@@ -24,7 +24,6 @@ namespace GestionDeColegiados
         public MenuPrincipal()
         {
             InitializeComponent();
-            
         }
 
         private void btnGestionColegiados_MouseEnter(object sender, EventArgs e)
@@ -60,7 +59,9 @@ namespace GestionDeColegiados
 
         private void btnNuevoGrupoColegiados_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new frmAsignarGrupoColegiados());
+            AbrirFormEnPanel(new frmNuevoGrupoColegiado());
+            frmNuevoGrupoColegiado frmNuevoGrupoColegiado = new frmNuevoGrupoColegiado();
+            frmNuevoGrupoColegiado.Show();
         }
 
         private void btnVerTodosColegiados_Click(object sender, EventArgs e)
@@ -99,8 +100,6 @@ namespace GestionDeColegiados
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-
-
 
         //evento para minimizar pantalla
         private void pbMinimizar_Click_1(object sender, EventArgs e)

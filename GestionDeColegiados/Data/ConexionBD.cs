@@ -8,8 +8,7 @@ namespace Sistema
 {
     class ConexionBD
     {
-        public static MySqlConnection getConexion()
-        {
+        public static MySqlConnection getConexion() {
             string servidor = "localhost";
             string puerto = "3306";
             string usuario = "presidente";
@@ -21,7 +20,6 @@ namespace Sistema
             MySqlConnection conexion = new MySqlConnection(cadenaConexion);
 
             return conexion;
-
         }
     }
 }

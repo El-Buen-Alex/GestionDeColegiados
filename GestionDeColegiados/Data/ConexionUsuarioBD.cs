@@ -52,7 +52,6 @@ namespace Model
             conexion.Close();
             //finalmente lo retornamos
             return administrador;
-
         }
     }
 }
