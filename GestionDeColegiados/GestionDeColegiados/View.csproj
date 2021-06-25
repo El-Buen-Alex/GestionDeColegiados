@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A5B342B2-977A-4A3B-A2A0-F1D9EAE7D8C5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>GestionDeColegiados</RootNamespace>
+    <AssemblyName>GestionDeColegiados</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmCambiarGrupoColegiados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCambiarGrupoColegiados.Designer.cs">
+      <DependentUpon>frmCambiarGrupoColegiados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGenerarEncuentros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGenerarEncuentros.Designer.cs">
+      <DependentUpon>frmGenerarEncuentros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNuevoEquipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNuevoEquipo.Designer.cs">
+      <DependentUpon>frmNuevoEquipo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNuevoGrupoColegiado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNuevoGrupoColegiado.Designer.cs">
+      <DependentUpon>frmNuevoGrupoColegiado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAsignarGrupoColegiados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAsignarGrupoColegiados.Designer.cs">
+      <DependentUpon>frmAsignarGrupoColegiados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVerTodosLosColegiados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVerTodosLosColegiados.Designer.cs">
+      <DependentUpon>frmVerTodosLosColegiados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IniciarSesion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IniciarSesion.Designer.cs">
+      <DependentUpon>IniciarSesion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuPrincipal.Designer.cs">
+      <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmCambiarGrupoColegiados.resx">
+      <DependentUpon>frmCambiarGrupoColegiados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGenerarEncuentros.resx">
+      <DependentUpon>frmGenerarEncuentros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNuevoEquipo.resx">
+      <DependentUpon>frmNuevoEquipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNuevoGrupoColegiado.resx">
+      <DependentUpon>frmNuevoGrupoColegiado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAsignarGrupoColegiados.resx">
+      <DependentUpon>frmAsignarGrupoColegiados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVerTodosLosColegiados.resx">
+      <DependentUpon>frmVerTodosLosColegiados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IniciarSesion.resx">
+      <DependentUpon>IniciarSesion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuPrincipal.resx">
+      <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\FEF_logo.svg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cerrar.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cerrar-Bar.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerrarF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cerrar 3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerrarVentana.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Maximizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Max.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Min.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login-rounded-right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Control\Control.csproj">
+      <Project>{2483b36b-ec02-47ee-a103-8ddeeafa5ceb}</Project>
+      <Name>Control</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
