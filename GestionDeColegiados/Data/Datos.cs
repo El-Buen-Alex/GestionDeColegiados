@@ -161,5 +161,13 @@ namespace Data {
             conexion.Close();
             return msj;
         }
+
+
+        /*public List<string> ConsultarColegiado () {
+            List<string> listaColegiado = new List<string>();
+
+            return listaColegiado;
+        }*/
+
     }
 }

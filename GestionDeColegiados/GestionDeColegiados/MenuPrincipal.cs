@@ -60,8 +60,6 @@ namespace GestionDeColegiados
         private void btnNuevoGrupoColegiados_Click(object sender, EventArgs e)
         {
             AbrirFormEnPanel(new frmNuevoGrupoColegiado());
-            frmNuevoGrupoColegiado frmNuevoGrupoColegiado = new frmNuevoGrupoColegiado();
-            frmNuevoGrupoColegiado.Show();
         }
 
         private void btnVerTodosColegiados_Click(object sender, EventArgs e)

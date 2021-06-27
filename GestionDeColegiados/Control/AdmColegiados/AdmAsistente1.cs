@@ -30,17 +30,16 @@ namespace Control.AdmColegiados {
 
         //Agregar
         public int Guardar (TextBox txtcedulaAs1, TextBox txtnombreAs1, TextBox txtapellidoAs1, 
-            TextBox txtdomicilioAs1, TextBox txtemailAs1, TextBox txttelefonoAs1, ComboBox cmbbandaAs1) {
+            TextBox txtdomicilioAs1, TextBox txtemailAs1, TextBox txttelefonoAs1) {
             string cedula = txtcedulaAs1.Text,
                 nombre = txtnombreAs1.Text,
                 apellidos = txtapellidoAs1.Text,
                 domicilio = txtdomicilioAs1.Text,
                 email = txtemailAs1.Text,
-                telefono = txttelefonoAs1.Text,
-                banda = cmbbandaAs1.Text;
+                telefono = txttelefonoAs1.Text;
             int id = 0;
 
-            asistente1 = new Asistente(0, cedula, nombre, apellidos, domicilio, email, telefono, banda);
+            asistente1 = new Asistente(0, cedula, nombre, apellidos, domicilio, email, telefono, "Derecha");
 
             if (asistente1 != null) {
                 listaAsistente1.Add(asistente1);
@@ -53,9 +52,7 @@ namespace Control.AdmColegiados {
             int id = 0;
 
             id = datos.InsertarAsistente1(asistente1);
-            if (id >= 1) {
-                MessageBox.Show("Se ha guardado correctamente");
-            } else {
+            if (id == 0) {
                 MessageBox.Show("No se ha podido comunicar con la BD");
             }
             return id;

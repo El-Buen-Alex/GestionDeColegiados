@@ -46,5 +46,27 @@ namespace Control.AdmColegiados {
                 MessageBox.Show("Se ha guardado correctamente");
             }
         }
+
+        //Listar
+        /*public int getLista () { //Método para devolver el numero de listas
+            return ListaColegiado.Count;
+        }
+
+        private void llenar (DataGridView dgvListarColegiados) {
+            dgvListarColegiados.Rows.Clear();
+            foreach (Colegiado colegiado in listaColegiado) {
+                dgvListarColegiados.Rows.Add();
+            }
+        }
+
+        public void LlenarDatos (DataGridView dgvListarColegiados) {
+            throw new NotImplementedException();
+        }
+
+        private void ConsultarColegiadoBD () {
+            listaColegiado = datos.ConsultarColegiado();
+            if (listaColegiado.Count == 0)
+                MessageBox.Show("No hay elementos en la tabla");
+        }*/
     }
 }

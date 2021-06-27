@@ -48,16 +48,6 @@ namespace Control {
             return vacio;
         }
 
-        public bool validarVacios2 (TextBox txtcedulaAs, TextBox txtnombreAs, TextBox txtapellidoAs, 
-            TextBox txtdomicilioAs, TextBox txtemailAs, TextBox txttelefonoAs, ComboBox cmbbandaAs) {
-            bool vacio = true;
-            if (txtcedulaAs.Text != "" && txtnombreAs.Text != "" && txtapellidoAs.Text != "" &&
-                txtdomicilioAs.Text != "" && txtemailAs.Text != "" && txttelefonoAs.Text != "" && cmbbandaAs.Text != "") {
-                return vacio = false;
-            }
-            return vacio;
-        }
-
         public bool validarnum (int idJuezCentral, int idAsistente1, int idAsistente2, int idCuartoArbitro) {
             bool vacio = true;
             if (idJuezCentral != 0 && idAsistente1 != 0 && idAsistente2 != 0 && idCuartoArbitro != 0) {
