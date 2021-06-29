@@ -180,7 +180,7 @@ namespace GestionDeColegiados
             this.txtcedulaJC.Name = "txtcedulaJC";
             this.txtcedulaJC.Size = new System.Drawing.Size(189, 20);
             this.txtcedulaJC.TabIndex = 15;
-            this.txtcedulaJC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcedulaJC_KeyPress);
+            this.txtcedulaJC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validarNumeros_KeyPress);
             // 
             // txtapellidoAs1
             // 
@@ -190,7 +190,7 @@ namespace GestionDeColegiados
             this.txtapellidoAs1.Size = new System.Drawing.Size(189, 20);
             this.txtapellidoAs1.TabIndex = 16;
             this.txtapellidoAs1.Visible = false;
-            this.txtapellidoAs1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnombreJC_KeyPress);
+            this.txtapellidoAs1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validarLetras_KeyPress);
             // 
             // txttelefonoAs1
             // 
@@ -200,7 +200,7 @@ namespace GestionDeColegiados
             this.txttelefonoAs1.Size = new System.Drawing.Size(189, 20);
             this.txttelefonoAs1.TabIndex = 17;
             this.txttelefonoAs1.Visible = false;
-            this.txttelefonoAs1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcedulaJC_KeyPress);
+            this.txttelefonoAs1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validarNumeros_KeyPress);
             // 
             // txtemailAs1
             // 
@@ -219,7 +219,7 @@ namespace GestionDeColegiados
             this.txtdomicilioAs1.Size = new System.Drawing.Size(189, 20);
             this.txtdomicilioAs1.TabIndex = 19;
             this.txtdomicilioAs1.Visible = false;
-            this.txtdomicilioAs1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnombreJC_KeyPress);
+            this.txtdomicilioAs1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validarLetras_KeyPress);
             // 
             // txtnombreAs1
             // 
@@ -229,7 +229,7 @@ namespace GestionDeColegiados
             this.txtnombreAs1.Size = new System.Drawing.Size(189, 20);
             this.txtnombreAs1.TabIndex = 20;
             this.txtnombreAs1.Visible = false;
-            this.txtnombreAs1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnombreJC_KeyPress);
+            this.txtnombreAs1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validarLetras_KeyPress);
             // 
             // txtcedulaAs1
             // 
@@ -239,7 +239,7 @@ namespace GestionDeColegiados
             this.txtcedulaAs1.Size = new System.Drawing.Size(189, 20);
             this.txtcedulaAs1.TabIndex = 21;
             this.txtcedulaAs1.Visible = false;
-            this.txtcedulaAs1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcedulaJC_KeyPress);
+            this.txtcedulaAs1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validarNumeros_KeyPress);
             // 
             // txttelefonoJC
             // 
@@ -248,7 +248,7 @@ namespace GestionDeColegiados
             this.txttelefonoJC.Name = "txttelefonoJC";
             this.txttelefonoJC.Size = new System.Drawing.Size(189, 20);
             this.txttelefonoJC.TabIndex = 22;
-            this.txttelefonoJC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcedulaJC_KeyPress);
+            this.txttelefonoJC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validarNumeros_KeyPress);
             // 
             // txtemailJC
             // 
@@ -265,7 +265,7 @@ namespace GestionDeColegiados
             this.txtdomicilioJC.Name = "txtdomicilioJC";
             this.txtdomicilioJC.Size = new System.Drawing.Size(189, 20);
             this.txtdomicilioJC.TabIndex = 24;
-            this.txtdomicilioJC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnombreJC_KeyPress);
+            this.txtdomicilioJC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validarLetras_KeyPress);
             // 
             // txtapellidoJC
             // 
@@ -274,7 +274,7 @@ namespace GestionDeColegiados
             this.txtapellidoJC.Name = "txtapellidoJC";
             this.txtapellidoJC.Size = new System.Drawing.Size(189, 20);
             this.txtapellidoJC.TabIndex = 25;
-            this.txtapellidoJC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnombreJC_KeyPress);
+            this.txtapellidoJC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validarLetras_KeyPress);
             // 
             // txtnombreJC
             // 
@@ -283,7 +283,7 @@ namespace GestionDeColegiados
             this.txtnombreJC.Name = "txtnombreJC";
             this.txtnombreJC.Size = new System.Drawing.Size(189, 20);
             this.txtnombreJC.TabIndex = 26;
-            this.txtnombreJC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnombreJC_KeyPress);
+            this.txtnombreJC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validarLetras_KeyPress);
             // 
             // txtdomicilioCA
             // 
@@ -293,7 +293,7 @@ namespace GestionDeColegiados
             this.txtdomicilioCA.Size = new System.Drawing.Size(189, 20);
             this.txtdomicilioCA.TabIndex = 27;
             this.txtdomicilioCA.Visible = false;
-            this.txtdomicilioCA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnombreJC_KeyPress);
+            this.txtdomicilioCA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validarLetras_KeyPress);
             // 
             // txtapellidoCA
             // 
@@ -303,7 +303,7 @@ namespace GestionDeColegiados
             this.txtapellidoCA.Size = new System.Drawing.Size(189, 20);
             this.txtapellidoCA.TabIndex = 28;
             this.txtapellidoCA.Visible = false;
-            this.txtapellidoCA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnombreJC_KeyPress);
+            this.txtapellidoCA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validarLetras_KeyPress);
             // 
             // txtnombreCA
             // 
@@ -313,7 +313,7 @@ namespace GestionDeColegiados
             this.txtnombreCA.Size = new System.Drawing.Size(189, 20);
             this.txtnombreCA.TabIndex = 29;
             this.txtnombreCA.Visible = false;
-            this.txtnombreCA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnombreJC_KeyPress);
+            this.txtnombreCA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validarLetras_KeyPress);
             // 
             // txtcedulaCA
             // 
@@ -323,7 +323,7 @@ namespace GestionDeColegiados
             this.txtcedulaCA.Size = new System.Drawing.Size(189, 20);
             this.txtcedulaCA.TabIndex = 30;
             this.txtcedulaCA.Visible = false;
-            this.txtcedulaCA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcedulaJC_KeyPress);
+            this.txtcedulaCA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validarNumeros_KeyPress);
             // 
             // txttelefonoAs2
             // 
@@ -333,7 +333,7 @@ namespace GestionDeColegiados
             this.txttelefonoAs2.Size = new System.Drawing.Size(189, 20);
             this.txttelefonoAs2.TabIndex = 31;
             this.txttelefonoAs2.Visible = false;
-            this.txttelefonoAs2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcedulaJC_KeyPress);
+            this.txttelefonoAs2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validarNumeros_KeyPress);
             // 
             // txtemailAs2
             // 
@@ -352,7 +352,7 @@ namespace GestionDeColegiados
             this.txtdomicilioAs2.Size = new System.Drawing.Size(189, 20);
             this.txtdomicilioAs2.TabIndex = 33;
             this.txtdomicilioAs2.Visible = false;
-            this.txtdomicilioAs2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnombreJC_KeyPress);
+            this.txtdomicilioAs2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validarLetras_KeyPress);
             // 
             // txtapellidoAs2
             // 
@@ -362,7 +362,7 @@ namespace GestionDeColegiados
             this.txtapellidoAs2.Size = new System.Drawing.Size(189, 20);
             this.txtapellidoAs2.TabIndex = 34;
             this.txtapellidoAs2.Visible = false;
-            this.txtapellidoAs2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnombreJC_KeyPress);
+            this.txtapellidoAs2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validarLetras_KeyPress);
             // 
             // txtnombreAs2
             // 
@@ -372,7 +372,7 @@ namespace GestionDeColegiados
             this.txtnombreAs2.Size = new System.Drawing.Size(189, 20);
             this.txtnombreAs2.TabIndex = 35;
             this.txtnombreAs2.Visible = false;
-            this.txtnombreAs2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnombreJC_KeyPress);
+            this.txtnombreAs2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validarLetras_KeyPress);
             // 
             // txtcedulaAs2
             // 
@@ -382,7 +382,7 @@ namespace GestionDeColegiados
             this.txtcedulaAs2.Size = new System.Drawing.Size(189, 20);
             this.txtcedulaAs2.TabIndex = 36;
             this.txtcedulaAs2.Visible = false;
-            this.txtcedulaAs2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcedulaJC_KeyPress);
+            this.txtcedulaAs2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validarNumeros_KeyPress);
             // 
             // txttelefonoCA
             // 
@@ -392,7 +392,7 @@ namespace GestionDeColegiados
             this.txttelefonoCA.Size = new System.Drawing.Size(189, 20);
             this.txttelefonoCA.TabIndex = 37;
             this.txttelefonoCA.Visible = false;
-            this.txttelefonoCA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcedulaJC_KeyPress);
+            this.txttelefonoCA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validarNumeros_KeyPress);
             // 
             // txtemailCA
             // 

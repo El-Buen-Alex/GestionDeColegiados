@@ -15,7 +15,7 @@ namespace GestionDeColegiados
 
         public frmVerTodosLosColegiados() {
             InitializeComponent();
-            //admColegiado.LlenarDatos(dgvListarColegiados);
+            admColegiado.llenarDatos(dgvListarColegiados);
         }
     }
 }

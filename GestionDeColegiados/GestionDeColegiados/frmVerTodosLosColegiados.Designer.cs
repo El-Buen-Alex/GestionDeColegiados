@@ -42,6 +42,7 @@ namespace GestionDeColegiados
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Transparent;
             this.label2.Location = new System.Drawing.Point(167, 42);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(132, 24);
@@ -67,7 +68,7 @@ namespace GestionDeColegiados
             // 
             // colJuezCentral
             // 
-            this.colJuezCentral.HeaderText = "JuezCentral";
+            this.colJuezCentral.HeaderText = "Juez Central";
             this.colJuezCentral.Name = "colJuezCentral";
             this.colJuezCentral.ReadOnly = true;
             // 
@@ -97,9 +98,9 @@ namespace GestionDeColegiados
             this.ClientSize = new System.Drawing.Size(480, 555);
             this.Controls.Add(this.dgvListarColegiados);
             this.Controls.Add(this.label2);
-            this.ForeColor = System.Drawing.Color.Transparent;
+            this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmVerTodosLosColegiados";
             this.Text = "frmVerTodosLosColegiados";
             ((System.ComponentModel.ISupportInitialize)(this.dgvListarColegiados)).EndInit();

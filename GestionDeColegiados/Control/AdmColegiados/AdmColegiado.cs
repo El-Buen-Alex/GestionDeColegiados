@@ -48,25 +48,16 @@ namespace Control.AdmColegiados {
         }
 
         //Listar
-        /*public int getLista () { //Método para devolver el numero de listas
-            return ListaColegiado.Count;
-        }
-
-        private void llenar (DataGridView dgvListarColegiados) {
-            dgvListarColegiados.Rows.Clear();
-            foreach (Colegiado colegiado in listaColegiado) {
-                dgvListarColegiados.Rows.Add();
+        public void llenarDatos (DataGridView dgvListarColegiados) {
+            List<IntegrantesColegiados> listaintegColeg = new List<IntegrantesColegiados>();
+            listaintegColeg = datos.ConsultarColegiado();
+            if (listaintegColeg.Count == 0) {
+                MessageBox.Show("No se ha registrado Colegiados");
+            } else {
+                foreach (IntegrantesColegiados integrantescol in listaintegColeg) {
+                    dgvListarColegiados.Rows.Add(integrantescol.NombrejuezCentral,integrantescol.Nombreasistente1,integrantescol.Nombreasistente2,integrantescol.NombrecuartoArbitro);
+                }
             }
         }
-
-        public void LlenarDatos (DataGridView dgvListarColegiados) {
-            throw new NotImplementedException();
-        }
-
-        private void ConsultarColegiadoBD () {
-            listaColegiado = datos.ConsultarColegiado();
-            if (listaColegiado.Count == 0)
-                MessageBox.Show("No hay elementos en la tabla");
-        }*/
     }
 }

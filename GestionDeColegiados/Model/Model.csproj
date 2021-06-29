@@ -53,6 +53,7 @@
     <Compile Include="Colegiados\Asistente.cs" />
     <Compile Include="Colegiados\Colegiado.cs" />
     <Compile Include="Colegiados\CuartoArbitro.cs" />
+    <Compile Include="Colegiados\IntegrantesColegiados.cs" />
     <Compile Include="Colegiados\JuezCentral.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

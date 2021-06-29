@@ -38,6 +38,7 @@ namespace Data {
                 trans.Commit();
             } catch (MySqlException ex) {
                 trans.Rollback();
+                throw new Exception(ex.ToString());
             }
             conexion.Close();
             return id;
@@ -69,6 +70,7 @@ namespace Data {
                 trans.Commit();
             } catch (MySqlException ex) {
                 trans.Rollback();
+                throw new Exception(ex.ToString());
             }
             conexion.Close();
             return id;
@@ -100,6 +102,7 @@ namespace Data {
                 trans.Commit();
             } catch (MySqlException ex) {
                 trans.Rollback();
+                throw new Exception(ex.ToString());
             }
             conexion.Close();
             return id;
@@ -130,6 +133,7 @@ namespace Data {
                 trans.Commit();
             } catch (MySqlException ex) {
                 trans.Rollback();
+                throw new Exception(ex.ToString());
             }
             conexion.Close();
             return id;
@@ -157,17 +161,38 @@ namespace Data {
             } catch (MySqlException ex) {
                 trans.Rollback();
                 msj = false;
+                throw new Exception(ex.ToString());
             }
             conexion.Close();
             return msj;
         }
 
 
-        /*public List<string> ConsultarColegiado () {
-            List<string> listaColegiado = new List<string>();
-
+        public List<IntegrantesColegiados> ConsultarColegiado () {
+            List<IntegrantesColegiados> listaColegiado = new List<IntegrantesColegiados>();
+            IntegrantesColegiados integrantesColeg = null;
+            MySqlDataReader reader = null; //tabla virtual
+            conexion = ConexionBD.getConexion();
+            conexion.Open();
+            try {
+                MySqlCommand comando = new MySqlCommand("obtenerColegiado", conexion);
+                comando.CommandType = CommandType.StoredProcedure;
+                reader = comando.ExecuteReader();
+                while (reader.Read()) {
+                    integrantesColeg = new IntegrantesColegiados();
+                    integrantesColeg.NombrejuezCentral = reader["nombreJC"].ToString();
+                    integrantesColeg.Nombreasistente1 = reader["nombreAs1"].ToString();
+                    integrantesColeg.Nombreasistente2 = reader["nombreAs2"].ToString();
+                    integrantesColeg.NombrecuartoArbitro = reader["nombreCA"].ToString();
+                    listaColegiado.Add(integrantesColeg);
+                }
+            } catch(MySqlException ex) {
+                listaColegiado = null;
+                throw new Exception(ex.ToString());
+            }
+            conexion.Close();
             return listaColegiado;
-        }*/
+        }
 
     }
 }
