@@ -134,6 +134,7 @@ namespace GestionDeColegiados
             this.registrar.TabIndex = 10;
             this.registrar.Text = "Registrar";
             this.registrar.UseVisualStyleBackColor = false;
+            this.registrar.Click += new System.EventHandler(this.registrar_Click);
             // 
             // frmNuevoEquipo
             // 

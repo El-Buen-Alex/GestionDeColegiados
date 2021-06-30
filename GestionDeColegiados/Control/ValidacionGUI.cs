@@ -28,6 +28,15 @@ namespace Control {
             return x;
         }
 
+        public bool validarVacios(string nombre, string numjugadores, string director, string presidente)
+        {
+            bool camposVacios = false;
+            if(String.IsNullOrEmpty(nombre.Trim())==true || String.IsNullOrEmpty(numjugadores.Trim()) || String.IsNullOrEmpty(director.Trim()) || String.IsNullOrEmpty(presidente.Trim()))
+                camposVacios = true;
+
+            return camposVacios;
+        }
+
         public float EsFloat (string valor) {
             float x = 0;
             try {

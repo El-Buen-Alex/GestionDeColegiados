@@ -1,4 +1,5 @@
 ﻿using Model.Colegiados;
+using Model.Equipo;
 using MySql.Data.MySqlClient;
 using Sistema;
 using System;
@@ -37,6 +38,35 @@ namespace Data {
 
                 trans.Commit();
             } catch (MySqlException ex) {
+                trans.Rollback();
+                throw new Exception(ex.ToString());
+            }
+            conexion.Close();
+            return id;
+        }
+
+        public int InsertarEquipo(Equipo equipo)
+        {
+            int id = 0;
+            conexion = ConexionBD.getConexion();
+            conexion.Open();
+            trans = conexion.BeginTransaction();
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand("guardarEquipo", conexion, trans);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@_nombre", equipo.NombreEquipo);
+                cmd.Parameters.AddWithValue("@_numero_jugadores", equipo.NumeroJugadores);
+                cmd.Parameters.AddWithValue("@_nombre_director_tecnico", equipo.NombreDirectoTecnico);
+                cmd.Parameters.AddWithValue("@_presidente_equipo", equipo.PresidenteEquipo);
+                cmd.ExecuteNonQuery();
+                cmd = new MySqlCommand("obtenerId", conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                id = Convert.ToInt32(cmd.ExecuteScalar());
+                trans.Commit();
+            }
+            catch (MySqlException ex)
+            {
                 trans.Rollback();
                 throw new Exception(ex.ToString());
             }

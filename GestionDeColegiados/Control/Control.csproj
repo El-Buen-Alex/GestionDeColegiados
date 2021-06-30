@@ -51,6 +51,7 @@
     <Compile Include="AdmColegiados\AdmColegiado.cs" />
     <Compile Include="AdmColegiados\AdmCuartoArbitro.cs" />
     <Compile Include="AdmColegiados\AdmJuezCentral.cs" />
+    <Compile Include="AdmEquipos\AdmEquipo.cs" />
     <Compile Include="GestionLogin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ValidacionGUI.cs" />
