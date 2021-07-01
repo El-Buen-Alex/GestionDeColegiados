@@ -12,10 +12,7 @@ using System.Windows.Forms;
 namespace GestionDeColegiados { 
     public partial class frmNuevoGrupoColegiado : Form {
         ValidacionGUI validacionGUI = new ValidacionGUI();
-        AdmJuezCentral admJuezCentral = AdmJuezCentral.getAdmJ();
-        AdmAsistente1 admAsistente1 = AdmAsistente1.getAdmA1();
-        AdmAsistente2 admAsistente2 = AdmAsistente2.getAdmA2();
-        AdmCuartoArbitro admCuartoArbitro = AdmCuartoArbitro.getAdmCA();
+        Contexto contexto = null;
         AdmColegiado admColegiado = AdmColegiado.getAdmCol();
 
         public frmNuevoGrupoColegiado(){
@@ -92,22 +89,26 @@ namespace GestionDeColegiados {
 
         private int obtenerIdJuezCentral () {
             int id = 0;
-            id = admJuezCentral.Guardar(txtcedulaJC, txtnombreJC, txtapellidoJC, txtdomicilioJC, txtemailJC, txttelefonoJC);
+            contexto = new Contexto(AdmJuezCentral.getAdmJ());
+            id = contexto.obtenerDatos(txtcedulaJC, txtnombreJC, txtapellidoJC, txtdomicilioJC, txtemailJC, txttelefonoJC);
             return id;
         }
         private int obtenerIdAsistente1 () {
             int id = 0;
-            id = admAsistente1.Guardar(txtcedulaAs1, txtnombreAs1, txtapellidoAs1, txtdomicilioAs1, txtemailAs1, txttelefonoAs1);
+            contexto = new Contexto(AdmAsistente1.getAdmA1());
+            id = contexto.obtenerDatos(txtcedulaAs1, txtnombreAs1, txtapellidoAs1, txtdomicilioAs1, txtemailAs1, txttelefonoAs1);
             return id;
         }
         private int obtenerIdAsistente2 () {
             int id = 0;
-            id = admAsistente2.Guardar(txtcedulaAs2, txtnombreAs2, txtapellidoAs2, txtdomicilioAs2, txtemailAs2, txttelefonoAs2);
+            contexto = new Contexto(AdmAsistente2.getAdmA2());
+            id = contexto.obtenerDatos(txtcedulaAs2, txtnombreAs2, txtapellidoAs2, txtdomicilioAs2, txtemailAs2, txttelefonoAs2);
             return id;
         }
         private int obtenerIdCuartoArbitro () {
             int id = 0;
-            id = admCuartoArbitro.Guardar(txtcedulaCA, txtnombreCA, txtapellidoCA, txtdomicilioCA, txtemailCA, txttelefonoCA);
+            contexto = new Contexto(AdmCuartoArbitro.getAdmCA());
+            id = contexto.obtenerDatos(txtcedulaCA, txtnombreCA, txtapellidoCA, txtdomicilioCA, txtemailCA, txttelefonoCA);
             return id;
         }
         private void ocultarCamposJuezCentral () {

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Control.AdmColegiados {
-    public class AdmJuezCentral {
+    public class AdmJuezCentral : IAdm{
         List<JuezCentral> listaJuezCentral = new List<JuezCentral>();
         JuezCentral juezCentral = null;
         ValidacionGUI v = new ValidacionGUI();
@@ -29,7 +29,7 @@ namespace Control.AdmColegiados {
         }
 
         //Agregar
-        public int Guardar (TextBox txtcedulaJC, TextBox txtnombreJC, TextBox txtapellidoJC,
+        public int guardar (TextBox txtcedulaJC, TextBox txtnombreJC, TextBox txtapellidoJC,
             TextBox txtdomicilioJC, TextBox txtemailJC, TextBox txttelefonoJC) {
             string cedula = txtcedulaJC.Text,
                 nombre = txtnombreJC.Text,
@@ -43,12 +43,12 @@ namespace Control.AdmColegiados {
 
             if (juezCentral != null) {
                 listaJuezCentral.Add(juezCentral);
-                id = GuardarJuezCentral(juezCentral); //Guardar BD
+                id = GuardarJuezCentralBD(juezCentral); //Guardar BD
             }
             return id;
         }
 
-        private int GuardarJuezCentral (JuezCentral juezCentral) {
+        private int GuardarJuezCentralBD (JuezCentral juezCentral) {
             int id = 0;
             
             id = datos.InsertarJuezCentral(juezCentral);

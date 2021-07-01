@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Control.AdmColegiados {
-    public class AdmAsistente1 {
+    public class AdmAsistente1 : IAdm{
         List<Asistente> listaAsistente1 = new List<Asistente>();
         Asistente asistente1 = null;
         ValidacionGUI v = new ValidacionGUI();
@@ -29,7 +29,7 @@ namespace Control.AdmColegiados {
         }
 
         //Agregar
-        public int Guardar (TextBox txtcedulaAs1, TextBox txtnombreAs1, TextBox txtapellidoAs1, 
+        public int guardar (TextBox txtcedulaAs1, TextBox txtnombreAs1, TextBox txtapellidoAs1, 
             TextBox txtdomicilioAs1, TextBox txtemailAs1, TextBox txttelefonoAs1) {
             string cedula = txtcedulaAs1.Text,
                 nombre = txtnombreAs1.Text,
@@ -43,12 +43,12 @@ namespace Control.AdmColegiados {
 
             if (asistente1 != null) {
                 listaAsistente1.Add(asistente1);
-                id = GuardarAsistente1(asistente1); //Guardar BD
+                id = GuardarAsistente1BD(asistente1); //Guardar BD
             }
             return id;
         }
 
-        private int GuardarAsistente1 (Asistente asistente1) {
+        private int GuardarAsistente1BD (Asistente asistente1) {
             int id = 0;
 
             id = datos.InsertarAsistente1(asistente1);
