@@ -183,6 +183,10 @@
       <Project>{2483b36b-ec02-47ee-a103-8ddeeafa5ceb}</Project>
       <Name>Control</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{6F613673-769D-462B-8A59-93C5BB888B39}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\marco.png" />

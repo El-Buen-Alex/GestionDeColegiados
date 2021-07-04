@@ -74,6 +74,68 @@ namespace Data {
             return id;
         }
 
+        public int registrarEncuentrosGenerados(string nombreEquipo, string estado, int idEquipo)
+        {
+            int id = 0;
+            conexion = ConexionBD.getConexion();
+            conexion.Open();
+            trans = conexion.BeginTransaction();
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand("guardarEncuentros", conexion, trans);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@_idequipo", idEquipo);
+                cmd.Parameters.AddWithValue("@_nombre", nombreEquipo);
+                cmd.Parameters.AddWithValue("@_estado", estado);
+                cmd.ExecuteNonQuery();
+                cmd = new MySqlCommand("obtenerId", conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                id = Convert.ToInt32(cmd.ExecuteScalar());
+                trans.Commit();
+            }
+            catch (MySqlException ex)
+            {
+                trans.Rollback();
+                throw new Exception(ex.ToString());
+            }
+            conexion.Close();
+            return id;
+        }
+
+        
+
+        public List<Equipo> consultarEquipos()
+        {
+            List<Equipo> listaEquipo = new List<Equipo>();
+            int id = 0;
+            Equipo nombreEquipo = null;
+            conexion = ConexionBD.getConexion();
+            conexion.Open();
+            try
+            {
+                MySqlCommand comando = new MySqlCommand("obtenerNombreEquipo", conexion);
+                comando.CommandType = CommandType.StoredProcedure;
+                MySqlDataReader reader = comando.ExecuteReader();
+                while (reader.Read())
+                {
+                    nombreEquipo = new Equipo();
+                    nombreEquipo.NombreEquipo = reader["nombre"].ToString();
+                    nombreEquipo.IdEquipo = Convert.ToInt32(reader["idequipo"].ToString());
+                    Console.WriteLine(nombreEquipo.NombreEquipo);
+                    listaEquipo.Add(nombreEquipo);
+                    Console.WriteLine("ids:" + nombreEquipo.IdEquipo);
+                }
+                Console.WriteLine("Cantidad de registros: "+ listaEquipo.Count);
+            }
+            catch (MySqlException ex)
+            {
+                listaEquipo = null;
+                throw new Exception(ex.ToString());
+            }
+            conexion.Close();
+            return listaEquipo;
+        }
+
         public int InsertarAsistente1 (Asistente asistente1) {
             int id = 0;
             conexion = ConexionBD.getConexion();
@@ -206,6 +268,7 @@ namespace Data {
             conexion.Open();
             try {
                 MySqlCommand comando = new MySqlCommand("obtenerColegiado", conexion);
+             
                 comando.CommandType = CommandType.StoredProcedure;
                 reader = comando.ExecuteReader();
                 while (reader.Read()) {

@@ -12,7 +12,9 @@ namespace Control.AdmEquipos
     public class AdmEquipo
     {
         Equipo equipo = null;
-        List<Equipo> listaEquipo = null;
+        List<Equipo> listaEquipo = new List<Equipo>();
+        List<int> indexNumeroAleatorio = new List<int>();
+        List<int> indexRegistro = new List<int>();
         private static AdmEquipo admEquipo = null;
         Datos datos = new Datos();
         internal List<Equipo> Lista { get => listaEquipo; set => listaEquipo = value; }
@@ -32,7 +34,6 @@ namespace Control.AdmEquipos
 
         public void GuardarDatos(string nombre, int numJugadores, string directorNombre, string presidenteNombre)
         {
-            listaEquipo = new List<Equipo>();
             equipo = new Equipo(0,nombre, numJugadores, directorNombre, presidenteNombre);
             if (equipo != null)
             {
@@ -41,6 +42,47 @@ namespace Control.AdmEquipos
                 registrarEquipo(equipo);
             }
         }
+
+       
+        public void llenarCamposTextos(TextBox cajaTexto, int numBase, int numTope)
+        {
+            cajaTexto.Text = "";
+           // indexNumeroAleatorio = null;
+            extraerNombreEquipos();
+            indexNumeroAleatorio = generarNumeros(numBase, numTope);
+            foreach (int indexAleatorio in indexNumeroAleatorio)
+            {
+                cajaTexto.Text += listaEquipo[indexAleatorio - 1].NombreEquipo + "\r\n\r\n\r ";
+               
+            }
+        }
+
+       public void registrarEncuentros(string tipoEquipo)
+        {
+            string nombreEquipo = "";
+            int idEquipo = 0;
+            int id = 0;
+            extraerNombreEquipos();
+
+            foreach (int indexAleatorio in indexRegistro)
+            {
+                nombreEquipo=listaEquipo[indexAleatorio - 1].NombreEquipo.ToString();
+                idEquipo=Convert.ToInt32(listaEquipo[indexAleatorio - 1].IdEquipo);
+                id=datos.registrarEncuentrosGenerados(nombreEquipo, tipoEquipo, idEquipo);
+
+            }
+           
+            if (id == '0')
+            {
+                MessageBox.Show("Error al registrar el encuentro");
+            }
+            else
+            {
+                MessageBox.Show("Registro exitoso!");
+            }
+
+        }
+
 
         private void registrarEquipo(Equipo equipo)
         {
@@ -55,5 +97,31 @@ namespace Control.AdmEquipos
                 MessageBox.Show("Registro exitoso!");
             }
         }
+
+        public List<Equipo> extraerNombreEquipos()
+        {
+            listaEquipo = datos.consultarEquipos();
+            return listaEquipo;
+            
+        }
+        
+        public List<int> generarNumeros(int x, int y)
+        {
+
+            List<int> listaAleatorio = new List<int>();
+            int numeroGenerado = 0;
+            while (listaAleatorio.Count < 5)
+            {
+                numeroGenerado = new Random().Next(x,y);
+                if (!listaAleatorio.Contains(numeroGenerado))
+                {
+                    listaAleatorio.Add(numeroGenerado);
+                    indexRegistro.Add(numeroGenerado);
+                }
+            }
+            return listaAleatorio;
+        }
+
+        
     }
 }
