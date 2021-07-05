@@ -10,8 +10,9 @@ namespace Control
     public class usuarioNoRegistradoException : Exception
     {
 
-        public usuarioNoRegistradoException(string mensaje):base(mensaje)
+        public usuarioNoRegistradoException(string usuario):base("El usuario:-- " + usuario+" --no se encuentra registrado en el sistema")
         {
+            
         }
         public usuarioNoRegistradoException(string mensaje, Exception inner) : base(mensaje, inner)
         {
