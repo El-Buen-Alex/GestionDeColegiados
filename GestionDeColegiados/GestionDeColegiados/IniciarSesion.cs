@@ -96,21 +96,29 @@ namespace GestionDeColegiados
             else
             {
                 //metodo que envia el usuario y contraseña ingrsado para validar si los datos fueron ingresados correctamente
-                string respuesta= "";
+                string mensaje = "";
                 try
                 {
                     gestionLogin.controlLogin(usuario, password);
+                }
+                catch(usuarioNoRegistradoException ex)
+                {
+                    mensaje = ex.Message;
+                }
+
+                if (mensaje.Length != 0)
+                {
                     this.Hide();
                     MenuPrincipal pantallaPrincipal = new MenuPrincipal();
                     pantallaPrincipal.Show();
                 }
-                catch(usuarioNoRegistradoException ex)
+                else
                 {
-                    MessageBox.Show(respuesta, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(mensaje, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
-                
-            }            
+
+            }
         }
 
         //metodo que valida si existen campos vacios en la GUI

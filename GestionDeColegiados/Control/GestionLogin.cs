@@ -10,7 +10,7 @@ namespace Control
     {
 
         //metodo necesario para gestionar el intento de acceder a la aplicación
-        public string controlLogin(string usuario, string password)
+        public void controlLogin(string usuario, string password)
         {
             //creamos un objeto que nos ayudará a gestionar la conexion
             ConexionUsuarioBD gestionUsuario = new ConexionUsuarioBD();
@@ -24,8 +24,7 @@ namespace Control
             if (nuevoUsuario == null)
             {
                 throw new usuarioNoRegistradoException("El usuario: " + usuario + " no está registrado en el sistema");
-            }         
-            return respuesta;
+            }   
         }
     }
 }
