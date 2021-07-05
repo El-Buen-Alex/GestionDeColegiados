@@ -31,6 +31,11 @@ namespace Control.AdmEquipos
             }
             return admEquipo;
         }
+        public int cantidadEquiposRegistrados()
+        {
+            extraerNombreEquipos();
+            return listaEquipo.Count;
+        }
 
         public void GuardarDatos(string nombre, int numJugadores, string directorNombre, string presidenteNombre)
         {

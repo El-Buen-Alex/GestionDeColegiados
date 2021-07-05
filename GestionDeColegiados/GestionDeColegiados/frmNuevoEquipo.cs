@@ -15,6 +15,7 @@ namespace GestionDeColegiados
     {
         ValidacionGUI validacionGUI = new ValidacionGUI();
         AdmEquipo admEquipo = AdmEquipo.getEquipo();
+        registroEquipoMaximoException excepcionEquipos = null;
         public frmNuevoEquipo()
         {
             InitializeComponent();
@@ -29,13 +30,32 @@ namespace GestionDeColegiados
                 presidenteNombre = presidente.Text;
 
             bool hayVacios = validacionGUI.validarVacios(Nombre, numJugadores, directorNombre, presidenteNombre);
-            if( hayVacios !=true ) {
-                MessageBox.Show(Nombre + ", " + numJugadores + ", " + directorNombre + ", " + presidenteNombre);
-               admEquipo.GuardarDatos(Nombre, validacionGUI.EsInt(numJugadores), directorNombre, presidenteNombre);
-                
-            } else {
-                MessageBox.Show("Hay ciertos campos vacios");
+            try
+            {
+                if (admEquipo.cantidadEquiposRegistrados() < 10)
+                {
+                    if (hayVacios != true)
+                    {
+                        MessageBox.Show(Nombre + ", " + numJugadores + ", " + directorNombre + ", " + presidenteNombre);
+                        admEquipo.GuardarDatos(Nombre, validacionGUI.EsInt(numJugadores), directorNombre, presidenteNombre);
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Hay ciertos campos vacios");
+                    }
+                }
+                else
+                {
+                    throw new registroEquipoMaximoException("EL registro máximo de equipos es de 10");
+                }
             }
+            catch(registroEquipoMaximoException mensaje)
+            {
+                MessageBox.Show(mensaje.ToString());
+            }
+            
+            
         }
         
         
