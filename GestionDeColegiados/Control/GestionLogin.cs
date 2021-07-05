@@ -23,7 +23,7 @@ namespace Control
 
             if (nuevoUsuario == null)
             {
-                respuesta = "El usuario  y/o contraseña no coinciden";
+                throw new usuarioNoRegistradoException("El usuario: " + usuario + " no está registrado en el sistema");
             }         
             return respuesta;
         }

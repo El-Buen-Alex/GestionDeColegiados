@@ -96,17 +96,20 @@ namespace GestionDeColegiados
             else
             {
                 //metodo que envia el usuario y contraseña ingrsado para validar si los datos fueron ingresados correctamente
-                string respuesta = gestionLogin.controlLogin(usuario, password);
-                if (respuesta.Length > 0)
+                string respuesta= "";
+                try
                 {
-                    MessageBox.Show(respuesta, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
+                    gestionLogin.controlLogin(usuario, password);
                     this.Hide();
                     MenuPrincipal pantallaPrincipal = new MenuPrincipal();
                     pantallaPrincipal.Show();
                 }
+                catch(usuarioNoRegistradoException ex)
+                {
+                    MessageBox.Show(respuesta, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                
             }            
         }
 
