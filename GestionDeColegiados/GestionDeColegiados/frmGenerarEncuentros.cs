@@ -1,5 +1,5 @@
-﻿using Control.AdmEquipos;
-using Model.Equipo;
+﻿using Control.AdmEncuentrosGenerados;
+using Control.AdmEquipos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,13 +14,39 @@ namespace GestionDeColegiados
     public partial class frmGenerarEncuentros : Form
     {
         AdmEquipo admEquipo = AdmEquipo.getEquipo();
-        List<Equipo> nombreEquipo = new List<Equipo>();
+        AdmGenerarEncuentros admGenerarEncuentros = AdmGenerarEncuentros.getAdmadmGenerarEncuentros();
+        private List<Label> listaContenedoresLocal = new List<Label>();
+        private List<Label> listaContenedoresVisitante = new List<Label>();
         public frmGenerarEncuentros()
         {
             InitializeComponent();
+            listaContenedoresLocal.Add(lblEquipo1);
+            listaContenedoresLocal.Add(lblEquipo2);
+            listaContenedoresLocal.Add(lblEquipo3);
+            listaContenedoresLocal.Add(lblEquipo4);
+            listaContenedoresLocal.Add(lblEquipo5);
+            listaContenedoresVisitante.Add(lblEquipo6);
+            listaContenedoresVisitante.Add(lblEquipo7);
+            listaContenedoresVisitante.Add(lblEquipo8);
+            listaContenedoresVisitante.Add(lblEquipo9);
+            listaContenedoresVisitante.Add(lblEquipo10);
         }
 
-        private void generar_Click(object sender, EventArgs e)
+
+
+        private void generarEncuentros_Click(object sender, EventArgs e)
+        {
+            if (admEquipo.cantidadEquiposRegistrados() <10)
+            {
+                MessageBox.Show("No existen Equipos registrados, primero ingrese algunos!");
+            }
+            else
+            {
+                admGenerarEncuentros.generarEncuentrosAleatorios(listaContenedoresLocal, listaContenedoresVisitante);
+            }
+        }
+
+       /* private void generar_Click(object sender, EventArgs e)
         {
             nombreEquipo =admEquipo.extraerNombreEquipos();
             if (nombreEquipo.Count == 0)
@@ -38,7 +64,7 @@ namespace GestionDeColegiados
                 MessageBox.Show("Para generar encuentros deben haber 10 equipos. "+nombreEquipo.Count+" es la cantidad de equipos existentes.");
             }
             
-        }
+        }*/
        
 
         private void label7_Click(object sender, EventArgs e)
@@ -49,7 +75,7 @@ namespace GestionDeColegiados
         {
 
         }
-
+        /*
         private void guardarDatos_Click(object sender, EventArgs e)
         {
             nombreEquipo = admEquipo.extraerNombreEquipos();
@@ -65,6 +91,6 @@ namespace GestionDeColegiados
             {
                 MessageBox.Show("No ha generado encuentros!");
             }
-        }
+        }*/
     }
 }

@@ -55,6 +55,7 @@
     <Compile Include="Colegiados\CuartoArbitro.cs" />
     <Compile Include="Colegiados\IntegrantesColegiados.cs" />
     <Compile Include="Colegiados\JuezCentral.cs" />
+    <Compile Include="EncuentroGenerado.cs" />
     <Compile Include="EquipoFolder\Equipo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

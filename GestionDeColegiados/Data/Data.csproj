@@ -87,6 +87,8 @@
     <Compile Include="ConexionBD.cs" />
     <Compile Include="ConexionUsuarioBD.cs" />
     <Compile Include="Datos.cs" />
+    <Compile Include="DatosEncuentroDefinido.cs" />
+    <Compile Include="DatosEnuenctrosGenerados.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

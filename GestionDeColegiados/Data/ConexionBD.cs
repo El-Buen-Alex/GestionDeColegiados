@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Sistema
 {
-    class ConexionBD
+    public class ConexionBD
     {
         public static MySqlConnection getConexion() {
             string servidor = "localhost";

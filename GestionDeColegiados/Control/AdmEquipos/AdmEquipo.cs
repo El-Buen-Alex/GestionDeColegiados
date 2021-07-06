@@ -33,7 +33,7 @@ namespace Control.AdmEquipos
         }
         public int cantidadEquiposRegistrados()
         {
-            extraerNombreEquipos();
+            extraerEquipos();
             return listaEquipo.Count;
         }
 
@@ -53,7 +53,7 @@ namespace Control.AdmEquipos
         {
             cajaTexto.Text = "";
            // indexNumeroAleatorio = null;
-            extraerNombreEquipos();
+            extraerEquipos();
             indexNumeroAleatorio = generarNumeros(numBase, numTope);
             foreach (int indexAleatorio in indexNumeroAleatorio)
             {
@@ -67,7 +67,7 @@ namespace Control.AdmEquipos
             string nombreEquipo = "";
             int idEquipo = 0;
             int id = 0;
-            extraerNombreEquipos();
+            extraerEquipos();
 
             foreach (int indexAleatorio in indexRegistro)
             {
@@ -103,7 +103,7 @@ namespace Control.AdmEquipos
             }
         }
 
-        public List<Equipo> extraerNombreEquipos()
+        public List<Equipo> extraerEquipos()
         {
             listaEquipo = datos.consultarEquipos();
             return listaEquipo;

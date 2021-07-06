@@ -120,8 +120,8 @@ namespace Data {
                 {
                     nombreEquipo = new Equipo();
                     nombreEquipo.NombreEquipo = reader["nombre"].ToString();
-                    nombreEquipo.IdEquipo = Convert.ToInt32(reader["idequipo"].ToString());
                     Console.WriteLine(nombreEquipo.NombreEquipo);
+                    nombreEquipo.IdEquipo = Convert.ToInt32(reader["idequipo"].ToString());
                     listaEquipo.Add(nombreEquipo);
                     Console.WriteLine("ids:" + nombreEquipo.IdEquipo);
                 }

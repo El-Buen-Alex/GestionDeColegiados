@@ -53,6 +53,7 @@
     <Compile Include="AdmColegiados\AdmJuezCentral.cs" />
     <Compile Include="AdmColegiados\Contexto.cs" />
     <Compile Include="AdmColegiados\IAdm.cs" />
+    <Compile Include="AdmEncuentrosGenerados\AdmGenerarEncuentros.cs" />
     <Compile Include="AdmEquipos\AdmEquipo.cs" />
     <Compile Include="GestionLogin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -72,6 +73,9 @@
       <Project>{6F613673-769D-462B-8A59-93C5BB888B39}</Project>
       <Name>Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AdmEncuentrosDefinidos\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
