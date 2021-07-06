@@ -117,13 +117,13 @@ DELIMITER
 DELIMITER $$
 CREATE PROCEDURE obtenerNombreEquipo()
 	BEGIN
-		SELECT e.nombre, e.idequipo as nombre, idequipo FROM equipo e;
+		SELECT e.nombre, e.idequipo FROM equipo e;
 	END$$
 DELIMITER 
 
 /*PROCEDIMIENTO PARA GUARDAR ENCUENTROS*/
 DELIMITER $$
-CREATE PROCEDURE guardarEncuentros( 
+CREATE PROCEDURE guardarEncuentros(
 	in _idequipo int,
     in _nombre varchar(25),
     in _estado varchar(10))
@@ -133,3 +133,24 @@ CREATE PROCEDURE guardarEncuentros(
             
 			END$$
 DELIMITER 
+
+/*PROCEDIMIENTO PARA OBTENER ENCUENTROS DIPONIBLES*/
+DELIMITER $$
+CREATE PROCEDURE encuentroDisponible()
+	BEGIN
+		SELECT e.estado FROM encuentrosequipos e WHERE e.estado = "PENDIENTE"; 
+	END$$
+DELIMITER
+
+/*PROCEDIMIENTO PARA ASIGNAR EQUIPO A COLEGIADO*/
+DELIMITER $$
+CREATE PROCEDURE encuentroDisponible()
+	BEGIN
+		SELECT e.estado FROM encuentrosequipos e WHERE e.estado = "PENDIENTE"; 
+	END$$
+DELIMITER 
+
+
+
+
+

@@ -1,11 +1,11 @@
 /*CREACIÓN DE TABLAS*/
 
 /*CREACIÓN DE TABLA ADMINISTRADORES*/
-create table Administradores(
-IdAdministradores int not null auto_increment,
-AdminName varchar(50) not null,
-AdminPassword varchar(50) not null,
-primary key (IdAdministradores)
+CREATE TABLE `campeonatos`.`administradores` (
+`IdAdministradores` int not null auto_increment,
+`AdminName` varchar(50) not null,
+`AdminPassword` varchar(50) not null,
+primary key (`IdAdministradores`)
 )engine= InnoDB;
 
 /*CREACIÓN DE TABLA JUEZCENTRAL*/
@@ -32,8 +32,8 @@ CREATE TABLE `campeonatos`.`asistente1` (
   PRIMARY KEY (`idasistente1`));
   
 /*CREACIÓN DE TABLA ASISTENTE2*/
-CREATE TABLE `campeonatos`.`asistente1` (
-  `idasistente1` INT NOT NULL AUTO_INCREMENT,
+CREATE TABLE `campeonatos`.`asistente2` (
+  `idasistente2` INT NOT NULL AUTO_INCREMENT,
   `cedula` VARCHAR(10) NOT NULL,
   `nombre` VARCHAR(25) NOT NULL,
   `apellido` VARCHAR(25) NOT NULL,
@@ -41,7 +41,7 @@ CREATE TABLE `campeonatos`.`asistente1` (
   `email` VARCHAR(25) NOT NULL,
   `telefono` VARCHAR(10) NOT NULL,
   `banda` VARCHAR(25) NOT NULL,
-  PRIMARY KEY (`idasistente1`));
+  PRIMARY KEY (`idasistente2`));
   
 /*CREACIÓN DE TABLA CUARTO ARBITRO*/
 CREATE TABLE `campeonatos`.`cuartoarbitro` (
@@ -99,7 +99,15 @@ PRIMARY KEY(`idequipo`));
 /*CREACIÓN DE TABLA ENCUENTROS GENERADOS*/
 CREATE TABLE `campeonatos`.`encuentrosequipos`(
 `idencuentro` INT NOT NULL AUTO_INCREMENT,
-`idequipo` INT NOT NULL,
-`nombre` VARCHAR(25) NOT NULL,
-`estado` VARCHAR(10),
+`idequipo1` INT NOT NULL,
+`idequipo2` INT NOT NULL,
+`estado` VARCHAR(10) NOT NULL,
+PRIMARY KEY(`idencuentro`));
+
+/*CREACIÓN DE TABLA ENCUENTROS DEFINIDOS*/
+CREATE TABLE `campeonatos`.`encuentroDefinidos`(
+`idefinido` INT NOT NULL AUTO_INCREMENT,
+`idequipo1` INT NOT NULL,
+`idequipo2` INT NOT NULL,
+`estado` VARCHAR(10) NOT NULL,
 PRIMARY KEY(`idencuentro`));

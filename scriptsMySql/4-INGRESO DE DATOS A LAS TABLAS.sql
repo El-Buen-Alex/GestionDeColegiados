@@ -91,3 +91,9 @@ INSERT INTO cuartoarbitro (cedula,nombre,apellido,domicilio,email,telefono)
         VALUES ('1818181818','Aveline','de Grandpré','Guayaquil','Aveline@hotmail.com','0923422354');
 INSERT INTO colegiado (idjuezcentral,idasistente1,idasistente2,idcuartoarbitro) 
         VALUES ('6','6','6','6');
+        
+/*INGRESO DE ENCUENTROS A TABLA ENCUENTROSEQUIPOS*/
+INSERT INTO encuentrosequipos (idencuentro, idequipo1, idequipo2, estado) 
+        VALUES ('1','1','8','PENDIENTE');
+INSERT INTO encuentrosequipos (idencuentro, idequipo1, idequipo2, estado) 
+        VALUES ('2','2','9','ASIGNADO');
