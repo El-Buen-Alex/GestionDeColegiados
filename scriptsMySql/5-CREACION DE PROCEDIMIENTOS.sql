@@ -142,15 +142,33 @@ CREATE PROCEDURE encuentroDisponible()
 	END$$
 DELIMITER
 
-/*PROCEDIMIENTO PARA ASIGNAR EQUIPO A COLEGIADO*/
+/*PROCEDIMIENTO PARA GUARDAR ENCUENTRO DEFINIDOS*/
 DELIMITER $$
-CREATE PROCEDURE encuentroDisponible()
-	BEGIN
-		SELECT e.estado FROM encuentrosequipos e WHERE e.estado = "PENDIENTE"; 
-	END$$
+CREATE PROCEDURE guardarEncuentrosDefinidos(
+	in _fecha datetime,
+    in _idencuentro int,
+    in _idcolegiado int,
+    in _estado varchar(10))
+		BEGIN 
+					INSERT INTO encuentrosdefinidos(fecha,idencuentro,idcolegiado,estado)
+			VALUES	(_fecha,_idencuentro,_idcolegiado,_estado);
+            
+			END$$
 DELIMITER 
 
-
-
-
-
+/*PROCEDIMIENTO PARA MOSTRAR ENCUENTRO DEFINIDOS*/
+DELIMITER $$
+CREATE PROCEDURE guardarEncuentrosDefinidos(
+	in _fecha datetime,
+    in _idencuentro int,
+    in _idcolegiado int,
+    in _estado varchar(10))
+		BEGIN 
+					INSERT INTO encuentrosdefinidos(fecha,idencuentro,idcolegiado,estado)
+			VALUES	(_fecha,_idencuentro,_idcolegiado,_estado);
+            
+			END$$
+DELIMITER 
+/*PROCEDIMIENTO PARA MODFIICAR FECHA*/
+/*PROCEDIMIENTO PARA MODFIICAR GRUPO DE COLEGIADO*/
+/*PROCEDIMIENTO PARA VISUALIZAR GRUPO DE COLEGIADO*/
