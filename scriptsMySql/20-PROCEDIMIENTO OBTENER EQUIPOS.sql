@@ -1,6 +1,6 @@
 DELIMITER $$
 CREATE PROCEDURE obtenerNombreEquipo()
 	BEGIN
-		SELECT e.nombre as nombre FROM equipo e;
+		SELECT e.nombre, e.idequipo as nombre, idequipo FROM equipo e;
 	END$$
 DELIMITER 

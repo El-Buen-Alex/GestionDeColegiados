@@ -106,7 +106,7 @@ namespace GestionDeColegiados
                     mensaje = ex.Message;
                 }
 
-                if (mensaje.Length != 0)
+                if (mensaje=="" )
                 {
                     this.Hide();
                     MenuPrincipal pantallaPrincipal = new MenuPrincipal();

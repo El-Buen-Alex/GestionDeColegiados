@@ -23,7 +23,7 @@ namespace Control
 
             if (nuevoUsuario == null)
             {
-                throw new usuarioNoRegistradoException("El usuario: " + usuario + " no está registrado en el sistema");
+                throw new usuarioNoRegistradoException(usuario);
             }   
         }
     }

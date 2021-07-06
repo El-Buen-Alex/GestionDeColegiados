@@ -9,5 +9,3 @@ CREATE PROCEDURE guardarEncuentros(
             
 			END$$
 DELIMITER 
-
-select * from encuentrosequipos;

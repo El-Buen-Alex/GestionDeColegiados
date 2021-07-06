@@ -27,11 +27,15 @@ namespace GestionDeColegiados
             {
                 MessageBox.Show("No existen Equipos registrados, primero ingrese algunos!");
             }
-            else
+            else if(nombreEquipo.Count==10)
             {
                 admEquipo.llenarCamposTextos(local, 1,6);
                 admEquipo.llenarCamposTextos(visitante, 6, 11);
 
+            }
+            else
+            {
+                MessageBox.Show("Para generar encuentros deben haber 10 equipos. "+nombreEquipo.Count+" es la cantidad de equipos existentes.");
             }
             
         }
@@ -53,9 +57,13 @@ namespace GestionDeColegiados
             {
                 MessageBox.Show("No existen Equipos registrados, primero ingrese algunos!");
             }
-            else
+            else if(!(local.Text=="")==true && !(visitante.Text=="")==true)
             {
                admEquipo.registrarEncuentros("estado");
+            }
+            else
+            {
+                MessageBox.Show("No ha generado encuentros!");
             }
         }
     }
