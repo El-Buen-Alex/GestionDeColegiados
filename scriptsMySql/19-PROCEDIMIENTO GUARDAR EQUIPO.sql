@@ -10,4 +10,5 @@ CREATE PROCEDURE guardarEquipo(
             
 			END$$
 DELIMITER 
+
     
