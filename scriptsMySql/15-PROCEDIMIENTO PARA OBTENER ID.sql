@@ -1,6 +1,0 @@
-DELIMITER $$
-CREATE PROCEDURE obtenerId()
-	BEGIN
-		SELECT @@identity;
-	END$$
-DELIMITER 
