@@ -102,12 +102,23 @@ CREATE TABLE `campeonatos`.`encuentrosequipos`(
 `idequipo1` INT NOT NULL,
 `idequipo2` INT NOT NULL,
 `estado` VARCHAR(10) NOT NULL,
-PRIMARY KEY(`idencuentro`));
+PRIMARY KEY(`idencuentro`), 
+FOREIGN KEY(`idequipo1`)
+REFERENCES `campeonatos`.`equipo` (`idequipo`),
+FOREIGN KEY(`idequipo2`)
+REFERENCES `campeonatos`.`equipo` (`idequipo`)
+ );
 
 /*CREACIÓN DE TABLA ENCUENTROS DEFINIDOS*/
 CREATE TABLE `campeonatos`.`encuentroDefinidos`(
 `idefinido` INT NOT NULL AUTO_INCREMENT,
-`idequipo1` INT NOT NULL,
-`idequipo2` INT NOT NULL,
+`fecha` DATETIME,
+`idencuentro` INT NOT NULL,
+`idcolegiado` INT NOT NULL,
 `estado` VARCHAR(10) NOT NULL,
-PRIMARY KEY(`idencuentro`));
+PRIMARY KEY(`idefinido`),
+FOREIGN KEY(`idencuentro`)
+REFERENCES `campeonatos`.`encuentrosequipos` (`idencuentro`),
+FOREIGN KEY(`idcolegiado`)
+REFERENCES `campeonatos`.`colegiado` (`idcolegiado`)
+ );
