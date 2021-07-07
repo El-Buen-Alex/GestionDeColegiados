@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Model;
+using Data;
 using System.Text;
 using System.Threading.Tasks;
 using Control.AdmEquipos;
@@ -17,6 +18,11 @@ namespace Control.AdmEncuentrosGenerados
         private static AdmGenerarEncuentros admGenerarEncuentros=null;
         private AdmEquipo admEquipo = AdmEquipo.getEquipo();
         private List<Equipo> listaEquipos;
+        private DatosEnuenctrosGenerados datosEncuentrosGenerados = new DatosEnuenctrosGenerados();
+
+        private List<int> idsEquiposLocales = new List<int>();
+        private List<int> idsEquiposVisitantes = new List<int>();
+
         private List<int> numerosAleatoriosLocal = new List<int>();
         private List<int> numerosAleatoriosVisitante = new List<int>();
 
@@ -39,11 +45,11 @@ namespace Control.AdmEncuentrosGenerados
             numerosAleatoriosLocal = generListaAleatoria(1, 6);
             numerosAleatoriosVisitante = generListaAleatoria(6, 11);
             listaEquipos = admEquipo.extraerEquipos();
-            llenarNombreEquipos(listaContenedoresLocal,numerosAleatoriosLocal, listaEquipos);
-            llenarNombreEquipos(listaContenedoresVisitante,numerosAleatoriosVisitante, listaEquipos);
+            llenarNombreEquipos(listaContenedoresLocal,numerosAleatoriosLocal, listaEquipos, idsEquiposLocales);
+            llenarNombreEquipos(listaContenedoresVisitante,numerosAleatoriosVisitante, listaEquipos, idsEquiposVisitantes);
 
         }
-       private string llenarNombreEquipos(List<Label> contenedores,List<int> listaAleatoria, List<Equipo> equipos)
+       private string llenarNombreEquipos(List<Label> contenedores,List<int> listaAleatoria, List<Equipo> equipos, List<int> idsEquipos)
         {
             string nombreEquipos = "";
             Console.WriteLine("vine  ");
@@ -52,11 +58,19 @@ namespace Control.AdmEncuentrosGenerados
             {
                 Console.WriteLine(posicionAleatoria);
                 contenedores[x].Text = equipos[posicionAleatoria - 1].NombreEquipo;
+                idsEquipos.Add(equipos[posicionAleatoria - 1].IdEquipo);
                 x++;
             }
             return nombreEquipos;
         }
-       
+
+        public int obtnerNumeroEncuentrosGeneradosPendientes()
+        {
+            int numeroEncuentros = datosEncuentrosGenerados.ObetnerNumeroEncuentrosPendientes();
+            Console.WriteLine(numeroEncuentros + " --ecneuntros registrados");
+            return numeroEncuentros;
+        }
+
         private List<int> generListaAleatoria(int limiteInferior, int limiteSuperior)
         {
             List<int> listaAleatoria = new List<int>();
@@ -71,6 +85,34 @@ namespace Control.AdmEncuentrosGenerados
                 }
             }
             return listaAleatoria;
+        }
+
+        private List<EncuentroGenerado> generarListaEncuentros()
+        {
+            List<EncuentroGenerado> lista = new List<EncuentroGenerado>();
+            for(int x=0; x < 5; x++)
+            {
+                encuentroAuxiliar = new EncuentroGenerado(idsEquiposLocales[x], idsEquiposVisitantes[x], "PENDIENTE");
+                lista.Add(encuentroAuxiliar);
+            }
+
+            return lista;
+        }
+
+        public string guardarEncuentrosAleatorios()
+        {
+            listaEncuentrosGenerados = generarListaEncuentros();
+            bool guardo = datosEncuentrosGenerados.GuardarEncuentrosGenerados(listaEncuentrosGenerados);
+            string mensaje = "";
+            if (guardo)
+            {
+                mensaje = "Se ha guardado con exito los encuentros generados";
+            }
+            else
+            {
+                mensaje = "No se logro guardar con exito. Intente nuevamente.";
+            }
+            return mensaje;
         }
     }
 }

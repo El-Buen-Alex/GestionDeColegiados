@@ -3,6 +3,7 @@ using MySql.Data.MySqlClient;
 using Sistema;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,49 +14,57 @@ namespace Data
     {
         private MySqlConnection conexion = null;
         private MySqlTransaction transaccion = null;
-
-        /*
-         
-            try
-            {
-                MySqlCommand cmd = new MySqlCommand("guardarJuezCentral", conexion, trans);
-               /* cmd.CommandType = Comma ndType.StoredProcedure;
-
-                cmd.Parameters.AddWithValue("@_cedula", juezCentral.Cedula);
-                cmd.Parameters.AddWithValue("@_nombre", juezCentral.Nombre);
-                cmd.Parameters.AddWithValue("@_apellido", juezCentral.Apellidos);
-                cmd.Parameters.AddWithValue("@_domicilio", juezCentral.Domicilio);
-                cmd.Parameters.AddWithValue("@_email", juezCentral.Email);
-                cmd.Parameters.AddWithValue("@_telefono", juezCentral.Telefono);
-
-        cmd.ExecuteNonQuery();
-
-                cmd = new MySqlCommand("obtenerId", conexion);
-        cmd.CommandType = CommandType.StoredProcedure;
-                id = Convert.ToInt32(cmd.ExecuteScalar());
-
-                trans.Commit();
-            }
-            catch (MySqlException ex)
-            {
-                trans.Rollback();
-                throw new Exception(ex.ToString());
-}
-conexion.Close();
-return id;*/
-
-
-        public void GuardarEncuentrosGenerados(List<EncuentroGenerado> listaEncuentrosGenerados)
+        public bool GuardarEncuentrosGenerados(List<EncuentroGenerado> listaEncuentrosGenerados)
         {
-            int id = 0;
+            bool guardo=false;
             conexion= ConexionBD.getConexion();
             conexion.Open();
             transaccion = conexion.BeginTransaction();
             try
             {
+                foreach(EncuentroGenerado encuentroGenerado in listaEncuentrosGenerados)
+                {
+                    MySqlCommand cmd = new MySqlCommand("guardarEncuentrosGenerados", conexion, transaccion);
 
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@_idEquipoLocal", encuentroGenerado.IdEquipoLocal);
+                    cmd.Parameters.AddWithValue("@_idEquipoVisitante", encuentroGenerado.IdEquipoVisitante);
+                    cmd.Parameters.AddWithValue("@_estado", encuentroGenerado.Estado);
+                    cmd.ExecuteNonQuery();
+                    guardo = true;
+                    Console.WriteLine("guarda");
+                }
+            }catch(MySqlException ex)
+            {
+                transaccion.Rollback();
+                guardo = false;
             }
-            Console.WriteLine("Tamanio:" + listaEncuentrosGenerados.Count());
+            if (guardo == true)
+            {
+                transaccion.Commit();
+            }
+            conexion.Close();
+            return guardo;
+        }
+
+        public int ObetnerNumeroEncuentrosPendientes()
+        {
+            int cantidad = 0;
+            conexion = ConexionBD.getConexion();
+            conexion.Open();
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand("obtenerNumeroEncuentroDisponible", conexion);
+
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cantidad = Convert.ToInt32(cmd.ExecuteScalar());
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error al obtener cantidad de encuentros pendientes: " + ex.Message);
+            }
+            return cantidad;
         }
     }
 }

@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using Control;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using Control.AdmEncuentrosGenerados;
 
 namespace GestionDeColegiados
 {
@@ -21,6 +23,8 @@ namespace GestionDeColegiados
 
         private Color colorDefaultClose;
         private Color colorDefaultMin;
+
+        private AdmGenerarEncuentros admGenerarEncuentros = AdmGenerarEncuentros.getAdmadmGenerarEncuentros();
         public MenuPrincipal()
         {
             InitializeComponent();
@@ -74,7 +78,14 @@ namespace GestionDeColegiados
 
         private void btnGenerarEncuentros_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new frmGenerarEncuentros());
+            if(admGenerarEncuentros.obtnerNumeroEncuentrosGeneradosPendientes() == 0)
+            {
+                AbrirFormEnPanel(new frmGenerarEncuentros());
+            }
+            else
+            {
+                MessageBox.Show("Ya se han generado y registrados los encuentros");
+            }
         }
 
         private void btnAsignarColegiados_Click(object sender, EventArgs e)

@@ -31,9 +31,6 @@ namespace GestionDeColegiados
             listaContenedoresVisitante.Add(lblEquipo9);
             listaContenedoresVisitante.Add(lblEquipo10);
         }
-
-
-
         private void generarEncuentros_Click(object sender, EventArgs e)
         {
             if (admEquipo.cantidadEquiposRegistrados() <10)
@@ -46,51 +43,17 @@ namespace GestionDeColegiados
             }
         }
 
-       /* private void generar_Click(object sender, EventArgs e)
-        {
-            nombreEquipo =admEquipo.extraerNombreEquipos();
-            if (nombreEquipo.Count == 0)
-            {
-                MessageBox.Show("No existen Equipos registrados, primero ingrese algunos!");
-            }
-            else if(nombreEquipo.Count==10)
-            {
-                admEquipo.llenarCamposTextos(local, 1,6);
-                admEquipo.llenarCamposTextos(visitante, 6, 11);
-
-            }
-            else
-            {
-                MessageBox.Show("Para generar encuentros deben haber 10 equipos. "+nombreEquipo.Count+" es la cantidad de equipos existentes.");
-            }
-            
-        }*/
-       
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-        /*
         private void guardarDatos_Click(object sender, EventArgs e)
         {
-            nombreEquipo = admEquipo.extraerNombreEquipos();
-            if (nombreEquipo.Count == 0)
+            string guardo = admGenerarEncuentros.guardarEncuentrosAleatorios();
+
+            MessageBox.Show(guardo);
+            if (guardo[0] == 'S')
             {
-                MessageBox.Show("No existen Equipos registrados, primero ingrese algunos!");
+                btnGenerarEncuentros.Enabled = false;
+                btnGuardarEncuentros.Enabled = false;
             }
-            else if(!(local.Text=="")==true && !(visitante.Text=="")==true)
-            {
-               admEquipo.registrarEncuentros("estado");
-            }
-            else
-            {
-                MessageBox.Show("No ha generado encuentros!");
-            }
-        }*/
+        }
+        
     }
 }

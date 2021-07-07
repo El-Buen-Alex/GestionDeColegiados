@@ -32,10 +32,10 @@ namespace GestionDeColegiados
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGenerarEncuentros));
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.generar = new System.Windows.Forms.Button();
+            this.btnGenerarEncuentros = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.guardarDatos = new System.Windows.Forms.Button();
+            this.btnGuardarEncuentros = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -93,56 +93,55 @@ namespace GestionDeColegiados
             this.label3.TabIndex = 12;
             this.label3.Text = "VS";
             // 
-            // generar
+            // btnGenerarEncuentros
             // 
-            this.generar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this.generar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.generar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.generar.Location = new System.Drawing.Point(89, 542);
-            this.generar.Name = "generar";
-            this.generar.Size = new System.Drawing.Size(134, 49);
-            this.generar.TabIndex = 16;
-            this.generar.Text = "Generar encuentros";
-            this.generar.UseVisualStyleBackColor = false;
-            this.generar.Click += new System.EventHandler(this.generarEncuentros_Click);
+            this.btnGenerarEncuentros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.btnGenerarEncuentros.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerarEncuentros.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnGenerarEncuentros.Location = new System.Drawing.Point(89, 542);
+            this.btnGenerarEncuentros.Name = "btnGenerarEncuentros";
+            this.btnGenerarEncuentros.Size = new System.Drawing.Size(134, 49);
+            this.btnGenerarEncuentros.TabIndex = 16;
+            this.btnGenerarEncuentros.Text = "Generar encuentros";
+            this.btnGenerarEncuentros.UseVisualStyleBackColor = false;
+            this.btnGenerarEncuentros.Click += new System.EventHandler(this.generarEncuentros_Click);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label7.Location = new System.Drawing.Point(497, 43);
+            this.label7.Location = new System.Drawing.Point(415, 88);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(107, 25);
             this.label7.TabIndex = 17;
             this.label7.Text = "Visitantes";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label8.Location = new System.Drawing.Point(56, 43);
+            this.label8.Location = new System.Drawing.Point(120, 88);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(64, 25);
             this.label8.TabIndex = 18;
             this.label8.Text = "Local";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
-            // guardarDatos
+            // btnGuardarEncuentros
             // 
-            this.guardarDatos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this.guardarDatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guardarDatos.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.guardarDatos.Location = new System.Drawing.Point(377, 556);
-            this.guardarDatos.Name = "guardarDatos";
-            this.guardarDatos.Size = new System.Drawing.Size(145, 49);
-            this.guardarDatos.TabIndex = 22;
-            this.guardarDatos.Text = "Registrar encuentros";
-            this.guardarDatos.UseVisualStyleBackColor = false;
+            this.btnGuardarEncuentros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.btnGuardarEncuentros.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarEncuentros.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnGuardarEncuentros.Location = new System.Drawing.Point(377, 556);
+            this.btnGuardarEncuentros.Name = "btnGuardarEncuentros";
+            this.btnGuardarEncuentros.Size = new System.Drawing.Size(145, 49);
+            this.btnGuardarEncuentros.TabIndex = 22;
+            this.btnGuardarEncuentros.Text = "Registrar encuentros";
+            this.btnGuardarEncuentros.UseVisualStyleBackColor = false;
+            this.btnGuardarEncuentros.Click += new System.EventHandler(this.guardarDatos_Click);
             // 
             // pictureBox1
             // 
@@ -293,6 +292,7 @@ namespace GestionDeColegiados
             // lblEquipo1
             // 
             this.lblEquipo1.AutoSize = true;
+            this.lblEquipo1.BackColor = System.Drawing.Color.LightGray;
             this.lblEquipo1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEquipo1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblEquipo1.Location = new System.Drawing.Point(120, 136);
@@ -305,6 +305,7 @@ namespace GestionDeColegiados
             // lblEquipo3
             // 
             this.lblEquipo3.AutoSize = true;
+            this.lblEquipo3.BackColor = System.Drawing.Color.LightGray;
             this.lblEquipo3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEquipo3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblEquipo3.Location = new System.Drawing.Point(107, 325);
@@ -317,6 +318,7 @@ namespace GestionDeColegiados
             // lblEquipo2
             // 
             this.lblEquipo2.AutoSize = true;
+            this.lblEquipo2.BackColor = System.Drawing.Color.LightGray;
             this.lblEquipo2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEquipo2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblEquipo2.Location = new System.Drawing.Point(107, 249);
@@ -329,6 +331,7 @@ namespace GestionDeColegiados
             // lblEquipo4
             // 
             this.lblEquipo4.AutoSize = true;
+            this.lblEquipo4.BackColor = System.Drawing.Color.LightGray;
             this.lblEquipo4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEquipo4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblEquipo4.Location = new System.Drawing.Point(107, 405);
@@ -341,6 +344,7 @@ namespace GestionDeColegiados
             // lblEquipo5
             // 
             this.lblEquipo5.AutoSize = true;
+            this.lblEquipo5.BackColor = System.Drawing.Color.LightGray;
             this.lblEquipo5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEquipo5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblEquipo5.Location = new System.Drawing.Point(107, 477);
@@ -353,6 +357,7 @@ namespace GestionDeColegiados
             // lblEquipo6
             // 
             this.lblEquipo6.AutoSize = true;
+            this.lblEquipo6.BackColor = System.Drawing.Color.LightGray;
             this.lblEquipo6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEquipo6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblEquipo6.Location = new System.Drawing.Point(437, 136);
@@ -365,6 +370,7 @@ namespace GestionDeColegiados
             // lblEquipo7
             // 
             this.lblEquipo7.AutoSize = true;
+            this.lblEquipo7.BackColor = System.Drawing.Color.LightGray;
             this.lblEquipo7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEquipo7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblEquipo7.Location = new System.Drawing.Point(437, 246);
@@ -377,6 +383,7 @@ namespace GestionDeColegiados
             // lblEquipo8
             // 
             this.lblEquipo8.AutoSize = true;
+            this.lblEquipo8.BackColor = System.Drawing.Color.LightGray;
             this.lblEquipo8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEquipo8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblEquipo8.Location = new System.Drawing.Point(437, 325);
@@ -389,6 +396,7 @@ namespace GestionDeColegiados
             // lblEquipo9
             // 
             this.lblEquipo9.AutoSize = true;
+            this.lblEquipo9.BackColor = System.Drawing.Color.LightGray;
             this.lblEquipo9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEquipo9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblEquipo9.Location = new System.Drawing.Point(428, 405);
@@ -401,6 +409,7 @@ namespace GestionDeColegiados
             // lblEquipo10
             // 
             this.lblEquipo10.AutoSize = true;
+            this.lblEquipo10.BackColor = System.Drawing.Color.LightGray;
             this.lblEquipo10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEquipo10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblEquipo10.Location = new System.Drawing.Point(428, 491);
@@ -442,10 +451,10 @@ namespace GestionDeColegiados
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.guardarDatos);
+            this.Controls.Add(this.btnGuardarEncuentros);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.generar);
+            this.Controls.Add(this.btnGenerarEncuentros);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
@@ -471,10 +480,10 @@ namespace GestionDeColegiados
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button generar;
+        private System.Windows.Forms.Button btnGenerarEncuentros;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button guardarDatos;
+        private System.Windows.Forms.Button btnGuardarEncuentros;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
