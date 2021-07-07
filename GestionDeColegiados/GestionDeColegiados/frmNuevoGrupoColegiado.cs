@@ -37,7 +37,8 @@ namespace GestionDeColegiados {
         private void btnsiguiente1_Click (object sender, EventArgs e) {
             bool vacio = validacionGUI.validarVacios(txtcedulaJC, txtnombreJC, txtapellidoJC, txtdomicilioJC, txtemailJC, txttelefonoJC);
             if (vacio != true) {
-                ocultarCamposJuezCentral();
+                camposJuezCentral(false);
+                camposAsistente1(true);
             } else {
                 camposIncompletos();
             }
@@ -46,7 +47,8 @@ namespace GestionDeColegiados {
         private void btnsiguiente2_Click (object sender, EventArgs e) {
             bool vacio = validacionGUI.validarVacios(txtcedulaAs1, txtnombreAs1, txtapellidoAs1, txtdomicilioAs1, txtemailAs1, txttelefonoAs1);
             if (vacio != true) {
-                ocultarCamposAsistente1();
+                camposAsistente1(false);
+                camposAsistente2(true);
             } else {
                 camposIncompletos();
             }
@@ -55,7 +57,8 @@ namespace GestionDeColegiados {
         private void btnsiguiente3_Click (object sender, EventArgs e) {
             bool vacio = validacionGUI.validarVacios(txtcedulaAs2, txtnombreAs2, txtapellidoAs2, txtdomicilioAs2, txtemailAs2, txttelefonoAs2);
             if (vacio != true) {
-                ocultarCamposAsistente2();
+                camposAsistente2(false);
+                camposCuartoArbitro(true);
             } else {
                 camposIncompletos();
             }
@@ -111,62 +114,45 @@ namespace GestionDeColegiados {
             id = contexto.obtenerDatos(txtcedulaCA, txtnombreCA, txtapellidoCA, txtdomicilioCA, txtemailCA, txttelefonoCA);
             return id;
         }
-        private void ocultarCamposJuezCentral () {
-            labJuezCentral.Visible = false;
-            txtcedulaJC.Visible = false;
-            txtnombreJC.Visible = false;
-            txtapellidoJC.Visible = false;
-            txtdomicilioJC.Visible = false;
-            txtemailJC.Visible = false;
-            txttelefonoJC.Visible = false;
-            btnsiguiente1.Visible = false;
-
-            labAsist1.Visible = true;
-            txtcedulaAs1.Visible = true;
-            txtnombreAs1.Visible = true;
-            txtapellidoAs1.Visible = true;
-            txtdomicilioAs1.Visible = true;
-            txtemailAs1.Visible = true;
-            txttelefonoAs1.Visible = true;
-            btnsiguiente2.Visible = true;
+        private void camposJuezCentral(bool valor){
+            labJuezCentral.Visible = valor;
+            txtcedulaJC.Visible = valor;
+            txtnombreJC.Visible = valor;
+            txtapellidoJC.Visible = valor;
+            txtdomicilioJC.Visible = valor;
+            txtemailJC.Visible = valor;
+            txttelefonoJC.Visible = valor;
+            btnsiguiente1.Visible = valor;
         }
-        private void ocultarCamposAsistente1 () {
-            labAsist1.Visible = false;
-            txtcedulaAs1.Visible = false;
-            txtnombreAs1.Visible = false;
-            txtapellidoAs1.Visible = false;
-            txtdomicilioAs1.Visible = false;
-            txtemailAs1.Visible = false;
-            txttelefonoAs1.Visible = false;
-            btnsiguiente2.Visible = false;
-
-            labAsist2.Visible = true;
-            txtcedulaAs2.Visible = true;
-            txtnombreAs2.Visible = true;
-            txtapellidoAs2.Visible = true;
-            txtdomicilioAs2.Visible = true;
-            txtemailAs2.Visible = true;
-            txttelefonoAs2.Visible = true;
-            btnsiguiente3.Visible = true;
+        private void camposAsistente1(bool valor){
+            labAsist1.Visible = valor;
+            txtcedulaAs1.Visible = valor;
+            txtnombreAs1.Visible = valor;
+            txtapellidoAs1.Visible = valor;
+            txtdomicilioAs1.Visible = valor;
+            txtemailAs1.Visible = valor;
+            txttelefonoAs1.Visible = valor;
+            btnsiguiente2.Visible = valor;
         }
-        private void ocultarCamposAsistente2 () {
-            labAsist2.Visible = false;
-            txtcedulaAs2.Visible = false;
-            txtnombreAs2.Visible = false;
-            txtapellidoAs2.Visible = false;
-            txtdomicilioAs2.Visible = false;
-            txtemailAs2.Visible = false;
-            txttelefonoAs2.Visible = false;
-            btnsiguiente3.Visible = false;
-
-            labCuartoArb.Visible = true;
-            txtcedulaCA.Visible = true;
-            txtnombreCA.Visible = true;
-            txtapellidoCA.Visible = true;
-            txtdomicilioCA.Visible = true;
-            txtemailCA.Visible = true;
-            txttelefonoCA.Visible = true;
-            btnRegistrar.Visible = true;
+        private void camposAsistente2(bool valor){
+            labAsist2.Visible = valor;
+            txtcedulaAs2.Visible = valor;
+            txtnombreAs2.Visible = valor;
+            txtapellidoAs2.Visible = valor;
+            txtdomicilioAs2.Visible = valor;
+            txtemailAs2.Visible = valor;
+            txttelefonoAs2.Visible = valor;
+            btnsiguiente3.Visible = valor;
+        }
+        private void camposCuartoArbitro(bool valor){
+            labCuartoArb.Visible = valor;
+            txtcedulaCA.Visible = valor;
+            txtnombreCA.Visible = valor;
+            txtapellidoCA.Visible = valor;
+            txtdomicilioCA.Visible = valor;
+            txtemailCA.Visible = valor;
+            txttelefonoCA.Visible = valor;
+            btnRegistrar.Visible = valor;
         }
     }
 }
