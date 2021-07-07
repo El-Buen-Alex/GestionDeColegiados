@@ -123,12 +123,12 @@ DELIMITER
 
 /*PROCEDIMIENTO PARA GUARDAR ENCUENTROS*/
 DELIMITER $$
-CREATE PROCEDURE guardarEncuentros(
+CREATE PROCEDURE guardarEncuentrosGenerados(
 	in _idequipo int,
     in _nombre varchar(25),
     in _estado varchar(10))
 		BEGIN 
-					INSERT INTO encuentrosequipos(idequipo,nombre,estado)
+					INSERT INTO encuentrosgenerados(idequipo,nombre,estado)
 			VALUES	(_idequipo,_nombre,_estado);
             
 			END$$
@@ -136,7 +136,7 @@ DELIMITER
 
 /*PROCEDIMIENTO PARA OBTENER ENCUENTROS DIPONIBLES*/
 DELIMITER $$
-CREATE PROCEDURE encuentroDisponible()
+CREATE PROCEDURE obtenerEncuentroDisponible()
 	BEGIN
 		SELECT e.estado FROM encuentrosequipos e WHERE e.estado = "PENDIENTE"; 
 	END$$
