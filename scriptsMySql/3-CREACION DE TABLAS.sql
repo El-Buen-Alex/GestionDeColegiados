@@ -97,7 +97,7 @@ CREATE TABLE `campeonatos`.`equipo`(
 PRIMARY KEY(`idequipo`));
 
 /*CREACIÓN DE TABLA ENCUENTROS GENERADOS*/
-CREATE TABLE `campeonatos`.`encuentrosequipos`(
+CREATE TABLE `campeonatos`.`encuentrosGenerados`(
 `idencuentro` INT NOT NULL AUTO_INCREMENT,
 `idequipo1` INT NOT NULL,
 `idequipo2` INT NOT NULL,
@@ -118,7 +118,7 @@ CREATE TABLE `campeonatos`.`encuentroDefinidos`(
 `estado` VARCHAR(10) NOT NULL,
 PRIMARY KEY(`idefinido`),
 FOREIGN KEY(`idencuentro`)
-REFERENCES `campeonatos`.`encuentrosequipos` (`idencuentro`),
+REFERENCES `campeonatos`.`encuentrosGenerados` (`idencuentro`),
 FOREIGN KEY(`idcolegiado`)
 REFERENCES `campeonatos`.`colegiado` (`idcolegiado`)
  );
