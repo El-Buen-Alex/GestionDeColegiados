@@ -113,12 +113,25 @@ REFERENCES `campeonatos`.`equipo` (`idequipo`)
 CREATE TABLE `campeonatos`.`encuentroDefinidos`(
 `idefinido` INT NOT NULL AUTO_INCREMENT,
 `fecha` DATE,
+`hora` time,
 `idencuentro` INT NOT NULL,
 `idcolegiado` INT NOT NULL,
+`idestadio` int,
 `estado` VARCHAR(10) NOT NULL,
 PRIMARY KEY(`idefinido`),
 FOREIGN KEY(`idencuentro`)
 REFERENCES `campeonatos`.`encuentrosGenerados` (`idencuentro`),
 FOREIGN KEY(`idcolegiado`)
-REFERENCES `campeonatos`.`colegiado` (`idcolegiado`)
+REFERENCES `campeonatos`.`colegiado` (`idcolegiado`),
+FOREIGN KEY(`idestadio`)
+REFERENCES `campeonatos`.`estadios` (`idestadio`)
  );
+ 
+ /*CREACIÓN DE TABLA ESTADIOS*/
+CREATE TABLE `campeonatos`.`estadio`(
+`idestadio` INT NOT NULL AUTO_INCREMENT,
+`nombreEstadio` VARCHAR(30),
+PRIMARY KEY(`idestadio`)
+ );
+ 
+ 
