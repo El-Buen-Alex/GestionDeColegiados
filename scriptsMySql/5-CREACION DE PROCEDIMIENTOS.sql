@@ -136,9 +136,9 @@ DELIMITER
 
 /*PROCEDIMIENTO PARA OBTENER ENCUENTROS DIPONIBLES*/
 DELIMITER $$
-CREATE PROCEDURE obtenerEncuentroDisponible()
+CREATE PROCEDURE obtenerNumeroEncuentroDisponible()
 	BEGIN
-		SELECT e.estado FROM encuentrosequipos e WHERE e.estado = "PENDIENTE"; 
+		SELECT count(*) as tamanio FROM encuentrosgenerados WHERE estado = "PENDIENTE"; 
 	END$$
 DELIMITER
 
