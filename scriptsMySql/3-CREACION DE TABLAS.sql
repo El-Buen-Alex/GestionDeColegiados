@@ -124,7 +124,7 @@ REFERENCES `campeonatos`.`encuentrosGenerados` (`idencuentro`),
 FOREIGN KEY(`idcolegiado`)
 REFERENCES `campeonatos`.`colegiado` (`idcolegiado`),
 FOREIGN KEY(`idestadio`)
-REFERENCES `campeonatos`.`estadios` (`idestadio`)
+REFERENCES `campeonatos`.`estadio` (`idestadio`)
  );
  
  /*CREACIÓN DE TABLA ESTADIOS*/
