@@ -85,7 +85,6 @@ namespace Control.AdmEncuentrosGenerados
         public int obtnerNumeroEncuentrosGeneradosPendientes()
         {
             int numeroEncuentros = datosEncuentrosGenerados.ObetnerNumeroEncuentrosPendientes();
-            Console.WriteLine(numeroEncuentros + " --ecneuntros registrados");
             return numeroEncuentros;
         }
 

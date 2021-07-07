@@ -54,7 +54,7 @@ namespace Data
             conexion.Open();
             try
             {
-                MySqlCommand cmd = new MySqlCommand("obtenerNumeroEncuentroDisponible", conexion);
+                MySqlCommand cmd = new MySqlCommand("obtenerNumeroEncuentroPendiente", conexion);
 
                 cmd.CommandType = CommandType.StoredProcedure;
 

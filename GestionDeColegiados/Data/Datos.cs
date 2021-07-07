@@ -240,13 +240,10 @@ namespace Data {
                 cmd.Parameters.AddWithValue("@_domicilio", cuartoArbitro.Domicilio);
                 cmd.Parameters.AddWithValue("@_email", cuartoArbitro.Email);
                 cmd.Parameters.AddWithValue("@_telefono", cuartoArbitro.Telefono);
-
                 cmd.ExecuteNonQuery();
-
                 cmd = new MySqlCommand("obtenerId", conexion);
                 cmd.CommandType = CommandType.StoredProcedure;
                 id = Convert.ToInt32(cmd.ExecuteScalar());
-
                 trans.Commit();
             } catch (MySqlException ex) {
                 trans.Rollback();
@@ -256,6 +253,27 @@ namespace Data {
             return id;
         }
 
+        public int ObtenerCantidadEquipoRegistrados()
+        {
+            int cantidad= 0;
+            conexion = ConexionBD.getConexion();
+            conexion.Open();
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand("cantidadEquipos", conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                MySqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    cantidad = Convert.ToInt32(reader["cantidadEquipos"].ToString());
+                }
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error al obtener la cantidad de equipos registrados"+ex.Message);
+            }
+            return cantidad;
+        }
 
         public bool InsertarColegiado (Colegiado colegiado) {
             conexion = ConexionBD.getConexion();

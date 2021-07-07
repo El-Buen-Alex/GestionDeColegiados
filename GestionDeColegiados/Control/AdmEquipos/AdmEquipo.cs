@@ -48,6 +48,19 @@ namespace Control.AdmEquipos
             }
         }
 
+        public void LlenarEquipos(List<Label> listaContenedores)
+        {
+            extraerEquipos();
+            for (int x=0; x < listaEquipo.Count; x++)
+            {
+                listaContenedores[x].Text = listaEquipo[x].NombreEquipo;
+            }
+        }
+
+        public int ObtenerCantidadEquipo()
+        {
+            return datos.ObtenerCantidadEquipoRegistrados();
+        }
         public Equipo ObtenerEquipoPorId(int id)
         {
             return datos.ObtenerEquipoPorId(id);

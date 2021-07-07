@@ -30,7 +30,7 @@ namespace GestionDeColegiados
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGenerarEncuentros));
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTitulo = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnGenerarEncuentros = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -72,22 +72,22 @@ namespace GestionDeColegiados
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // lblTitulo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(146, 43);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(355, 32);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "GENERAR ENCUENTRO";
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblTitulo.Location = new System.Drawing.Point(146, 43);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(355, 32);
+            this.lblTitulo.TabIndex = 0;
+            this.lblTitulo.Text = "GENERAR ENCUENTRO";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(278, 234);
+            this.label3.Location = new System.Drawing.Point(298, 234);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(72, 44);
             this.label3.TabIndex = 12;
@@ -111,7 +111,7 @@ namespace GestionDeColegiados
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label7.Location = new System.Drawing.Point(415, 88);
+            this.label7.Location = new System.Drawing.Point(463, 88);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(107, 25);
             this.label7.TabIndex = 17;
@@ -135,7 +135,7 @@ namespace GestionDeColegiados
             this.btnGuardarEncuentros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
             this.btnGuardarEncuentros.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarEncuentros.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnGuardarEncuentros.Location = new System.Drawing.Point(377, 556);
+            this.btnGuardarEncuentros.Location = new System.Drawing.Point(425, 556);
             this.btnGuardarEncuentros.Name = "btnGuardarEncuentros";
             this.btnGuardarEncuentros.Size = new System.Drawing.Size(145, 49);
             this.btnGuardarEncuentros.TabIndex = 22;
@@ -189,7 +189,7 @@ namespace GestionDeColegiados
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(263, 386);
+            this.label4.Location = new System.Drawing.Point(298, 386);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(72, 44);
             this.label4.TabIndex = 25;
@@ -210,7 +210,7 @@ namespace GestionDeColegiados
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox6.Image = global::GestionDeColegiados.Properties.Resources.Local;
-            this.pictureBox6.Location = new System.Drawing.Point(353, 481);
+            this.pictureBox6.Location = new System.Drawing.Point(401, 481);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(216, 47);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -221,7 +221,7 @@ namespace GestionDeColegiados
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox7.Image = global::GestionDeColegiados.Properties.Resources.Local;
-            this.pictureBox7.Location = new System.Drawing.Point(353, 396);
+            this.pictureBox7.Location = new System.Drawing.Point(401, 396);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(216, 47);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -231,7 +231,7 @@ namespace GestionDeColegiados
             // pictureBox8
             // 
             this.pictureBox8.Image = global::GestionDeColegiados.Properties.Resources.Local;
-            this.pictureBox8.Location = new System.Drawing.Point(362, 315);
+            this.pictureBox8.Location = new System.Drawing.Point(410, 315);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(216, 47);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -242,7 +242,7 @@ namespace GestionDeColegiados
             // 
             this.pictureBox9.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox9.Image = global::GestionDeColegiados.Properties.Resources.Local;
-            this.pictureBox9.Location = new System.Drawing.Point(362, 236);
+            this.pictureBox9.Location = new System.Drawing.Point(410, 236);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(216, 47);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -252,7 +252,7 @@ namespace GestionDeColegiados
             // pictureBox10
             // 
             this.pictureBox10.Image = global::GestionDeColegiados.Properties.Resources.Local;
-            this.pictureBox10.Location = new System.Drawing.Point(362, 125);
+            this.pictureBox10.Location = new System.Drawing.Point(410, 125);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(216, 47);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -263,7 +263,7 @@ namespace GestionDeColegiados
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(278, 121);
+            this.label2.Location = new System.Drawing.Point(298, 121);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 44);
             this.label2.TabIndex = 38;
@@ -273,7 +273,7 @@ namespace GestionDeColegiados
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(278, 291);
+            this.label6.Location = new System.Drawing.Point(298, 292);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(72, 44);
             this.label6.TabIndex = 39;
@@ -283,7 +283,7 @@ namespace GestionDeColegiados
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(263, 484);
+            this.label9.Location = new System.Drawing.Point(298, 481);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(72, 44);
             this.label9.TabIndex = 40;
@@ -360,7 +360,7 @@ namespace GestionDeColegiados
             this.lblEquipo6.BackColor = System.Drawing.Color.LightGray;
             this.lblEquipo6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEquipo6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblEquipo6.Location = new System.Drawing.Point(437, 136);
+            this.lblEquipo6.Location = new System.Drawing.Point(485, 136);
             this.lblEquipo6.Name = "lblEquipo6";
             this.lblEquipo6.Size = new System.Drawing.Size(64, 25);
             this.lblEquipo6.TabIndex = 46;
@@ -373,7 +373,7 @@ namespace GestionDeColegiados
             this.lblEquipo7.BackColor = System.Drawing.Color.LightGray;
             this.lblEquipo7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEquipo7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblEquipo7.Location = new System.Drawing.Point(437, 246);
+            this.lblEquipo7.Location = new System.Drawing.Point(485, 246);
             this.lblEquipo7.Name = "lblEquipo7";
             this.lblEquipo7.Size = new System.Drawing.Size(64, 25);
             this.lblEquipo7.TabIndex = 47;
@@ -386,7 +386,7 @@ namespace GestionDeColegiados
             this.lblEquipo8.BackColor = System.Drawing.Color.LightGray;
             this.lblEquipo8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEquipo8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblEquipo8.Location = new System.Drawing.Point(437, 325);
+            this.lblEquipo8.Location = new System.Drawing.Point(485, 325);
             this.lblEquipo8.Name = "lblEquipo8";
             this.lblEquipo8.Size = new System.Drawing.Size(64, 25);
             this.lblEquipo8.TabIndex = 48;
@@ -399,7 +399,7 @@ namespace GestionDeColegiados
             this.lblEquipo9.BackColor = System.Drawing.Color.LightGray;
             this.lblEquipo9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEquipo9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblEquipo9.Location = new System.Drawing.Point(428, 405);
+            this.lblEquipo9.Location = new System.Drawing.Point(476, 405);
             this.lblEquipo9.Name = "lblEquipo9";
             this.lblEquipo9.Size = new System.Drawing.Size(64, 25);
             this.lblEquipo9.TabIndex = 49;
@@ -412,7 +412,7 @@ namespace GestionDeColegiados
             this.lblEquipo10.BackColor = System.Drawing.Color.LightGray;
             this.lblEquipo10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEquipo10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblEquipo10.Location = new System.Drawing.Point(428, 491);
+            this.lblEquipo10.Location = new System.Drawing.Point(476, 491);
             this.lblEquipo10.Name = "lblEquipo10";
             this.lblEquipo10.Size = new System.Drawing.Size(64, 25);
             this.lblEquipo10.TabIndex = 50;
@@ -456,7 +456,7 @@ namespace GestionDeColegiados
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnGenerarEncuentros);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblTitulo);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmGenerarEncuentros";
@@ -478,7 +478,7 @@ namespace GestionDeColegiados
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnGenerarEncuentros;
         private System.Windows.Forms.Label label7;

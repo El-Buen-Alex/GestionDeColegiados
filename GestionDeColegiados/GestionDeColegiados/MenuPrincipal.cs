@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using Control;
+using Control.AdmEquipos;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -25,6 +26,7 @@ namespace GestionDeColegiados
         private Color colorDefaultMin;
 
         private AdmGenerarEncuentros admGenerarEncuentros = AdmGenerarEncuentros.getAdmadmGenerarEncuentros();
+        private AdmEquipo admEquipo = AdmEquipo.getEquipo();
         public MenuPrincipal()
         {
             InitializeComponent();
@@ -73,24 +75,43 @@ namespace GestionDeColegiados
 
         private void btnAnadirEquipo_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new frmNuevoEquipo());
+            if(admEquipo.ObtenerCantidadEquipo() < 10)
+            {
+                AbrirFormEnPanel(new frmNuevoEquipo());
+            }
+            else
+            {
+                AbrirFormEnPanel(new frmListaEquipos()); 
+            }
+            
         }
 
         private void btnGenerarEncuentros_Click(object sender, EventArgs e)
         {
             if(admGenerarEncuentros.obtnerNumeroEncuentrosGeneradosPendientes() == 0)
             {
-                AbrirFormEnPanel(new frmGenerarEncuentros());
+                AbrirFormEnPanel(new frmGenerarEncuentros(false));
             }
             else
             {
                 MessageBox.Show("Ya se han generado y registrados los encuentros");
+                AbrirFormEnPanel(new frmGenerarEncuentros(true));
+                
             }
         }
 
         private void btnAsignarColegiados_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new frmAsignarGrupoColegiados());
+            int numeroEncuentros = admGenerarEncuentros.obtnerNumeroEncuentrosGeneradosPendientes();
+            if (numeroEncuentros == 0)
+            {
+                MessageBox.Show("Ya se han asignado fecha y colegiados a los encuentros");
+            }
+            else
+            {
+                AbrirFormEnPanel(new frmAsignarGrupoColegiados());
+            }
+            
         }
 
         private void btnCambiarGrupo_Click(object sender, EventArgs e)

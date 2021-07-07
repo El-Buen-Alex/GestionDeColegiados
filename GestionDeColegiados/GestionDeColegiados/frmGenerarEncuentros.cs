@@ -17,9 +17,24 @@ namespace GestionDeColegiados
         AdmGenerarEncuentros admGenerarEncuentros = AdmGenerarEncuentros.getAdmadmGenerarEncuentros();
         private List<Label> listaContenedoresLocal = new List<Label>();
         private List<Label> listaContenedoresVisitante = new List<Label>();
-        public frmGenerarEncuentros()
+        public frmGenerarEncuentros(bool estado)
         {
             InitializeComponent();
+            inciarContenedores();
+            if (estado)
+            {
+                btnGenerarEncuentros.Visible = false;
+                btnGuardarEncuentros.Visible = false;
+                lblTitulo.Text = "ENCUENTROS PENDIENTES DE FECHA Y COLEGIADOS";
+                for(int x=0; x <5; x++)
+                {
+                    admGenerarEncuentros.LlenarPrimeraTupla(listaContenedoresLocal[x], listaContenedoresVisitante[x]);
+                }
+            }
+        }
+        
+        private void inciarContenedores()
+        {
             listaContenedoresLocal.Add(lblEquipo1);
             listaContenedoresLocal.Add(lblEquipo2);
             listaContenedoresLocal.Add(lblEquipo3);

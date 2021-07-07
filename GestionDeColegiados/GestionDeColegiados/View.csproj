@@ -68,6 +68,12 @@
     <Compile Include="frmGenerarEncuentros.Designer.cs">
       <DependentUpon>frmGenerarEncuentros.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmListaEquipos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListaEquipos.Designer.cs">
+      <DependentUpon>frmListaEquipos.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmNuevoEquipo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmGenerarEncuentros.resx">
       <DependentUpon>frmGenerarEncuentros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListaEquipos.resx">
+      <DependentUpon>frmListaEquipos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmNuevoEquipo.resx">
       <DependentUpon>frmNuevoEquipo.cs</DependentUpon>

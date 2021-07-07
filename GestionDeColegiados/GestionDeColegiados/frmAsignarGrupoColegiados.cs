@@ -33,6 +33,13 @@ namespace GestionDeColegiados
             btnRegistrar.Enabled = accesibilidad;
             btnSiguiente.Enabled = !accesibilidad;
         }
+        private void controladoresGUINoDisponibles()
+        {
+            dtpFechaEncuentro.Enabled = false;
+            cmbGrupoColegiado.Enabled = false;
+            btnRegistrar.Enabled = false;
+            btnSiguiente.Enabled = false;
+        }
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             int grupoSeleccionado = cmbGrupoColegiado.SelectedIndex;
@@ -42,6 +49,10 @@ namespace GestionDeColegiados
             if (guardo)
             {
                 cambiarAccesibilidadControlesGraficos(false);
+            }
+            if (admGenerarEncuentros.obtnerNumeroEncuentrosGeneradosPendientes() == 0)
+            {
+                controladoresGUINoDisponibles();
             }
         }
 
