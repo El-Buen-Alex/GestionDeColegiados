@@ -166,12 +166,14 @@ DELIMITER
 DELIMITER $$
 CREATE PROCEDURE guardarEncuentrosDefinidos(
 	in _fecha date,
+    in _hora time,
     in _idencuentro int,
     in _idcolegiado int,
+    in _idestadio int,
     in _estado varchar(10))
 		BEGIN 
-					INSERT INTO encuentrodefinidos(fecha,idencuentro,idcolegiado,estado)
-			VALUES	(_fecha,_idencuentro,_idcolegiado,_estado);
+					INSERT INTO encuentrodefinidos(fecha,hora,idencuentro,idcolegiado,idestadio,estado)
+			VALUES	(_fecha,_hora,_idencuentro,_idcolegiado,_idestadio,_estado);
             
 			END$$
 DELIMITER 
