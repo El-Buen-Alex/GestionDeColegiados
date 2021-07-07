@@ -124,12 +124,12 @@ DELIMITER
 /*PROCEDIMIENTO PARA GUARDAR ENCUENTROS*/
 DELIMITER $$
 CREATE PROCEDURE guardarEncuentrosGenerados(
-	in _idequipo int,
-    in _nombre varchar(25),
+	in _idequipo1 int,
+    in _idequipo2 int,
     in _estado varchar(10))
 		BEGIN 
-					INSERT INTO encuentrosgenerados(idequipo,nombre,estado)
-			VALUES	(_idequipo,_nombre,_estado);
+					INSERT INTO encuentrosGenerados(idequipo1,idequipo2,estado)
+			VALUES	(_idequipo1,_idequipo2,_nombre,_estado);
             
 			END$$
 DELIMITER 
@@ -157,18 +157,6 @@ CREATE PROCEDURE guardarEncuentrosDefinidos(
 DELIMITER 
 
 /*PROCEDIMIENTO PARA MOSTRAR ENCUENTRO DEFINIDOS*/
-DELIMITER $$
-CREATE PROCEDURE guardarEncuentrosDefinidos(
-	in _fecha datetime,
-    in _idencuentro int,
-    in _idcolegiado int,
-    in _estado varchar(10))
-		BEGIN 
-					INSERT INTO encuentrosdefinidos(fecha,idencuentro,idcolegiado,estado)
-			VALUES	(_fecha,_idencuentro,_idcolegiado,_estado);
-            
-			END$$
-DELIMITER 
 /*PROCEDIMIENTO PARA MODFIICAR FECHA*/
 /*PROCEDIMIENTO PARA MODFIICAR GRUPO DE COLEGIADO*/
 /*PROCEDIMIENTO PARA VISUALIZAR GRUPO DE COLEGIADO*/
