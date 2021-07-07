@@ -58,6 +58,7 @@
     <Compile Include="EncuentroDefinido.cs" />
     <Compile Include="EncuentroGenerado.cs" />
     <Compile Include="EquipoFolder\Equipo.cs" />
+    <Compile Include="Estadio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

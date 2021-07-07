@@ -56,11 +56,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmCambiarGrupoColegiados.cs">
+    <Compile Include="frmCambiarEstadioPartido.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCambiarGrupoColegiados.Designer.cs">
-      <DependentUpon>frmCambiarGrupoColegiados.cs</DependentUpon>
+    <Compile Include="frmCambiarEstadioPartido.Designer.cs">
+      <DependentUpon>frmCambiarEstadioPartido.cs</DependentUpon>
     </Compile>
     <Compile Include="frmGenerarEncuentros.cs">
       <SubType>Form</SubType>
@@ -86,11 +86,11 @@
     <Compile Include="frmNuevoGrupoColegiado.Designer.cs">
       <DependentUpon>frmNuevoGrupoColegiado.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAsignarGrupoColegiados.cs">
+    <Compile Include="frmRegistrarPartido.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAsignarGrupoColegiados.Designer.cs">
-      <DependentUpon>frmAsignarGrupoColegiados.cs</DependentUpon>
+    <Compile Include="frmRegistrarPartido.Designer.cs">
+      <DependentUpon>frmRegistrarPartido.cs</DependentUpon>
     </Compile>
     <Compile Include="frmVerTodosLosColegiados.cs">
       <SubType>Form</SubType>
@@ -112,8 +112,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmCambiarGrupoColegiados.resx">
-      <DependentUpon>frmCambiarGrupoColegiados.cs</DependentUpon>
+    <EmbeddedResource Include="frmCambiarEstadioPartido.resx">
+      <DependentUpon>frmCambiarEstadioPartido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGenerarEncuentros.resx">
       <DependentUpon>frmGenerarEncuentros.cs</DependentUpon>
@@ -127,8 +127,8 @@
     <EmbeddedResource Include="frmNuevoGrupoColegiado.resx">
       <DependentUpon>frmNuevoGrupoColegiado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAsignarGrupoColegiados.resx">
-      <DependentUpon>frmAsignarGrupoColegiados.cs</DependentUpon>
+    <EmbeddedResource Include="frmRegistrarPartido.resx">
+      <DependentUpon>frmRegistrarPartido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVerTodosLosColegiados.resx">
       <DependentUpon>frmVerTodosLosColegiados.cs</DependentUpon>

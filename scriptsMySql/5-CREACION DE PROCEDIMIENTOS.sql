@@ -161,6 +161,14 @@ CREATE PROCEDURE obtenerEncuentroPendiente()
 		SELECT * FROM encuentrosgenerados WHERE estado = "PENDIENTE"; 
 	END$$
 DELIMITER 
+DELIMITER $$
+CREATE PROCEDURE obtenerEncuentroPorID(
+ in _idencuentro int)
+
+	BEGIN
+		SELECT * FROM encuentrosgenerados WHERE encuentrosgenerados.idencuentro = _idEncuentro; 
+	END$$
+DELIMITER 
 
 /*PROCEDIMIENTO PARA GUARDAR ENCUENTRO DEFINIDOS*/
 DELIMITER $$
@@ -211,13 +219,39 @@ CREATE PROCEDURE asigacionEncuentroAsignadoencuentrodefinidos(
 			END$$
 DELIMITER  
 
-
 /* PROCEDIMIENTO PARA SABER CUANTOS EQUIPOS EXISTEN*/
 DELIMITER $$
 CREATE PROCEDURE cantidadEquipos()
 	BEGIN
 		SELECT count(*) as cantidadEquipos FROM equipo; 
 	END$$
+DELIMITER 
+
+
+
+DELIMITER $$
+CREATE PROCEDURE estadiosDiponibles()
+	BEGIN
+		SELECT * FROM estadio WHERE estado = "DISPONIBLE"; 
+	END$$
+DELIMITER
+
+DELIMITER $$
+CREATE PROCEDURE informacionEstadio()
+	BEGIN
+		SELECT * FROM estadio;
+	END$$
+DELIMITER 
+
+DELIMITER $$ 
+CREATE PROCEDURE asigacionEstadioOcupado(
+    in _estado varchar(10),
+    in _idestadio int)
+		BEGIN 
+					UPDATE estadio
+			SET	estado= _estado WHERE idestadio = _idestadio;
+            
+			END$$
 DELIMITER 
 /*PROCEDIMIENTO PARA MOSTRAR ENCUENTRO DEFINIDOS*/
 /*PROCEDIMIENTO PARA MODFIICAR FECHA*/

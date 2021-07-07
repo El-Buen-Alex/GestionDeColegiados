@@ -47,6 +47,34 @@ namespace Data
             return guardo;
         }
 
+        public EncuentroGenerado ObtenerEncuentrosPendientes(int idEncuentroGeneradoPendiente)
+        {
+            EncuentroGenerado encuentro=null;
+            conexion = ConexionBD.getConexion();
+            conexion.Open();
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand("obtenerEncuentroPorID", conexion, transaccion);
+
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@_idencuentro", idEncuentroGeneradoPendiente);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    encuentro = new EncuentroGenerado();
+                    encuentro.IdEquipoLocal = Convert.ToInt32(reader["idEquipoLocal"].ToString());
+                    encuentro.IdEquipoVisitante = Convert.ToInt32(reader["idEquipoVisitante"].ToString());
+                    encuentro.Estado = reader["estado"].ToString();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error al obtener encuentro pendiente: " + ex.Message);
+            }
+
+            return encuentro;
+        }
+
         public int ObetnerNumeroEncuentrosPendientes()
         {
             int cantidad = 0;

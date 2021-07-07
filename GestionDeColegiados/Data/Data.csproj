@@ -89,6 +89,7 @@
     <Compile Include="Datos.cs" />
     <Compile Include="DatosEncuentroDefinido.cs" />
     <Compile Include="DatosEnuenctrosGenerados.cs" />
+    <Compile Include="DatosEstadios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

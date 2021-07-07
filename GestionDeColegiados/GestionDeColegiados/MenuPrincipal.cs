@@ -109,14 +109,14 @@ namespace GestionDeColegiados
             }
             else
             {
-                AbrirFormEnPanel(new frmAsignarGrupoColegiados());
+                AbrirFormEnPanel(new frmRegistrarPartido());
             }
             
         }
 
         private void btnCambiarGrupo_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new frmCambiarGrupoColegiados());
+            AbrirFormEnPanel(new frmCambiarEstadioPartido());
         }
 
         private void pbMinimizar_Click(object sender, EventArgs e)

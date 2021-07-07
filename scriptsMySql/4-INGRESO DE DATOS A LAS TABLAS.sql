@@ -92,4 +92,36 @@ INSERT INTO cuartoarbitro (cedula,nombre,apellido,domicilio,email,telefono)
 INSERT INTO colegiado (idjuezcentral,idasistente1,idasistente2,idcuartoarbitro) 
         VALUES ('6','6','6','6');
         
+INSERT INTO estadio (nombreEstadio, estado) 
+values ('Monumental', 'DISPONIBLE');
+INSERT INTO estadio (nombreEstadio, estado)
+ values ('Etho Vega', 'DISPONIBLE');
+INSERT INTO estadio (nombreEstadio, estado) 
+values ('Rodrigo Paz Delgado', 'DISPONIBLE');
+INSERT INTO estadio (nombreEstadio, estado) 
+values ('Capwell', 'DISPONIBLE');
+INSERT INTO estadio (nombreEstadio, estado) 
+values ('Jocay', 'DISPONIBLE');
+INSERT INTO estadio (nombreEstadio, estado) 
+values ('Bellavista', 'DISPONIBLE');
+INSERT INTO estadio (nombreEstadio, estado) 
+values ('9 de mayo', 'DISPONIBLE');
+INSERT INTO estadio (nombreEstadio, estado) 
+values ('La Cocha', 'DISPONIBLE');
+INSERT INTO estadio (nombreEstadio, estado) 
+values ('UTN', 'DISPONIBLE');
+INSERT INTO estadio (nombreEstadio, estado) 
+values ('Los Chorijos','DISPONIBLE');
+
+INSERT INTO estadio (nombreEstadio, estado) values ('Space', 'DISPONIBLE');
+INSERT INTO estadio (nombreEstadio, estado) values ('Lions', 'DISPONIBLE');
+INSERT INTO estadio (nombreEstadio, estado) values ('Paz', 'DISPONIBLE');
+INSERT INTO estadio (nombreEstadio, estado) values ('Lit', 'DISPONIBLE');
+INSERT INTO estadio (nombreEstadio, estado) values ('Harvy', 'DISPONIBLE');
+INSERT INTO estadio (nombreEstadio, estado) values ('Specte', 'DISPONIBLE');
+INSERT INTO estadio (nombreEstadio, estado) values ('Ross', 'DISPONIBLE');
+INSERT INTO estadio (nombreEstadio, estado) values ('Harman', 'DISPONIBLE');
+INSERT INTO estadio (nombreEstadio, estado) values ('Pearson', 'DISPONIBLE');
+INSERT INTO estadio (nombreEstadio, estado) values ('Fire','DISPONIBLE');
+
 

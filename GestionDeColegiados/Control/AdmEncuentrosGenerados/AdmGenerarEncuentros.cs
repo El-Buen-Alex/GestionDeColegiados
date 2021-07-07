@@ -32,6 +32,11 @@ namespace Control.AdmEncuentrosGenerados
             lblEquipoVisitante.Text = equipoVisitante.NombreEquipo;
         }
 
+        public EncuentroGenerado ObtenerEncuentroPorID(int idEncuentroGeneradoPendiente)
+        {
+           return  datosEncuentrosGenerados.ObtenerEncuentrosPendientes(idEncuentroGeneradoPendiente);
+        }
+
         private List<int> idsEquiposLocales = new List<int>();
         private List<int> idsEquiposVisitantes = new List<int>();
 

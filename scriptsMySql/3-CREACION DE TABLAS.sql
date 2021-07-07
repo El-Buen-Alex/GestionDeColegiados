@@ -109,6 +109,15 @@ FOREIGN KEY(`idEquipoVisitante`)
 REFERENCES `campeonatos`.`equipo` (`idequipo`)
  );
 
+
+ /*CREACIÓN DE TABLA ESTADIOS*/
+CREATE TABLE `campeonatos`.`estadio`(
+`idestadio` INT NOT NULL AUTO_INCREMENT,
+`nombreEstadio` VARCHAR(30),
+`estado` VARCHAR(10) NOT NULL,
+PRIMARY KEY(`idestadio`)
+ );
+
 /*CREACIÓN DE TABLA ENCUENTROS DEFINIDOS*/
 CREATE TABLE `campeonatos`.`encuentroDefinidos`(
 `idefinido` INT NOT NULL AUTO_INCREMENT,
@@ -127,11 +136,6 @@ FOREIGN KEY(`idestadio`)
 REFERENCES `campeonatos`.`estadio` (`idestadio`)
  );
  
- /*CREACIÓN DE TABLA ESTADIOS*/
-CREATE TABLE `campeonatos`.`estadio`(
-`idestadio` INT NOT NULL AUTO_INCREMENT,
-`nombreEstadio` VARCHAR(30),
-PRIMARY KEY(`idestadio`)
- );
+
  
  

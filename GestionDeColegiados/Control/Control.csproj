@@ -56,6 +56,7 @@
     <Compile Include="AdmEncuentrosGenerados\AdmGenerarEncuentros.cs" />
     <Compile Include="AdmEncuentrosGenerados\AdmEncuentrosDefinidos.cs" />
     <Compile Include="AdmEquipos\AdmEquipo.cs" />
+    <Compile Include="AdmEstadios\AdmEstadio.cs" />
     <Compile Include="GestionLogin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="registroEquipoMaximoException.cs" />
