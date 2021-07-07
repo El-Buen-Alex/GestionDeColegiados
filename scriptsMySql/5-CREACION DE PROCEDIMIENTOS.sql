@@ -164,7 +164,6 @@ DELIMITER
 DELIMITER $$
 CREATE PROCEDURE obtenerEncuentroPorID(
  in _idencuentro int)
-
 	BEGIN
 		SELECT * FROM encuentrosgenerados WHERE encuentrosgenerados.idencuentro = _idEncuentro; 
 	END$$
@@ -244,6 +243,14 @@ CREATE PROCEDURE informacionEstadio()
 DELIMITER 
 
 DELIMITER $$ 
+
+DELIMITER $$
+CREATE PROCEDURE mostrarEncuentroDefinidos()
+	BEGIN
+		SELECT * FROM encuentroDefinidos WHERE estado = "PorJugar" order by idefinido asc limit 5; 
+	END$$
+DELIMITER 
+
 CREATE PROCEDURE asigacionEstadioOcupado(
     in _estado varchar(10),
     in _idestadio int)
