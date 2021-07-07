@@ -124,12 +124,12 @@ DELIMITER
 /*PROCEDIMIENTO PARA GUARDAR ENCUENTROS*/
 DELIMITER $$
 CREATE PROCEDURE guardarEncuentrosGenerados(
-	in _idequipo1 int,
-    in _idequipo2 int,
+	in _idEquipoLocal int,
+    in _idEquipoVisitante int,
     in _estado varchar(10))
 		BEGIN 
-					INSERT INTO encuentrosGenerados(idequipo1,idequipo2,estado)
-			VALUES	(_idequipo1,_idequipo2,_nombre,_estado);
+					INSERT INTO encuentrosGenerados(idEquipoLocal,idEquipoVisitante,estado)
+			VALUES	(_idEquipoLocal,_idEquipoVisitante,_estado);
             
 			END$$
 DELIMITER 
