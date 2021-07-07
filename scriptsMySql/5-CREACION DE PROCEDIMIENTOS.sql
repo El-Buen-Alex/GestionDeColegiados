@@ -91,13 +91,14 @@ DELIMITER
 DELIMITER $$
 CREATE PROCEDURE obtenerColegiado()
 	BEGIN
-		SELECT jc.nombre nombreJC, as1.nombre nombreAs1, as2.nombre nombreAs2, ca.nombre nombreCA FROM colegiado c 
+		SELECT c.idcolegiado idGrupoColegiado, jc.nombre nombreJC, as1.nombre nombreAs1, as2.nombre nombreAs2, ca.nombre nombreCA FROM colegiado c 
 		INNER JOIN juezcentral jc ON jc.idjuezcentral = c.idjuezcentral
 		INNER JOIN asistente1 as1 ON as1.idasistente1 = c.idasistente1
 		INNER JOIN asistente2 as2 ON as2.idasistente2 = c.idasistente2
 		INNER JOIN cuartoarbitro ca ON ca.idcuartoarbitro = c.idcuartoarbitro;
 	END$$
-DELIMITER
+DELIMITER 
+
 
 /*PROCEDIMIENTO PARA GUARDAR EQUIPO*/
 DELIMITER $$
@@ -112,6 +113,18 @@ CREATE PROCEDURE guardarEquipo(
             
 			END$$
 DELIMITER 
+
+
+/*PROCEDIMIENTO PARA OBTENER EQUIPO MEDIANTE ID*/
+DELIMITER $$
+CREATE PROCEDURE obtenerEquipo(
+in _equipoID int)
+	BEGIN
+    declare equipoID int;
+    set equipoID = _equipoID;
+		SELECT * FROM equipo WHERE idequipo = equipoID;
+	END$$
+DELIMITER
 
 /*PROCEDIMIENTO PARA OBTENER EQUIPO*/
 DELIMITER $$
@@ -136,26 +149,65 @@ DELIMITER
 
 /*PROCEDIMIENTO PARA OBTENER ENCUENTROS DIPONIBLES*/
 DELIMITER $$
-CREATE PROCEDURE obtenerNumeroEncuentroDisponible()
+CREATE PROCEDURE obtenerNumeroEncuentroPendiente()
 	BEGIN
 		SELECT count(*) as tamanio FROM encuentrosgenerados WHERE estado = "PENDIENTE"; 
 	END$$
 DELIMITER
 
+DELIMITER $$
+CREATE PROCEDURE obtenerEncuentroPendiente()
+	BEGIN
+		SELECT * FROM encuentrosgenerados WHERE estado = "PENDIENTE"; 
+	END$$
+DELIMITER 
+
 /*PROCEDIMIENTO PARA GUARDAR ENCUENTRO DEFINIDOS*/
 DELIMITER $$
 CREATE PROCEDURE guardarEncuentrosDefinidos(
-	in _fecha datetime,
+	in _fecha date,
     in _idencuentro int,
     in _idcolegiado int,
     in _estado varchar(10))
 		BEGIN 
-					INSERT INTO encuentrosdefinidos(fecha,idencuentro,idcolegiado,estado)
+					INSERT INTO encuentrodefinidos(fecha,idencuentro,idcolegiado,estado)
 			VALUES	(_fecha,_idencuentro,_idcolegiado,_estado);
             
 			END$$
 DELIMITER 
 
+
+CREATE PROCEDURE asigacionEncuentroAsignado(
+    in _estado varchar(10)
+    in _idencuentro int)
+		BEGIN 
+					INSERT INTO encuentrosGenerados(estado)
+			VALUES	(_estado) WHERE idencuentro = _idencuentro;
+            
+			END$$
+DELIMITER 
+
+DELIMITER $$ 
+CREATE PROCEDURE asigacionEncuentroAsignado(
+    in _estado varchar(10),
+    in _idencuentro int)
+		BEGIN 
+					UPDATE encuentrosGenerados
+			SET	estado= _estado WHERE idencuentro = _idencuentro;
+            
+			END$$
+DELIMITER 
+
+DELIMITER $$ 
+CREATE PROCEDURE asigacionEncuentroAsignadoencuentrodefinidos(
+    in _estado varchar(10),
+    in _idencuentro int)
+		BEGIN 
+					UPDATE encuentrosGenerados
+			SET	estado= _estado WHERE idencuentro = _idencuentro;
+            
+			END$$
+DELIMITER  
 /*PROCEDIMIENTO PARA MOSTRAR ENCUENTRO DEFINIDOS*/
 /*PROCEDIMIENTO PARA MODFIICAR FECHA*/
 /*PROCEDIMIENTO PARA MODFIICAR GRUPO DE COLEGIADO*/

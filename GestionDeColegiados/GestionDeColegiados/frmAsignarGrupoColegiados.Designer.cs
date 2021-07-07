@@ -35,8 +35,8 @@ namespace GestionDeColegiados
             this.label2 = new System.Windows.Forms.Label();
             this.lblEquipoLocal = new System.Windows.Forms.Label();
             this.lblEquipoVisitante = new System.Windows.Forms.Label();
-            this.registrar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSiguiente = new System.Windows.Forms.Button();
+            this.btnRegistrar = new System.Windows.Forms.Button();
             this.dtpFechaEncuentro = new System.Windows.Forms.DateTimePicker();
             this.cmbGrupoColegiado = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -60,7 +60,7 @@ namespace GestionDeColegiados
             // pictureBox1
             // 
             this.pictureBox1.Image = global::GestionDeColegiados.Properties.Resources.Local;
-            this.pictureBox1.Location = new System.Drawing.Point(25, 145);
+            this.pictureBox1.Location = new System.Drawing.Point(27, 163);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(242, 135);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -70,7 +70,7 @@ namespace GestionDeColegiados
             // pictureBox2
             // 
             this.pictureBox2.Image = global::GestionDeColegiados.Properties.Resources.visitante;
-            this.pictureBox2.Location = new System.Drawing.Point(334, 145);
+            this.pictureBox2.Location = new System.Drawing.Point(334, 163);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(242, 135);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -94,44 +94,49 @@ namespace GestionDeColegiados
             this.lblEquipoLocal.AutoSize = true;
             this.lblEquipoLocal.BackColor = System.Drawing.SystemColors.ControlLight;
             this.lblEquipoLocal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEquipoLocal.Location = new System.Drawing.Point(114, 199);
+            this.lblEquipoLocal.Location = new System.Drawing.Point(93, 217);
             this.lblEquipoLocal.Name = "lblEquipoLocal";
-            this.lblEquipoLocal.Size = new System.Drawing.Size(0, 20);
+            this.lblEquipoLocal.Size = new System.Drawing.Size(110, 20);
             this.lblEquipoLocal.TabIndex = 6;
+            this.lblEquipoLocal.Text = "equipoLocal";
             // 
             // lblEquipoVisitante
             // 
             this.lblEquipoVisitante.AutoSize = true;
             this.lblEquipoVisitante.BackColor = System.Drawing.SystemColors.ControlLight;
             this.lblEquipoVisitante.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEquipoVisitante.Location = new System.Drawing.Point(430, 199);
+            this.lblEquipoVisitante.Location = new System.Drawing.Point(380, 217);
             this.lblEquipoVisitante.Name = "lblEquipoVisitante";
-            this.lblEquipoVisitante.Size = new System.Drawing.Size(0, 20);
+            this.lblEquipoVisitante.Size = new System.Drawing.Size(138, 20);
             this.lblEquipoVisitante.TabIndex = 7;
+            this.lblEquipoVisitante.Text = "equipoVisitante";
             // 
-            // registrar
+            // btnSiguiente
             // 
-            this.registrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this.registrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.registrar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.registrar.Location = new System.Drawing.Point(410, 530);
-            this.registrar.Name = "registrar";
-            this.registrar.Size = new System.Drawing.Size(145, 49);
-            this.registrar.TabIndex = 11;
-            this.registrar.Text = "SIGUIENTE";
-            this.registrar.UseVisualStyleBackColor = false;
+            this.btnSiguiente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.btnSiguiente.Enabled = false;
+            this.btnSiguiente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSiguiente.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSiguiente.Location = new System.Drawing.Point(431, 530);
+            this.btnSiguiente.Name = "btnSiguiente";
+            this.btnSiguiente.Size = new System.Drawing.Size(145, 49);
+            this.btnSiguiente.TabIndex = 11;
+            this.btnSiguiente.Text = "SIGUIENTE";
+            this.btnSiguiente.UseVisualStyleBackColor = false;
+            this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
             // 
-            // button1
+            // btnRegistrar
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(225, 530);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(145, 49);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "REGISTRAR";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnRegistrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.btnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRegistrar.Location = new System.Drawing.Point(191, 530);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.Size = new System.Drawing.Size(145, 49);
+            this.btnRegistrar.TabIndex = 12;
+            this.btnRegistrar.Text = "REGISTRAR";
+            this.btnRegistrar.UseVisualStyleBackColor = false;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // dtpFechaEncuentro
             // 
@@ -143,6 +148,7 @@ namespace GestionDeColegiados
             // 
             // cmbGrupoColegiado
             // 
+            this.cmbGrupoColegiado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGrupoColegiado.FormattingEnabled = true;
             this.cmbGrupoColegiado.Location = new System.Drawing.Point(318, 386);
             this.cmbGrupoColegiado.Name = "cmbGrupoColegiado";
@@ -181,8 +187,8 @@ namespace GestionDeColegiados
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cmbGrupoColegiado);
             this.Controls.Add(this.dtpFechaEncuentro);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.registrar);
+            this.Controls.Add(this.btnRegistrar);
+            this.Controls.Add(this.btnSiguiente);
             this.Controls.Add(this.lblEquipoVisitante);
             this.Controls.Add(this.lblEquipoLocal);
             this.Controls.Add(this.label2);
@@ -208,8 +214,8 @@ namespace GestionDeColegiados
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblEquipoLocal;
         private System.Windows.Forms.Label lblEquipoVisitante;
-        private System.Windows.Forms.Button registrar;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSiguiente;
+        private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.DateTimePicker dtpFechaEncuentro;
         private System.Windows.Forms.ComboBox cmbGrupoColegiado;
         private System.Windows.Forms.Label label3;

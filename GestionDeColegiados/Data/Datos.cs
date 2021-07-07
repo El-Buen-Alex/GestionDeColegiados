@@ -45,6 +45,31 @@ namespace Data {
             return id;
         }
 
+        public Equipo ObtenerEquipoPorId(int id)
+        {
+            Equipo equipo = null;
+            conexion = ConexionBD.getConexion();
+            conexion.Open();
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand("obtenerEquipo", conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@_equipoID", id);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    equipo = new Equipo();
+                    equipo.NombreEquipo = reader["nombre"].ToString();
+                    equipo.IdEquipo = Convert.ToInt32(reader["idequipo"].ToString());
+                }
+            }
+            catch(MySqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return equipo;
+        }
+
         public int InsertarEquipo(Equipo equipo)
         {
             int id = 0;
@@ -273,6 +298,7 @@ namespace Data {
                 reader = comando.ExecuteReader();
                 while (reader.Read()) {
                     integrantesColeg = new IntegrantesColegiados();
+                    integrantesColeg.IdGrupoColegiado = Convert.ToInt32(reader["idGrupoColegiado"].ToString());
                     integrantesColeg.NombrejuezCentral = reader["nombreJC"].ToString();
                     integrantesColeg.Nombreasistente1 = reader["nombreAs1"].ToString();
                     integrantesColeg.Nombreasistente2 = reader["nombreAs2"].ToString();

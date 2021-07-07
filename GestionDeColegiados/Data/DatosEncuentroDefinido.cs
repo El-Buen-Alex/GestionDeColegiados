@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Model;
+using MySql.Data.MySqlClient;
 using Sistema;
 using System;
 using System.Collections.Generic;
@@ -12,42 +13,39 @@ namespace Data
     public class DatosEncuentroDefinido
     {
         private MySqlConnection conexion = null;
-        private MySqlTransaction trans = null;
+        private MySqlTransaction transaccion = null;
 
-        public int InsertarJuezCentral()
+
+        public int GuardarEncuentroDefinido(EncuentroDefinido encuentroDefinido)
         {
             int id = 0;
             conexion = ConexionBD.getConexion();
             conexion.Open();
-            trans = conexion.BeginTransaction();
+            transaccion = conexion.BeginTransaction();
+            Console.WriteLine(encuentroDefinido.FechaDeEncuentro.ToShortDateString())  ;
             try
             {
-                MySqlCommand cmd = new MySqlCommand("guardarJuezCentral", conexion, trans);
-               /* cmd.CommandType = Comma ndType.StoredProcedure;
-
-                cmd.Parameters.AddWithValue("@_cedula", juezCentral.Cedula);
-                cmd.Parameters.AddWithValue("@_nombre", juezCentral.Nombre);
-                cmd.Parameters.AddWithValue("@_apellido", juezCentral.Apellidos);
-                cmd.Parameters.AddWithValue("@_domicilio", juezCentral.Domicilio);
-                cmd.Parameters.AddWithValue("@_email", juezCentral.Email);
-                cmd.Parameters.AddWithValue("@_telefono", juezCentral.Telefono);*/
-
-                cmd.ExecuteNonQuery();
-
-                cmd = new MySqlCommand("obtenerId", conexion);
-                cmd.CommandType = CommandType.StoredProcedure;
-                id = Convert.ToInt32(cmd.ExecuteScalar());
-
-                trans.Commit();
+                MySqlCommand comando = new MySqlCommand("guardarEncuentrosDefinidos", conexion, transaccion);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("_fecha", encuentroDefinido.FechaDeEncuentro.ToString("yyyy-MM-dd"));
+                comando.Parameters.AddWithValue("_idencuentro", encuentroDefinido.IdEncuentroGeneradoPendiente);
+                comando.Parameters.AddWithValue("_idcolegiado", encuentroDefinido.IdColegiado);
+                comando.Parameters.AddWithValue("_estado", encuentroDefinido.Estado);
+                comando.ExecuteNonQuery();
+                comando = new MySqlCommand("obtenerId", conexion);
+                comando.CommandType = CommandType.StoredProcedure;
+                id = Convert.ToInt32(comando.ExecuteScalar());
+                if (id != 0)
+                {
+                    transaccion.Commit();
+                }
             }
-            catch (MySqlException ex)
+            catch(MySqlException ex)
             {
-                trans.Rollback();
-                throw new Exception(ex.ToString());
+                transaccion.Rollback();
+                Console.WriteLine(ex.Message);
             }
-            conexion.Close();
             return id;
         }
-
     }
 }

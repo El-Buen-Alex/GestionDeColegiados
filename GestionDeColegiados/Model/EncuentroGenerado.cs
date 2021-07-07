@@ -13,7 +13,10 @@ namespace Model
         private int idEquipoVisitante;
         private string estado;
 
+        public EncuentroGenerado()
+        {
 
+        }
         public EncuentroGenerado(int idEquipoLocal, int idEquipoVisitante, string estado)
         {
             this.idEquipoLocal = idEquipoLocal;

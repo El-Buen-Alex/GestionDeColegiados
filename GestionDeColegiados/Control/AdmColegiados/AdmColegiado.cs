@@ -13,10 +13,11 @@ namespace Control.AdmColegiados {
         Colegiado colegiado = null;
         ValidacionGUI v = new ValidacionGUI();
         Datos datos = new Datos();
-
+        private List<IntegrantesColegiados> listaintegColeg;
         private static AdmColegiado admCol= null;
 
         public List<Colegiado> ListaColegiado { get => listaColegiado; set => listaColegiado = value; }
+        public List<IntegrantesColegiados> ListaintegColeg { get => listaintegColeg; set => listaintegColeg = value; }
 
         private AdmColegiado () {
             listaColegiado = new List<Colegiado>();
@@ -26,6 +27,15 @@ namespace Control.AdmColegiados {
             if (admCol == null)
                 admCol = new AdmColegiado();
             return admCol;
+        }
+
+        public void LlenarColegiadosCmb(ComboBox cmbGrupoColegiado)
+        {
+            listaintegColeg = new List<IntegrantesColegiados>();
+            listaintegColeg = datos.ConsultarColegiado();
+            cmbGrupoColegiado.DisplayMember = "NombrejuezCentral";
+            cmbGrupoColegiado.DataSource = listaintegColeg;
+
         }
 
         public void Guardar (int idjuezcentral, int idasistente1, int idasistente2, int idcuartoarbitro) {

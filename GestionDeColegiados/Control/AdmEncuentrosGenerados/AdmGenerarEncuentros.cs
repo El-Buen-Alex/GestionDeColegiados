@@ -14,11 +14,23 @@ namespace Control.AdmEncuentrosGenerados
     public class AdmGenerarEncuentros
     {
         private List<EncuentroGenerado> listaEncuentrosGenerados;
+        private List<EncuentroGenerado> listaEncuentrosGeneradosPendientes;
         private EncuentroGenerado encuentroAuxiliar = null;
         private static AdmGenerarEncuentros admGenerarEncuentros=null;
         private AdmEquipo admEquipo = AdmEquipo.getEquipo();
         private List<Equipo> listaEquipos;
         private DatosEnuenctrosGenerados datosEncuentrosGenerados = new DatosEnuenctrosGenerados();
+
+        public void LlenarPrimeraTupla(Label lblEquipoLocal, Label lblEquipoVisitante)
+        {
+            listaEncuentrosGeneradosPendientes = datosEncuentrosGenerados.ObtenerEncuentrosPendientes();
+            int idEquipoLocal = listaEncuentrosGeneradosPendientes[0].IdEquipoLocal;
+            int idEquipoVisitante= listaEncuentrosGeneradosPendientes[0].IdEquipoVisitante;
+            Equipo equipoLocal = admEquipo.ObtenerEquipoPorId(idEquipoLocal);
+            Equipo equipoVisitante = admEquipo.ObtenerEquipoPorId(idEquipoVisitante);
+            lblEquipoLocal.Text =equipoLocal.NombreEquipo;
+            lblEquipoVisitante.Text = equipoVisitante.NombreEquipo;
+        }
 
         private List<int> idsEquiposLocales = new List<int>();
         private List<int> idsEquiposVisitantes = new List<int>();
@@ -27,6 +39,13 @@ namespace Control.AdmEncuentrosGenerados
         private List<int> numerosAleatoriosVisitante = new List<int>();
 
         public List<EncuentroGenerado> ListaEncuentrosGenerados { get => listaEncuentrosGenerados; set => listaEncuentrosGenerados = value; }
+        public List<EncuentroGenerado> ListaEncuentrosGeneradosPendientes { get => listaEncuentrosGeneradosPendientes; set => listaEncuentrosGeneradosPendientes = value; }
+
+        public bool CambiarEstadoEncuentro(int idEncuentroGeneradoPendiente)
+        {
+            return datosEncuentrosGenerados.CambiarEstadoEncuentro(idEncuentroGeneradoPendiente);
+        }
+
         private AdmGenerarEncuentros()
         {
             listaEncuentrosGenerados = new List<EncuentroGenerado>();
@@ -39,7 +58,6 @@ namespace Control.AdmEncuentrosGenerados
             }
             return admGenerarEncuentros;
         }
-
         public void generarEncuentrosAleatorios(List<Label> listaContenedoresLocal, List<Label> listaContenedoresVisitante)
         {
             numerosAleatoriosLocal = generListaAleatoria(1, 6);

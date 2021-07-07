@@ -66,5 +66,58 @@ namespace Data
             }
             return cantidad;
         }
+
+        public bool CambiarEstadoEncuentro(int idEncuentroGeneradoPendiente)
+        {
+            bool cambio = false;
+            conexion = ConexionBD.getConexion();
+            conexion.Open();
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand("asigacionEncuentroAsignado", conexion);
+
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@_estado", "Por Jugar");
+                cmd.Parameters.AddWithValue("@_idencuentro", idEncuentroGeneradoPendiente);
+                cmd.ExecuteNonQuery();
+                cambio = true;
+            }
+            catch(MySqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return cambio;
+        }
+
+        public List<EncuentroGenerado> ObtenerEncuentrosPendientes()
+        {
+            List<EncuentroGenerado> lista = new List<EncuentroGenerado>();
+            EncuentroGenerado encuentroGeneradoPendiente = null;
+            conexion = ConexionBD.getConexion();
+            conexion.Open();
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand("obtenerEncuentroPendiente", conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                MySqlDataReader reader = cmd.ExecuteReader();
+                Console.WriteLine("hola entre a encuentros pendt");
+                while (reader.Read())
+                {
+                    encuentroGeneradoPendiente = new EncuentroGenerado();
+                    encuentroGeneradoPendiente.Id=Convert.ToInt32(reader["idencuentro"].ToString());
+                    encuentroGeneradoPendiente.IdEquipoLocal= Convert.ToInt32(reader["idEquipoLocal"].ToString());
+                    encuentroGeneradoPendiente.IdEquipoVisitante= Convert.ToInt32(reader["idEquipoVisitante"].ToString());
+                    encuentroGeneradoPendiente.Estado = reader["estado"].ToString();
+                    lista.Add(encuentroGeneradoPendiente);
+                    Console.WriteLine(lista.Count);
+                }
+            }
+            catch(MySqlException ex)
+            {
+                Console.WriteLine("Error al obtener cantidad de encuentros pendientes: " + ex.Message);
+            }
+            conexion.Close();
+            return lista;
+        }
     }
 }

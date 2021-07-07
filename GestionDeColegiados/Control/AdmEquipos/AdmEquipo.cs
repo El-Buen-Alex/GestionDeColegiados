@@ -48,7 +48,11 @@ namespace Control.AdmEquipos
             }
         }
 
-       
+        public Equipo ObtenerEquipoPorId(int id)
+        {
+            return datos.ObtenerEquipoPorId(id);
+        }
+
         public void llenarCamposTextos(TextBox cajaTexto, int numBase, int numTope)
         {
             cajaTexto.Text = "";

@@ -112,7 +112,7 @@ REFERENCES `campeonatos`.`equipo` (`idequipo`)
 /*CREACIÓN DE TABLA ENCUENTROS DEFINIDOS*/
 CREATE TABLE `campeonatos`.`encuentroDefinidos`(
 `idefinido` INT NOT NULL AUTO_INCREMENT,
-`fecha` DATETIME,
+`fecha` DATE,
 `idencuentro` INT NOT NULL,
 `idcolegiado` INT NOT NULL,
 `estado` VARCHAR(10) NOT NULL,
