@@ -237,7 +237,13 @@ CREATE PROCEDURE cantidadEquipos()
 	END$$
 DELIMITER 
 
-
+DELIMITER $$
+CREATE PROCEDURE obtenerEstadioPorId(
+	in _idEstadio int)
+	BEGIN
+		SELECT * FROM estadio WHERE idestadio = _idEstadio; 
+	END$$
+DELIMITER
 
 DELIMITER $$
 CREATE PROCEDURE estadiosDiponibles()
