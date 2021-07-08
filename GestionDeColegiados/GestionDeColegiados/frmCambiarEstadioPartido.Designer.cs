@@ -36,6 +36,8 @@ namespace GestionDeColegiados
             this.label3 = new System.Windows.Forms.Label();
             this.cmbEstadios = new System.Windows.Forms.ComboBox();
             this.btnGuardarCambios = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblEstadioActual = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -53,8 +55,8 @@ namespace GestionDeColegiados
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(12, 136);
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Location = new System.Drawing.Point(15, 319);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(554, 20);
             this.label1.TabIndex = 2;
@@ -65,7 +67,7 @@ namespace GestionDeColegiados
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(39, 210);
+            this.label2.Location = new System.Drawing.Point(13, 156);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(175, 32);
             this.label2.TabIndex = 3;
@@ -75,9 +77,9 @@ namespace GestionDeColegiados
             // 
             this.cmbEncuentros.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEncuentros.FormattingEnabled = true;
-            this.cmbEncuentros.Location = new System.Drawing.Point(222, 210);
+            this.cmbEncuentros.Location = new System.Drawing.Point(194, 161);
             this.cmbEncuentros.Name = "cmbEncuentros";
-            this.cmbEncuentros.Size = new System.Drawing.Size(313, 24);
+            this.cmbEncuentros.Size = new System.Drawing.Size(373, 24);
             this.cmbEncuentros.TabIndex = 4;
             this.cmbEncuentros.SelectedIndexChanged += new System.EventHandler(this.cmbEncuentros_SelectedIndexChanged);
             // 
@@ -86,7 +88,7 @@ namespace GestionDeColegiados
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(39, 291);
+            this.label3.Location = new System.Drawing.Point(16, 365);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(174, 32);
             this.label3.TabIndex = 5;
@@ -96,7 +98,7 @@ namespace GestionDeColegiados
             // 
             this.cmbEstadios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEstadios.FormattingEnabled = true;
-            this.cmbEstadios.Location = new System.Drawing.Point(222, 297);
+            this.cmbEstadios.Location = new System.Drawing.Point(196, 365);
             this.cmbEstadios.Name = "cmbEstadios";
             this.cmbEstadios.Size = new System.Drawing.Size(230, 24);
             this.cmbEstadios.TabIndex = 6;
@@ -107,7 +109,7 @@ namespace GestionDeColegiados
             this.btnGuardarCambios.Enabled = false;
             this.btnGuardarCambios.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarCambios.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnGuardarCambios.Location = new System.Drawing.Point(222, 411);
+            this.btnGuardarCambios.Location = new System.Drawing.Point(229, 466);
             this.btnGuardarCambios.Name = "btnGuardarCambios";
             this.btnGuardarCambios.Size = new System.Drawing.Size(145, 49);
             this.btnGuardarCambios.TabIndex = 23;
@@ -115,12 +117,36 @@ namespace GestionDeColegiados
             this.btnGuardarCambios.UseVisualStyleBackColor = false;
             this.btnGuardarCambios.Click += new System.EventHandler(this.btnGuardarCambios_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label4.Location = new System.Drawing.Point(3, 223);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(287, 32);
+            this.label4.TabIndex = 24;
+            this.label4.Text = "ESTADIO ACTUAL: ";
+            // 
+            // lblEstadioActual
+            // 
+            this.lblEstadioActual.AutoSize = true;
+            this.lblEstadioActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstadioActual.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblEstadioActual.Location = new System.Drawing.Point(311, 223);
+            this.lblEstadioActual.Name = "lblEstadioActual";
+            this.lblEstadioActual.Size = new System.Drawing.Size(39, 32);
+            this.lblEstadioActual.TabIndex = 25;
+            this.lblEstadioActual.Text = "   ";
+            // 
             // frmCambiarEstadioPartido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(129)))), ((int)(((byte)(150)))));
             this.ClientSize = new System.Drawing.Size(595, 624);
+            this.Controls.Add(this.lblEstadioActual);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.btnGuardarCambios);
             this.Controls.Add(this.cmbEstadios);
             this.Controls.Add(this.label3);
@@ -145,5 +171,7 @@ namespace GestionDeColegiados
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cmbEstadios;
         private System.Windows.Forms.Button btnGuardarCambios;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblEstadioActual;
     }
 }

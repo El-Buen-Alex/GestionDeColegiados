@@ -33,14 +33,18 @@ namespace Control.AdmEstadios
 
         public void LlenarEstadiosCmb(ComboBox cmbEstadio)
         {
+            cmbEstadio.Items.Clear();
             listaEstadiosDisponibles = datosEstadios.obtenerEstadiosDisponibles();
             cmbEstadio.DisplayMember = "nombre";
             cmbEstadio.DataSource = listaEstadiosDisponibles;
         }
-
-        public bool CambiarEstadoEstadio(int idEsadio)
+        public Estadio ObtenerEstadioPorId(int idEstadio)
         {
-           return datosEstadios.CambiarEstado(idEsadio);
+            return datosEstadios.ObtenerEstadioPorId(idEstadio);
+        }
+        public bool CambiarEstadoEstadio(int idEsadio, string estado)
+        {
+           return datosEstadios.CambiarEstado(idEsadio, estado);
         }
     }
 }

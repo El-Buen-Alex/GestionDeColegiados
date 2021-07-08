@@ -24,17 +24,34 @@ namespace GestionDeColegiados
         {
             admEstadio.LlenarEstadiosCmb(cmbEstadios);
             admEncuentrosDefinidos.LlenarPartidosCmb(cmbEncuentros);
+            lblEstadioActual.Text = "  ";
+            btnGuardarCambios.Enabled = false;
         }
         private void btnGuardarCambios_Click(object sender, EventArgs e)
         {
+            int indexEncuentro, indexEstadio;
+
             if (cmbEncuentros.Items.ToString() != "" && cmbEstadios.Items.ToString()!="")
             {
-
+                indexEncuentro = cmbEncuentros.SelectedIndex;
+                indexEstadio = cmbEstadios.SelectedIndex;
+                bool actualizo = admEncuentrosDefinidos.ActualizarEstadio(indexEncuentro, indexEstadio);
+                if (actualizo)
+                {
+                    MessageBox.Show("El cambio se realizo con exito");
+                    refrezcarComponentes();
+                }
+                else
+                {
+                    MessageBox.Show("No se logró modificar el registro.");
+                }
             }
         }
 
         private void cmbEncuentros_SelectedIndexChanged(object sender, EventArgs e)
         {
+            int indexEncuentroDefinidoSeleccionado = cmbEncuentros.SelectedIndex;
+            lblEstadioActual.Text= admEncuentrosDefinidos.ObtenerNombreEstadioDelPartido(indexEncuentroDefinidoSeleccionado);
             btnGuardarCambios.Enabled = true;
         }
     }

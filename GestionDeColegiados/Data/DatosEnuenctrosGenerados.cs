@@ -62,6 +62,7 @@ namespace Data
                 if (reader.Read())
                 {
                     encuentro = new EncuentroGenerado();
+                    encuentro.Id = Convert.ToInt32(reader["idencuentro"].ToString());
                     encuentro.IdEquipoLocal = Convert.ToInt32(reader["idEquipoLocal"].ToString());
                     encuentro.IdEquipoVisitante = Convert.ToInt32(reader["idEquipoVisitante"].ToString());
                     encuentro.Estado = reader["estado"].ToString();

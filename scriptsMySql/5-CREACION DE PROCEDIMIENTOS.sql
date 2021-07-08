@@ -208,6 +208,17 @@ CREATE PROCEDURE asigacionEncuentroAsignado(
 DELIMITER 
 
 DELIMITER $$ 
+CREATE PROCEDURE actulizarEstadioAsociado(
+    in _idencuentro int,
+    in _idEstadio int)
+		BEGIN 
+				UPDATE encuentrodefinidos
+			SET	idestadio=_idEstadio WHERE idencuentro = _idencuentro;
+            
+			END$$
+DELIMITER 
+
+DELIMITER $$ 
 CREATE PROCEDURE asigacionEncuentroAsignadoencuentrodefinidos(
     in _estado varchar(10),
     in _idencuentro int)

@@ -67,7 +67,7 @@ namespace Data
                     encuentroDefinido.Id = Convert.ToInt32(reader["idefinido"].ToString());
                     encuentroDefinido.IdColegiado = Convert.ToInt32(reader["idcolegiado"].ToString());
                     encuentroDefinido.IdEncuentroGeneradoPendiente = Convert.ToInt32(reader["idencuentro"].ToString());
-                    encuentroDefinido.IdEstadio = Convert.ToInt32(reader["idefinido"].ToString());
+                    encuentroDefinido.IdEstadio = Convert.ToInt32(reader["idestadio"].ToString());
                     lista.Add(encuentroDefinido);
                 }
 
@@ -78,6 +78,28 @@ namespace Data
             }
 
             return lista;
+        }
+
+        public bool ActualizarEstadioDePartido(int idEncuentroPorActualizar, int idNuevoEstadioAsociado)
+        {
+            bool exito = false;
+            conexion = ConexionBD.getConexion();
+            conexion.Open();
+
+            try
+            {
+                MySqlCommand comando = new MySqlCommand("actulizarEstadioAsociado", conexion, transaccion);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@_idencuentro", idEncuentroPorActualizar);
+                comando.Parameters.AddWithValue("@_idEstadio", idNuevoEstadioAsociado);
+                comando.ExecuteNonQuery();
+                exito = true;
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return exito;
         }
     }
 }

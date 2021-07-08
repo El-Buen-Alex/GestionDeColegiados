@@ -33,7 +33,7 @@ namespace Data
                     estadio.Nombre = reader["nombreEstadio"].ToString();
                     estadio.Estado = reader["estado"].ToString();
                     listaEstadios.Add(estadio);
-                    Console.WriteLine(estadio.Nombre);
+                    Console.WriteLine(estadio.Id);
                 }
             }
             catch(MySqlException ex)
@@ -44,7 +44,33 @@ namespace Data
             return listaEstadios;
         }
 
-        public bool CambiarEstado(int idEsadio)
+        public Estadio ObtenerEstadioPorId(int idEstadio)
+        {
+            Estadio estadio = null;
+            conexion = ConexionBD.getConexion();
+            conexion.Open();
+            try
+            {
+                MySqlCommand comando = new MySqlCommand("obtenerEstadioPorId", conexion);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@_idEstadio", idEstadio);
+                MySqlDataReader reader = comando.ExecuteReader();
+                if (reader.Read())
+                {
+                    estadio = new Estadio();
+                    estadio.Id = Convert.ToInt32(reader["idestadio"].ToString());
+                    estadio.Nombre = reader["nombreEstadio"].ToString();
+                    estadio.Estado = reader["estado"].ToString();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error en la obtencion de estadios disponibles: " + ex.Message);
+            }
+            return estadio;
+        }
+
+        public bool CambiarEstado(int idEsadio, string estado)
         {
             bool cambio=false;
             conexion = ConexionBD.getConexion();
@@ -54,7 +80,7 @@ namespace Data
             {
                 MySqlCommand comando = new MySqlCommand("asigacionEstadioOcupado", conexion, transaccion);
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("_estado", "OCUPADO");
+                comando.Parameters.AddWithValue("_estado", estado);
                 comando.Parameters.AddWithValue("_idestadio", idEsadio);
                 comando.ExecuteNonQuery();
                 transaccion.Commit();
