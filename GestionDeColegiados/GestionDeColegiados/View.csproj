@@ -217,6 +217,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\vrs.png" />
     <None Include="Resources\tupla.png" />
     <None Include="Resources\visitante.png" />
     <None Include="Resources\Local.png" />
