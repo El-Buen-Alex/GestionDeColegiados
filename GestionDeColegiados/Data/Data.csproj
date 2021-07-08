@@ -86,7 +86,7 @@
   <ItemGroup>
     <Compile Include="ConexionBD.cs" />
     <Compile Include="ConexionUsuarioBD.cs" />
-    <Compile Include="Datos.cs" />
+    <Compile Include="DatosColegiados.cs" />
     <Compile Include="DatosEncuentroDefinido.cs" />
     <Compile Include="DatosEnuenctrosGenerados.cs" />
     <Compile Include="DatosEstadios.cs" />

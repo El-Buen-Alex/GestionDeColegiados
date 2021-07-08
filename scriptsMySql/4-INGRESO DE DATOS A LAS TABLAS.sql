@@ -13,16 +13,16 @@ INSERT INTO equipo(nombre, numero_jugadores, nombre_director_tecnico, presidente
 	VALUES('Liga D.U', '23', 'Alex Aguinaga', 'Esteban Paz');
     
 INSERT INTO equipo(nombre, numero_jugadores, nombre_director_tecnico, presidente_equipo)
-	VALUES('Independiente del Valle', '24', 'Renato Paiva', 'Franklin Tello');
+	VALUES('Indpendiente', '24', 'Renato Paiva', 'Franklin Tello');
 
 INSERT INTO equipo(nombre, numero_jugadores, nombre_director_tecnico, presidente_equipo)
-	VALUES('Sociedad Deportiva Aucas', '20', 'Gabriel Schürrer', 'Dany Walker');
+	VALUES('Aucas', '20', 'Gabriel Schürrer', 'Dany Walker');
     
 INSERT INTO equipo(nombre, numero_jugadores, nombre_director_tecnico, presidente_equipo)
-	VALUES('Manta Futbol Club', '21', 'Fabián Frías', 'José Medranda');
+	VALUES('Manta Club', '21', 'Fabián Frías', 'José Medranda');
     
 INSERT INTO equipo(nombre, numero_jugadores, nombre_director_tecnico, presidente_equipo)
-	VALUES('LGuayaquil City', '23', 'Pool Gavilánez', 'Iván Mendoza');
+	VALUES('Guayaquil C', '23', 'Pool Gavilánez', 'Iván Mendoza');
     
 INSERT INTO equipo(nombre, numero_jugadores, nombre_director_tecnico, presidente_equipo)
 	VALUES('Orense S.C', '24', 'Andrés García', 'Martha Romero');
@@ -91,7 +91,8 @@ INSERT INTO cuartoarbitro (cedula,nombre,apellido,domicilio,email,telefono)
         VALUES ('1818181818','Aveline','de Grandpré','Guayaquil','Aveline@hotmail.com','0923422354');
 INSERT INTO colegiado (idjuezcentral,idasistente1,idasistente2,idcuartoarbitro) 
         VALUES ('6','6','6','6');
-        
+      
+/*INGRESO DATOS DE EQUIPOS*/
 INSERT INTO estadio (nombreEstadio, estado) 
 values ('Monumental', 'DISPONIBLE');
 INSERT INTO estadio (nombreEstadio, estado)
@@ -112,16 +113,3 @@ INSERT INTO estadio (nombreEstadio, estado)
 values ('UTN', 'DISPONIBLE');
 INSERT INTO estadio (nombreEstadio, estado) 
 values ('Los Chorijos','DISPONIBLE');
-
-INSERT INTO estadio (nombreEstadio, estado) values ('Space', 'DISPONIBLE');
-INSERT INTO estadio (nombreEstadio, estado) values ('Lions', 'DISPONIBLE');
-INSERT INTO estadio (nombreEstadio, estado) values ('Paz', 'DISPONIBLE');
-INSERT INTO estadio (nombreEstadio, estado) values ('Lit', 'DISPONIBLE');
-INSERT INTO estadio (nombreEstadio, estado) values ('Harvy', 'DISPONIBLE');
-INSERT INTO estadio (nombreEstadio, estado) values ('Specte', 'DISPONIBLE');
-INSERT INTO estadio (nombreEstadio, estado) values ('Ross', 'DISPONIBLE');
-INSERT INTO estadio (nombreEstadio, estado) values ('Harman', 'DISPONIBLE');
-INSERT INTO estadio (nombreEstadio, estado) values ('Pearson', 'DISPONIBLE');
-INSERT INTO estadio (nombreEstadio, estado) values ('Fire','DISPONIBLE');
-
-

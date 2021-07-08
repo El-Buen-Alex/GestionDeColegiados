@@ -87,7 +87,7 @@ in _idcuartoarbitro int)
 	END$$
 DELIMITER
 
-/*PROCEDIMIENTO PARA OBTENER COLEGIADO*/
+/*PROCEDIMIENTO PARA OBTENER GRUPO DE COLEGIADO*/
 DELIMITER $$
 CREATE PROCEDURE obtenerColegiado()
 	BEGIN
@@ -99,7 +99,7 @@ CREATE PROCEDURE obtenerColegiado()
 	END$$
 DELIMITER 
 
-/*obtener un colegiado*/
+/*PROCEDIMIENTO PARA OBTENER GRUPO DE COLEGIADO MEDIANTE ID*/
 DELIMITER $$
 CREATE PROCEDURE obtenerUnColegiado(
 	in _idColegiado int)
@@ -168,12 +168,15 @@ CREATE PROCEDURE obtenerNumeroEncuentroPendiente()
 	END$$
 DELIMITER
 
+/*PROCEDIMIENTO PARA OBTENER ENCUENTROS PENDIENTES*/
 DELIMITER $$
 CREATE PROCEDURE obtenerEncuentroPendiente()
 	BEGIN
 		SELECT * FROM encuentrosgenerados WHERE estado = "PENDIENTE"; 
 	END$$
 DELIMITER 
+
+/*PROCEDIMIENTO PARA OBTENER ENCUENTROS MEDIANTE ID*/
 DELIMITER $$
 CREATE PROCEDURE obtenerEncuentroPorID(
  in _idencuentro int)
@@ -198,17 +201,7 @@ CREATE PROCEDURE guardarEncuentrosDefinidos(
 			END$$
 DELIMITER 
 
-
-CREATE PROCEDURE asigacionEncuentroAsignado(
-    in _estado varchar(10)
-    in _idencuentro int)
-		BEGIN 
-					INSERT INTO encuentrosGenerados(estado)
-			VALUES	(_estado) WHERE idencuentro = _idencuentro;
-            
-			END$$
-DELIMITER 
-
+/*PROCEDIMIENTO PARA GUARDAR CAMBIAR EL ESTADO A ASIGNADO AL ENCUENTRO*/
 DELIMITER $$ 
 CREATE PROCEDURE asigacionEncuentroAsignado(
     in _estado varchar(10),
@@ -220,27 +213,17 @@ CREATE PROCEDURE asigacionEncuentroAsignado(
 			END$$
 DELIMITER 
 
-DELIMITER $$ 
-CREATE PROCEDURE actulizarEstadioAsociado(
-    in _idencuentro int,
-    in _idEstadio int)
-		BEGIN 
-				UPDATE encuentrodefinidos
-			SET	idestadio=_idEstadio WHERE idencuentro = _idencuentro;
-            
-			END$$
-DELIMITER 
-
-DELIMITER $$ 
-CREATE PROCEDURE asigacionEncuentroAsignadoencuentrodefinidos(
+/*PROCEDIMIENTO PARA CAMBIAR EL ESTADO DEL ESTADIO*/
+DELIMITER $$
+CREATE PROCEDURE asigacionEstadioOcupado(
     in _estado varchar(10),
-    in _idencuentro int)
+    in _idestadio int)
 		BEGIN 
-					UPDATE encuentrosGenerados
-			SET	estado= _estado WHERE idencuentro = _idencuentro;
+					UPDATE estadio
+			SET	estado= _estado WHERE idestadio = _idestadio;
             
 			END$$
-DELIMITER  
+DELIMITER
 
 /* PROCEDIMIENTO PARA SABER CUANTOS EQUIPOS EXISTEN*/
 DELIMITER $$
@@ -250,6 +233,7 @@ CREATE PROCEDURE cantidadEquipos()
 	END$$
 DELIMITER 
 
+/* PROCEDIMIENTO PARA OBTENER ESTADIO MEDIANTE ID*/
 DELIMITER $$
 CREATE PROCEDURE obtenerEstadioPorId(
 	in _idEstadio int)
@@ -258,6 +242,7 @@ CREATE PROCEDURE obtenerEstadioPorId(
 	END$$
 DELIMITER
 
+/* PROCEDIMIENTO PARA OBTENER ESTADIOS DISPONIBLES*/
 DELIMITER $$
 CREATE PROCEDURE estadiosDiponibles()
 	BEGIN
@@ -265,6 +250,7 @@ CREATE PROCEDURE estadiosDiponibles()
 	END$$
 DELIMITER
 
+/* PROCEDIMIENTO PARA OBTENER ESTADIOS*/
 DELIMITER $$
 CREATE PROCEDURE informacionEstadio()
 	BEGIN
@@ -272,6 +258,7 @@ CREATE PROCEDURE informacionEstadio()
 	END$$
 DELIMITER 
 
+/* PROCEDIMIENTO PARA OBTENER LA CANTIDAD DE ENCUENTROS POR JUGAR*/
 DELIMITER $$
 CREATE PROCEDURE cantidadEncuentrosPorJugar()
 	BEGIN
@@ -279,23 +266,10 @@ CREATE PROCEDURE cantidadEncuentrosPorJugar()
 	END$$
 DELIMITER 
 
+/* PROCEDIMIENTO PARA OBTENER LOS ULTIMOS 5 ENCUENTROS DEFINIDOS*/
 DELIMITER $$
 CREATE PROCEDURE mostrarEncuentroDefinidos()
 	BEGIN
 		SELECT * FROM encuentroDefinidos WHERE estado = "PorJugar" order by idefinido asc limit 5; 
 	END$$
-DELIMITER 
-
-CREATE PROCEDURE asigacionEstadioOcupado(
-    in _estado varchar(10),
-    in _idestadio int)
-		BEGIN 
-					UPDATE estadio
-			SET	estado= _estado WHERE idestadio = _idestadio;
-            
-			END$$
-DELIMITER 
-/*PROCEDIMIENTO PARA MOSTRAR ENCUENTRO DEFINIDOS*/
-/*PROCEDIMIENTO PARA MODFIICAR FECHA*/
-/*PROCEDIMIENTO PARA MODFIICAR GRUPO DE COLEGIADO*/
-/*PROCEDIMIENTO PARA VISUALIZAR GRUPO DE COLEGIADO*/
+DELIMITER  

@@ -16,7 +16,7 @@ namespace Control.AdmEquipos
         List<int> indexNumeroAleatorio = new List<int>();
         List<int> indexRegistro = new List<int>();
         private static AdmEquipo admEquipo = null;
-        Datos datos = new Datos();
+        DatosColegiados datos = new DatosColegiados();
         internal List<Equipo> Lista { get => listaEquipo; set => listaEquipo = value; }
 
         private AdmEquipo()

@@ -87,7 +87,12 @@ namespace Data
 
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cantidad = Convert.ToInt32(cmd.ExecuteScalar());
+                MySqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                   cantidad = Convert.ToInt32(reader["tamanio"].ToString());
+                    Console.WriteLine(cantidad);
+                }
             }
             catch (MySqlException ex)
             {

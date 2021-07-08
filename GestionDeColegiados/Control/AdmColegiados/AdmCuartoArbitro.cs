@@ -12,7 +12,7 @@ namespace Control.AdmColegiados {
         List<CuartoArbitro> listaCuartoArbitro = new List<CuartoArbitro>();
         CuartoArbitro cuartoArbitro = null;
         ValidacionGUI v = new ValidacionGUI();
-        Datos datos = new Datos();
+        DatosColegiados datos = new DatosColegiados();
 
         private static AdmCuartoArbitro admCA = null;
 

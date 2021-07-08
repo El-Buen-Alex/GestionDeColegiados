@@ -12,7 +12,7 @@ namespace Control.AdmColegiados {
         List<JuezCentral> listaJuezCentral = new List<JuezCentral>();
         JuezCentral juezCentral = null;
         ValidacionGUI v = new ValidacionGUI();
-        Datos datos = new Datos();
+        DatosColegiados datos = new DatosColegiados();
 
         private static AdmJuezCentral admJ = null;
 

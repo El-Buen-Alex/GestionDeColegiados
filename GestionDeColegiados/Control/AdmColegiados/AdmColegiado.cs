@@ -12,7 +12,7 @@ namespace Control.AdmColegiados {
         List<Colegiado> listaColegiado = new List<Colegiado>();
         Colegiado colegiado = null;
         ValidacionGUI v = new ValidacionGUI();
-        Datos datos = new Datos();
+        DatosColegiados datos = new DatosColegiados();
         private List<IntegrantesColegiados> listaintegColeg;
         private static AdmColegiado admCol= null;
 

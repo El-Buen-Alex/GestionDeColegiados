@@ -109,7 +109,6 @@ FOREIGN KEY(`idEquipoVisitante`)
 REFERENCES `campeonatos`.`equipo` (`idequipo`)
  );
 
-
  /*CREACIÓN DE TABLA ESTADIOS*/
 CREATE TABLE `campeonatos`.`estadio`(
 `idestadio` INT NOT NULL AUTO_INCREMENT,

@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Data {
-    public class Datos {
+    public class DatosColegiados {
         private MySqlConnection conexion = null;
         private MySqlTransaction trans = null;
 

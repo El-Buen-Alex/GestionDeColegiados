@@ -12,7 +12,7 @@ namespace Control.AdmColegiados {
         List<Asistente> listaAsistente2 = new List<Asistente>();
         Asistente asistente2 = null;
         ValidacionGUI v = new ValidacionGUI();
-        Datos datos = new Datos();
+        DatosColegiados datos = new DatosColegiados();
 
         private static AdmAsistente2 admA2 = null;
 
