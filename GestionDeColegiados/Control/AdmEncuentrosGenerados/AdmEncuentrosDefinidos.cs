@@ -22,6 +22,9 @@ namespace Control.AdmEncuentrosGenerados
         private DatosEncuentroDefinido datosEncuentroDefinido = new DatosEncuentroDefinido();
         private AdmGenerarEncuentros admEncuentrosGenerados = AdmGenerarEncuentros.getAdmadmGenerarEncuentros();
         private AdmColegiado admColegiados = AdmColegiado.getAdmCol();
+
+        
+
         private AdmEquipo admEquipos = AdmEquipo.getEquipo();
         private AdmEstadio admEstadios = AdmEstadio.GetAdmEstadio();
       
@@ -47,9 +50,37 @@ namespace Control.AdmEncuentrosGenerados
 
         public string ObtenerNombreEstadioDelPartido(int indexEncuentroDefinidoSeleccionado)
         {
+
             Estadio estadio = admEstadio.ObtenerEstadioPorId(listaEncuentrosDefinidos[indexEncuentroDefinidoSeleccionado].IdEstadio);
             
             return estadio.Nombre;
+        }
+        private EncuentroGenerado ObtenerEncuentroGenerado(int id)
+        {
+            return admEncuentrosGenerados.ObtenerEncuentroPorID(id);
+        }
+        
+        public void LlenarInformacíonPartidoCompleta(int indexEncuentroSeleccionado, Label lblEquipoLocal, Label lblEquipoVisitante, Label lblEstadio, Label lblFecha, Label lblColegiado)
+        {
+
+            listaEncuentrosDefinidos = datosEncuentroDefinido.ObtenerEncuentros();
+            EncuentroDefinido encuentroDefinido = listaEncuentrosDefinidos[indexEncuentroSeleccionado];
+            EncuentroGenerado encuentroGenerado = ObtenerEncuentroGenerado(encuentroDefinido.IdEncuentroGeneradoPendiente);
+            Equipo local, visitante;
+            local = admEquipos.ObtenerEquipoPorId(encuentroGenerado.IdEquipoLocal);
+            visitante = admEquipos.ObtenerEquipoPorId(encuentroGenerado.IdEquipoVisitante);
+
+            lblFecha.Text = "FECHA: " + encuentroDefinido.FechaDeEncuentro.ToShortDateString()+" HORA: " + encuentroDefinido.Hora.ToShortTimeString();
+            Console.WriteLine("" + encuentroDefinido.FechaDeEncuentro.ToShortDateString() + "  " + encuentroDefinido.Hora.ToShortTimeString());
+            lblEquipoLocal.Text = local.NombreEquipo;
+            lblEquipoVisitante.Text = visitante.NombreEquipo;
+            lblEstadio.Text = ObtenerNombreEstadioDelPartido(indexEncuentroSeleccionado);
+            lblColegiado.Text = admColegiados.ObtenerNombreDeColegiados(encuentroDefinido.IdColegiado);
+        }
+
+        public int ObtenerNumeroPartidosPorJugar()
+        {
+            return datosEncuentroDefinido.ObtenerCantidadEncuentrosPorJugar();
         }
 
         public bool ActualizarEstadio(int indexEncuentro, int indexEstadio)

@@ -44,7 +44,7 @@ namespace Data {
             conexion.Close();
             return id;
         }
-
+        
         public Equipo ObtenerEquipoPorId(int id)
         {
             Equipo equipo = null;
@@ -99,6 +99,7 @@ namespace Data {
             return id;
         }
 
+        
         public int registrarEncuentrosGenerados(string nombreEquipo, string estado, int idEquipo)
         {
             int id = 0;
@@ -302,6 +303,34 @@ namespace Data {
             return msj;
         }
 
+        public string ObtenerNombreDeColegiados(int idColegiado)
+        {
+            string nombres = "";
+            MySqlDataReader reader = null; //tabla virtual
+            conexion = ConexionBD.getConexion();
+            conexion.Open();
+            try
+            {
+                MySqlCommand comando = new MySqlCommand("obtenerUnColegiado", conexion);
+
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@_idColegiado", idColegiado);
+                reader = comando.ExecuteReader();
+                if (reader.Read())
+                {
+                    nombres = "Juez Central: "+ reader["nombreJC"].ToString()+"\r\n";
+                    nombres +="Asistente 1: "+ reader["nombreAs1"].ToString() + "\r\n";
+                    nombres += "Asistente 2: "+reader["nombreAs2"].ToString() + "\r\n";
+                    nombres += "Cuarto Arbitro: "+reader["nombreCA"].ToString();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            conexion.Close();
+            return nombres;
+        }
 
         public List<IntegrantesColegiados> ConsultarColegiado () {
             List<IntegrantesColegiados> listaColegiado = new List<IntegrantesColegiados>();

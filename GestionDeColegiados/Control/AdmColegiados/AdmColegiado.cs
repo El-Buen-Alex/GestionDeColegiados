@@ -69,5 +69,14 @@ namespace Control.AdmColegiados {
                 }
             }
         }
+
+        public string ObtenerNombreDeColegiados(int idColegiado)
+        {
+            string nombres = "0";
+
+            nombres = datos.ObtenerNombreDeColegiados(idColegiado);
+
+            return nombres;
+        }
     }
 }

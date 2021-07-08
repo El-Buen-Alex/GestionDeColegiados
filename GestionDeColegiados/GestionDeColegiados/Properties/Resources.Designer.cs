@@ -133,6 +133,16 @@ namespace GestionDeColegiados.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap tupla {
+            get {
+                object obj = ResourceManager.GetObject("tupla", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap visitante {
             get {
                 object obj = ResourceManager.GetObject("visitante", resourceCulture);

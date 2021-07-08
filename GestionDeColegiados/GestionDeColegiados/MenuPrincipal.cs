@@ -27,6 +27,7 @@ namespace GestionDeColegiados
 
         private AdmGenerarEncuentros admGenerarEncuentros = AdmGenerarEncuentros.getAdmadmGenerarEncuentros();
         private AdmEquipo admEquipo = AdmEquipo.getEquipo();
+        private AdmEncuentrosDefinidos admEncuentrosDefinidos = AdmEncuentrosDefinidos.GetAdmGenerarEncuentrosDefinidos();
         public MenuPrincipal()
         {
             InitializeComponent();
@@ -114,9 +115,17 @@ namespace GestionDeColegiados
             
         }
 
-        private void btnCambiarGrupo_Click(object sender, EventArgs e)
+        private void btnCambiarEstadio_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new frmCambiarEstadioPartido());
+            if (admEncuentrosDefinidos.ObtenerNumeroPartidosPorJugar() == 0)
+            {
+                MessageBox.Show("No hay Partidos por definir. Por favor, genere encuentros primero");
+            }
+            else
+            {
+                AbrirFormEnPanel(new frmCambiarEstadioPartido());
+            }
+            
         }
 
         private void pbMinimizar_Click(object sender, EventArgs e)
@@ -163,6 +172,19 @@ namespace GestionDeColegiados
         private void pbMinimizar_MouseLeave(object sender, EventArgs e)
         {
             pbMinimizar.BackColor = colorDefaultMin;
+        }
+
+        private void btnVerEncuentrosDefinidos_Click(object sender, EventArgs e)
+        {
+            if (admEncuentrosDefinidos.ObtenerNumeroPartidosPorJugar() == 0)
+            {
+                MessageBox.Show("No hay Partidos por definir. Por favor, genere encuentros primero");
+            }
+            else
+            {
+                AbrirFormEnPanel(new frmTodosLosEncuentrosDefinidos());
+            }
+           
         }
     }
 }

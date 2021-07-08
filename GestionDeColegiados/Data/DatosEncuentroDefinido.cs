@@ -68,6 +68,8 @@ namespace Data
                     encuentroDefinido.IdColegiado = Convert.ToInt32(reader["idcolegiado"].ToString());
                     encuentroDefinido.IdEncuentroGeneradoPendiente = Convert.ToInt32(reader["idencuentro"].ToString());
                     encuentroDefinido.IdEstadio = Convert.ToInt32(reader["idestadio"].ToString());
+                    encuentroDefinido.Hora = Convert.ToDateTime(reader["hora"].ToString());
+                    encuentroDefinido.FechaDeEncuentro = Convert.ToDateTime(reader["fecha"].ToString());
                     lista.Add(encuentroDefinido);
                 }
 
@@ -100,6 +102,30 @@ namespace Data
                 Console.WriteLine(ex.Message);
             }
             return exito;
+        }
+
+        public int ObtenerCantidadEncuentrosPorJugar()
+        {
+            int cantidad = 0;
+            conexion = ConexionBD.getConexion();
+            conexion.Open();
+            try
+            {
+                MySqlCommand comando = new MySqlCommand("cantidadEncuentrosPorJugar", conexion);
+                comando.CommandType = CommandType.StoredProcedure;
+                MySqlDataReader reader = comando.ExecuteReader();
+                if (reader.Read())
+                {
+                    cantidad = Convert.ToInt32(reader["cantidadEncuentros"].ToString());
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            conexion.Close();
+            return cantidad;
         }
     }
 }
