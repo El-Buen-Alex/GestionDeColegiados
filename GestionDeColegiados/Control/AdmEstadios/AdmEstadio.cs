@@ -33,7 +33,7 @@ namespace Control.AdmEstadios
 
         public void LlenarEstadiosCmb(ComboBox cmbEstadio)
         {
-            cmbEstadio.Items.Clear();
+            cmbEstadio.DataSource = null;
             listaEstadiosDisponibles = datosEstadios.obtenerEstadiosDisponibles();
             cmbEstadio.DisplayMember = "nombre";
             cmbEstadio.DataSource = listaEstadiosDisponibles;

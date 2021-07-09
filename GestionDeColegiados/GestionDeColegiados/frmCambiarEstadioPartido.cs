@@ -19,12 +19,15 @@ namespace GestionDeColegiados
         {
             InitializeComponent();
             refrezcarComponentes();
+            
         }
         private void refrezcarComponentes()
         {
+            cmbEstadios.Enabled = false;
             admEstadio.LlenarEstadiosCmb(cmbEstadios);
             admEncuentrosDefinidos.LlenarPartidosCmb(cmbEncuentros);
             lblEstadioActual.Text = "  ";
+            cmbEstadios.SelectedItem = null;
             btnGuardarCambios.Enabled = false;
         }
         private void btnGuardarCambios_Click(object sender, EventArgs e)
@@ -52,6 +55,11 @@ namespace GestionDeColegiados
         {
             int indexEncuentroDefinidoSeleccionado = cmbEncuentros.SelectedIndex;
             lblEstadioActual.Text= admEncuentrosDefinidos.ObtenerNombreEstadioDelPartido(indexEncuentroDefinidoSeleccionado);
+            cmbEstadios.Enabled = true;
+        }
+
+        private void cmbEstadios_SelectedIndexChanged(object sender, EventArgs e)
+        {
             btnGuardarCambios.Enabled = true;
         }
     }

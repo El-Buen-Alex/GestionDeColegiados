@@ -113,3 +113,17 @@ INSERT INTO estadio (nombreEstadio, estado)
 values ('UTN', 'DISPONIBLE');
 INSERT INTO estadio (nombreEstadio, estado) 
 values ('Los Chorijos','DISPONIBLE');
+INSERT INTO estadio (nombreEstadio, estado) 
+values ('Camp Nou', 'DISPONIBLE');
+INSERT INTO estadio (nombreEstadio, estado) 
+values ('Etho Vega', 'DISPONIBLE');
+INSERT INTO estadio (nombreEstadio, estado) 
+values ('Velódromo', 'DISPONIBLE');
+INSERT INTO estadio (nombreEstadio, estado) 
+values ('Wembley', 'DISPONIBLE');
+INSERT INTO estadio (nombreEstadio, estado) 
+values ('Anfield', 'DISPONIBLE'); 
+INSERT INTO estadio (nombreEstadio, estado) 
+values ('Azteca', 'DISPONIBLE');
+INSERT INTO estadio (nombreEstadio, estado) 
+values ('Maracaná', 'DISPONIBLE');

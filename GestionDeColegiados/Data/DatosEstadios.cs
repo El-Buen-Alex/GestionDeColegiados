@@ -78,7 +78,7 @@ namespace Data
             transaccion = conexion.BeginTransaction();
             try
             {
-                MySqlCommand comando = new MySqlCommand("actulizarEstadioAsociado", conexion, transaccion);
+                MySqlCommand comando = new MySqlCommand("asigacionEstadoEstadio", conexion, transaccion);
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("_estado", estado);
                 comando.Parameters.AddWithValue("_idestadio", idEsadio);

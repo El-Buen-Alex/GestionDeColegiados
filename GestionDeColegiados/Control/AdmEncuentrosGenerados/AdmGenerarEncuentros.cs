@@ -32,6 +32,18 @@ namespace Control.AdmEncuentrosGenerados
             lblEquipoVisitante.Text = equipoVisitante.NombreEquipo;
         }
 
+        public void LlenarTuplas(Label lblEquipoLocal, Label lblEquipoVisitante, int posicion)
+        {
+            listaEncuentrosGeneradosPendientes = datosEncuentrosGenerados.ObtenerEncuentrosPendientes();
+            int idEquipoLocal = listaEncuentrosGeneradosPendientes[posicion].IdEquipoLocal;
+            int idEquipoVisitante = listaEncuentrosGeneradosPendientes[posicion].IdEquipoVisitante;
+            Equipo equipoLocal = admEquipo.ObtenerEquipoPorId(idEquipoLocal);
+            Equipo equipoVisitante = admEquipo.ObtenerEquipoPorId(idEquipoVisitante);
+            lblEquipoLocal.Text = equipoLocal.NombreEquipo;
+            lblEquipoVisitante.Text = equipoVisitante.NombreEquipo;
+            Console.WriteLine("l: " + equipoLocal.NombreEquipo + " V " + equipoVisitante.NombreEquipo);
+        }
+
         public EncuentroGenerado ObtenerEncuentroPorID(int idEncuentroGeneradoPendiente)
         {
            return  datosEncuentrosGenerados.ObtenerEncuentrosPendientes(idEncuentroGeneradoPendiente);
@@ -65,6 +77,7 @@ namespace Control.AdmEncuentrosGenerados
         }
         public void generarEncuentrosAleatorios(List<Label> listaContenedoresLocal, List<Label> listaContenedoresVisitante)
         {
+
             numerosAleatoriosLocal = generListaAleatoria(1, 6);
             numerosAleatoriosVisitante = generListaAleatoria(6, 11);
             listaEquipos = admEquipo.extraerEquipos();

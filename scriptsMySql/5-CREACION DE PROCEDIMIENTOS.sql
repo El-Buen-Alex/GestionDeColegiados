@@ -213,9 +213,24 @@ CREATE PROCEDURE asigacionEncuentroAsignado(
 			END$$
 DELIMITER 
 
+
+/*PROCEDIMIENTO PARA CAMBIAR EL ESTADIO EN UN ENCUENTRO DEFINIDO*/
+DELIMITER $$
+CREATE PROCEDURE actulizarEstadioAsociado(
+    in _idencuentro int,
+    in _idEstadio int)
+		BEGIN 
+				UPDATE encuentrodefinidos
+			SET	idestadio=_idEstadio WHERE idencuentro = _idencuentro;
+            
+			END$$
+DELIMITER 
+
+
+
 /*PROCEDIMIENTO PARA CAMBIAR EL ESTADO DEL ESTADIO*/
 DELIMITER $$
-CREATE PROCEDURE asigacionEstadioOcupado(
+CREATE PROCEDURE asigacionEstadoEstadio(
     in _estado varchar(10),
     in _idestadio int)
 		BEGIN 

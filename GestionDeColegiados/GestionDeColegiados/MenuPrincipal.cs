@@ -89,16 +89,37 @@ namespace GestionDeColegiados
 
         private void btnGenerarEncuentros_Click(object sender, EventArgs e)
         {
-            if(admGenerarEncuentros.obtnerNumeroEncuentrosGeneradosPendientes() == 0)
+            int cantEncuentrosDefinidos = admEncuentrosDefinidos.ObtenerNumeroPartidosPorJugar();
+            if (cantEncuentrosDefinidos == 0)
             {
-                AbrirFormEnPanel(new frmGenerarEncuentros(false));
+                if (admEquipo.ObtenerCantidadEquipo() == 10)
+                {
+                    if (admGenerarEncuentros.obtnerNumeroEncuentrosGeneradosPendientes() == 0)
+                    {
+                        AbrirFormEnPanel(new frmGenerarEncuentros(false));
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ya se han generado y registrados los encuentros");
+                        AbrirFormEnPanel(new frmGenerarEncuentros(true));
+                    }
+                }
+                else
+                {
+                    string faltaEquipo = "Para generar encuentros debe existir 10 equipos registrados" +
+                        "\n\rExisten: " + admEquipo.ObtenerCantidadEquipo() + " Equipos registrados." +
+                        " Por favor ingrese: " + (10 - admEquipo.ObtenerCantidadEquipo()) + " más";
+                    MessageBox.Show(faltaEquipo, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    AbrirFormEnPanel(new frmNuevoEquipo());
+                }
             }
             else
             {
-                MessageBox.Show("Ya se han generado y registrados los encuentros");
-                AbrirFormEnPanel(new frmGenerarEncuentros(true));
-                
+                MessageBox.Show("Existen: " + cantEncuentrosDefinidos + " Por jugar, no se puede Generar Encuentros");
+                AbrirFormEnPanel(new frmTodosLosEncuentrosDefinidos());
             }
+            
+           
         }
 
         private void btnAsignarColegiados_Click(object sender, EventArgs e)

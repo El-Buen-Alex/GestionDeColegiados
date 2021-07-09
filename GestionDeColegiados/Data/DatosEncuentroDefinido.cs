@@ -47,6 +47,7 @@ namespace Data
                 transaccion.Rollback();
                 Console.WriteLine(ex.Message);
             }
+            conexion.Close();
             return id;
         }
 
@@ -78,7 +79,7 @@ namespace Data
             {
                 Console.WriteLine(ex.Message);
             }
-
+            conexion.Close();
             return lista;
         }
 
@@ -101,6 +102,7 @@ namespace Data
             {
                 Console.WriteLine(ex.Message);
             }
+            conexion.Close();
             return exito;
         }
 

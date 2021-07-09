@@ -102,6 +102,7 @@ namespace GestionDeColegiados
             this.cmbEstadios.Name = "cmbEstadios";
             this.cmbEstadios.Size = new System.Drawing.Size(230, 24);
             this.cmbEstadios.TabIndex = 6;
+            this.cmbEstadios.SelectedIndexChanged += new System.EventHandler(this.cmbEstadios_SelectedIndexChanged);
             // 
             // btnGuardarCambios
             // 

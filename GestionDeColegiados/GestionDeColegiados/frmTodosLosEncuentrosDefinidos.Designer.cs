@@ -92,7 +92,7 @@ namespace GestionDeColegiados
             this.lblEquipoVisitante.AutoSize = true;
             this.lblEquipoVisitante.BackColor = System.Drawing.SystemColors.ControlLight;
             this.lblEquipoVisitante.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEquipoVisitante.Location = new System.Drawing.Point(367, 315);
+            this.lblEquipoVisitante.Location = new System.Drawing.Point(405, 315);
             this.lblEquipoVisitante.Name = "lblEquipoVisitante";
             this.lblEquipoVisitante.Size = new System.Drawing.Size(123, 20);
             this.lblEquipoVisitante.TabIndex = 12;
@@ -104,7 +104,7 @@ namespace GestionDeColegiados
             this.lblEquipoLocal.AutoSize = true;
             this.lblEquipoLocal.BackColor = System.Drawing.SystemColors.ControlLight;
             this.lblEquipoLocal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEquipoLocal.Location = new System.Drawing.Point(53, 315);
+            this.lblEquipoLocal.Location = new System.Drawing.Point(89, 315);
             this.lblEquipoLocal.Name = "lblEquipoLocal";
             this.lblEquipoLocal.Size = new System.Drawing.Size(99, 20);
             this.lblEquipoLocal.TabIndex = 11;
