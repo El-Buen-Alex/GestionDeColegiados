@@ -51,22 +51,17 @@ namespace Control.AdmColegiados {
             bool mensaje = false;
             mensaje = datos.InsertarColegiado(colegiado);
             if (mensaje == false) {
-                MessageBox.Show("No se ha podido comunicar con la BD");
+                MessageBox.Show("No se ha podido comunicar con la BD", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             } else {
-                MessageBox.Show("Se ha guardado correctamente");
+                MessageBox.Show("Se ha guardado correctamente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
         //Listar
         public void llenarDatos (DataGridView dgvListarColegiados) {
-            List<IntegrantesColegiados> listaintegColeg = new List<IntegrantesColegiados>();
             listaintegColeg = datos.ConsultarColegiado();
-            if (listaintegColeg.Count == 0) {
-                MessageBox.Show("No se ha registrado Colegiados");
-            } else {
-                foreach (IntegrantesColegiados integrantescol in listaintegColeg) {
-                    dgvListarColegiados.Rows.Add(integrantescol.NombrejuezCentral,integrantescol.Nombreasistente1,integrantescol.Nombreasistente2,integrantescol.NombrecuartoArbitro);
-                }
+            foreach (IntegrantesColegiados integrantescol in listaintegColeg) {
+                dgvListarColegiados.Rows.Add(integrantescol.NombrejuezCentral,integrantescol.Nombreasistente1,integrantescol.Nombreasistente2,integrantescol.NombrecuartoArbitro);
             }
         }
 
@@ -77,6 +72,10 @@ namespace Control.AdmColegiados {
             nombres = datos.ObtenerNombreDeColegiados(idColegiado);
 
             return nombres;
+        }
+        public int obtenerCantidadColegiado () {
+            listaintegColeg = datos.ConsultarColegiado();
+            return listaintegColeg.Count;
         }
     }
 }

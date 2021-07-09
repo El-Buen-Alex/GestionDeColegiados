@@ -10,6 +10,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using Control.AdmEncuentrosGenerados;
+using Control.AdmColegiados;
 
 namespace GestionDeColegiados
 {
@@ -28,6 +29,8 @@ namespace GestionDeColegiados
         private AdmGenerarEncuentros admGenerarEncuentros = AdmGenerarEncuentros.getAdmadmGenerarEncuentros();
         private AdmEquipo admEquipo = AdmEquipo.getEquipo();
         private AdmEncuentrosDefinidos admEncuentrosDefinidos = AdmEncuentrosDefinidos.GetAdmGenerarEncuentrosDefinidos();
+        private AdmColegiado admColegiado = AdmColegiado.getAdmCol();
+
         public MenuPrincipal()
         {
             InitializeComponent();
@@ -71,20 +74,21 @@ namespace GestionDeColegiados
 
         private void btnVerTodosColegiados_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new frmVerTodosLosColegiados());
+            if(admColegiado.obtenerCantidadColegiado() == 0) {
+                MessageBox.Show("No se han registrado colegiados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                AbrirFormEnPanel(new frmNuevoGrupoColegiado());
+            } else {
+                AbrirFormEnPanel(new frmVerTodosLosColegiados());
+            }
         }
 
         private void btnAnadirEquipo_Click(object sender, EventArgs e)
         {
-            if(admEquipo.ObtenerCantidadEquipo() < 10)
-            {
+            if(admEquipo.ObtenerCantidadEquipo() < 10) {
                 AbrirFormEnPanel(new frmNuevoEquipo());
-            }
-            else
-            {
+            } else{
                 AbrirFormEnPanel(new frmListaEquipos()); 
             }
-            
         }
 
         private void btnGenerarEncuentros_Click(object sender, EventArgs e)

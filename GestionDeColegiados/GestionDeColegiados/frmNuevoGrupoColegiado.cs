@@ -68,13 +68,17 @@ namespace GestionDeColegiados {
             bool vacio = validacionGUI.validarVacios(txtcedulaCA, txtnombreCA, txtapellidoCA, txtdomicilioCA, txtemailCA, txttelefonoCA);
             if (vacio != true) {
                 registrarColegiado();
+                limpiarCamposJuezCentral();
+                limpiarCamposAsistente1();
+                limpiarCamposAsistente2();
+                limpiarCamposArbitroCentral();
             } else {
                 camposIncompletos();
             }
         }
 
         private void camposIncompletos () {
-            MessageBox.Show("Hay ciertos campos vacios");
+            MessageBox.Show("Hay ciertos campos vacios", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void registrarColegiado () {
@@ -86,7 +90,7 @@ namespace GestionDeColegiados {
             if(vacio != true) {
                 admColegiado.Guardar(idJuezCentral,idAsistente1,idAsistente2,idCuartoArbitro);
             } else {
-                MessageBox.Show("No se pudo agregar colegiados");
+                MessageBox.Show("No se pudo agregar colegiados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -153,6 +157,38 @@ namespace GestionDeColegiados {
             txtemailCA.Visible = valor;
             txttelefonoCA.Visible = valor;
             btnRegistrar.Visible = valor;
+        }
+        private void limpiarCamposJuezCentral () {
+            txtcedulaJC.Text = "";
+            txtnombreJC.Text = "";
+            txtapellidoJC.Text = "";
+            txtdomicilioJC.Text = "";
+            txtemailJC.Text = "";
+            txttelefonoJC.Text = "";
+        }
+        private void limpiarCamposAsistente1 () {
+            txtcedulaAs1.Text = "";
+            txtnombreAs1.Text = "";
+            txtapellidoAs1.Text = "";
+            txtdomicilioAs1.Text = "";
+            txtemailAs1.Text = "";
+            txttelefonoAs1.Text = "";
+        }
+        private void limpiarCamposAsistente2 () {
+            txtcedulaAs2.Text = "";
+            txtnombreAs2.Text = "";
+            txtapellidoAs2.Text = "";
+            txtdomicilioAs2.Text = "";
+            txtemailAs2.Text = "";
+            txttelefonoAs2.Text = "";
+        }
+        private void limpiarCamposArbitroCentral () {
+            txtcedulaCA.Text = "";
+            txtnombreCA.Text = "";
+            txtapellidoCA.Text = "";
+            txtdomicilioCA.Text = "";
+            txtemailCA.Text = "";
+            txttelefonoCA.Text = "";
         }
     }
 }
