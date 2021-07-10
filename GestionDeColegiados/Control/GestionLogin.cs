@@ -18,7 +18,6 @@ namespace Control
             string respuesta = "";
             Administrador nuevoUsuario = null;
 
-
             nuevoUsuario = gestionUsuario.ExisteUsuario(usuario, password);
 
             if (nuevoUsuario == null)

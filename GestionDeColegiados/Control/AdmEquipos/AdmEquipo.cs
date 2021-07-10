@@ -69,7 +69,6 @@ namespace Control.AdmEquipos
         public void llenarCamposTextos(TextBox cajaTexto, int numBase, int numTope)
         {
             cajaTexto.Text = "";
-           // indexNumeroAleatorio = null;
             extraerEquipos();
             indexNumeroAleatorio = generarNumeros(numBase, numTope);
             foreach (int indexAleatorio in indexNumeroAleatorio)

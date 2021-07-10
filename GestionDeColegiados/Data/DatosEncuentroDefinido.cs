@@ -42,7 +42,7 @@ namespace Data
                     transaccion.Commit();
                 }
             }
-            catch(MySqlException ex)
+            catch(Exception ex)
             {
                 transaccion.Rollback();
                 Console.WriteLine(ex.Message);
@@ -75,7 +75,7 @@ namespace Data
                 }
 
             }
-            catch (MySqlException ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
@@ -91,7 +91,7 @@ namespace Data
 
             try
             {
-                MySqlCommand comando = new MySqlCommand("actulizarEstadioAsociado", conexion, transaccion);
+                MySqlCommand comando = new MySqlCommand("actulizarEstadioAsociadop", conexion, transaccion);
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@_idencuentro", idEncuentroPorActualizar);
                 comando.Parameters.AddWithValue("@_idEstadio", idNuevoEstadioAsociado);
@@ -122,7 +122,7 @@ namespace Data
                 }
 
             }
-            catch (MySqlException ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }

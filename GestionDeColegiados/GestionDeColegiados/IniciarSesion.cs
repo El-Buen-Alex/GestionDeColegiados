@@ -105,7 +105,6 @@ namespace GestionDeColegiados
                 {
                     mensaje = ex.Message;
                 }
-
                 if (mensaje=="" )
                 {
                     this.Hide();

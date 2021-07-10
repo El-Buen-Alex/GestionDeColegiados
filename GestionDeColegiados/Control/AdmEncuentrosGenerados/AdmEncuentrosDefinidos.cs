@@ -89,11 +89,22 @@ namespace Control.AdmEncuentrosGenerados
             int idEncuentroPorActualizar = listaEncuentrosGenerados[indexEncuentro].Id;
             int idNuevoEstadioAsociado = admEstadio.ListaEstadiosDisponibles[indexEstadio].Id;
             int idAntiguoEStadio = listaEncuentrosDefinidos[indexEncuentro].IdEstadio;
-            actualizo = datosEncuentroDefinido.ActualizarEstadioDePartido(idEncuentroPorActualizar, idNuevoEstadioAsociado);
-            if (actualizo)
+            try
             {
-                admEstadio.CambiarEstadoEstadio(idNuevoEstadioAsociado, "OCUPADO");
-                admEstadio.CambiarEstadoEstadio(idAntiguoEStadio, "DISPONIBLE");
+                actualizo = datosEncuentroDefinido.ActualizarEstadioDePartido(idEncuentroPorActualizar, idNuevoEstadioAsociado);
+                if (actualizo)
+                {
+                    admEstadio.CambiarEstadoEstadio(idNuevoEstadioAsociado, "OCUPADO");
+                    admEstadio.CambiarEstadoEstadio(idAntiguoEStadio, "DISPONIBLE");
+                }
+                else
+                {
+                    throw new ErrorActualizarEstadioException("En ActualizarEstadio-AdmEncuentrosDefinidos: ");
+                }
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
             return actualizo;
         }
@@ -130,11 +141,18 @@ namespace Control.AdmEncuentrosGenerados
                bool cambiarEstado= admEncuentrosGenerados.CambiarEstadoEncuentro(idEncuentroGeneradoPendiente);
                 if (cambiarEstado)
                 {
-                    bool cambioEstadio=admEstadio.CambiarEstadoEstadio(idEsadio, "OCUPADO");
-                    if (cambiarEstado)
+                    try
                     {
-                        guardo = true;
+                        bool cambioEstadio = admEstadio.CambiarEstadoEstadio(idEsadio, "OCUPADO");
+                        if (cambiarEstado)
+                        {
+                            guardo = true;
+                        }
+                    }catch(Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
                     }
+                    
                 }
             }
             return guardo;

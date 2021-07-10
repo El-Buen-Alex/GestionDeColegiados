@@ -23,6 +23,7 @@ namespace Data
             conexion.Open();
             try
             {
+                string nombreComando = "estadiosDiponibles";
                 MySqlCommand comando = new MySqlCommand("estadiosDiponibles", conexion);
                 comando.CommandType = CommandType.StoredProcedure;
                 MySqlDataReader reader = comando.ExecuteReader();
@@ -86,7 +87,7 @@ namespace Data
                 transaccion.Commit();
                 cambio = true;
             }
-            catch(MySqlException ex)
+            catch(Exception ex)
             {
                 transaccion.Rollback();
                 Console.WriteLine("Error en la obtencion de estadios disponibles: " + ex.Message);

@@ -137,16 +137,25 @@ namespace Control.AdmEncuentrosGenerados
         public string guardarEncuentrosAleatorios()
         {
             listaEncuentrosGenerados = generarListaEncuentros();
-            bool guardo = datosEncuentrosGenerados.GuardarEncuentrosGenerados(listaEncuentrosGenerados);
+            bool guardo=false;
             string mensaje = "";
-            if (guardo)
+            try
             {
-                mensaje = "Se ha guardado con exito los encuentros generados";
-            }
-            else
+                guardo = datosEncuentrosGenerados.GuardarEncuentrosGenerados(listaEncuentrosGenerados);
+                if (guardo)
+                {
+                    mensaje = "Se ha guardado con exito los encuentros generados";
+                }
+                else
+                {
+                    mensaje = "No se logro guardar con exito. Intente nuevamente.";
+                    throw new generarEncuentrosException("Error en guardarEncuentrosAleatorios-AdmGenerarEncuentros");
+                }
+            }catch(Exception ex)
             {
-                mensaje = "No se logro guardar con exito. Intente nuevamente.";
+                Console.WriteLine(ex.Message);
             }
+             
             return mensaje;
         }
     }

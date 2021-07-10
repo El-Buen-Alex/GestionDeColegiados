@@ -44,7 +44,14 @@ namespace Control.AdmEstadios
         }
         public bool CambiarEstadoEstadio(int idEsadio, string estado)
         {
-           return datosEstadios.CambiarEstado(idEsadio, estado);
+            bool cambio = false;
+            cambio= datosEstadios.CambiarEstado(idEsadio, estado);
+            if (!cambio)
+            {
+                throw new ErrorActualizarEstadioException("Error en CambiarEstadoEstadio-AdmEstadio");
+            }
+
+            return cambio;
         }
     }
 }
