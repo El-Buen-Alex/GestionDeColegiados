@@ -16,7 +16,9 @@ namespace Control.AdmColegiados
 
         public List<JuezCentral> ListaJuezCentral { get => listaJuezCentral; set => listaJuezCentral = value; }
 
-        private AdmJuezCentral()
+        //Paso para el uso de Singleton
+        //Creando atributo privado y estático de la misma clase
+        private AdmJuezCentral ()
         {
             listaJuezCentral = new List<JuezCentral>();
         }
@@ -28,7 +30,7 @@ namespace Control.AdmColegiados
             return admJ;
         }
 
-        //Agregar
+        //Método guardar de la interface IAdm
         public int guardar(TextBox txtcedulaJC, TextBox txtnombreJC, TextBox txtapellidoJC,
             TextBox txtdomicilioJC, TextBox txtemailJC, TextBox txttelefonoJC)
         {
@@ -44,19 +46,20 @@ namespace Control.AdmColegiados
 
             if (juezCentral != null)
             {
-                listaJuezCentral.Add(juezCentral);
+                listaJuezCentral.Add(juezCentral);      //Añadir a la lista
                 id = GuardarJuezCentralBD(juezCentral); //Guardar BD
             }
             return id;
         }
 
+        //Guardar datos a la BD
         private int GuardarJuezCentralBD(JuezCentral juezCentral)
         {
             int id = 0;
             string mensaje = "";
             try {
                 id = datos.InsertarJuezCentral(juezCentral);
-            } catch (insertarFallidoBDException ex) {
+            } catch (falloBDException ex) {
                 mensaje = ex.Message;
             }
             if (mensaje != "") {

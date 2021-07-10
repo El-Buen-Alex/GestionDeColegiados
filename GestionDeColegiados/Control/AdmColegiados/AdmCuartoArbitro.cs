@@ -16,7 +16,9 @@ namespace Control.AdmColegiados
 
         public List<CuartoArbitro> ListaCuartoArbitro { get => listaCuartoArbitro; set => listaCuartoArbitro = value; }
 
-        private AdmCuartoArbitro()
+        //Paso para el uso de Singleton
+        //Creando atributo privado y estático de la misma clase
+        private AdmCuartoArbitro ()
         {
             listaCuartoArbitro = new List<CuartoArbitro>();
         }
@@ -28,7 +30,7 @@ namespace Control.AdmColegiados
             return admCA;
         }
 
-        //Agregar
+        //Método guardar de la interface IAdm
         public int guardar(TextBox txtcedulaJC, TextBox txtnombreJC, TextBox txtapellidoJC,
             TextBox txtdomicilioJC, TextBox txtemailJC, TextBox txttelefonoJC)
         {
@@ -44,19 +46,20 @@ namespace Control.AdmColegiados
 
             if (cuartoArbitro != null)
             {
-                listaCuartoArbitro.Add(cuartoArbitro);
+                listaCuartoArbitro.Add(cuartoArbitro);    //Añadir a la lista
                 id = GuardarJuezCentralBD(cuartoArbitro); //Guardar BD
             }
             return id;
         }
 
+        //Guardar datos a la BD
         private int GuardarJuezCentralBD(CuartoArbitro cuartoArbitro)
         {
             int id = 0;
             string mensaje = "";
             try {
                 id = datos.InsertarCuartoArbitro(cuartoArbitro);
-            } catch (insertarFallidoBDException ex) {
+            } catch (falloBDException ex) {
                 mensaje = ex.Message;
             }
             if (mensaje != "") {

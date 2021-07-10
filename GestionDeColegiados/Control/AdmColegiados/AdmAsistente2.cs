@@ -15,8 +15,10 @@ namespace Control.AdmColegiados
         private static AdmAsistente2 admA2 = null;
 
         public List<Asistente> ListaAsistente2 { get => listaAsistente2; set => listaAsistente2 = value; }
-
-        private AdmAsistente2()
+        
+        //Paso para el uso de Singleton
+        //Creando atributo privado y estático de la misma clase
+        private AdmAsistente2 ()
         {
             listaAsistente2 = new List<Asistente>();
         }
@@ -28,7 +30,7 @@ namespace Control.AdmColegiados
             return admA2;
         }
 
-        //Agregar
+        //Método guardar de la interface IAdm
         public int guardar(TextBox txtcedulaAs2, TextBox txtnombreAs2, TextBox txtapellidoAs2,
             TextBox txtdomicilioAs2, TextBox txtemailAs2, TextBox txttelefonoAs2)
         {
@@ -44,19 +46,20 @@ namespace Control.AdmColegiados
 
             if (asistente2 != null)
             {
-                listaAsistente2.Add(asistente2);
+                listaAsistente2.Add(asistente2);      //Añadir a la lista
                 id = GuardarAsistente2BD(asistente2); //Guardar BD
             }
             return id;
         }
 
+        //Guardar datos a la BD
         private int GuardarAsistente2BD(Asistente asistente2)
         {
             int id = 0;
             string mensaje = "";
             try {
                 id = datos.InsertarAsistente2(asistente2);
-            } catch (insertarFallidoBDException ex) {
+            } catch (falloBDException ex) {
                 mensaje = ex.Message;
             }
             if (mensaje != "") {

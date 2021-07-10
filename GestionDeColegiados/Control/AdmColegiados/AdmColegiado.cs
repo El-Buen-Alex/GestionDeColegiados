@@ -17,7 +17,9 @@ namespace Control.AdmColegiados
         public List<Colegiado> ListaColegiado { get => listaColegiado; set => listaColegiado = value; }
         public List<IntegrantesColegiados> ListaintegColeg { get => listaintegColeg; set => listaintegColeg = value; }
 
-        private AdmColegiado()
+        //Paso para el uso de Singleton
+        //Creando atributo privado y estático de la misma clase
+        private AdmColegiado ()
         {
             listaColegiado = new List<Colegiado>();
         }
@@ -29,6 +31,7 @@ namespace Control.AdmColegiados
             return admCol;
         }
 
+        //Llenar ComboBox con nombres de Juez Central
         public void LlenarColegiadosCmb(ComboBox cmbGrupoColegiado)
         {
             listaintegColeg = new List<IntegrantesColegiados>();
@@ -38,6 +41,7 @@ namespace Control.AdmColegiados
 
         }
 
+        //Guardar id de todos los arbitros
         public void Guardar(int idjuezcentral, int idasistente1, int idasistente2, int idcuartoarbitro)
         {
             colegiado = new Colegiado(0, idjuezcentral, idasistente1, idasistente2, idcuartoarbitro);
@@ -49,12 +53,13 @@ namespace Control.AdmColegiados
             }
         }
 
+        //Guardar colegiado en la BD
         private void GuardarColegiadoBD(Colegiado colegiado)
         {
             string mensaje = "";
             try {
                 datos.InsertarColegiado(colegiado);
-            } catch (insertarFallidoBDException ex) {
+            } catch (falloBDException ex) {
                 mensaje = ex.Message;
             }
             if (mensaje != "") {
@@ -65,7 +70,7 @@ namespace Control.AdmColegiados
             }
         }
 
-        //Listar
+        //Listar datos con los nombres de los colegiados
         public void llenarDatos(DataGridView dgvListarColegiados)
         {
             listaintegColeg = datos.ConsultarColegiado();
@@ -82,13 +87,14 @@ namespace Control.AdmColegiados
             return nombres;
         }
 
+        //Obtener Cantidad de Colegiados
         public int obtenerCantidadColegiado()
         {
             listaintegColeg = datos.ConsultarColegiado();
             return listaintegColeg.Count;
         }
 
-
+        //Consulta para validar si el arbitro ya está registrado
         public bool validarCedula (TextBox txtcedula) 
         {
             string cedula = txtcedula.Text;
