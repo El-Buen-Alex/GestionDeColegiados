@@ -60,7 +60,6 @@
     <Compile Include="ErrorActualizarEstadioException.cs" />
     <Compile Include="generarEncuentrosException.cs" />
     <Compile Include="GestionLogin.cs" />
-    <Compile Include="ProcedimientoAlmacenadoNoCreadoException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="registroEquipoMaximoException.cs" />
     <Compile Include="usuarioNoRegistradoException.cs" />

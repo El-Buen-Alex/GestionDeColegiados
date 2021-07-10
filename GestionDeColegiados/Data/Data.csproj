@@ -90,7 +90,6 @@
     <Compile Include="DatosEncuentroDefinido.cs" />
     <Compile Include="DatosEnuenctrosGenerados.cs" />
     <Compile Include="DatosEstadios.cs" />
-    <Compile Include="ProcedimientoAlmacenadoNoCreadoException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
