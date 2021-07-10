@@ -1,15 +1,11 @@
-﻿
-using MySql.Data.MySqlClient;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using MySql.Data.MySqlClient;
 
 namespace Sistema
 {
     public class ConexionBD
     {
-        public static MySqlConnection getConexion() {
+        public static MySqlConnection getConexion()
+        {
             string servidor = "localhost";
             string puerto = "3306";
             string usuario = "presidente";

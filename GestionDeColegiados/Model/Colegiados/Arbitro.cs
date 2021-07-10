@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Model {
-    public abstract class Arbitro {
+﻿namespace Model
+{
+    public abstract class Arbitro
+    {
         private int idArbitro;
         private string cedula;
         private string nombre;
@@ -14,11 +10,13 @@ namespace Model {
         private string email;
         private string telefono;
 
-        public Arbitro () {
+        public Arbitro()
+        {
         }
 
-        public Arbitro (int idArbitro, string cedula, string nombre, string apellidos, 
-            string domicilio, string email, string telefono) {
+        public Arbitro(int idArbitro, string cedula, string nombre, string apellidos,
+            string domicilio, string email, string telefono)
+        {
             this.cedula = cedula;
             this.nombre = nombre;
             this.apellidos = apellidos;
@@ -35,7 +33,8 @@ namespace Model {
         public string Email { get => email; set => email = value; }
         public string Telefono { get => telefono; set => telefono = value; }
 
-        public override string ToString () {
+        public override string ToString()
+        {
             return base.ToString();
         }
     }

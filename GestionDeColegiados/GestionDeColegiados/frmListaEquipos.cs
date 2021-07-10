@@ -1,19 +1,12 @@
-﻿using System;
-using Control.AdmEquipos;
+﻿using Control.AdmEquipos;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GestionDeColegiados
 {
     public partial class frmListaEquipos : Form
     {
-        private List<Label> listaContenedores= new List<Label>();
+        private List<Label> listaContenedores = new List<Label>();
         private AdmEquipo admEquipo = AdmEquipo.getEquipo();
         public frmListaEquipos()
         {
@@ -30,7 +23,5 @@ namespace GestionDeColegiados
             listaContenedores.Add(lblEquipo10);
             admEquipo.LlenarEquipos(listaContenedores);
         }
-
-        
     }
 }

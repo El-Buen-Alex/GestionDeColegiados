@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using Control.AdmEncuentrosGenerados;
-using System.Threading.Tasks;
+﻿using Control.AdmEncuentrosGenerados;
+using System;
 using System.Windows.Forms;
 
 namespace GestionDeColegiados
@@ -20,7 +13,7 @@ namespace GestionDeColegiados
             admEncuentrosDefinidos.LlenarPartidosCmb(cmbEncuentros);
             CambiarAccesibilidadControladoresGUI(false);
         }
-        
+
         private void CambiarAccesibilidadControladoresGUI(bool estado)
         {
             pbTupla.Visible = estado;
@@ -34,7 +27,7 @@ namespace GestionDeColegiados
         private void cmbEncuentros_SelectedIndexChanged(object sender, EventArgs e)
         {
             int indexEncuentroSeleccionado = cmbEncuentros.SelectedIndex;
-            admEncuentrosDefinidos.LlenarInformacíonPartidoCompleta(indexEncuentroSeleccionado,lblEquipoLocal, lblEquipoVisitante, lblEstadio, lblFecha, lblColegiados);
+            admEncuentrosDefinidos.LlenarInformacíonPartidoCompleta(indexEncuentroSeleccionado, lblEquipoLocal, lblEquipoVisitante, lblEstadio, lblFecha, lblColegiados);
             CambiarAccesibilidadControladoresGUI(true);
         }
     }

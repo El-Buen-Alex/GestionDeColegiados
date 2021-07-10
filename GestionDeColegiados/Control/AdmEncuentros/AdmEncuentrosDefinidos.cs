@@ -1,16 +1,12 @@
-﻿using Model;
+﻿using Control.AdmColegiados;
+using Control.AdmEquipos;
+using Control.AdmEstadios;
 using Data;
+using Model;
 using Model.Equipo;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Control.AdmColegiados;
-using Control.AdmEstadios;
 using System.Windows.Forms;
-using Control.AdmEquipos;
-using Control.AdmEstadios;
 
 namespace Control.AdmEncuentrosGenerados
 {
@@ -23,11 +19,11 @@ namespace Control.AdmEncuentrosGenerados
         private AdmGenerarEncuentros admEncuentrosGenerados = AdmGenerarEncuentros.getAdmadmGenerarEncuentros();
         private AdmColegiado admColegiados = AdmColegiado.getAdmCol();
 
-        
+
 
         private AdmEquipo admEquipos = AdmEquipo.getEquipo();
         private AdmEstadio admEstadios = AdmEstadio.GetAdmEstadio();
-      
+
         public void LlenarPartidosCmb(ComboBox cmbEncuentros)
         {
             cmbEncuentros.Items.Clear();
@@ -35,16 +31,15 @@ namespace Control.AdmEncuentrosGenerados
             EncuentroGenerado encuentroGenerado;
             Equipo local, visitante;
             Estadio estadio;
-            for (int x=0;x < listaEncuentrosDefinidos.Count; x++)
+            for (int x = 0; x < listaEncuentrosDefinidos.Count; x++)
             {
                 encuentroGenerado = admEncuentrosGenerados.ObtenerEncuentroPorID(listaEncuentrosDefinidos[x].IdEncuentroGeneradoPendiente);
                 local = admEquipos.ObtenerEquipoPorId(encuentroGenerado.IdEquipoLocal);
                 visitante = admEquipos.ObtenerEquipoPorId(encuentroGenerado.IdEquipoVisitante);
-                
+
                 estadio = admEstadios.ObtenerEstadioPorId(listaEncuentrosDefinidos[x].IdEstadio);
-                cmbEncuentros.Items.Add(x+1+":" + local.NombreEquipo + " VS " + visitante.NombreEquipo +"- " +estadio.Nombre);
+                cmbEncuentros.Items.Add(x + 1 + ":" + local.NombreEquipo + " VS " + visitante.NombreEquipo + "- " + estadio.Nombre);
                 listaEncuentrosGenerados.Add(encuentroGenerado);
-                Console.WriteLine(encuentroGenerado.Id);
             }
         }
 
@@ -52,14 +47,14 @@ namespace Control.AdmEncuentrosGenerados
         {
 
             Estadio estadio = admEstadio.ObtenerEstadioPorId(listaEncuentrosDefinidos[indexEncuentroDefinidoSeleccionado].IdEstadio);
-            
+
             return estadio.Nombre;
         }
         private EncuentroGenerado ObtenerEncuentroGenerado(int id)
         {
             return admEncuentrosGenerados.ObtenerEncuentroPorID(id);
         }
-        
+
         public void LlenarInformacíonPartidoCompleta(int indexEncuentroSeleccionado, Label lblEquipoLocal, Label lblEquipoVisitante, Label lblEstadio, Label lblFecha, Label lblColegiado)
         {
 
@@ -70,8 +65,7 @@ namespace Control.AdmEncuentrosGenerados
             local = admEquipos.ObtenerEquipoPorId(encuentroGenerado.IdEquipoLocal);
             visitante = admEquipos.ObtenerEquipoPorId(encuentroGenerado.IdEquipoVisitante);
 
-            lblFecha.Text = "FECHA: " + encuentroDefinido.FechaDeEncuentro.ToShortDateString()+" HORA: " + encuentroDefinido.Hora.ToShortTimeString();
-            Console.WriteLine("" + encuentroDefinido.FechaDeEncuentro.ToShortDateString() + "  " + encuentroDefinido.Hora.ToShortTimeString());
+            lblFecha.Text = "FECHA: " + encuentroDefinido.FechaDeEncuentro.ToShortDateString() + " HORA: " + encuentroDefinido.Hora.ToShortTimeString();
             lblEquipoLocal.Text = local.NombreEquipo;
             lblEquipoVisitante.Text = visitante.NombreEquipo;
             lblEstadio.Text = ObtenerNombreEstadioDelPartido(indexEncuentroSeleccionado);
@@ -102,7 +96,7 @@ namespace Control.AdmEncuentrosGenerados
                     throw new ErrorActualizarEstadioException("En ActualizarEstadio-AdmEncuentrosDefinidos: ");
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
@@ -110,7 +104,7 @@ namespace Control.AdmEncuentrosGenerados
         }
 
         private AdmEstadio admEstadio = AdmEstadio.GetAdmEstadio();
-        
+
         private AdmEncuentrosDefinidos()
         {
             listaEncuentrosDefinidos = new List<EncuentroDefinido>();
@@ -137,8 +131,8 @@ namespace Control.AdmEncuentrosGenerados
             int id = datosEncuentroDefinido.GuardarEncuentroDefinido(encuentroDefinido);
             if (id != 0)
             {
-               
-               bool cambiarEstado= admEncuentrosGenerados.CambiarEstadoEncuentro(idEncuentroGeneradoPendiente);
+
+                bool cambiarEstado = admEncuentrosGenerados.CambiarEstadoEncuentro(idEncuentroGeneradoPendiente);
                 if (cambiarEstado)
                 {
                     try
@@ -148,11 +142,12 @@ namespace Control.AdmEncuentrosGenerados
                         {
                             guardo = true;
                         }
-                    }catch(Exception ex)
+                    }
+                    catch (Exception ex)
                     {
                         Console.WriteLine(ex.Message);
                     }
-                    
+
                 }
             }
             return guardo;

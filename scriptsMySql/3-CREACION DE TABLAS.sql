@@ -4,7 +4,7 @@
 CREATE TABLE `campeonatos`.`administradores` (
 `IdAdministradores` int not null auto_increment,
 `AdminName` varchar(50) not null,
-`AdminPassword` varchar(50) not null,
+`AdminPassword` varchar(15) not null,
 primary key (`IdAdministradores`)
 )engine= InnoDB;
 

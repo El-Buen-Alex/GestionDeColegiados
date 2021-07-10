@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Model.Colegiados {
-    public class IntegrantesColegiados {
+﻿namespace Model.Colegiados
+{
+    public class IntegrantesColegiados
+    {
         private int idGrupoColegiado;
         private string nombrejuezCentral;
         private string nombreasistente1;
@@ -18,7 +14,8 @@ namespace Model.Colegiados {
         public string NombrecuartoArbitro { get => nombrecuartoArbitro; set => nombrecuartoArbitro = value; }
         public int IdGrupoColegiado { get => idGrupoColegiado; set => idGrupoColegiado = value; }
 
-        public override string ToString () {
+        public override string ToString()
+        {
             return base.ToString();
         }
     }

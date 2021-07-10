@@ -151,6 +151,7 @@ namespace GestionDeColegiados
             this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(172)))), ((int)(((byte)(171)))));
             this.txtPassword.Location = new System.Drawing.Point(406, 321);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPassword.MaxLength = 15;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(132, 23);

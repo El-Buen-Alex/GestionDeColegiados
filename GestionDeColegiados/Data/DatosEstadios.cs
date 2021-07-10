@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Model;
 using MySql.Data.MySqlClient;
-using System.Text;
-using System.Threading.Tasks;
-using Model;
 using Sistema;
+using System;
+using System.Collections.Generic;
 using System.Data;
 
 namespace Data
@@ -23,7 +20,6 @@ namespace Data
             conexion.Open();
             try
             {
-                string nombreComando = "estadiosDiponibles";
                 MySqlCommand comando = new MySqlCommand("estadiosDiponibles", conexion);
                 comando.CommandType = CommandType.StoredProcedure;
                 MySqlDataReader reader = comando.ExecuteReader();
@@ -34,14 +30,13 @@ namespace Data
                     estadio.Nombre = reader["nombreEstadio"].ToString();
                     estadio.Estado = reader["estado"].ToString();
                     listaEstadios.Add(estadio);
-                    Console.WriteLine(estadio.Id);
                 }
             }
-            catch(MySqlException ex)
+            catch (MySqlException ex)
             {
                 Console.WriteLine("Error en la obtencion de estadios disponibles: " + ex.Message);
             }
-
+            conexion.Close();
             return listaEstadios;
         }
 
@@ -63,17 +58,19 @@ namespace Data
                     estadio.Nombre = reader["nombreEstadio"].ToString();
                     estadio.Estado = reader["estado"].ToString();
                 }
+
             }
             catch (MySqlException ex)
             {
                 Console.WriteLine("Error en la obtencion de estadios disponibles: " + ex.Message);
             }
+            conexion.Close();
             return estadio;
         }
 
         public bool CambiarEstado(int idEsadio, string estado)
         {
-            bool cambio=false;
+            bool cambio = false;
             conexion = ConexionBD.getConexion();
             conexion.Open();
             transaccion = conexion.BeginTransaction();
@@ -87,7 +84,7 @@ namespace Data
                 transaccion.Commit();
                 cambio = true;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 transaccion.Rollback();
                 Console.WriteLine("Error en la obtencion de estadios disponibles: " + ex.Message);

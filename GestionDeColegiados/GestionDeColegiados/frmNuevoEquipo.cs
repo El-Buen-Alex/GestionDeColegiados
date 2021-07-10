@@ -1,12 +1,6 @@
 ﻿using Control;
 using Control.AdmEquipos;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace GestionDeColegiados
@@ -23,7 +17,6 @@ namespace GestionDeColegiados
 
         private void registrar_Click(object sender, EventArgs e)
         {
-            int id = 0;
             String Nombre = nombre.Text.Trim(),
                 numJugadores = numjugadores.Text,
                 directorNombre = director.Text,
@@ -50,14 +43,14 @@ namespace GestionDeColegiados
                     throw new registroEquipoMaximoException("EL registro máximo de equipos es de 10");
                 }
             }
-            catch(registroEquipoMaximoException mensaje)
+            catch (registroEquipoMaximoException mensaje)
             {
                 MessageBox.Show(mensaje.ToString());
             }
-            
-            
+
+
         }
-        
-        
+
+
     }
 }

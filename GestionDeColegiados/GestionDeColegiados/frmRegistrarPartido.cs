@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using Control.AdmColegiados;
 using Control.AdmEncuentrosGenerados;
-using Control.AdmColegiados;
 using Control.AdmEstadios;
-using System.Drawing;
-using System.Linq;
-using System.Text;
+using System;
 using System.Windows.Forms;
 
 namespace GestionDeColegiados
@@ -22,9 +16,9 @@ namespace GestionDeColegiados
         {
             InitializeComponent();
             refrezcarContenedores();
-            
+
         }
-         private void refrezcarContenedores()
+        private void refrezcarContenedores()
         {
             admGenerarEncuentros.LlenarPrimeraTupla(lblEquipoLocal, lblEquipoVisitante);
             admColegiado.LlenarColegiadosCmb(cmbGrupoColegiado);
@@ -54,7 +48,7 @@ namespace GestionDeColegiados
             DateTime fechaPartido = dtpFechaEncuentro.Value;
             DateTime horaPartido = dtpHora.Value;
             int estadioSeleccionado = cmbEstadio.SelectedIndex;
-            bool guardo=admGenerarEncuentroDefinido.GuardarEncuentroDefinido(grupoSeleccionado, fechaPartido, horaPartido, estadioSeleccionado);
+            bool guardo = admGenerarEncuentroDefinido.GuardarEncuentroDefinido(grupoSeleccionado, fechaPartido, horaPartido, estadioSeleccionado);
             if (guardo)
             {
                 cambiarAccesibilidadControlesGraficos(false);

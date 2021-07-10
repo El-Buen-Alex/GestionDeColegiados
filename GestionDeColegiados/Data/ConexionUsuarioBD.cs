@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using MySql.Data.MySqlClient;
-using System.Linq;
-using System.Text;
+﻿using MySql.Data.MySqlClient;
 using Sistema;
+using System;
 using System.Data;
 
 namespace Model
@@ -46,7 +43,6 @@ namespace Model
                 administrador.Nombre = reader["AdminName"].ToString();
                 administrador.Password = reader["AdminPassword"].ToString();
 
-                Console.WriteLine("usuario" + administrador.Nombre);
             }
             //cerramos la conexion
             conexion.Close();

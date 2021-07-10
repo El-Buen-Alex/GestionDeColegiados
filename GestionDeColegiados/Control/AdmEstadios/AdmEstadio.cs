@@ -1,10 +1,6 @@
-﻿using System;
+﻿using Data;
 using Model;
-using Data;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Control.AdmEstadios
@@ -45,7 +41,7 @@ namespace Control.AdmEstadios
         public bool CambiarEstadoEstadio(int idEsadio, string estado)
         {
             bool cambio = false;
-            cambio= datosEstadios.CambiarEstado(idEsadio, estado);
+            cambio = datosEstadios.CambiarEstado(idEsadio, estado);
             if (!cambio)
             {
                 throw new ErrorActualizarEstadioException("Error en CambiarEstadoEstadio-AdmEstadio");

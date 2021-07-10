@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using Control;
-using Control.AdmEquipos;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using System.Runtime.InteropServices;
+﻿using Control.AdmColegiados;
 using Control.AdmEncuentrosGenerados;
-using Control.AdmColegiados;
+using Control.AdmEquipos;
+using System;
+using System.Drawing;
+using System.Runtime.InteropServices;
+using System.Windows.Forms;
 
 namespace GestionDeColegiados
 {
@@ -74,20 +68,26 @@ namespace GestionDeColegiados
 
         private void btnVerTodosColegiados_Click(object sender, EventArgs e)
         {
-            if(admColegiado.obtenerCantidadColegiado() == 0) {
+            if (admColegiado.obtenerCantidadColegiado() == 0)
+            {
                 MessageBox.Show("No se han registrado colegiados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 AbrirFormEnPanel(new frmNuevoGrupoColegiado());
-            } else {
+            }
+            else
+            {
                 AbrirFormEnPanel(new frmVerTodosLosColegiados());
             }
         }
 
         private void btnAnadirEquipo_Click(object sender, EventArgs e)
         {
-            if(admEquipo.ObtenerCantidadEquipo() < 10) {
+            if (admEquipo.ObtenerCantidadEquipo() < 10)
+            {
                 AbrirFormEnPanel(new frmNuevoEquipo());
-            } else{
-                AbrirFormEnPanel(new frmListaEquipos()); 
+            }
+            else
+            {
+                AbrirFormEnPanel(new frmListaEquipos());
             }
         }
 
@@ -122,8 +122,8 @@ namespace GestionDeColegiados
                 MessageBox.Show("Existen: " + cantEncuentrosDefinidos + " Por jugar, no se puede Generar Encuentros");
                 AbrirFormEnPanel(new frmTodosLosEncuentrosDefinidos());
             }
-            
-           
+
+
         }
 
         private void btnAsignarColegiados_Click(object sender, EventArgs e)
@@ -137,7 +137,7 @@ namespace GestionDeColegiados
             {
                 AbrirFormEnPanel(new frmRegistrarPartido());
             }
-            
+
         }
 
         private void btnCambiarEstadio_Click(object sender, EventArgs e)
@@ -150,7 +150,7 @@ namespace GestionDeColegiados
             {
                 AbrirFormEnPanel(new frmCambiarEstadioPartido());
             }
-            
+
         }
 
         private void pbMinimizar_Click(object sender, EventArgs e)
@@ -209,7 +209,7 @@ namespace GestionDeColegiados
             {
                 AbrirFormEnPanel(new frmTodosLosEncuentrosDefinidos());
             }
-           
+
         }
     }
 }

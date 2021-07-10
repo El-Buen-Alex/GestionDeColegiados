@@ -53,8 +53,8 @@
     <Compile Include="AdmColegiados\AdmJuezCentral.cs" />
     <Compile Include="AdmColegiados\Contexto.cs" />
     <Compile Include="AdmColegiados\IAdm.cs" />
-    <Compile Include="AdmEncuentrosGenerados\AdmGenerarEncuentros.cs" />
-    <Compile Include="AdmEncuentrosGenerados\AdmEncuentrosDefinidos.cs" />
+    <Compile Include="AdmEncuentros\AdmGenerarEncuentros.cs" />
+    <Compile Include="AdmEncuentros\AdmEncuentrosDefinidos.cs" />
     <Compile Include="AdmEquipos\AdmEquipo.cs" />
     <Compile Include="AdmEstadios\AdmEstadio.cs" />
     <Compile Include="ErrorActualizarEstadioException.cs" />

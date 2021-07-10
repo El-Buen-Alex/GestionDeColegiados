@@ -4,9 +4,6 @@ using Sistema;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Data
 {
@@ -22,7 +19,6 @@ namespace Data
             conexion = ConexionBD.getConexion();
             conexion.Open();
             transaccion = conexion.BeginTransaction();
-            Console.WriteLine(encuentroDefinido.FechaDeEncuentro.ToShortDateString())  ;
             try
             {
                 MySqlCommand comando = new MySqlCommand("guardarEncuentrosDefinidos", conexion, transaccion);
@@ -42,7 +38,7 @@ namespace Data
                     transaccion.Commit();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 transaccion.Rollback();
                 Console.WriteLine(ex.Message);
@@ -53,7 +49,7 @@ namespace Data
 
         public List<EncuentroDefinido> ObtenerEncuentros()
         {
-            List<EncuentroDefinido> lista = new List<EncuentroDefinido>() ;
+            List<EncuentroDefinido> lista = new List<EncuentroDefinido>();
             EncuentroDefinido encuentroDefinido = null;
             conexion = ConexionBD.getConexion();
             conexion.Open();

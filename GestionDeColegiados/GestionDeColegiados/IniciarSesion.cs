@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using Control;
+using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using Control;
-using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Windows.Forms;
 
 namespace GestionDeColegiados
 {
@@ -35,7 +30,7 @@ namespace GestionDeColegiados
 
         }
 
-        
+
 
         // metodo necesario para gestionar el movimiento de la ventana
         private void BarraTitulo_MouseDown(object sender, MouseEventArgs e)
@@ -60,7 +55,7 @@ namespace GestionDeColegiados
         private void pbCerrar_MouseEnter(object sender, EventArgs e)
         {
             colorDefaultClose = pbCerrar.BackColor;
-            pbCerrar.BackColor= Color.FromArgb(202, 49, 32);
+            pbCerrar.BackColor = Color.FromArgb(202, 49, 32);
         }
         protected void pbCerrar_MouseLeave(object sender, EventArgs e)
         {
@@ -69,8 +64,8 @@ namespace GestionDeColegiados
 
         protected void pbMinimizar_MouseEnter(object sender, EventArgs e)
         {
-            colorDefaultMin= pbMinimizar.BackColor;
-            pbMinimizar.BackColor= Color.FromArgb(52, 58, 64);
+            colorDefaultMin = pbMinimizar.BackColor;
+            pbMinimizar.BackColor = Color.FromArgb(52, 58, 64);
         }
 
         private void pbMinimizar_MouseLeave(object sender, EventArgs e)
@@ -101,11 +96,11 @@ namespace GestionDeColegiados
                 {
                     gestionLogin.controlLogin(usuario, password);
                 }
-                catch(usuarioNoRegistradoException ex)
+                catch (usuarioNoRegistradoException ex)
                 {
                     mensaje = ex.Message;
                 }
-                if (mensaje=="" )
+                if (mensaje == "")
                 {
                     this.Hide();
                     MenuPrincipal pantallaPrincipal = new MenuPrincipal();
@@ -114,12 +109,18 @@ namespace GestionDeColegiados
                 else
                 {
                     MessageBox.Show(mensaje, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    borrarCampos();
 
                 }
 
             }
         }
+        private void borrarCampos()
+        {
+            txtUsuario.Text = "";
+            txtPassword.Text = "";
 
+        }
         //metodo que valida si existen campos vacios en la GUI
         private void validarCamposVaciosLogin()
         {

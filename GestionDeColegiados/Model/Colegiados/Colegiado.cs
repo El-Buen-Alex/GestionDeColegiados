@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Model.Colegiados {
-    public class Colegiado {
+﻿namespace Model.Colegiados
+{
+    public class Colegiado
+    {
         private int idcolegiado;
         private int idjuezcentral;
         private int idasistente1;
@@ -18,7 +14,8 @@ namespace Model.Colegiados {
         public int Idasistente2 { get => idasistente2; set => idasistente2 = value; }
         public int Idcuartoarbitro { get => idcuartoarbitro; set => idcuartoarbitro = value; }
 
-        public Colegiado (int idcolegiado, int idjuezcentral, int idasistente1, int idasistente2, int idcuartoarbitro) {
+        public Colegiado(int idcolegiado, int idjuezcentral, int idasistente1, int idasistente2, int idcuartoarbitro)
+        {
             this.idcolegiado = idcolegiado;
             this.idjuezcentral = idjuezcentral;
             this.idasistente1 = idasistente1;
@@ -26,7 +23,8 @@ namespace Model.Colegiados {
             this.idcuartoarbitro = idcuartoarbitro;
         }
 
-        public override string ToString () {
+        public override string ToString()
+        {
             return base.ToString();
         }
     }

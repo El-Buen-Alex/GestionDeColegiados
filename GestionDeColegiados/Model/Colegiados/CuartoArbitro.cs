@@ -1,18 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace Model.Colegiados
+{
+    public class CuartoArbitro : Arbitro
+    {
 
-namespace Model.Colegiados {
-    public class CuartoArbitro : Arbitro {
-
-        public CuartoArbitro (int idArbitro, string cedula, string nombre, string apellidos,
+        public CuartoArbitro(int idArbitro, string cedula, string nombre, string apellidos,
             string domicilio, string email, string telefono) : base(idArbitro, cedula, nombre, apellidos,
-                domicilio, email, telefono) {
+                domicilio, email, telefono)
+        {
         }
 
-        public override string ToString () {
+        public override string ToString()
+        {
             return base.ToString();
         }
     }

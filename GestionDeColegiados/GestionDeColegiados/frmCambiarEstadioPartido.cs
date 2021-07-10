@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using Control.AdmEncuentrosGenerados;
+﻿using Control.AdmEncuentrosGenerados;
 using Control.AdmEstadios;
+using System;
 using System.Windows.Forms;
 
 namespace GestionDeColegiados
@@ -19,7 +13,7 @@ namespace GestionDeColegiados
         {
             InitializeComponent();
             refrezcarComponentes();
-            
+
         }
         private void refrezcarComponentes()
         {
@@ -34,7 +28,7 @@ namespace GestionDeColegiados
         {
             int indexEncuentro, indexEstadio;
 
-            if (cmbEncuentros.Items.ToString() != "" && cmbEstadios.Items.ToString()!="")
+            if (cmbEncuentros.Items.ToString() != "" && cmbEstadios.Items.ToString() != "")
             {
                 indexEncuentro = cmbEncuentros.SelectedIndex;
                 indexEstadio = cmbEstadios.SelectedIndex;
@@ -54,7 +48,7 @@ namespace GestionDeColegiados
         private void cmbEncuentros_SelectedIndexChanged(object sender, EventArgs e)
         {
             int indexEncuentroDefinidoSeleccionado = cmbEncuentros.SelectedIndex;
-            lblEstadioActual.Text= admEncuentrosDefinidos.ObtenerNombreEstadioDelPartido(indexEncuentroDefinidoSeleccionado);
+            lblEstadioActual.Text = admEncuentrosDefinidos.ObtenerNombreEstadioDelPartido(indexEncuentroDefinidoSeleccionado);
             cmbEstadios.Enabled = true;
         }
 

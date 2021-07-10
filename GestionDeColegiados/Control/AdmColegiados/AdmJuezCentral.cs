@@ -1,14 +1,12 @@
 ﻿using Data;
 using Model.Colegiados;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Control.AdmColegiados {
-    public class AdmJuezCentral : IAdm{
+namespace Control.AdmColegiados
+{
+    public class AdmJuezCentral : IAdm
+    {
         List<JuezCentral> listaJuezCentral = new List<JuezCentral>();
         JuezCentral juezCentral = null;
         ValidacionGUI v = new ValidacionGUI();
@@ -18,19 +16,22 @@ namespace Control.AdmColegiados {
 
         public List<JuezCentral> ListaJuezCentral { get => listaJuezCentral; set => listaJuezCentral = value; }
 
-        private AdmJuezCentral () {
+        private AdmJuezCentral()
+        {
             listaJuezCentral = new List<JuezCentral>();
         }
 
-        public static AdmJuezCentral getAdmJ () {
+        public static AdmJuezCentral getAdmJ()
+        {
             if (admJ == null)
                 admJ = new AdmJuezCentral();
             return admJ;
         }
 
         //Agregar
-        public int guardar (TextBox txtcedulaJC, TextBox txtnombreJC, TextBox txtapellidoJC,
-            TextBox txtdomicilioJC, TextBox txtemailJC, TextBox txttelefonoJC) {
+        public int guardar(TextBox txtcedulaJC, TextBox txtnombreJC, TextBox txtapellidoJC,
+            TextBox txtdomicilioJC, TextBox txtemailJC, TextBox txttelefonoJC)
+        {
             string cedula = txtcedulaJC.Text,
                 nombre = txtnombreJC.Text,
                 apellidos = txtapellidoJC.Text,
@@ -39,20 +40,23 @@ namespace Control.AdmColegiados {
                 telefono = txttelefonoJC.Text;
             int id = 0;
 
-            juezCentral = new JuezCentral(0,cedula,nombre,apellidos,domicilio,email,telefono);
+            juezCentral = new JuezCentral(0, cedula, nombre, apellidos, domicilio, email, telefono);
 
-            if (juezCentral != null) {
+            if (juezCentral != null)
+            {
                 listaJuezCentral.Add(juezCentral);
                 id = GuardarJuezCentralBD(juezCentral); //Guardar BD
             }
             return id;
         }
 
-        private int GuardarJuezCentralBD (JuezCentral juezCentral) {
+        private int GuardarJuezCentralBD(JuezCentral juezCentral)
+        {
             int id = 0;
-            
+
             id = datos.InsertarJuezCentral(juezCentral);
-            if (id == 0) {
+            if (id == 0)
+            {
                 MessageBox.Show("No se ha podido comunicar con la BD");
             }
             return id;

@@ -5,21 +5,22 @@ using Sistema;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Data {
-    public class DatosColegiados {
+namespace Data
+{
+    public class DatosColegiados
+    {
         private MySqlConnection conexion = null;
         private MySqlTransaction trans = null;
 
-        public int InsertarJuezCentral (JuezCentral juezCentral) {
+        public int InsertarJuezCentral(JuezCentral juezCentral)
+        {
             int id = 0;
             conexion = ConexionBD.getConexion();
             conexion.Open();
             trans = conexion.BeginTransaction();
-            try {
+            try
+            {
                 MySqlCommand cmd = new MySqlCommand("guardarJuezCentral", conexion, trans);
                 cmd.CommandType = CommandType.StoredProcedure;
 
@@ -37,14 +38,16 @@ namespace Data {
                 id = Convert.ToInt32(cmd.ExecuteScalar());
 
                 trans.Commit();
-            } catch (MySqlException ex) {
+            }
+            catch (MySqlException ex)
+            {
                 trans.Rollback();
                 throw new Exception(ex.ToString());
             }
             conexion.Close();
             return id;
         }
-        
+
         public Equipo ObtenerEquipoPorId(int id)
         {
             Equipo equipo = null;
@@ -53,6 +56,7 @@ namespace Data {
             try
             {
                 MySqlCommand cmd = new MySqlCommand("obtenerEquipo", conexion);
+
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@_equipoID", id);
                 MySqlDataReader reader = cmd.ExecuteReader();
@@ -63,10 +67,11 @@ namespace Data {
                     equipo.IdEquipo = Convert.ToInt32(reader["idequipo"].ToString());
                 }
             }
-            catch(MySqlException ex)
+            catch (MySqlException ex)
             {
                 Console.WriteLine(ex.Message);
             }
+            conexion.Close();
             return equipo;
         }
 
@@ -99,7 +104,7 @@ namespace Data {
             return id;
         }
 
-        
+
         public int registrarEncuentrosGenerados(string nombreEquipo, string estado, int idEquipo)
         {
             int id = 0;
@@ -128,12 +133,11 @@ namespace Data {
             return id;
         }
 
-        
+
 
         public List<Equipo> consultarEquipos()
         {
             List<Equipo> listaEquipo = new List<Equipo>();
-            int id = 0;
             Equipo nombreEquipo = null;
             conexion = ConexionBD.getConexion();
             conexion.Open();
@@ -146,12 +150,9 @@ namespace Data {
                 {
                     nombreEquipo = new Equipo();
                     nombreEquipo.NombreEquipo = reader["nombre"].ToString();
-                    Console.WriteLine(nombreEquipo.NombreEquipo);
                     nombreEquipo.IdEquipo = Convert.ToInt32(reader["idequipo"].ToString());
                     listaEquipo.Add(nombreEquipo);
-                    Console.WriteLine("ids:" + nombreEquipo.IdEquipo);
                 }
-                Console.WriteLine("Cantidad de registros: "+ listaEquipo.Count);
             }
             catch (MySqlException ex)
             {
@@ -162,12 +163,14 @@ namespace Data {
             return listaEquipo;
         }
 
-        public int InsertarAsistente1 (Asistente asistente1) {
+        public int InsertarAsistente1(Asistente asistente1)
+        {
             int id = 0;
             conexion = ConexionBD.getConexion();
             conexion.Open();
             trans = conexion.BeginTransaction();
-            try {
+            try
+            {
                 MySqlCommand cmd = new MySqlCommand("guardarAsistente1", conexion, trans);
                 cmd.CommandType = CommandType.StoredProcedure;
 
@@ -186,7 +189,9 @@ namespace Data {
                 id = Convert.ToInt32(cmd.ExecuteScalar());
 
                 trans.Commit();
-            } catch (MySqlException ex) {
+            }
+            catch (MySqlException ex)
+            {
                 trans.Rollback();
                 throw new Exception(ex.ToString());
             }
@@ -194,12 +199,14 @@ namespace Data {
             return id;
         }
 
-        public int InsertarAsistente2 (Asistente asistente2) {
+        public int InsertarAsistente2(Asistente asistente2)
+        {
             int id = 0;
             conexion = ConexionBD.getConexion();
             conexion.Open();
             trans = conexion.BeginTransaction();
-            try {
+            try
+            {
                 MySqlCommand cmd = new MySqlCommand("guardarAsistente2", conexion, trans);
                 cmd.CommandType = CommandType.StoredProcedure;
 
@@ -218,7 +225,9 @@ namespace Data {
                 id = Convert.ToInt32(cmd.ExecuteScalar());
 
                 trans.Commit();
-            } catch (MySqlException ex) {
+            }
+            catch (MySqlException ex)
+            {
                 trans.Rollback();
                 throw new Exception(ex.ToString());
             }
@@ -226,12 +235,14 @@ namespace Data {
             return id;
         }
 
-        public int InsertarCuartoArbitro (CuartoArbitro cuartoArbitro) {
+        public int InsertarCuartoArbitro(CuartoArbitro cuartoArbitro)
+        {
             int id = 0;
             conexion = ConexionBD.getConexion();
             conexion.Open();
             trans = conexion.BeginTransaction();
-            try {
+            try
+            {
                 MySqlCommand cmd = new MySqlCommand("guardarCuartoArbitro", conexion, trans);
                 cmd.CommandType = CommandType.StoredProcedure;
 
@@ -246,7 +257,9 @@ namespace Data {
                 cmd.CommandType = CommandType.StoredProcedure;
                 id = Convert.ToInt32(cmd.ExecuteScalar());
                 trans.Commit();
-            } catch (MySqlException ex) {
+            }
+            catch (MySqlException ex)
+            {
                 trans.Rollback();
                 throw new Exception(ex.ToString());
             }
@@ -256,7 +269,7 @@ namespace Data {
 
         public int ObtenerCantidadEquipoRegistrados()
         {
-            int cantidad= 0;
+            int cantidad = 0;
             conexion = ConexionBD.getConexion();
             conexion.Open();
             try
@@ -271,17 +284,20 @@ namespace Data {
             }
             catch (MySqlException ex)
             {
-                Console.WriteLine("Error al obtener la cantidad de equipos registrados"+ex.Message);
+                Console.WriteLine("Error al obtener la cantidad de equipos registrados" + ex.Message);
             }
+            conexion.Close();
             return cantidad;
         }
 
-        public bool InsertarColegiado (Colegiado colegiado) {
+        public bool InsertarColegiado(Colegiado colegiado)
+        {
             conexion = ConexionBD.getConexion();
             conexion.Open();
             trans = conexion.BeginTransaction();
             bool msj = false;
-            try {
+            try
+            {
                 MySqlCommand cmd = new MySqlCommand("guardarColegiado", conexion, trans);
                 cmd.CommandType = CommandType.StoredProcedure;
 
@@ -294,7 +310,9 @@ namespace Data {
 
                 trans.Commit();
                 msj = true;
-            } catch (MySqlException ex) {
+            }
+            catch (MySqlException ex)
+            {
                 trans.Rollback();
                 msj = false;
                 throw new Exception(ex.ToString());
@@ -318,10 +336,10 @@ namespace Data {
                 reader = comando.ExecuteReader();
                 if (reader.Read())
                 {
-                    nombres = "Juez Central: "+ reader["nombreJC"].ToString()+"\r\n";
-                    nombres +="Asistente 1: "+ reader["nombreAs1"].ToString() + "\r\n";
-                    nombres += "Asistente 2: "+reader["nombreAs2"].ToString() + "\r\n";
-                    nombres += "Cuarto Arbitro: "+reader["nombreCA"].ToString();
+                    nombres = "Juez Central: " + reader["nombreJC"].ToString() + "\r\n";
+                    nombres += "Asistente 1: " + reader["nombreAs1"].ToString() + "\r\n";
+                    nombres += "Asistente 2: " + reader["nombreAs2"].ToString() + "\r\n";
+                    nombres += "Cuarto Arbitro: " + reader["nombreCA"].ToString();
                 }
             }
             catch (MySqlException ex)
@@ -332,18 +350,21 @@ namespace Data {
             return nombres;
         }
 
-        public List<IntegrantesColegiados> ConsultarColegiado () {
+        public List<IntegrantesColegiados> ConsultarColegiado()
+        {
             List<IntegrantesColegiados> listaColegiado = new List<IntegrantesColegiados>();
             IntegrantesColegiados integrantesColeg = null;
             MySqlDataReader reader = null; //tabla virtual
             conexion = ConexionBD.getConexion();
             conexion.Open();
-            try {
+            try
+            {
                 MySqlCommand comando = new MySqlCommand("obtenerColegiado", conexion);
-             
+
                 comando.CommandType = CommandType.StoredProcedure;
                 reader = comando.ExecuteReader();
-                while (reader.Read()) {
+                while (reader.Read())
+                {
                     integrantesColeg = new IntegrantesColegiados();
                     integrantesColeg.IdGrupoColegiado = Convert.ToInt32(reader["idGrupoColegiado"].ToString());
                     integrantesColeg.NombrejuezCentral = reader["nombreJC"].ToString();
@@ -352,7 +373,9 @@ namespace Data {
                     integrantesColeg.NombrecuartoArbitro = reader["nombreCA"].ToString();
                     listaColegiado.Add(integrantesColeg);
                 }
-            } catch(MySqlException ex) {
+            }
+            catch (MySqlException ex)
+            {
                 listaColegiado = null;
                 throw new Exception(ex.ToString());
             }

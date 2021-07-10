@@ -2,11 +2,6 @@
 using Control.AdmEquipos;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace GestionDeColegiados
@@ -33,14 +28,14 @@ namespace GestionDeColegiados
                 btnGuardarEncuentros.Visible = false;
                 lblTitulo.Text = "ENCUENTROS PENDIENTES" +
                     "\r\n DE FECHA Y COLEGIADOS";
-                int limiteInferiorPb=0, limiteSuperiorPb=0;
-                for(int x=0; x <admGenerarEncuentros.obtnerNumeroEncuentrosGeneradosPendientes(); x++)
+                int limiteInferiorPb = 0, limiteSuperiorPb = 0;
+                for (int x = 0; x < admGenerarEncuentros.obtnerNumeroEncuentrosGeneradosPendientes(); x++)
                 {
-                    
+
                     admGenerarEncuentros.LlenarTuplas(listaContenedoresLocal[x], listaContenedoresVisitante[x], x);
                     listaContenedoresLocal[x].Visible = true;
                     listaContenedoresVisitante[x].Visible = true;
-                    limiteSuperiorPb = limiteInferiorPb+3;
+                    limiteSuperiorPb = limiteInferiorPb + 3;
                     ActivarPictureBox(limiteInferiorPb, limiteSuperiorPb);
                     limiteInferiorPb += 3;
                 }
@@ -53,7 +48,7 @@ namespace GestionDeColegiados
         }
         private void ActivarPictureBox(int LimiteInferior, int LimiteSuperior)
         {
-            for (int i =LimiteInferior; i <LimiteSuperior; i++)
+            for (int i = LimiteInferior; i < LimiteSuperior; i++)
             {
                 listaPictureBox[i].Visible = true;
             }
@@ -68,11 +63,11 @@ namespace GestionDeColegiados
         }
         private void cambiarAccesibilidad(List<Label> listaContenedores, bool estado)
         {
-            foreach(Label contenedor in listaContenedores)
+            foreach (Label contenedor in listaContenedores)
             {
                 contenedor.Visible = estado;
             }
-            
+
         }
         private void agregarPbaLista()
         {
@@ -111,9 +106,9 @@ namespace GestionDeColegiados
             cambiarAccesibilidad(listaContenedoresLocal, true);
             cambiarAccesibilidad(listaContenedoresVisitante, true);
             cambiarAccesibilidadPictureBox(listaPictureBox, true);
-            
+
             admGenerarEncuentros.generarEncuentrosAleatorios(listaContenedoresLocal, listaContenedoresVisitante);
-                
+
             btnGuardarEncuentros.Enabled = true;
         }
 
@@ -128,6 +123,6 @@ namespace GestionDeColegiados
                 btnGuardarEncuentros.Visible = false;
             }
         }
-        
+
     }
 }
