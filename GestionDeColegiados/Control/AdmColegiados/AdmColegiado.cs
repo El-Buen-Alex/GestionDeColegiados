@@ -51,14 +51,16 @@ namespace Control.AdmColegiados
 
         private void GuardarColegiadoBD(Colegiado colegiado)
         {
-            bool mensaje = false;
-            mensaje = datos.InsertarColegiado(colegiado);
-            if (mensaje == false)
-            {
-                MessageBox.Show("No se ha podido comunicar con la BD", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            string mensaje = "";
+            try {
+                datos.InsertarColegiado(colegiado);
+            } catch (insertarFallidoBDException ex) {
+                mensaje = ex.Message;
             }
-            else
-            {
+            if (mensaje != "") {
+                MessageBox.Show(mensaje, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("No se ha guardado el colegiado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            } else {
                 MessageBox.Show("Se ha guardado correctamente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }

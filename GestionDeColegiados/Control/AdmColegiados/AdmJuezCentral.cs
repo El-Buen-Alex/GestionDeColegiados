@@ -53,11 +53,14 @@ namespace Control.AdmColegiados
         private int GuardarJuezCentralBD(JuezCentral juezCentral)
         {
             int id = 0;
-
-            id = datos.InsertarJuezCentral(juezCentral);
-            if (id == 0)
-            {
-                MessageBox.Show("No se ha podido comunicar con la BD");
+            string mensaje = "";
+            try {
+                id = datos.InsertarJuezCentral(juezCentral);
+            } catch (insertarFallidoBDException ex) {
+                mensaje = ex.Message;
+            }
+            if (mensaje != "") {
+                MessageBox.Show(mensaje);
             }
             return id;
         }

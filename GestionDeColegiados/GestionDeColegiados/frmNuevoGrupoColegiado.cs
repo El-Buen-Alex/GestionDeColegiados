@@ -87,6 +87,8 @@ namespace GestionDeColegiados
                 limpiarCamposAsistente1();
                 limpiarCamposAsistente2();
                 limpiarCamposArbitroCentral();
+                camposCuartoArbitro(false);
+                camposJuezCentral(true);
             }
             else
             {

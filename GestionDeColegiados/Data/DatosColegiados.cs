@@ -42,7 +42,7 @@ namespace Data
             catch (MySqlException ex)
             {
                 trans.Rollback();
-                throw new Exception(ex.ToString());
+                throw new insertarFallidoBDException(ex.Message);
             }
             conexion.Close();
             return id;
@@ -193,7 +193,7 @@ namespace Data
             catch (MySqlException ex)
             {
                 trans.Rollback();
-                throw new Exception(ex.ToString());
+                throw new insertarFallidoBDException(ex.Message);
             }
             conexion.Close();
             return id;
@@ -229,7 +229,7 @@ namespace Data
             catch (MySqlException ex)
             {
                 trans.Rollback();
-                throw new Exception(ex.ToString());
+                throw new insertarFallidoBDException(ex.Message);
             }
             conexion.Close();
             return id;
@@ -261,7 +261,7 @@ namespace Data
             catch (MySqlException ex)
             {
                 trans.Rollback();
-                throw new Exception(ex.ToString());
+                throw new insertarFallidoBDException(ex.Message);
             }
             conexion.Close();
             return id;
@@ -290,12 +290,11 @@ namespace Data
             return cantidad;
         }
 
-        public bool InsertarColegiado(Colegiado colegiado)
+        public void InsertarColegiado(Colegiado colegiado)
         {
             conexion = ConexionBD.getConexion();
             conexion.Open();
             trans = conexion.BeginTransaction();
-            bool msj = false;
             try
             {
                 MySqlCommand cmd = new MySqlCommand("guardarColegiado", conexion, trans);
@@ -309,16 +308,13 @@ namespace Data
                 cmd.ExecuteNonQuery();
 
                 trans.Commit();
-                msj = true;
             }
             catch (MySqlException ex)
             {
                 trans.Rollback();
-                msj = false;
-                throw new Exception(ex.ToString());
+                throw new insertarFallidoBDException(ex.Message);
             }
             conexion.Close();
-            return msj;
         }
 
         public string ObtenerNombreDeColegiados(int idColegiado)

@@ -53,11 +53,14 @@ namespace Control.AdmColegiados
         private int GuardarAsistente1BD(Asistente asistente1)
         {
             int id = 0;
-
-            id = datos.InsertarAsistente1(asistente1);
-            if (id == 0)
-            {
-                MessageBox.Show("No se ha podido comunicar con la BD");
+            string mensaje = "";
+            try {
+                id = datos.InsertarAsistente1(asistente1);
+            } catch (insertarFallidoBDException ex) {
+                mensaje = ex.Message;
+            }
+            if (mensaje != "") {
+                MessageBox.Show(mensaje);
             }
             return id;
         }
