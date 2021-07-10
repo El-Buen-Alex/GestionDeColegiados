@@ -73,10 +73,10 @@ namespace GestionDeColegiados
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(134, 50);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(116, 53);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(218, 24);
+            this.label2.Size = new System.Drawing.Size(260, 26);
             this.label2.TabIndex = 1;
             this.label2.Text = "AGREGAR COLEGIADO";
             // 
@@ -131,7 +131,7 @@ namespace GestionDeColegiados
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(75, 20);
             this.label7.TabIndex = 10;
-            this.label7.Text = "Telefono:";
+            this.label7.Text = "Teléfono:";
             // 
             // label8
             // 
@@ -478,7 +478,7 @@ namespace GestionDeColegiados
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(63, 20);
             this.label6.TabIndex = 52;
-            this.label6.Text = "Cedula:";
+            this.label6.Text = "Cédula:";
             // 
             // frmNuevoGrupoColegiado
             // 

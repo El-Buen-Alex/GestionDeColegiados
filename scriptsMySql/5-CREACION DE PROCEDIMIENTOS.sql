@@ -288,3 +288,15 @@ CREATE PROCEDURE mostrarEncuentroDefinidos()
 		SELECT * FROM encuentroDefinidos WHERE estado = "PorJugar" order by idefinido asc limit 5; 
 	END$$
 DELIMITER  
+
+/*PROCEDIMIENTO PARA OBTENER CEDULA DE COLEGIADO*/
+DELIMITER $$
+CREATE PROCEDURE obtenerCedulaColegiado()
+	BEGIN
+		SELECT c.idcolegiado idGrupoColegiado, jc.cedula cedulaJC, as1.cedula cedulaAs1, as2.cedula cedulaAs2, ca.cedula cedulaCA FROM colegiado c 
+		INNER JOIN juezcentral jc ON jc.idjuezcentral = c.idjuezcentral
+		INNER JOIN asistente1 as1 ON as1.idasistente1 = c.idasistente1
+		INNER JOIN asistente2 as2 ON as2.idasistente2 = c.idasistente2
+		INNER JOIN cuartoarbitro ca ON ca.idcuartoarbitro = c.idcuartoarbitro;
+	END$$
+DELIMITER 

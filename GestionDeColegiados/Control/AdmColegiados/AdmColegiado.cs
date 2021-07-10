@@ -81,10 +81,29 @@ namespace Control.AdmColegiados
             nombres = datos.ObtenerNombreDeColegiados(idColegiado);
             return nombres;
         }
+
         public int obtenerCantidadColegiado()
         {
             listaintegColeg = datos.ConsultarColegiado();
             return listaintegColeg.Count;
         }
+
+
+        public bool validarCedula (TextBox txtcedula) 
+        {
+            string cedula = txtcedula.Text;
+            bool repetido = false;
+            listaintegColeg = datos.ConsultarCedulaColegiado();
+            foreach(IntegrantesColegiados integ in listaintegColeg) 
+            {
+                if(integ.NombrejuezCentral == cedula || integ.Nombreasistente1 == cedula || 
+                    integ.Nombreasistente2 == cedula || integ.NombrecuartoArbitro == cedula) 
+                {
+                    repetido = true;
+                    break;
+                }
+            }
+            return repetido;
+        }
     }
-}
+} 

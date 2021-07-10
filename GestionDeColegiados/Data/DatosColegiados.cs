@@ -104,7 +104,6 @@ namespace Data
             return id;
         }
 
-
         public int registrarEncuentrosGenerados(string nombreEquipo, string estado, int idEquipo)
         {
             int id = 0;
@@ -372,6 +371,34 @@ namespace Data
             }
             catch (MySqlException ex)
             {
+                listaColegiado = null;
+                throw new Exception(ex.ToString());
+            }
+            conexion.Close();
+            return listaColegiado;
+        }
+
+        public List<IntegrantesColegiados> ConsultarCedulaColegiado () {
+            List<IntegrantesColegiados> listaColegiado = new List<IntegrantesColegiados>();
+            IntegrantesColegiados integrantesColeg = null;
+            MySqlDataReader reader = null; //tabla virtual
+            conexion = ConexionBD.getConexion();
+            conexion.Open();
+            try {
+                MySqlCommand comando = new MySqlCommand("obtenerCedulaColegiado", conexion);
+
+                comando.CommandType = CommandType.StoredProcedure;
+                reader = comando.ExecuteReader();
+                while (reader.Read()) {
+                    integrantesColeg = new IntegrantesColegiados();
+                    integrantesColeg.IdGrupoColegiado = Convert.ToInt32(reader["idGrupoColegiado"].ToString());
+                    integrantesColeg.NombrejuezCentral = reader["cedulaJC"].ToString();
+                    integrantesColeg.Nombreasistente1 = reader["cedulaAs1"].ToString();
+                    integrantesColeg.Nombreasistente2 = reader["cedulaAs2"].ToString();
+                    integrantesColeg.NombrecuartoArbitro = reader["cedulaCA"].ToString();
+                    listaColegiado.Add(integrantesColeg);
+                }
+            } catch (MySqlException ex) {
                 listaColegiado = null;
                 throw new Exception(ex.ToString());
             }
