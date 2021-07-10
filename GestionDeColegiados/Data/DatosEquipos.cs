@@ -5,13 +5,18 @@ using Sistema;
 using System;
 using System.Collections.Generic;
 using System.Data;
-
+/*clase que conecta directamente con los procedimientos que están ejecutados en la base de datos*/
 namespace Data
 {
     public class DatosEquipos
     {
         private MySqlConnection conexion = null;
         private MySqlTransaction trans = null;
+        /*método encargado de extraer el id del equipo el cual es pasado por parametro en el llamado de este método.
+            *Realiza las conexiones hacia la bd, escribe el nombre de la columna en la cual va hacer la busqueda.
+            *Una vez los datos cargaos se los almacena en los campos correspondiente de la clase contenedora Equipo el
+            *cual se encuentra en Model.
+        */
         public Equipo ObtenerEquipoPorId(int id)
         {
             Equipo equipo = null;
@@ -38,6 +43,10 @@ namespace Data
             conexion.Close();
             return equipo;
         }
+        /*Método que tiene la finalidad de almacenar los datos en la bd, donde recibió por parámetros el objeto del cual va a fragmentar la informacion
+         * para almacenarla. Se escribe el nombre de la columna y la variable que contiene la informacion para así poder registrarla en la bd
+         * 
+         */
         public int InsertarEquipo(Equipo equipo)
         {
             int id = 0;
@@ -66,34 +75,7 @@ namespace Data
             conexion.Close();
             return id;
         }
-        public int registrarEncuentrosGenerados(string nombreEquipo, string estado, int idEquipo)
-        {
-            int id = 0;
-            conexion = ConexionBD.getConexion();
-            conexion.Open();
-            trans = conexion.BeginTransaction();
-            try
-            {
-                MySqlCommand cmd = new MySqlCommand("guardarEncuentros", conexion, trans);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@_idequipo", idEquipo);
-                cmd.Parameters.AddWithValue("@_nombre", nombreEquipo);
-                cmd.Parameters.AddWithValue("@_estado", estado);
-                cmd.ExecuteNonQuery();
-                cmd = new MySqlCommand("obtenerId", conexion);
-                cmd.CommandType = CommandType.StoredProcedure;
-                id = Convert.ToInt32(cmd.ExecuteScalar());
-                trans.Commit();
-            }
-            catch (MySqlException ex)
-            {
-                trans.Rollback();
-                throw new Exception(ex.ToString());
-            }
-            conexion.Close();
-            return id;
-        }
-
+        /*método encargado de extraer la informacion necesaria para ser presentada según sea nuestro criterio*/
         public List<Equipo> consultarEquipos()
         {
             List<Equipo> listaEquipo = new List<Equipo>();
@@ -121,6 +103,7 @@ namespace Data
             conexion.Close();
             return listaEquipo;
         }
+        /*Método el cual se comunica con el prcedimiento que nos devolverá la cantidad de equipos registrados en la bd*/
         public int ObtenerCantidadEquipoRegistrados()
         {
             int cantidad = 0;
