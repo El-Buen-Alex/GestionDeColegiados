@@ -27,7 +27,6 @@ namespace GestionDeColegiados
         public btnIniciarSesion()
         {
             InitializeComponent();
-
         }
 
 
@@ -92,14 +91,7 @@ namespace GestionDeColegiados
             {
                 //metodo que envia el usuario y contraseña ingrsado para validar si los datos fueron ingresados correctamente
                 string mensaje = "";
-                try
-                {
-                    gestionLogin.controlLogin(usuario, password);
-                }
-                catch (usuarioNoRegistradoException ex)
-                {
-                    mensaje = ex.Message;
-                }
+                mensaje=gestionLogin.controlLogin(usuario, password);
                 if (mensaje == "")
                 {
                     this.Hide();
@@ -112,7 +104,6 @@ namespace GestionDeColegiados
                     borrarCampos();
 
                 }
-
             }
         }
         private void borrarCampos()

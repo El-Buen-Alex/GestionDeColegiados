@@ -87,7 +87,7 @@ namespace Data
 
             try
             {
-                MySqlCommand comando = new MySqlCommand("actulizarEstadioAsociadop", conexion, transaccion);
+                MySqlCommand comando = new MySqlCommand("actulizarEstadioAsociado", conexion, transaccion);
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@_idencuentro", idEncuentroPorActualizar);
                 comando.Parameters.AddWithValue("@_idEstadio", idNuevoEstadioAsociado);

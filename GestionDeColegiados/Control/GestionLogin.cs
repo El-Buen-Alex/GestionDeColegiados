@@ -1,4 +1,5 @@
 ﻿using Model;
+using System;
 
 namespace Control
 {
@@ -6,18 +7,27 @@ namespace Control
     {
 
         //metodo necesario para gestionar el intento de acceder a la aplicación
-        public void controlLogin(string usuario, string password)
+        public string controlLogin(string usuario, string password)
         {
             //creamos un objeto que nos ayudará a gestionar la conexion
             ConexionUsuarioBD gestionUsuario = new ConexionUsuarioBD();
             Administrador nuevoUsuario = null;
-
-            nuevoUsuario = gestionUsuario.ExisteUsuario(usuario, password);
-
-            if (nuevoUsuario == null)
+            //creamos una cadena que ayudará a dar respuesta del proceso
+            string respuesta = "";
+            try
             {
-                throw new usuarioNoRegistradoException(usuario);
+                nuevoUsuario = gestionUsuario.ExisteUsuario(usuario, password);
+
+                if (nuevoUsuario == null)
+                {
+                    throw new usuarioNoRegistradoException(usuario);
+                }
+            }catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                respuesta = ex.Message;
             }
+            return respuesta;
         }
     }
 }
