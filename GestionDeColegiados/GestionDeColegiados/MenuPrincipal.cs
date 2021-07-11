@@ -11,7 +11,7 @@ namespace GestionDeColegiados
     public partial class MenuPrincipal : Form
     {
 
-        //dlly variables necesarios para poder mover de lugar la barra de titulo 
+        //dll y variables necesarios para poder mover de lugar la barra de titulo 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -47,17 +47,20 @@ namespace GestionDeColegiados
         }
 
 
-
+        //metodo para mostrar un form dentro del panel principal
         private void AbrirFormEnPanel(object formhija)
         {
+            /*preguntamos si existe minimo un formulario ya abierto
+            si es así entonces lo cerramos*/
             if (this.pnlPanelContenedor.Controls.Count > 0)
                 this.pnlPanelContenedor.Controls.RemoveAt(0);
-            Form fh = formhija as Form;
-            fh.TopLevel = false;
-            fh.Dock = DockStyle.Fill;
-            this.pnlPanelContenedor.Controls.Add(fh);
-            this.pnlPanelContenedor.Tag = fh;
-            fh.Show();
+            //finalmente abrimos el frm que se desea mostrar en el panel principal
+            Form formAMostrar = formhija as Form;
+            formAMostrar.TopLevel = false;
+            formAMostrar.Dock = DockStyle.Fill;
+            this.pnlPanelContenedor.Controls.Add(formAMostrar);
+            this.pnlPanelContenedor.Tag = formAMostrar;
+            formAMostrar.Show();
 
         }
 

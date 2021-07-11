@@ -20,7 +20,10 @@ namespace GestionDeColegiados
         }
         private void refrezcarContenedores()
         {
-            admGenerarEncuentros.LlenarPrimeraTupla(lblEquipoLocal, lblEquipoVisitante);
+            /*pasamos posicion 0, porque cada vez que se asigna un estadio y coleggiado a un 
+             ecneuntroG generado pendiente, este cambia de estado("por jugar") y en la lista existe
+            un encuentro menos por definir estadio y colegiado*/
+            admGenerarEncuentros.LlenarTuplas(lblEquipoLocal, lblEquipoVisitante,0);
             admColegiado.LlenarColegiadosCmb(cmbGrupoColegiado);
             admEstadio.LlenarEstadiosCmb(cmbEstadio);
         }
@@ -51,16 +54,21 @@ namespace GestionDeColegiados
             bool guardo = admGenerarEncuentroDefinido.GuardarEncuentroDefinido(grupoSeleccionado, fechaPartido, horaPartido, estadioSeleccionado);
             if (guardo)
             {
+                //si guarda se bloquea la capacidad de editar algun encuentro ya definido
                 cambiarAccesibilidadControlesGraficos(false);
             }
             if (admGenerarEncuentros.obtnerNumeroEncuentrosGeneradosPendientes() == 0)
             {
+                //Si ya no existen encuentros pedientes por definir colegiados, estado y fecha
+                //se bloquea la capacidad de interactuar completamente con esta interfaz
                 controladoresGUINoDisponibles();
             }
         }
 
         private void btnSiguiente_Click(object sender, EventArgs e)
         {
+            //si da clic en siguiente, se resetean los componentes y 
+            //se cambia la accesbilidad de la ventana grafica
             refrezcarContenedores();
             cambiarAccesibilidadControlesGraficos(true);
         }

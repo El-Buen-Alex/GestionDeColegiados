@@ -11,6 +11,10 @@ namespace GestionDeColegiados
         public frmListaEquipos()
         {
             InitializeComponent();
+            /*se llenan los labels a una lista 
+             * para poder gestionar el conjunto de ellos, al mostrar
+             * los equipo
+            */
             listaContenedores.Add(lblEquipo1);
             listaContenedores.Add(lblEquipo2);
             listaContenedores.Add(lblEquipo3);
@@ -21,6 +25,7 @@ namespace GestionDeColegiados
             listaContenedores.Add(lblEquipo8);
             listaContenedores.Add(lblEquipo9);
             listaContenedores.Add(lblEquipo10);
+            //llenamos los equipos en los labls
             admEquipo.LlenarEquipos(listaContenedores);
         }
     }

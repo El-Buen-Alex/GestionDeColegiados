@@ -18,12 +18,28 @@ namespace Control.AdmEncuentrosGenerados
         private DatosEncuentroDefinido datosEncuentroDefinido = new DatosEncuentroDefinido();
         private AdmGenerarEncuentros admEncuentrosGenerados = AdmGenerarEncuentros.getAdmadmGenerarEncuentros();
         private AdmColegiado admColegiados = AdmColegiado.getAdmCol();
-
-
-
         private AdmEquipo admEquipos = AdmEquipo.getEquipo();
         private AdmEstadio admEstadios = AdmEstadio.GetAdmEstadio();
+        private AdmEstadio admEstadio = AdmEstadio.GetAdmEstadio();
 
+        private AdmEncuentrosDefinidos()
+        {
+            listaEncuentrosDefinidos = new List<EncuentroDefinido>();
+        }
+
+        public List<EncuentroDefinido> ListaEncuentrosDefinidos { get => listaEncuentrosDefinidos; set => listaEncuentrosDefinidos = value; }
+
+        public static AdmEncuentrosDefinidos GetAdmGenerarEncuentrosDefinidos()
+        {
+            if (admGenerarEncuentrosDefinidos == null)
+            {
+                admGenerarEncuentrosDefinidos = new AdmEncuentrosDefinidos();
+            }
+            return admGenerarEncuentrosDefinidos;
+        }
+        /*metodo usado para llenar encuentros en un combobox
+         se recupera los encuentros definidos, el nombre de equipo local y visitante
+        ademas del estadio*/
         public void LlenarPartidosCmb(ComboBox cmbEncuentros)
         {
             cmbEncuentros.Items.Clear();
@@ -43,6 +59,7 @@ namespace Control.AdmEncuentrosGenerados
             }
         }
 
+        /*metodo para pedirle a AdmEstadio que nos devuelva el nombre de un estadio a través del id*/
         public string ObtenerNombreEstadioDelPartido(int indexEncuentroDefinidoSeleccionado)
         {
 
@@ -50,11 +67,17 @@ namespace Control.AdmEncuentrosGenerados
 
             return estadio.Nombre;
         }
+        /*metodo para pedirle a EncuentroGenerado que nos devuelva el nombre de un Encuentro Generado a través del id*/
         private EncuentroGenerado ObtenerEncuentroGenerado(int id)
         {
             return admEncuentrosGenerados.ObtenerEncuentroPorID(id);
         }
-
+        /*meotdo usado para llenar la informacion completa de un encuentro 
+         *obteniendo el nombre de los equipos 
+         *estadio
+         *fecha
+         *y grupo de colegiados
+         */
         public void LlenarInformacíonPartidoCompleta(int indexEncuentroSeleccionado, Label lblEquipoLocal, Label lblEquipoVisitante, Label lblEstadio, Label lblFecha, Label lblColegiado)
         {
 
@@ -71,12 +94,12 @@ namespace Control.AdmEncuentrosGenerados
             lblEstadio.Text = ObtenerNombreEstadioDelPartido(indexEncuentroSeleccionado);
             lblColegiado.Text = admColegiados.ObtenerNombreDeColegiados(encuentroDefinido.IdColegiado);
         }
-
         public int ObtenerNumeroPartidosPorJugar()
         {
             return datosEncuentroDefinido.ObtenerCantidadEncuentrosPorJugar();
         }
-
+        /*Metodo que actualiza el estadio de un encuentro definido
+         */
         public bool ActualizarEstadio(int indexEncuentro, int indexEstadio)
         {
             bool actualizo = false;
@@ -102,25 +125,9 @@ namespace Control.AdmEncuentrosGenerados
             }
             return actualizo;
         }
-
-        private AdmEstadio admEstadio = AdmEstadio.GetAdmEstadio();
-
-        private AdmEncuentrosDefinidos()
-        {
-            listaEncuentrosDefinidos = new List<EncuentroDefinido>();
-        }
-
-        public List<EncuentroDefinido> ListaEncuentrosDefinidos { get => listaEncuentrosDefinidos; set => listaEncuentrosDefinidos = value; }
-
-        public static AdmEncuentrosDefinidos GetAdmGenerarEncuentrosDefinidos()
-        {
-            if (admGenerarEncuentrosDefinidos == null)
-            {
-                admGenerarEncuentrosDefinidos = new AdmEncuentrosDefinidos();
-            }
-            return admGenerarEncuentrosDefinidos;
-        }
-
+        /*metodo que guarda un encuentro deifnido y a su vez cambia el estado
+         de un encuentro generado
+         y el estadio al que fue asignado*/
         public bool GuardarEncuentroDefinido(int grupoColegiado, DateTime fechaPartido, DateTime horaPartido, int estadioSeleccionado)
         {
             bool guardo = false;

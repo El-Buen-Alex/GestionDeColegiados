@@ -12,6 +12,7 @@ namespace GestionDeColegiados
         public frmCambiarEstadioPartido()
         {
             InitializeComponent();
+            //se setean los controladores graficos
             refrezcarComponentes();
 
         }
@@ -27,14 +28,18 @@ namespace GestionDeColegiados
         private void btnGuardarCambios_Click(object sender, EventArgs e)
         {
             int indexEncuentro, indexEstadio;
-
             if (cmbEncuentros.Items.ToString() != "" && cmbEstadios.Items.ToString() != "")
             {
+                //se recupera la posicion del encuentro al que se desea cambiar el estadio
+                //se selecciona el nuevo estadio al que se desea asignar al encuentro
                 indexEncuentro = cmbEncuentros.SelectedIndex;
                 indexEstadio = cmbEstadios.SelectedIndex;
+                //se intenta cambiar el estadio al encuentro
                 bool actualizo = admEncuentrosDefinidos.ActualizarEstadio(indexEncuentro, indexEstadio);
                 if (actualizo)
                 {
+                    // si no ocurre problemas al cambiar, se refrezcan los componentes y 
+                    //se muestra que el cambio se realizó con exito
                     MessageBox.Show("El cambio se realizo con exito");
                     refrezcarComponentes();
                 }
@@ -47,6 +52,9 @@ namespace GestionDeColegiados
 
         private void cmbEncuentros_SelectedIndexChanged(object sender, EventArgs e)
         {
+            /*cuando el usuario seleccione un encuentro
+             el contenido del lblEstadioActual se seteara con el
+            nombre del estadio actual del encuentro que se ha seleccionado*/
             int indexEncuentroDefinidoSeleccionado = cmbEncuentros.SelectedIndex;
             lblEstadioActual.Text = admEncuentrosDefinidos.ObtenerNombreEstadioDelPartido(indexEncuentroDefinidoSeleccionado);
             cmbEstadios.Enabled = true;
@@ -54,6 +62,7 @@ namespace GestionDeColegiados
 
         private void cmbEstadios_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //si se selecciona un nuevo estadio, habilitará la opcion de guardar
             btnGuardarCambios.Enabled = true;
         }
     }

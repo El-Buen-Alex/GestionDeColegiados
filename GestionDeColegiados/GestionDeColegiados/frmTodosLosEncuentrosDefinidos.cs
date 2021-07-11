@@ -10,7 +10,9 @@ namespace GestionDeColegiados
         public frmTodosLosEncuentrosDefinidos()
         {
             InitializeComponent();
+            //llenamos el combobox con los encuentros definidos disponibles
             admEncuentrosDefinidos.LlenarPartidosCmb(cmbEncuentros);
+            //deshabilitamos la capacidad de acceder a controladores graficos
             CambiarAccesibilidadControladoresGUI(false);
         }
 
@@ -26,8 +28,11 @@ namespace GestionDeColegiados
         }
         private void cmbEncuentros_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //cuando se seleccione un encuentro se recogera la posicion de la opcion combobox
             int indexEncuentroSeleccionado = cmbEncuentros.SelectedIndex;
+            //se llena la información de los encuentros
             admEncuentrosDefinidos.LlenarInformacíonPartidoCompleta(indexEncuentroSeleccionado, lblEquipoLocal, lblEquipoVisitante, lblEstadio, lblFecha, lblColegiados);
+            //se permite la vista de los controladores graficos
             CambiarAccesibilidadControladoresGUI(true);
         }
     }

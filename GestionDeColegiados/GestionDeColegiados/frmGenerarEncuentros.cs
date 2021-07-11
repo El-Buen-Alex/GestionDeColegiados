@@ -48,6 +48,9 @@ namespace GestionDeColegiados
         }
         private void ActivarPictureBox(int LimiteInferior, int LimiteSuperior)
         {
+            /*por cada encuentro pendiente se deben mostrar 3 picturebox de la lista 
+            se añade el limite inferior desde donde se va a habilitar hasta doonde se va a 
+            habilitar dichos picturebox*/
             for (int i = LimiteInferior; i < LimiteSuperior; i++)
             {
                 listaPictureBox[i].Visible = true;
@@ -55,6 +58,8 @@ namespace GestionDeColegiados
         }
         private void cambiarAccesibilidadPictureBox(List<PictureBox> listaContenedores, bool estado)
         {
+            /*establecemos que todos los picturebox se mostraran en un estado
+            que se pasará por parametro*/
             foreach (PictureBox pictureBox in listaContenedores)
             {
                 pictureBox.Visible = estado;
@@ -63,6 +68,8 @@ namespace GestionDeColegiados
         }
         private void cambiarAccesibilidad(List<Label> listaContenedores, bool estado)
         {
+            /*establecemos que todos los labels se mostraran en un estado
+           que se pasará por parametro*/
             foreach (Label contenedor in listaContenedores)
             {
                 contenedor.Visible = estado;
@@ -71,6 +78,7 @@ namespace GestionDeColegiados
         }
         private void agregarPbaLista()
         {
+            //añadimos los pciturebox a la lista
             listaPictureBox.Add(pictureBox1);
             listaPictureBox.Add(pictureBox2);
             listaPictureBox.Add(pictureBox3);
@@ -90,6 +98,7 @@ namespace GestionDeColegiados
         }
         private void inciarContenedores()
         {
+            //añadimos los labels a la lista
             listaContenedoresLocal.Add(lblEquipo1);
             listaContenedoresLocal.Add(lblEquipo2);
             listaContenedoresLocal.Add(lblEquipo3);
@@ -103,22 +112,25 @@ namespace GestionDeColegiados
         }
         private void generarEncuentros_Click(object sender, EventArgs e)
         {
+            //mostramos los label y picturebox necesarios para generar encuentros
             cambiarAccesibilidad(listaContenedoresLocal, true);
             cambiarAccesibilidad(listaContenedoresVisitante, true);
             cambiarAccesibilidadPictureBox(listaPictureBox, true);
-
             admGenerarEncuentros.generarEncuentrosAleatorios(listaContenedoresLocal, listaContenedoresVisitante);
-
+            //una vez generado los encuentros se activa la opcion de guardar encuentros
             btnGuardarEncuentros.Enabled = true;
         }
 
         private void guardarDatos_Click(object sender, EventArgs e)
         {
+            //se guarda los encuentos y retorna un mensaje respuesta a la acción de guardar
             string guardo = admGenerarEncuentros.guardarEncuentrosAleatorios();
-
             MessageBox.Show(guardo);
             if (guardo[0] == 'S')
             {
+                //si guarda con exito, los controladores se deshabilitan
+                btnGenerarEncuentros.Enabled = false;
+                btnGuardarEncuentros.Enabled = false;
                 btnGenerarEncuentros.Visible = false;
                 btnGuardarEncuentros.Visible = false;
             }
