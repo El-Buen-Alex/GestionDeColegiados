@@ -62,30 +62,19 @@ CREATE TABLE `campeonatos`.`colegiado` (
   `idasistente2` INT NOT NULL,
   `idcuartoarbitro` INT NOT NULL,
   PRIMARY KEY (`idcolegiado`),
-  INDEX `_idx` (`idjuezcentral` ASC) VISIBLE,
-  INDEX `Colegiado_Asistente1_FK_idx` (`idasistente1` ASC) VISIBLE,
-  INDEX `Colegiado_Asistente2_FK_idx` (`idasistente2` ASC) INVISIBLE,
-  INDEX `Colegiado_CuartoArbitro_FK_idx` (`idcuartoarbitro` ASC) VISIBLE,
   CONSTRAINT `Colegiado_JuezCentral_FK`
     FOREIGN KEY (`idjuezcentral`)
-    REFERENCES `campeonatos`.`juezcentral` (`idjuezcentral`)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE,
+    REFERENCES `campeonatos`.`juezcentral` (`idjuezcentral`),
   CONSTRAINT `Colegiado_Asistente1_FK`
     FOREIGN KEY (`idasistente1`)
-    REFERENCES `campeonatos`.`asistente1` (`idasistente1`)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE,
+    REFERENCES `campeonatos`.`asistente1` (`idasistente1`),
   CONSTRAINT `Colegiado_Asistente2_FK`
     FOREIGN KEY (`idasistente2`)
-    REFERENCES `campeonatos`.`asistente2` (`idasistente2`)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE,
+    REFERENCES `campeonatos`.`asistente2` (`idasistente2`),
   CONSTRAINT `Colegiado_CuartoArbitro_FK`
     FOREIGN KEY (`idcuartoarbitro`)
     REFERENCES `campeonatos`.`cuartoarbitro` (`idcuartoarbitro`)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE);
+    );
     
 /*CREACIÓN DE TABLA EQUIPO*/
 CREATE TABLE `campeonatos`.`equipo`(
