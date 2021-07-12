@@ -48,17 +48,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Administrador.cs" />
+    <Compile Include="Administrador\Administrador.cs" />
     <Compile Include="Colegiados\Arbitro.cs" />
     <Compile Include="Colegiados\Asistente.cs" />
     <Compile Include="Colegiados\Colegiado.cs" />
     <Compile Include="Colegiados\CuartoArbitro.cs" />
     <Compile Include="Colegiados\IntegrantesColegiados.cs" />
     <Compile Include="Colegiados\JuezCentral.cs" />
-    <Compile Include="EncuentroDefinido.cs" />
-    <Compile Include="EncuentroGenerado.cs" />
-    <Compile Include="EquipoFolder\Equipo.cs" />
-    <Compile Include="Estadio.cs" />
+    <Compile Include="Partido\EncuentroDefinido.cs" />
+    <Compile Include="Campeonato\EncuentroGenerado.cs" />
+    <Compile Include="Equipo\Equipo.cs" />
+    <Compile Include="Equipo\Estadio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
