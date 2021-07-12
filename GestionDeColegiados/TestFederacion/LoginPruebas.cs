@@ -11,7 +11,7 @@ namespace UnitTestProject1
         public void LoginPrueba()
         {
             var name = "presidente";
-            var password = "1234prxesi5";
+            var password = "1234presi5";
             var resultadoEsperado = "";
 
             GestionLogin controlLogin = new GestionLogin();
