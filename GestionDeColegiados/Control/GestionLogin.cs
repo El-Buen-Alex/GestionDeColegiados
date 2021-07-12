@@ -20,6 +20,7 @@ namespace Control
 
                 if (nuevoUsuario == null)
                 {
+                    //se lanza la excepcion
                     throw new usuarioNoRegistradoException(usuario);
                 }
             }catch(Exception ex)

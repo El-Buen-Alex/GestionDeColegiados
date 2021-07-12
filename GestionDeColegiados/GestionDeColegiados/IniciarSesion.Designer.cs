@@ -61,9 +61,9 @@ namespace GestionDeColegiados
             this.PanelBarraTitulo.Controls.Add(this.pbCerrar);
             this.PanelBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelBarraTitulo.Location = new System.Drawing.Point(0, 0);
-            this.PanelBarraTitulo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PanelBarraTitulo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.PanelBarraTitulo.Name = "PanelBarraTitulo";
-            this.PanelBarraTitulo.Size = new System.Drawing.Size(800, 34);
+            this.PanelBarraTitulo.Size = new System.Drawing.Size(600, 28);
             this.PanelBarraTitulo.TabIndex = 1;
             this.PanelBarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraTitulo_MouseDown);
             // 
@@ -71,10 +71,10 @@ namespace GestionDeColegiados
             // 
             this.pbMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbMinimizar.Image = global::GestionDeColegiados.Properties.Resources.Min;
-            this.pbMinimizar.Location = new System.Drawing.Point(727, 4);
-            this.pbMinimizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbMinimizar.Location = new System.Drawing.Point(545, 3);
+            this.pbMinimizar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pbMinimizar.Name = "pbMinimizar";
-            this.pbMinimizar.Size = new System.Drawing.Size(25, 25);
+            this.pbMinimizar.Size = new System.Drawing.Size(19, 20);
             this.pbMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbMinimizar.TabIndex = 4;
             this.pbMinimizar.TabStop = false;
@@ -86,10 +86,10 @@ namespace GestionDeColegiados
             // 
             this.pbCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbCerrar.Image = global::GestionDeColegiados.Properties.Resources.cerrarVentana;
-            this.pbCerrar.Location = new System.Drawing.Point(761, 4);
-            this.pbCerrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbCerrar.Location = new System.Drawing.Point(571, 3);
+            this.pbCerrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pbCerrar.Name = "pbCerrar";
-            this.pbCerrar.Size = new System.Drawing.Size(35, 25);
+            this.pbCerrar.Size = new System.Drawing.Size(26, 20);
             this.pbCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbCerrar.TabIndex = 2;
             this.pbCerrar.TabStop = false;
@@ -102,9 +102,10 @@ namespace GestionDeColegiados
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(393, 69);
+            this.label2.Location = new System.Drawing.Point(295, 56);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(289, 36);
+            this.label2.Size = new System.Drawing.Size(237, 29);
             this.label2.TabIndex = 3;
             this.label2.Text = "INICIO DE SESIÓN";
             // 
@@ -113,9 +114,10 @@ namespace GestionDeColegiados
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(212)))), ((int)(((byte)(218)))));
-            this.label1.Location = new System.Drawing.Point(377, 338);
+            this.label1.Location = new System.Drawing.Point(283, 275);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(158, 32);
+            this.label1.Size = new System.Drawing.Size(127, 26);
             this.label1.TabIndex = 4;
             this.label1.Text = "USUARIO:";
             // 
@@ -124,9 +126,10 @@ namespace GestionDeColegiados
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(212)))), ((int)(((byte)(218)))));
-            this.label3.Location = new System.Drawing.Point(307, 395);
+            this.label3.Location = new System.Drawing.Point(230, 321);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(229, 32);
+            this.label3.Size = new System.Drawing.Size(182, 26);
             this.label3.TabIndex = 5;
             this.label3.Text = "CONTRASEÑA:";
             // 
@@ -135,11 +138,11 @@ namespace GestionDeColegiados
             this.txtUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
             this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(172)))), ((int)(((byte)(171)))));
-            this.txtUsuario.Location = new System.Drawing.Point(541, 345);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtUsuario.Location = new System.Drawing.Point(406, 280);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtUsuario.MaxLength = 14;
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(175, 27);
+            this.txtUsuario.Size = new System.Drawing.Size(132, 23);
             this.txtUsuario.TabIndex = 6;
             // 
             // txtPassword
@@ -147,12 +150,12 @@ namespace GestionDeColegiados
             this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(172)))), ((int)(((byte)(171)))));
-            this.txtPassword.Location = new System.Drawing.Point(541, 395);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPassword.Location = new System.Drawing.Point(406, 321);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPassword.MaxLength = 14;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(175, 27);
+            this.txtPassword.Size = new System.Drawing.Size(132, 23);
             this.txtPassword.TabIndex = 7;
             // 
             // panel1
@@ -160,19 +163,19 @@ namespace GestionDeColegiados
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 34);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Location = new System.Drawing.Point(0, 28);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(257, 509);
+            this.panel1.Size = new System.Drawing.Size(193, 413);
             this.panel1.TabIndex = 9;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::GestionDeColegiados.Properties.Resources.FEF_logo_svg;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 151);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 123);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(245, 174);
+            this.pictureBox1.Size = new System.Drawing.Size(184, 141);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -180,10 +183,10 @@ namespace GestionDeColegiados
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(477, 458);
-            this.button1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.button1.Location = new System.Drawing.Point(358, 372);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(147, 34);
+            this.button1.Size = new System.Drawing.Size(110, 28);
             this.button1.TabIndex = 10;
             this.button1.Text = "Iniciar Sesión";
             this.button1.UseVisualStyleBackColor = true;
@@ -192,10 +195,10 @@ namespace GestionDeColegiados
             // pictureBox2
             // 
             this.pictureBox2.Image = global::GestionDeColegiados.Properties.Resources.login_rounded_right;
-            this.pictureBox2.Location = new System.Drawing.Point(395, 119);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox2.Location = new System.Drawing.Point(296, 97);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(288, 197);
+            this.pictureBox2.Size = new System.Drawing.Size(216, 160);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 8;
             this.pictureBox2.TabStop = false;
@@ -210,10 +213,10 @@ namespace GestionDeColegiados
             // 
             // btnIniciarSesion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(129)))), ((int)(((byte)(150)))));
-            this.ClientSize = new System.Drawing.Size(800, 543);
+            this.ClientSize = new System.Drawing.Size(600, 441);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox2);
@@ -224,10 +227,10 @@ namespace GestionDeColegiados
             this.Controls.Add(this.label2);
             this.Controls.Add(this.PanelBarraTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "btnIniciarSesion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "+";
             this.PanelBarraTitulo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).EndInit();

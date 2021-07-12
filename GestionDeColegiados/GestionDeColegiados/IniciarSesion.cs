@@ -78,7 +78,6 @@ namespace GestionDeColegiados
             usuario = txtUsuario.Text;
             password = txtPassword.Text;
 
-            validarCamposVaciosLogin();
 
             GestionLogin gestionLogin = new GestionLogin();
 

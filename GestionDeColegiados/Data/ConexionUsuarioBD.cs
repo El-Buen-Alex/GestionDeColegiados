@@ -22,7 +22,7 @@ namespace Model
             //llamamos al procedimiento almacenado creado
 
             MySqlCommand comando = new MySqlCommand("loginPresidente", conexion);
-            //informamos que eel comando a enviar es un procedimiento almacenado
+            //informamos que el comando a enviar es un procedimiento almacenado
             comando.CommandType = CommandType.StoredProcedure;
             /*
              * Aqui enviamos los parametros necesarios para el procedimiento almacenado
