@@ -103,6 +103,8 @@ namespace Control.AdmEncuentrosGenerados
         public bool ActualizarEstadio(int indexEncuentro, int indexEstadio)
         {
             bool actualizo = false;
+            listaEncuentrosDefinidos = datosEncuentroDefinido.ObtenerEncuentros();
+            admEstadio.refrezcarListaEstadiosDisponibles();
             int idEncuentroPorActualizar = listaEncuentrosGenerados[indexEncuentro].Id;
             int idNuevoEstadioAsociado = admEstadio.ListaEstadiosDisponibles[indexEstadio].Id;
             int idAntiguoEStadio = listaEncuentrosDefinidos[indexEncuentro].IdEstadio;

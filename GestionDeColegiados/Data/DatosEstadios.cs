@@ -32,7 +32,7 @@ namespace Data
                     listaEstadios.Add(estadio);
                 }
             }
-            catch (MySqlException ex)
+            catch (Exception ex)
             {
                 Console.WriteLine("Error en la obtencion de estadios disponibles: " + ex.Message);
             }

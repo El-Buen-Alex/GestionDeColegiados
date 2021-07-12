@@ -26,7 +26,10 @@ namespace Control.AdmEstadios
             }
             return admEstadio;
         }
-
+        public void refrezcarListaEstadiosDisponibles()
+        {
+            listaEstadiosDisponibles = datosEstadios.obtenerEstadiosDisponibles();
+        }
         public void LlenarEstadiosCmb(ComboBox cmbEstadio)
         {
             cmbEstadio.DataSource = null;
