@@ -21,7 +21,7 @@ namespace Model
 
             //llamamos al procedimiento almacenado creado
 
-            MySqlCommand comando = new MySqlCommand("loginExample", conexion);
+            MySqlCommand comando = new MySqlCommand("loginPresidente", conexion);
             //informamos que eel comando a enviar es un procedimiento almacenado
             comando.CommandType = CommandType.StoredProcedure;
             /*
@@ -39,9 +39,9 @@ namespace Model
             if (reader.Read())
             {
                 administrador = new Administrador();
-                administrador.Id = int.Parse(reader["IdAdministradores"].ToString());
-                administrador.Nombre = reader["AdminName"].ToString();
-                administrador.Password = reader["AdminPassword"].ToString();
+                administrador.Id = int.Parse(reader["IdPresidente"].ToString());
+                administrador.Nombre = reader["PresidenteName"].ToString();
+                administrador.Password = reader["PresidentePassword"].ToString();
 
             }
             //cerramos la conexion

@@ -1,11 +1,11 @@
 /*CREACIÓN DE TABLAS*/
 
 /*CREACIÓN DE TABLA ADMINISTRADORES*/
-CREATE TABLE `campeonatos`.`administradores` (
-`IdAdministradores` int not null auto_increment,
-`AdminName` varchar(50) not null,
-`AdminPassword` varchar(15) not null,
-primary key (`IdAdministradores`)
+CREATE TABLE `campeonatos`.`presidente` (
+`IdPresidente` int not null auto_increment,
+`PresidenteName` varchar(50) not null,
+`PresidentePassword` varchar(15) not null,
+primary key (`IdPresidente`)
 )engine= InnoDB;
 
 /*CREACIÓN DE TABLA JUEZCENTRAL*/
@@ -123,7 +123,3 @@ REFERENCES `campeonatos`.`colegiado` (`idcolegiado`),
 FOREIGN KEY(`idestadio`)
 REFERENCES `campeonatos`.`estadio` (`idestadio`)
  );
- 
-
- 
- 
