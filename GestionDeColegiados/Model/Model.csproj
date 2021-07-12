@@ -48,7 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Administrador\Administrador.cs" />
+    <Compile Include="Presidente\Presidente.cs" />
     <Compile Include="Colegiados\Arbitro.cs" />
     <Compile Include="Colegiados\Asistente.cs" />
     <Compile Include="Colegiados\Colegiado.cs" />
@@ -58,7 +58,7 @@
     <Compile Include="Partido\EncuentroDefinido.cs" />
     <Compile Include="Campeonato\EncuentroGenerado.cs" />
     <Compile Include="Equipo\Equipo.cs" />
-    <Compile Include="Equipo\Estadio.cs" />
+    <Compile Include="Estadio\Estadio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
