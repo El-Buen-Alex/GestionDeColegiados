@@ -1,4 +1,6 @@
 ﻿
+using System.Windows.Forms;
+
 namespace GestionDeColegiados
 {
     partial class frmCambiarEstadioPartido
@@ -174,5 +176,7 @@ namespace GestionDeColegiados
         private System.Windows.Forms.Button btnGuardarCambios;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblEstadioActual;
+
+        public ComboBox CmbEncuentros { get => cmbEncuentros; set => cmbEncuentros = value; }
     }
 }

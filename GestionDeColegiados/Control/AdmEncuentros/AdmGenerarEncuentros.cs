@@ -43,7 +43,7 @@ namespace Control.AdmEncuentrosGenerados
          */
         public EncuentroGenerado ObtenerEncuentroPorID(int idEncuentroGeneradoPendiente)
         {
-            return datosEncuentrosGenerados.ObtenerEncuentrosPendientes(idEncuentroGeneradoPendiente);
+            return datosEncuentrosGenerados.ObtenerEncuentroPendiente(idEncuentroGeneradoPendiente);
         }
         /*Metodo para pedirle a la clase admEncuentrosGenerados que 
          * cambie el estado de un encuentro generado pendiente a por jugar
@@ -70,38 +70,68 @@ namespace Control.AdmEncuentrosGenerados
          * llenando dos listas de contenedores con nombres, uno de equipo local y otro de 
          * equipos visiatnte
          */
-        public void generarEncuentrosAleatorios(List<Label> listaContenedoresLocal, List<Label> listaContenedoresVisitante)
+        public bool generarEncuentrosAleatorios(List<Label> listaContenedoresLocal, List<Label> listaContenedoresVisitante)
         {
-
+            bool respuesta = false;
             numerosAleatoriosLocal = generListaAleatoria(1, 6);
             numerosAleatoriosVisitante = generListaAleatoria(6, 11);
             listaEquipos = admEquipo.extraerEquipos();
             //aqui se generan encuentros aleatorios y los ids se guardan acorde a su ubicacion
             //en su lista respectiva:idsequiposLocal idsEquipoVisitante
-            llenarNombreEquipos(listaContenedoresLocal, numerosAleatoriosLocal, listaEquipos, idsEquiposLocales);
-            llenarNombreEquipos(listaContenedoresVisitante, numerosAleatoriosVisitante, listaEquipos, idsEquiposVisitantes);
-
+            try
+            {
+                bool generoNombreEquipoLocales = llenarNombreEquipos(listaContenedoresLocal, numerosAleatoriosLocal, listaEquipos, idsEquiposLocales);
+                bool generoNombreEquipoVisitantes = llenarNombreEquipos(listaContenedoresVisitante, numerosAleatoriosVisitante, listaEquipos, idsEquiposVisitantes);
+                if(!generoNombreEquipoVisitantes || !generoNombreEquipoLocales)
+                {
+                    throw new generarEncuentrosException("Error en generarEncuentrosAleatorios");
+                }
+                else
+                {
+                    respuesta = true;
+                }
+            }catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return respuesta;
+        }
+        public void llenarListaEncuentrosGeneradosPendientes()
+        {
+            this.listaEncuentrosGeneradosPendientes=datosEncuentrosGenerados.ObtenerEncuentrosPendientes();
         }
         /*Metodo donde se gestiona el llenar los nombres del encuentro de dos equipos
          * en sus contenedores respectivos
          */
-        private string llenarNombreEquipos(List<Label> contenedores, List<int> listaAleatoria, List<Equipo> equipos, List<int> idsEquipos)
+        private bool llenarNombreEquipos(List<Label> contenedores, List<int> listaAleatoria, List<Equipo> equipos, List<int> idsEquipos)
         {
-            string nombreEquipos = "";
+            bool genero=false;
             int x = 0;
             foreach (int posicionAleatoria in listaAleatoria)
             {
                 contenedores[x].Text = equipos[posicionAleatoria - 1].NombreEquipo;
                 idsEquipos.Add(equipos[posicionAleatoria - 1].IdEquipo);
                 x++;
+                genero = true;
             }
-            return nombreEquipos;
+            return genero;
         }
 
         public int obtnerNumeroEncuentrosGeneradosPendientes()
         {
-            int numeroEncuentros = datosEncuentrosGenerados.ObetnerNumeroEncuentrosPendientes();
-            return numeroEncuentros;
+            int numeroEncuentros=0;
+            try
+            {
+                 numeroEncuentros = datosEncuentrosGenerados.ObetnerNumeroEncuentrosPendientes();
+                if (numeroEncuentros == -1)
+                {
+                    throw new generarEncuentrosException("Error en 'obtnerNumeroEncuentrosGeneradosPendientes()'");
+                }
+            }catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+             return numeroEncuentros;
         }
         /*Funcion necesaria para generar numeros aletorios en un rango definido y agregarlos
         * a una lista

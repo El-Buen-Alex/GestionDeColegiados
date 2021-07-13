@@ -47,8 +47,11 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EncuentroDefinidoTest.cs" />
+    <Compile Include="GenerarEncuentroTests.cs" />
     <Compile Include="LoginPruebas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -59,6 +62,10 @@
     <ProjectReference Include="..\Control\Control.csproj">
       <Project>{2483b36b-ec02-47ee-a103-8ddeeafa5ceb}</Project>
       <Name>Control</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GestionDeColegiados\View.csproj">
+      <Project>{a5b342b2-977a-4a3b-a2a0-f1d9eae7d8c5}</Project>
+      <Name>View</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

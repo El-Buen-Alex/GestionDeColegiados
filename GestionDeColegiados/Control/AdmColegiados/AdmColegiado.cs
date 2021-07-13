@@ -40,7 +40,10 @@ namespace Control.AdmColegiados
             cmbGrupoColegiado.DataSource = listaintegColeg;
 
         }
-
+        public void llenarListaColegiados()
+        {
+            listaintegColeg = datos.ConsultarColegiado();
+        }
         //Guardar id de todos los arbitros
         public void Guardar(int idjuezcentral, int idasistente1, int idasistente2, int idcuartoarbitro)
         {

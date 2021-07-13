@@ -130,10 +130,13 @@ namespace Control.AdmEncuentrosGenerados
         /*metodo que guarda un encuentro deifnido y a su vez cambia el estado
          de un encuentro generado
          y el estadio al que fue asignado*/
-        public bool GuardarEncuentroDefinido(int grupoColegiado, DateTime fechaPartido, DateTime horaPartido, int estadioSeleccionado)
+        public bool GuardarEncuentroDefinido(int grupoColegiado, DateTime fechaPartido, DateTime horaPartido, int estadioSeleccionado, int posicion)
         {
             bool guardo = false;
-            int idEncuentroGeneradoPendiente = admEncuentrosGenerados.ListaEncuentrosGeneradosPendientes[0].Id;
+            admEncuentrosGenerados.llenarListaEncuentrosGeneradosPendientes();
+            admColegiados.llenarListaColegiados();
+            admEstadio.refrezcarListaEstadiosDisponibles();
+            int idEncuentroGeneradoPendiente = admEncuentrosGenerados.ListaEncuentrosGeneradosPendientes[posicion].Id;
             int idColegiado = admColegiados.ListaintegColeg[grupoColegiado].IdGrupoColegiado;
             int idEsadio = admEstadio.ListaEstadiosDisponibles[estadioSeleccionado].Id;
             EncuentroDefinido encuentroDefinido = new EncuentroDefinido(idEncuentroGeneradoPendiente, idColegiado, fechaPartido, "PorJugar", horaPartido, idEsadio);
@@ -154,6 +157,7 @@ namespace Control.AdmEncuentrosGenerados
                     }
                     catch (Exception ex)
                     {
+                        guardo = false;
                         Console.WriteLine(ex.Message);
                     }
 
