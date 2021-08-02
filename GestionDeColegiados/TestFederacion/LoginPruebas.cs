@@ -10,7 +10,7 @@ namespace UnitTestProject1
         [TestMethod]
         public void LoginPrueba()
         {
-            var name = "presidente";
+            var name = "preidente";
             var password = "1234presi5";
             var resultadoEsperado = "";
 
