@@ -13,6 +13,10 @@ namespace GestionDeColegiados
         private List<Label> listaContenedoresLocal = new List<Label>();
         private List<Label> listaContenedoresVisitante = new List<Label>();
         private List<PictureBox> listaPictureBox = new List<PictureBox>();
+
+        public List<Label> ListaContenedoresLocal { get => listaContenedoresLocal; set => listaContenedoresLocal = value; }
+        public List<Label> ListaContenedoresVisitante { get => listaContenedoresVisitante; set => listaContenedoresVisitante = value; }
+
         public frmGenerarEncuentros(bool estado)
         {
             InitializeComponent();
@@ -116,9 +120,16 @@ namespace GestionDeColegiados
             cambiarAccesibilidad(listaContenedoresLocal, true);
             cambiarAccesibilidad(listaContenedoresVisitante, true);
             cambiarAccesibilidadPictureBox(listaPictureBox, true);
-            admGenerarEncuentros.generarEncuentrosAleatorios(listaContenedoresLocal, listaContenedoresVisitante);
+            bool genero=admGenerarEncuentros.generarEncuentrosAleatorios(listaContenedoresLocal, listaContenedoresVisitante);
             //una vez generado los encuentros se activa la opcion de guardar encuentros
-            btnGuardarEncuentros.Enabled = true;
+            if (genero)
+            {
+                btnGuardarEncuentros.Enabled = true;
+            }
+            else
+            {
+                MessageBox.Show("No se logró generar Encuentros");
+            }
         }
 
         private void guardarDatos_Click(object sender, EventArgs e)

@@ -44,7 +44,7 @@ namespace Data
             return guardo;
         }
 
-        public EncuentroGenerado ObtenerEncuentrosPendientes(int idEncuentroGeneradoPendiente)
+        public EncuentroGenerado ObtenerEncuentroPendiente(int idEncuentroGeneradoPendiente)
         {
             EncuentroGenerado encuentro = null;
             conexion = ConexionBD.getConexion();
@@ -92,6 +92,7 @@ namespace Data
             }
             catch (MySqlException ex)
             {
+                cantidad = -1;
                 Console.WriteLine("Error al obtener cantidad de encuentros pendientes: " + ex.Message);
             }
             conexion.Close();

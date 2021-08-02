@@ -207,8 +207,8 @@ CREATE PROCEDURE asigacionEncuentroAsignado(
     in _estado varchar(10),
     in _idencuentro int)
 		BEGIN 
-					UPDATE encuentrosGenerados
-			SET	estado= _estado WHERE idencuentro = _idencuentro;
+					UPDATE encuentrosgenerados
+			SET	estado=_estado WHERE idencuentro = _idencuentro;
             
 			END$$
 DELIMITER 

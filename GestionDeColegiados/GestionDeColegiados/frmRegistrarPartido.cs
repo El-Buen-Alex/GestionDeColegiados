@@ -51,7 +51,7 @@ namespace GestionDeColegiados
             DateTime fechaPartido = dtpFechaEncuentro.Value;
             DateTime horaPartido = dtpHora.Value;
             int estadioSeleccionado = cmbEstadio.SelectedIndex;
-            bool guardo = admGenerarEncuentroDefinido.GuardarEncuentroDefinido(grupoSeleccionado, fechaPartido, horaPartido, estadioSeleccionado);
+            bool guardo = admGenerarEncuentroDefinido.GuardarEncuentroDefinido(grupoSeleccionado, fechaPartido, horaPartido, estadioSeleccionado,0);
             if (guardo)
             {
                 //si guarda se bloquea la capacidad de editar algun encuentro ya definido
