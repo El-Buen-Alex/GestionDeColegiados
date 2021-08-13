@@ -1,4 +1,5 @@
 /*INGRESO DEL PRESIDENTE*/
+use campeonatos;
 insert into presidente (IdPresidente, PresidenteName, PresidentePassword) VALUES
 ('1', 'presidente', '1234presi5');
 

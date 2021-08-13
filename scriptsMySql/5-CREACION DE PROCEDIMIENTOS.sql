@@ -1,5 +1,5 @@
 /*PROCEDIMIENTOS*/
-
+use campeonatos;
 /*PROCEDIMIENTO PARA REALIZAR LOGIN*/
 DELIMITER $$
 create procedure loginPresidente (IN username VARCHAR(15), IN pass VARCHAR(15))
