@@ -19,8 +19,8 @@ in _email varchar(25),
 in _telefono varchar(10),
 in _banda varchar(25))
 	BEGIN
-		INSERT INTO asistente1 (cedula,nombre,apellido,domicilio,email,telefono,banda) 
-        VALUES (_cedula,_nombre,_apellido,_domicilio,_email,_telefono,_banda);
+		INSERT INTO asistente1 (cedula,nombre,apellido,domicilio,email,telefono,banda, estado) 
+        VALUES (_cedula,_nombre,_apellido,_domicilio,_email,_telefono,_banda, 'A');
 	END$$
 DELIMITER 
 
@@ -121,8 +121,8 @@ CREATE PROCEDURE guardarEquipo(
     in _nombre_director_tecnico varchar(25),
     in _presidente_equipo varchar(25))
 		BEGIN 
-					INSERT INTO equipo(nombre,numero_jugadoreS,nombre_director_tecnico,presidente_equipo)
-			VALUES	(_nombre, _numero_jugadores, _nombre_director_tecnico,  _presidente_equipo);
+					INSERT INTO equipo(nombre,numero_jugadoreS,nombre_director_tecnico,presidente_equipo, estado)
+			VALUES	(_nombre, _numero_jugadores, _nombre_director_tecnico,  _presidente_equipo, 'A');
             
 			END$$
 DELIMITER 
@@ -152,7 +152,7 @@ DELIMITER $$
 CREATE PROCEDURE guardarEncuentrosGenerados(
 	in _idEquipoLocal int,
     in _idEquipoVisitante int,
-    in _estado varchar(10))
+    in _estado char)
 		BEGIN 
 					INSERT INTO encuentrosGenerados(idEquipoLocal,idEquipoVisitante,estado)
 			VALUES	(_idEquipoLocal,_idEquipoVisitante,_estado);
@@ -164,7 +164,7 @@ DELIMITER
 DELIMITER $$
 CREATE PROCEDURE obtenerNumeroEncuentroPendiente()
 	BEGIN
-		SELECT count(*) as tamanio FROM encuentrosgenerados WHERE estado = "PENDIENTE"; 
+		SELECT count(*) as tamanio FROM encuentrosgenerados WHERE estado = "A"; 
 	END$$
 DELIMITER
 
@@ -172,7 +172,7 @@ DELIMITER
 DELIMITER $$
 CREATE PROCEDURE obtenerEncuentroPendiente()
 	BEGIN
-		SELECT * FROM encuentrosgenerados WHERE estado = "PENDIENTE"; 
+		SELECT * FROM encuentrosgenerados WHERE estado = "A"; 
 	END$$
 DELIMITER 
 
@@ -193,7 +193,7 @@ CREATE PROCEDURE guardarEncuentrosDefinidos(
     in _idencuentro int,
     in _idcolegiado int,
     in _idestadio int,
-    in _estado varchar(10))
+    in _estado char)
 		BEGIN 
 					INSERT INTO encuentrodefinidos(fecha,hora,idencuentro,idcolegiado,idestadio,estado)
 			VALUES	(_fecha,_hora,_idencuentro,_idcolegiado,_idestadio,_estado);
@@ -204,7 +204,7 @@ DELIMITER
 /*PROCEDIMIENTO PARA GUARDAR CAMBIAR EL ESTADO A ASIGNADO AL ENCUENTRO*/
 DELIMITER $$ 
 CREATE PROCEDURE asigacionEncuentroAsignado(
-    in _estado varchar(10),
+    in _estado char,
     in _idencuentro int)
 		BEGIN 
 					UPDATE encuentrosgenerados
@@ -231,7 +231,7 @@ DELIMITER
 /*PROCEDIMIENTO PARA CAMBIAR EL ESTADO DEL ESTADIO*/
 DELIMITER $$
 CREATE PROCEDURE asigacionEstadoEstadio(
-    in _estado varchar(10),
+    in _estado char,
     in _idestadio int)
 		BEGIN 
 					UPDATE estadio
@@ -261,7 +261,7 @@ DELIMITER
 DELIMITER $$
 CREATE PROCEDURE estadiosDiponibles()
 	BEGIN
-		SELECT * FROM estadio WHERE estado = "DISPONIBLE"; 
+		SELECT * FROM estadio WHERE estado = "A"; 
 	END$$
 DELIMITER
 
@@ -277,7 +277,7 @@ DELIMITER
 DELIMITER $$
 CREATE PROCEDURE cantidadEncuentrosPorJugar()
 	BEGIN
-		SELECT count(*) as cantidadEncuentros FROM encuentroDefinidos WHERE estado = "PorJugar"; 
+		SELECT count(*) as cantidadEncuentros FROM encuentroDefinidos WHERE estado = "A"; 
 	END$$
 DELIMITER 
 
@@ -285,7 +285,7 @@ DELIMITER
 DELIMITER $$
 CREATE PROCEDURE mostrarEncuentroDefinidos()
 	BEGIN
-		SELECT * FROM encuentroDefinidos WHERE estado = "PorJugar" order by idefinido asc limit 5; 
+		SELECT * FROM encuentroDefinidos WHERE estado = "A" order by idefinido asc limit 5; 
 	END$$
 DELIMITER  
 
