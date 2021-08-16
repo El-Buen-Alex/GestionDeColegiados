@@ -1,3 +1,4 @@
+use campeonatos;
 /*CREACIÓN DE TABLAS*/
 
 /*CREACIÓN DE TABLA ADMINISTRADORES*/
@@ -5,6 +6,7 @@ CREATE TABLE `campeonatos`.`presidente` (
 `IdPresidente` int not null auto_increment,
 `PresidenteName` varchar(50) not null,
 `PresidentePassword` varchar(15) not null,
+`estado` char not null,
 primary key (`IdPresidente`)
 )engine= InnoDB;
 
@@ -17,6 +19,7 @@ CREATE TABLE `campeonatos`.`juezcentral` (
   `domicilio` VARCHAR(25) NOT NULL,
   `email` VARCHAR(25) NOT NULL,
   `telefono` VARCHAR(10) NOT NULL,
+  `estado` char not null,
   PRIMARY KEY (`idjuezcentral`));
   
 /*CREACIÓN DE TABLA ASISTENTE1*/
@@ -29,6 +32,7 @@ CREATE TABLE `campeonatos`.`asistente1` (
   `email` VARCHAR(25) NOT NULL,
   `telefono` VARCHAR(10) NOT NULL,
   `banda` VARCHAR(25) NOT NULL,
+  `estado` char not null,
   PRIMARY KEY (`idasistente1`));
   
 /*CREACIÓN DE TABLA ASISTENTE2*/
@@ -41,6 +45,7 @@ CREATE TABLE `campeonatos`.`asistente2` (
   `email` VARCHAR(25) NOT NULL,
   `telefono` VARCHAR(10) NOT NULL,
   `banda` VARCHAR(25) NOT NULL,
+  `estado` char not null,
   PRIMARY KEY (`idasistente2`));
   
 /*CREACIÓN DE TABLA CUARTO ARBITRO*/
@@ -52,6 +57,7 @@ CREATE TABLE `campeonatos`.`cuartoarbitro` (
   `domicilio` VARCHAR(25) NOT NULL,
   `email` VARCHAR(25) NOT NULL,
   `telefono` VARCHAR(10) NOT NULL,
+  `estado` char not null,
   PRIMARY KEY (`idcuartoarbitro`));
   
 /*CREACIÓN DE TABLA CUARTO COLEGIADO*/
@@ -61,6 +67,7 @@ CREATE TABLE `campeonatos`.`colegiado` (
   `idasistente1` INT NOT NULL,
   `idasistente2` INT NOT NULL,
   `idcuartoarbitro` INT NOT NULL,
+  `estado` char not null,
   PRIMARY KEY (`idcolegiado`),
   CONSTRAINT `Colegiado_JuezCentral_FK`
     FOREIGN KEY (`idjuezcentral`)
@@ -83,6 +90,7 @@ CREATE TABLE `campeonatos`.`equipo`(
 `numero_jugadores` INT NOT NULL,
 `nombre_director_tecnico` VARCHAR(25) NOT NULL,
 `presidente_equipo` VARCHAR(25) NOT NULL,
+`estado` char not null,
 PRIMARY KEY(`idequipo`));
 
 /*CREACIÓN DE TABLA ENCUENTROS GENERADOS*/
@@ -90,7 +98,7 @@ CREATE TABLE `campeonatos`.`encuentrosGenerados`(
 `idencuentro` INT NOT NULL AUTO_INCREMENT,
 `idEquipoLocal` INT NOT NULL,
 `idEquipoVisitante` INT NOT NULL,
-`estado` VARCHAR(10) NOT NULL,
+`estado` char not null,
 PRIMARY KEY(`idencuentro`), 
 FOREIGN KEY(`idEquipoLocal`)
 REFERENCES `campeonatos`.`equipo` (`idequipo`),
@@ -102,7 +110,7 @@ REFERENCES `campeonatos`.`equipo` (`idequipo`)
 CREATE TABLE `campeonatos`.`estadio`(
 `idestadio` INT NOT NULL AUTO_INCREMENT,
 `nombreEstadio` VARCHAR(30),
-`estado` VARCHAR(10) NOT NULL,
+`estado` char not null,
 PRIMARY KEY(`idestadio`)
  );
 
@@ -114,7 +122,7 @@ CREATE TABLE `campeonatos`.`encuentroDefinidos`(
 `idencuentro` INT NOT NULL,
 `idcolegiado` INT NOT NULL,
 `idestadio` int,
-`estado` VARCHAR(10) NOT NULL,
+`estado` char not null,
 PRIMARY KEY(`idefinido`),
 FOREIGN KEY(`idencuentro`)
 REFERENCES `campeonatos`.`encuentrosGenerados` (`idencuentro`),
