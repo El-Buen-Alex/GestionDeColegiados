@@ -164,7 +164,7 @@ DELIMITER
 DELIMITER $$
 CREATE PROCEDURE obtenerNumeroEncuentroPendiente()
 	BEGIN
-		SELECT count(*) as tamanio FROM encuentrosgenerados WHERE estado = "PENDIENTE"; 
+		SELECT count(*) as tamanio FROM encuentrosgenerados WHERE estado = "A"; 
 	END$$
 DELIMITER
 
@@ -172,7 +172,7 @@ DELIMITER
 DELIMITER $$
 CREATE PROCEDURE obtenerEncuentroPendiente()
 	BEGIN
-		SELECT * FROM encuentrosgenerados WHERE estado = "PENDIENTE"; 
+		SELECT * FROM encuentrosgenerados WHERE estado = "A"; 
 	END$$
 DELIMITER 
 
@@ -261,7 +261,7 @@ DELIMITER
 DELIMITER $$
 CREATE PROCEDURE estadiosDiponibles()
 	BEGIN
-		SELECT * FROM estadio WHERE estado = "DISPONIBLE"; 
+		SELECT * FROM estadio WHERE estado = "A"; 
 	END$$
 DELIMITER
 
@@ -277,7 +277,7 @@ DELIMITER
 DELIMITER $$
 CREATE PROCEDURE cantidadEncuentrosPorJugar()
 	BEGIN
-		SELECT count(*) as cantidadEncuentros FROM encuentroDefinidos WHERE estado = "PorJugar"; 
+		SELECT count(*) as cantidadEncuentros FROM encuentroDefinidos WHERE estado = "A"; 
 	END$$
 DELIMITER 
 
@@ -285,7 +285,7 @@ DELIMITER
 DELIMITER $$
 CREATE PROCEDURE mostrarEncuentroDefinidos()
 	BEGIN
-		SELECT * FROM encuentroDefinidos WHERE estado = "PorJugar" order by idefinido asc limit 5; 
+		SELECT * FROM encuentroDefinidos WHERE estado = "A" order by idefinido asc limit 5; 
 	END$$
 DELIMITER  
 
