@@ -1,5 +1,6 @@
 ﻿using Control;
 using Control.AdmEncuentrosGenerados;
+using Control.AdmColegiados;
 using Control.AdmEstadios;
 using System;
 using System.Windows.Forms;
@@ -10,24 +11,19 @@ namespace GestionDeColegiados
     {
         AdmEncuentrosDefinidos admEncuentrosDefinidos = AdmEncuentrosDefinidos.GetAdmGenerarEncuentrosDefinidos();
         AdmEstadio admEstadio = AdmEstadio.GetAdmEstadio();
+        AdmColegiado admColegiado = AdmColegiado.getAdmCol();
         private bool muestraInfo;
         private ValidacionGUI validacionGUI = new ValidacionGUI();
         public frmCambiarEstadioPartido()
         {
             InitializeComponent();
             //se setean los controladores graficos
+            admEncuentrosDefinidos.LlenarPartidosCmb(cmbEncuentros);
             cambiarDisponibilidadControladoresUi(false);
-            refrezcarComponentes();
+           
 
         }
-        private void refrezcarComponentes()
-        {
-            cmbEstadios.Enabled = false;
-            admEstadio.LlenarEstadiosCmb(cmbEstadios);
-            admEncuentrosDefinidos.LlenarPartidosCmb(cmbEncuentros);
-            cmbEstadios.SelectedItem = null;
-            btnGuardarCambios.Enabled = false;
-        }
+        
 
         private void EnviarDatosGuardar()
         {
@@ -49,7 +45,8 @@ namespace GestionDeColegiados
                     // si no ocurre problemas al cambiar, se refrezcan los componentes y 
                     //se muestra que el cambio se realizó con exito
                     MessageBox.Show("El cambio se realizo con exito");
-                    refrezcarComponentes();
+                    cambiarDisponibilidadControladoresUi(false);
+                    cambiarAccesibilidadBotonGuardar(false);
                 }
                 else
                 {
@@ -69,10 +66,11 @@ namespace GestionDeColegiados
              el contenido del lblEstadioActual se seteara con el
             nombre del estadio actual del encuentro que se ha seleccionado*/
             int indexEncuentroDefinidoSeleccionado = cmbEncuentros.SelectedIndex;
-            muestraInfo = admEncuentrosDefinidos.LlenarInformacíonPartidoCompleta(indexEncuentroDefinidoSeleccionado, lblEquipoLocal, lblEquipoVisitante, cmbEstadios, dtpFechaEncuentro, dtpHora, cmbGrupoColegiado, lblColegiados);
+            muestraInfo = admEncuentrosDefinidos.LlenarInformacíonPartidoCompleta(indexEncuentroDefinidoSeleccionado, lblEquipoLocal, lblEquipoVisitante, cmbEstadios, dtpFechaEncuentro, dtpHora, cmbGrupoColegiado, txtColegiados);
             if (muestraInfo)
             {
                 cambiarDisponibilidadControladoresUi(true);
+                validarFecha();
             }
         }
         private void cambiarDisponibilidadControladoresUi(bool estado)
@@ -88,10 +86,18 @@ namespace GestionDeColegiados
         {
             btnGuardarCambios.Enabled = estado;
         }
-
+        
         private void cmb_SelectedIndexChanged(object sender, EventArgs e)
         {
             //si se selecciona un nuevo estadio, habilitará la opcion de guardar
+            btnGuardarCambios.Enabled = true;
+        }
+        private void cmbColegiados_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //si se selecciona un nuevo estadio, habilitará la opcion de guardar
+            int indexColegiados = cmbGrupoColegiado.SelectedIndex;
+            string s = admColegiado.ObtenerNombreDeColegiadosIndex(indexColegiados);
+            txtColegiados.Text = s;
             btnGuardarCambios.Enabled = true;
         }
 

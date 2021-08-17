@@ -84,6 +84,13 @@ namespace Control.AdmColegiados
             }
         }
 
+
+        public string ObtenerNombreDeColegiadosIndex(int indexColegiados)
+        {
+            int id = listaintegColeg[indexColegiados].IdGrupoColegiado;
+            return ObtenerNombreDeColegiados(id);
+        }
+
         public string ObtenerNombreDeColegiados(int idColegiado)
         {
             string nombres = "0";
@@ -115,6 +122,8 @@ namespace Control.AdmColegiados
             }
             return repetido;
         }
+
+        
 
         public void LlenarColegiadosCmb(ComboBox cmbGrupoColegiado, int idColegiados)
         {

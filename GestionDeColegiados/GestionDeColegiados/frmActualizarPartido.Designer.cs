@@ -48,8 +48,8 @@ namespace GestionDeColegiados
             this.lblvs = new System.Windows.Forms.Label();
             this.ptbEquipoVisitante = new System.Windows.Forms.PictureBox();
             this.ptbEquipoLocal = new System.Windows.Forms.PictureBox();
-            this.lblColegiados = new System.Windows.Forms.Label();
             this.lblFechaMenor = new System.Windows.Forms.Label();
+            this.txtColegiados = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.ptbEquipoVisitante)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbEquipoLocal)).BeginInit();
             this.SuspendLayout();
@@ -104,7 +104,7 @@ namespace GestionDeColegiados
             // 
             this.cmbEstadios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEstadios.FormattingEnabled = true;
-            this.cmbEstadios.Location = new System.Drawing.Point(301, 499);
+            this.cmbEstadios.Location = new System.Drawing.Point(273, 483);
             this.cmbEstadios.Name = "cmbEstadios";
             this.cmbEstadios.Size = new System.Drawing.Size(121, 24);
             this.cmbEstadios.TabIndex = 38;
@@ -113,9 +113,10 @@ namespace GestionDeColegiados
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(161, 499);
+            this.label6.Location = new System.Drawing.Point(161, 484);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(91, 25);
             this.label6.TabIndex = 37;
@@ -124,9 +125,10 @@ namespace GestionDeColegiados
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(83, 395);
+            this.label5.Location = new System.Drawing.Point(83, 354);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(169, 25);
             this.label5.TabIndex = 36;
@@ -136,7 +138,7 @@ namespace GestionDeColegiados
             // 
             this.dtpHora.CustomFormat = "HH:mm";
             this.dtpHora.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpHora.Location = new System.Drawing.Point(301, 396);
+            this.dtpHora.Location = new System.Drawing.Point(273, 354);
             this.dtpHora.Name = "dtpHora";
             this.dtpHora.ShowUpDown = true;
             this.dtpHora.Size = new System.Drawing.Size(200, 22);
@@ -146,9 +148,10 @@ namespace GestionDeColegiados
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(40, 443);
+            this.label7.Location = new System.Drawing.Point(40, 402);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(212, 25);
             this.label7.TabIndex = 34;
@@ -157,9 +160,10 @@ namespace GestionDeColegiados
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(39, 337);
+            this.label8.Location = new System.Drawing.Point(39, 296);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(213, 25);
             this.label8.TabIndex = 33;
@@ -169,16 +173,16 @@ namespace GestionDeColegiados
             // 
             this.cmbGrupoColegiado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGrupoColegiado.FormattingEnabled = true;
-            this.cmbGrupoColegiado.Location = new System.Drawing.Point(301, 444);
+            this.cmbGrupoColegiado.Location = new System.Drawing.Point(273, 402);
             this.cmbGrupoColegiado.Name = "cmbGrupoColegiado";
             this.cmbGrupoColegiado.Size = new System.Drawing.Size(121, 24);
             this.cmbGrupoColegiado.TabIndex = 32;
-            this.cmbGrupoColegiado.SelectedIndexChanged += new System.EventHandler(this.cmb_SelectedIndexChanged);
+            this.cmbGrupoColegiado.SelectedIndexChanged += new System.EventHandler(this.cmbColegiados_SelectedIndexChanged);
             // 
             // dtpFechaEncuentro
             // 
             this.dtpFechaEncuentro.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaEncuentro.Location = new System.Drawing.Point(301, 340);
+            this.dtpFechaEncuentro.Location = new System.Drawing.Point(273, 298);
             this.dtpFechaEncuentro.Name = "dtpFechaEncuentro";
             this.dtpFechaEncuentro.Size = new System.Drawing.Size(200, 22);
             this.dtpFechaEncuentro.TabIndex = 31;
@@ -189,7 +193,7 @@ namespace GestionDeColegiados
             this.lblEquipoVisitante.AutoSize = true;
             this.lblEquipoVisitante.BackColor = System.Drawing.SystemColors.ControlLight;
             this.lblEquipoVisitante.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEquipoVisitante.Location = new System.Drawing.Point(363, 239);
+            this.lblEquipoVisitante.Location = new System.Drawing.Point(363, 198);
             this.lblEquipoVisitante.Name = "lblEquipoVisitante";
             this.lblEquipoVisitante.Size = new System.Drawing.Size(138, 20);
             this.lblEquipoVisitante.TabIndex = 30;
@@ -200,7 +204,7 @@ namespace GestionDeColegiados
             this.lblEquipoLocal.AutoSize = true;
             this.lblEquipoLocal.BackColor = System.Drawing.SystemColors.ControlLight;
             this.lblEquipoLocal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEquipoLocal.Location = new System.Drawing.Point(76, 239);
+            this.lblEquipoLocal.Location = new System.Drawing.Point(76, 198);
             this.lblEquipoLocal.Name = "lblEquipoLocal";
             this.lblEquipoLocal.Size = new System.Drawing.Size(110, 20);
             this.lblEquipoLocal.TabIndex = 29;
@@ -212,7 +216,7 @@ namespace GestionDeColegiados
             this.lblvs.BackColor = System.Drawing.Color.Transparent;
             this.lblvs.Font = new System.Drawing.Font("Impact", 27F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblvs.ForeColor = System.Drawing.Color.Black;
-            this.lblvs.Location = new System.Drawing.Point(246, 208);
+            this.lblvs.Location = new System.Drawing.Point(246, 167);
             this.lblvs.Name = "lblvs";
             this.lblvs.Size = new System.Drawing.Size(73, 56);
             this.lblvs.TabIndex = 28;
@@ -221,7 +225,7 @@ namespace GestionDeColegiados
             // ptbEquipoVisitante
             // 
             this.ptbEquipoVisitante.Image = global::GestionDeColegiados.Properties.Resources.visitante;
-            this.ptbEquipoVisitante.Location = new System.Drawing.Point(317, 185);
+            this.ptbEquipoVisitante.Location = new System.Drawing.Point(317, 144);
             this.ptbEquipoVisitante.Name = "ptbEquipoVisitante";
             this.ptbEquipoVisitante.Size = new System.Drawing.Size(242, 135);
             this.ptbEquipoVisitante.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -231,33 +235,33 @@ namespace GestionDeColegiados
             // ptbEquipoLocal
             // 
             this.ptbEquipoLocal.Image = global::GestionDeColegiados.Properties.Resources.Local;
-            this.ptbEquipoLocal.Location = new System.Drawing.Point(10, 185);
+            this.ptbEquipoLocal.Location = new System.Drawing.Point(10, 144);
             this.ptbEquipoLocal.Name = "ptbEquipoLocal";
             this.ptbEquipoLocal.Size = new System.Drawing.Size(242, 135);
             this.ptbEquipoLocal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ptbEquipoLocal.TabIndex = 26;
             this.ptbEquipoLocal.TabStop = false;
             // 
-            // lblColegiados
-            // 
-            this.lblColegiados.AutoSize = true;
-            this.lblColegiados.Location = new System.Drawing.Point(441, 443);
-            this.lblColegiados.Name = "lblColegiados";
-            this.lblColegiados.Size = new System.Drawing.Size(24, 17);
-            this.lblColegiados.TabIndex = 39;
-            this.lblColegiados.Text = "    ";
-            // 
             // lblFechaMenor
             // 
             this.lblFechaMenor.AutoSize = true;
             this.lblFechaMenor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFechaMenor.ForeColor = System.Drawing.Color.Orange;
-            this.lblFechaMenor.Location = new System.Drawing.Point(41, 319);
+            this.lblFechaMenor.Location = new System.Drawing.Point(41, 278);
             this.lblFechaMenor.Name = "lblFechaMenor";
             this.lblFechaMenor.Size = new System.Drawing.Size(332, 18);
             this.lblFechaMenor.TabIndex = 40;
             this.lblFechaMenor.Text = "Por favor seleccione una fecha mayor a la actual.";
             this.lblFechaMenor.Visible = false;
+            // 
+            // txtColegiados
+            // 
+            this.txtColegiados.Enabled = false;
+            this.txtColegiados.Location = new System.Drawing.Point(407, 401);
+            this.txtColegiados.Multiline = true;
+            this.txtColegiados.Name = "txtColegiados";
+            this.txtColegiados.Size = new System.Drawing.Size(168, 75);
+            this.txtColegiados.TabIndex = 41;
             // 
             // frmCambiarEstadioPartido
             // 
@@ -265,8 +269,8 @@ namespace GestionDeColegiados
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(129)))), ((int)(((byte)(150)))));
             this.ClientSize = new System.Drawing.Size(595, 624);
+            this.Controls.Add(this.txtColegiados);
             this.Controls.Add(this.lblFechaMenor);
-            this.Controls.Add(this.lblColegiados);
             this.Controls.Add(this.cmbEstadios);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -313,8 +317,8 @@ namespace GestionDeColegiados
         private Label lblvs;
         private PictureBox ptbEquipoVisitante;
         private PictureBox ptbEquipoLocal;
-        private Label lblColegiados;
         private Label lblFechaMenor;
+        private TextBox txtColegiados;
 
         public ComboBox CmbEncuentros { get => cmbEncuentros; set => cmbEncuentros = value; }
     }

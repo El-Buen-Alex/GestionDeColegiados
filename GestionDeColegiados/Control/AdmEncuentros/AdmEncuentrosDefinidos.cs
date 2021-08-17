@@ -111,7 +111,7 @@ namespace Control.AdmEncuentrosGenerados
         }
 
  
-        public bool LlenarInformacíonPartidoCompleta(int indexEncuentroSeleccionado, Label lblEquipoLocal, Label lblEquipoVisitante, ComboBox cmbEstadios, DateTimePicker dtpFechaEncuentro, DateTimePicker dtpHora, ComboBox cmbGrupoColegiado, Label lblColegiado)
+        public bool LlenarInformacíonPartidoCompleta(int indexEncuentroSeleccionado, Label lblEquipoLocal, Label lblEquipoVisitante, ComboBox cmbEstadios, DateTimePicker dtpFechaEncuentro, DateTimePicker dtpHora, ComboBox cmbGrupoColegiado, TextBox txtColegiado)
         {
             bool respuesta = false;
             try
@@ -127,7 +127,7 @@ namespace Control.AdmEncuentrosGenerados
 
 
                 string colegiados = admColegiados.ObtenerNombreDeColegiados(encuentroDefinido.IdColegiado);
-                lblColegiado.Text = colegiados;
+                txtColegiado.Text = colegiados;
 
                 admColegiados.LlenarColegiadosCmb(cmbGrupoColegiado, encuentroDefinido.IdColegiado);
 

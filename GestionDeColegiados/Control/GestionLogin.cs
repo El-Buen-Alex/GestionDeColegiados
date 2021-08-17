@@ -16,7 +16,7 @@ namespace Control
             string respuesta = "";
             try
             {
-                nuevoUsuario = gestionUsuario.ExisteUsuario(usuario, password);
+                nuevoUsuario = gestionUsuario.ExisteUsuario(usuario.Trim(), password);
 
                 if (nuevoUsuario == null)
                 {
