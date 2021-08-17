@@ -135,7 +135,7 @@ in _equipoID int)
 	BEGIN
     declare equipoID int;
     set equipoID = _equipoID;
-		SELECT * FROM equipo WHERE idequipo = equipoID AND estadio="A";
+		SELECT * FROM equipo WHERE idequipo = equipoID AND estado="A";
 	END$$
 DELIMITER
 
@@ -143,7 +143,7 @@ DELIMITER
 DELIMITER $$
 CREATE PROCEDURE obtenerNombreEquipo()
 	BEGIN
-		SELECT e.nombre, e.idequipo FROM equipo e WHERE estadio="A";
+		SELECT e.nombre, e.idequipo FROM equipo e WHERE estado='A';
 	END$$
 DELIMITER 
 
