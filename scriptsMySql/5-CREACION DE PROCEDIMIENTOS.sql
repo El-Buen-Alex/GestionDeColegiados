@@ -95,7 +95,7 @@ CREATE PROCEDURE obtenerColegiado()
 		INNER JOIN juezcentral jc ON jc.idjuezcentral = c.idjuezcentral
 		INNER JOIN asistente1 as1 ON as1.idasistente1 = c.idasistente1
 		INNER JOIN asistente2 as2 ON as2.idasistente2 = c.idasistente2
-		INNER JOIN cuartoarbitro ca ON ca.idcuartoarbitro = c.idcuartoarbitro WHERE estado='A';
+		INNER JOIN cuartoarbitro ca ON ca.idcuartoarbitro = c.idcuartoarbitro WHERE c.estado='A';
 	END$$
 DELIMITER 
 
@@ -109,7 +109,7 @@ CREATE PROCEDURE obtenerUnColegiado(
 		INNER JOIN asistente1 as1 ON as1.idasistente1 = c.idasistente1
 		INNER JOIN asistente2 as2 ON as2.idasistente2 = c.idasistente2
 		INNER JOIN cuartoarbitro ca ON ca.idcuartoarbitro = c.idcuartoarbitro
-        WHERE c.idcolegiado=_idColegiado and estado='A';
+        WHERE c.idcolegiado=_idColegiado and c.estado='A';
 	END$$
 DELIMITER 
 
@@ -297,7 +297,7 @@ CREATE PROCEDURE obtenerCedulaColegiado()
 		INNER JOIN juezcentral jc ON jc.idjuezcentral = c.idjuezcentral
 		INNER JOIN asistente1 as1 ON as1.idasistente1 = c.idasistente1
 		INNER JOIN asistente2 as2 ON as2.idasistente2 = c.idasistente2
-		INNER JOIN cuartoarbitro ca ON ca.idcuartoarbitro = c.idcuartoarbitro WHERE estado='A';
+		INNER JOIN cuartoarbitro ca ON ca.idcuartoarbitro = c.idcuartoarbitro WHERE c.estado='A';
 	END$$
 DELIMITER 
 
