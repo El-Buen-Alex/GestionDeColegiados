@@ -34,8 +34,8 @@ in _email varchar(25),
 in _telefono varchar(10),
 in _banda varchar(25))
 	BEGIN
-		INSERT INTO asistente2 (cedula,nombre,apellido,domicilio,email,telefono,banda) 
-        VALUES (_cedula,_nombre,_apellido,_domicilio,_email,_telefono,_banda);
+		INSERT INTO asistente2 (cedula,nombre,apellido,domicilio,email,telefono,banda, estado) 
+        VALUES (_cedula,_nombre,_apellido,_domicilio,_email,_telefono,_banda, 'A');
 	END$$
 DELIMITER 
 
@@ -48,8 +48,8 @@ in _domicilio varchar(25),
 in _email varchar(25),
 in _telefono varchar(10))
 	BEGIN
-		INSERT INTO cuartoarbitro (cedula,nombre,apellido,domicilio,email,telefono) 
-        VALUES (_cedula,_nombre,_apellido,_domicilio,_email,_telefono);
+		INSERT INTO cuartoarbitro (cedula,nombre,apellido,domicilio,email,telefono, estado) 
+        VALUES (_cedula,_nombre,_apellido,_domicilio,_email,_telefono, "A");
 	END$$
 DELIMITER 
 
@@ -62,8 +62,8 @@ in _domicilio varchar(25),
 in _email varchar(25),
 in _telefono varchar(10))
 	BEGIN
-		INSERT INTO juezcentral (cedula,nombre,apellido,domicilio,email,telefono) 
-        VALUES (_cedula,_nombre,_apellido,_domicilio,_email,_telefono);
+		INSERT INTO juezcentral (cedula,nombre,apellido,domicilio,email,telefono, estado) 
+        VALUES (_cedula,_nombre,_apellido,_domicilio,_email,_telefono, "A");
 	END$$
 DELIMITER
 
@@ -82,8 +82,8 @@ in _idasistente1 int,
 in _idasistente2 int,
 in _idcuartoarbitro int)
 	BEGIN
-		INSERT INTO colegiado (idjuezcentral,idasistente1,idasistente2,idcuartoarbitro) 
-        VALUES (_idjuezcentral,_idasistente1,_idasistente2,_idcuartoarbitro);
+		INSERT INTO colegiado (idjuezcentral,idasistente1,idasistente2,idcuartoarbitro, estado) 
+        VALUES (_idjuezcentral,_idasistente1,_idasistente2,_idcuartoarbitro, "A");
 	END$$
 DELIMITER
 
@@ -95,7 +95,7 @@ CREATE PROCEDURE obtenerColegiado()
 		INNER JOIN juezcentral jc ON jc.idjuezcentral = c.idjuezcentral
 		INNER JOIN asistente1 as1 ON as1.idasistente1 = c.idasistente1
 		INNER JOIN asistente2 as2 ON as2.idasistente2 = c.idasistente2
-		INNER JOIN cuartoarbitro ca ON ca.idcuartoarbitro = c.idcuartoarbitro;
+		INNER JOIN cuartoarbitro ca ON ca.idcuartoarbitro = c.idcuartoarbitro WHERE estadio="A";
 	END$$
 DELIMITER 
 
@@ -109,7 +109,7 @@ CREATE PROCEDURE obtenerUnColegiado(
 		INNER JOIN asistente1 as1 ON as1.idasistente1 = c.idasistente1
 		INNER JOIN asistente2 as2 ON as2.idasistente2 = c.idasistente2
 		INNER JOIN cuartoarbitro ca ON ca.idcuartoarbitro = c.idcuartoarbitro
-        WHERE c.idcolegiado=_idColegiado;
+        WHERE c.idcolegiado=_idColegiado and estadio="A";
 	END$$
 DELIMITER 
 
@@ -135,7 +135,7 @@ in _equipoID int)
 	BEGIN
     declare equipoID int;
     set equipoID = _equipoID;
-		SELECT * FROM equipo WHERE idequipo = equipoID;
+		SELECT * FROM equipo WHERE idequipo = equipoID AND estadio="A";
 	END$$
 DELIMITER
 
@@ -143,7 +143,7 @@ DELIMITER
 DELIMITER $$
 CREATE PROCEDURE obtenerNombreEquipo()
 	BEGIN
-		SELECT e.nombre, e.idequipo FROM equipo e;
+		SELECT e.nombre, e.idequipo FROM equipo e WHERE estadio="A";
 	END$$
 DELIMITER 
 
@@ -181,7 +181,7 @@ DELIMITER $$
 CREATE PROCEDURE obtenerEncuentroPorID(
  in _idencuentro int)
 	BEGIN
-		SELECT * FROM encuentrosgenerados WHERE encuentrosgenerados.idencuentro = _idEncuentro; 
+		SELECT * FROM encuentrosgenerados WHERE encuentrosgenerados.idencuentro = _idEncuentro AND estadio="A"; 
 	END$$
 DELIMITER 
 
@@ -244,7 +244,7 @@ DELIMITER
 DELIMITER $$
 CREATE PROCEDURE cantidadEquipos()
 	BEGIN
-		SELECT count(*) as cantidadEquipos FROM equipo; 
+		SELECT count(*) as cantidadEquipos FROM equipo WHERE estadio="A"; 
 	END$$
 DELIMITER 
 
@@ -253,7 +253,7 @@ DELIMITER $$
 CREATE PROCEDURE obtenerEstadioPorId(
 	in _idEstadio int)
 	BEGIN
-		SELECT * FROM estadio WHERE idestadio = _idEstadio; 
+		SELECT * FROM estadio WHERE idestadio = _idEstadio AND estadio="A";
 	END$$
 DELIMITER
 
@@ -269,7 +269,7 @@ DELIMITER
 DELIMITER $$
 CREATE PROCEDURE informacionEstadio()
 	BEGIN
-		SELECT * FROM estadio;
+		SELECT * FROM estadio WHERE estadio="A";
 	END$$
 DELIMITER 
 
@@ -297,6 +297,6 @@ CREATE PROCEDURE obtenerCedulaColegiado()
 		INNER JOIN juezcentral jc ON jc.idjuezcentral = c.idjuezcentral
 		INNER JOIN asistente1 as1 ON as1.idasistente1 = c.idasistente1
 		INNER JOIN asistente2 as2 ON as2.idasistente2 = c.idasistente2
-		INNER JOIN cuartoarbitro ca ON ca.idcuartoarbitro = c.idcuartoarbitro;
+		INNER JOIN cuartoarbitro ca ON ca.idcuartoarbitro = c.idcuartoarbitro WHERE estadio="A";
 	END$$
 DELIMITER 
