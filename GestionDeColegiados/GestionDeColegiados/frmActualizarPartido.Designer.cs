@@ -48,6 +48,8 @@ namespace GestionDeColegiados
             this.lblvs = new System.Windows.Forms.Label();
             this.ptbEquipoVisitante = new System.Windows.Forms.PictureBox();
             this.ptbEquipoLocal = new System.Windows.Forms.PictureBox();
+            this.lblColegiados = new System.Windows.Forms.Label();
+            this.lblFechaMenor = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ptbEquipoVisitante)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbEquipoLocal)).BeginInit();
             this.SuspendLayout();
@@ -106,6 +108,7 @@ namespace GestionDeColegiados
             this.cmbEstadios.Name = "cmbEstadios";
             this.cmbEstadios.Size = new System.Drawing.Size(121, 24);
             this.cmbEstadios.TabIndex = 38;
+            this.cmbEstadios.SelectedIndexChanged += new System.EventHandler(this.cmb_SelectedIndexChanged);
             // 
             // label6
             // 
@@ -138,6 +141,7 @@ namespace GestionDeColegiados
             this.dtpHora.ShowUpDown = true;
             this.dtpHora.Size = new System.Drawing.Size(200, 22);
             this.dtpHora.TabIndex = 35;
+            this.dtpHora.ValueChanged += new System.EventHandler(this.dtpHoraEncuentro_ValueChanged);
             // 
             // label7
             // 
@@ -169,6 +173,7 @@ namespace GestionDeColegiados
             this.cmbGrupoColegiado.Name = "cmbGrupoColegiado";
             this.cmbGrupoColegiado.Size = new System.Drawing.Size(121, 24);
             this.cmbGrupoColegiado.TabIndex = 32;
+            this.cmbGrupoColegiado.SelectedIndexChanged += new System.EventHandler(this.cmb_SelectedIndexChanged);
             // 
             // dtpFechaEncuentro
             // 
@@ -177,6 +182,7 @@ namespace GestionDeColegiados
             this.dtpFechaEncuentro.Name = "dtpFechaEncuentro";
             this.dtpFechaEncuentro.Size = new System.Drawing.Size(200, 22);
             this.dtpFechaEncuentro.TabIndex = 31;
+            this.dtpFechaEncuentro.ValueChanged += new System.EventHandler(this.dtpFechaEncuentro_ValueChanged);
             // 
             // lblEquipoVisitante
             // 
@@ -232,12 +238,35 @@ namespace GestionDeColegiados
             this.ptbEquipoLocal.TabIndex = 26;
             this.ptbEquipoLocal.TabStop = false;
             // 
+            // lblColegiados
+            // 
+            this.lblColegiados.AutoSize = true;
+            this.lblColegiados.Location = new System.Drawing.Point(441, 443);
+            this.lblColegiados.Name = "lblColegiados";
+            this.lblColegiados.Size = new System.Drawing.Size(24, 17);
+            this.lblColegiados.TabIndex = 39;
+            this.lblColegiados.Text = "    ";
+            // 
+            // lblFechaMenor
+            // 
+            this.lblFechaMenor.AutoSize = true;
+            this.lblFechaMenor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaMenor.ForeColor = System.Drawing.Color.Orange;
+            this.lblFechaMenor.Location = new System.Drawing.Point(41, 319);
+            this.lblFechaMenor.Name = "lblFechaMenor";
+            this.lblFechaMenor.Size = new System.Drawing.Size(332, 18);
+            this.lblFechaMenor.TabIndex = 40;
+            this.lblFechaMenor.Text = "Por favor seleccione una fecha mayor a la actual.";
+            this.lblFechaMenor.Visible = false;
+            // 
             // frmCambiarEstadioPartido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(129)))), ((int)(((byte)(150)))));
             this.ClientSize = new System.Drawing.Size(595, 624);
+            this.Controls.Add(this.lblFechaMenor);
+            this.Controls.Add(this.lblColegiados);
             this.Controls.Add(this.cmbEstadios);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -284,6 +313,8 @@ namespace GestionDeColegiados
         private Label lblvs;
         private PictureBox ptbEquipoVisitante;
         private PictureBox ptbEquipoLocal;
+        private Label lblColegiados;
+        private Label lblFechaMenor;
 
         public ComboBox CmbEncuentros { get => cmbEncuentros; set => cmbEncuentros = value; }
     }

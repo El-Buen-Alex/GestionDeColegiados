@@ -59,8 +59,6 @@ namespace Control.AdmEncuentrosGenerados
             }
         }
 
-        
-
         /*metodo para pedirle a AdmEstadio que nos devuelva el nombre de un estadio a través del id*/
         public string ObtenerNombreEstadioDelPartido(int indexEncuentroDefinidoSeleccionado)
         {
@@ -113,34 +111,65 @@ namespace Control.AdmEncuentrosGenerados
         }
 
  
-        public bool LlenarInformacíonPartidoCompleta(int indexEncuentroSeleccionado, Label lblEquipoLocal, Label lblEquipoVisitante, ComboBox cmbEstadios, DateTimePicker dtpFechaEncuentro, DateTimePicker dtpHora, ComboBox cmbGrupoColegiado)
+        public bool LlenarInformacíonPartidoCompleta(int indexEncuentroSeleccionado, Label lblEquipoLocal, Label lblEquipoVisitante, ComboBox cmbEstadios, DateTimePicker dtpFechaEncuentro, DateTimePicker dtpHora, ComboBox cmbGrupoColegiado, Label lblColegiado)
         {
             bool respuesta = false;
-            listaEncuentrosDefinidos = datosEncuentroDefinido.ObtenerEncuentros();
-            EncuentroDefinido encuentroDefinido = listaEncuentrosDefinidos[indexEncuentroSeleccionado];
-            EncuentroGenerado encuentroGenerado = ObtenerEncuentroGenerado(encuentroDefinido.IdEncuentroGeneradoPendiente);
-            LlenarDatosPartido(indexEncuentroSeleccionado, lblEquipoLocal, lblEquipoVisitante, encuentroDefinido);
-            Estadio estadio=admEstadio.ObtenerEstadioPorId(listaEncuentrosDefinidos[indexEncuentroSeleccionado].IdEstadio);
-           
-            admEstadio.SeleccionarEstadio(cmbEstadios, estadio);
-            string colegiados=admColegiados.ObtenerNombreDeColegiados(encuentroDefinido.IdColegiado);
-            Console.WriteLine(colegiados);
-            admColegiados.LlenarColegiadosCmb(cmbGrupoColegiado, encuentroDefinido.IdColegiado);
-            dtpFechaEncuentro.Value = encuentroDefinido.FechaDeEncuentro;
-            dtpHora.Value = encuentroDefinido.Hora;
-           
+            try
+            {
+                listaEncuentrosDefinidos = datosEncuentroDefinido.ObtenerEncuentros();
+
+                EncuentroDefinido encuentroDefinido = listaEncuentrosDefinidos[indexEncuentroSeleccionado];
+                EncuentroGenerado encuentroGenerado = ObtenerEncuentroGenerado(encuentroDefinido.IdEncuentroGeneradoPendiente);
+                LlenarDatosPartido(indexEncuentroSeleccionado, lblEquipoLocal, lblEquipoVisitante, encuentroDefinido);
+
+                Estadio estadio = admEstadio.ObtenerEstadioPorId(listaEncuentrosDefinidos[indexEncuentroSeleccionado].IdEstadio);
+                admEstadio.SeleccionarEstadio(cmbEstadios, estadio);
+
+
+                string colegiados = admColegiados.ObtenerNombreDeColegiados(encuentroDefinido.IdColegiado);
+                lblColegiado.Text = colegiados;
+
+                admColegiados.LlenarColegiadosCmb(cmbGrupoColegiado, encuentroDefinido.IdColegiado);
+
+                dtpFechaEncuentro.Value = encuentroDefinido.FechaDeEncuentro;
+                dtpHora.Value = encuentroDefinido.Hora;
+
+                respuesta = true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            
             return respuesta;
         }
+        public bool ActualizarEncuentroDefinido(int indexEncuentro, int indexEstadio, int indexColegiados, DateTime fecha, DateTime hora)
+        {
+            bool actualizo = false;
+            EncuentroDefinido auxiliar = listaEncuentrosDefinidos[indexEncuentro];
+            int idNuevoEstadioAsociado = admEstadio.ListaEstadiosDisponibles[indexEstadio].Id;
+            int nuevoColegiadoAsociado = admColegiados.ListaintegColeg[indexColegiados].IdGrupoColegiado;
+            actualizo = datosEncuentroDefinido.ActualizarFechaHoraDEPartido(auxiliar.Id, fecha, hora, nuevoColegiadoAsociado);
+            if (actualizo)
+            {
+                if (auxiliar.IdEstadio != idNuevoEstadioAsociado)
+                {
+                    actualizo = ActualizarEstadio(auxiliar, idNuevoEstadioAsociado);
+                }
+            }
+           
+            return actualizo;
+        }
+
         /*Metodo que actualiza el estadio de un encuentro definido
          */
-        public bool ActualizarEstadio(int indexEncuentro, int indexEstadio)
+        public bool ActualizarEstadio(EncuentroDefinido encuentroDefinido, int idNuevoEstadioAsociado)
         {
             bool actualizo = false;
             listaEncuentrosDefinidos = datosEncuentroDefinido.ObtenerEncuentros();
-            admEstadio.refrezcarListaEstadiosDisponibles();
-            int idEncuentroPorActualizar = listaEncuentrosGenerados[indexEncuentro].Id;
-            int idNuevoEstadioAsociado = admEstadio.ListaEstadiosDisponibles[indexEstadio].Id;
-            int idAntiguoEStadio = listaEncuentrosDefinidos[indexEncuentro].IdEstadio;
+            ///admEstadio.refrezcarListaEstadiosDisponibles();
+            int idEncuentroPorActualizar = encuentroDefinido.Id;
+            int idAntiguoEStadio = encuentroDefinido.IdEstadio;
             try
             {
                 actualizo = datosEncuentroDefinido.ActualizarEstadioDePartido(idEncuentroPorActualizar, idNuevoEstadioAsociado);

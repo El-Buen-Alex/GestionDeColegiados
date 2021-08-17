@@ -372,7 +372,7 @@ namespace GestionDeColegiados
             this.btnCambiarGrupo.Name = "btnCambiarGrupo";
             this.btnCambiarGrupo.Size = new System.Drawing.Size(143, 47);
             this.btnCambiarGrupo.TabIndex = 19;
-            this.btnCambiarGrupo.Text = "Cambiar Estadio";
+            this.btnCambiarGrupo.Text = "Editar Info Partido";
             this.btnCambiarGrupo.UseVisualStyleBackColor = false;
             this.btnCambiarGrupo.Click += new System.EventHandler(this.btnCambiarEstadio_Click);
             // 

@@ -124,5 +124,34 @@ namespace Data
             conexion.Close();
             return cantidad;
         }
+
+        public bool ActualizarFechaHoraDEPartido(int id,DateTime fecha, DateTime hora, int idColegiado)
+        {
+            bool exito = false;
+            conexion = ConexionBD.getConexion();
+            conexion.Open();
+
+            try
+            {
+                MySqlCommand comando = new MySqlCommand("actulizarFechaHoraColegiadoEncuentroDefinido", conexion, transaccion);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@_idefinido", id);
+                comando.Parameters.AddWithValue("@_fecha", fecha.ToString("yyyy-MM-dd"));
+                comando.Parameters.AddWithValue("@_hora", hora.ToString("HH:mm"));
+                comando.Parameters.AddWithValue("@_idColegiado", idColegiado);
+                comando.ExecuteNonQuery();
+                exito = true;
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+                exito = false;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+            return exito;
+        }
     }
 }

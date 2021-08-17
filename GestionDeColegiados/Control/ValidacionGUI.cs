@@ -78,5 +78,15 @@ namespace Control
             }
             return vacio;
         }
+
+        public bool ValidarFecha(DateTime fechaElegida)
+        {
+            bool respuesta = true;
+            if (fechaElegida <= DateTime.Now)
+            {
+                respuesta = false;
+            }
+            return respuesta;
+        }
     }
 }

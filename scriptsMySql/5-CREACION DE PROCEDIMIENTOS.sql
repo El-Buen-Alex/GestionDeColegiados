@@ -309,7 +309,21 @@ CREATE PROCEDURE actulizarEncuentroDefinido(
     in _idEstadio int)
 		BEGIN 
 				UPDATE encuentrodefinidos
-			SET	_fecha=fecha, _hora = hora, _idencuentro = idencuentro, _idcolegiado = idecolegiado,
-            _idEstadio = idEstadio WHERE idefinido = _idefinido;
+			SET	fecha=_fecha, hora = _hora, idencuentro = _idencuentro, idcolegiado = _idecolegiado,
+            idEstadio = _idEstadio WHERE idefinido = _idefinido;
+			END$$
+DELIMITER 
+
+/*PROCEDIMIENTO PARA ACTUALIZAR FECHA DEFINIDO*/
+DELIMITER $$
+CREATE PROCEDURE actulizarFechaHoraColegiadoEncuentroDefinido(
+	in _idefinido int,
+	in _fecha date,
+    in _hora time,
+    in _idColegiado int)
+		BEGIN 
+				UPDATE encuentrodefinidos
+			SET	fecha=_fecha, hora = _hora, idcolegiado = _idColegiado
+            WHERE idefinido = _idefinido;
 			END$$
 DELIMITER 
