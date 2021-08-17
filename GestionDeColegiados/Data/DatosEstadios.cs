@@ -28,7 +28,7 @@ namespace Data
                     estadio = new Estadio();
                     estadio.Id = Convert.ToInt32(reader["idestadio"].ToString());
                     estadio.Nombre = reader["nombreEstadio"].ToString();
-                    estadio.Estado = reader["estado"].ToString();
+                    estadio.Asignacion = reader["asignacion"].ToString();
                     listaEstadios.Add(estadio);
                 }
             }
@@ -56,7 +56,7 @@ namespace Data
                     estadio = new Estadio();
                     estadio.Id = Convert.ToInt32(reader["idestadio"].ToString());
                     estadio.Nombre = reader["nombreEstadio"].ToString();
-                    estadio.Estado = reader["estado"].ToString();
+                    estadio.Asignacion = reader["asignacion"].ToString();
                 }
 
             }
@@ -78,7 +78,7 @@ namespace Data
             {
                 MySqlCommand comando = new MySqlCommand("asigacionEstadoEstadio", conexion, transaccion);
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("_estado", estado);
+                comando.Parameters.AddWithValue("_asignacion", estado);
                 comando.Parameters.AddWithValue("_idestadio", idEsadio);
                 comando.ExecuteNonQuery();
                 transaccion.Commit();

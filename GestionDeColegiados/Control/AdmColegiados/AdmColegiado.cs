@@ -1,5 +1,6 @@
 ﻿using Data;
 using Model.Colegiados;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -113,6 +114,20 @@ namespace Control.AdmColegiados
                 }
             }
             return repetido;
+        }
+
+        public void LlenarColegiadosCmb(ComboBox cmbGrupoColegiado, int idColegiados)
+        {
+            LlenarColegiadosCmb(cmbGrupoColegiado);
+            int i = 0;
+            foreach (IntegrantesColegiados item in listaintegColeg)
+            {
+                if (item.IdGrupoColegiado == idColegiados)
+                {
+                    cmbGrupoColegiado.SelectedIndex = i;
+                }
+                i++;
+            }
         }
     }
 } 

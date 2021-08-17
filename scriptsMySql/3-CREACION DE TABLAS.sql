@@ -98,6 +98,7 @@ CREATE TABLE `campeonatos`.`encuentrosGenerados`(
 `idencuentro` INT NOT NULL AUTO_INCREMENT,
 `idEquipoLocal` INT NOT NULL,
 `idEquipoVisitante` INT NOT NULL,
+`asignacion` varchar(11) not null,
 `estado` char not null,
 PRIMARY KEY(`idencuentro`), 
 FOREIGN KEY(`idEquipoLocal`)
@@ -110,6 +111,7 @@ REFERENCES `campeonatos`.`equipo` (`idequipo`)
 CREATE TABLE `campeonatos`.`estadio`(
 `idestadio` INT NOT NULL AUTO_INCREMENT,
 `nombreEstadio` VARCHAR(30),
+ `asignacion` VARCHAR(11) not null,
 `estado` char not null,
 PRIMARY KEY(`idestadio`)
  );
@@ -122,6 +124,7 @@ CREATE TABLE `campeonatos`.`encuentroDefinidos`(
 `idencuentro` INT NOT NULL,
 `idcolegiado` INT NOT NULL,
 `idestadio` int,
+`asignacion` varchar(11) not null,
 `estado` char not null,
 PRIMARY KEY(`idefinido`),
 FOREIGN KEY(`idencuentro`)

@@ -120,10 +120,15 @@ namespace Control.AdmEncuentrosGenerados
             EncuentroDefinido encuentroDefinido = listaEncuentrosDefinidos[indexEncuentroSeleccionado];
             EncuentroGenerado encuentroGenerado = ObtenerEncuentroGenerado(encuentroDefinido.IdEncuentroGeneradoPendiente);
             LlenarDatosPartido(indexEncuentroSeleccionado, lblEquipoLocal, lblEquipoVisitante, encuentroDefinido);
-            string estadio= ObtenerNombreEstadioDelPartido(indexEncuentroSeleccionado);
+            Estadio estadio=admEstadio.ObtenerEstadioPorId(listaEncuentrosDefinidos[indexEncuentroSeleccionado].IdEstadio);
+           
             admEstadio.SeleccionarEstadio(cmbEstadios, estadio);
+            string colegiados=admColegiados.ObtenerNombreDeColegiados(encuentroDefinido.IdColegiado);
+            Console.WriteLine(colegiados);
+            admColegiados.LlenarColegiadosCmb(cmbGrupoColegiado, encuentroDefinido.IdColegiado);
             dtpFechaEncuentro.Value = encuentroDefinido.FechaDeEncuentro;
             dtpHora.Value = encuentroDefinido.Hora;
+           
             return respuesta;
         }
         /*Metodo que actualiza el estadio de un encuentro definido
@@ -141,8 +146,8 @@ namespace Control.AdmEncuentrosGenerados
                 actualizo = datosEncuentroDefinido.ActualizarEstadioDePartido(idEncuentroPorActualizar, idNuevoEstadioAsociado);
                 if (actualizo)
                 {
-                    admEstadio.CambiarEstadoEstadio(idNuevoEstadioAsociado, "N");
-                    admEstadio.CambiarEstadoEstadio(idAntiguoEStadio, "A");
+                    admEstadio.CambiarEstadoEstadio(idNuevoEstadioAsociado, "OCUPADO");
+                    admEstadio.CambiarEstadoEstadio(idAntiguoEStadio, "DISPONIBLE");
                 }
                 else
                 {
@@ -167,7 +172,7 @@ namespace Control.AdmEncuentrosGenerados
             int idEncuentroGeneradoPendiente = admEncuentrosGenerados.ListaEncuentrosGeneradosPendientes[posicion].Id;
             int idColegiado = admColegiados.ListaintegColeg[grupoColegiado].IdGrupoColegiado;
             int idEsadio = admEstadio.ListaEstadiosDisponibles[estadioSeleccionado].Id;
-            EncuentroDefinido encuentroDefinido = new EncuentroDefinido(idEncuentroGeneradoPendiente, idColegiado, fechaPartido, "A", horaPartido, idEsadio);
+            EncuentroDefinido encuentroDefinido = new EncuentroDefinido(idEncuentroGeneradoPendiente, idColegiado, fechaPartido, horaPartido, idEsadio);
             int id = datosEncuentroDefinido.GuardarEncuentroDefinido(encuentroDefinido);
             if (id != 0)
             {
@@ -177,7 +182,7 @@ namespace Control.AdmEncuentrosGenerados
                 {
                     try
                     {
-                        bool cambioEstadio = admEstadio.CambiarEstadoEstadio(idEsadio, "N");
+                        bool cambioEstadio = admEstadio.CambiarEstadoEstadio(idEsadio, "OCUPADO");
                         if (cambiarEstado)
                         {
                             guardo = true;

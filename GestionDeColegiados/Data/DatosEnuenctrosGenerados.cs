@@ -26,7 +26,6 @@ namespace Data
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@_idEquipoLocal", encuentroGenerado.IdEquipoLocal);
                     cmd.Parameters.AddWithValue("@_idEquipoVisitante", encuentroGenerado.IdEquipoVisitante);
-                    cmd.Parameters.AddWithValue("@_estado", encuentroGenerado.Estado);
                     cmd.ExecuteNonQuery();
                     guardo = true;
                 }
@@ -109,7 +108,6 @@ namespace Data
                 MySqlCommand cmd = new MySqlCommand("asigacionEncuentroAsignado", conexion);
 
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@_estado", "Por Jugar");
                 cmd.Parameters.AddWithValue("@_idencuentro", idEncuentroGeneradoPendiente);
                 cmd.ExecuteNonQuery();
                 cambio = true;

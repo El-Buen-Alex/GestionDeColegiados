@@ -151,11 +151,10 @@ DELIMITER
 DELIMITER $$
 CREATE PROCEDURE guardarEncuentrosGenerados(
 	in _idEquipoLocal int,
-    in _idEquipoVisitante int,
-    in _estado char)
+    in _idEquipoVisitante int)
 		BEGIN 
-					INSERT INTO encuentrosGenerados(idEquipoLocal,idEquipoVisitante,estado)
-			VALUES	(_idEquipoLocal,_idEquipoVisitante,_estado);
+					INSERT INTO encuentrosGenerados(idEquipoLocal,idEquipoVisitante, asignacion, estado)
+			VALUES	(_idEquipoLocal,_idEquipoVisitante,'PENDIENTE','A');
             
 			END$$
 DELIMITER 
@@ -164,7 +163,7 @@ DELIMITER
 DELIMITER $$
 CREATE PROCEDURE obtenerNumeroEncuentroPendiente()
 	BEGIN
-		SELECT count(*) as tamanio FROM encuentrosgenerados WHERE estado = 'A'; 
+		SELECT count(*) as tamanio FROM encuentrosgenerados WHERE asignacion = 'PENDIENTE'; 
 	END$$
 DELIMITER
 
@@ -172,7 +171,7 @@ DELIMITER
 DELIMITER $$
 CREATE PROCEDURE obtenerEncuentroPendiente()
 	BEGIN
-		SELECT * FROM encuentrosgenerados WHERE estado = 'A'; 
+		SELECT * FROM encuentrosgenerados WHERE asignacion = 'PENDIENTE'; 
 	END$$
 DELIMITER 
 
@@ -192,11 +191,10 @@ CREATE PROCEDURE guardarEncuentrosDefinidos(
     in _hora time,
     in _idencuentro int,
     in _idcolegiado int,
-    in _idestadio int,
-    in _estado char)
+    in _idestadio int)
 		BEGIN 
-					INSERT INTO encuentrodefinidos(fecha,hora,idencuentro,idcolegiado,idestadio,estado)
-			VALUES	(_fecha,_hora,_idencuentro,_idcolegiado,_idestadio,_estado);
+					INSERT INTO encuentrodefinidos(fecha,hora,idencuentro,idcolegiado,idestadio,asignacion,estado)
+			VALUES	(_fecha,_hora,_idencuentro,_idcolegiado,_idestadio,'ASIGNADO','A');
             
 			END$$
 DELIMITER 
@@ -204,11 +202,10 @@ DELIMITER
 /*PROCEDIMIENTO PARA GUARDAR CAMBIAR EL ESTADO A ASIGNADO AL ENCUENTRO*/
 DELIMITER $$ 
 CREATE PROCEDURE asigacionEncuentroAsignado(
-    in _estado char,
     in _idencuentro int)
 		BEGIN 
 					UPDATE encuentrosgenerados
-			SET	estado=_estado WHERE idencuentro = _idencuentro;
+			SET	asignacion='ASIGNADO' WHERE idencuentro = _idencuentro;
             
 			END$$
 DELIMITER 
@@ -231,11 +228,11 @@ DELIMITER
 /*PROCEDIMIENTO PARA CAMBIAR EL ESTADO DEL ESTADIO*/
 DELIMITER $$
 CREATE PROCEDURE asigacionEstadoEstadio(
-    in _estado char,
+    in _asignacion varchar(11),
     in _idestadio int)
 		BEGIN 
 					UPDATE estadio
-			SET	estado= _estado WHERE idestadio = _idestadio;
+			SET	asignacion= _asignacion WHERE idestadio = _idestadio;
             
 			END$$
 DELIMITER
@@ -261,7 +258,7 @@ DELIMITER
 DELIMITER $$
 CREATE PROCEDURE estadiosDiponibles()
 	BEGIN
-		SELECT * FROM estadio WHERE estado = 'A'; 
+		SELECT * FROM estadio WHERE asignacion = 'DISPONIBLE'; 
 	END$$
 DELIMITER
 

@@ -28,7 +28,6 @@ namespace Data
                 comando.Parameters.AddWithValue("_idencuentro", encuentroDefinido.IdEncuentroGeneradoPendiente);
                 comando.Parameters.AddWithValue("_idcolegiado", encuentroDefinido.IdColegiado);
                 comando.Parameters.AddWithValue("_idestadio", encuentroDefinido.IdEstadio);
-                comando.Parameters.AddWithValue("_estado", encuentroDefinido.Estado);
                 comando.ExecuteNonQuery();
                 comando = new MySqlCommand("obtenerId", conexion);
                 comando.CommandType = CommandType.StoredProcedure;

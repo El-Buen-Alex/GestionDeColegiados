@@ -57,7 +57,6 @@ namespace GestionDeColegiados
             nombre del estadio actual del encuentro que se ha seleccionado*/
             int indexEncuentroDefinidoSeleccionado = cmbEncuentros.SelectedIndex;
             cambiarDisponibilidadControladoresUi(true);
-            string estadio = admEncuentrosDefinidos.ObtenerNombreEstadioDelPartido(indexEncuentroDefinidoSeleccionado);
             bool lleno = admEncuentrosDefinidos.LlenarInformacíonPartidoCompleta(indexEncuentroDefinidoSeleccionado, lblEquipoLocal, lblEquipoVisitante, cmbEstadios, dtpFechaEncuentro, dtpHora, cmbGrupoColegiado);
         }
         private void cambiarDisponibilidadControladoresUi(bool estado)

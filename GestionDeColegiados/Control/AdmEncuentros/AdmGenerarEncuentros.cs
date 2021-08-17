@@ -160,7 +160,7 @@ namespace Control.AdmEncuentrosGenerados
             List<EncuentroGenerado> lista = new List<EncuentroGenerado>();
             for (int x = 0; x < 5; x++)
             {
-                encuentroAuxiliar = new EncuentroGenerado(idsEquiposLocales[x], idsEquiposVisitantes[x], "A");
+                encuentroAuxiliar = new EncuentroGenerado(idsEquiposLocales[x], idsEquiposVisitantes[x]);
                 lista.Add(encuentroAuxiliar);
             }
 

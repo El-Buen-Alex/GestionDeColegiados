@@ -16,6 +16,14 @@ namespace Model
         {
 
         }
+        public EncuentroDefinido(int idEncuentroGeneradoPendiente, int idColegiado, DateTime fechaDeEncuentro, DateTime hora, int idEStadio)
+        {
+            this.idEncuentroGeneradoPendiente = idEncuentroGeneradoPendiente;
+            this.idColegiado = idColegiado;
+            this.fechaDeEncuentro = fechaDeEncuentro;
+            this.hora = hora;
+            this.idEstadio = idEStadio;
+        }
         public EncuentroDefinido(int idEncuentroGeneradoPendiente, int idColegiado, DateTime fechaDeEncuentro, string estado, DateTime hora, int idEStadio)
         {
             this.idEncuentroGeneradoPendiente = idEncuentroGeneradoPendiente;

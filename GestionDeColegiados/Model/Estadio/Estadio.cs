@@ -4,7 +4,7 @@
     {
         private int id;
         private string nombre;
-        private string estado;
+        private string asignacion;
 
         public Estadio()
         {
@@ -14,11 +14,11 @@
         {
             this.id = id;
             this.nombre = nombre;
-            this.estado = estado;
+            this.asignacion = estado;
         }
 
         public int Id { get => id; set => id = value; }
         public string Nombre { get => nombre; set => nombre = value; }
-        public string Estado { get => estado; set => estado = value; }
+        public string Asignacion { get => asignacion; set => asignacion = value; }
     }
 }

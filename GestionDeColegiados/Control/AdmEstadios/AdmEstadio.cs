@@ -38,6 +38,14 @@ namespace Control.AdmEstadios
             cmbEstadio.DisplayMember = "nombre";
             cmbEstadio.DataSource = listaEstadiosDisponibles;
         }
+        public void LlenarEstadiosCmb(ComboBox cmbEstadio, Estadio estadio)
+        {
+            cmbEstadio.DataSource = null;
+            listaEstadiosDisponibles = datosEstadios.obtenerEstadiosDisponibles();
+            listaEstadiosDisponibles.Insert(0, estadio);
+            cmbEstadio.DisplayMember = "nombre";
+            cmbEstadio.DataSource = listaEstadiosDisponibles;
+        }
         public Estadio ObtenerEstadioPorId(int idEstadio)
         {
             return datosEstadios.ObtenerEstadioPorId(idEstadio);
@@ -54,17 +62,16 @@ namespace Control.AdmEstadios
             return cambio;
         }
 
-        public void SeleccionarEstadio(ComboBox cmbEstadios, string estadioNombre)
+        public void SeleccionarEstadio(ComboBox cmbEstadios, Estadio estadio)
         {
             int i = 0;
-            foreach(Estadio e in listaEstadiosDisponibles)
-            {
-                if (e.Nombre == estadioNombre)
-                {
-                    cmbEstadios.SelectedIndex = i;
-                }
-                i++;
-            }
+            LlenarEstadiosCmb(cmbEstadios, estadio);
+            cmbEstadios.SelectedIndex = 0;
+        }
+
+        internal Estadio ObtenerEstadioPorIndex(int indexEncuentroSeleccionado)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -19,8 +19,8 @@ INSERT INTO equipo(nombre, numero_jugadores, nombre_director_tecnico, presidente
 INSERT INTO equipo(nombre, numero_jugadores, nombre_director_tecnico, presidente_equipo, estado)
 	VALUES('Aucas', '20', 'Gabriel Schürrer', 'Dany Walker','A');
     
-INSERT INTO equipo(nombre, numero_jugadores, nombre_director_tecnico, presidente_equipo, estado)
-	VALUES('Manta Club', '21', 'Fabián Frías', 'José Medranda','A');
+INSERT INTO equipo(nombre, numero_jugadores, nombre_director_tecnico, presidente_equipo,  estado)
+	VALUES('Manta Club', '21', 'Fabián Frías', 'José Medranda', 'A');
     
 INSERT INTO equipo(nombre, numero_jugadores, nombre_director_tecnico, presidente_equipo, estado)
 	VALUES('Guayaquil C', '23', 'Pool Gavilánez', 'Iván Mendoza','A');
@@ -95,37 +95,37 @@ INSERT INTO colegiado (idjuezcentral,idasistente1,idasistente2,idcuartoarbitro, 
         VALUES ('6','6','6','6','A');
       
 /*INGRESO DATOS DE EQUIPOS*/
-INSERT INTO estadio (nombreEstadio, estado) 
-values ('Monumental','A');
-INSERT INTO estadio (nombreEstadio, estado)
- values ('Etho Vega','A');
-INSERT INTO estadio (nombreEstadio, estado) 
-values ('Rodrigo Paz Delgado','A');
-INSERT INTO estadio (nombreEstadio, estado) 
-values ('Capwell','A');
-INSERT INTO estadio (nombreEstadio, estado) 
-values ('Jocay','A');
-INSERT INTO estadio (nombreEstadio, estado) 
-values ('Bellavista','A');
-INSERT INTO estadio (nombreEstadio, estado) 
-values ('9 de mayo','A');
-INSERT INTO estadio (nombreEstadio, estado) 
-values ('La Cocha','A');
-INSERT INTO estadio (nombreEstadio, estado) 
-values ('UTN','A');
-INSERT INTO estadio (nombreEstadio, estado) 
-values ('Los Chorijos','A');
-INSERT INTO estadio (nombreEstadio, estado) 
-values ('Camp Nou','A');
-INSERT INTO estadio (nombreEstadio, estado) 
-values ('Etho Vega','A');
-INSERT INTO estadio (nombreEstadio, estado) 
-values ('Velódromo','A');
-INSERT INTO estadio (nombreEstadio, estado) 
-values ('Wembley','A');
-INSERT INTO estadio (nombreEstadio, estado) 
-values ('Anfield','A'); 
-INSERT INTO estadio (nombreEstadio, estado) 
-values ('Azteca','A');
-INSERT INTO estadio (nombreEstadio, estado) 
-values ('Maracaná','A');
+INSERT INTO estadio (nombreEstadio,asignacion, estado) 
+values ('Monumental','DISPONIBLE','A');
+INSERT INTO estadio (nombreEstadio, asignacion, estado)
+ values ('Etho Vega','DISPONIBLE','A');
+INSERT INTO estadio (nombreEstadio,asignacion, estado) 
+values ('Rodrigo Paz Delgado','DISPONIBLE','A');
+INSERT INTO estadio (nombreEstadio,asignacion, estado) 
+values ('Capwell','DISPONIBLE','A');
+INSERT INTO estadio (nombreEstadio,asignacion, estado) 
+values ('Jocay','DISPONIBLE','A');
+INSERT INTO estadio (nombreEstadio,asignacion, estado) 
+values ('Bellavista','DISPONIBLE','A');
+INSERT INTO estadio (nombreEstadio,asignacion, estado) 
+values ('9 de mayo','DISPONIBLE','A');
+INSERT INTO estadio (nombreEstadio,asignacion, estado) 
+values ('La Cocha','DISPONIBLE','A');
+INSERT INTO estadio (nombreEstadio,asignacion, estado) 
+values ('UTN','DISPONIBLE','A');
+INSERT INTO estadio (nombreEstadio,asignacion, estado) 
+values ('Los Chorijos','DISPONIBLE','A');
+INSERT INTO estadio (nombreEstadio,asignacion, estado) 
+values ('Camp Nou','DISPONIBLE','A');
+INSERT INTO estadio (nombreEstadio,asignacion, estado) 
+values ('Etho Vega','DISPONIBLE','A');
+INSERT INTO estadio (nombreEstadio,asignacion, estado) 
+values ('Velódromo','DISPONIBLE','A');
+INSERT INTO estadio (nombreEstadio,asignacion, estado) 
+values ('Wembley','DISPONIBLE','A');
+INSERT INTO estadio (nombreEstadio,asignacion, estado) 
+values ('Anfield','DISPONIBLE','A'); 
+INSERT INTO estadio (nombreEstadio,asignacion, estado) 
+values ('Azteca','DISPONIBLE','A');
+INSERT INTO estadio (nombreEstadio,asignacion, estado) 
+values ('Maracaná','DISPONIBLE','A');
