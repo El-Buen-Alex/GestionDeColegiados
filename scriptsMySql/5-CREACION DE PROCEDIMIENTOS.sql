@@ -49,7 +49,7 @@ in _email varchar(25),
 in _telefono varchar(10))
 	BEGIN
 		INSERT INTO cuartoarbitro (cedula,nombre,apellido,domicilio,email,telefono, estado) 
-        VALUES (_cedula,_nombre,_apellido,_domicilio,_email,_telefono, "A");
+        VALUES (_cedula,_nombre,_apellido,_domicilio,_email,_telefono, 'A');
 	END$$
 DELIMITER 
 
@@ -63,7 +63,7 @@ in _email varchar(25),
 in _telefono varchar(10))
 	BEGIN
 		INSERT INTO juezcentral (cedula,nombre,apellido,domicilio,email,telefono, estado) 
-        VALUES (_cedula,_nombre,_apellido,_domicilio,_email,_telefono, "A");
+        VALUES (_cedula,_nombre,_apellido,_domicilio,_email,_telefono, 'A');
 	END$$
 DELIMITER
 
@@ -83,7 +83,7 @@ in _idasistente2 int,
 in _idcuartoarbitro int)
 	BEGIN
 		INSERT INTO colegiado (idjuezcentral,idasistente1,idasistente2,idcuartoarbitro, estado) 
-        VALUES (_idjuezcentral,_idasistente1,_idasistente2,_idcuartoarbitro, "A");
+        VALUES (_idjuezcentral,_idasistente1,_idasistente2,_idcuartoarbitro, 'A');
 	END$$
 DELIMITER
 
@@ -95,7 +95,7 @@ CREATE PROCEDURE obtenerColegiado()
 		INNER JOIN juezcentral jc ON jc.idjuezcentral = c.idjuezcentral
 		INNER JOIN asistente1 as1 ON as1.idasistente1 = c.idasistente1
 		INNER JOIN asistente2 as2 ON as2.idasistente2 = c.idasistente2
-		INNER JOIN cuartoarbitro ca ON ca.idcuartoarbitro = c.idcuartoarbitro WHERE estadio="A";
+		INNER JOIN cuartoarbitro ca ON ca.idcuartoarbitro = c.idcuartoarbitro WHERE estado='A';
 	END$$
 DELIMITER 
 
@@ -109,7 +109,7 @@ CREATE PROCEDURE obtenerUnColegiado(
 		INNER JOIN asistente1 as1 ON as1.idasistente1 = c.idasistente1
 		INNER JOIN asistente2 as2 ON as2.idasistente2 = c.idasistente2
 		INNER JOIN cuartoarbitro ca ON ca.idcuartoarbitro = c.idcuartoarbitro
-        WHERE c.idcolegiado=_idColegiado and estadio="A";
+        WHERE c.idcolegiado=_idColegiado and estado='A';
 	END$$
 DELIMITER 
 
@@ -135,7 +135,7 @@ in _equipoID int)
 	BEGIN
     declare equipoID int;
     set equipoID = _equipoID;
-		SELECT * FROM equipo WHERE idequipo = equipoID AND estado="A";
+		SELECT * FROM equipo WHERE idequipo = equipoID AND estado='A';
 	END$$
 DELIMITER
 
@@ -164,7 +164,7 @@ DELIMITER
 DELIMITER $$
 CREATE PROCEDURE obtenerNumeroEncuentroPendiente()
 	BEGIN
-		SELECT count(*) as tamanio FROM encuentrosgenerados WHERE estado = "A"; 
+		SELECT count(*) as tamanio FROM encuentrosgenerados WHERE estado = 'A'; 
 	END$$
 DELIMITER
 
@@ -172,7 +172,7 @@ DELIMITER
 DELIMITER $$
 CREATE PROCEDURE obtenerEncuentroPendiente()
 	BEGIN
-		SELECT * FROM encuentrosgenerados WHERE estado = "A"; 
+		SELECT * FROM encuentrosgenerados WHERE estado = 'A'; 
 	END$$
 DELIMITER 
 
@@ -181,7 +181,7 @@ DELIMITER $$
 CREATE PROCEDURE obtenerEncuentroPorID(
  in _idencuentro int)
 	BEGIN
-		SELECT * FROM encuentrosgenerados WHERE encuentrosgenerados.idencuentro = _idEncuentro AND estadio="A"; 
+		SELECT * FROM encuentrosgenerados WHERE encuentrosgenerados.idencuentro = _idEncuentro AND estado='A'; 
 	END$$
 DELIMITER 
 
@@ -244,7 +244,7 @@ DELIMITER
 DELIMITER $$
 CREATE PROCEDURE cantidadEquipos()
 	BEGIN
-		SELECT count(*) as cantidadEquipos FROM equipo WHERE estadio="A"; 
+		SELECT count(*) as cantidadEquipos FROM equipo WHERE estado='A'; 
 	END$$
 DELIMITER 
 
@@ -253,7 +253,7 @@ DELIMITER $$
 CREATE PROCEDURE obtenerEstadioPorId(
 	in _idEstadio int)
 	BEGIN
-		SELECT * FROM estadio WHERE idestadio = _idEstadio AND estadio="A";
+		SELECT * FROM estadio WHERE idestadio = _idEstadio AND estado='A';
 	END$$
 DELIMITER
 
@@ -261,7 +261,7 @@ DELIMITER
 DELIMITER $$
 CREATE PROCEDURE estadiosDiponibles()
 	BEGIN
-		SELECT * FROM estadio WHERE estado = "A"; 
+		SELECT * FROM estadio WHERE estado = 'A'; 
 	END$$
 DELIMITER
 
@@ -269,7 +269,7 @@ DELIMITER
 DELIMITER $$
 CREATE PROCEDURE informacionEstadio()
 	BEGIN
-		SELECT * FROM estadio WHERE estadio="A";
+		SELECT * FROM estadio WHERE estado='A';
 	END$$
 DELIMITER 
 
@@ -277,7 +277,7 @@ DELIMITER
 DELIMITER $$
 CREATE PROCEDURE cantidadEncuentrosPorJugar()
 	BEGIN
-		SELECT count(*) as cantidadEncuentros FROM encuentroDefinidos WHERE estado = "A"; 
+		SELECT count(*) as cantidadEncuentros FROM encuentroDefinidos WHERE estado = 'A'; 
 	END$$
 DELIMITER 
 
@@ -285,7 +285,7 @@ DELIMITER
 DELIMITER $$
 CREATE PROCEDURE mostrarEncuentroDefinidos()
 	BEGIN
-		SELECT * FROM encuentroDefinidos WHERE estado = "A" order by idefinido asc limit 5; 
+		SELECT * FROM encuentroDefinidos WHERE estado = 'A' order by idefinido asc limit 5; 
 	END$$
 DELIMITER  
 
@@ -297,6 +297,22 @@ CREATE PROCEDURE obtenerCedulaColegiado()
 		INNER JOIN juezcentral jc ON jc.idjuezcentral = c.idjuezcentral
 		INNER JOIN asistente1 as1 ON as1.idasistente1 = c.idasistente1
 		INNER JOIN asistente2 as2 ON as2.idasistente2 = c.idasistente2
-		INNER JOIN cuartoarbitro ca ON ca.idcuartoarbitro = c.idcuartoarbitro WHERE estadio="A";
+		INNER JOIN cuartoarbitro ca ON ca.idcuartoarbitro = c.idcuartoarbitro WHERE estado='A';
 	END$$
+DELIMITER 
+
+/*PROCEDIMIENTO PARA ACTUALIZAR ENCUENTRO DEFINIDO*/
+DELIMITER $$
+CREATE PROCEDURE actulizarEncuentroDefinido(
+	in _idefinido int,
+	in _fecha date,
+    in _hora time,
+	in _idencuentro int,
+    in _idcolegiado int,
+    in _idEstadio int)
+		BEGIN 
+				UPDATE encuentrodefinidos
+			SET	_fecha=fecha, _hora = hora, _idencuentro = idencuentro, _idcolegiado = idecolegiado,
+            _idEstadio = idEstadio WHERE idefinido = _idefinido;
+			END$$
 DELIMITER 
