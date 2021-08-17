@@ -56,11 +56,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmCambiarEstadioPartido.cs">
+    <Compile Include="frmActualizarPartido.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCambiarEstadioPartido.Designer.cs">
-      <DependentUpon>frmCambiarEstadioPartido.cs</DependentUpon>
+    <Compile Include="frmActualizarPartido.Designer.cs">
+      <DependentUpon>frmActualizarPartido.cs</DependentUpon>
     </Compile>
     <Compile Include="frmGenerarEncuentros.cs">
       <SubType>Form</SubType>
@@ -118,8 +118,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmCambiarEstadioPartido.resx">
-      <DependentUpon>frmCambiarEstadioPartido.cs</DependentUpon>
+    <EmbeddedResource Include="frmActualizarPartido.resx">
+      <DependentUpon>frmActualizarPartido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGenerarEncuentros.resx">
       <DependentUpon>frmGenerarEncuentros.cs</DependentUpon>

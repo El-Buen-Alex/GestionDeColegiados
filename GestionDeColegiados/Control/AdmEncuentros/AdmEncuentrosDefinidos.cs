@@ -59,6 +59,8 @@ namespace Control.AdmEncuentrosGenerados
             }
         }
 
+        
+
         /*metodo para pedirle a AdmEstadio que nos devuelva el nombre de un estadio a través del id*/
         public string ObtenerNombreEstadioDelPartido(int indexEncuentroDefinidoSeleccionado)
         {
@@ -78,25 +80,51 @@ namespace Control.AdmEncuentrosGenerados
          *fecha
          *y grupo de colegiados
          */
-        public void LlenarInformacíonPartidoCompleta(int indexEncuentroSeleccionado, Label lblEquipoLocal, Label lblEquipoVisitante, Label lblEstadio, Label lblFecha, Label lblColegiado)
-        {
 
-            listaEncuentrosDefinidos = datosEncuentroDefinido.ObtenerEncuentros();
-            EncuentroDefinido encuentroDefinido = listaEncuentrosDefinidos[indexEncuentroSeleccionado];
+        private void LlenarDatosPartido(int indexEncuentroSeleccionado, Label lblEquipoLocal, Label lblEquipoVisitante, EncuentroDefinido encuentroDefinido)
+        {
             EncuentroGenerado encuentroGenerado = ObtenerEncuentroGenerado(encuentroDefinido.IdEncuentroGeneradoPendiente);
             Equipo local, visitante;
             local = admEquipos.ObtenerEquipoPorId(encuentroGenerado.IdEquipoLocal);
             visitante = admEquipos.ObtenerEquipoPorId(encuentroGenerado.IdEquipoVisitante);
-
-            lblFecha.Text = "FECHA: " + encuentroDefinido.FechaDeEncuentro.ToShortDateString() + " HORA: " + encuentroDefinido.Hora.ToShortTimeString();
             lblEquipoLocal.Text = local.NombreEquipo;
             lblEquipoVisitante.Text = visitante.NombreEquipo;
+        }
+
+        private void LlenarFechaHoraPartido(Label lblFecha, EncuentroDefinido encuentroDefinido)
+        {
+            lblFecha.Text = "FECHA: " + encuentroDefinido.FechaDeEncuentro.ToShortDateString() + " HORA: " + encuentroDefinido.Hora.ToShortTimeString();
+
+        }
+
+        public void LlenarInformacíonPartidoCompleta(int indexEncuentroSeleccionado, Label lblEquipoLocal, Label lblEquipoVisitante, Label lblEstadio, Label lblFecha, Label lblColegiado)
+        {
+            listaEncuentrosDefinidos = datosEncuentroDefinido.ObtenerEncuentros();
+            EncuentroDefinido encuentroDefinido = listaEncuentrosDefinidos[indexEncuentroSeleccionado];
+            LlenarDatosPartido(indexEncuentroSeleccionado, lblEquipoLocal, lblEquipoVisitante, encuentroDefinido);
+            LlenarFechaHoraPartido(lblFecha, encuentroDefinido);
             lblEstadio.Text = ObtenerNombreEstadioDelPartido(indexEncuentroSeleccionado);
             lblColegiado.Text = admColegiados.ObtenerNombreDeColegiados(encuentroDefinido.IdColegiado);
+           
         }
         public int ObtenerNumeroPartidosPorJugar()
         {
             return datosEncuentroDefinido.ObtenerCantidadEncuentrosPorJugar();
+        }
+
+ 
+        public bool LlenarInformacíonPartidoCompleta(int indexEncuentroSeleccionado, Label lblEquipoLocal, Label lblEquipoVisitante, ComboBox cmbEstadios, DateTimePicker dtpFechaEncuentro, DateTimePicker dtpHora, ComboBox cmbGrupoColegiado)
+        {
+            bool respuesta = false;
+            listaEncuentrosDefinidos = datosEncuentroDefinido.ObtenerEncuentros();
+            EncuentroDefinido encuentroDefinido = listaEncuentrosDefinidos[indexEncuentroSeleccionado];
+            EncuentroGenerado encuentroGenerado = ObtenerEncuentroGenerado(encuentroDefinido.IdEncuentroGeneradoPendiente);
+            LlenarDatosPartido(indexEncuentroSeleccionado, lblEquipoLocal, lblEquipoVisitante, encuentroDefinido);
+            string estadio= ObtenerNombreEstadioDelPartido(indexEncuentroSeleccionado);
+            admEstadio.SeleccionarEstadio(cmbEstadios, estadio);
+            dtpFechaEncuentro.Value = encuentroDefinido.FechaDeEncuentro;
+            dtpHora.Value = encuentroDefinido.Hora;
+            return respuesta;
         }
         /*Metodo que actualiza el estadio de un encuentro definido
          */

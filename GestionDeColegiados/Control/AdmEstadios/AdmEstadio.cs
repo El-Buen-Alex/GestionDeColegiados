@@ -1,5 +1,6 @@
 ﻿using Data;
 using Model;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -51,6 +52,19 @@ namespace Control.AdmEstadios
             }
 
             return cambio;
+        }
+
+        public void SeleccionarEstadio(ComboBox cmbEstadios, string estadioNombre)
+        {
+            int i = 0;
+            foreach(Estadio e in listaEstadiosDisponibles)
+            {
+                if (e.Nombre == estadioNombre)
+                {
+                    cmbEstadios.SelectedIndex = i;
+                }
+                i++;
+            }
         }
     }
 }

@@ -13,6 +13,7 @@ namespace GestionDeColegiados
         {
             InitializeComponent();
             //se setean los controladores graficos
+            cambiarDisponibilidadControladoresUi(false);
             refrezcarComponentes();
 
         }
@@ -21,7 +22,6 @@ namespace GestionDeColegiados
             cmbEstadios.Enabled = false;
             admEstadio.LlenarEstadiosCmb(cmbEstadios);
             admEncuentrosDefinidos.LlenarPartidosCmb(cmbEncuentros);
-            lblEstadioActual.Text = "  ";
             cmbEstadios.SelectedItem = null;
             btnGuardarCambios.Enabled = false;
         }
@@ -56,10 +56,19 @@ namespace GestionDeColegiados
              el contenido del lblEstadioActual se seteara con el
             nombre del estadio actual del encuentro que se ha seleccionado*/
             int indexEncuentroDefinidoSeleccionado = cmbEncuentros.SelectedIndex;
-            lblEstadioActual.Text = admEncuentrosDefinidos.ObtenerNombreEstadioDelPartido(indexEncuentroDefinidoSeleccionado);
-            cmbEstadios.Enabled = true;
+            cambiarDisponibilidadControladoresUi(true);
+            string estadio = admEncuentrosDefinidos.ObtenerNombreEstadioDelPartido(indexEncuentroDefinidoSeleccionado);
+            bool lleno = admEncuentrosDefinidos.LlenarInformacíonPartidoCompleta(indexEncuentroDefinidoSeleccionado, lblEquipoLocal, lblEquipoVisitante, cmbEstadios, dtpFechaEncuentro, dtpHora, cmbGrupoColegiado);
         }
-
+        private void cambiarDisponibilidadControladoresUi(bool estado)
+        {
+            lblEquipoLocal.Enabled = estado;
+            lblEquipoVisitante.Enabled = estado;
+            dtpFechaEncuentro.Enabled = estado;
+            dtpHora.Enabled = estado;
+            cmbGrupoColegiado.Enabled = estado;
+            cmbEstadios.Enabled = estado;
+        }
         private void cmbEstadios_SelectedIndexChanged(object sender, EventArgs e)
         {
             //si se selecciona un nuevo estadio, habilitará la opcion de guardar
