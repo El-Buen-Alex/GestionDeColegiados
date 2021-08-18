@@ -37,9 +37,12 @@ namespace Control.AdmEncuentrosGenerados
             }
             return admGenerarEncuentrosDefinidos;
         }
+
+        
+
         /*metodo usado para llenar encuentros en un combobox
-         se recupera los encuentros definidos, el nombre de equipo local y visitante
-        ademas del estadio*/
+se recupera los encuentros definidos, el nombre de equipo local y visitante
+ademas del estadio*/
         public void LlenarPartidosCmb(ComboBox cmbEncuentros)
         {
             cmbEncuentros.Items.Clear();
@@ -78,7 +81,12 @@ namespace Control.AdmEncuentrosGenerados
          *fecha
          *y grupo de colegiados
          */
-
+        public void LlenarMatch(int indexEncuentroSeleccionado, Label lblEquipoLocal, Label lblEquipoVisitante)
+        {
+            listaEncuentrosDefinidos = datosEncuentroDefinido.ObtenerEncuentros();
+            EncuentroDefinido encuentroDefinido = listaEncuentrosDefinidos[indexEncuentroSeleccionado];
+            LlenarDatosPartido(indexEncuentroSeleccionado, lblEquipoLocal, lblEquipoVisitante, encuentroDefinido);
+        }
         private void LlenarDatosPartido(int indexEncuentroSeleccionado, Label lblEquipoLocal, Label lblEquipoVisitante, EncuentroDefinido encuentroDefinido)
         {
             EncuentroGenerado encuentroGenerado = ObtenerEncuentroGenerado(encuentroDefinido.IdEncuentroGeneradoPendiente);

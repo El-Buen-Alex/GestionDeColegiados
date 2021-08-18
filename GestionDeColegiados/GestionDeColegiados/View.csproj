@@ -62,6 +62,12 @@
     <Compile Include="frmActualizarPartido.Designer.cs">
       <DependentUpon>frmActualizarPartido.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCambiarPartido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCambiarPartido.Designer.cs">
+      <DependentUpon>frmCambiarPartido.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGenerarEncuentros.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmActualizarPartido.resx">
       <DependentUpon>frmActualizarPartido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCambiarPartido.resx">
+      <DependentUpon>frmCambiarPartido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGenerarEncuentros.resx">
       <DependentUpon>frmGenerarEncuentros.cs</DependentUpon>

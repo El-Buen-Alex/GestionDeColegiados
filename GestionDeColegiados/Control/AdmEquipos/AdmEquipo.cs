@@ -44,6 +44,8 @@ namespace Control.AdmEquipos
                 registrarEquipo(equipo);
             }
         }
+
+
         /*Método encargado de llenar los labels con informacion para ser presentada al usuario donde sea invocado*/
         public void LlenarEquipos(List<Label> listaContenedores)
         {
@@ -53,9 +55,10 @@ namespace Control.AdmEquipos
                 listaContenedores[x].Text = listaEquipo[x].NombreEquipo;
             }
         }
+
         /*método encargado de funcionar como puente entre los métodos de control con el método de data para obtener la cantidad de equipos 
-         *  registrados en la base de datos
-         */
+*  registrados en la base de datos
+*/
         public int ObtenerCantidadEquipo()
         {
             return datos.ObtenerCantidadEquipoRegistrados();
@@ -87,6 +90,48 @@ namespace Control.AdmEquipos
             listaEquipo = datos.consultarEquipos();
             return listaEquipo;
 
+        }
+
+        public void LlenarEquiposCmb(ComboBox cmbEquipos, List<Equipo> equiposAux )
+        {
+            if (equiposAux != null && equiposAux.Count>0)
+            {
+                
+                cmbEquipos.DataSource = null;
+                cmbEquipos.DisplayMember = "nombreEquipo";
+                cmbEquipos.DataSource = equiposAux;
+                cmbEquipos.SelectedIndex = -1;
+            }
+        }
+        private int seleccionarEquipoCmb(string equipo, List<Equipo> equiposAux)
+        {
+            int index = 0, iterador = 0;
+            foreach (Equipo e in equiposAux)
+            {
+                if (e.NombreEquipo == equipo)
+                {
+                    index = iterador;
+                }
+                iterador++;
+            }
+            return index;
+        }
+
+        public void ObserverCmbEquipos(ComboBox cmbEquipos, string equipo, string equipoSelect)
+        {
+            List<Equipo> equiposAux = extraerEquipos();
+            int index = 0, iterador=0;
+            foreach  (Equipo e in equiposAux)
+            {
+                if (e.NombreEquipo == equipo)
+                {
+                    index = iterador;
+                }
+                iterador++;
+            }         
+            equiposAux.RemoveAt(index);
+            LlenarEquiposCmb(cmbEquipos, equiposAux);
+            cmbEquipos.SelectedIndex = seleccionarEquipoCmb(equipoSelect, equiposAux);
         }
 
 
