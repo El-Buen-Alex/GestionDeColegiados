@@ -101,7 +101,7 @@ namespace GestionDeColegiados
             {
                 if (admEquipo.ObtenerCantidadEquipo() == 10)
                 {
-                    if (admGenerarEncuentros.obtnerNumeroEncuentrosGeneradosPendientes() == 0)
+                    if (admGenerarEncuentros.obtnerNumeroEncuentrosGeneradosPendientes() == 0 )
                     {
                         AbrirFormEnPanel(new frmGenerarEncuentros(false));
                     }

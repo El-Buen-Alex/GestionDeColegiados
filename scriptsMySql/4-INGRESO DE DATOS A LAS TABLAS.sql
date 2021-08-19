@@ -1,7 +1,9 @@
 /*INGRESO DEL PRESIDENTE*/
 -- use campeonatos;
-insert into presidente (IdPresidente, PresidenteName, PresidentePassword, estado) VALUES
-('1', 'presidente', '1234presi5','A');
+insert into users (Id, UserName, UserPassword, rol, estado) VALUES
+('1', 'presidente', '1234presi5','presidente','A');
+insert into users (Id, UserName, UserPassword,rol, estado) VALUES
+('2', 'arbitroGeneral', '1234arbi5','arbitro','A');
 
 /*INGRESO DE EQUIPOS A TABLA EQUIPO*/
 INSERT INTO equipo(nombre, numero_jugadores, nombre_director_tecnico, presidente_equipo, estado)
