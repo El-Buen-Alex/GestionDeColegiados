@@ -29,7 +29,7 @@ namespace GestionDeColegiados
                     if (hayVacios != true)
                     {
                         MessageBox.Show(Nombre + ", " + numJugadores + ", " + directorNombre + ", " + presidenteNombre);
-                        admEquipo.GuardarDatos(Nombre, validacionGUI.EsInt(numJugadores), directorNombre, presidenteNombre);       /*Se ejecuta el método que nos permitirá guardar la información*/
+                        admEquipo.GuardarDatos(Nombre, validacionGUI.AInt(numJugadores), directorNombre, presidenteNombre);       /*Se ejecuta el método que nos permitirá guardar la información*/
 
                     }
                     else

@@ -137,3 +137,16 @@ REFERENCES `campeonatos`.`estadio` (`idestadio`)
  );
  
  /*PARTIDO FINALIZADO*/
+ CREATE TABLE `campeonatos`.`partidoFinalizado`(
+`id_partidoFinalizado` INT NOT NULL AUTO_INCREMENT,
+`idEquipo` INT NOT NULL,
+`golesFavor` int not null,
+`golesContra` int not null,
+`golesDiferencia` int not null,
+`puntos` int not null,
+`copa` varchar(20) not null,
+`estado` char not null,
+PRIMARY KEY(`id_partidoFinalizado`), 
+FOREIGN KEY(`idEquipo`)
+REFERENCES `campeonatos`.`equipo` (`idequipo`)
+ );

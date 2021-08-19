@@ -84,6 +84,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DatosEncuentroFinalizado.cs" />
     <Compile Include="DatosEquipos.cs" />
     <Compile Include="falloBDException.cs" />
     <Compile Include="ConexionBD.cs" />
