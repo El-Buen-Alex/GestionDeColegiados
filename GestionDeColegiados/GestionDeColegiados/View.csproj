@@ -62,12 +62,6 @@
     <Compile Include="frmActualizarPartido.Designer.cs">
       <DependentUpon>frmActualizarPartido.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCambiarPartido.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmCambiarPartido.Designer.cs">
-      <DependentUpon>frmCambiarPartido.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmGenerarEncuentros.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +92,12 @@
     <Compile Include="frmRegistrarPartido.Designer.cs">
       <DependentUpon>frmRegistrarPartido.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmsArbitro\FrmMenuArbitro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmsArbitro\FrmMenuArbitro.Designer.cs">
+      <DependentUpon>FrmMenuArbitro.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTodosLosEncuentrosDefinidos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,9 +127,6 @@
     <EmbeddedResource Include="frmActualizarPartido.resx">
       <DependentUpon>frmActualizarPartido.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCambiarPartido.resx">
-      <DependentUpon>frmCambiarPartido.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmGenerarEncuentros.resx">
       <DependentUpon>frmGenerarEncuentros.cs</DependentUpon>
     </EmbeddedResource>
@@ -144,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmRegistrarPartido.resx">
       <DependentUpon>frmRegistrarPartido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmsArbitro\FrmMenuArbitro.resx">
+      <DependentUpon>FrmMenuArbitro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTodosLosEncuentrosDefinidos.resx">
       <DependentUpon>frmTodosLosEncuentrosDefinidos.cs</DependentUpon>

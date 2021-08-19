@@ -23,6 +23,10 @@ namespace Control
                     //se lanza la excepcion
                     throw new usuarioNoRegistradoException(usuario);
                 }
+                else
+                {
+                    respuesta = nuevoUsuario.Rol;
+                }
             }catch(Exception ex)
             {
                 Console.WriteLine(ex.Message);

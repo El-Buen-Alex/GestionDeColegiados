@@ -2,12 +2,13 @@ use campeonatos;
 /*CREACIÓN DE TABLAS*/
 
 /*CREACIÓN DE TABLA ADMINISTRADORES*/
-CREATE TABLE `campeonatos`.`presidente` (
-`IdPresidente` int not null auto_increment,
-`PresidenteName` varchar(50) not null,
-`PresidentePassword` varchar(15) not null,
+CREATE TABLE `campeonatos`.`users` (
+`Id` int not null auto_increment,
+`UserName` varchar(50) not null,
+`UserPassword` varchar(15) not null,
+`rol` varchar(11) not null,
 `estado` char not null,
-primary key (`IdPresidente`)
+primary key (`Id`)
 )engine= InnoDB;
 
 /*CREACIÓN DE TABLA JUEZCENTRAL*/
@@ -134,3 +135,5 @@ REFERENCES `campeonatos`.`colegiado` (`idcolegiado`),
 FOREIGN KEY(`idestadio`)
 REFERENCES `campeonatos`.`estadio` (`idestadio`)
  );
+ 
+ /*PARTIDO FINALIZADO*/

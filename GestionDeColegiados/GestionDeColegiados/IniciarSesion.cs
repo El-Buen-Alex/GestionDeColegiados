@@ -1,8 +1,10 @@
 ﻿using Control;
+using GestionDeColegiados.FrmsArbitro;
 using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+
 
 namespace GestionDeColegiados
 {
@@ -91,11 +93,16 @@ namespace GestionDeColegiados
                 //metodo que envia el usuario y contraseña ingrsado para validar si los datos fueron ingresados correctamente
                 string mensaje = "";
                 mensaje=gestionLogin.controlLogin(usuario, password);
-                if (mensaje == "")
+                if (mensaje == "presidente")
                 {
                     this.Hide();
                     MenuPrincipal pantallaPrincipal = new MenuPrincipal();
                     pantallaPrincipal.Show();
+                }else if (mensaje=="arbitro")
+                {
+                    this.Hide();
+                    FrmMenuArbitro pantallaPrincipalArbitro = new FrmMenuArbitro();
+                    pantallaPrincipalArbitro.Show();
                 }
                 else
                 {

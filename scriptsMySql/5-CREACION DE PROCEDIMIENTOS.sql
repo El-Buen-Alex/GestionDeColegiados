@@ -2,10 +2,10 @@
 use campeonatos;
 /*PROCEDIMIENTO PARA REALIZAR LOGIN*/
 DELIMITER $$
-create procedure loginPresidente (IN username VARCHAR(15), IN pass VARCHAR(15))
+create procedure login (IN username VARCHAR(15), IN pass VARCHAR(15))
 	BEGIN 
-		SELECT IdPresidente, PresidenteName, PresidentePassword FROM presidente
-		WHERE PresidenteName = username AND PresidentePassword = pass;
+		SELECT Id, UserName, UserPassword, rol FROM users
+		WHERE UserName = username AND UserPassword = pass;
 	END$$
 DELIMITER 
 
