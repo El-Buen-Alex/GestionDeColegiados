@@ -6,7 +6,7 @@ namespace Control
     public class ValidacionGUI
     {
 
-        public int EsInt(string valor)
+        public int AInt(string valor)
         {
             int x = 0;
             try

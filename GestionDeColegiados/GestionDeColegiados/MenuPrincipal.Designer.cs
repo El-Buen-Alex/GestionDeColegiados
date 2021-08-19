@@ -56,18 +56,15 @@ namespace GestionDeColegiados
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnVerEncuentrosDefinidos = new System.Windows.Forms.Button();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.panel16 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlPanelContenedor = new System.Windows.Forms.Panel();
             this.PanelBarraTitulo = new System.Windows.Forms.Panel();
             this.pbMinimizar = new System.Windows.Forms.PictureBox();
             this.pbCerrar = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.flpOpcionGestionColegiado.SuspendLayout();
@@ -75,12 +72,11 @@ namespace GestionDeColegiados
             this.flpOpcionGestionEncuentros.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel15.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PanelBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -316,8 +312,6 @@ namespace GestionDeColegiados
             this.flpOpcionGestionEncuentros.Controls.Add(this.btnCambiarGrupo);
             this.flpOpcionGestionEncuentros.Controls.Add(this.panel4);
             this.flpOpcionGestionEncuentros.Controls.Add(this.btnVerEncuentrosDefinidos);
-            this.flpOpcionGestionEncuentros.Controls.Add(this.panel15);
-            this.flpOpcionGestionEncuentros.Controls.Add(this.button1);
             this.flpOpcionGestionEncuentros.Location = new System.Drawing.Point(3, 383);
             this.flpOpcionGestionEncuentros.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flpOpcionGestionEncuentros.Name = "flpOpcionGestionEncuentros";
@@ -416,40 +410,6 @@ namespace GestionDeColegiados
             this.btnVerEncuentrosDefinidos.UseVisualStyleBackColor = false;
             this.btnVerEncuentrosDefinidos.Click += new System.EventHandler(this.btnVerEncuentrosDefinidos_Click);
             // 
-            // panel15
-            // 
-            this.panel15.Controls.Add(this.panel16);
-            this.panel15.Location = new System.Drawing.Point(3, 155);
-            this.panel15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(84, 47);
-            this.panel15.TabIndex = 25;
-            // 
-            // panel16
-            // 
-            this.panel16.Location = new System.Drawing.Point(0, 51);
-            this.panel16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(84, 47);
-            this.panel16.TabIndex = 23;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(75)))), ((int)(((byte)(119)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Silver;
-            this.button1.Location = new System.Drawing.Point(93, 155);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(143, 47);
-            this.button1.TabIndex = 26;
-            this.button1.Text = "CAMBIAR ENCUENTROS";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.label3);
@@ -494,6 +454,17 @@ namespace GestionDeColegiados
             this.label1.Size = new System.Drawing.Size(111, 17);
             this.label1.TabIndex = 12;
             this.label1.Text = "FEDERACIÓN ";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::GestionDeColegiados.Properties.Resources.FEF_logo_svg;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 17);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(96, 66);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // pnlPanelContenedor
             // 
@@ -547,17 +518,6 @@ namespace GestionDeColegiados
             this.pbCerrar.MouseEnter += new System.EventHandler(this.pbCerrar_MouseEnter);
             this.pbCerrar.MouseLeave += new System.EventHandler(this.pbCerrar_MouseLeave);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::GestionDeColegiados.Properties.Resources.FEF_logo_svg;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 17);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(96, 66);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -580,13 +540,12 @@ namespace GestionDeColegiados
             this.flpOpcionGestionEncuentros.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            this.panel15.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.PanelBarraTitulo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -629,8 +588,5 @@ namespace GestionDeColegiados
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button btnVerEncuentrosDefinidos;
-        private System.Windows.Forms.Panel panel15;
-        private System.Windows.Forms.Panel panel16;
-        private System.Windows.Forms.Button button1;
     }
 }

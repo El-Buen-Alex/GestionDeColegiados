@@ -214,18 +214,5 @@ namespace GestionDeColegiados
             }
 
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (admEncuentrosDefinidos.ObtenerNumeroPartidosPorJugar() == 0)
-            {
-                MessageBox.Show("No hay Partidos por definir. Por favor, genere encuentros primero");
-            }
-            else
-            {
-                AbrirFormEnPanel(new frmCambiarPartido());
-            }
-
-        }
     }
 }

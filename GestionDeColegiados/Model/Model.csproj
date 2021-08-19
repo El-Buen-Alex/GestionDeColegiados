@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Partido\EncuentroFinalizado.cs" />
     <Compile Include="Presidente\Presidente.cs" />
     <Compile Include="Colegiados\Arbitro.cs" />
     <Compile Include="Colegiados\Asistente.cs" />
