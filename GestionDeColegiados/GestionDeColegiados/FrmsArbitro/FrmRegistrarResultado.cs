@@ -46,8 +46,19 @@ namespace GestionDeColegiados.FrmsArbitro
             refrezcarComponentes();
             cambiarDisponibilidadControladoresUi(true);
         }
+
+        private void guardado(bool guardado)
+        {
+            if (guardado)
+            {
+                cambiarDisponibilidadControladoresUi(false);
+                admEncuentrosDefinidos.LlenarPartidosCmb(cmbEncuentros);
+            }
+        }
+
         private void enviarDatosGuardar()
         {
+            bool respuesta = false;
             string golesLocal = txtGolesLocal.Text;
             string golesVisitante = txtGolesVisitante.Text;
             if (String.IsNullOrEmpty(golesLocal) || String.IsNullOrEmpty(golesVisitante))
@@ -57,13 +68,34 @@ namespace GestionDeColegiados.FrmsArbitro
             else
             {
                 int index = cmbEncuentros.SelectedIndex;
-                bool guardado = admEncuentroFinalizado.GuardarEncuentroFinalizado(index, golesLocal, golesVisitante);
+                 respuesta = admEncuentroFinalizado.GuardarEncuentroFinalizado(index, golesLocal, golesVisitante);
+                guardado(respuesta);
             }
         }
+
 
         private void btnGuardarCambios_Click(object sender, EventArgs e)
         {
             enviarDatosGuardar();
+        }
+
+        private void ActualizarPuntos()
+        {
+            string golLocal = txtGolesLocal.Text;
+            string golVisitante = txtGolesVisitante.Text;
+            admEncuentroFinalizado.CalcularPuntos(lblPuntosLocalResultado, golLocal, golVisitante);
+            admEncuentroFinalizado.CalcularPuntos(lblPuntosVisitanteResultado, golVisitante, golLocal);
+
+        }
+
+        private void txtGolesLocal_TextChanged(object sender, EventArgs e)
+        {
+            ActualizarPuntos();
+        }
+
+        private void txtGolesVisitante_TextChanged(object sender, EventArgs e)
+        {
+            ActualizarPuntos();
         }
     }
 }

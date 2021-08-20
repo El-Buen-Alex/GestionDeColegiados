@@ -16,6 +16,7 @@ namespace Model.Partido
         private int idEquipo;
         private string copa;
         private string estado;
+        private int idEncuentroDefinido;
 
         public EncuentroFinalizado()
         {
@@ -40,17 +41,19 @@ namespace Model.Partido
 
             return puntos;
         }
-        public EncuentroFinalizado(int idEquipo, int golFavor, int golContra)
+        public EncuentroFinalizado(int idEquipo, int golFavor, int golContra, int idEncuentroDefinido)
         {
             this.idEquipo = idEquipo;
             this.GolesFavor = golFavor;
             this.GolesContra = golContra;
             this.golesDiferencia = this.GolesFavor - this.GolesContra;
-            CalcularPuntos(golFavor, golContra);
+            this.puntos=CalcularPuntos(golFavor, golContra);
+            this.idEncuentroDefinido = idEncuentroDefinido;
+            this.copa =""+DateTime.Now.Year;
         }
 
         public EncuentroFinalizado( int golesFavor, int golesContra,
-           int golesDiferencia, int puntos, int idEquipo, string copa, string estado )
+           int golesDiferencia, int puntos, int idEquipo, string copa, string estado, int idEncuentroDefinido)
         {
             this.id = 0;
             this.golesFavor = golesFavor;
@@ -61,10 +64,11 @@ namespace Model.Partido
             this.copa = copa;
             this.estado = estado;
             this.golesDiferencia = this.GolesFavor - this.GolesContra;
+            this.idEncuentroDefinido = idEncuentroDefinido;
         }
 
         public EncuentroFinalizado(int id, int golesFavor, int golesContra,
-            int golesDiferencia, int puntos, int idEquipo, string copa, string estado)
+            int golesDiferencia, int puntos, int idEquipo, string copa, string estado, int idEncuentroDefinido)
         {
             this.id = id;
             this.golesFavor = golesFavor;
@@ -75,6 +79,8 @@ namespace Model.Partido
             this.copa = copa;
             this.estado = estado;
             this.golesDiferencia = this.GolesFavor - this.GolesContra;
+            this.idEncuentroDefinido = idEncuentroDefinido;
+            this.puntos = CalcularPuntos(this.golesFavor, this.GolesContra);
         }
 
         public int Id { get => id; set => id = value; }
@@ -92,6 +98,6 @@ namespace Model.Partido
         public string Copa { get => copa; set => copa = value; }
 
         public string Estado { get => estado; set => estado = value; }
-
+        public int IdEncuentroDefinido { get => idEncuentroDefinido; set => idEncuentroDefinido = value; }
     }
 }

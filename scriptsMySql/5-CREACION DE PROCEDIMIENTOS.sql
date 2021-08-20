@@ -274,17 +274,17 @@ DELIMITER
 DELIMITER $$
 CREATE PROCEDURE cantidadEncuentrosPorJugar()
 	BEGIN
-		SELECT count(*) as cantidadEncuentros FROM encuentroDefinidos WHERE estado = 'A'; 
+		SELECT count(*) as cantidadEncuentros FROM encuentroDefinidos WHERE estado = 'A' and asignacion="ASIGNADO"; 
 	END$$
-DELIMITER 
+DELIMITER ;
 
 /* PROCEDIMIENTO PARA OBTENER LOS ULTIMOS 5 ENCUENTROS DEFINIDOS*/
 DELIMITER $$
 CREATE PROCEDURE mostrarEncuentroDefinidos()
 	BEGIN
-		SELECT * FROM encuentroDefinidos WHERE estado = 'A' order by idefinido asc limit 5; 
+		SELECT * FROM encuentroDefinidos WHERE estado = 'A' and asignacion="ASIGNADO" order by idefinido asc limit 5; 
 	END$$
-DELIMITER  
+DELIMITER  ;
 
 /*PROCEDIMIENTO PARA OBTENER CEDULA DE COLEGIADO*/
 DELIMITER $$
@@ -296,7 +296,7 @@ CREATE PROCEDURE obtenerCedulaColegiado()
 		INNER JOIN asistente2 as2 ON as2.idasistente2 = c.idasistente2
 		INNER JOIN cuartoarbitro ca ON ca.idcuartoarbitro = c.idcuartoarbitro WHERE c.estado='A';
 	END$$
-DELIMITER 
+DELIMITER ;
 
 /*PROCEDIMIENTO PARA ACTUALIZAR ENCUENTRO DEFINIDO*/
 DELIMITER $$
@@ -312,7 +312,7 @@ CREATE PROCEDURE actulizarEncuentroDefinido(
 			SET	fecha=_fecha, hora = _hora, idencuentro = _idencuentro, idcolegiado = _idecolegiado,
             idEstadio = _idEstadio WHERE idefinido = _idefinido;
 			END$$
-DELIMITER 
+DELIMITER ;
 
 /*PROCEDIMIENTO PARA ACTUALIZAR FECHA DEFINIDO*/
 DELIMITER $$
@@ -326,4 +326,21 @@ CREATE PROCEDURE actulizarFechaHoraColegiadoEncuentroDefinido(
 			SET	fecha=_fecha, hora = _hora, idcolegiado = _idColegiado
             WHERE idefinido = _idefinido;
 			END$$
-DELIMITER 
+DELIMITER ;
+
+/*PROCEDIMIENTO PARA GUARDAR PARTIDO FINALIZADO*/
+DELIMITER $$
+CREATE PROCEDURE guardarPartidoFinalizado( in _idEquipo int,
+in _idDefinido int,
+in _golesFavor int,
+in _golesContra int,
+in _golesDiferencia int,
+in _puntos int,
+in _copa varchar(20))
+	BEGIN
+		INSERT INTO encuentrofinalizado (idDefinido,idEquipo,golesFavor,golesContra,golesDiferencia,puntos,copa, estado) 
+        VALUES (_idDefinido,_idEquipo,_golesFavor,_golesContra,_golesDiferencia,_puntos,concat('LIGA-',_copa),'A');
+	END$$
+DELIMITER ;
+
+

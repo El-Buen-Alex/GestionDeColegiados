@@ -135,11 +135,12 @@ REFERENCES `campeonatos`.`colegiado` (`idcolegiado`),
 FOREIGN KEY(`idestadio`)
 REFERENCES `campeonatos`.`estadio` (`idestadio`)
  );
- 
+
  /*PARTIDO FINALIZADO*/
- CREATE TABLE `campeonatos`.`partidoFinalizado`(
+ CREATE TABLE `campeonatos`.`encuentrofinalizado`(
 `id_partidoFinalizado` INT NOT NULL AUTO_INCREMENT,
 `idEquipo` INT NOT NULL,
+`idDefinido` INT NOT NULL,
 `golesFavor` int not null,
 `golesContra` int not null,
 `golesDiferencia` int not null,
@@ -148,5 +149,7 @@ REFERENCES `campeonatos`.`estadio` (`idestadio`)
 `estado` char not null,
 PRIMARY KEY(`id_partidoFinalizado`), 
 FOREIGN KEY(`idEquipo`)
-REFERENCES `campeonatos`.`equipo` (`idequipo`)
+REFERENCES `campeonatos`.`equipo` (`idequipo`),
+FOREIGN KEY(`idDefinido`)
+REFERENCES `campeonatos`.`encuentrodefinidos` (`idefinido`)
  );

@@ -9,6 +9,7 @@ using Model;
 using Model.Equipo;
 using Model.Partido;
 using Data;
+using System.Windows.Forms;
 
 namespace Control.AdmEncuentros
 {
@@ -37,6 +38,18 @@ namespace Control.AdmEncuentros
             return admEncuentroFinalizado;
         }
 
+        public void LlenarDgv(DataGridView dgvCompeticion)
+        {
+            string anio = "" + DateTime.Now.Year;
+            encuentrosFinalizados = datosEncuentroFinalizado.GetEncuentrosFinalizados(anio);
+            int posicion= 1;
+            foreach (EncuentroFinalizado encuentro in encuentrosFinalizados)
+            {
+                string nombreEquipo = admEquipos.ObtenerEquipoPorId(encuentro.IdEquipo).NombreEquipo;
+                dgvCompeticion.Rows.Add(posicion, nombreEquipo, encuentro.GolesFavor, encuentro.GolesContra, encuentro.GolesDiferencia, encuentro.Puntos );
+                posicion++;
+            }
+        }
 
         public bool GuardarEncuentroFinalizado(int index, string golesLocal, string golesVisitante)
         {
@@ -51,8 +64,8 @@ namespace Control.AdmEncuentros
             int golLocal = validaciones.AInt(golesLocal);
             int golVisitante = validaciones.AInt(golesVisitante);
 
-            EncuentroFinalizado encuentroResultadoLocal= new EncuentroFinalizado(equipoLocal.IdEquipo,golLocal, golVisitante);
-            EncuentroFinalizado encuentroResultadoVisitante = new EncuentroFinalizado(equipoVisitante.IdEquipo, golVisitante, golLocal);
+            EncuentroFinalizado encuentroResultadoLocal= new EncuentroFinalizado(equipoLocal.IdEquipo,golLocal, golVisitante, encuentroDefinido.Id);
+            EncuentroFinalizado encuentroResultadoVisitante = new EncuentroFinalizado(equipoVisitante.IdEquipo, golVisitante, golLocal, encuentroDefinido.Id);
 
             bool guardo = datosEncuentroFinalizado.AddEncuentroFinalizado(encuentroResultadoLocal);
             if (guardo)
@@ -61,6 +74,31 @@ namespace Control.AdmEncuentros
             }
 
             return guardado;
+        }
+
+        public void CalcularPuntos(Label lblPuntos, string golFavor, string golContra)
+        {
+            if(!String.IsNullOrEmpty(golFavor) && !String.IsNullOrEmpty(golContra))
+            {
+                int gFavor = validaciones.AInt(golFavor);
+                int gContra = validaciones.AInt(golContra);
+                lblPuntos.Text = "" + puntos(gFavor, gContra);
+            }
+        }
+        private int puntos(int golFavor, int golContra)
+        {
+            int respuesta = 0;
+            if (golContra == golFavor)
+            {
+                respuesta = 1;
+            }else if (golFavor > golContra)
+            {
+                respuesta = 3;
+            }else if(golFavor < golContra)
+            {
+                respuesta = 0;
+            }
+            return respuesta;
         }
     }
 }

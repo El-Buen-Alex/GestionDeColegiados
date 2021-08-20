@@ -35,29 +35,29 @@ namespace GestionDeColegiados.FrmsArbitro
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.btnGestionColegiado1 = new System.Windows.Forms.Button();
-            this.flpOpcionGestionColegiado = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpGestionPartidoFinalizado = new System.Windows.Forms.FlowLayoutPanel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.btnNuevoGrupoColegiados = new System.Windows.Forms.Button();
+            this.btnRegistrarPartido = new System.Windows.Forms.Button();
             this.panel17 = new System.Windows.Forms.Panel();
-            this.btnVerTodosColegiados = new System.Windows.Forms.Button();
+            this.btnActualizarPartido = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnVerTodosPartidos = new System.Windows.Forms.Button();
             this.flpOpcionGestionEncuentros = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PanelBarraTitulo = new System.Windows.Forms.Panel();
             this.pbMinimizar = new System.Windows.Forms.PictureBox();
             this.pbCerrar = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
-            this.flpOpcionGestionColegiado.SuspendLayout();
+            this.flpGestionPartidoFinalizado.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PanelBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -95,7 +95,7 @@ namespace GestionDeColegiados.FrmsArbitro
             // 
             this.flowLayoutPanel1.Controls.Add(this.panel8);
             this.flowLayoutPanel1.Controls.Add(this.btnGestionColegiado1);
-            this.flowLayoutPanel1.Controls.Add(this.flpOpcionGestionColegiado);
+            this.flowLayoutPanel1.Controls.Add(this.flpGestionPartidoFinalizado);
             this.flowLayoutPanel1.Controls.Add(this.flpOpcionGestionEncuentros);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 110);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -126,21 +126,22 @@ namespace GestionDeColegiados.FrmsArbitro
             this.btnGestionColegiado1.TabIndex = 19;
             this.btnGestionColegiado1.Text = "PARTIDO FINALIZADO";
             this.btnGestionColegiado1.UseVisualStyleBackColor = false;
+            this.btnGestionColegiado1.MouseEnter += new System.EventHandler(this.btnGestionColegiado1_MouseEnter);
             // 
-            // flpOpcionGestionColegiado
+            // flpGestionPartidoFinalizado
             // 
-            this.flpOpcionGestionColegiado.Controls.Add(this.panel6);
-            this.flpOpcionGestionColegiado.Controls.Add(this.btnNuevoGrupoColegiados);
-            this.flpOpcionGestionColegiado.Controls.Add(this.panel17);
-            this.flpOpcionGestionColegiado.Controls.Add(this.btnVerTodosColegiados);
-            this.flpOpcionGestionColegiado.Controls.Add(this.panel3);
-            this.flpOpcionGestionColegiado.Controls.Add(this.button1);
-            this.flpOpcionGestionColegiado.Location = new System.Drawing.Point(3, 53);
-            this.flpOpcionGestionColegiado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.flpOpcionGestionColegiado.Name = "flpOpcionGestionColegiado";
-            this.flpOpcionGestionColegiado.Size = new System.Drawing.Size(256, 210);
-            this.flpOpcionGestionColegiado.TabIndex = 20;
-            this.flpOpcionGestionColegiado.Visible = false;
+            this.flpGestionPartidoFinalizado.Controls.Add(this.panel6);
+            this.flpGestionPartidoFinalizado.Controls.Add(this.btnRegistrarPartido);
+            this.flpGestionPartidoFinalizado.Controls.Add(this.panel17);
+            this.flpGestionPartidoFinalizado.Controls.Add(this.btnActualizarPartido);
+            this.flpGestionPartidoFinalizado.Controls.Add(this.panel3);
+            this.flpGestionPartidoFinalizado.Controls.Add(this.btnVerTodosPartidos);
+            this.flpGestionPartidoFinalizado.Location = new System.Drawing.Point(3, 53);
+            this.flpGestionPartidoFinalizado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.flpGestionPartidoFinalizado.Name = "flpGestionPartidoFinalizado";
+            this.flpGestionPartidoFinalizado.Size = new System.Drawing.Size(256, 210);
+            this.flpGestionPartidoFinalizado.TabIndex = 20;
+            this.flpGestionPartidoFinalizado.Visible = false;
             // 
             // panel6
             // 
@@ -150,21 +151,21 @@ namespace GestionDeColegiados.FrmsArbitro
             this.panel6.Size = new System.Drawing.Size(84, 47);
             this.panel6.TabIndex = 21;
             // 
-            // btnNuevoGrupoColegiados
+            // btnRegistrarPartido
             // 
-            this.btnNuevoGrupoColegiados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this.btnNuevoGrupoColegiados.FlatAppearance.BorderSize = 0;
-            this.btnNuevoGrupoColegiados.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(75)))), ((int)(((byte)(119)))));
-            this.btnNuevoGrupoColegiados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevoGrupoColegiados.ForeColor = System.Drawing.Color.Silver;
-            this.btnNuevoGrupoColegiados.Location = new System.Drawing.Point(93, 2);
-            this.btnNuevoGrupoColegiados.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnNuevoGrupoColegiados.Name = "btnNuevoGrupoColegiados";
-            this.btnNuevoGrupoColegiados.Size = new System.Drawing.Size(143, 47);
-            this.btnNuevoGrupoColegiados.TabIndex = 15;
-            this.btnNuevoGrupoColegiados.Text = "REGISTRAR PARTIDO ";
-            this.btnNuevoGrupoColegiados.UseVisualStyleBackColor = false;
-            this.btnNuevoGrupoColegiados.Click += new System.EventHandler(this.btnNuevoGrupoColegiados_Click);
+            this.btnRegistrarPartido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.btnRegistrarPartido.FlatAppearance.BorderSize = 0;
+            this.btnRegistrarPartido.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(75)))), ((int)(((byte)(119)))));
+            this.btnRegistrarPartido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrarPartido.ForeColor = System.Drawing.Color.Silver;
+            this.btnRegistrarPartido.Location = new System.Drawing.Point(93, 2);
+            this.btnRegistrarPartido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRegistrarPartido.Name = "btnRegistrarPartido";
+            this.btnRegistrarPartido.Size = new System.Drawing.Size(143, 47);
+            this.btnRegistrarPartido.TabIndex = 15;
+            this.btnRegistrarPartido.Text = "REGISTRAR PARTIDO ";
+            this.btnRegistrarPartido.UseVisualStyleBackColor = false;
+            this.btnRegistrarPartido.Click += new System.EventHandler(this.btnRegistrarPartido_Click);
             // 
             // panel17
             // 
@@ -174,20 +175,21 @@ namespace GestionDeColegiados.FrmsArbitro
             this.panel17.Size = new System.Drawing.Size(84, 47);
             this.panel17.TabIndex = 23;
             // 
-            // btnVerTodosColegiados
+            // btnActualizarPartido
             // 
-            this.btnVerTodosColegiados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this.btnVerTodosColegiados.FlatAppearance.BorderSize = 0;
-            this.btnVerTodosColegiados.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(75)))), ((int)(((byte)(119)))));
-            this.btnVerTodosColegiados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVerTodosColegiados.ForeColor = System.Drawing.Color.Silver;
-            this.btnVerTodosColegiados.Location = new System.Drawing.Point(93, 53);
-            this.btnVerTodosColegiados.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnVerTodosColegiados.Name = "btnVerTodosColegiados";
-            this.btnVerTodosColegiados.Size = new System.Drawing.Size(143, 47);
-            this.btnVerTodosColegiados.TabIndex = 19;
-            this.btnVerTodosColegiados.Text = "EDITAR PARTIDO";
-            this.btnVerTodosColegiados.UseVisualStyleBackColor = false;
+            this.btnActualizarPartido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.btnActualizarPartido.FlatAppearance.BorderSize = 0;
+            this.btnActualizarPartido.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(75)))), ((int)(((byte)(119)))));
+            this.btnActualizarPartido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizarPartido.ForeColor = System.Drawing.Color.Silver;
+            this.btnActualizarPartido.Location = new System.Drawing.Point(93, 53);
+            this.btnActualizarPartido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnActualizarPartido.Name = "btnActualizarPartido";
+            this.btnActualizarPartido.Size = new System.Drawing.Size(143, 47);
+            this.btnActualizarPartido.TabIndex = 19;
+            this.btnActualizarPartido.Text = "EDITAR PARTIDO";
+            this.btnActualizarPartido.UseVisualStyleBackColor = false;
+            this.btnActualizarPartido.Click += new System.EventHandler(this.btnActualizarPartidoFinalizado_Click);
             // 
             // panel3
             // 
@@ -197,20 +199,21 @@ namespace GestionDeColegiados.FrmsArbitro
             this.panel3.Size = new System.Drawing.Size(84, 47);
             this.panel3.TabIndex = 24;
             // 
-            // button1
+            // btnVerTodosPartidos
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(75)))), ((int)(((byte)(119)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.Silver;
-            this.button1.Location = new System.Drawing.Point(93, 104);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(143, 47);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "VER TODOS";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnVerTodosPartidos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.btnVerTodosPartidos.FlatAppearance.BorderSize = 0;
+            this.btnVerTodosPartidos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(75)))), ((int)(((byte)(119)))));
+            this.btnVerTodosPartidos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerTodosPartidos.ForeColor = System.Drawing.Color.Silver;
+            this.btnVerTodosPartidos.Location = new System.Drawing.Point(93, 104);
+            this.btnVerTodosPartidos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnVerTodosPartidos.Name = "btnVerTodosPartidos";
+            this.btnVerTodosPartidos.Size = new System.Drawing.Size(143, 47);
+            this.btnVerTodosPartidos.TabIndex = 25;
+            this.btnVerTodosPartidos.Text = "VER COMPETICION";
+            this.btnVerTodosPartidos.UseVisualStyleBackColor = false;
+            this.btnVerTodosPartidos.Click += new System.EventHandler(this.btnVerTodosPartidos_Click);
             // 
             // flpOpcionGestionEncuentros
             // 
@@ -255,17 +258,6 @@ namespace GestionDeColegiados.FrmsArbitro
             this.label1.TabIndex = 12;
             this.label1.Text = "FEDERACIÓN ";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::GestionDeColegiados.Properties.Resources.FEF_logo_svg;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 17);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(96, 66);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // PanelBarraTitulo
             // 
             this.PanelBarraTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(75)))), ((int)(((byte)(119)))));
@@ -308,6 +300,17 @@ namespace GestionDeColegiados.FrmsArbitro
             this.pbCerrar.MouseEnter += new System.EventHandler(this.pbCerrar_MouseEnter);
             this.pbCerrar.MouseLeave += new System.EventHandler(this.pbCerrar_MouseLeave);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::GestionDeColegiados.Properties.Resources.FEF_logo_svg;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 17);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(96, 66);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // FrmMenuArbitro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -323,13 +326,13 @@ namespace GestionDeColegiados.FrmsArbitro
             this.Text = "FrmMenuArbitro";
             this.panel1.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
-            this.flpOpcionGestionColegiado.ResumeLayout(false);
+            this.flpGestionPartidoFinalizado.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.PanelBarraTitulo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -342,10 +345,10 @@ namespace GestionDeColegiados.FrmsArbitro
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Button btnGestionColegiado1;
-        private System.Windows.Forms.FlowLayoutPanel flpOpcionGestionColegiado;
+        private System.Windows.Forms.FlowLayoutPanel flpGestionPartidoFinalizado;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Button btnNuevoGrupoColegiados;
-        private System.Windows.Forms.Button btnVerTodosColegiados;
+        private System.Windows.Forms.Button btnRegistrarPartido;
+        private System.Windows.Forms.Button btnActualizarPartido;
         private System.Windows.Forms.FlowLayoutPanel flpOpcionGestionEncuentros;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label3;
@@ -356,6 +359,6 @@ namespace GestionDeColegiados.FrmsArbitro
         private System.Windows.Forms.PictureBox pbCerrar;
         private System.Windows.Forms.Panel panel17;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnVerTodosPartidos;
     }
 }

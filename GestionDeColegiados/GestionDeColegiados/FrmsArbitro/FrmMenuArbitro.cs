@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Control.AdmEncuentrosGenerados;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,8 @@ namespace GestionDeColegiados.FrmsArbitro
 {
     public partial class FrmMenuArbitro : Form
     {
+        private AdmEncuentrosDefinidos admEncuentrosDefinidos = AdmEncuentrosDefinidos.GetAdmGenerarEncuentrosDefinidos();
+
         //dll y variables necesarios para poder mover de lugar la barra de titulo 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -80,9 +83,43 @@ namespace GestionDeColegiados.FrmsArbitro
             pbMinimizar.BackColor = colorDefaultMin;
         }
 
-        private void btnNuevoGrupoColegiados_Click(object sender, EventArgs e)
+        
+
+        private void btnGestionColegiado1_MouseEnter(object sender, EventArgs e)
         {
-            //AbrirFormEnPanel();
+            flpGestionPartidoFinalizado.Visible = true;
+        }
+
+        private void btnRegistrarPartido_Click(object sender, EventArgs e)
+        {
+            int cantEncuentrosDefinidos = admEncuentrosDefinidos.ObtenerNumeroPartidosPorJugar();
+            if (cantEncuentrosDefinidos == 0)
+            {
+                MessageBox.Show("No existen encuentros definidos por registrar");
+            }
+            else
+            {
+                AbrirFormEnPanel(new FrmRegistrarResultado());
+            }
+           
+        }
+
+        private void btnActualizarPartidoFinalizado_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnVerTodosPartidos_Click(object sender, EventArgs e)
+        {
+            int cantEncuentrosDefinidos = admEncuentrosDefinidos.ObtenerNumeroPartidosPorJugar();
+            if (cantEncuentrosDefinidos == 0)
+            {
+                MessageBox.Show("No existen encuentros definidos por ver");
+            }
+            else
+            {
+                AbrirFormEnPanel(new FrmVerCompeticion());
+            }
         }
     }
 }

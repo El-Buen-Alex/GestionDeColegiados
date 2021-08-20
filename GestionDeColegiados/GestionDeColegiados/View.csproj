@@ -104,6 +104,12 @@
     <Compile Include="FrmsArbitro\FrmRegistrarResultado.Designer.cs">
       <DependentUpon>FrmRegistrarResultado.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmsArbitro\FrmVerCompeticion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmsArbitro\FrmVerCompeticion.Designer.cs">
+      <DependentUpon>FrmVerCompeticion.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTodosLosEncuentrosDefinidos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmsArbitro\FrmRegistrarResultado.resx">
       <DependentUpon>FrmRegistrarResultado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmsArbitro\FrmVerCompeticion.resx">
+      <DependentUpon>FrmVerCompeticion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTodosLosEncuentrosDefinidos.resx">
       <DependentUpon>frmTodosLosEncuentrosDefinidos.cs</DependentUpon>
