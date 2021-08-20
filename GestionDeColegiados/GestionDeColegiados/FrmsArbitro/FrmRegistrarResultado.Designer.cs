@@ -47,6 +47,8 @@ namespace GestionDeColegiados.FrmsArbitro
             this.txtGolesVisitante = new System.Windows.Forms.TextBox();
             this.lblPuntosLocalResultado = new System.Windows.Forms.Label();
             this.lblPuntosVisitanteResultado = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ptbEquipoVisitante)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbEquipoLocal)).BeginInit();
             this.SuspendLayout();
@@ -212,6 +214,7 @@ namespace GestionDeColegiados.FrmsArbitro
             this.txtGolesLocal.Name = "txtGolesLocal";
             this.txtGolesLocal.Size = new System.Drawing.Size(71, 22);
             this.txtGolesLocal.TabIndex = 45;
+            this.txtGolesLocal.TextChanged += new System.EventHandler(this.txtGolesLocal_TextChanged);
             // 
             // txtGolesVisitante
             // 
@@ -219,12 +222,13 @@ namespace GestionDeColegiados.FrmsArbitro
             this.txtGolesVisitante.Name = "txtGolesVisitante";
             this.txtGolesVisitante.Size = new System.Drawing.Size(72, 22);
             this.txtGolesVisitante.TabIndex = 46;
+            this.txtGolesVisitante.TextChanged += new System.EventHandler(this.txtGolesVisitante_TextChanged);
             // 
             // lblPuntosLocalResultado
             // 
             this.lblPuntosLocalResultado.AutoSize = true;
             this.lblPuntosLocalResultado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblPuntosLocalResultado.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblPuntosLocalResultado.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblPuntosLocalResultado.Location = new System.Drawing.Point(288, 380);
             this.lblPuntosLocalResultado.Name = "lblPuntosLocalResultado";
             this.lblPuntosLocalResultado.Size = new System.Drawing.Size(22, 25);
@@ -235,12 +239,34 @@ namespace GestionDeColegiados.FrmsArbitro
             // 
             this.lblPuntosVisitanteResultado.AutoSize = true;
             this.lblPuntosVisitanteResultado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblPuntosVisitanteResultado.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblPuntosVisitanteResultado.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblPuntosVisitanteResultado.Location = new System.Drawing.Point(292, 417);
             this.lblPuntosVisitanteResultado.Name = "lblPuntosVisitanteResultado";
             this.lblPuntosVisitanteResultado.Size = new System.Drawing.Size(22, 25);
             this.lblPuntosVisitanteResultado.TabIndex = 48;
             this.lblPuntosVisitanteResultado.Text = "  ";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label3.Location = new System.Drawing.Point(304, 380);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(22, 25);
+            this.label3.TabIndex = 47;
+            this.label3.Text = "  ";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label4.Location = new System.Drawing.Point(308, 417);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(22, 25);
+            this.label4.TabIndex = 48;
+            this.label4.Text = "  ";
             // 
             // FrmRegistrarResultado
             // 
@@ -248,7 +274,9 @@ namespace GestionDeColegiados.FrmsArbitro
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(129)))), ((int)(((byte)(150)))));
             this.ClientSize = new System.Drawing.Size(595, 624);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.lblPuntosVisitanteResultado);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.lblPuntosLocalResultado);
             this.Controls.Add(this.txtGolesVisitante);
             this.Controls.Add(this.txtGolesLocal);
@@ -297,5 +325,7 @@ namespace GestionDeColegiados.FrmsArbitro
         private System.Windows.Forms.TextBox txtGolesVisitante;
         private System.Windows.Forms.Label lblPuntosLocalResultado;
         private System.Windows.Forms.Label lblPuntosVisitanteResultado;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

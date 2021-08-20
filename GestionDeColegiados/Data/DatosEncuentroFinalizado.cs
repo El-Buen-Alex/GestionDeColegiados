@@ -23,16 +23,17 @@ namespace Data
             trans = conexion.BeginTransaction();
             try
             {
-                MySqlCommand cmd = new MySqlCommand("insertarResultadoPartido", conexion, trans);
+                MySqlCommand cmd = new MySqlCommand("guardarPartidoFinalizado", conexion, trans);
                 
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue("@_idEquipo", encuentroFinalizado.IdEquipo);
+                cmd.Parameters.AddWithValue("@_idDefinido", encuentroFinalizado.IdEncuentroDefinido);
                 cmd.Parameters.AddWithValue("@_golesFavor", encuentroFinalizado.GolesFavor);
                 cmd.Parameters.AddWithValue("@_golesContra", encuentroFinalizado.GolesContra);
                 cmd.Parameters.AddWithValue("@_golesDiferencia", encuentroFinalizado.GolesDiferencia);
                 cmd.Parameters.AddWithValue("@_puntos",encuentroFinalizado.Puntos);
-                cmd.Parameters.AddWithValue("@_copa", DateTime.Now.Year);
+                cmd.Parameters.AddWithValue("@_copa", encuentroFinalizado.Copa);
 
                 cmd.ExecuteNonQuery();
              
@@ -51,6 +52,11 @@ namespace Data
             }
            
             return guardado;
+        }
+
+        public List<EncuentroFinalizado> GetEncuentrosFinalizados(string anio)
+        {
+            throw new NotImplementedException();
         }
     }
 }
