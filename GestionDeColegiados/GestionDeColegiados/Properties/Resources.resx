@@ -130,8 +130,8 @@
   <data name="Maximizar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Maximizar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="tupla" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tupla.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="vrs" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vrs.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="login_rounded_right" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\login-rounded-right.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,10 +142,10 @@
   <data name="visitante" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\visitante.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="tupla" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tupla.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Max" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Max.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="vrs" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\vrs.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

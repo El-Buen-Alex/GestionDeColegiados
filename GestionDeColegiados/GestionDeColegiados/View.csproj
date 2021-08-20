@@ -235,6 +235,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Cancelar.png" />
     <Content Include="Resources\vrs.png" />
     <None Include="Resources\tupla.png" />
     <None Include="Resources\visitante.png" />

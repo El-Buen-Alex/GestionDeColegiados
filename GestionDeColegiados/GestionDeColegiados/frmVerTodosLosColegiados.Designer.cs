@@ -63,7 +63,7 @@ namespace GestionDeColegiados
             this.dgvListarColegiados.Name = "dgvListarColegiados";
             this.dgvListarColegiados.ReadOnly = true;
             this.dgvListarColegiados.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvListarColegiados.Size = new System.Drawing.Size(450, 447);
+            this.dgvListarColegiados.Size = new System.Drawing.Size(450, 183);
             this.dgvListarColegiados.TabIndex = 3;
             // 
             // colJuezCentral

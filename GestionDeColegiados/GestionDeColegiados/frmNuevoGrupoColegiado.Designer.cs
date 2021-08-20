@@ -68,6 +68,10 @@ namespace GestionDeColegiados
             this.btnsiguiente2 = new System.Windows.Forms.Button();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnRegresar2 = new System.Windows.Forms.Button();
+            this.btnRegresar3 = new System.Windows.Forms.Button();
+            this.btnRegresar4 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label2
@@ -410,7 +414,7 @@ namespace GestionDeColegiados
             this.btnsiguiente1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(75)))), ((int)(((byte)(119)))));
             this.btnsiguiente1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnsiguiente1.ForeColor = System.Drawing.Color.Silver;
-            this.btnsiguiente1.Location = new System.Drawing.Point(182, 454);
+            this.btnsiguiente1.Location = new System.Drawing.Point(328, 476);
             this.btnsiguiente1.Margin = new System.Windows.Forms.Padding(2);
             this.btnsiguiente1.Name = "btnsiguiente1";
             this.btnsiguiente1.Size = new System.Drawing.Size(101, 38);
@@ -426,7 +430,7 @@ namespace GestionDeColegiados
             this.btnsiguiente3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(75)))), ((int)(((byte)(119)))));
             this.btnsiguiente3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnsiguiente3.ForeColor = System.Drawing.Color.Silver;
-            this.btnsiguiente3.Location = new System.Drawing.Point(182, 454);
+            this.btnsiguiente3.Location = new System.Drawing.Point(328, 476);
             this.btnsiguiente3.Margin = new System.Windows.Forms.Padding(2);
             this.btnsiguiente3.Name = "btnsiguiente3";
             this.btnsiguiente3.Size = new System.Drawing.Size(101, 38);
@@ -443,7 +447,7 @@ namespace GestionDeColegiados
             this.btnsiguiente2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(75)))), ((int)(((byte)(119)))));
             this.btnsiguiente2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnsiguiente2.ForeColor = System.Drawing.Color.Silver;
-            this.btnsiguiente2.Location = new System.Drawing.Point(182, 454);
+            this.btnsiguiente2.Location = new System.Drawing.Point(328, 476);
             this.btnsiguiente2.Margin = new System.Windows.Forms.Padding(2);
             this.btnsiguiente2.Name = "btnsiguiente2";
             this.btnsiguiente2.Size = new System.Drawing.Size(101, 38);
@@ -460,7 +464,7 @@ namespace GestionDeColegiados
             this.btnRegistrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(75)))), ((int)(((byte)(119)))));
             this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrar.ForeColor = System.Drawing.Color.Silver;
-            this.btnRegistrar.Location = new System.Drawing.Point(182, 454);
+            this.btnRegistrar.Location = new System.Drawing.Point(328, 476);
             this.btnRegistrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(101, 38);
@@ -480,12 +484,83 @@ namespace GestionDeColegiados
             this.label6.TabIndex = 52;
             this.label6.Text = "Cédula:";
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(75)))), ((int)(((byte)(119)))));
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.ForeColor = System.Drawing.Color.Silver;
+            this.btnCancelar.Location = new System.Drawing.Point(59, 476);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(101, 38);
+            this.btnCancelar.TabIndex = 56;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnRegresar2
+            // 
+            this.btnRegresar2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.btnRegresar2.FlatAppearance.BorderSize = 0;
+            this.btnRegresar2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(75)))), ((int)(((byte)(119)))));
+            this.btnRegresar2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegresar2.ForeColor = System.Drawing.Color.Silver;
+            this.btnRegresar2.Location = new System.Drawing.Point(198, 476);
+            this.btnRegresar2.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRegresar2.Name = "btnRegresar2";
+            this.btnRegresar2.Size = new System.Drawing.Size(101, 38);
+            this.btnRegresar2.TabIndex = 57;
+            this.btnRegresar2.Text = "Regresar";
+            this.btnRegresar2.UseVisualStyleBackColor = false;
+            this.btnRegresar2.Visible = false;
+            this.btnRegresar2.Click += new System.EventHandler(this.btnRegresar2_Click);
+            // 
+            // btnRegresar3
+            // 
+            this.btnRegresar3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.btnRegresar3.FlatAppearance.BorderSize = 0;
+            this.btnRegresar3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(75)))), ((int)(((byte)(119)))));
+            this.btnRegresar3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegresar3.ForeColor = System.Drawing.Color.Silver;
+            this.btnRegresar3.Location = new System.Drawing.Point(198, 476);
+            this.btnRegresar3.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRegresar3.Name = "btnRegresar3";
+            this.btnRegresar3.Size = new System.Drawing.Size(101, 38);
+            this.btnRegresar3.TabIndex = 58;
+            this.btnRegresar3.Text = "Regresar";
+            this.btnRegresar3.UseVisualStyleBackColor = false;
+            this.btnRegresar3.Visible = false;
+            this.btnRegresar3.Click += new System.EventHandler(this.btnRegresar3_Click);
+            // 
+            // btnRegresar4
+            // 
+            this.btnRegresar4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.btnRegresar4.FlatAppearance.BorderSize = 0;
+            this.btnRegresar4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(75)))), ((int)(((byte)(119)))));
+            this.btnRegresar4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegresar4.ForeColor = System.Drawing.Color.Silver;
+            this.btnRegresar4.Location = new System.Drawing.Point(198, 476);
+            this.btnRegresar4.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRegresar4.Name = "btnRegresar4";
+            this.btnRegresar4.Size = new System.Drawing.Size(101, 38);
+            this.btnRegresar4.TabIndex = 59;
+            this.btnRegresar4.Text = "Regresar";
+            this.btnRegresar4.UseVisualStyleBackColor = false;
+            this.btnRegresar4.Visible = false;
+            this.btnRegresar4.Click += new System.EventHandler(this.btnRegresar4_Click);
+            // 
             // frmNuevoGrupoColegiado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(129)))), ((int)(((byte)(150)))));
             this.ClientSize = new System.Drawing.Size(499, 549);
+            this.Controls.Add(this.btnRegresar4);
+            this.Controls.Add(this.btnRegresar3);
+            this.Controls.Add(this.btnRegresar2);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.btnsiguiente2);
@@ -575,5 +650,9 @@ namespace GestionDeColegiados
         private System.Windows.Forms.Button btnsiguiente2;
         private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnRegresar2;
+        private System.Windows.Forms.Button btnRegresar3;
+        private System.Windows.Forms.Button btnRegresar4;
     }
 }

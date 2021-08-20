@@ -67,6 +67,11 @@ namespace GestionDeColegiados
             }
         }
 
+        private void btnRegresar2_Click (object sender, EventArgs e) {
+            camposAsistente1(false);
+            camposJuezCentral(true);
+        }
+
         private void btnsiguiente3_Click(object sender, EventArgs e)
         {
             bool vacio = validacionGUI.validarVacios(txtcedulaAs2, txtnombreAs2, txtapellidoAs2, txtdomicilioAs2, txtemailAs2, txttelefonoAs2);
@@ -81,6 +86,11 @@ namespace GestionDeColegiados
             } else {
                 camposIncompletos();
             }
+        }
+
+        private void btnRegresar3_Click (object sender, EventArgs e) {
+            camposAsistente2(false);
+            camposAsistente1(true);
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
@@ -101,6 +111,27 @@ namespace GestionDeColegiados
                 }
             } else {
                 camposIncompletos();
+            }
+        }
+
+        private void btnRegresar4_Click (object sender, EventArgs e) {
+            camposCuartoArbitro(false);
+            camposAsistente2(true);
+        }
+
+        private void btnCancelar_Click (object sender, EventArgs e) 
+        {
+            DialogResult resultado;
+            resultado = MessageBox.Show("¿Está seguro que desea cancelar?\nSi lo hace, los datos ingresados se borrarán.", "Cancelar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (resultado == DialogResult.Yes) {
+                limpiarCamposJuezCentral();
+                limpiarCamposAsistente1();
+                limpiarCamposAsistente2();
+                limpiarCamposArbitroCentral();
+                camposAsistente1(false);
+                camposAsistente2(false);
+                camposCuartoArbitro(false);
+                camposJuezCentral(true);
             }
         }
 
@@ -179,6 +210,7 @@ namespace GestionDeColegiados
             txtdomicilioAs1.Visible = valor;
             txtemailAs1.Visible = valor;
             txttelefonoAs1.Visible = valor;
+            btnRegresar2.Visible = valor;
             btnsiguiente2.Visible = valor;
         }
         private void camposAsistente2(bool valor)
@@ -190,6 +222,7 @@ namespace GestionDeColegiados
             txtdomicilioAs2.Visible = valor;
             txtemailAs2.Visible = valor;
             txttelefonoAs2.Visible = valor;
+            btnRegresar3.Visible = valor;
             btnsiguiente3.Visible = valor;
         }
         private void camposCuartoArbitro(bool valor)
@@ -201,6 +234,7 @@ namespace GestionDeColegiados
             txtdomicilioCA.Visible = valor;
             txtemailCA.Visible = valor;
             txttelefonoCA.Visible = valor;
+            btnRegresar4.Visible = valor;
             btnRegistrar.Visible = valor;
         }
         private void limpiarCamposJuezCentral()
