@@ -92,6 +92,12 @@
     <Compile Include="frmRegistrarPartido.Designer.cs">
       <DependentUpon>frmRegistrarPartido.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmsArbitro\FrmEditarPartidoFinalizado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmsArbitro\FrmEditarPartidoFinalizado.Designer.cs">
+      <DependentUpon>FrmEditarPartidoFinalizado.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmsArbitro\FrmMenuArbitro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmRegistrarPartido.resx">
       <DependentUpon>frmRegistrarPartido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmsArbitro\FrmEditarPartidoFinalizado.resx">
+      <DependentUpon>FrmEditarPartidoFinalizado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmsArbitro\FrmMenuArbitro.resx">
       <DependentUpon>FrmMenuArbitro.cs</DependentUpon>

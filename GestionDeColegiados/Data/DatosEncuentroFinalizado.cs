@@ -56,7 +56,40 @@ namespace Data
 
         public List<EncuentroFinalizado> GetEncuentrosFinalizados(string anio)
         {
-            throw new NotImplementedException();
+            List<EncuentroFinalizado> posiciones = new List<EncuentroFinalizado>();
+            EncuentroFinalizado encuentroFinalizado = null;
+            conexion = ConexionBD.getConexion();
+            conexion.Open();
+            try
+            {
+                int golesFavor = 0;
+                MySqlCommand cmd = new MySqlCommand("obtenerCompetencia", conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@_anio", anio);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    encuentroFinalizado = new EncuentroFinalizado();
+                    encuentroFinalizado.Id= Convert.ToInt32(reader["id_partidoFinalizado"].ToString());
+                    encuentroFinalizado.IdEquipo= Convert.ToInt32(reader["idEquipo"].ToString());
+                    encuentroFinalizado.IdEncuentroDefinido= Convert.ToInt32(reader["idDefinido"].ToString());
+                    encuentroFinalizado.GolesFavor= Convert.ToInt32(reader["golesAFavor"].ToString());
+                    encuentroFinalizado.GolesContra = Convert.ToInt32(reader["golesEnContra"].ToString());
+                    encuentroFinalizado.GolesDiferencia = Convert.ToInt32(reader["golesDeDiferencia"].ToString());
+                    encuentroFinalizado.Puntos= Convert.ToInt32(reader["puntosTotales"].ToString());
+                    posiciones.Add(encuentroFinalizado);
+                }
+                
+            }
+            catch (MySqlException ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                conexion.Close();
+            }
+            return posiciones;
         }
     }
 }

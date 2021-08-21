@@ -40,6 +40,7 @@ namespace GestionDeColegiados.FrmsArbitro
             this.colGolContra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colGolDiferencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPuntos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblAdvertencia = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompeticion)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,7 +83,7 @@ namespace GestionDeColegiados.FrmsArbitro
             this.colGolDiferencia,
             this.colPuntos});
             this.dgvCompeticion.EnableHeadersVisualStyles = false;
-            this.dgvCompeticion.Location = new System.Drawing.Point(81, 92);
+            this.dgvCompeticion.Location = new System.Drawing.Point(52, 112);
             this.dgvCompeticion.Name = "dgvCompeticion";
             this.dgvCompeticion.ReadOnly = true;
             this.dgvCompeticion.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -102,7 +103,8 @@ namespace GestionDeColegiados.FrmsArbitro
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(129)))), ((int)(((byte)(150)))));
             this.dgvCompeticion.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCompeticion.RowTemplate.Height = 24;
-            this.dgvCompeticion.Size = new System.Drawing.Size(437, 466);
+            this.dgvCompeticion.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dgvCompeticion.Size = new System.Drawing.Size(496, 328);
             this.dgvCompeticion.TabIndex = 33;
             // 
             // colNum
@@ -153,12 +155,24 @@ namespace GestionDeColegiados.FrmsArbitro
             this.colPuntos.ReadOnly = true;
             this.colPuntos.Width = 93;
             // 
+            // lblAdvertencia
+            // 
+            this.lblAdvertencia.AutoSize = true;
+            this.lblAdvertencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAdvertencia.Location = new System.Drawing.Point(159, 82);
+            this.lblAdvertencia.Name = "lblAdvertencia";
+            this.lblAdvertencia.Size = new System.Drawing.Size(319, 17);
+            this.lblAdvertencia.TabIndex = 34;
+            this.lblAdvertencia.Text = "AÚN NO SE HA JUGADO ALGÚN PARTIDO";
+            this.lblAdvertencia.Visible = false;
+            // 
             // FrmVerCompeticion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(129)))), ((int)(((byte)(150)))));
             this.ClientSize = new System.Drawing.Size(595, 624);
+            this.Controls.Add(this.lblAdvertencia);
             this.Controls.Add(this.dgvCompeticion);
             this.Controls.Add(this.lblTitulo);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -181,5 +195,6 @@ namespace GestionDeColegiados.FrmsArbitro
         private System.Windows.Forms.DataGridViewTextBoxColumn colGolContra;
         private System.Windows.Forms.DataGridViewTextBoxColumn colGolDiferencia;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPuntos;
+        private System.Windows.Forms.Label lblAdvertencia;
     }
 }

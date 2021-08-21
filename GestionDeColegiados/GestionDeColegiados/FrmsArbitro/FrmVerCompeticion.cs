@@ -18,7 +18,12 @@ namespace GestionDeColegiados.FrmsArbitro
         public FrmVerCompeticion()
         {
             InitializeComponent();
-            admEncuentroFinalizado.LlenarDgv(dgvCompeticion);
+            competenciaLlenar();
+        }
+        private void competenciaLlenar()
+        {
+            bool existe = admEncuentroFinalizado.LlenarDgv(dgvCompeticion);
+            lblAdvertencia.Visible = !existe;
         }
     }
 }

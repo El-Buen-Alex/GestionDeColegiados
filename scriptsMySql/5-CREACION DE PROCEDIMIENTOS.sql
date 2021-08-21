@@ -343,4 +343,16 @@ in _copa varchar(20))
 	END$$
 DELIMITER ;
 
+/*PROCEDIMIENTO PARA OBETENER TABLA DE POSICIONES: VER CAMPEONATO*/
+DELIMITER $$
+CREATE PROCEDURE obtenerCompetencia(in _anio varchar(4))
+BEGIN
+	select id_partidoFinalizado,idEquipo, idDefinido,  sum(golesFavor) as golesAFavor, sum(golesContra) as golesEnContra,
+	sum(golesDiferencia) as golesDeDiferencia, sum(puntos) as puntosTotales
+	 from campeonatos.encuentrofinalizado
+	 where  estado="A" and copa=concat('LIGA-',_anio)
+	 GROUP BY idEquipo
+	 ORDER BY puntosTotales desc, golesDeDiferencia desc;
+END$$
+DELIMITER ;
 

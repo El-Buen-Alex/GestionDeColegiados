@@ -111,15 +111,9 @@ namespace GestionDeColegiados.FrmsArbitro
 
         private void btnVerTodosPartidos_Click(object sender, EventArgs e)
         {
-            int cantEncuentrosDefinidos = admEncuentrosDefinidos.ObtenerNumeroPartidosPorJugar();
-            if (cantEncuentrosDefinidos == 0)
-            {
-                MessageBox.Show("No existen encuentros definidos por ver");
-            }
-            else
-            {
-                AbrirFormEnPanel(new FrmVerCompeticion());
-            }
+            
+             AbrirFormEnPanel(new FrmVerCompeticion());
+            
         }
     }
 }
