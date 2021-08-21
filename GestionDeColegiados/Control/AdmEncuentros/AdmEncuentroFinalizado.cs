@@ -38,17 +38,23 @@ namespace Control.AdmEncuentros
             return admEncuentroFinalizado;
         }
 
-        public void LlenarDgv(DataGridView dgvCompeticion)
+        public bool LlenarDgv(DataGridView dgvCompeticion)
         {
+            bool respuesta = false ;
             string anio = "" + DateTime.Now.Year;
             encuentrosFinalizados = datosEncuentroFinalizado.GetEncuentrosFinalizados(anio);
-            int posicion= 1;
-            foreach (EncuentroFinalizado encuentro in encuentrosFinalizados)
+            if (encuentrosFinalizados.Count > 0)
             {
-                string nombreEquipo = admEquipos.ObtenerEquipoPorId(encuentro.IdEquipo).NombreEquipo;
-                dgvCompeticion.Rows.Add(posicion, nombreEquipo, encuentro.GolesFavor, encuentro.GolesContra, encuentro.GolesDiferencia, encuentro.Puntos );
-                posicion++;
+                int posicion = 1;
+                foreach (EncuentroFinalizado encuentro in encuentrosFinalizados)
+                {
+                    string nombreEquipo = admEquipos.ObtenerEquipoPorId(encuentro.IdEquipo).NombreEquipo;
+                    dgvCompeticion.Rows.Add(posicion, nombreEquipo, encuentro.GolesFavor, encuentro.GolesContra, encuentro.GolesDiferencia, encuentro.Puntos);
+                    posicion++;
+                }
+                respuesta = true;
             }
+            return respuesta;
         }
 
         public bool GuardarEncuentroFinalizado(int index, string golesLocal, string golesVisitante)
