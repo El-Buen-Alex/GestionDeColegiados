@@ -356,3 +356,11 @@ BEGIN
 END$$
 DELIMITER ;
 
+/* PROCEDIMIENTO PARA OBTENER LOS EQUIPOS DEFINIDOS QUE ESTEN EN EQUIPOS FINALIZADOS*/
+DELIMITER $$
+CREATE PROCEDURE equiposEnEncuentrosFinalizados(in _copa varchar(20))
+	BEGIN
+		SELECT * FROM encuentroDefinidos WHERE EXISTS (select * from encuentrofinalizado where idefinido = idDefinido 
+		AND estado = 'A' AND copa = _copa);
+	END$$ 
+DELIMITER ;
