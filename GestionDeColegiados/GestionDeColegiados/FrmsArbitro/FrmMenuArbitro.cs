@@ -1,4 +1,5 @@
-﻿using Control.AdmEncuentrosGenerados;
+﻿using Control.AdmEncuentros;
+using Control.AdmEncuentrosGenerados;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +16,7 @@ namespace GestionDeColegiados.FrmsArbitro
     public partial class FrmMenuArbitro : Form
     {
         private AdmEncuentrosDefinidos admEncuentrosDefinidos = AdmEncuentrosDefinidos.GetAdmGenerarEncuentrosDefinidos();
-
+        private AdmEncuentroFinalizado admEncuentroFinalizado = AdmEncuentroFinalizado.GetAdmEncuentrosFinalizados();
         //dll y variables necesarios para poder mover de lugar la barra de titulo 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -103,10 +104,17 @@ namespace GestionDeColegiados.FrmsArbitro
             }
            
         }
-
+        private void existenRegistrosArbir(object formhija)
+        {
+            int cantEncuentrosFinalizados = admEncuentroFinalizado.GetCantidadEncuentrosFinalizados();
+            if (cantEncuentrosFinalizados > 0)
+            {
+                AbrirFormEnPanel(formhija);
+            }
+        }
         private void btnActualizarPartidoFinalizado_Click(object sender, EventArgs e)
         {
-
+            existenRegistrosArbir(new FrmEditarPartidoFinalizado());
         }
 
         private void btnVerTodosPartidos_Click(object sender, EventArgs e)

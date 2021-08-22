@@ -358,9 +358,40 @@ DELIMITER ;
 
 /* PROCEDIMIENTO PARA OBTENER LOS EQUIPOS DEFINIDOS QUE ESTEN EN EQUIPOS FINALIZADOS*/
 DELIMITER $$
-CREATE PROCEDURE equiposEnEncuentrosFinalizados(in _copa varchar(20))
+CREATE PROCEDURE encuentrosDefinidosEncuentrosFinalizados(in _copa varchar(5))
 	BEGIN
 		SELECT * FROM encuentroDefinidos WHERE EXISTS (select * from encuentrofinalizado where idefinido = idDefinido 
-		AND estado = 'A' AND copa = _copa);
+		AND estado = 'A' AND copa = concat('LIGA-', _copa));
 	END$$ 
+DELIMITER ;
+
+/* PROCEDIMIENTO PARA OBTENER LA CANTIDAD DE ENCUENTROS POR JUGAR*/
+DELIMITER $$
+CREATE PROCEDURE cantidadEncuentrosFinalizados(in _copa varchar(5))
+	BEGIN
+		SELECT count(*) as cantidadEncuentros FROM encuentrofinalizado WHERE estado = 'A' and copa=concat('LIGA-',_copa); 
+	END$$
+DELIMITER ;
+/*OBTIENE UN ENCUENTRO FINALIZADO POR ID DEFINIDO Y ID EQUIPO*/
+DELIMITER $$
+CREATE PROCEDURE obtenerEncuentroFinalizadoById(in _idDefinido int, in _idEquipo int)
+	BEGIN
+		SELECT * FROM encuentrofinalizado WHERE estado='A' and idDefinido=_idDefinido and idEquipo=_idEquipo;
+    END$$
+DELIMITER ;
+
+/*PROCEDIMIENTO PARA ACTUALIZAR ENCUENTRO FINALIZADO*/
+DELIMITER $$
+CREATE PROCEDURE actulizarEncuentroFinalizado(
+	in _idDefinido int,
+    in _idEquipo int,
+	in _golFavor int,
+    in _golContra int,
+    in _golDiferencia int,
+    in _puntos int)
+		BEGIN 
+				UPDATE encuentrofinalizado
+			SET	golesFavor=_golFavor, golesContra=_golContra,golesDiferencia=_golDiferencia,puntos=_puntos
+            WHERE  idDefinido =_idDefinido and idEquipo=_idEquipo;
+			END$$
 DELIMITER ;
