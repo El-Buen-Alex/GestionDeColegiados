@@ -32,8 +32,6 @@ namespace GestionDeColegiados.FrmsArbitro
             this.lblEquipoVisitante = new System.Windows.Forms.Label();
             this.lblEquipoLocal = new System.Windows.Forms.Label();
             this.lblvs = new System.Windows.Forms.Label();
-            this.ptbEquipoVisitante = new System.Windows.Forms.PictureBox();
-            this.ptbEquipoLocal = new System.Windows.Forms.PictureBox();
             this.cmbEncuentros = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
@@ -49,6 +47,8 @@ namespace GestionDeColegiados.FrmsArbitro
             this.lblPuntosVisitanteResultado = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.ptbEquipoVisitante = new System.Windows.Forms.PictureBox();
+            this.ptbEquipoLocal = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.ptbEquipoVisitante)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbEquipoLocal)).BeginInit();
             this.SuspendLayout();
@@ -87,26 +87,6 @@ namespace GestionDeColegiados.FrmsArbitro
             this.lblvs.TabIndex = 36;
             this.lblvs.Text = "VS";
             // 
-            // ptbEquipoVisitante
-            // 
-            this.ptbEquipoVisitante.Image = global::GestionDeColegiados.Properties.Resources.visitante;
-            this.ptbEquipoVisitante.Location = new System.Drawing.Point(324, 135);
-            this.ptbEquipoVisitante.Name = "ptbEquipoVisitante";
-            this.ptbEquipoVisitante.Size = new System.Drawing.Size(242, 135);
-            this.ptbEquipoVisitante.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ptbEquipoVisitante.TabIndex = 35;
-            this.ptbEquipoVisitante.TabStop = false;
-            // 
-            // ptbEquipoLocal
-            // 
-            this.ptbEquipoLocal.Image = global::GestionDeColegiados.Properties.Resources.Local;
-            this.ptbEquipoLocal.Location = new System.Drawing.Point(17, 135);
-            this.ptbEquipoLocal.Name = "ptbEquipoLocal";
-            this.ptbEquipoLocal.Size = new System.Drawing.Size(242, 135);
-            this.ptbEquipoLocal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ptbEquipoLocal.TabIndex = 34;
-            this.ptbEquipoLocal.TabStop = false;
-            // 
             // cmbEncuentros
             // 
             this.cmbEncuentros.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -133,11 +113,11 @@ namespace GestionDeColegiados.FrmsArbitro
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblTitulo.Location = new System.Drawing.Point(107, 9);
+            this.lblTitulo.Location = new System.Drawing.Point(1, 9);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(401, 32);
+            this.lblTitulo.Size = new System.Drawing.Size(581, 32);
             this.lblTitulo.TabIndex = 31;
-            this.lblTitulo.Text = "RESULTADO DEL PARTIDO";
+            this.lblTitulo.Text = "REGISTRAR RESULTADO DEL PARTIDO";
             // 
             // btnGuardarCambios
             // 
@@ -191,7 +171,7 @@ namespace GestionDeColegiados.FrmsArbitro
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(257, 41);
+            this.label1.Location = new System.Drawing.Point(223, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(107, 32);
             this.label1.TabIndex = 43;
@@ -267,6 +247,26 @@ namespace GestionDeColegiados.FrmsArbitro
             this.label4.Size = new System.Drawing.Size(22, 25);
             this.label4.TabIndex = 48;
             this.label4.Text = "  ";
+            // 
+            // ptbEquipoVisitante
+            // 
+            this.ptbEquipoVisitante.Image = global::GestionDeColegiados.Properties.Resources.visitante;
+            this.ptbEquipoVisitante.Location = new System.Drawing.Point(324, 135);
+            this.ptbEquipoVisitante.Name = "ptbEquipoVisitante";
+            this.ptbEquipoVisitante.Size = new System.Drawing.Size(242, 135);
+            this.ptbEquipoVisitante.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptbEquipoVisitante.TabIndex = 35;
+            this.ptbEquipoVisitante.TabStop = false;
+            // 
+            // ptbEquipoLocal
+            // 
+            this.ptbEquipoLocal.Image = global::GestionDeColegiados.Properties.Resources.Local;
+            this.ptbEquipoLocal.Location = new System.Drawing.Point(17, 135);
+            this.ptbEquipoLocal.Name = "ptbEquipoLocal";
+            this.ptbEquipoLocal.Size = new System.Drawing.Size(242, 135);
+            this.ptbEquipoLocal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptbEquipoLocal.TabIndex = 34;
+            this.ptbEquipoLocal.TabStop = false;
             // 
             // FrmRegistrarResultado
             // 

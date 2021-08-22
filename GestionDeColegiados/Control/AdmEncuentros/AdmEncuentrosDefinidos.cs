@@ -18,6 +18,9 @@ namespace Control.AdmEncuentrosGenerados
         private DatosEncuentroDefinido datosEncuentroDefinido = new DatosEncuentroDefinido();
         private AdmGenerarEncuentros admEncuentrosGenerados = AdmGenerarEncuentros.getAdmadmGenerarEncuentros();
         private AdmColegiado admColegiados = AdmColegiado.getAdmCol();
+
+       
+
         private AdmEquipo admEquipos = AdmEquipo.getEquipo();
         private AdmEstadio admEstadios = AdmEstadio.GetAdmEstadio();
         private AdmEstadio admEstadio = AdmEstadio.GetAdmEstadio();
@@ -40,13 +43,8 @@ namespace Control.AdmEncuentrosGenerados
 
         
 
-        /*metodo usado para llenar encuentros en un combobox
-se recupera los encuentros definidos, el nombre de equipo local y visitante
-ademas del estadio*/
-        public void LlenarPartidosCmb(ComboBox cmbEncuentros)
+        private void llenarCmbMatch(ComboBox cmbEncuentros)
         {
-            cmbEncuentros.Items.Clear();
-            listaEncuentrosDefinidos = datosEncuentroDefinido.ObtenerEncuentros();
             EncuentroGenerado encuentroGenerado;
             Equipo local, visitante;
             Estadio estadio;
@@ -62,6 +60,48 @@ ademas del estadio*/
             }
         }
 
+        public EncuentroDefinido GetEncuentroDefinidoByIndex(int index)
+        {
+            return this.ListaEncuentrosDefinidos[index];
+        }
+
+        public bool LlenarCmbEncuentrosDefinidosFinalizados(ComboBox cmbEncuentros)
+        {
+            bool resultado = false;
+            string anio = DateTime.Now.Year.ToString();
+            cmbEncuentros.Items.Clear();
+            listaEncuentrosDefinidos = datosEncuentroDefinido.GetEncuentrosDefinidosFinalizados(anio);
+            if (listaEncuentrosDefinidos.Count > 0)
+            {
+                llenarCmbMatch(cmbEncuentros);
+                resultado = true;
+            }
+            return resultado;
+        }
+
+        /*metodo usado para llenar encuentros en un combobox
+se recupera los encuentros definidos, el nombre de equipo local y visitante
+ademas del estadio*/
+        public void LlenarPartidosCmb(ComboBox cmbEncuentros)
+        {
+            cmbEncuentros.Items.Clear();
+            listaEncuentrosDefinidos = datosEncuentroDefinido.ObtenerEncuentros();
+            llenarCmbMatch(cmbEncuentros);
+           /* EncuentroGenerado encuentroGenerado;
+            Equipo local, visitante;
+            Estadio estadio;
+            for (int x = 0; x < listaEncuentrosDefinidos.Count; x++)
+            {
+                encuentroGenerado = admEncuentrosGenerados.ObtenerEncuentroPorID(listaEncuentrosDefinidos[x].IdEncuentroGeneradoPendiente);
+                local = admEquipos.ObtenerEquipoPorId(encuentroGenerado.IdEquipoLocal);
+                visitante = admEquipos.ObtenerEquipoPorId(encuentroGenerado.IdEquipoVisitante);
+
+                estadio = admEstadios.ObtenerEstadioPorId(listaEncuentrosDefinidos[x].IdEstadio);
+                cmbEncuentros.Items.Add(x + 1 + ":" + local.NombreEquipo + " VS " + visitante.NombreEquipo + "- " + estadio.Nombre);
+                listaEncuentrosGenerados.Add(encuentroGenerado);
+            }*/
+        }
+
         /*metodo para pedirle a AdmEstadio que nos devuelva el nombre de un estadio a través del id*/
         public string ObtenerNombreEstadioDelPartido(int indexEncuentroDefinidoSeleccionado)
         {
@@ -75,6 +115,22 @@ ademas del estadio*/
         {
             return admEncuentrosGenerados.ObtenerEncuentroPorID(id);
         }
+
+
+
+        public void LlenarMatchDefinidosFinalizados(int index, Label lblEquipoLocal, Label lblEquipoVisitante)
+        {
+            string anio = DateTime.Now.Year.ToString();
+            listaEncuentrosDefinidos = datosEncuentroDefinido.GetEncuentrosDefinidosFinalizados(anio);
+            llenarMatchEnParLabel(index, lblEquipoLocal, lblEquipoVisitante);
+        }
+        private void llenarMatchEnParLabel(int indexEncuentroSeleccionado, Label lblEquipoLocal, Label lblEquipoVisitante)
+        {
+            EncuentroDefinido encuentroDefinido = listaEncuentrosDefinidos[indexEncuentroSeleccionado];
+            LlenarDatosPartido(indexEncuentroSeleccionado, lblEquipoLocal, lblEquipoVisitante, encuentroDefinido);
+
+        }
+
         /*meotdo usado para llenar la informacion completa de un encuentro 
          *obteniendo el nombre de los equipos 
          *estadio

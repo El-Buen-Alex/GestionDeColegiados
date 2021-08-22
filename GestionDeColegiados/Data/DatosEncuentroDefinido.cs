@@ -78,6 +78,41 @@ namespace Data
             return lista;
         }
 
+        public List<EncuentroDefinido> GetEncuentrosDefinidosFinalizados(string anio)
+        {
+            List<EncuentroDefinido> lista = new List<EncuentroDefinido>();
+            EncuentroDefinido encuentroDefinido = null;
+            conexion = ConexionBD.getConexion();
+            conexion.Open();
+            try
+            {
+                MySqlCommand comando = new MySqlCommand("encuentrosDefinidosEncuentrosFinalizados", conexion, transaccion);
+                comando.Parameters.AddWithValue("_copa", anio);
+                comando.CommandType = CommandType.StoredProcedure;
+                MySqlDataReader reader = comando.ExecuteReader();
+                while (reader.Read())
+                {
+                    encuentroDefinido = new EncuentroDefinido();
+                    encuentroDefinido.Id = Convert.ToInt32(reader["idefinido"].ToString());
+                    encuentroDefinido.IdColegiado = Convert.ToInt32(reader["idcolegiado"].ToString());
+                    encuentroDefinido.IdEncuentroGeneradoPendiente = Convert.ToInt32(reader["idencuentro"].ToString());
+                    encuentroDefinido.IdEstadio = Convert.ToInt32(reader["idestadio"].ToString());
+                    encuentroDefinido.Hora = Convert.ToDateTime(reader["hora"].ToString());
+                    encuentroDefinido.FechaDeEncuentro = Convert.ToDateTime(reader["fecha"].ToString());
+                    lista.Add(encuentroDefinido);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                conexion.Close();
+            }
+            return lista;
+        }
+
         public bool ActualizarEstadioDePartido(int idEncuentroPorActualizar, int idNuevoEstadioAsociado)
         {
             bool exito = false;

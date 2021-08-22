@@ -15,6 +15,7 @@ namespace Control.AdmEncuentros
 {
     public class AdmEncuentroFinalizado
     {
+
         private static AdmEncuentroFinalizado admEncuentroFinalizado = null;
         private List<EncuentroFinalizado> encuentrosFinalizados;
         private AdmEncuentrosDefinidos admEncuentrosDefinidos = AdmEncuentrosDefinidos.GetAdmGenerarEncuentrosDefinidos();
@@ -53,6 +54,60 @@ namespace Control.AdmEncuentros
                     posicion++;
                 }
                 respuesta = true;
+            }
+            return respuesta;
+        }
+        private int CalcularPuntosVisitante(int puntos)
+        {
+            int puntosVisitante = 0;
+            if (puntos == 0)
+            {
+                puntosVisitante = 3;
+            }else if (puntos == 1)
+            {
+                puntosVisitante = 1;
+            }else if (puntos == 3)
+            {
+                puntosVisitante = 0;
+            }
+            return puntosVisitante;
+        }
+        public void LlenarInformacionPartido(int index, TextBox txtGolesLocal, TextBox txtGolesVisitante, Label lblPuntosLocalResultado, Label lblPuntosVisitanteResultado)
+        {
+            EncuentroDefinido encuentroDefinido = admEncuentrosDefinidos.GetEncuentroDefinidoByIndex(index);
+            EncuentroGenerado encuentroGenerado = admEncuentrosGenerados.ObtenerEncuentroPorID(encuentroDefinido.IdEncuentroGeneradoPendiente);
+            EncuentroFinalizado encuentroFinalizado = datosEncuentroFinalizado.GetEncuentroFinalizadoByIDefinidoEquipo(encuentroDefinido.Id, encuentroGenerado.IdEquipoLocal);
+            txtGolesLocal.Text = encuentroFinalizado.GolesFavor.ToString();
+            txtGolesVisitante.Text = encuentroFinalizado.GolesContra.ToString();
+            int puntosLocal = encuentroFinalizado.Puntos;
+            lblPuntosLocalResultado.Text = puntosLocal.ToString();
+            lblPuntosVisitanteResultado.Text = CalcularPuntosVisitante(puntosLocal).ToString();
+        }
+        private EncuentroFinalizado GetEncuentro(int idEquipo, int idDefinido, string golesFavor, string golesContra)
+        {
+            
+            Equipo equipo = admEquipos.ObtenerEquipoPorId(idEquipo);
+            
+            int golAFavor = validaciones.AInt(golesFavor);
+            int golEnContra = validaciones.AInt(golesContra);
+            return new EncuentroFinalizado(equipo.IdEquipo, golAFavor, golEnContra, idDefinido);
+
+        }
+        public bool UpdateEncuentroFinalizado(int index, string golesLocal, string golesVisitante)
+        {
+            bool respuesta = false;
+
+            EncuentroDefinido encuentroDefinido = admEncuentrosDefinidos.ListaEncuentrosDefinidos[index];
+            EncuentroGenerado encuentroGenerado = admEncuentrosGenerados.ObtenerEncuentroPorID(encuentroDefinido.IdEncuentroGeneradoPendiente);
+
+
+            EncuentroFinalizado encuentroResultadoLocal = GetEncuentro(encuentroGenerado.IdEquipoLocal, encuentroDefinido.Id, golesLocal, golesVisitante);
+            EncuentroFinalizado encuentroResultadoVisitante = GetEncuentro(encuentroGenerado.IdEquipoVisitante, encuentroDefinido.Id, golesVisitante, golesLocal);
+            
+            respuesta = datosEncuentroFinalizado.UpdateEncuentroFinalizado(encuentroResultadoLocal);
+            if (respuesta)
+            {
+                respuesta = datosEncuentroFinalizado.UpdateEncuentroFinalizado(encuentroResultadoVisitante);
             }
             return respuesta;
         }
@@ -105,6 +160,17 @@ namespace Control.AdmEncuentros
                 respuesta = 0;
             }
             return respuesta;
+        }
+
+        public int GetCantidadEncuentrosFinalizados()
+        {
+            string anio = DateTime.Now.Year.ToString();
+            int cantidad= datosEncuentroFinalizado.GetCantidadEncuentrosFinalizados(anio);
+            if (cantidad < 0)
+            {
+
+            }
+            return cantidad;
         }
     }
 }
