@@ -78,6 +78,40 @@ namespace Data
             return lista;
         }
 
+        public bool DarBajaEncuentroDefinido(string anio)
+        {
+            bool respuesta = false;
+            conexion = ConexionBD.getConexion();
+            conexion.Open();
+            transaccion = conexion.BeginTransaction();
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand("DarBajaEncuentrosDefinidos", conexion, transaccion);
+
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("_copa", anio);
+
+                cmd.ExecuteNonQuery();
+
+                transaccion.Commit();
+
+                respuesta = true;
+
+            }
+            catch (MySqlException ex)
+            {
+                transaccion.Rollback();
+
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                conexion.Close();
+            }
+            return respuesta;
+        }
+
         public List<EncuentroDefinido> GetEncuentrosDefinidosFinalizados(string anio)
         {
             List<EncuentroDefinido> lista = new List<EncuentroDefinido>();

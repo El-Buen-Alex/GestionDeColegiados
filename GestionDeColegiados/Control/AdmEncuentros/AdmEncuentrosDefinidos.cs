@@ -1,4 +1,5 @@
 ﻿using Control.AdmColegiados;
+using Control.AdmEncuentros;
 using Control.AdmEquipos;
 using Control.AdmEstadios;
 using Data;
@@ -18,7 +19,7 @@ namespace Control.AdmEncuentrosGenerados
         private DatosEncuentroDefinido datosEncuentroDefinido = new DatosEncuentroDefinido();
         private AdmGenerarEncuentros admEncuentrosGenerados = AdmGenerarEncuentros.getAdmadmGenerarEncuentros();
         private AdmColegiado admColegiados = AdmColegiado.getAdmCol();
-
+        private AdmEncuentroFinalizado admEncuentroFinalizado = AdmEncuentroFinalizado.GetAdmEncuentrosFinalizados();
        
 
         private AdmEquipo admEquipos = AdmEquipo.getEquipo();
@@ -58,6 +59,22 @@ namespace Control.AdmEncuentrosGenerados
                 cmbEncuentros.Items.Add(x + 1 + ":" + local.NombreEquipo + " VS " + visitante.NombreEquipo + "- " + estadio.Nombre);
                 listaEncuentrosGenerados.Add(encuentroGenerado);
             }
+        }
+
+        public bool DarBajaEncuentrosDefinidos()
+        {
+            bool respuesta = false;
+            string anio = DateTime.Now.Year.ToString();
+            
+           respuesta= admEncuentroFinalizado.DarBajaCompetencia();
+            if (respuesta)
+            {
+                respuesta = datosEncuentroDefinido.DarBajaEncuentroDefinido(anio);
+            }
+
+            
+
+            return respuesta;
         }
 
         public EncuentroDefinido GetEncuentroDefinidoByIndex(int index)

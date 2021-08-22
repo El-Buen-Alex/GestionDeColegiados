@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Control.AdmEncuentrosGenerados;
+﻿using Control.AdmEncuentrosGenerados;
 using Control.AdmEquipos;
+using Data;
 using Model;
 using Model.Equipo;
 using Model.Partido;
-using Data;
+using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Control.AdmEncuentros
@@ -39,6 +36,44 @@ namespace Control.AdmEncuentros
             return admEncuentroFinalizado;
         }
 
+        public bool FinalizarCompetencia()
+        {
+            bool respuesta = false;
+
+            respuesta = DarBajaCompetencia();
+            if (respuesta)
+            {
+                respuesta =admEncuentrosDefinidos.DarBajaEncuentrosDefinidos();
+                if (respuesta)
+                {
+                    respuesta = admEncuentrosGenerados.DarBajaEncuentrosGenerados();
+                }
+            }
+
+            return respuesta;
+        }
+
+        public bool DarBajaCompetencia()
+        {
+            bool respuesta = false;
+            string anio = DateTime.Now.Year.ToString();
+            int cantidad = datosEncuentroFinalizado.GetCantidadEncuentrosFinalizados(anio);
+            if (cantidad > 0)
+            {
+                respuesta = datosEncuentroFinalizado.FinalizarCompetencia(anio);
+            }
+            else if(cantidad==0)
+            {
+                respuesta = true;
+            }
+            else if(cantidad ==-1)
+            {
+                respuesta = false;
+            }
+           
+            return respuesta;
+        }
+
         public bool LlenarDgv(DataGridView dgvCompeticion)
         {
             bool respuesta = false ;
@@ -57,6 +92,9 @@ namespace Control.AdmEncuentros
             }
             return respuesta;
         }
+
+       
+
         private int CalcularPuntosVisitante(int puntos)
         {
             int puntosVisitante = 0;

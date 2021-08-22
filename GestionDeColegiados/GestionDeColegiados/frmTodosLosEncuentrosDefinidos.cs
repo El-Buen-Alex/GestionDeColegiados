@@ -35,5 +35,18 @@ namespace GestionDeColegiados
             //se permite la vista de los controladores graficos
             CambiarAccesibilidadControladoresGUI(true);
         }
+        private void mostrarMensajeFinalizar(bool respuesta)
+        {
+
+        }
+        private void DarBajaEncuentroDefToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult res = MessageBox.Show("¿Seguro que quieres terminar la competición?", "Cuidado", MessageBoxButtons.YesNo);
+            if (res == DialogResult.Yes)
+            {
+                bool resultado = admEncuentrosDefinidos.DarBajaEncuentrosDefinidos();
+                mostrarMensajeFinalizar(resultado);
+            }
+        }
     }
 }

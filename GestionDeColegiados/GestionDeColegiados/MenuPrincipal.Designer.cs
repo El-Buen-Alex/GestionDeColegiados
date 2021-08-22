@@ -65,6 +65,11 @@ namespace GestionDeColegiados
             this.PanelBarraTitulo = new System.Windows.Forms.Panel();
             this.pbMinimizar = new System.Windows.Forms.PictureBox();
             this.pbCerrar = new System.Windows.Forms.PictureBox();
+            this.flpVerCompetencia = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.btnVerTodosPartidos = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.flpOpcionGestionColegiado.SuspendLayout();
@@ -77,6 +82,7 @@ namespace GestionDeColegiados
             this.PanelBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).BeginInit();
+            this.flpVerCompetencia.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -101,6 +107,9 @@ namespace GestionDeColegiados
             this.flowLayoutPanel1.Controls.Add(this.panel10);
             this.flowLayoutPanel1.Controls.Add(this.btnGestionEncuentros2);
             this.flowLayoutPanel1.Controls.Add(this.flpOpcionGestionEncuentros);
+            this.flowLayoutPanel1.Controls.Add(this.panel15);
+            this.flowLayoutPanel1.Controls.Add(this.button1);
+            this.flowLayoutPanel1.Controls.Add(this.flpVerCompetencia);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 110);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -315,7 +324,7 @@ namespace GestionDeColegiados
             this.flpOpcionGestionEncuentros.Location = new System.Drawing.Point(3, 383);
             this.flpOpcionGestionEncuentros.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flpOpcionGestionEncuentros.Name = "flpOpcionGestionEncuentros";
-            this.flpOpcionGestionEncuentros.Size = new System.Drawing.Size(256, 258);
+            this.flpOpcionGestionEncuentros.Size = new System.Drawing.Size(256, 153);
             this.flpOpcionGestionEncuentros.TabIndex = 24;
             this.flpOpcionGestionEncuentros.Visible = false;
             // 
@@ -518,6 +527,66 @@ namespace GestionDeColegiados
             this.pbCerrar.MouseEnter += new System.EventHandler(this.pbCerrar_MouseEnter);
             this.pbCerrar.MouseLeave += new System.EventHandler(this.pbCerrar_MouseLeave);
             // 
+            // flpVerCompetencia
+            // 
+            this.flpVerCompetencia.Controls.Add(this.panel16);
+            this.flpVerCompetencia.Controls.Add(this.btnVerTodosPartidos);
+            this.flpVerCompetencia.Location = new System.Drawing.Point(3, 591);
+            this.flpVerCompetencia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.flpVerCompetencia.Name = "flpVerCompetencia";
+            this.flpVerCompetencia.Size = new System.Drawing.Size(256, 53);
+            this.flpVerCompetencia.TabIndex = 25;
+            this.flpVerCompetencia.Visible = false;
+            // 
+            // panel15
+            // 
+            this.panel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(75)))), ((int)(((byte)(119)))));
+            this.panel15.Location = new System.Drawing.Point(3, 540);
+            this.panel15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(25, 47);
+            this.panel15.TabIndex = 16;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(75)))), ((int)(((byte)(119)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.Silver;
+            this.button1.Location = new System.Drawing.Point(34, 540);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(219, 47);
+            this.button1.TabIndex = 25;
+            this.button1.Text = "COMPETENCIA: LIGA";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.MouseEnter += new System.EventHandler(this.button1_MouseEnter);
+            // 
+            // panel16
+            // 
+            this.panel16.Location = new System.Drawing.Point(3, 2);
+            this.panel16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(84, 47);
+            this.panel16.TabIndex = 24;
+            // 
+            // btnVerTodosPartidos
+            // 
+            this.btnVerTodosPartidos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.btnVerTodosPartidos.FlatAppearance.BorderSize = 0;
+            this.btnVerTodosPartidos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(75)))), ((int)(((byte)(119)))));
+            this.btnVerTodosPartidos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerTodosPartidos.ForeColor = System.Drawing.Color.Silver;
+            this.btnVerTodosPartidos.Location = new System.Drawing.Point(93, 2);
+            this.btnVerTodosPartidos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnVerTodosPartidos.Name = "btnVerTodosPartidos";
+            this.btnVerTodosPartidos.Size = new System.Drawing.Size(143, 47);
+            this.btnVerTodosPartidos.TabIndex = 25;
+            this.btnVerTodosPartidos.Text = "VER COMPETICION";
+            this.btnVerTodosPartidos.UseVisualStyleBackColor = false;
+            this.btnVerTodosPartidos.Click += new System.EventHandler(this.btnVerTodosPartidos_Click);
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -546,6 +615,7 @@ namespace GestionDeColegiados
             this.PanelBarraTitulo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).EndInit();
+            this.flpVerCompetencia.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -588,5 +658,10 @@ namespace GestionDeColegiados
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button btnVerEncuentrosDefinidos;
+        private System.Windows.Forms.FlowLayoutPanel flpVerCompetencia;
+        private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel16;
+        private System.Windows.Forms.Button btnVerTodosPartidos;
     }
 }

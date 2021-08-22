@@ -120,7 +120,7 @@ namespace GestionDeColegiados.FrmsArbitro
         private void btnVerTodosPartidos_Click(object sender, EventArgs e)
         {
             
-             AbrirFormEnPanel(new FrmVerCompeticion());
+             AbrirFormEnPanel(new FrmVerCompeticion(false));
             
         }
     }

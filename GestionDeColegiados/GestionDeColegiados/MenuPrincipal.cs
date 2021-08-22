@@ -1,6 +1,8 @@
 ﻿using Control.AdmColegiados;
+using Control.AdmEncuentros;
 using Control.AdmEncuentrosGenerados;
 using Control.AdmEquipos;
+using GestionDeColegiados.FrmsArbitro;
 using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
@@ -19,7 +21,7 @@ namespace GestionDeColegiados
 
         private Color colorDefaultClose;
         private Color colorDefaultMin;
-
+        private AdmEncuentroFinalizado admEncuentroFinalizado = AdmEncuentroFinalizado.GetAdmEncuentrosFinalizados();
         private AdmGenerarEncuentros admGenerarEncuentros = AdmGenerarEncuentros.getAdmadmGenerarEncuentros();
         private AdmEquipo admEquipo = AdmEquipo.getEquipo();
         private AdmEncuentrosDefinidos admEncuentrosDefinidos = AdmEncuentrosDefinidos.GetAdmGenerarEncuentrosDefinidos();
@@ -213,6 +215,20 @@ namespace GestionDeColegiados
                 AbrirFormEnPanel(new frmTodosLosEncuentrosDefinidos());
             }
 
+        }
+
+        private void btnVerTodosPartidos_Click(object sender, EventArgs e)
+        {
+            int cantEncuentrosFinalizados = admEncuentroFinalizado.GetCantidadEncuentrosFinalizados();
+            if (cantEncuentrosFinalizados > 0)
+            {
+                AbrirFormEnPanel(new FrmVerCompeticion(true));
+            }
+        }
+
+        private void button1_MouseEnter(object sender, EventArgs e)
+        {
+            flpVerCompetencia.Visible = true;
         }
     }
 }

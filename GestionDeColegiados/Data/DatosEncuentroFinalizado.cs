@@ -54,6 +54,40 @@ namespace Data
             return guardado;
         }
 
+        public bool FinalizarCompetencia(string anio)
+        {
+            bool respuesta = false;
+            conexion = ConexionBD.getConexion();
+            conexion.Open();
+            trans = conexion.BeginTransaction();
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand("finalizarCompetencia", conexion, trans);
+
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("_copa", anio);
+
+                cmd.ExecuteNonQuery();
+
+                trans.Commit();
+
+                respuesta = true;
+               
+            }
+            catch (MySqlException ex)
+            {
+                trans.Rollback();
+                
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                conexion.Close();
+            }
+            return respuesta;
+        }
+
         public List<EncuentroFinalizado> GetEncuentrosFinalizados(string anio)
         {
             List<EncuentroFinalizado> posiciones = new List<EncuentroFinalizado>();

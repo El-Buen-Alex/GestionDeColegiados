@@ -38,9 +38,15 @@ namespace Control.AdmEncuentrosGenerados
             lblEquipoLocal.Text = equipoLocal.NombreEquipo;
             lblEquipoVisitante.Text = equipoVisitante.NombreEquipo;
         }
+
+        internal bool DarBajaEncuentrosGenerados()
+        {
+            throw new NotImplementedException();
+        }
+
         /*Metodo para pedirle a la clase admEncuentrosGenerados que nos devuelva
-         * un encuentro generado a través del id del mismo
-         */
+* un encuentro generado a través del id del mismo
+*/
         public EncuentroGenerado ObtenerEncuentroPorID(int idEncuentroGeneradoPendiente)
         {
             return datosEncuentrosGenerados.ObtenerEncuentroPendiente(idEncuentroGeneradoPendiente);

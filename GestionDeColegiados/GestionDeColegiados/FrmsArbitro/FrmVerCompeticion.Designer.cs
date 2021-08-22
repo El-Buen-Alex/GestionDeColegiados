@@ -41,7 +41,12 @@ namespace GestionDeColegiados.FrmsArbitro
             this.colGolDiferencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPuntos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblAdvertencia = new System.Windows.Forms.Label();
+            this.msAdmin = new System.Windows.Forms.MenuStrip();
+            this.aDMINISTRARToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tERMINARCOMPETENCIAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tERMINARCOMPETENCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompeticion)).BeginInit();
+            this.msAdmin.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -49,7 +54,7 @@ namespace GestionDeColegiados.FrmsArbitro
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblTitulo.Location = new System.Drawing.Point(76, 25);
+            this.lblTitulo.Location = new System.Drawing.Point(75, 74);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(442, 32);
             this.lblTitulo.TabIndex = 32;
@@ -83,7 +88,7 @@ namespace GestionDeColegiados.FrmsArbitro
             this.colGolDiferencia,
             this.colPuntos});
             this.dgvCompeticion.EnableHeadersVisualStyles = false;
-            this.dgvCompeticion.Location = new System.Drawing.Point(52, 112);
+            this.dgvCompeticion.Location = new System.Drawing.Point(51, 161);
             this.dgvCompeticion.Name = "dgvCompeticion";
             this.dgvCompeticion.ReadOnly = true;
             this.dgvCompeticion.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -159,12 +164,49 @@ namespace GestionDeColegiados.FrmsArbitro
             // 
             this.lblAdvertencia.AutoSize = true;
             this.lblAdvertencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAdvertencia.Location = new System.Drawing.Point(159, 82);
+            this.lblAdvertencia.Location = new System.Drawing.Point(158, 131);
             this.lblAdvertencia.Name = "lblAdvertencia";
             this.lblAdvertencia.Size = new System.Drawing.Size(319, 17);
             this.lblAdvertencia.TabIndex = 34;
             this.lblAdvertencia.Text = "AÚN NO SE HA JUGADO ALGÚN PARTIDO";
             this.lblAdvertencia.Visible = false;
+            // 
+            // msAdmin
+            // 
+            this.msAdmin.Dock = System.Windows.Forms.DockStyle.None;
+            this.msAdmin.Enabled = false;
+            this.msAdmin.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.msAdmin.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aDMINISTRARToolStripMenuItem});
+            this.msAdmin.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
+            this.msAdmin.Location = new System.Drawing.Point(461, 9);
+            this.msAdmin.Name = "msAdmin";
+            this.msAdmin.Size = new System.Drawing.Size(276, 28);
+            this.msAdmin.TabIndex = 35;
+            this.msAdmin.Text = "menuStrip1";
+            // 
+            // aDMINISTRARToolStripMenuItem
+            // 
+            this.aDMINISTRARToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tERMINARCOMPETENCIAToolStripMenuItem,
+            this.tERMINARCOMPETENCToolStripMenuItem});
+            this.aDMINISTRARToolStripMenuItem.Name = "aDMINISTRARToolStripMenuItem";
+            this.aDMINISTRARToolStripMenuItem.Size = new System.Drawing.Size(120, 24);
+            this.aDMINISTRARToolStripMenuItem.Text = "ADMINISTRAR";
+            // 
+            // tERMINARCOMPETENCIAToolStripMenuItem
+            // 
+            this.tERMINARCOMPETENCIAToolStripMenuItem.Name = "tERMINARCOMPETENCIAToolStripMenuItem";
+            this.tERMINARCOMPETENCIAToolStripMenuItem.Size = new System.Drawing.Size(287, 26);
+            this.tERMINARCOMPETENCIAToolStripMenuItem.Text = "DAR DE BAJA COMPETENCIA";
+            this.tERMINARCOMPETENCIAToolStripMenuItem.Click += new System.EventHandler(this.DAR_BAJA_RCOMPETENCIAToolStripMenuItem_Click);
+            // 
+            // tERMINARCOMPETENCToolStripMenuItem
+            // 
+            this.tERMINARCOMPETENCToolStripMenuItem.Name = "tERMINARCOMPETENCToolStripMenuItem";
+            this.tERMINARCOMPETENCToolStripMenuItem.Size = new System.Drawing.Size(287, 26);
+            this.tERMINARCOMPETENCToolStripMenuItem.Text = "TERMINAR COMPETENC";
+            this.tERMINARCOMPETENCToolStripMenuItem.Click += new System.EventHandler(this.tERMINARCOMPETENCToolStripMenuItem_Click);
             // 
             // FrmVerCompeticion
             // 
@@ -175,11 +217,14 @@ namespace GestionDeColegiados.FrmsArbitro
             this.Controls.Add(this.lblAdvertencia);
             this.Controls.Add(this.dgvCompeticion);
             this.Controls.Add(this.lblTitulo);
+            this.Controls.Add(this.msAdmin);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmVerCompeticion";
             this.Text = "FrmVerCompeticion";
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompeticion)).EndInit();
+            this.msAdmin.ResumeLayout(false);
+            this.msAdmin.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -196,5 +241,9 @@ namespace GestionDeColegiados.FrmsArbitro
         private System.Windows.Forms.DataGridViewTextBoxColumn colGolDiferencia;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPuntos;
         private System.Windows.Forms.Label lblAdvertencia;
+        private System.Windows.Forms.MenuStrip msAdmin;
+        private System.Windows.Forms.ToolStripMenuItem aDMINISTRARToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tERMINARCOMPETENCIAToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tERMINARCOMPETENCToolStripMenuItem;
     }
 }

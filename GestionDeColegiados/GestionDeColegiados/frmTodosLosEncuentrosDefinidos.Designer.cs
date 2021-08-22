@@ -40,7 +40,11 @@ namespace GestionDeColegiados
             this.lblEstadio = new System.Windows.Forms.Label();
             this.lblColegiados = new System.Windows.Forms.Label();
             this.lblTituloColegiados = new System.Windows.Forms.Label();
+            this.msAdmin = new System.Windows.Forms.MenuStrip();
+            this.aDMINISTRARToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.DarBajaEncuentroDefToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pbTupla)).BeginInit();
+            this.msAdmin.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -166,12 +170,42 @@ namespace GestionDeColegiados
             this.lblTituloColegiados.TabIndex = 23;
             this.lblTituloColegiados.Text = "COLEGIADOS:";
             // 
+            // msAdmin
+            // 
+            this.msAdmin.Dock = System.Windows.Forms.DockStyle.None;
+            this.msAdmin.Enabled = false;
+            this.msAdmin.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.msAdmin.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aDMINISTRARToolStripMenuItem});
+            this.msAdmin.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
+            this.msAdmin.Location = new System.Drawing.Point(495, 9);
+            this.msAdmin.Name = "msAdmin";
+            this.msAdmin.Size = new System.Drawing.Size(276, 28);
+            this.msAdmin.TabIndex = 36;
+            this.msAdmin.Text = "menuStrip1";
+            // 
+            // aDMINISTRARToolStripMenuItem
+            // 
+            this.aDMINISTRARToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.DarBajaEncuentroDefToolStripMenuItem});
+            this.aDMINISTRARToolStripMenuItem.Name = "aDMINISTRARToolStripMenuItem";
+            this.aDMINISTRARToolStripMenuItem.Size = new System.Drawing.Size(120, 24);
+            this.aDMINISTRARToolStripMenuItem.Text = "ADMINISTRAR";
+            // 
+            // DarBajaEncuentroDefToolStripMenuItem
+            // 
+            this.DarBajaEncuentroDefToolStripMenuItem.Name = "DarBajaEncuentroDefToolStripMenuItem";
+            this.DarBajaEncuentroDefToolStripMenuItem.Size = new System.Drawing.Size(360, 26);
+            this.DarBajaEncuentroDefToolStripMenuItem.Text = "DAR DE BAJA ENCUENTROS DEFINIDOS";
+            this.DarBajaEncuentroDefToolStripMenuItem.Click += new System.EventHandler(this.DarBajaEncuentroDefToolStripMenuItem_Click);
+            // 
             // frmTodosLosEncuentrosDefinidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(129)))), ((int)(((byte)(150)))));
             this.ClientSize = new System.Drawing.Size(625, 683);
+            this.Controls.Add(this.msAdmin);
             this.Controls.Add(this.lblTituloColegiados);
             this.Controls.Add(this.lblColegiados);
             this.Controls.Add(this.lblEstadio);
@@ -187,6 +221,8 @@ namespace GestionDeColegiados
             this.Name = "frmTodosLosEncuentrosDefinidos";
             this.Text = "frmTodosLosEncuentrosDefinidos";
             ((System.ComponentModel.ISupportInitialize)(this.pbTupla)).EndInit();
+            this.msAdmin.ResumeLayout(false);
+            this.msAdmin.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,5 +241,8 @@ namespace GestionDeColegiados
         private System.Windows.Forms.Label lblEstadio;
         private System.Windows.Forms.Label lblColegiados;
         private System.Windows.Forms.Label lblTituloColegiados;
+        private System.Windows.Forms.MenuStrip msAdmin;
+        private System.Windows.Forms.ToolStripMenuItem aDMINISTRARToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem DarBajaEncuentroDefToolStripMenuItem;
     }
 }
