@@ -54,7 +54,7 @@ namespace Data
             return guardado;
         }
 
-        public bool FinalizarCompetencia(string anio)
+        public bool FinalizarCompetencia(string anio, string estado)
         {
             bool respuesta = false;
             conexion = ConexionBD.getConexion();
@@ -67,7 +67,7 @@ namespace Data
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue("_copa", anio);
-
+                cmd.Parameters.AddWithValue("_estado", estado[0]);
                 cmd.ExecuteNonQuery();
 
                 trans.Commit();

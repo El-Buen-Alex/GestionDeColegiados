@@ -68,6 +68,32 @@ namespace Data
             return estadio;
         }
 
+        public bool PutEstadiosDisponibles()
+        {
+            bool cambio = false;
+            conexion = ConexionBD.getConexion();
+            conexion.Open();
+            transaccion = conexion.BeginTransaction();
+            try
+            {
+                MySqlCommand comando = new MySqlCommand("PonerEstadiosDisponibles", conexion, transaccion);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.ExecuteNonQuery();
+                transaccion.Commit();
+                cambio = true;
+            }
+            catch (Exception ex)
+            {
+                transaccion.Rollback();
+                Console.WriteLine("Error en la obtencion de estadios disponibles: " + ex.Message);
+            }
+            finally
+            {
+                conexion.Close();
+            }
+            return cambio;
+        }
+
         public bool CambiarEstado(int idEsadio, string estado)
         {
             bool cambio = false;

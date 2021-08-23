@@ -58,6 +58,14 @@ namespace Control.AdmEncuentrosGenerados
         {
             return datosEncuentrosGenerados.CambiarEstadoEncuentro(idEncuentroGeneradoPendiente);
         }
+
+        public bool DarBajaEncuentros()
+        {
+            bool respuesta = datosEncuentrosGenerados.CambiarEstadoEncuentros("N");
+
+            return respuesta;
+        }
+
         //constructor privado para ejecutar singleton
         private AdmGenerarEncuentros()
         {

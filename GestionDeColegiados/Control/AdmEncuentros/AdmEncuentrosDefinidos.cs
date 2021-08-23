@@ -19,8 +19,7 @@ namespace Control.AdmEncuentrosGenerados
         private DatosEncuentroDefinido datosEncuentroDefinido = new DatosEncuentroDefinido();
         private AdmGenerarEncuentros admEncuentrosGenerados = AdmGenerarEncuentros.getAdmadmGenerarEncuentros();
         private AdmColegiado admColegiados = AdmColegiado.getAdmCol();
-        private AdmEncuentroFinalizado admEncuentroFinalizado = AdmEncuentroFinalizado.GetAdmEncuentrosFinalizados();
-       
+        
 
         private AdmEquipo admEquipos = AdmEquipo.getEquipo();
         private AdmEstadio admEstadios = AdmEstadio.GetAdmEstadio();
@@ -46,7 +45,7 @@ namespace Control.AdmEncuentrosGenerados
 
         private void llenarCmbMatch(ComboBox cmbEncuentros)
         {
-            EncuentroGenerado encuentroGenerado;
+            EncuentroGenerado   encuentroGenerado;
             Equipo local, visitante;
             Estadio estadio;
             for (int x = 0; x < listaEncuentrosDefinidos.Count; x++)
@@ -65,15 +64,8 @@ namespace Control.AdmEncuentrosGenerados
         {
             bool respuesta = false;
             string anio = DateTime.Now.Year.ToString();
+            respuesta = datosEncuentroDefinido.CambiarEstadoEnucentroDefinido("N");
             
-           respuesta= admEncuentroFinalizado.DarBajaCompetencia();
-            if (respuesta)
-            {
-                respuesta = datosEncuentroDefinido.DarBajaEncuentroDefinido(anio);
-            }
-
-            
-
             return respuesta;
         }
 
@@ -94,6 +86,15 @@ namespace Control.AdmEncuentrosGenerados
                 resultado = true;
             }
             return resultado;
+        }
+
+        public bool ReinicarCompetencia()
+        {
+         
+            
+           bool respuesta = datosEncuentroDefinido.CambiarEstadoEnucentroDefinido("R");
+            
+            return respuesta;
         }
 
         /*metodo usado para llenar encuentros en un combobox
@@ -117,6 +118,11 @@ ademas del estadio*/
                 cmbEncuentros.Items.Add(x + 1 + ":" + local.NombreEquipo + " VS " + visitante.NombreEquipo + "- " + estadio.Nombre);
                 listaEncuentrosGenerados.Add(encuentroGenerado);
             }*/
+        }
+
+        public int ObtenerCantidadEncuentrosDefinidos()
+        {
+            return datosEncuentroDefinido.ObtenerCantidadEncuentrosDefinidos();
         }
 
         /*metodo para pedirle a AdmEstadio que nos devuelva el nombre de un estadio a través del id*/

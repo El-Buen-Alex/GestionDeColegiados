@@ -62,6 +62,11 @@ namespace Control.AdmEstadios
             return cambio;
         }
 
+        public void PonerEstadiosDisponibles()
+        {
+            bool respuesta=datosEstadios.PutEstadiosDisponibles();
+        }
+
         public void SeleccionarEstadio(ComboBox cmbEstadios, Estadio estadio)
         {
             int i = 0;

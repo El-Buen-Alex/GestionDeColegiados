@@ -219,11 +219,9 @@ namespace GestionDeColegiados
 
         private void btnVerTodosPartidos_Click(object sender, EventArgs e)
         {
-            int cantEncuentrosFinalizados = admEncuentroFinalizado.GetCantidadEncuentrosFinalizados();
-            if (cantEncuentrosFinalizados > 0)
-            {
+           
                 AbrirFormEnPanel(new FrmVerCompeticion(true));
-            }
+            
         }
 
         private void button1_MouseEnter(object sender, EventArgs e)

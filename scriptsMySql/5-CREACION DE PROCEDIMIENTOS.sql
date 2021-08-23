@@ -163,7 +163,7 @@ DELIMITER
 DELIMITER $$
 CREATE PROCEDURE obtenerNumeroEncuentroPendiente()
 	BEGIN
-		SELECT count(*) as tamanio FROM encuentrosgenerados WHERE asignacion = 'PENDIENTE'; 
+		SELECT count(*) as tamanio FROM encuentrosgenerados WHERE asignacion = 'PENDIENTE' and estado='A'; 
 	END$$
 DELIMITER
 
@@ -171,7 +171,7 @@ DELIMITER
 DELIMITER $$
 CREATE PROCEDURE obtenerEncuentroPendiente()
 	BEGIN
-		SELECT * FROM encuentrosgenerados WHERE asignacion = 'PENDIENTE'; 
+		SELECT * FROM encuentrosgenerados WHERE asignacion = 'PENDIENTE' and estado='A'; 
 	END$$
 DELIMITER 
 
@@ -258,9 +258,17 @@ DELIMITER
 DELIMITER $$
 CREATE PROCEDURE estadiosDiponibles()
 	BEGIN
-		SELECT * FROM estadio WHERE asignacion = 'DISPONIBLE'; 
+		SELECT * FROM estadio WHERE asignacion = 'DISPONIBLE' and estado='A'; 
 	END$$
 DELIMITER
+
+DELIMITER $$
+CREATE PROCEDURE PonerEstadiosDisponibles()
+	BEGIN
+		UPDATE estadio SET asignacion = 'DISPONIBLE' WHERE asignacion='OCUPADO' and estado='A'; 
+	END$$
+DELIMITER
+
 
 /* PROCEDIMIENTO PARA OBTENER ESTADIOS*/
 DELIMITER $$
@@ -278,6 +286,13 @@ CREATE PROCEDURE cantidadEncuentrosPorJugar()
 	END$$
 DELIMITER ;
 
+/* PROCEDIMIENTO PARA OBTENER LA CANTIDAD DE ENCUENTROS ACTIVOS*/
+DELIMITER $$
+CREATE PROCEDURE cantidadEncuentrosDefinidosActivos()
+	BEGIN
+		SELECT count(*) as cantidadEncuentros FROM encuentroDefinidos WHERE estado = 'A'; 
+	END$$
+DELIMITER ;
 /* PROCEDIMIENTO PARA OBTENER LOS ULTIMOS 5 ENCUENTROS DEFINIDOS*/
 DELIMITER $$
 CREATE PROCEDURE mostrarEncuentroDefinidos()
@@ -394,4 +409,37 @@ CREATE PROCEDURE actulizarEncuentroFinalizado(
 			SET	golesFavor=_golFavor, golesContra=_golContra,golesDiferencia=_golDiferencia,puntos=_puntos
             WHERE  idDefinido =_idDefinido and idEquipo=_idEquipo;
 			END$$
+DELIMITER ;
+
+drop procedure finalizarCompetencia;
+/*PROCEDIMIENTO PARA FINALIZAR LA COMPETENCIA*/
+DELIMITER $$
+CREATE PROCEDURE finalizarCompetencia(in _copa varchar(5), in _estado char)
+BEGIN 
+	update campeonatos.encuentrofinalizado set estado=_estado where copa=concat('LIGA-',_copa);
+END$$
+DELIMITER ;
+
+/*PROCEDIMIENTO PARA DAR DE BAJA LA COMPETENCIA*/
+DELIMITER $$
+CREATE PROCEDURE DarBajaCompetencia(in _copa varchar(5))
+BEGIN 
+	update campeonatos.encuentrofinalizado set estado='N' where copa=concat('LIGA-',_copa);
+END$$
+DELIMITER ;
+
+/*PROCEDIMIENTO PARA DAR DE BAJA ENCUENTROS DEFINIDOS*/
+DELIMITER $$
+CREATE PROCEDURE CambiarEstadoEncuentrosDefinidos(in _estado char)
+BEGIN 
+	update campeonatos.encuentrodefinidos set estado=_estado where estado='A';
+END$$
+DELIMITER ;
+
+/*CambiarEstadoEncuentrosGeneradoToN*/
+DELIMITER $$
+CREATE PROCEDURE CambiarEstadoEncuentrosGeneradoToN(in _estado char)
+BEGIN 
+	update campeonatos.encuentrosgenerados set estado=_estado, asignacion="ELIMINADO" where estado='A';
+END$$
 DELIMITER ;

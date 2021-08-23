@@ -29,9 +29,9 @@ namespace GestionDeColegiados.FrmsArbitro
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.dgvCompeticion = new System.Windows.Forms.DataGridView();
             this.colNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,8 +43,13 @@ namespace GestionDeColegiados.FrmsArbitro
             this.lblAdvertencia = new System.Windows.Forms.Label();
             this.msAdmin = new System.Windows.Forms.MenuStrip();
             this.aDMINISTRARToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tERMINARCOMPETENCIAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tERMINARCOMPETENCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rEINICIARToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rEINICIARTODALACOMPETENCIAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rEINICIARRESULTADOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tERMINARCOMPETEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fINALIZARCOMPETENCIAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dARBAJAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dARBAJACOMPETENCIAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompeticion)).BeginInit();
             this.msAdmin.SuspendLayout();
             this.SuspendLayout();
@@ -70,14 +75,14 @@ namespace GestionDeColegiados.FrmsArbitro
             this.dgvCompeticion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCompeticion.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvCompeticion.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCompeticion.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCompeticion.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvCompeticion.ColumnHeadersHeight = 35;
             this.dgvCompeticion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvCompeticion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -92,21 +97,21 @@ namespace GestionDeColegiados.FrmsArbitro
             this.dgvCompeticion.Name = "dgvCompeticion";
             this.dgvCompeticion.ReadOnly = true;
             this.dgvCompeticion.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(175)))), ((int)(((byte)(197)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCompeticion.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(175)))), ((int)(((byte)(197)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCompeticion.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvCompeticion.RowHeadersVisible = false;
             this.dgvCompeticion.RowHeadersWidth = 5;
             this.dgvCompeticion.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(129)))), ((int)(((byte)(150)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Caviar Dreams", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(129)))), ((int)(((byte)(150)))));
-            this.dgvCompeticion.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(129)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Caviar Dreams", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(129)))), ((int)(((byte)(150)))));
+            this.dgvCompeticion.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvCompeticion.RowTemplate.Height = 24;
             this.dgvCompeticion.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvCompeticion.Size = new System.Drawing.Size(496, 328);
@@ -179,7 +184,7 @@ namespace GestionDeColegiados.FrmsArbitro
             this.msAdmin.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aDMINISTRARToolStripMenuItem});
             this.msAdmin.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
-            this.msAdmin.Location = new System.Drawing.Point(461, 9);
+            this.msAdmin.Location = new System.Drawing.Point(310, 9);
             this.msAdmin.Name = "msAdmin";
             this.msAdmin.Size = new System.Drawing.Size(276, 28);
             this.msAdmin.TabIndex = 35;
@@ -188,25 +193,65 @@ namespace GestionDeColegiados.FrmsArbitro
             // aDMINISTRARToolStripMenuItem
             // 
             this.aDMINISTRARToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tERMINARCOMPETENCIAToolStripMenuItem,
-            this.tERMINARCOMPETENCToolStripMenuItem});
+            this.rEINICIARToolStripMenuItem,
+            this.tERMINARCOMPETEToolStripMenuItem,
+            this.dARBAJAToolStripMenuItem});
             this.aDMINISTRARToolStripMenuItem.Name = "aDMINISTRARToolStripMenuItem";
             this.aDMINISTRARToolStripMenuItem.Size = new System.Drawing.Size(120, 24);
             this.aDMINISTRARToolStripMenuItem.Text = "ADMINISTRAR";
             // 
-            // tERMINARCOMPETENCIAToolStripMenuItem
+            // rEINICIARToolStripMenuItem
             // 
-            this.tERMINARCOMPETENCIAToolStripMenuItem.Name = "tERMINARCOMPETENCIAToolStripMenuItem";
-            this.tERMINARCOMPETENCIAToolStripMenuItem.Size = new System.Drawing.Size(287, 26);
-            this.tERMINARCOMPETENCIAToolStripMenuItem.Text = "DAR DE BAJA COMPETENCIA";
-            this.tERMINARCOMPETENCIAToolStripMenuItem.Click += new System.EventHandler(this.DAR_BAJA_RCOMPETENCIAToolStripMenuItem_Click);
+            this.rEINICIARToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.rEINICIARTODALACOMPETENCIAToolStripMenuItem,
+            this.rEINICIARRESULTADOSToolStripMenuItem});
+            this.rEINICIARToolStripMenuItem.Name = "rEINICIARToolStripMenuItem";
+            this.rEINICIARToolStripMenuItem.Size = new System.Drawing.Size(263, 26);
+            this.rEINICIARToolStripMenuItem.Text = "REINICIAR COMPETENCIA";
             // 
-            // tERMINARCOMPETENCToolStripMenuItem
+            // rEINICIARTODALACOMPETENCIAToolStripMenuItem
             // 
-            this.tERMINARCOMPETENCToolStripMenuItem.Name = "tERMINARCOMPETENCToolStripMenuItem";
-            this.tERMINARCOMPETENCToolStripMenuItem.Size = new System.Drawing.Size(287, 26);
-            this.tERMINARCOMPETENCToolStripMenuItem.Text = "TERMINAR COMPETENC";
-            this.tERMINARCOMPETENCToolStripMenuItem.Click += new System.EventHandler(this.tERMINARCOMPETENCToolStripMenuItem_Click);
+            this.rEINICIARTODALACOMPETENCIAToolStripMenuItem.Name = "rEINICIARTODALACOMPETENCIAToolStripMenuItem";
+            this.rEINICIARTODALACOMPETENCIAToolStripMenuItem.Size = new System.Drawing.Size(327, 26);
+            this.rEINICIARTODALACOMPETENCIAToolStripMenuItem.Text = "REINICIAR TODA LA COMPETENCIA";
+            this.rEINICIARTODALACOMPETENCIAToolStripMenuItem.Click += new System.EventHandler(this.rEINICIARTODALACOMPETENCIAToolStripMenuItem_Click);
+            // 
+            // rEINICIARRESULTADOSToolStripMenuItem
+            // 
+            this.rEINICIARRESULTADOSToolStripMenuItem.Name = "rEINICIARRESULTADOSToolStripMenuItem";
+            this.rEINICIARRESULTADOSToolStripMenuItem.Size = new System.Drawing.Size(327, 26);
+            this.rEINICIARRESULTADOSToolStripMenuItem.Text = "REINICIAR RESULTADOS";
+            this.rEINICIARRESULTADOSToolStripMenuItem.Click += new System.EventHandler(this.rEINICIARRESULTADOSToolStripMenuItem_Click);
+            // 
+            // tERMINARCOMPETEToolStripMenuItem
+            // 
+            this.tERMINARCOMPETEToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fINALIZARCOMPETENCIAToolStripMenuItem});
+            this.tERMINARCOMPETEToolStripMenuItem.Name = "tERMINARCOMPETEToolStripMenuItem";
+            this.tERMINARCOMPETEToolStripMenuItem.Size = new System.Drawing.Size(263, 26);
+            this.tERMINARCOMPETEToolStripMenuItem.Text = "TERMINAR COMPETE";
+            // 
+            // fINALIZARCOMPETENCIAToolStripMenuItem
+            // 
+            this.fINALIZARCOMPETENCIAToolStripMenuItem.Name = "fINALIZARCOMPETENCIAToolStripMenuItem";
+            this.fINALIZARCOMPETENCIAToolStripMenuItem.Size = new System.Drawing.Size(266, 26);
+            this.fINALIZARCOMPETENCIAToolStripMenuItem.Text = "FINALIZAR COMPETENCIA";
+            this.fINALIZARCOMPETENCIAToolStripMenuItem.Click += new System.EventHandler(this.fINALIZARCOMPETENCIAToolStripMenuItem_Click);
+            // 
+            // dARBAJAToolStripMenuItem
+            // 
+            this.dARBAJAToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dARBAJACOMPETENCIAToolStripMenuItem});
+            this.dARBAJAToolStripMenuItem.Name = "dARBAJAToolStripMenuItem";
+            this.dARBAJAToolStripMenuItem.Size = new System.Drawing.Size(263, 26);
+            this.dARBAJAToolStripMenuItem.Text = "DAR BAJA";
+            // 
+            // dARBAJACOMPETENCIAToolStripMenuItem
+            // 
+            this.dARBAJACOMPETENCIAToolStripMenuItem.Name = "dARBAJACOMPETENCIAToolStripMenuItem";
+            this.dARBAJACOMPETENCIAToolStripMenuItem.Size = new System.Drawing.Size(264, 26);
+            this.dARBAJACOMPETENCIAToolStripMenuItem.Text = "DAR BAJA COMPETENCIA";
+            this.dARBAJACOMPETENCIAToolStripMenuItem.Click += new System.EventHandler(this.DAR_BAJA_RCOMPETENCIAToolStripMenuItem_Click);
             // 
             // FrmVerCompeticion
             // 
@@ -243,7 +288,12 @@ namespace GestionDeColegiados.FrmsArbitro
         private System.Windows.Forms.Label lblAdvertencia;
         private System.Windows.Forms.MenuStrip msAdmin;
         private System.Windows.Forms.ToolStripMenuItem aDMINISTRARToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tERMINARCOMPETENCIAToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tERMINARCOMPETENCToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rEINICIARToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rEINICIARTODALACOMPETENCIAToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rEINICIARRESULTADOSToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tERMINARCOMPETEToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fINALIZARCOMPETENCIAToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dARBAJAToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dARBAJACOMPETENCIAToolStripMenuItem;
     }
 }

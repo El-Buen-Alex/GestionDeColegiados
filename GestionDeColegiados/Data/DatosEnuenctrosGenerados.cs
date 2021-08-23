@@ -98,6 +98,40 @@ namespace Data
             return cantidad;
         }
 
+        public bool CambiarEstadoEncuentros(string estado)
+        {
+            bool respuesta = false;
+            conexion = ConexionBD.getConexion();
+            conexion.Open();
+            transaccion = conexion.BeginTransaction();
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand("CambiarEstadoEncuentrosGeneradoToN", conexion, transaccion);
+
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("_estado", estado[0]);
+
+                cmd.ExecuteNonQuery();
+
+                transaccion.Commit();
+
+                respuesta = true;
+
+            }
+            catch (MySqlException ex)
+            {
+                transaccion.Rollback();
+
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                conexion.Close();
+            }
+            return respuesta;
+        }
+
         public bool CambiarEstadoEncuentro(int idEncuentroGeneradoPendiente)
         {
             bool cambio = false;

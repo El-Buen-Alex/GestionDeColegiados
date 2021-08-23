@@ -40,14 +40,28 @@ namespace Control.AdmEncuentros
         {
             bool respuesta = false;
 
-            respuesta = DarBajaCompetencia();
-            if (respuesta)
+            //respuesta = DarBajaCompetencia();
+            string anio = DateTime.Now.Year.ToString();
+            respuesta = datosEncuentroFinalizado.FinalizarCompetencia(anio, "F");
+            return respuesta;
+        }
+
+        public bool ReinicarCompetencia()
+        {
+            bool respuesta = false;
+            string anio = DateTime.Now.Year.ToString();
+            int cantidad = datosEncuentroFinalizado.GetCantidadEncuentrosFinalizados(anio);
+            if (cantidad > 0)
             {
-                respuesta =admEncuentrosDefinidos.DarBajaEncuentrosDefinidos();
-                if (respuesta)
-                {
-                    respuesta = admEncuentrosGenerados.DarBajaEncuentrosGenerados();
-                }
+                respuesta = datosEncuentroFinalizado.FinalizarCompetencia(anio,"R");
+            }
+            else if (cantidad == 0)
+            {
+                respuesta = true;
+            }
+            else if (cantidad == -1)
+            {
+                respuesta = false;
             }
 
             return respuesta;
@@ -60,7 +74,7 @@ namespace Control.AdmEncuentros
             int cantidad = datosEncuentroFinalizado.GetCantidadEncuentrosFinalizados(anio);
             if (cantidad > 0)
             {
-                respuesta = datosEncuentroFinalizado.FinalizarCompetencia(anio);
+                respuesta = datosEncuentroFinalizado.FinalizarCompetencia(anio,"N");
             }
             else if(cantidad==0)
             {

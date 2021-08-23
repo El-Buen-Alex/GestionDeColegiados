@@ -78,7 +78,7 @@ namespace Data
             return lista;
         }
 
-        public bool DarBajaEncuentroDefinido(string anio)
+        public bool CambiarEstadoEnucentroDefinido(string estado)
         {
             bool respuesta = false;
             conexion = ConexionBD.getConexion();
@@ -86,11 +86,11 @@ namespace Data
             transaccion = conexion.BeginTransaction();
             try
             {
-                MySqlCommand cmd = new MySqlCommand("DarBajaEncuentrosDefinidos", conexion, transaccion);
+                MySqlCommand cmd = new MySqlCommand("CambiarEstadoEncuentrosDefinidos", conexion, transaccion);
 
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("_copa", anio);
+                cmd.Parameters.AddWithValue("_estado", estado[0]);
 
                 cmd.ExecuteNonQuery();
 
@@ -145,6 +145,33 @@ namespace Data
                 conexion.Close();
             }
             return lista;
+        }
+
+        public int ObtenerCantidadEncuentrosDefinidos()
+        {
+            int cantidad = 0;
+            conexion = ConexionBD.getConexion();
+            conexion.Open();
+            try
+            {
+                MySqlCommand comando = new MySqlCommand("cantidadEncuentrosDefinidosActivos", conexion);
+                comando.CommandType = CommandType.StoredProcedure;
+                MySqlDataReader reader = comando.ExecuteReader();
+                if (reader.Read())
+                {
+                    cantidad = Convert.ToInt32(reader["cantidadEncuentros"].ToString());
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                conexion.Close();
+            }
+            return cantidad;
         }
 
         public bool ActualizarEstadioDePartido(int idEncuentroPorActualizar, int idNuevoEstadioAsociado)

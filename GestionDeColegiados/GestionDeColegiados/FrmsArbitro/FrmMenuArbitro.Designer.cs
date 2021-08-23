@@ -40,9 +40,11 @@ namespace GestionDeColegiados.FrmsArbitro
             this.btnRegistrarPartido = new System.Windows.Forms.Button();
             this.panel17 = new System.Windows.Forms.Panel();
             this.btnActualizarPartido = new System.Windows.Forms.Button();
+            this.flpOpcionGestionEncuentros = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnVerTodosPartidos = new System.Windows.Forms.Button();
-            this.flpOpcionGestionEncuentros = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -50,8 +52,6 @@ namespace GestionDeColegiados.FrmsArbitro
             this.PanelBarraTitulo = new System.Windows.Forms.Panel();
             this.pbMinimizar = new System.Windows.Forms.PictureBox();
             this.pbCerrar = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.flpGestionPartidoFinalizado.SuspendLayout();
@@ -192,6 +192,42 @@ namespace GestionDeColegiados.FrmsArbitro
             this.btnActualizarPartido.UseVisualStyleBackColor = false;
             this.btnActualizarPartido.Click += new System.EventHandler(this.btnActualizarPartidoFinalizado_Click);
             // 
+            // flpOpcionGestionEncuentros
+            // 
+            this.flpOpcionGestionEncuentros.Controls.Add(this.panel4);
+            this.flpOpcionGestionEncuentros.Controls.Add(this.button1);
+            this.flpOpcionGestionEncuentros.Controls.Add(this.panel3);
+            this.flpOpcionGestionEncuentros.Controls.Add(this.btnVerTodosPartidos);
+            this.flpOpcionGestionEncuentros.Location = new System.Drawing.Point(3, 163);
+            this.flpOpcionGestionEncuentros.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.flpOpcionGestionEncuentros.Name = "flpOpcionGestionEncuentros";
+            this.flpOpcionGestionEncuentros.Size = new System.Drawing.Size(256, 268);
+            this.flpOpcionGestionEncuentros.TabIndex = 24;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(75)))), ((int)(((byte)(119)))));
+            this.panel4.Location = new System.Drawing.Point(3, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(25, 47);
+            this.panel4.TabIndex = 16;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(75)))), ((int)(((byte)(119)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.Silver;
+            this.button1.Location = new System.Drawing.Point(34, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(219, 47);
+            this.button1.TabIndex = 25;
+            this.button1.Text = "COMPETENCIA: LIGA";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // panel3
             // 
             this.panel3.Location = new System.Drawing.Point(3, 53);
@@ -215,19 +251,6 @@ namespace GestionDeColegiados.FrmsArbitro
             this.btnVerTodosPartidos.Text = "VER COMPETICION";
             this.btnVerTodosPartidos.UseVisualStyleBackColor = false;
             this.btnVerTodosPartidos.Click += new System.EventHandler(this.btnVerTodosPartidos_Click);
-            // 
-            // flpOpcionGestionEncuentros
-            // 
-            this.flpOpcionGestionEncuentros.Controls.Add(this.panel4);
-            this.flpOpcionGestionEncuentros.Controls.Add(this.button1);
-            this.flpOpcionGestionEncuentros.Controls.Add(this.panel3);
-            this.flpOpcionGestionEncuentros.Controls.Add(this.btnVerTodosPartidos);
-            this.flpOpcionGestionEncuentros.Location = new System.Drawing.Point(3, 163);
-            this.flpOpcionGestionEncuentros.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.flpOpcionGestionEncuentros.Name = "flpOpcionGestionEncuentros";
-            this.flpOpcionGestionEncuentros.Size = new System.Drawing.Size(256, 268);
-            this.flpOpcionGestionEncuentros.TabIndex = 24;
-            this.flpOpcionGestionEncuentros.Visible = false;
             // 
             // panel2
             // 
@@ -315,30 +338,6 @@ namespace GestionDeColegiados.FrmsArbitro
             this.pbCerrar.Click += new System.EventHandler(this.pbCerrar_Click);
             this.pbCerrar.MouseEnter += new System.EventHandler(this.pbCerrar_MouseEnter);
             this.pbCerrar.MouseLeave += new System.EventHandler(this.pbCerrar_MouseLeave);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(75)))), ((int)(((byte)(119)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.Silver;
-            this.button1.Location = new System.Drawing.Point(34, 2);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(219, 47);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "COMPETENCIA: LIGA";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(75)))), ((int)(((byte)(119)))));
-            this.panel4.Location = new System.Drawing.Point(3, 2);
-            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(25, 47);
-            this.panel4.TabIndex = 16;
             // 
             // FrmMenuArbitro
             // 
