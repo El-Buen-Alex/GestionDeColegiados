@@ -67,5 +67,12 @@ namespace Control.AdmColegiados
             }
             return id;
         }
+
+        public void obtenerDatos (int id, DataGridView dgvListarColegiados) {
+            listaJuezCentral = datos.consultarJuezCentral(id);
+            foreach (JuezCentral datosJC in listaJuezCentral) {
+                dgvListarColegiados.Rows.Add("Juez Central", datosJC.Cedula, datosJC.Nombre, datosJC.Apellidos, datosJC.Domicilio, datosJC.Email, datosJC.Telefono);
+            }
+        }
     }
 }

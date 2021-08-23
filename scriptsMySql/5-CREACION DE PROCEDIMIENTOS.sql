@@ -99,6 +99,58 @@ CREATE PROCEDURE obtenerColegiado()
 	END$$
 DELIMITER 
 
+/*PROCEDIMIENTO PARA OBTENER ID DE COLEGIADO*/
+DELIMITER $$
+CREATE PROCEDURE obtenerIdColegiado()
+	BEGIN
+		SELECT idcolegiado FROM colegiado WHERE estado='A';
+	END$$
+DELIMITER 
+
+/*PROCEDIMIENTO PARA OBTENER JUEZ CENTRAL*/
+DELIMITER $$
+CREATE PROCEDURE obtenerJuezCentral(IN _idColegiado int)
+	BEGIN
+		SELECT jc.cedula cedula, jc.nombre nombre, jc.apellido apellido, jc.domicilio domicilio, jc.email email, jc.telefono telefono FROM colegiado c 
+		INNER JOIN juezcentral jc ON jc.idjuezcentral = c.idjuezcentral
+        WHERE c.idcolegiado = _idColegiado
+        AND c.estado='A';
+	END$$
+DELIMITER 
+
+/*PROCEDIMIENTO PARA OBTENER ASISTENTE 1*/
+DELIMITER $$
+CREATE PROCEDURE obtenerAsistente1 (IN _idColegiado int)
+	BEGIN
+		SELECT asis.cedula cedula, asis.nombre nombre, asis.apellido apellido, asis.domicilio domicilio, asis.email email, asis.telefono telefono FROM colegiado c 
+		INNER JOIN asistente1 asis ON asis.idasistente1 = c.idasistente1
+        WHERE c.idcolegiado = _idColegiado
+        AND c.estado='A';
+	END$$
+DELIMITER 
+
+/*PROCEDIMIENTO PARA OBTENER ASISTENTE 2*/
+DELIMITER $$
+CREATE PROCEDURE obtenerAsistente2 (IN _idColegiado int)
+	BEGIN
+		SELECT asis.cedula cedula, asis.nombre nombre, asis.apellido apellido, asis.domicilio domicilio, asis.email email, asis.telefono telefono FROM colegiado c 
+		INNER JOIN asistente2 asis ON asis.idasistente2 = c.idasistente2
+        WHERE c.idcolegiado = _idColegiado
+        AND c.estado='A';
+	END$$
+DELIMITER 
+
+/*PROCEDIMIENTO PARA OBTENER CUARTO ARBITRO*/
+DELIMITER $$
+CREATE PROCEDURE obtenerCuartoArbitro(IN _idColegiado int)
+	BEGIN
+		SELECT cuarto.cedula cedula, cuarto.nombre nombre, cuarto.apellido apellido, cuarto.domicilio domicilio, cuarto.email email, cuarto.telefono telefono FROM colegiado c 
+		INNER JOIN cuartoarbitro cuarto ON cuarto.idcuartoarbitro = c.idcuartoarbitro
+        WHERE c.idcolegiado = _idColegiado
+        AND c.estado='A';
+	END$$
+DELIMITER 
+
 /*PROCEDIMIENTO PARA OBTENER GRUPO DE COLEGIADO MEDIANTE ID*/
 DELIMITER $$
 CREATE PROCEDURE obtenerUnColegiado(
@@ -126,7 +178,6 @@ CREATE PROCEDURE guardarEquipo(
             
 			END$$
 DELIMITER 
-
 
 /*PROCEDIMIENTO PARA OBTENER EQUIPO MEDIANTE ID*/
 DELIMITER $$
@@ -210,7 +261,6 @@ CREATE PROCEDURE asigacionEncuentroAsignado(
 			END$$
 DELIMITER 
 
-
 /*PROCEDIMIENTO PARA CAMBIAR EL ESTADIO EN UN ENCUENTRO DEFINIDO*/
 DELIMITER $$
 CREATE PROCEDURE actulizarEstadioAsociado(
@@ -222,8 +272,6 @@ CREATE PROCEDURE actulizarEstadioAsociado(
             
 			END$$
 DELIMITER 
-
-
 
 /*PROCEDIMIENTO PARA CAMBIAR EL ESTADO DEL ESTADIO*/
 DELIMITER $$

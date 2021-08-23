@@ -14,6 +14,7 @@ namespace Control.AdmColegiados
         DatosColegiados datos = new DatosColegiados();
         private List<IntegrantesColegiados> listaintegColeg;
         private static AdmColegiado admCol = null;
+        Contexto contexto = null;
 
         public List<Colegiado> ListaColegiado { get => listaColegiado; set => listaColegiado = value; }
         public List<IntegrantesColegiados> ListaintegColeg { get => listaintegColeg; set => listaintegColeg = value; }
@@ -75,15 +76,33 @@ namespace Control.AdmColegiados
         }
 
         //Listar datos con los nombres de los colegiados
-        public void llenarDatos(DataGridView dgvListarColegiados)
-        {
-            listaintegColeg = datos.ConsultarColegiado();
-            foreach (IntegrantesColegiados integrantescol in listaintegColeg)
-            {
-                dgvListarColegiados.Rows.Add(integrantescol.NombrejuezCentral, integrantescol.Nombreasistente1, integrantescol.Nombreasistente2, integrantescol.NombrecuartoArbitro);
+        public void llenarComboIdColegiado (ComboBox cmbIdArbitro) {
+            List<int> listaIdArbitro = new List<int>();
+            listaIdArbitro = datos.consultarIdColegiado();
+            foreach (int datosId in listaIdArbitro) {
+                cmbIdArbitro.Items.Add("Grupo "+datosId);
             }
         }
 
+        public void llenarDatosGrivColegiado (DataGridView dgvListarColegiados, ComboBox cmbIdArbitro) {
+            dgvListarColegiados.Rows.Clear();
+            string colegiadoSeleccionado = cmbIdArbitro.Text;
+            char delimitador = ' ';
+            string[] cadena = colegiadoSeleccionado.Split(delimitador);
+            int id = Convert.ToInt32(cadena[1]);
+
+            contexto = new Contexto(AdmJuezCentral.getAdmJ());
+            contexto.datos(id, dgvListarColegiados);
+
+            contexto = new Contexto(AdmAsistente1.getAdmA1());
+            contexto.datos(id, dgvListarColegiados);
+
+            contexto = new Contexto(AdmAsistente2.getAdmA2());
+            contexto.datos(id, dgvListarColegiados);
+
+            contexto = new Contexto(AdmCuartoArbitro.getAdmCA());
+            contexto.datos(id, dgvListarColegiados);
+        }
 
         public string ObtenerNombreDeColegiadosIndex(int indexColegiados)
         {
@@ -122,8 +141,6 @@ namespace Control.AdmColegiados
             }
             return repetido;
         }
-
-        
 
         public void LlenarColegiadosCmb(ComboBox cmbGrupoColegiado, int idColegiados)
         {

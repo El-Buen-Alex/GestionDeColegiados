@@ -81,6 +81,8 @@ namespace GestionDeColegiados
             else
             {
                 AbrirFormEnPanel(new frmVerTodosLosColegiados());
+                frmVerTodosLosColegiados ver = new frmVerTodosLosColegiados();
+                ver.Show();
             }
         }
 

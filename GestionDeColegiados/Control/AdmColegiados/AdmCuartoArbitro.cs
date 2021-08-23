@@ -67,5 +67,12 @@ namespace Control.AdmColegiados
             }
             return id;
         }
+
+        public void obtenerDatos (int id, DataGridView dgvListarColegiados) {
+            listaCuartoArbitro = datos.consultarCuartoArbitro(id);
+            foreach (CuartoArbitro datosCA in listaCuartoArbitro) {
+                dgvListarColegiados.Rows.Add("Cuarto Arbitro", datosCA.Cedula, datosCA.Nombre, datosCA.Apellidos, datosCA.Domicilio, datosCA.Email, datosCA.Telefono);
+            }
+        }
     }
 }

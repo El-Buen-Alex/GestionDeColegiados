@@ -4,6 +4,9 @@
     {
         private string banda;
 
+        public Asistente () {
+        }
+
         public Asistente(int idArbitro, string cedula, string nombre, string apellidos,
             string domicilio, string email, string telefono, string banda) : base(idArbitro, cedula,
                 nombre, apellidos, domicilio, email, telefono)

@@ -6,5 +6,6 @@ namespace Control.AdmColegiados
     {
         int guardar(TextBox txtcedula, TextBox txtnombre, TextBox txtapellido,
             TextBox txtdomicilio, TextBox txtemail, TextBox txttelefono);
+        void obtenerDatos (int id, DataGridView dgvListarColegiados);
     }
 }

@@ -67,5 +67,12 @@ namespace Control.AdmColegiados
             }
             return id;
         }
+
+        public void obtenerDatos (int id, DataGridView dgvListarColegiados) {
+            listaAsistente2 = datos.consultarAsistente2(id);
+            foreach (Asistente datosAs2 in listaAsistente2) {
+                dgvListarColegiados.Rows.Add("Asistente 2", datosAs2.Cedula, datosAs2.Nombre, datosAs2.Apellidos, datosAs2.Domicilio, datosAs2.Email, datosAs2.Telefono);
+            }
+        }
     }
 }

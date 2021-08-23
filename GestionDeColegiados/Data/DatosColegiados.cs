@@ -1,4 +1,5 @@
-﻿using Model.Colegiados;
+﻿using Model;
+using Model.Colegiados;
 using Model.Equipo;
 using MySql.Data.MySqlClient;
 using Sistema;
@@ -188,6 +189,135 @@ namespace Data
                 throw new falloBDException(ex.Message);
             }
             conexion.Close();//Cerrar conexión
+        }
+
+        public List<int> consultarIdColegiado () {
+            List<int> listaIdColegiado = new List<int>(); //Crear lista
+            MySqlDataReader reader = null;          //tabla virtual
+            conexion = ConexionBD.getConexion();    //Obtener conexión
+            conexion.Open();                        //Abrir conexión
+            try {
+                MySqlCommand comando = new MySqlCommand("obtenerIdColegiado", conexion);
+                comando.CommandType = CommandType.StoredProcedure;
+                reader = comando.ExecuteReader();
+
+                //Condición para leer y agregar los arbitros a la lista
+                while (reader.Read()) {
+                    int id = Convert.ToInt32(reader["idcolegiado"].ToString());
+                    listaIdColegiado.Add(id);
+                }
+            } catch (MySqlException ex) {
+                listaIdColegiado = null;
+                throw new falloBDException(ex.Message);
+            }
+            conexion.Close();   //Cerrar conexión
+            return listaIdColegiado;
+        }
+
+        public List<JuezCentral> consultarJuezCentral (int id) {
+            List<JuezCentral> listaArbitro = new List<JuezCentral>(); //Crear lista
+            JuezCentral arbitro = null;
+            MySqlDataReader reader = null;          //tabla virtual
+            conexion = ConexionBD.getConexion();    //Obtener conexión
+            conexion.Open();                        //Abrir conexión
+            try {
+                MySqlCommand comando = new MySqlCommand("obtenerJuezCentral", conexion);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@_idColegiado", id);
+                reader = comando.ExecuteReader();
+
+                //Condición para leer y agregar los arbitros a la lista
+                while (reader.Read()) {
+                    arbitro = new JuezCentral();
+                    arbitro.Cedula = reader["cedula"].ToString();
+                    arbitro.Nombre = reader["nombre"].ToString();
+                    arbitro.Apellidos = reader["apellido"].ToString();
+                    arbitro.Domicilio = reader["domicilio"].ToString();
+                    arbitro.Email = reader["email"].ToString();
+                    arbitro.Telefono = reader["telefono"].ToString();
+                    listaArbitro.Add(arbitro);
+                }
+            } catch (MySqlException ex) {
+                listaArbitro = null;
+                throw new falloBDException(ex.Message);
+            }
+            conexion.Close();   //Cerrar conexión
+            return listaArbitro;
+        }
+
+        public List<Asistente> consultarAsistente (int id, string procedimiento){
+            List<Asistente> listaAsistente = new List<Asistente>();
+            Asistente asistente = null;
+            MySqlDataReader reader = null;          //tabla virtual
+            conexion = ConexionBD.getConexion();    //Obtener conexión
+            conexion.Open();                        //Abrir conexión
+            try {
+                MySqlCommand comando = new MySqlCommand(procedimiento, conexion);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@_idColegiado", id);
+                reader = comando.ExecuteReader();
+
+                //Condición para leer y agregar los arbitros a la lista
+                while (reader.Read()) {
+                    asistente = new Asistente();
+                    asistente.Cedula = reader["cedula"].ToString();
+                    asistente.Nombre = reader["nombre"].ToString();
+                    asistente.Apellidos = reader["apellido"].ToString();
+                    asistente.Domicilio = reader["domicilio"].ToString();
+                    asistente.Email = reader["email"].ToString();
+                    asistente.Telefono = reader["telefono"].ToString();
+                    listaAsistente.Add(asistente);
+                }
+            } catch (MySqlException ex) {
+                listaAsistente = null;
+                throw new falloBDException(ex.Message);
+            }
+            conexion.Close();   //Cerrar conexión
+            return listaAsistente;
+        }
+
+        public List<Asistente> consultarAsistente1 (int id) {
+            List<Asistente> listaAsistente1 = new List<Asistente>();
+            listaAsistente1 = consultarAsistente(id, "obtenerAsistente1");
+            return listaAsistente1;
+        }
+
+        public List<Asistente> consultarAsistente2 (int id) {
+            List<Asistente> listaAsistente1 = new List<Asistente>();
+            listaAsistente1 = consultarAsistente(id, "obtenerAsistente2");
+            return listaAsistente1;
+        }
+
+
+        public List<CuartoArbitro> consultarCuartoArbitro (int id) {
+            List<CuartoArbitro> listaCA = new List<CuartoArbitro>(); //Crear lista
+            CuartoArbitro arbitro = null;
+            MySqlDataReader reader = null;          //tabla virtual
+            conexion = ConexionBD.getConexion();    //Obtener conexión
+            conexion.Open();                        //Abrir conexión
+            try {
+                MySqlCommand comando = new MySqlCommand("obtenerCuartoArbitro", conexion);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@_idColegiado", id);
+                reader = comando.ExecuteReader();
+
+                //Condición para leer y agregar los arbitros a la lista
+                while (reader.Read()) {
+                    arbitro = new CuartoArbitro();
+                    arbitro.Cedula = reader["cedula"].ToString();
+                    arbitro.Nombre = reader["nombre"].ToString();
+                    arbitro.Apellidos = reader["apellido"].ToString();
+                    arbitro.Domicilio = reader["domicilio"].ToString();
+                    arbitro.Email = reader["email"].ToString();
+                    arbitro.Telefono = reader["telefono"].ToString();
+                    listaCA.Add(arbitro);
+                }
+            } catch (MySqlException ex) {
+                listaCA = null;
+                throw new falloBDException(ex.Message);
+            }
+            conexion.Close();   //Cerrar conexión
+            return listaCA;
         }
 
         public List<IntegrantesColegiados> ConsultarColegiado()

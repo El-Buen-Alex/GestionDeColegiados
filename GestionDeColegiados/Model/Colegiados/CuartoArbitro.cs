@@ -2,6 +2,8 @@
 {
     public class CuartoArbitro : Arbitro
     {
+        public CuartoArbitro () {
+        }
 
         public CuartoArbitro(int idArbitro, string cedula, string nombre, string apellidos,
             string domicilio, string email, string telefono) : base(idArbitro, cedula, nombre, apellidos,

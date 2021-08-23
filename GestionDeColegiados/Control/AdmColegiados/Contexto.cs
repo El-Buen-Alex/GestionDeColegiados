@@ -20,5 +20,9 @@ namespace Control.AdmColegiados
             return this.adm.guardar(txtcedula, txtnombre, txtapellido,
             txtdomicilio, txtemail, txttelefono);
         }
+        
+        public void datos (int id, DataGridView dgvListarColegiados) {
+            adm.obtenerDatos(id, dgvListarColegiados);
+        }
     }
 }
