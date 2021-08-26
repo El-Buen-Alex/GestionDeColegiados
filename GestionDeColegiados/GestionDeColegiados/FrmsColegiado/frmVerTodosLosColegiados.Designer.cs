@@ -29,6 +29,8 @@ namespace GestionDeColegiados
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvListarColegiados = new System.Windows.Forms.DataGridView();
             this.colArbitro = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,18 +44,13 @@ namespace GestionDeColegiados
             this.cmbIdArbitro = new System.Windows.Forms.ComboBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.coTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.coEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.coDomicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.coApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.coNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.coCedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.coArbitro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvEditar = new System.Windows.Forms.DataGridView();
-            this.btnActualizar = new System.Windows.Forms.Button();
+            this.btnEliminarArbitro = new System.Windows.Forms.Button();
+            this.btnEliminarColegiado = new System.Windows.Forms.Button();
+            this.PanelBarraTitulo = new System.Windows.Forms.Panel();
+            this.pbCerrar = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListarColegiados)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEditar)).BeginInit();
+            this.PanelBarraTitulo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -61,7 +58,7 @@ namespace GestionDeColegiados
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(330, 40);
+            this.label2.Location = new System.Drawing.Point(330, 55);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(132, 24);
             this.label2.TabIndex = 2;
@@ -71,7 +68,20 @@ namespace GestionDeColegiados
             // 
             this.dgvListarColegiados.AllowUserToAddRows = false;
             this.dgvListarColegiados.AllowUserToDeleteRows = false;
-            this.dgvListarColegiados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            this.dgvListarColegiados.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvListarColegiados.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgvListarColegiados.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvListarColegiados.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvListarColegiados.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvListarColegiados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvListarColegiados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colArbitro,
             this.colCedula,
@@ -80,11 +90,10 @@ namespace GestionDeColegiados
             this.colDomicilio,
             this.colEmail,
             this.colTelefono});
-            this.dgvListarColegiados.Location = new System.Drawing.Point(12, 164);
+            this.dgvListarColegiados.Location = new System.Drawing.Point(12, 167);
             this.dgvListarColegiados.Name = "dgvListarColegiados";
             this.dgvListarColegiados.ReadOnly = true;
-            this.dgvListarColegiados.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvListarColegiados.Size = new System.Drawing.Size(761, 183);
+            this.dgvListarColegiados.Size = new System.Drawing.Size(759, 183);
             this.dgvListarColegiados.TabIndex = 3;
             // 
             // colArbitro
@@ -95,7 +104,7 @@ namespace GestionDeColegiados
             // 
             // colCedula
             // 
-            this.colCedula.HeaderText = "Cedula";
+            this.colCedula.HeaderText = "Cédula";
             this.colCedula.Name = "colCedula";
             this.colCedula.ReadOnly = true;
             // 
@@ -125,7 +134,7 @@ namespace GestionDeColegiados
             // 
             // colTelefono
             // 
-            this.colTelefono.HeaderText = "Telefono";
+            this.colTelefono.HeaderText = "Teléfono";
             this.colTelefono.Name = "colTelefono";
             this.colTelefono.ReadOnly = true;
             // 
@@ -134,7 +143,7 @@ namespace GestionDeColegiados
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(12, 108);
+            this.label1.Location = new System.Drawing.Point(19, 112);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(190, 24);
             this.label1.TabIndex = 4;
@@ -142,11 +151,13 @@ namespace GestionDeColegiados
             // 
             // cmbIdArbitro
             // 
+            this.cmbIdArbitro.BackColor = System.Drawing.SystemColors.Window;
             this.cmbIdArbitro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbIdArbitro.FormattingEnabled = true;
-            this.cmbIdArbitro.Location = new System.Drawing.Point(208, 113);
+            this.cmbIdArbitro.IntegralHeight = false;
+            this.cmbIdArbitro.Location = new System.Drawing.Point(215, 117);
             this.cmbIdArbitro.Name = "cmbIdArbitro";
-            this.cmbIdArbitro.Size = new System.Drawing.Size(199, 21);
+            this.cmbIdArbitro.Size = new System.Drawing.Size(259, 21);
             this.cmbIdArbitro.TabIndex = 5;
             // 
             // btnBuscar
@@ -156,7 +167,7 @@ namespace GestionDeColegiados
             this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(75)))), ((int)(((byte)(119)))));
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.ForeColor = System.Drawing.Color.Silver;
-            this.btnBuscar.Location = new System.Drawing.Point(460, 108);
+            this.btnBuscar.Location = new System.Drawing.Point(517, 112);
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(101, 31);
@@ -168,11 +179,12 @@ namespace GestionDeColegiados
             // btnEditar
             // 
             this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.btnEditar.Enabled = false;
             this.btnEditar.FlatAppearance.BorderSize = 0;
             this.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(75)))), ((int)(((byte)(119)))));
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.ForeColor = System.Drawing.Color.Silver;
-            this.btnEditar.Location = new System.Drawing.Point(187, 379);
+            this.btnEditar.Location = new System.Drawing.Point(187, 383);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(101, 31);
@@ -181,102 +193,76 @@ namespace GestionDeColegiados
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // btnEliminar
+            // btnEliminarArbitro
             // 
-            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this.btnEliminar.FlatAppearance.BorderSize = 0;
-            this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(75)))), ((int)(((byte)(119)))));
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.ForeColor = System.Drawing.Color.Silver;
-            this.btnEliminar.Location = new System.Drawing.Point(509, 379);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(101, 31);
-            this.btnEliminar.TabIndex = 60;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            this.btnEliminarArbitro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.btnEliminarArbitro.Enabled = false;
+            this.btnEliminarArbitro.FlatAppearance.BorderSize = 0;
+            this.btnEliminarArbitro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(75)))), ((int)(((byte)(119)))));
+            this.btnEliminarArbitro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarArbitro.ForeColor = System.Drawing.Color.Silver;
+            this.btnEliminarArbitro.Location = new System.Drawing.Point(504, 383);
+            this.btnEliminarArbitro.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEliminarArbitro.Name = "btnEliminarArbitro";
+            this.btnEliminarArbitro.Size = new System.Drawing.Size(101, 31);
+            this.btnEliminarArbitro.TabIndex = 60;
+            this.btnEliminarArbitro.Text = "Eliminar";
+            this.btnEliminarArbitro.UseVisualStyleBackColor = false;
+            this.btnEliminarArbitro.Click += new System.EventHandler(this.btnEliminarArbitro_Click);
             // 
-            // coTelefono
+            // btnEliminarColegiado
             // 
-            this.coTelefono.HeaderText = "Telefono";
-            this.coTelefono.Name = "coTelefono";
+            this.btnEliminarColegiado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.btnEliminarColegiado.Enabled = false;
+            this.btnEliminarColegiado.FlatAppearance.BorderSize = 0;
+            this.btnEliminarColegiado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(75)))), ((int)(((byte)(119)))));
+            this.btnEliminarColegiado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarColegiado.ForeColor = System.Drawing.Color.Silver;
+            this.btnEliminarColegiado.Location = new System.Drawing.Point(662, 112);
+            this.btnEliminarColegiado.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEliminarColegiado.Name = "btnEliminarColegiado";
+            this.btnEliminarColegiado.Size = new System.Drawing.Size(101, 31);
+            this.btnEliminarColegiado.TabIndex = 61;
+            this.btnEliminarColegiado.Text = "Eliminar";
+            this.btnEliminarColegiado.UseVisualStyleBackColor = false;
+            this.btnEliminarColegiado.Click += new System.EventHandler(this.btnEliminarColegiado_Click);
             // 
-            // coEmail
+            // PanelBarraTitulo
             // 
-            this.coEmail.HeaderText = "Email";
-            this.coEmail.Name = "coEmail";
+            this.PanelBarraTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(75)))), ((int)(((byte)(119)))));
+            this.PanelBarraTitulo.Controls.Add(this.pbCerrar);
+            this.PanelBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelBarraTitulo.Location = new System.Drawing.Point(0, 0);
+            this.PanelBarraTitulo.Margin = new System.Windows.Forms.Padding(2);
+            this.PanelBarraTitulo.Name = "PanelBarraTitulo";
+            this.PanelBarraTitulo.Size = new System.Drawing.Size(783, 28);
+            this.PanelBarraTitulo.TabIndex = 62;
+            this.PanelBarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelBarraTitulo_MouseDown);
             // 
-            // coDomicilio
+            // pbCerrar
             // 
-            this.coDomicilio.HeaderText = "Domicilio";
-            this.coDomicilio.Name = "coDomicilio";
-            // 
-            // coApellido
-            // 
-            this.coApellido.HeaderText = "Apellido";
-            this.coApellido.Name = "coApellido";
-            // 
-            // coNombre
-            // 
-            this.coNombre.HeaderText = "Nombre";
-            this.coNombre.Name = "coNombre";
-            // 
-            // coCedula
-            // 
-            this.coCedula.HeaderText = "Cedula";
-            this.coCedula.Name = "coCedula";
-            // 
-            // coArbitro
-            // 
-            this.coArbitro.HeaderText = "Arbitro";
-            this.coArbitro.Name = "coArbitro";
-            this.coArbitro.ReadOnly = true;
-            // 
-            // dgvEditar
-            // 
-            this.dgvEditar.AllowUserToAddRows = false;
-            this.dgvEditar.AllowUserToDeleteRows = false;
-            this.dgvEditar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEditar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.coArbitro,
-            this.coCedula,
-            this.coNombre,
-            this.coApellido,
-            this.coDomicilio,
-            this.coEmail,
-            this.coTelefono});
-            this.dgvEditar.Location = new System.Drawing.Point(12, 429);
-            this.dgvEditar.Name = "dgvEditar";
-            this.dgvEditar.Size = new System.Drawing.Size(761, 77);
-            this.dgvEditar.TabIndex = 61;
-            this.dgvEditar.Visible = false;
-            // 
-            // btnActualizar
-            // 
-            this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this.btnActualizar.FlatAppearance.BorderSize = 0;
-            this.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(75)))), ((int)(((byte)(119)))));
-            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizar.ForeColor = System.Drawing.Color.Silver;
-            this.btnActualizar.Location = new System.Drawing.Point(349, 529);
-            this.btnActualizar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(101, 31);
-            this.btnActualizar.TabIndex = 62;
-            this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.UseVisualStyleBackColor = false;
-            this.btnActualizar.Visible = false;
+            this.pbCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbCerrar.Image = global::GestionDeColegiados.Properties.Resources.cerrarVentana;
+            this.pbCerrar.Location = new System.Drawing.Point(750, 5);
+            this.pbCerrar.Margin = new System.Windows.Forms.Padding(2);
+            this.pbCerrar.Name = "pbCerrar";
+            this.pbCerrar.Size = new System.Drawing.Size(26, 20);
+            this.pbCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbCerrar.TabIndex = 2;
+            this.pbCerrar.TabStop = false;
+            this.pbCerrar.Click += new System.EventHandler(this.pbCerrar_Click);
+            this.pbCerrar.MouseEnter += new System.EventHandler(this.pbCerrar_MouseEnter);
+            this.pbCerrar.MouseLeave += new System.EventHandler(this.pbCerrar_MouseLeave);
             // 
             // frmVerTodosLosColegiados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(129)))), ((int)(((byte)(150)))));
-            this.ClientSize = new System.Drawing.Size(783, 603);
-            this.Controls.Add(this.btnActualizar);
-            this.Controls.Add(this.dgvEditar);
-            this.Controls.Add(this.btnEliminar);
+            this.ClientSize = new System.Drawing.Size(783, 452);
+            this.Controls.Add(this.PanelBarraTitulo);
+            this.Controls.Add(this.btnEliminarColegiado);
+            this.Controls.Add(this.btnEliminarArbitro);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.cmbIdArbitro);
@@ -287,9 +273,11 @@ namespace GestionDeColegiados
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmVerTodosLosColegiados";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmVerTodosLosColegiados";
             ((System.ComponentModel.ISupportInitialize)(this.dgvListarColegiados)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEditar)).EndInit();
+            this.PanelBarraTitulo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -299,6 +287,14 @@ namespace GestionDeColegiados
 
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgvListarColegiados;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmbIdArbitro;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnEliminarArbitro;
+        private System.Windows.Forms.Button btnEliminarColegiado;
+        private System.Windows.Forms.Panel PanelBarraTitulo;
+        private System.Windows.Forms.PictureBox pbCerrar;
         private System.Windows.Forms.DataGridViewTextBoxColumn colArbitro;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCedula;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
@@ -306,19 +302,5 @@ namespace GestionDeColegiados
         private System.Windows.Forms.DataGridViewTextBoxColumn colDomicilio;
         private System.Windows.Forms.DataGridViewTextBoxColumn colEmail;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTelefono;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cmbIdArbitro;
-        private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn coTelefono;
-        private System.Windows.Forms.DataGridViewTextBoxColumn coEmail;
-        private System.Windows.Forms.DataGridViewTextBoxColumn coDomicilio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn coApellido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn coNombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn coCedula;
-        private System.Windows.Forms.DataGridViewTextBoxColumn coArbitro;
-        private System.Windows.Forms.DataGridView dgvEditar;
-        private System.Windows.Forms.Button btnActualizar;
     }
 }

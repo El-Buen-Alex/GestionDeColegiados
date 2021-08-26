@@ -78,7 +78,7 @@ namespace GestionDeColegiados
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(116, 53);
+            this.label2.Location = new System.Drawing.Point(105, 77);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(260, 26);
             this.label2.TabIndex = 1;
@@ -88,7 +88,7 @@ namespace GestionDeColegiados
             // 
             this.labJuezCentral.AutoSize = true;
             this.labJuezCentral.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labJuezCentral.Location = new System.Drawing.Point(169, 107);
+            this.labJuezCentral.Location = new System.Drawing.Point(158, 131);
             this.labJuezCentral.Name = "labJuezCentral";
             this.labJuezCentral.Size = new System.Drawing.Size(145, 22);
             this.labJuezCentral.TabIndex = 5;
@@ -98,7 +98,7 @@ namespace GestionDeColegiados
             // 
             this.labAsist2.AutoSize = true;
             this.labAsist2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labAsist2.Location = new System.Drawing.Point(151, 97);
+            this.labAsist2.Location = new System.Drawing.Point(140, 121);
             this.labAsist2.Name = "labAsist2";
             this.labAsist2.Size = new System.Drawing.Size(185, 44);
             this.labAsist2.TabIndex = 6;
@@ -109,7 +109,7 @@ namespace GestionDeColegiados
             // 
             this.labAsist1.AutoSize = true;
             this.labAsist1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labAsist1.Location = new System.Drawing.Point(151, 97);
+            this.labAsist1.Location = new System.Drawing.Point(140, 121);
             this.labAsist1.Name = "labAsist1";
             this.labAsist1.Size = new System.Drawing.Size(177, 44);
             this.labAsist1.TabIndex = 7;
@@ -120,7 +120,7 @@ namespace GestionDeColegiados
             // 
             this.labCuartoArb.AutoSize = true;
             this.labCuartoArb.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labCuartoArb.Location = new System.Drawing.Point(156, 107);
+            this.labCuartoArb.Location = new System.Drawing.Point(145, 131);
             this.labCuartoArb.Name = "labCuartoArb";
             this.labCuartoArb.Size = new System.Drawing.Size(172, 22);
             this.labCuartoArb.TabIndex = 8;
@@ -131,7 +131,7 @@ namespace GestionDeColegiados
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(84, 390);
+            this.label7.Location = new System.Drawing.Point(73, 414);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(75, 20);
             this.label7.TabIndex = 10;
@@ -141,7 +141,7 @@ namespace GestionDeColegiados
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(107, 349);
+            this.label8.Location = new System.Drawing.Point(96, 373);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(52, 20);
             this.label8.TabIndex = 11;
@@ -151,7 +151,7 @@ namespace GestionDeColegiados
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(84, 304);
+            this.label9.Location = new System.Drawing.Point(73, 328);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(76, 20);
             this.label9.TabIndex = 12;
@@ -161,7 +161,7 @@ namespace GestionDeColegiados
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(90, 257);
+            this.label10.Location = new System.Drawing.Point(79, 281);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(69, 20);
             this.label10.TabIndex = 13;
@@ -171,7 +171,7 @@ namespace GestionDeColegiados
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(90, 213);
+            this.label11.Location = new System.Drawing.Point(79, 237);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(69, 20);
             this.label11.TabIndex = 14;
@@ -179,7 +179,7 @@ namespace GestionDeColegiados
             // 
             // txtcedulaJC
             // 
-            this.txtcedulaJC.Location = new System.Drawing.Point(202, 166);
+            this.txtcedulaJC.Location = new System.Drawing.Point(191, 190);
             this.txtcedulaJC.MaxLength = 10;
             this.txtcedulaJC.Name = "txtcedulaJC";
             this.txtcedulaJC.Size = new System.Drawing.Size(189, 20);
@@ -188,7 +188,7 @@ namespace GestionDeColegiados
             // 
             // txtapellidoAs1
             // 
-            this.txtapellidoAs1.Location = new System.Drawing.Point(202, 257);
+            this.txtapellidoAs1.Location = new System.Drawing.Point(191, 281);
             this.txtapellidoAs1.MaxLength = 25;
             this.txtapellidoAs1.Name = "txtapellidoAs1";
             this.txtapellidoAs1.Size = new System.Drawing.Size(189, 20);
@@ -198,7 +198,7 @@ namespace GestionDeColegiados
             // 
             // txttelefonoAs1
             // 
-            this.txttelefonoAs1.Location = new System.Drawing.Point(202, 390);
+            this.txttelefonoAs1.Location = new System.Drawing.Point(191, 414);
             this.txttelefonoAs1.MaxLength = 10;
             this.txttelefonoAs1.Name = "txttelefonoAs1";
             this.txttelefonoAs1.Size = new System.Drawing.Size(189, 20);
@@ -208,7 +208,7 @@ namespace GestionDeColegiados
             // 
             // txtemailAs1
             // 
-            this.txtemailAs1.Location = new System.Drawing.Point(202, 349);
+            this.txtemailAs1.Location = new System.Drawing.Point(191, 373);
             this.txtemailAs1.MaxLength = 25;
             this.txtemailAs1.Name = "txtemailAs1";
             this.txtemailAs1.Size = new System.Drawing.Size(189, 20);
@@ -217,7 +217,7 @@ namespace GestionDeColegiados
             // 
             // txtdomicilioAs1
             // 
-            this.txtdomicilioAs1.Location = new System.Drawing.Point(202, 304);
+            this.txtdomicilioAs1.Location = new System.Drawing.Point(191, 328);
             this.txtdomicilioAs1.MaxLength = 25;
             this.txtdomicilioAs1.Name = "txtdomicilioAs1";
             this.txtdomicilioAs1.Size = new System.Drawing.Size(189, 20);
@@ -227,7 +227,7 @@ namespace GestionDeColegiados
             // 
             // txtnombreAs1
             // 
-            this.txtnombreAs1.Location = new System.Drawing.Point(202, 215);
+            this.txtnombreAs1.Location = new System.Drawing.Point(191, 239);
             this.txtnombreAs1.MaxLength = 25;
             this.txtnombreAs1.Name = "txtnombreAs1";
             this.txtnombreAs1.Size = new System.Drawing.Size(189, 20);
@@ -237,7 +237,7 @@ namespace GestionDeColegiados
             // 
             // txtcedulaAs1
             // 
-            this.txtcedulaAs1.Location = new System.Drawing.Point(202, 166);
+            this.txtcedulaAs1.Location = new System.Drawing.Point(191, 190);
             this.txtcedulaAs1.MaxLength = 10;
             this.txtcedulaAs1.Name = "txtcedulaAs1";
             this.txtcedulaAs1.Size = new System.Drawing.Size(189, 20);
@@ -247,7 +247,7 @@ namespace GestionDeColegiados
             // 
             // txttelefonoJC
             // 
-            this.txttelefonoJC.Location = new System.Drawing.Point(202, 390);
+            this.txttelefonoJC.Location = new System.Drawing.Point(191, 414);
             this.txttelefonoJC.MaxLength = 10;
             this.txttelefonoJC.Name = "txttelefonoJC";
             this.txttelefonoJC.Size = new System.Drawing.Size(189, 20);
@@ -256,7 +256,7 @@ namespace GestionDeColegiados
             // 
             // txtemailJC
             // 
-            this.txtemailJC.Location = new System.Drawing.Point(202, 349);
+            this.txtemailJC.Location = new System.Drawing.Point(191, 373);
             this.txtemailJC.MaxLength = 25;
             this.txtemailJC.Name = "txtemailJC";
             this.txtemailJC.Size = new System.Drawing.Size(189, 20);
@@ -264,7 +264,7 @@ namespace GestionDeColegiados
             // 
             // txtdomicilioJC
             // 
-            this.txtdomicilioJC.Location = new System.Drawing.Point(202, 304);
+            this.txtdomicilioJC.Location = new System.Drawing.Point(191, 328);
             this.txtdomicilioJC.MaxLength = 25;
             this.txtdomicilioJC.Name = "txtdomicilioJC";
             this.txtdomicilioJC.Size = new System.Drawing.Size(189, 20);
@@ -273,7 +273,7 @@ namespace GestionDeColegiados
             // 
             // txtapellidoJC
             // 
-            this.txtapellidoJC.Location = new System.Drawing.Point(202, 257);
+            this.txtapellidoJC.Location = new System.Drawing.Point(191, 281);
             this.txtapellidoJC.MaxLength = 25;
             this.txtapellidoJC.Name = "txtapellidoJC";
             this.txtapellidoJC.Size = new System.Drawing.Size(189, 20);
@@ -282,7 +282,7 @@ namespace GestionDeColegiados
             // 
             // txtnombreJC
             // 
-            this.txtnombreJC.Location = new System.Drawing.Point(202, 215);
+            this.txtnombreJC.Location = new System.Drawing.Point(191, 239);
             this.txtnombreJC.MaxLength = 25;
             this.txtnombreJC.Name = "txtnombreJC";
             this.txtnombreJC.Size = new System.Drawing.Size(189, 20);
@@ -291,7 +291,7 @@ namespace GestionDeColegiados
             // 
             // txtdomicilioCA
             // 
-            this.txtdomicilioCA.Location = new System.Drawing.Point(202, 304);
+            this.txtdomicilioCA.Location = new System.Drawing.Point(191, 328);
             this.txtdomicilioCA.MaxLength = 25;
             this.txtdomicilioCA.Name = "txtdomicilioCA";
             this.txtdomicilioCA.Size = new System.Drawing.Size(189, 20);
@@ -301,7 +301,7 @@ namespace GestionDeColegiados
             // 
             // txtapellidoCA
             // 
-            this.txtapellidoCA.Location = new System.Drawing.Point(202, 257);
+            this.txtapellidoCA.Location = new System.Drawing.Point(191, 281);
             this.txtapellidoCA.MaxLength = 25;
             this.txtapellidoCA.Name = "txtapellidoCA";
             this.txtapellidoCA.Size = new System.Drawing.Size(189, 20);
@@ -311,7 +311,7 @@ namespace GestionDeColegiados
             // 
             // txtnombreCA
             // 
-            this.txtnombreCA.Location = new System.Drawing.Point(202, 215);
+            this.txtnombreCA.Location = new System.Drawing.Point(191, 239);
             this.txtnombreCA.MaxLength = 25;
             this.txtnombreCA.Name = "txtnombreCA";
             this.txtnombreCA.Size = new System.Drawing.Size(189, 20);
@@ -321,7 +321,7 @@ namespace GestionDeColegiados
             // 
             // txtcedulaCA
             // 
-            this.txtcedulaCA.Location = new System.Drawing.Point(202, 166);
+            this.txtcedulaCA.Location = new System.Drawing.Point(191, 190);
             this.txtcedulaCA.MaxLength = 10;
             this.txtcedulaCA.Name = "txtcedulaCA";
             this.txtcedulaCA.Size = new System.Drawing.Size(189, 20);
@@ -331,7 +331,7 @@ namespace GestionDeColegiados
             // 
             // txttelefonoAs2
             // 
-            this.txttelefonoAs2.Location = new System.Drawing.Point(202, 390);
+            this.txttelefonoAs2.Location = new System.Drawing.Point(191, 414);
             this.txttelefonoAs2.MaxLength = 10;
             this.txttelefonoAs2.Name = "txttelefonoAs2";
             this.txttelefonoAs2.Size = new System.Drawing.Size(189, 20);
@@ -341,7 +341,7 @@ namespace GestionDeColegiados
             // 
             // txtemailAs2
             // 
-            this.txtemailAs2.Location = new System.Drawing.Point(202, 349);
+            this.txtemailAs2.Location = new System.Drawing.Point(191, 373);
             this.txtemailAs2.MaxLength = 25;
             this.txtemailAs2.Name = "txtemailAs2";
             this.txtemailAs2.Size = new System.Drawing.Size(189, 20);
@@ -350,7 +350,7 @@ namespace GestionDeColegiados
             // 
             // txtdomicilioAs2
             // 
-            this.txtdomicilioAs2.Location = new System.Drawing.Point(202, 304);
+            this.txtdomicilioAs2.Location = new System.Drawing.Point(191, 328);
             this.txtdomicilioAs2.MaxLength = 25;
             this.txtdomicilioAs2.Name = "txtdomicilioAs2";
             this.txtdomicilioAs2.Size = new System.Drawing.Size(189, 20);
@@ -360,7 +360,7 @@ namespace GestionDeColegiados
             // 
             // txtapellidoAs2
             // 
-            this.txtapellidoAs2.Location = new System.Drawing.Point(202, 257);
+            this.txtapellidoAs2.Location = new System.Drawing.Point(191, 281);
             this.txtapellidoAs2.MaxLength = 25;
             this.txtapellidoAs2.Name = "txtapellidoAs2";
             this.txtapellidoAs2.Size = new System.Drawing.Size(189, 20);
@@ -370,7 +370,7 @@ namespace GestionDeColegiados
             // 
             // txtnombreAs2
             // 
-            this.txtnombreAs2.Location = new System.Drawing.Point(202, 215);
+            this.txtnombreAs2.Location = new System.Drawing.Point(191, 239);
             this.txtnombreAs2.MaxLength = 25;
             this.txtnombreAs2.Name = "txtnombreAs2";
             this.txtnombreAs2.Size = new System.Drawing.Size(189, 20);
@@ -380,7 +380,7 @@ namespace GestionDeColegiados
             // 
             // txtcedulaAs2
             // 
-            this.txtcedulaAs2.Location = new System.Drawing.Point(202, 166);
+            this.txtcedulaAs2.Location = new System.Drawing.Point(191, 190);
             this.txtcedulaAs2.MaxLength = 10;
             this.txtcedulaAs2.Name = "txtcedulaAs2";
             this.txtcedulaAs2.Size = new System.Drawing.Size(189, 20);
@@ -390,7 +390,7 @@ namespace GestionDeColegiados
             // 
             // txttelefonoCA
             // 
-            this.txttelefonoCA.Location = new System.Drawing.Point(202, 390);
+            this.txttelefonoCA.Location = new System.Drawing.Point(191, 414);
             this.txttelefonoCA.MaxLength = 10;
             this.txttelefonoCA.Name = "txttelefonoCA";
             this.txttelefonoCA.Size = new System.Drawing.Size(189, 20);
@@ -400,7 +400,7 @@ namespace GestionDeColegiados
             // 
             // txtemailCA
             // 
-            this.txtemailCA.Location = new System.Drawing.Point(202, 349);
+            this.txtemailCA.Location = new System.Drawing.Point(191, 373);
             this.txtemailCA.MaxLength = 25;
             this.txtemailCA.Name = "txtemailCA";
             this.txtemailCA.Size = new System.Drawing.Size(189, 20);
@@ -414,7 +414,7 @@ namespace GestionDeColegiados
             this.btnsiguiente1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(75)))), ((int)(((byte)(119)))));
             this.btnsiguiente1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnsiguiente1.ForeColor = System.Drawing.Color.Silver;
-            this.btnsiguiente1.Location = new System.Drawing.Point(328, 476);
+            this.btnsiguiente1.Location = new System.Drawing.Point(317, 500);
             this.btnsiguiente1.Margin = new System.Windows.Forms.Padding(2);
             this.btnsiguiente1.Name = "btnsiguiente1";
             this.btnsiguiente1.Size = new System.Drawing.Size(101, 38);
@@ -430,7 +430,7 @@ namespace GestionDeColegiados
             this.btnsiguiente3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(75)))), ((int)(((byte)(119)))));
             this.btnsiguiente3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnsiguiente3.ForeColor = System.Drawing.Color.Silver;
-            this.btnsiguiente3.Location = new System.Drawing.Point(328, 476);
+            this.btnsiguiente3.Location = new System.Drawing.Point(317, 500);
             this.btnsiguiente3.Margin = new System.Windows.Forms.Padding(2);
             this.btnsiguiente3.Name = "btnsiguiente3";
             this.btnsiguiente3.Size = new System.Drawing.Size(101, 38);
@@ -447,7 +447,7 @@ namespace GestionDeColegiados
             this.btnsiguiente2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(75)))), ((int)(((byte)(119)))));
             this.btnsiguiente2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnsiguiente2.ForeColor = System.Drawing.Color.Silver;
-            this.btnsiguiente2.Location = new System.Drawing.Point(328, 476);
+            this.btnsiguiente2.Location = new System.Drawing.Point(317, 500);
             this.btnsiguiente2.Margin = new System.Windows.Forms.Padding(2);
             this.btnsiguiente2.Name = "btnsiguiente2";
             this.btnsiguiente2.Size = new System.Drawing.Size(101, 38);
@@ -464,7 +464,7 @@ namespace GestionDeColegiados
             this.btnRegistrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(75)))), ((int)(((byte)(119)))));
             this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrar.ForeColor = System.Drawing.Color.Silver;
-            this.btnRegistrar.Location = new System.Drawing.Point(328, 476);
+            this.btnRegistrar.Location = new System.Drawing.Point(317, 500);
             this.btnRegistrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(101, 38);
@@ -478,7 +478,7 @@ namespace GestionDeColegiados
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(96, 164);
+            this.label6.Location = new System.Drawing.Point(85, 188);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(63, 20);
             this.label6.TabIndex = 52;
@@ -491,7 +491,7 @@ namespace GestionDeColegiados
             this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(75)))), ((int)(((byte)(119)))));
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.ForeColor = System.Drawing.Color.Silver;
-            this.btnCancelar.Location = new System.Drawing.Point(59, 476);
+            this.btnCancelar.Location = new System.Drawing.Point(48, 500);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(101, 38);
@@ -507,7 +507,7 @@ namespace GestionDeColegiados
             this.btnRegresar2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(75)))), ((int)(((byte)(119)))));
             this.btnRegresar2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegresar2.ForeColor = System.Drawing.Color.Silver;
-            this.btnRegresar2.Location = new System.Drawing.Point(198, 476);
+            this.btnRegresar2.Location = new System.Drawing.Point(187, 500);
             this.btnRegresar2.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegresar2.Name = "btnRegresar2";
             this.btnRegresar2.Size = new System.Drawing.Size(101, 38);
@@ -524,7 +524,7 @@ namespace GestionDeColegiados
             this.btnRegresar3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(75)))), ((int)(((byte)(119)))));
             this.btnRegresar3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegresar3.ForeColor = System.Drawing.Color.Silver;
-            this.btnRegresar3.Location = new System.Drawing.Point(198, 476);
+            this.btnRegresar3.Location = new System.Drawing.Point(187, 500);
             this.btnRegresar3.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegresar3.Name = "btnRegresar3";
             this.btnRegresar3.Size = new System.Drawing.Size(101, 38);
@@ -541,7 +541,7 @@ namespace GestionDeColegiados
             this.btnRegresar4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(75)))), ((int)(((byte)(119)))));
             this.btnRegresar4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegresar4.ForeColor = System.Drawing.Color.Silver;
-            this.btnRegresar4.Location = new System.Drawing.Point(198, 476);
+            this.btnRegresar4.Location = new System.Drawing.Point(187, 500);
             this.btnRegresar4.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegresar4.Name = "btnRegresar4";
             this.btnRegresar4.Size = new System.Drawing.Size(101, 38);
@@ -556,7 +556,7 @@ namespace GestionDeColegiados
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(129)))), ((int)(((byte)(150)))));
-            this.ClientSize = new System.Drawing.Size(499, 549);
+            this.ClientSize = new System.Drawing.Size(499, 602);
             this.Controls.Add(this.btnRegresar4);
             this.Controls.Add(this.btnRegresar3);
             this.Controls.Add(this.btnRegresar2);

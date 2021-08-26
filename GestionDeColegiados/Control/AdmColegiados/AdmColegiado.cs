@@ -80,12 +80,13 @@ namespace Control.AdmColegiados
             List<int> listaIdArbitro = new List<int>();
             listaIdArbitro = datos.consultarIdColegiado();
             foreach (int datosId in listaIdArbitro) {
-                cmbIdArbitro.Items.Add("Grupo "+datosId);
+                cmbIdArbitro.Items.Add("Grupo " + datosId);
             }
         }
 
         public void llenarDatosGrivColegiado (DataGridView dgvListarColegiados, ComboBox cmbIdArbitro) {
             dgvListarColegiados.Rows.Clear();
+
             string colegiadoSeleccionado = cmbIdArbitro.Text;
             char delimitador = ' ';
             string[] cadena = colegiadoSeleccionado.Split(delimitador);

@@ -80,10 +80,22 @@
     <Compile Include="frmNuevoEquipo.Designer.cs">
       <DependentUpon>frmNuevoEquipo.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmNuevoGrupoColegiado.cs">
+    <Compile Include="FrmsColegiado\frmEditarArbitro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmNuevoGrupoColegiado.Designer.cs">
+    <Compile Include="FrmsColegiado\frmEditarArbitro.Designer.cs">
+      <DependentUpon>frmEditarArbitro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmsColegiado\frmElimAgregarArbitro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmsColegiado\frmElimAgregarArbitro.Designer.cs">
+      <DependentUpon>frmElimAgregarArbitro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmsColegiado\frmNuevoGrupoColegiado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmsColegiado\frmNuevoGrupoColegiado.Designer.cs">
       <DependentUpon>frmNuevoGrupoColegiado.cs</DependentUpon>
     </Compile>
     <Compile Include="frmRegistrarPartido.cs">
@@ -128,10 +140,10 @@
     <Compile Include="frmTodosLosEncuentrosDefinidos.Designer.cs">
       <DependentUpon>frmTodosLosEncuentrosDefinidos.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmVerTodosLosColegiados.cs">
+    <Compile Include="FrmsColegiado\frmVerTodosLosColegiados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmVerTodosLosColegiados.Designer.cs">
+    <Compile Include="FrmsColegiado\frmVerTodosLosColegiados.Designer.cs">
       <DependentUpon>frmVerTodosLosColegiados.cs</DependentUpon>
     </Compile>
     <Compile Include="IniciarSesion.cs">
@@ -160,7 +172,13 @@
     <EmbeddedResource Include="frmNuevoEquipo.resx">
       <DependentUpon>frmNuevoEquipo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmNuevoGrupoColegiado.resx">
+    <EmbeddedResource Include="FrmsColegiado\frmEditarArbitro.resx">
+      <DependentUpon>frmEditarArbitro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmsColegiado\frmElimAgregarArbitro.resx">
+      <DependentUpon>frmElimAgregarArbitro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmsColegiado\frmNuevoGrupoColegiado.resx">
       <DependentUpon>frmNuevoGrupoColegiado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRegistrarPartido.resx">
@@ -184,7 +202,7 @@
     <EmbeddedResource Include="frmTodosLosEncuentrosDefinidos.resx">
       <DependentUpon>frmTodosLosEncuentrosDefinidos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmVerTodosLosColegiados.resx">
+    <EmbeddedResource Include="FrmsColegiado\frmVerTodosLosColegiados.resx">
       <DependentUpon>frmVerTodosLosColegiados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IniciarSesion.resx">

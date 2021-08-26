@@ -39,8 +39,9 @@ namespace GestionDeColegiados
         {
             bool vacio = validacionGUI.validarVacios(txtcedulaJC, txtnombreJC, txtapellidoJC, txtdomicilioJC, txtemailJC, txttelefonoJC);
             bool cedulaRepetida = admColegiado.validarCedula(txtcedulaJC);
+            bool txtcedulaRepetida = (txtcedulaJC.Text == txtcedulaAs1.Text) || (txtcedulaJC.Text == txtcedulaAs2.Text) || (txtcedulaJC.Text == txtcedulaCA.Text);
             if (vacio != true) {
-                if (cedulaRepetida != true) {
+                if (cedulaRepetida != true && txtcedulaRepetida != true) {
                     camposJuezCentral(false);
                     camposAsistente1(true);
                 } else {
@@ -55,8 +56,9 @@ namespace GestionDeColegiados
         {
             bool vacio = validacionGUI.validarVacios(txtcedulaAs1, txtnombreAs1, txtapellidoAs1, txtdomicilioAs1, txtemailAs1, txttelefonoAs1);
             bool cedulaRepetida = admColegiado.validarCedula(txtcedulaAs1);
+            bool txtcedulaRepetida = (txtcedulaAs1.Text == txtcedulaJC.Text) || (txtcedulaAs1.Text == txtcedulaAs2.Text) || (txtcedulaAs1.Text == txtcedulaCA.Text);
             if (vacio != true) {
-                if (cedulaRepetida != true) {
+                if (cedulaRepetida != true && txtcedulaRepetida != true) {
                     camposAsistente1(false);
                     camposAsistente2(true);
                 } else {
@@ -76,8 +78,9 @@ namespace GestionDeColegiados
         {
             bool vacio = validacionGUI.validarVacios(txtcedulaAs2, txtnombreAs2, txtapellidoAs2, txtdomicilioAs2, txtemailAs2, txttelefonoAs2);
             bool cedulaRepetida = admColegiado.validarCedula(txtcedulaAs2);
+            bool txtcedulaRepetida = (txtcedulaAs2.Text==txtcedulaJC.Text) || (txtcedulaAs2.Text==txtcedulaAs1.Text) || (txtcedulaAs2.Text==txtcedulaCA.Text);
             if (vacio != true) {
-                if (cedulaRepetida != true) {
+                if (cedulaRepetida != true && txtcedulaRepetida != true) {
                     camposAsistente2(false);
                     camposCuartoArbitro(true);
                 } else {
@@ -97,8 +100,9 @@ namespace GestionDeColegiados
         {
             bool vacio = validacionGUI.validarVacios(txtcedulaCA, txtnombreCA, txtapellidoCA, txtdomicilioCA, txtemailCA, txttelefonoCA);
             bool cedulaRepetida = admColegiado.validarCedula(txtcedulaCA);
+            bool txtcedulaRepetida = (txtcedulaCA.Text == txtcedulaJC.Text) || (txtcedulaCA.Text == txtcedulaAs1.Text) || (txtcedulaCA.Text == txtcedulaAs2.Text);
             if (vacio != true) {
-                if (cedulaRepetida != true) {
+                if (cedulaRepetida != true && txtcedulaRepetida != true) {
                     registrarColegiado();
                     limpiarCamposJuezCentral();
                     limpiarCamposAsistente1();
@@ -135,16 +139,6 @@ namespace GestionDeColegiados
             }
         }
 
-        private void camposIncompletos()
-        {
-            MessageBox.Show("Hay ciertos campos vacios", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        private void mensajeCedulaRepetida()
-        {
-            MessageBox.Show("El árbitro que ingresó ya se encuentra registrado, ingrese uno nuevo", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
         private void registrarColegiado()
         {
             int idJuezCentral = obtenerIdJuezCentral(),
@@ -162,6 +156,14 @@ namespace GestionDeColegiados
             }
         }
 
+        private void camposIncompletos ()
+        {
+            MessageBox.Show("Hay ciertos campos vacios", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        private void mensajeCedulaRepetida () 
+        {
+            MessageBox.Show("El árbitro que ingresó ya se encuentra registrado!!\nIngrese uno nuevo", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
         private int obtenerIdJuezCentral()
         {
             int id = 0;
