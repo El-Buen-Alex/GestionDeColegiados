@@ -1,5 +1,6 @@
 ﻿using Data;
 using Model.Colegiados;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -72,6 +73,33 @@ namespace Control.AdmColegiados
             listaAsistente2 = datos.consultarAsistente2(id);
             foreach (Asistente datosAs2 in listaAsistente2) {
                 dgvListarColegiados.Rows.Add("Asistente 2", datosAs2.Cedula, datosAs2.Nombre, datosAs2.Apellidos, datosAs2.Domicilio, datosAs2.Email, datosAs2.Telefono);
+            }
+        }
+
+        Asistente as2;
+        public void recogerDatosEditar (DataGridViewRow filaSeleccionada) {
+            foreach (Asistente asistente in listaAsistente2) {
+                if (asistente.Cedula == filaSeleccionada.Cells[1].Value.ToString() &&
+                    asistente.Nombre == filaSeleccionada.Cells[2].Value.ToString() &&
+                    asistente.Apellidos == filaSeleccionada.Cells[3].Value.ToString() &&
+                    asistente.Domicilio == filaSeleccionada.Cells[4].Value.ToString() &&
+                    asistente.Email == filaSeleccionada.Cells[5].Value.ToString() &&
+                    asistente.Telefono == filaSeleccionada.Cells[6].Value.ToString()) {
+                    as2 = asistente;
+                }
+            }
+        }
+
+        public void llenarDatosFormEditar (TextBox txtCedula, TextBox txtNombre, TextBox txtApellido, TextBox txtDomicilio, TextBox txtEmail, TextBox txtTelefono) {
+            try {
+                txtCedula.Text = as2.Cedula.ToString();
+                txtNombre.Text = as2.Nombre.ToString();
+                txtApellido.Text = as2.Apellidos.ToString();
+                txtDomicilio.Text = as2.Domicilio.ToString();
+                txtEmail.Text = as2.Email.ToString();
+                txtTelefono.Text = as2.Telefono.ToString();
+            } catch (FormatException ex) {
+                Console.WriteLine(ex.Message);
             }
         }
     }

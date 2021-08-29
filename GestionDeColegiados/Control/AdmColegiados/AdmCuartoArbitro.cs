@@ -1,5 +1,6 @@
 ﻿using Data;
 using Model.Colegiados;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -71,7 +72,34 @@ namespace Control.AdmColegiados
         public void obtenerDatos (int id, DataGridView dgvListarColegiados) {
             listaCuartoArbitro = datos.consultarCuartoArbitro(id);
             foreach (CuartoArbitro datosCA in listaCuartoArbitro) {
-                dgvListarColegiados.Rows.Add("Cuarto Arbitro", datosCA.Cedula, datosCA.Nombre, datosCA.Apellidos, datosCA.Domicilio, datosCA.Email, datosCA.Telefono);
+                dgvListarColegiados.Rows.Add("Cuarto Árbitro", datosCA.Cedula, datosCA.Nombre, datosCA.Apellidos, datosCA.Domicilio, datosCA.Email, datosCA.Telefono);
+            }
+        }
+
+        CuartoArbitro CA;
+        public void recogerDatosEditar (DataGridViewRow filaSeleccionada) {
+            foreach (CuartoArbitro cuartoArb in listaCuartoArbitro) {
+                if (cuartoArb.Cedula == filaSeleccionada.Cells[1].Value.ToString() &&
+                    cuartoArb.Nombre == filaSeleccionada.Cells[2].Value.ToString() &&
+                    cuartoArb.Apellidos == filaSeleccionada.Cells[3].Value.ToString() &&
+                    cuartoArb.Domicilio == filaSeleccionada.Cells[4].Value.ToString() &&
+                    cuartoArb.Email == filaSeleccionada.Cells[5].Value.ToString() &&
+                    cuartoArb.Telefono == filaSeleccionada.Cells[6].Value.ToString()) {
+                    CA = cuartoArb;
+                }
+            }
+        }
+
+        public void llenarDatosFormEditar (TextBox txtCedula, TextBox txtNombre, TextBox txtApellido, TextBox txtDomicilio, TextBox txtEmail, TextBox txtTelefono) {
+            try {
+                txtCedula.Text = CA.Cedula.ToString();
+                txtNombre.Text = CA.Nombre.ToString();
+                txtApellido.Text = CA.Apellidos.ToString();
+                txtDomicilio.Text = CA.Domicilio.ToString();
+                txtEmail.Text = CA.Email.ToString();
+                txtTelefono.Text = CA.Telefono.ToString();
+            } catch (FormatException ex) {
+                Console.WriteLine(ex.Message);
             }
         }
     }

@@ -247,6 +247,7 @@
             this.Name = "frmEditarArbitro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmEditarArbitro";
+            this.Load += new System.EventHandler(this.frmEditarArbitro_Load);
             this.PanelBarraTitulo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).EndInit();
             this.ResumeLayout(false);

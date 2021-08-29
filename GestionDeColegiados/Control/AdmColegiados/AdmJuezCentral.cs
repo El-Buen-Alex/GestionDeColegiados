@@ -1,5 +1,6 @@
 ﻿using Data;
 using Model.Colegiados;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -72,6 +73,33 @@ namespace Control.AdmColegiados
             listaJuezCentral = datos.consultarJuezCentral(id);
             foreach (JuezCentral datosJC in listaJuezCentral) {
                 dgvListarColegiados.Rows.Add("Juez Central", datosJC.Cedula, datosJC.Nombre, datosJC.Apellidos, datosJC.Domicilio, datosJC.Email, datosJC.Telefono);
+            }
+        }
+
+        JuezCentral JC;
+        public void recogerDatosEditar (DataGridViewRow filaSeleccionada) {
+            foreach (JuezCentral juezCentral in listaJuezCentral) {
+                if (juezCentral.Cedula == filaSeleccionada.Cells[1].Value.ToString() &&
+                    juezCentral.Nombre == filaSeleccionada.Cells[2].Value.ToString() &&
+                    juezCentral.Apellidos == filaSeleccionada.Cells[3].Value.ToString() &&
+                    juezCentral.Domicilio == filaSeleccionada.Cells[4].Value.ToString() &&
+                    juezCentral.Email == filaSeleccionada.Cells[5].Value.ToString() &&
+                    juezCentral.Telefono == filaSeleccionada.Cells[6].Value.ToString()) {
+                    JC = juezCentral;
+                }
+            }
+        }
+
+        public void llenarDatosFormEditar (TextBox txtCedula, TextBox txtNombre, TextBox txtApellido, TextBox txtDomicilio, TextBox txtEmail, TextBox txtTelefono) {
+            try {
+                txtCedula.Text = JC.Cedula.ToString();
+                txtNombre.Text = JC.Nombre.ToString();
+                txtApellido.Text = JC.Apellidos.ToString();
+                txtDomicilio.Text = JC.Domicilio.ToString();
+                txtEmail.Text = JC.Email.ToString();
+                txtTelefono.Text = JC.Telefono.ToString();
+            } catch (FormatException ex) {
+                Console.WriteLine(ex.Message);
             }
         }
     }

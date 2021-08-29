@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Control.AdmColegiados;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,10 +21,16 @@ namespace GestionDeColegiados.FrmsColegiado
         private extern static void SendMessage (System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
         private Color colorDefaultClose;
+        AdmColegiado admColegiado = AdmColegiado.getAdmCol();
 
         public frmEditarArbitro (string arbitro) {
             InitializeComponent();
             lblEditar.Text += arbitro;
+        }
+
+        //Evento Load en frm
+        private void frmEditarArbitro_Load (object sender, EventArgs e) {
+            admColegiado.LlenarDatosFormEditar(txtCedula, txtNombre, txtApellido, txtDomicilio, txtEmail, txtTelefono);
         }
 
         //metodo que controla el evento de arrastrar pantalla
@@ -70,5 +77,6 @@ namespace GestionDeColegiados.FrmsColegiado
                 Close();
             }
         }
+
     }
 }

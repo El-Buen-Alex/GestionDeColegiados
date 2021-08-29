@@ -15,6 +15,7 @@ namespace Control.AdmColegiados
         private List<IntegrantesColegiados> listaintegColeg;
         private static AdmColegiado admCol = null;
         Contexto contexto = null;
+        DataGridViewRow filaSeleccionada = null;
 
         public List<Colegiado> ListaColegiado { get => listaColegiado; set => listaColegiado = value; }
         public List<IntegrantesColegiados> ListaintegColeg { get => listaintegColeg; set => listaintegColeg = value; }
@@ -155,6 +156,36 @@ namespace Control.AdmColegiados
                 }
                 i++;
             }
+        }
+
+        //Editar
+        private static Contexto escogerArbitro (DataGridViewRow filaSeleccionada) {
+            Contexto contextoArbitro = null;
+            string arbitro = filaSeleccionada.Cells[0].Value.ToString();
+            if (arbitro == "Juez Central") {
+                contextoArbitro = new Contexto(AdmJuezCentral.getAdmJ());
+            }
+            if (arbitro == "Asistente 1") {
+                contextoArbitro = new Contexto(AdmAsistente1.getAdmA1());
+            }
+            if (arbitro == "Asistente 2") {
+                contextoArbitro = new Contexto(AdmAsistente2.getAdmA2());
+            }
+            if (arbitro == "Cuarto Árbitro") {
+                contextoArbitro = new Contexto(AdmCuartoArbitro.getAdmCA());
+            }
+            return contextoArbitro;
+        }
+
+        public void recogerDatosEditar (DataGridView dgvListarColegiados) {
+            filaSeleccionada = dgvListarColegiados.CurrentRow;
+            contexto = escogerArbitro(filaSeleccionada);
+            contexto.recogerDatosEditar(filaSeleccionada);
+        }
+
+        public void LlenarDatosFormEditar (TextBox txtCedula, TextBox txtNombre, TextBox txtApellido, TextBox txtDomicilio, TextBox txtEmail, TextBox txtTelefono) {
+            contexto = escogerArbitro(filaSeleccionada);
+            contexto.llenarDatosFormEditar(txtCedula, txtNombre, txtApellido, txtDomicilio, txtEmail, txtTelefono);
         }
     }
 } 

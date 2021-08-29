@@ -24,5 +24,14 @@ namespace Control.AdmColegiados
         public void datos (int id, DataGridView dgvListarColegiados) {
             adm.obtenerDatos(id, dgvListarColegiados);
         }
+
+        public void recogerDatosEditar (DataGridViewRow filaSeleccionada) {
+            adm.recogerDatosEditar(filaSeleccionada);
+        }
+
+        public void llenarDatosFormEditar (TextBox txtCedula, TextBox txtNombre, TextBox txtApellido, 
+            TextBox txtDomicilio, TextBox txtEmail, TextBox txtTelefono) {
+            adm.llenarDatosFormEditar(txtCedula, txtNombre, txtApellido, txtDomicilio, txtEmail, txtTelefono);
+        }
     }
 }
