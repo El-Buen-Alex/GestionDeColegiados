@@ -229,5 +229,12 @@ namespace GestionDeColegiados
         {
             flpVerCompetencia.Visible = true;
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            btnIniciarSesion frm = new btnIniciarSesion();
+            frm.Show();
+        }
     }
 }

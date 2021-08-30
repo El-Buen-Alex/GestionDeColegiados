@@ -65,11 +65,12 @@ namespace GestionDeColegiados
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlPanelContenedor = new System.Windows.Forms.Panel();
             this.PanelBarraTitulo = new System.Windows.Forms.Panel();
             this.pbMinimizar = new System.Windows.Forms.PictureBox();
             this.pbCerrar = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.flpOpcionGestionColegiado.SuspendLayout();
@@ -79,10 +80,10 @@ namespace GestionDeColegiados
             this.panel4.SuspendLayout();
             this.flpVerCompetencia.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PanelBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -91,7 +92,7 @@ namespace GestionDeColegiados
             this.panel1.Controls.Add(this.flowLayoutPanel1);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(0, 26);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(202, 622);
             this.panel1.TabIndex = 11;
@@ -111,7 +112,7 @@ namespace GestionDeColegiados
             this.flowLayoutPanel1.Controls.Add(this.button1);
             this.flowLayoutPanel1.Controls.Add(this.flpVerCompetencia);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 89);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(194, 531);
             this.flowLayoutPanel1.TabIndex = 12;
@@ -120,7 +121,7 @@ namespace GestionDeColegiados
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(75)))), ((int)(((byte)(119)))));
             this.panel8.Location = new System.Drawing.Point(2, 2);
-            this.panel8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel8.Margin = new System.Windows.Forms.Padding(2);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(19, 38);
             this.panel8.TabIndex = 15;
@@ -133,7 +134,7 @@ namespace GestionDeColegiados
             this.btnGestionColegiado1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGestionColegiado1.ForeColor = System.Drawing.Color.Silver;
             this.btnGestionColegiado1.Location = new System.Drawing.Point(25, 2);
-            this.btnGestionColegiado1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGestionColegiado1.Margin = new System.Windows.Forms.Padding(2);
             this.btnGestionColegiado1.Name = "btnGestionColegiado1";
             this.btnGestionColegiado1.Size = new System.Drawing.Size(164, 38);
             this.btnGestionColegiado1.TabIndex = 19;
@@ -148,7 +149,7 @@ namespace GestionDeColegiados
             this.flpOpcionGestionColegiado.Controls.Add(this.panel7);
             this.flpOpcionGestionColegiado.Controls.Add(this.btnVerTodosColegiados);
             this.flpOpcionGestionColegiado.Location = new System.Drawing.Point(2, 44);
-            this.flpOpcionGestionColegiado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flpOpcionGestionColegiado.Margin = new System.Windows.Forms.Padding(2);
             this.flpOpcionGestionColegiado.Name = "flpOpcionGestionColegiado";
             this.flpOpcionGestionColegiado.Size = new System.Drawing.Size(192, 89);
             this.flpOpcionGestionColegiado.TabIndex = 20;
@@ -157,7 +158,7 @@ namespace GestionDeColegiados
             // panel6
             // 
             this.panel6.Location = new System.Drawing.Point(2, 2);
-            this.panel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(63, 38);
             this.panel6.TabIndex = 21;
@@ -170,7 +171,7 @@ namespace GestionDeColegiados
             this.btnNuevoGrupoColegiados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevoGrupoColegiados.ForeColor = System.Drawing.Color.Silver;
             this.btnNuevoGrupoColegiados.Location = new System.Drawing.Point(69, 2);
-            this.btnNuevoGrupoColegiados.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNuevoGrupoColegiados.Margin = new System.Windows.Forms.Padding(2);
             this.btnNuevoGrupoColegiados.Name = "btnNuevoGrupoColegiados";
             this.btnNuevoGrupoColegiados.Size = new System.Drawing.Size(107, 38);
             this.btnNuevoGrupoColegiados.TabIndex = 15;
@@ -181,7 +182,7 @@ namespace GestionDeColegiados
             // panel7
             // 
             this.panel7.Location = new System.Drawing.Point(2, 44);
-            this.panel7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel7.Margin = new System.Windows.Forms.Padding(2);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(63, 38);
             this.panel7.TabIndex = 22;
@@ -194,7 +195,7 @@ namespace GestionDeColegiados
             this.btnVerTodosColegiados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerTodosColegiados.ForeColor = System.Drawing.Color.Silver;
             this.btnVerTodosColegiados.Location = new System.Drawing.Point(69, 44);
-            this.btnVerTodosColegiados.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnVerTodosColegiados.Margin = new System.Windows.Forms.Padding(2);
             this.btnVerTodosColegiados.Name = "btnVerTodosColegiados";
             this.btnVerTodosColegiados.Size = new System.Drawing.Size(107, 38);
             this.btnVerTodosColegiados.TabIndex = 19;
@@ -206,7 +207,7 @@ namespace GestionDeColegiados
             // 
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(75)))), ((int)(((byte)(119)))));
             this.panel9.Location = new System.Drawing.Point(2, 137);
-            this.panel9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel9.Margin = new System.Windows.Forms.Padding(2);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(19, 38);
             this.panel9.TabIndex = 16;
@@ -219,7 +220,7 @@ namespace GestionDeColegiados
             this.btnGestionEquipos2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGestionEquipos2.ForeColor = System.Drawing.Color.Silver;
             this.btnGestionEquipos2.Location = new System.Drawing.Point(25, 137);
-            this.btnGestionEquipos2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGestionEquipos2.Margin = new System.Windows.Forms.Padding(2);
             this.btnGestionEquipos2.Name = "btnGestionEquipos2";
             this.btnGestionEquipos2.Size = new System.Drawing.Size(164, 38);
             this.btnGestionEquipos2.TabIndex = 15;
@@ -234,7 +235,7 @@ namespace GestionDeColegiados
             this.flpOpcionGestionEquipo.Controls.Add(this.panel12);
             this.flpOpcionGestionEquipo.Controls.Add(this.btnGenerarEncuentros);
             this.flpOpcionGestionEquipo.Location = new System.Drawing.Point(2, 179);
-            this.flpOpcionGestionEquipo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flpOpcionGestionEquipo.Margin = new System.Windows.Forms.Padding(2);
             this.flpOpcionGestionEquipo.Name = "flpOpcionGestionEquipo";
             this.flpOpcionGestionEquipo.Size = new System.Drawing.Size(192, 89);
             this.flpOpcionGestionEquipo.TabIndex = 23;
@@ -243,7 +244,7 @@ namespace GestionDeColegiados
             // panel11
             // 
             this.panel11.Location = new System.Drawing.Point(2, 2);
-            this.panel11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel11.Margin = new System.Windows.Forms.Padding(2);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(63, 38);
             this.panel11.TabIndex = 21;
@@ -256,7 +257,7 @@ namespace GestionDeColegiados
             this.btnAnadirEquipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAnadirEquipo.ForeColor = System.Drawing.Color.Silver;
             this.btnAnadirEquipo.Location = new System.Drawing.Point(69, 2);
-            this.btnAnadirEquipo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAnadirEquipo.Margin = new System.Windows.Forms.Padding(2);
             this.btnAnadirEquipo.Name = "btnAnadirEquipo";
             this.btnAnadirEquipo.Size = new System.Drawing.Size(107, 38);
             this.btnAnadirEquipo.TabIndex = 15;
@@ -267,7 +268,7 @@ namespace GestionDeColegiados
             // panel12
             // 
             this.panel12.Location = new System.Drawing.Point(2, 44);
-            this.panel12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel12.Margin = new System.Windows.Forms.Padding(2);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(63, 38);
             this.panel12.TabIndex = 22;
@@ -280,7 +281,7 @@ namespace GestionDeColegiados
             this.btnGenerarEncuentros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenerarEncuentros.ForeColor = System.Drawing.Color.Silver;
             this.btnGenerarEncuentros.Location = new System.Drawing.Point(69, 44);
-            this.btnGenerarEncuentros.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGenerarEncuentros.Margin = new System.Windows.Forms.Padding(2);
             this.btnGenerarEncuentros.Name = "btnGenerarEncuentros";
             this.btnGenerarEncuentros.Size = new System.Drawing.Size(107, 38);
             this.btnGenerarEncuentros.TabIndex = 19;
@@ -292,7 +293,7 @@ namespace GestionDeColegiados
             // 
             this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(75)))), ((int)(((byte)(119)))));
             this.panel10.Location = new System.Drawing.Point(2, 272);
-            this.panel10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel10.Margin = new System.Windows.Forms.Padding(2);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(19, 38);
             this.panel10.TabIndex = 17;
@@ -305,7 +306,7 @@ namespace GestionDeColegiados
             this.btnGestionEncuentros2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGestionEncuentros2.ForeColor = System.Drawing.Color.Silver;
             this.btnGestionEncuentros2.Location = new System.Drawing.Point(25, 272);
-            this.btnGestionEncuentros2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGestionEncuentros2.Margin = new System.Windows.Forms.Padding(2);
             this.btnGestionEncuentros2.Name = "btnGestionEncuentros2";
             this.btnGestionEncuentros2.Size = new System.Drawing.Size(164, 38);
             this.btnGestionEncuentros2.TabIndex = 18;
@@ -322,7 +323,7 @@ namespace GestionDeColegiados
             this.flpOpcionGestionEncuentros.Controls.Add(this.panel4);
             this.flpOpcionGestionEncuentros.Controls.Add(this.btnVerEncuentrosDefinidos);
             this.flpOpcionGestionEncuentros.Location = new System.Drawing.Point(2, 314);
-            this.flpOpcionGestionEncuentros.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flpOpcionGestionEncuentros.Margin = new System.Windows.Forms.Padding(2);
             this.flpOpcionGestionEncuentros.Name = "flpOpcionGestionEncuentros";
             this.flpOpcionGestionEncuentros.Size = new System.Drawing.Size(192, 124);
             this.flpOpcionGestionEncuentros.TabIndex = 24;
@@ -331,7 +332,7 @@ namespace GestionDeColegiados
             // panel13
             // 
             this.panel13.Location = new System.Drawing.Point(2, 2);
-            this.panel13.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel13.Margin = new System.Windows.Forms.Padding(2);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(63, 38);
             this.panel13.TabIndex = 21;
@@ -344,7 +345,7 @@ namespace GestionDeColegiados
             this.btnAsignarColegiados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAsignarColegiados.ForeColor = System.Drawing.Color.Silver;
             this.btnAsignarColegiados.Location = new System.Drawing.Point(69, 2);
-            this.btnAsignarColegiados.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAsignarColegiados.Margin = new System.Windows.Forms.Padding(2);
             this.btnAsignarColegiados.Name = "btnAsignarColegiados";
             this.btnAsignarColegiados.Size = new System.Drawing.Size(107, 38);
             this.btnAsignarColegiados.TabIndex = 15;
@@ -356,7 +357,7 @@ namespace GestionDeColegiados
             // 
             this.panel14.Controls.Add(this.panel3);
             this.panel14.Location = new System.Drawing.Point(2, 44);
-            this.panel14.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel14.Margin = new System.Windows.Forms.Padding(2);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(63, 38);
             this.panel14.TabIndex = 22;
@@ -364,7 +365,7 @@ namespace GestionDeColegiados
             // panel3
             // 
             this.panel3.Location = new System.Drawing.Point(0, 41);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(63, 38);
             this.panel3.TabIndex = 23;
@@ -377,7 +378,7 @@ namespace GestionDeColegiados
             this.btnCambiarGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCambiarGrupo.ForeColor = System.Drawing.Color.Silver;
             this.btnCambiarGrupo.Location = new System.Drawing.Point(69, 44);
-            this.btnCambiarGrupo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCambiarGrupo.Margin = new System.Windows.Forms.Padding(2);
             this.btnCambiarGrupo.Name = "btnCambiarGrupo";
             this.btnCambiarGrupo.Size = new System.Drawing.Size(107, 38);
             this.btnCambiarGrupo.TabIndex = 19;
@@ -389,7 +390,7 @@ namespace GestionDeColegiados
             // 
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Location = new System.Drawing.Point(2, 86);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(63, 38);
             this.panel4.TabIndex = 24;
@@ -397,7 +398,7 @@ namespace GestionDeColegiados
             // panel5
             // 
             this.panel5.Location = new System.Drawing.Point(0, 41);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(63, 38);
             this.panel5.TabIndex = 23;
@@ -411,7 +412,7 @@ namespace GestionDeColegiados
             this.btnVerEncuentrosDefinidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerEncuentrosDefinidos.ForeColor = System.Drawing.Color.Silver;
             this.btnVerEncuentrosDefinidos.Location = new System.Drawing.Point(69, 86);
-            this.btnVerEncuentrosDefinidos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnVerEncuentrosDefinidos.Margin = new System.Windows.Forms.Padding(2);
             this.btnVerEncuentrosDefinidos.Name = "btnVerEncuentrosDefinidos";
             this.btnVerEncuentrosDefinidos.Size = new System.Drawing.Size(107, 38);
             this.btnVerEncuentrosDefinidos.TabIndex = 25;
@@ -423,7 +424,7 @@ namespace GestionDeColegiados
             // 
             this.panel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(75)))), ((int)(((byte)(119)))));
             this.panel15.Location = new System.Drawing.Point(2, 442);
-            this.panel15.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel15.Margin = new System.Windows.Forms.Padding(2);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(19, 38);
             this.panel15.TabIndex = 16;
@@ -436,7 +437,7 @@ namespace GestionDeColegiados
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.Silver;
             this.button1.Location = new System.Drawing.Point(25, 442);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(164, 38);
             this.button1.TabIndex = 25;
@@ -449,7 +450,7 @@ namespace GestionDeColegiados
             this.flpVerCompetencia.Controls.Add(this.panel16);
             this.flpVerCompetencia.Controls.Add(this.btnVerTodosPartidos);
             this.flpVerCompetencia.Location = new System.Drawing.Point(2, 484);
-            this.flpVerCompetencia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flpVerCompetencia.Margin = new System.Windows.Forms.Padding(2);
             this.flpVerCompetencia.Name = "flpVerCompetencia";
             this.flpVerCompetencia.Size = new System.Drawing.Size(192, 43);
             this.flpVerCompetencia.TabIndex = 25;
@@ -458,7 +459,7 @@ namespace GestionDeColegiados
             // panel16
             // 
             this.panel16.Location = new System.Drawing.Point(2, 2);
-            this.panel16.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel16.Margin = new System.Windows.Forms.Padding(2);
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(63, 38);
             this.panel16.TabIndex = 24;
@@ -471,7 +472,7 @@ namespace GestionDeColegiados
             this.btnVerTodosPartidos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerTodosPartidos.ForeColor = System.Drawing.Color.Silver;
             this.btnVerTodosPartidos.Location = new System.Drawing.Point(69, 2);
-            this.btnVerTodosPartidos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnVerTodosPartidos.Margin = new System.Windows.Forms.Padding(2);
             this.btnVerTodosPartidos.Name = "btnVerTodosPartidos";
             this.btnVerTodosPartidos.Size = new System.Drawing.Size(107, 38);
             this.btnVerTodosPartidos.TabIndex = 25;
@@ -486,7 +487,7 @@ namespace GestionDeColegiados
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Location = new System.Drawing.Point(0, 2);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(188, 81);
             this.panel2.TabIndex = 1;
@@ -527,11 +528,22 @@ namespace GestionDeColegiados
             this.label1.TabIndex = 12;
             this.label1.Text = "FEDERACIÓN ";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::GestionDeColegiados.Properties.Resources.FEF_logo_svg;
+            this.pictureBox1.Location = new System.Drawing.Point(9, 14);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(72, 54);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // pnlPanelContenedor
             // 
             this.pnlPanelContenedor.AutoScroll = true;
             this.pnlPanelContenedor.Location = new System.Drawing.Point(202, 28);
-            this.pnlPanelContenedor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlPanelContenedor.Margin = new System.Windows.Forms.Padding(2);
             this.pnlPanelContenedor.Name = "pnlPanelContenedor";
             this.pnlPanelContenedor.Size = new System.Drawing.Size(469, 619);
             this.pnlPanelContenedor.TabIndex = 12;
@@ -543,9 +555,9 @@ namespace GestionDeColegiados
             this.PanelBarraTitulo.Controls.Add(this.pbCerrar);
             this.PanelBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelBarraTitulo.Location = new System.Drawing.Point(0, 0);
-            this.PanelBarraTitulo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PanelBarraTitulo.Margin = new System.Windows.Forms.Padding(2);
             this.PanelBarraTitulo.Name = "PanelBarraTitulo";
-            this.PanelBarraTitulo.Size = new System.Drawing.Size(671, 28);
+            this.PanelBarraTitulo.Size = new System.Drawing.Size(790, 28);
             this.PanelBarraTitulo.TabIndex = 13;
             this.PanelBarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelBarraTitulo_MouseDown);
             // 
@@ -553,7 +565,7 @@ namespace GestionDeColegiados
             // 
             this.pbMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbMinimizar.Image = global::GestionDeColegiados.Properties.Resources.Min;
-            this.pbMinimizar.Location = new System.Drawing.Point(610, 3);
+            this.pbMinimizar.Location = new System.Drawing.Point(733, 2);
             this.pbMinimizar.Margin = new System.Windows.Forms.Padding(2);
             this.pbMinimizar.Name = "pbMinimizar";
             this.pbMinimizar.Size = new System.Drawing.Size(19, 20);
@@ -568,7 +580,7 @@ namespace GestionDeColegiados
             // 
             this.pbCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbCerrar.Image = global::GestionDeColegiados.Properties.Resources.cerrarVentana;
-            this.pbCerrar.Location = new System.Drawing.Point(636, 3);
+            this.pbCerrar.Location = new System.Drawing.Point(759, 2);
             this.pbCerrar.Margin = new System.Windows.Forms.Padding(2);
             this.pbCerrar.Name = "pbCerrar";
             this.pbCerrar.Size = new System.Drawing.Size(26, 20);
@@ -579,29 +591,31 @@ namespace GestionDeColegiados
             this.pbCerrar.MouseEnter += new System.EventHandler(this.pbCerrar_MouseEnter);
             this.pbCerrar.MouseLeave += new System.EventHandler(this.pbCerrar_MouseLeave);
             // 
-            // pictureBox1
+            // button2
             // 
-            this.pictureBox1.Image = global::GestionDeColegiados.Properties.Resources.FEF_logo_svg;
-            this.pictureBox1.Location = new System.Drawing.Point(9, 14);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(72, 54);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(676, 38);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(109, 29);
+            this.button2.TabIndex = 14;
+            this.button2.Text = "CERRAR SESIÓN";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(129)))), ((int)(((byte)(150)))));
-            this.ClientSize = new System.Drawing.Size(671, 640);
+            this.ClientSize = new System.Drawing.Size(790, 640);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.PanelBarraTitulo);
             this.Controls.Add(this.pnlPanelContenedor);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(129)))), ((int)(((byte)(150)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuPrincipal";
@@ -615,10 +629,10 @@ namespace GestionDeColegiados
             this.flpVerCompetencia.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.PanelBarraTitulo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -666,5 +680,6 @@ namespace GestionDeColegiados
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.Button btnVerTodosPartidos;
+        private System.Windows.Forms.Button button2;
     }
 }
