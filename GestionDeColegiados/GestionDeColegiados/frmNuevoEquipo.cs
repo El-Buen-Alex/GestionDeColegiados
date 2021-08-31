@@ -44,7 +44,7 @@ namespace GestionDeColegiados
             }
             catch (registroEquipoMaximoException mensaje) // Uso de las excepciones personalizadas al querer ingresar un nuevo equipo cuando ha alcanzado el límite se desata.
             {
-                MessageBox.Show(mensaje.ToString());
+                MessageBox.Show("EL registro máximo de equipos es de 10");
             }
 
 
@@ -64,10 +64,13 @@ namespace GestionDeColegiados
         {
             if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
             {
+                
                 MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                numjugadores.Text = "";
                 e.Handled = true;
                 return;
             }
+            
         }
         /*Evento que permite el tecleo de palabras, uso de la tecla de borrado y la barra espaciadora*/
         private void director_KeyPress(object sender, KeyPressEventArgs e)
@@ -75,6 +78,7 @@ namespace GestionDeColegiados
             if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Space))
             {
                 MessageBox.Show("Solo se permiten letras", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                
                 e.Handled = true;
                 return;
             }
@@ -87,6 +91,15 @@ namespace GestionDeColegiados
                 MessageBox.Show("Solo se permiten letras", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 e.Handled = true;
                 return;
+            }
+        }
+
+        private void numjugadores_TextChanged(object sender, EventArgs e)
+        {
+            if (validacionGUI.AInt(numjugadores.Text) < 0 || validacionGUI.AInt(numjugadores.Text) > 12)
+            {
+                MessageBox.Show("Solo se permite el ingreso de 12 jugadores", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                numjugadores.Text = "";
             }
         }
     }
