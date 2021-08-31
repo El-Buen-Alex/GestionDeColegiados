@@ -1,5 +1,5 @@
 /*INGRESO DEL PRESIDENTE*/
--- use campeonatos;
+use campeonatos;
 insert into users (Id, UserName, UserPassword, rol, estado) VALUES
 ('1', 'presidente', '1234presi5','presidente','A');
 insert into users (Id, UserName, UserPassword,rol, estado) VALUES
