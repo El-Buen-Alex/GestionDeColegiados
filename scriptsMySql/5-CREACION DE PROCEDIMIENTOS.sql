@@ -4,7 +4,7 @@ use campeonatos;
 DELIMITER $$
 create procedure login (IN username VARCHAR(15), IN pass VARCHAR(15))
 	BEGIN 
-		SELECT Id, UserName, UserPassword, rol FROM users
+		SELECT Id, UserName, UserPassword, rol, acceso FROM users
 		WHERE UserName = username AND UserPassword = pass;
 	END$$
 DELIMITER 
@@ -338,7 +338,7 @@ DELIMITER ;
 DELIMITER $$
 CREATE PROCEDURE cantidadEncuentrosDefinidosActivos()
 	BEGIN
-		SELECT count(*) as cantidadEncuentros FROM encuentroDefinidos WHERE estado = 'A'; 
+		SELECT count(*) as cantidadEncuusersentros FROM encuentroDefinidos WHERE estado = 'A'; 
 	END$$
 DELIMITER ;
 /* PROCEDIMIENTO PARA OBTENER LOS ULTIMOS 5 ENCUENTROS DEFINIDOS*/

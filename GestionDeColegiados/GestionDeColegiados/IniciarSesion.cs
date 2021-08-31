@@ -92,24 +92,12 @@ namespace GestionDeColegiados
             {
                 //metodo que envia el usuario y contraseña ingrsado para validar si los datos fueron ingresados correctamente
                 string mensaje = "";
-                mensaje=gestionLogin.controlLogin(usuario, password);
-                if (mensaje == "presidente")
-                {
-                    this.Hide();
-                    MenuPrincipal pantallaPrincipal = new MenuPrincipal();
-                    pantallaPrincipal.Show();
-                }else if (mensaje=="arbitro")
-                {
-                    this.Hide();
-                    FrmMenuArbitro pantallaPrincipalArbitro = new FrmMenuArbitro();
-                    pantallaPrincipalArbitro.Show();
-                }
-                else
-                {
-                    MessageBox.Show(mensaje, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    borrarCampos();
+                mensaje = gestionLogin.controlLogin(usuario, password);
 
-                }
+                string ultimoAcceso = "";
+                ultimoAcceso = gestionLogin.validarUltimoAcceso(usuario, password);
+
+                redirigirUsuario(mensaje, ultimoAcceso);
             }
         }
         private void borrarCampos()
@@ -133,5 +121,38 @@ namespace GestionDeColegiados
                 errorProvider1.SetError(txtPassword, "Debe ingresar una contraseña");
             }
         }
+
+        private void redirigirUsuario(string mensaje, string ultimoAcceso)
+        {
+            if(ultimoAcceso == "")
+            {
+                this.Hide();
+                CambiarPass cambiar = new CambiarPass();
+                cambiar.Show();
+            }
+            else
+            {
+                if (mensaje == "presidente")
+                {
+                    this.Hide();
+                    MenuPrincipal pantallaPrincipal = new MenuPrincipal();
+                    pantallaPrincipal.Show();
+                }
+                else if (mensaje == "arbitro")
+                {
+                    this.Hide();
+                    FrmMenuArbitro pantallaPrincipalArbitro = new FrmMenuArbitro();
+                    pantallaPrincipalArbitro.Show();
+                }
+                else
+                {
+                    MessageBox.Show(mensaje, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    borrarCampos();
+
+                }
+            }
+            
+        }
+
     }
 }

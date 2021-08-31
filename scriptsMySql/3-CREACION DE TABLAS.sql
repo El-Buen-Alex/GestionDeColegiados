@@ -8,6 +8,7 @@ CREATE TABLE `campeonatos`.`users` (
 `UserPassword` varchar(15) not null,
 `rol` varchar(11) not null,
 `estado` char not null,
+`ultimoAcceso` char not null,
 primary key (`Id`)
 )engine= InnoDB;
 

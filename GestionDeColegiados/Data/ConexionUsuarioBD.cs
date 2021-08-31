@@ -43,7 +43,7 @@ namespace Model
                 administrador.Nombre = reader["UserName"].ToString();
                 administrador.Password = reader["UserPassword"].ToString();
                 administrador.Rol= reader["rol"].ToString();
-
+                administrador.UltimoAcceso = reader["acceso"].ToString();
             }
             //cerramos la conexion
             conexion.Close();

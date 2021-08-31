@@ -123,5 +123,12 @@ namespace GestionDeColegiados.FrmsArbitro
              AbrirFormEnPanel(new FrmVerCompeticion(false));
             
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            btnIniciarSesion frm = new btnIniciarSesion();
+            frm.Show();
+        }
     }
 }
