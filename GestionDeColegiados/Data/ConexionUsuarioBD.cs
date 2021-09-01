@@ -30,8 +30,8 @@ namespace Model
              *  el primer parametro es el nombre del campo en el procedimiento almacenadi
              *  el segundo parametro es la variable que contiene el valor para el campo
              */
-            comando.Parameters.AddWithValue("@username", usuario);
-            comando.Parameters.AddWithValue("@pass", pass);
+            comando.Parameters.AddWithValue("@_username", usuario);
+            comando.Parameters.AddWithValue("@_pass", pass);
             //ejecutamos dicho procedimiento
             reader = comando.ExecuteReader();
             // declaramos un administrador como null 
