@@ -53,7 +53,7 @@ namespace Control.AdmColegiados
             return id;
         }
 
-        //Guardar datos a la BD
+        //Guardar datos en la BD
         private int GuardarJuezCentralBD(JuezCentral juezCentral)
         {
             int id = 0;
@@ -69,13 +69,16 @@ namespace Control.AdmColegiados
             return id;
         }
 
+        //Método obtenerDatos de la interface IAdm
         public void obtenerDatos (int id, DataGridView dgvListarColegiados) {
             listaJuezCentral = datos.consultarJuezCentral(id);
             foreach (JuezCentral datosJC in listaJuezCentral) {
-                dgvListarColegiados.Rows.Add("Juez Central", datosJC.Cedula, datosJC.Nombre, datosJC.Apellidos, datosJC.Domicilio, datosJC.Email, datosJC.Telefono);
+                dgvListarColegiados.Rows.Add("Juez Central", datosJC.Cedula, datosJC.Nombre, 
+                    datosJC.Apellidos, datosJC.Domicilio, datosJC.Email, datosJC.Telefono);
             }
         }
 
+        //Método recogerDatosEditar de la interface IAdm
         JuezCentral JC;
         public void recogerDatosEditar (DataGridViewRow filaSeleccionada) {
             foreach (JuezCentral juezCentral in listaJuezCentral) {
@@ -90,7 +93,9 @@ namespace Control.AdmColegiados
             }
         }
 
-        public void llenarDatosFormEditar (TextBox txtCedula, TextBox txtNombre, TextBox txtApellido, TextBox txtDomicilio, TextBox txtEmail, TextBox txtTelefono) {
+        //Método llenarDatosFormEditar de la interface IAdm
+        public void llenarDatosFormEditar (TextBox txtCedula, TextBox txtNombre, TextBox txtApellido, 
+            TextBox txtDomicilio, TextBox txtEmail, TextBox txtTelefono) {
             try {
                 txtCedula.Text = JC.Cedula.ToString();
                 txtNombre.Text = JC.Nombre.ToString();
@@ -100,6 +105,40 @@ namespace Control.AdmColegiados
                 txtTelefono.Text = JC.Telefono.ToString();
             } catch (FormatException ex) {
                 Console.WriteLine(ex.Message);
+            }
+        }
+
+        //Método editarArbitro de la interface IAdm
+        public void editarArbitro (int idArbitro, string cedula, string nombre, string apellido,
+            string domicilio, string email, string telefono) {
+            try {
+                juezCentral = new JuezCentral();
+                juezCentral.IdArbitro = idArbitro;
+                juezCentral.Cedula = cedula;
+                juezCentral.Nombre = nombre;
+                juezCentral.Apellidos = apellido;
+                juezCentral.Domicilio = domicilio;
+                juezCentral.Email = email;
+                juezCentral.Telefono = telefono;
+
+                if (juezCentral != null) {
+                    EditarJuezCentralBD(juezCentral);  //BD
+                }
+            } catch (FormatException ex) {
+                Console.WriteLine(ex);
+            }
+        }
+
+        //Modificar datos en la BD
+        private void EditarJuezCentralBD (JuezCentral juezCentral) {
+            string mensaje = "";
+            try {
+                datos.EditarJuezCentralBD(juezCentral);
+            } catch (falloBDException ex) {
+                mensaje = ex.Message;
+            }
+            if (mensaje != "") {
+                MessageBox.Show(mensaje);
             }
         }
     }

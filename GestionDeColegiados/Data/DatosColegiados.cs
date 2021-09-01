@@ -196,7 +196,8 @@ namespace Data
             MySqlDataReader reader = null;          //tabla virtual
             conexion = ConexionBD.getConexion();    //Obtener conexión
             conexion.Open();                        //Abrir conexión
-            try {
+            try 
+            {
                 MySqlCommand comando = new MySqlCommand("obtenerIdColegiado", conexion);
                 comando.CommandType = CommandType.StoredProcedure;
                 reader = comando.ExecuteReader();
@@ -220,7 +221,8 @@ namespace Data
             MySqlDataReader reader = null;          //tabla virtual
             conexion = ConexionBD.getConexion();    //Obtener conexión
             conexion.Open();                        //Abrir conexión
-            try {
+            try 
+            {
                 MySqlCommand comando = new MySqlCommand("obtenerJuezCentral", conexion);
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@_idColegiado", id);
@@ -251,7 +253,8 @@ namespace Data
             MySqlDataReader reader = null;          //tabla virtual
             conexion = ConexionBD.getConexion();    //Obtener conexión
             conexion.Open();                        //Abrir conexión
-            try {
+            try 
+            {
                 MySqlCommand comando = new MySqlCommand(procedimiento, conexion);
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@_idColegiado", id);
@@ -295,7 +298,8 @@ namespace Data
             MySqlDataReader reader = null;          //tabla virtual
             conexion = ConexionBD.getConexion();    //Obtener conexión
             conexion.Open();                        //Abrir conexión
-            try {
+            try 
+            {
                 MySqlCommand comando = new MySqlCommand("obtenerCuartoArbitro", conexion);
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@_idColegiado", id);
@@ -361,7 +365,8 @@ namespace Data
             MySqlDataReader reader = null;          //tabla virtual
             conexion = ConexionBD.getConexion();    //Obtener conexión
             conexion.Open();                        //Abrir conexión
-            try {
+            try 
+            {
                 MySqlCommand comando = new MySqlCommand("obtenerCedulaColegiado", conexion);
 
                 comando.CommandType = CommandType.StoredProcedure;
@@ -390,7 +395,8 @@ namespace Data
             MySqlDataReader reader = null;          //tabla virtual
             conexion = ConexionBD.getConexion();    //Obtener conexión
             conexion.Open();                        //Abrir conexión
-            try {
+            try 
+            {
                 MySqlCommand comando = new MySqlCommand("obtenerUnColegiado", conexion);
 
                 comando.CommandType = CommandType.StoredProcedure;
@@ -407,6 +413,127 @@ namespace Data
             }
             conexion.Close();   //Cerrar conexión
             return nombres;
+        }
+
+        public List<Colegiado> obtenerTodosIdColegiado (int idColegiado) {
+            List<Colegiado> listaIDColegiado = new List<Colegiado>();
+            Colegiado colegiado = null;
+            MySqlDataReader reader = null;          //tabla virtual
+            conexion = ConexionBD.getConexion();    //Obtener conexión
+            conexion.Open();                        //Abrir conexión
+            try 
+            {
+                MySqlCommand comando = new MySqlCommand("obtenerTodosIDColegiado", conexion);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@_idColegiado", idColegiado);
+                reader = comando.ExecuteReader();
+
+                //Condición para leer y agregar los arbitros a la lista
+                while (reader.Read()) {
+                    colegiado = new Colegiado();
+                    colegiado.Idcolegiado = Convert.ToInt32(reader["idColegiado"].ToString());
+                    colegiado.Idjuezcentral = Convert.ToInt32(reader["idJuezCentral"].ToString());
+                    colegiado.Idasistente1 = Convert.ToInt32(reader["idAsistente1"].ToString());
+                    colegiado.Idasistente2 = Convert.ToInt32(reader["idAsistente2"].ToString());
+                    colegiado.Idcuartoarbitro = Convert.ToInt32(reader["idCuartoArbitro"].ToString());
+                    listaIDColegiado.Add(colegiado);
+                }
+            } 
+            catch (MySqlException ex) 
+            {
+                listaIDColegiado = null;
+                throw new falloBDException(ex.Message);
+            }
+            conexion.Close();   //Cerrar conexión
+            return listaIDColegiado;
+        }
+
+        public void EditarJuezCentralBD (JuezCentral juezCentral) {
+            conexion = ConexionBD.getConexion();    //Obtener conexión
+            conexion.Open();                        //Abrir conexión
+            trans = conexion.BeginTransaction();    //Comenzar transaccion
+            try 
+            {
+                MySqlCommand comando = new MySqlCommand("editarJuezCentral", conexion, trans);
+                comando.CommandType = CommandType.StoredProcedure;
+
+                comando.Parameters.AddWithValue("@_idJuezCentral", juezCentral.IdArbitro);
+                comando.Parameters.AddWithValue("@_cedula", juezCentral.Cedula);
+                comando.Parameters.AddWithValue("@_nombre", juezCentral.Nombre);
+                comando.Parameters.AddWithValue("@_apellido", juezCentral.Apellidos);
+                comando.Parameters.AddWithValue("@_domicilio", juezCentral.Domicilio);
+                comando.Parameters.AddWithValue("@_email", juezCentral.Email);
+                comando.Parameters.AddWithValue("@_telefono", juezCentral.Telefono);
+
+                comando.ExecuteNonQuery();
+                trans.Commit();
+            }
+            catch (MySqlException ex) 
+            {
+                trans.Rollback();
+                throw new falloBDException(ex.Message);
+            }
+            conexion.Close();   //Cerrar conexión
+        }
+
+        public void editarAsistenteBD (Asistente asistente, string procedimiento) {
+            conexion = ConexionBD.getConexion();    //Obtener conexión
+            conexion.Open();                        //Abrir conexión
+            trans = conexion.BeginTransaction();    //Comenzar transaccion
+            try {
+                MySqlCommand comando = new MySqlCommand(procedimiento, conexion, trans);
+                comando.CommandType = CommandType.StoredProcedure;
+
+                comando.Parameters.AddWithValue("@_idAsistente", asistente.IdArbitro);
+                comando.Parameters.AddWithValue("@_cedula", asistente.Cedula);
+                comando.Parameters.AddWithValue("@_nombre", asistente.Nombre);
+                comando.Parameters.AddWithValue("@_apellido", asistente.Apellidos);
+                comando.Parameters.AddWithValue("@_domicilio", asistente.Domicilio);
+                comando.Parameters.AddWithValue("@_email", asistente.Email);
+                comando.Parameters.AddWithValue("@_telefono", asistente.Telefono);
+
+                comando.ExecuteNonQuery();
+                trans.Commit();
+            } catch (MySqlException ex) {
+                trans.Rollback();
+                throw new falloBDException(ex.Message);
+            }
+            conexion.Close();   //Cerrar conexión
+        }
+
+        public void editarAsistente1BD (Asistente asistente1) {
+            string procedimiento = "editarAsistente1";
+            editarAsistenteBD(asistente1,procedimiento);
+        }
+
+        public void editarAsistente2BD (Asistente asistente2) {
+            string procedimiento = "editarAsistente2";
+            editarAsistenteBD(asistente2, procedimiento);
+        }
+
+        public void editarCuartoArbitro (CuartoArbitro cuartoArbitro) {
+            conexion = ConexionBD.getConexion();    //Obtener conexión
+            conexion.Open();                        //Abrir conexión
+            trans = conexion.BeginTransaction();    //Comenzar transaccion
+            try {
+                MySqlCommand comando = new MySqlCommand("editarCuartoArbitro", conexion, trans);
+                comando.CommandType = CommandType.StoredProcedure;
+
+                comando.Parameters.AddWithValue("@_idCuartoArbitro", cuartoArbitro.IdArbitro);
+                comando.Parameters.AddWithValue("@_cedula", cuartoArbitro.Cedula);
+                comando.Parameters.AddWithValue("@_nombre", cuartoArbitro.Nombre);
+                comando.Parameters.AddWithValue("@_apellido", cuartoArbitro.Apellidos);
+                comando.Parameters.AddWithValue("@_domicilio", cuartoArbitro.Domicilio);
+                comando.Parameters.AddWithValue("@_email", cuartoArbitro.Email);
+                comando.Parameters.AddWithValue("@_telefono", cuartoArbitro.Telefono);
+
+                comando.ExecuteNonQuery();
+                trans.Commit();
+            } catch (MySqlException ex) {
+                trans.Rollback();
+                throw new falloBDException(ex.Message);
+            }
+            conexion.Close();   //Cerrar conexión
         }
     }
 }

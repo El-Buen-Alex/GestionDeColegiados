@@ -10,5 +10,7 @@ namespace Control.AdmColegiados
         void recogerDatosEditar (DataGridViewRow filaSeleccionada);
         void llenarDatosFormEditar (TextBox txtCedula, TextBox txtNombre, TextBox txtApellido,
             TextBox txtDomicilio, TextBox txtEmail, TextBox txtTelefono);
+        void editarArbitro (int idArbitro, string cedula, string nombre, string apellido, 
+            string domicilio, string email, string telefono);
     }
 }

@@ -14,6 +14,9 @@
         public int Idasistente2 { get => idasistente2; set => idasistente2 = value; }
         public int Idcuartoarbitro { get => idcuartoarbitro; set => idcuartoarbitro = value; }
 
+        public Colegiado () {
+        }
+
         public Colegiado(int idcolegiado, int idjuezcentral, int idasistente1, int idasistente2, int idcuartoarbitro)
         {
             this.idcolegiado = idcolegiado;

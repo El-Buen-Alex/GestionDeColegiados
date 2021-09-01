@@ -58,7 +58,7 @@ namespace GestionDeColegiados
         private void btnEditar_Click (object sender, System.EventArgs e) {
             DataGridViewRow filaSeleccionada = dgvListarColegiados.CurrentRow;
             string arbitro = filaSeleccionada.Cells[0].Value.ToString();
-            frmEditarArbitro frmEditar = new frmEditarArbitro(arbitro);
+            frmEditarArbitro frmEditar = new frmEditarArbitro(arbitro,cmbIdArbitro.Text);
             admColegiado.recogerDatosEditar(dgvListarColegiados);
             frmEditar.ShowDialog();
             MessageBox.Show("Prueba");
@@ -70,8 +70,9 @@ namespace GestionDeColegiados
             if (resultado == DialogResult.Yes) {
                 DataGridViewRow row = dgvListarColegiados.CurrentRow;
                 string arbitro = row.Cells[0].Value.ToString();
-                frmElimAgregarArbitro frmAgregar = new frmElimAgregarArbitro(arbitro);
+                frmElimAgregarArbitro frmAgregar = new frmElimAgregarArbitro(arbitro,cmbIdArbitro.Text);
                 frmAgregar.ShowDialog();
+                MessageBox.Show("Prueba");
             }
         }
 

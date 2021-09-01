@@ -69,6 +69,7 @@ namespace Control.AdmColegiados
             return id;
         }
 
+        //Método obtenerDatos de la interface IAdm
         public void obtenerDatos (int id, DataGridView dgvListarColegiados) {
             listaAsistente1 = datos.consultarAsistente1(id);
             foreach (Asistente datosAs1 in listaAsistente1) {
@@ -76,6 +77,8 @@ namespace Control.AdmColegiados
             }
         }
 
+        //Editar
+        //Método recogerDatosEditar de la interface IAdm
         Asistente as1;
         public void recogerDatosEditar (DataGridViewRow filaSeleccionada) {
             foreach(Asistente asistente in listaAsistente1) {
@@ -90,6 +93,7 @@ namespace Control.AdmColegiados
             }
         }
 
+        //Método llenarDatosFormEditar de la interface IAdm
         public void llenarDatosFormEditar (TextBox txtCedula, TextBox txtNombre, TextBox txtApellido, TextBox txtDomicilio, TextBox txtEmail, TextBox txtTelefono) {
             try {
                 txtCedula.Text = as1.Cedula.ToString();
@@ -100,6 +104,40 @@ namespace Control.AdmColegiados
                 txtTelefono.Text = as1.Telefono.ToString();
             } catch (FormatException ex) {
                 Console.WriteLine(ex.Message);
+            }
+        }
+
+        //Método editarArbitro de la interface IAdm
+        public void editarArbitro (int idArbitro, string cedula, string nombre, string apellido,
+            string domicilio, string email, string telefono) {
+            try {
+                asistente1 = new Asistente();
+                asistente1.IdArbitro = idArbitro;
+                asistente1.Cedula = cedula;
+                asistente1.Nombre = nombre;
+                asistente1.Apellidos = apellido;
+                asistente1.Domicilio = domicilio;
+                asistente1.Email = email;
+                asistente1.Telefono = telefono;
+
+                if (asistente1 != null) {
+                    editarAsistente1BD(asistente1);
+                }
+            } catch (FormatException ex) {
+                Console.WriteLine(ex);
+            }
+        }
+
+        //Modificar datos en la BD
+        private void editarAsistente1BD (Asistente asistente1) {
+            string mensaje = "";
+            try {
+                datos.editarAsistente1BD(asistente1);
+            } catch (falloBDException ex) {
+                mensaje = ex.Message;
+            }
+            if (mensaje != "") {
+                MessageBox.Show(mensaje);
             }
         }
     }

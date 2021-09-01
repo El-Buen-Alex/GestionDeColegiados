@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Control;
+using Control.AdmColegiados;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,10 +22,13 @@ namespace GestionDeColegiados.FrmsColegiado
         private extern static void SendMessage (System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
         private Color colorDefaultClose;
+        ValidacionGUI validacionGUI = new ValidacionGUI();
+        AdmColegiado admColegiado = AdmColegiado.getAdmCol();
 
-        public frmElimAgregarArbitro (string arbitro) {
+        public frmElimAgregarArbitro (string arbitro, string idColegiado) {
             InitializeComponent();
             lblAgregar.Text += arbitro;
+            lblID.Text = idColegiado;
         }
 
         //metodo que controla el evento de arrastrar pantalla
@@ -63,8 +68,27 @@ namespace GestionDeColegiados.FrmsColegiado
         }
 
         private void btnAgregar_Click (object sender, EventArgs e) {
-            MessageBox.Show("Sus datos fueron actualizados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            Close();
+            bool vacio = validacionGUI.validarVacios(txtCedula, txtNombre, txtApellido, txtDomicilio, txtEmail, txtTelefono);
+            bool cedulaRepetida = admColegiado.validarCedula(txtCedula);
+            if (vacio == true) {
+                MessageBox.Show("Hay ciertos campos vacios", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            if (cedulaRepetida == true) {
+                MessageBox.Show("El árbitro que ingresó ya se encuentra registrado!!\nIngrese uno nuevo", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            if (vacio != true && cedulaRepetida != true) {
+                MessageBox.Show("Sus datos fueron agregados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Close();
+            }
+                
+        }
+
+        private void btnCancelar_Click (object sender, EventArgs e) {
+            DialogResult resultado;
+            resultado = MessageBox.Show("¡Está seguro de cancelar!", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
+            if (resultado == DialogResult.Yes) {
+                Close();
+            }
         }
     }
 }

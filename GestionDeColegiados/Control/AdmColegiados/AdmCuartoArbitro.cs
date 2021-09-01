@@ -69,6 +69,7 @@ namespace Control.AdmColegiados
             return id;
         }
 
+        //Método obtenerDatos de la interface IAdm
         public void obtenerDatos (int id, DataGridView dgvListarColegiados) {
             listaCuartoArbitro = datos.consultarCuartoArbitro(id);
             foreach (CuartoArbitro datosCA in listaCuartoArbitro) {
@@ -76,6 +77,8 @@ namespace Control.AdmColegiados
             }
         }
 
+        //Editar
+        //Método recogerDatosEditar de la interface IAdm
         CuartoArbitro CA;
         public void recogerDatosEditar (DataGridViewRow filaSeleccionada) {
             foreach (CuartoArbitro cuartoArb in listaCuartoArbitro) {
@@ -90,6 +93,7 @@ namespace Control.AdmColegiados
             }
         }
 
+        //Método llenarDatosFormEditar de la interface IAdm
         public void llenarDatosFormEditar (TextBox txtCedula, TextBox txtNombre, TextBox txtApellido, TextBox txtDomicilio, TextBox txtEmail, TextBox txtTelefono) {
             try {
                 txtCedula.Text = CA.Cedula.ToString();
@@ -100,6 +104,36 @@ namespace Control.AdmColegiados
                 txtTelefono.Text = CA.Telefono.ToString();
             } catch (FormatException ex) {
                 Console.WriteLine(ex.Message);
+            }
+        }
+
+        //Método editarArbitro de la interface IAdm
+        public void editarArbitro (int idArbitro, string cedula, string nombre, string apellido,
+            string domicilio, string email, string telefono) {
+            try {
+                cuartoArbitro = new CuartoArbitro();
+                cuartoArbitro.IdArbitro = idArbitro;
+                cuartoArbitro.Cedula = cedula;
+                cuartoArbitro.Nombre = nombre;
+                cuartoArbitro.Apellidos = apellido;
+                cuartoArbitro.Domicilio = domicilio;
+                cuartoArbitro.Email = email;
+                cuartoArbitro.Telefono = telefono;
+
+                if (cuartoArbitro != null) {
+                    editarCuartoArbitroBD(cuartoArbitro);
+                }
+            } catch (falloBDException ex) {
+                Console.WriteLine(ex);
+            }
+        }
+
+        //Modificar datos en la BD
+        private void editarCuartoArbitroBD (CuartoArbitro cuartoArbitro) {
+            try {
+                datos.editarCuartoArbitro(cuartoArbitro);
+            } catch (falloBDException ex) {
+                Console.WriteLine(ex);
             }
         }
     }

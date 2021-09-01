@@ -40,6 +40,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.lblEditar = new System.Windows.Forms.Label();
+            this.lblID = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.PanelBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).BeginInit();
             this.SuspendLayout();
@@ -201,7 +203,7 @@
             this.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(75)))), ((int)(((byte)(119)))));
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.ForeColor = System.Drawing.Color.Silver;
-            this.btnActualizar.Location = new System.Drawing.Point(206, 501);
+            this.btnActualizar.Location = new System.Drawing.Point(307, 503);
             this.btnActualizar.Margin = new System.Windows.Forms.Padding(2);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(101, 31);
@@ -220,12 +222,40 @@
             this.lblEditar.TabIndex = 79;
             this.lblEditar.Text = "Usted está editando un ";
             // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Location = new System.Drawing.Point(313, 133);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(15, 13);
+            this.lblID.TabIndex = 80;
+            this.lblID.Text = "id";
+            this.lblID.Visible = false;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(75)))), ((int)(((byte)(119)))));
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.ForeColor = System.Drawing.Color.Silver;
+            this.btnCancelar.Location = new System.Drawing.Point(86, 503);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(101, 31);
+            this.btnCancelar.TabIndex = 81;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // frmEditarArbitro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(129)))), ((int)(((byte)(150)))));
             this.ClientSize = new System.Drawing.Size(507, 566);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.lblID);
             this.Controls.Add(this.lblEditar);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.label7);
@@ -274,5 +304,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Label lblEditar;
+        private System.Windows.Forms.Label lblID;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

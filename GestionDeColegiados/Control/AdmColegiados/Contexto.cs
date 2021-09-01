@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 
 namespace Control.AdmColegiados
 {
@@ -32,6 +33,11 @@ namespace Control.AdmColegiados
         public void llenarDatosFormEditar (TextBox txtCedula, TextBox txtNombre, TextBox txtApellido, 
             TextBox txtDomicilio, TextBox txtEmail, TextBox txtTelefono) {
             adm.llenarDatosFormEditar(txtCedula, txtNombre, txtApellido, txtDomicilio, txtEmail, txtTelefono);
+        }
+
+        internal void editarArbitro (int idArbitro, string cedula, string nombre, string apellido, 
+            string domicilio, string email, string telefono) {
+            adm.editarArbitro(idArbitro, cedula, nombre, apellido, domicilio, email, telefono);
         }
     }
 }

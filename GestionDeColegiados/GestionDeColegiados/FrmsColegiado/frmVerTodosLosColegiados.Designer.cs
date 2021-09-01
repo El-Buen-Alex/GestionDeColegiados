@@ -29,8 +29,8 @@ namespace GestionDeColegiados
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvListarColegiados = new System.Windows.Forms.DataGridView();
             this.colArbitro = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,20 +68,20 @@ namespace GestionDeColegiados
             // 
             this.dgvListarColegiados.AllowUserToAddRows = false;
             this.dgvListarColegiados.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            this.dgvListarColegiados.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvListarColegiados.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvListarColegiados.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvListarColegiados.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvListarColegiados.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvListarColegiados.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvListarColegiados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvListarColegiados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvListarColegiados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colArbitro,
             this.colCedula,
@@ -204,9 +204,9 @@ namespace GestionDeColegiados
             this.btnEliminarArbitro.Location = new System.Drawing.Point(504, 383);
             this.btnEliminarArbitro.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminarArbitro.Name = "btnEliminarArbitro";
-            this.btnEliminarArbitro.Size = new System.Drawing.Size(101, 31);
+            this.btnEliminarArbitro.Size = new System.Drawing.Size(114, 31);
             this.btnEliminarArbitro.TabIndex = 60;
-            this.btnEliminarArbitro.Text = "Eliminar";
+            this.btnEliminarArbitro.Text = "Eliminar (Árbitro)";
             this.btnEliminarArbitro.UseVisualStyleBackColor = false;
             this.btnEliminarArbitro.Click += new System.EventHandler(this.btnEliminarArbitro_Click);
             // 
@@ -218,12 +218,12 @@ namespace GestionDeColegiados
             this.btnEliminarColegiado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(75)))), ((int)(((byte)(119)))));
             this.btnEliminarColegiado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminarColegiado.ForeColor = System.Drawing.Color.Silver;
-            this.btnEliminarColegiado.Location = new System.Drawing.Point(662, 112);
+            this.btnEliminarColegiado.Location = new System.Drawing.Point(646, 112);
             this.btnEliminarColegiado.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminarColegiado.Name = "btnEliminarColegiado";
-            this.btnEliminarColegiado.Size = new System.Drawing.Size(101, 31);
+            this.btnEliminarColegiado.Size = new System.Drawing.Size(116, 31);
             this.btnEliminarColegiado.TabIndex = 61;
-            this.btnEliminarColegiado.Text = "Eliminar";
+            this.btnEliminarColegiado.Text = "Eliminar (Colegiado)";
             this.btnEliminarColegiado.UseVisualStyleBackColor = false;
             this.btnEliminarColegiado.Click += new System.EventHandler(this.btnEliminarColegiado_Click);
             // 

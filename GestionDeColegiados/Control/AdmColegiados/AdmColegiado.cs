@@ -187,5 +187,41 @@ namespace Control.AdmColegiados
             contexto = escogerArbitro(filaSeleccionada);
             contexto.llenarDatosFormEditar(txtCedula, txtNombre, txtApellido, txtDomicilio, txtEmail, txtTelefono);
         }
+
+        private int obtenerIDArbitro (int idColegiado, DataGridViewRow filaSeleccionada) {
+            int idArbitro = 0;
+            listaColegiado = datos.obtenerTodosIdColegiado(idColegiado);
+            string arbitro = filaSeleccionada.Cells[0].Value.ToString();
+            if (arbitro == "Juez Central") {
+                foreach (Colegiado col in listaColegiado) {
+                    idArbitro = col.Idjuezcentral;
+                }
+            }
+            if (arbitro == "Asistente 1") {
+                foreach (Colegiado col in listaColegiado) {
+                    idArbitro = col.Idasistente1;
+                }
+            }
+            if (arbitro == "Asistente 2") {
+                foreach (Colegiado col in listaColegiado) {
+                    idArbitro = col.Idasistente2;
+                }
+            }
+            if (arbitro == "Cuarto Árbitro") {
+                foreach (Colegiado col in listaColegiado) {
+                    idArbitro = col.Idcuartoarbitro;
+                }
+            }
+            return idArbitro;
+        }
+
+        public void editarArbitro (string lblID, string cedula, string nombre, string apellido, string domicilio, string email, string telefono) {
+            char delimitador = ' ';
+            string[] cadena = lblID.Split(delimitador);
+            int idColegiado = Convert.ToInt32(cadena[1]);
+            int idArbitro = obtenerIDArbitro(idColegiado, filaSeleccionada);
+            contexto = escogerArbitro(filaSeleccionada);
+            contexto.editarArbitro(idArbitro, cedula, nombre, apellido, domicilio, email, telefono);
+        }
     }
 } 
