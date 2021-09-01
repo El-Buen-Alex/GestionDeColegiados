@@ -143,7 +143,7 @@ namespace GestionDeColegiados
             else
             {
                 int id = gestionLogin.obtenerId(usuario, password);
-                
+                this.Hide();
                 CambiarPass cambiar = new CambiarPass(id);
 
                 cambiar.ShowDialog();

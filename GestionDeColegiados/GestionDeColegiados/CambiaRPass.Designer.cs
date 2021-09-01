@@ -40,8 +40,12 @@
             this.pbCerrar = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnChangePass = new System.Windows.Forms.Button();
+            this.lblGolLocal = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtPass = new System.Windows.Forms.TextBox();
-            this.txtRepeatPass = new System.Windows.Forms.TextBox();
+            this.textRepeatPass = new System.Windows.Forms.TextBox();
+            this.lblAdvertencia = new System.Windows.Forms.Label();
+            this.lblAviso = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -57,10 +61,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::GestionDeColegiados.Properties.Resources.FEF_logo_svg;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 172);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 140);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(245, 174);
+            this.pictureBox1.Size = new System.Drawing.Size(184, 141);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -72,9 +76,9 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(257, 543);
+            this.panel1.Size = new System.Drawing.Size(193, 441);
             this.panel1.TabIndex = 11;
             // 
             // panel2
@@ -84,19 +88,19 @@
             this.panel2.Controls.Add(this.pictureBox4);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(257, 34);
+            this.panel2.Size = new System.Drawing.Size(193, 28);
             this.panel2.TabIndex = 2;
             // 
             // pictureBox3
             // 
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox3.Image = global::GestionDeColegiados.Properties.Resources.Min;
-            this.pictureBox3.Location = new System.Drawing.Point(727, 4);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox3.Location = new System.Drawing.Point(545, 3);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox3.Size = new System.Drawing.Size(19, 20);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 4;
             this.pictureBox3.TabStop = false;
@@ -105,10 +109,10 @@
             // 
             this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox4.Image = global::GestionDeColegiados.Properties.Resources.cerrarVentana;
-            this.pictureBox4.Location = new System.Drawing.Point(761, 4);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox4.Location = new System.Drawing.Point(571, 3);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(35, 25);
+            this.pictureBox4.Size = new System.Drawing.Size(26, 20);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 2;
             this.pictureBox4.TabStop = false;
@@ -121,20 +125,20 @@
             this.PanelBarraTitulo.Controls.Add(this.pictureBox6);
             this.PanelBarraTitulo.Controls.Add(this.pbCerrar);
             this.PanelBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelBarraTitulo.Location = new System.Drawing.Point(257, 0);
-            this.PanelBarraTitulo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PanelBarraTitulo.Location = new System.Drawing.Point(193, 0);
+            this.PanelBarraTitulo.Margin = new System.Windows.Forms.Padding(2);
             this.PanelBarraTitulo.Name = "PanelBarraTitulo";
-            this.PanelBarraTitulo.Size = new System.Drawing.Size(543, 34);
+            this.PanelBarraTitulo.Size = new System.Drawing.Size(407, 28);
             this.PanelBarraTitulo.TabIndex = 12;
             // 
             // pictureBox5
             // 
             this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox5.Image = global::GestionDeColegiados.Properties.Resources.Min;
-            this.pictureBox5.Location = new System.Drawing.Point(469, 4);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox5.Location = new System.Drawing.Point(352, 3);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox5.Size = new System.Drawing.Size(19, 20);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 6;
             this.pictureBox5.TabStop = false;
@@ -144,10 +148,10 @@
             // 
             this.pbMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbMinimizar.Image = global::GestionDeColegiados.Properties.Resources.Min;
-            this.pbMinimizar.Location = new System.Drawing.Point(727, 4);
-            this.pbMinimizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbMinimizar.Location = new System.Drawing.Point(545, 3);
+            this.pbMinimizar.Margin = new System.Windows.Forms.Padding(2);
             this.pbMinimizar.Name = "pbMinimizar";
-            this.pbMinimizar.Size = new System.Drawing.Size(25, 25);
+            this.pbMinimizar.Size = new System.Drawing.Size(19, 20);
             this.pbMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbMinimizar.TabIndex = 4;
             this.pbMinimizar.TabStop = false;
@@ -156,10 +160,10 @@
             // 
             this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox6.Image = global::GestionDeColegiados.Properties.Resources.cerrarVentana;
-            this.pictureBox6.Location = new System.Drawing.Point(504, 4);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox6.Location = new System.Drawing.Point(378, 3);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(35, 25);
+            this.pictureBox6.Size = new System.Drawing.Size(26, 20);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 5;
             this.pictureBox6.TabStop = false;
@@ -169,10 +173,10 @@
             // 
             this.pbCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbCerrar.Image = global::GestionDeColegiados.Properties.Resources.cerrarVentana;
-            this.pbCerrar.Location = new System.Drawing.Point(761, 4);
-            this.pbCerrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbCerrar.Location = new System.Drawing.Point(571, 3);
+            this.pbCerrar.Margin = new System.Windows.Forms.Padding(2);
             this.pbCerrar.Name = "pbCerrar";
-            this.pbCerrar.Size = new System.Drawing.Size(35, 25);
+            this.pbCerrar.Size = new System.Drawing.Size(26, 20);
             this.pbCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbCerrar.TabIndex = 2;
             this.pbCerrar.TabStop = false;
@@ -182,51 +186,124 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(301, 66);
+            this.label2.Location = new System.Drawing.Point(226, 54);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(418, 36);
+            this.label2.Size = new System.Drawing.Size(338, 29);
             this.label2.TabIndex = 13;
             this.label2.Text = "CAMBIO DE CONTRASEÑA";
             // 
             // btnChangePass
             // 
+            this.btnChangePass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
             this.btnChangePass.Enabled = false;
-            this.btnChangePass.Location = new System.Drawing.Point(448, 394);
+            this.btnChangePass.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChangePass.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnChangePass.Location = new System.Drawing.Point(332, 297);
+            this.btnChangePass.Margin = new System.Windows.Forms.Padding(2);
             this.btnChangePass.Name = "btnChangePass";
-            this.btnChangePass.Size = new System.Drawing.Size(75, 23);
-            this.btnChangePass.TabIndex = 14;
-            this.btnChangePass.Text = "button1";
-            this.btnChangePass.UseVisualStyleBackColor = true;
+            this.btnChangePass.Size = new System.Drawing.Size(109, 40);
+            this.btnChangePass.TabIndex = 58;
+            this.btnChangePass.Text = "GUARDAR";
+            this.btnChangePass.UseVisualStyleBackColor = false;
             this.btnChangePass.Click += new System.EventHandler(this.btnChangePass_Click);
+            // 
+            // lblGolLocal
+            // 
+            this.lblGolLocal.AutoSize = true;
+            this.lblGolLocal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblGolLocal.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblGolLocal.Location = new System.Drawing.Point(237, 157);
+            this.lblGolLocal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblGolLocal.Name = "lblGolLocal";
+            this.lblGolLocal.Size = new System.Drawing.Size(142, 20);
+            this.lblGolLocal.TabIndex = 60;
+            this.lblGolLocal.Text = "Nueva contraseña:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(237, 196);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(160, 20);
+            this.label1.TabIndex = 61;
+            this.label1.Text = "Repita la contraseña:";
             // 
             // txtPass
             // 
-            this.txtPass.Location = new System.Drawing.Point(448, 172);
+            this.txtPass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.txtPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(172)))), ((int)(((byte)(171)))));
+            this.txtPass.Location = new System.Drawing.Point(405, 156);
+            this.txtPass.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPass.MaxLength = 14;
             this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(100, 22);
-            this.txtPass.TabIndex = 15;
+            this.txtPass.PasswordChar = '*';
+            this.txtPass.Size = new System.Drawing.Size(132, 23);
+            this.txtPass.TabIndex = 64;
+            this.txtPass.TextChanged += new System.EventHandler(this.textRepeatPass_TextChanged);
             // 
-            // txtRepeatPass
+            // textRepeatPass
             // 
-            this.txtRepeatPass.Location = new System.Drawing.Point(479, 220);
-            this.txtRepeatPass.Name = "txtRepeatPass";
-            this.txtRepeatPass.Size = new System.Drawing.Size(100, 22);
-            this.txtRepeatPass.TabIndex = 16;
+            this.textRepeatPass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.textRepeatPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textRepeatPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(172)))), ((int)(((byte)(171)))));
+            this.textRepeatPass.Location = new System.Drawing.Point(405, 196);
+            this.textRepeatPass.Margin = new System.Windows.Forms.Padding(2);
+            this.textRepeatPass.MaxLength = 14;
+            this.textRepeatPass.Name = "textRepeatPass";
+            this.textRepeatPass.PasswordChar = '*';
+            this.textRepeatPass.Size = new System.Drawing.Size(132, 23);
+            this.textRepeatPass.TabIndex = 65;
+            this.textRepeatPass.TextChanged += new System.EventHandler(this.textRepeatPass_TextChanged);
+            // 
+            // lblAdvertencia
+            // 
+            this.lblAdvertencia.AutoSize = true;
+            this.lblAdvertencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAdvertencia.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblAdvertencia.Location = new System.Drawing.Point(238, 127);
+            this.lblAdvertencia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAdvertencia.Name = "lblAdvertencia";
+            this.lblAdvertencia.Size = new System.Drawing.Size(285, 13);
+            this.lblAdvertencia.TabIndex = 66;
+            this.lblAdvertencia.Text = "Su contraseña debe tener máximo 15 caracteres.";
+            // 
+            // lblAviso
+            // 
+            this.lblAviso.AutoSize = true;
+            this.lblAviso.Enabled = false;
+            this.lblAviso.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.lblAviso.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAviso.ForeColor = System.Drawing.Color.Red;
+            this.lblAviso.Location = new System.Drawing.Point(250, 234);
+            this.lblAviso.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAviso.Name = "lblAviso";
+            this.lblAviso.Size = new System.Drawing.Size(273, 13);
+            this.lblAviso.TabIndex = 67;
+            this.lblAviso.Text = "Las contraseñas ingresadas deben ser iguales.";
+            this.lblAviso.Visible = false;
             // 
             // CambiarPass
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(129)))), ((int)(((byte)(150)))));
-            this.ClientSize = new System.Drawing.Size(800, 543);
-            this.Controls.Add(this.txtRepeatPass);
+            this.ClientSize = new System.Drawing.Size(600, 441);
+            this.Controls.Add(this.lblAviso);
+            this.Controls.Add(this.lblAdvertencia);
+            this.Controls.Add(this.textRepeatPass);
             this.Controls.Add(this.txtPass);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblGolLocal);
             this.Controls.Add(this.btnChangePass);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.PanelBarraTitulo);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "CambiarPass";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CambiasPass";
@@ -259,7 +336,11 @@
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnChangePass;
+        private System.Windows.Forms.Label lblGolLocal;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtPass;
-        private System.Windows.Forms.TextBox txtRepeatPass;
+        private System.Windows.Forms.TextBox textRepeatPass;
+        private System.Windows.Forms.Label lblAdvertencia;
+        private System.Windows.Forms.Label lblAviso;
     }
 }

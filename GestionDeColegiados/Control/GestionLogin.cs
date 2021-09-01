@@ -21,7 +21,9 @@ namespace Control
                 if (nuevoUsuario == null)
                 {
                     //se lanza la excepcion
+                    respuesta = "ERROR: ";
                     throw new usuarioNoRegistradoException(usuario);
+
                 }
                 else
                 {
@@ -30,14 +32,14 @@ namespace Control
             }catch(Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                respuesta = ""+ex.Message;
+                respuesta = "ERROR: "+ex.Message;
             }
             return respuesta;
         }
 
-        public bool CambiarPass(string newPass, int idUser)
+        public string CambiarPass(string newPass, int idUser)
         {
-            bool cambio = gestionUsuario.CambiarPassword(newPass, idUser);
+            string cambio = gestionUsuario.CambiarPassword(newPass, idUser);
             
             return cambio;
         }
@@ -77,7 +79,7 @@ namespace Control
         {
             bool respuesta = true;
             Administrador admin = obtenerUsuario(usuario, password);
-            if (String.IsNullOrEmpty(admin.UltimoAcceso))
+            if (String.IsNullOrEmpty(admin.PrimerAcceso))
             {
                 respuesta = false;
             }

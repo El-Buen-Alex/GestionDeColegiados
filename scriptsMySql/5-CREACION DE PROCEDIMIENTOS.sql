@@ -4,8 +4,17 @@ use campeonatos;
 DELIMITER $$
 create procedure login (IN username VARCHAR(15), IN pass VARCHAR(15))
 	BEGIN 
-		SELECT Id, UserName, UserPassword, rol, acceso FROM users
+		SELECT Id, UserName, UserPassword, rol, primerAcceso FROM users
 		WHERE UserName = username AND UserPassword = pass;
+	END$$
+DELIMITER 
+
+/*PROCEDIMIENTO PARA ACTUALIZAR CAMBIO DE PASS*/
+DELIMITER $$
+create procedure cambiarPass (IN _idUser int, IN _newPass VARCHAR(15), IN _primerAcceso date)
+	BEGIN 
+		UPDATE users
+			SET	primerAcceso= _primerAcceso, UserPassword=_newPass WHERE id = _idUser;
 	END$$
 DELIMITER 
 

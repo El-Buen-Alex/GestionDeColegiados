@@ -19,6 +19,7 @@ namespace GestionDeColegiados
         {
             idUser = idUsuraio;
             InitializeComponent();
+           
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)
@@ -34,15 +35,53 @@ namespace GestionDeColegiados
         private void btnChangePass_Click(object sender, EventArgs e)
         {
             string newPass = txtPass.Text.Trim();
-            bool cambiar=gestionLogin.CambiarPass(newPass, this.idUser);
-            if (cambiar)
+            string cambiar = gestionLogin.CambiarPass(newPass, this.idUser);
+            if (cambiar.StartsWith("EXITO"))
             {
                 this.Close();
+                btnIniciarSesion iniciar = new btnIniciarSesion();
+                iniciar.Show();
+
             }
             else
             {
-
+                MessageBox.Show(cambiar, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+        private void habilitarButton()
+        {
+            string newPass = txtPass.Text.Trim();
+            string confPass = textRepeatPass.Text.Trim();
+
+            if(!string.IsNullOrEmpty(newPass) && !string.IsNullOrEmpty(confPass))
+            {
+                if (newPass == confPass)
+                {
+                    controlarVisibilidad(true, false);
+                }
+                else
+                {
+                    controlarVisibilidad(false, true);
+                }
+            }
+            else
+            {
+                btnChangePass.Enabled = false;
+            }
+            
+        }
+
+        private void controlarVisibilidad(bool estadoBtn, bool estadoLbl)
+        {
+            btnChangePass.Enabled = estadoBtn;
+            lblAviso.Visible = estadoLbl;
+        }
+
+        private void textRepeatPass_TextChanged(object sender, EventArgs e)
+        {
+            habilitarButton();
+
+        }
+
     }
 }
