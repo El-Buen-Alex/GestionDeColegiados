@@ -22,8 +22,6 @@ namespace GestionDeColegiados
         private Color colorDefaultClose;
         private Color colorDefaultMin;
 
-        string usuario;
-        string password;
 
         private GestionLogin gestionLogin = new GestionLogin();
 
@@ -79,8 +77,8 @@ namespace GestionDeColegiados
         //Evento que abre el formulario luego de un inicio de sesión exitoso
         private void button1_Click(object sender, EventArgs e)
         {
-            usuario = txtUsuario.Text;
-            password = txtPassword.Text;
+            string usuario = txtUsuario.Text;
+            string password = txtPassword.Text;
 
             if (string.IsNullOrEmpty(usuario) || (string.IsNullOrEmpty(password)))
             {
@@ -104,8 +102,8 @@ namespace GestionDeColegiados
         //metodo que valida si existen campos vacios en la GUI
         private void validarCamposVaciosLogin()
         {
-            usuario = txtUsuario.Text;
-            password = txtPassword.Text;
+            string usuario = txtUsuario.Text;
+            string password = txtPassword.Text;
 
             if (string.IsNullOrEmpty(usuario))
             {
@@ -134,13 +132,14 @@ namespace GestionDeColegiados
         }
 
 
-        private  void controlarUltimoAcceso(bool tuvoUltimoAcceso, string mensaje)
+        private  void controlarUltimoAcceso(bool tuvoUltimoAcceso, string mensaje, string usuario, string password)
         {
             if (tuvoUltimoAcceso)
             {
                 AccesoUser(mensaje);
             }
             else
+
             {
                 int id = gestionLogin.obtenerId(usuario, password);
                 this.Hide();
@@ -162,7 +161,7 @@ namespace GestionDeColegiados
             {
                 
                 bool ultimoAcceso = gestionLogin.validarUltimoAcceso(usuario, password);
-                controlarUltimoAcceso(ultimoAcceso, mensaje);
+                controlarUltimoAcceso(ultimoAcceso, mensaje, usuario, password);
             }
         }
     }
