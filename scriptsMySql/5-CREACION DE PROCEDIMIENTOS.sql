@@ -174,6 +174,81 @@ CREATE PROCEDURE obtenerUnColegiado(
 	END$$
 DELIMITER 
 
+/*PROCEDIMIENTO PARA OBTENER TODOS LOS ID DE COLEGIADO POR BUSQUEDA DE ID */
+DELIMITER $$
+CREATE PROCEDURE obtenerTodosIDColegiado (IN _idColegiado INT)
+	BEGIN
+		SELECT c.idcolegiado idColegiado, c.idjuezcentral idJuezCentral, c.idasistente1 idAsistente1, c.idasistente2 idAsistente2, c.idcuartoarbitro idCuartoArbitro
+		FROM colegiado c 
+		INNER JOIN juezcentral jc ON jc.idjuezcentral = c.idjuezcentral
+		INNER JOIN asistente1 as1 ON as1.idasistente1 = c.idasistente1
+		INNER JOIN asistente2 as2 ON as2.idasistente2 = c.idasistente2
+		INNER JOIN cuartoarbitro ca ON ca.idcuartoarbitro = c.idcuartoarbitro 
+		WHERE idcolegiado = _idColegiado
+		AND c.estado='A';
+	END$$
+DELIMITER 
+
+/*PROCEDIMIENTO PARA EDITAR UN JUEZ CENTRAL*/
+DELIMITER $$
+CREATE PROCEDURE editarJuezCentral (IN _idJuezCentral INT,
+IN _cedula VARCHAR(10),
+IN _nombre VARCHAR(25),
+IN _apellido VARCHAR(25),
+IN _domicilio VARCHAR(25),
+IN _email VARCHAR(25),
+IN _telefono VARCHAR(10))
+	BEGIN
+		UPDATE juezcentral SET cedula = _cedula, nombre = _nombre, apellido = _apellido, domicilio = _domicilio, email = _email, telefono = _telefono
+		WHERE idjuezcentral = _idJuezCentral;
+	END$$
+DELIMITER 
+
+/*PROCEDIMIENTO PARA EDITAR UN ASISTENTE 1*/
+DELIMITER $$
+CREATE PROCEDURE editarAsistente1 (IN _idAsistente INT,
+IN _cedula VARCHAR(10),
+IN _nombre VARCHAR(25),
+IN _apellido VARCHAR(25),
+IN _domicilio VARCHAR(25),
+IN _email VARCHAR(25),
+IN _telefono VARCHAR(10))
+	BEGIN
+		UPDATE asistente1 SET cedula = _cedula, nombre = _nombre, apellido = _apellido, domicilio = _domicilio, email = _email, telefono = _telefono
+		WHERE idasistente1 = _idAsistente;
+	END$$
+DELIMITER 
+
+/*PROCEDIMIENTO PARA EDITAR UN ASISTENTE 2*/
+DELIMITER $$
+CREATE PROCEDURE editarAsistente2 (IN _idAsistente INT,
+IN _cedula VARCHAR(10),
+IN _nombre VARCHAR(25),
+IN _apellido VARCHAR(25),
+IN _domicilio VARCHAR(25),
+IN _email VARCHAR(25),
+IN _telefono VARCHAR(10))
+	BEGIN
+		UPDATE asistente2 SET cedula = _cedula, nombre = _nombre, apellido = _apellido, domicilio = _domicilio, email = _email, telefono = _telefono
+		WHERE idasistente2 = _idAsistente;
+	END$$
+DELIMITER 
+
+/*PROCEDIMIENTO PARA EDITAR UN CUARTO ARBITRO*/
+DELIMITER $$
+CREATE PROCEDURE editarCuartoArbitro (IN _idCuartoArbitro INT,
+IN _cedula VARCHAR(10),
+IN _nombre VARCHAR(25),
+IN _apellido VARCHAR(25),
+IN _domicilio VARCHAR(25),
+IN _email VARCHAR(25),
+IN _telefono VARCHAR(10))
+	BEGIN
+		UPDATE cuartoarbitro SET cedula = _cedula, nombre = _nombre, apellido = _apellido, domicilio = _domicilio, email = _email, telefono = _telefono
+		WHERE idcuartoarbitro = _idCuartoArbitro;
+	END$$
+DELIMITER 
+
 /*PROCEDIMIENTO PARA GUARDAR EQUIPO*/
 DELIMITER $$
 CREATE PROCEDURE guardarEquipo( 
