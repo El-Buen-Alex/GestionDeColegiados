@@ -25,6 +25,8 @@ namespace GestionDeColegiados
         string usuario;
         string password;
 
+        private GestionLogin gestionLogin = new GestionLogin();
+
 
         public btnIniciarSesion()
         {
@@ -80,10 +82,6 @@ namespace GestionDeColegiados
             usuario = txtUsuario.Text;
             password = txtPassword.Text;
 
-
-            GestionLogin gestionLogin = new GestionLogin();
-
-
             if (string.IsNullOrEmpty(usuario) || (string.IsNullOrEmpty(password)))
             {
                 validarCamposVaciosLogin();
@@ -94,10 +92,7 @@ namespace GestionDeColegiados
                 string mensaje = "";
                 mensaje = gestionLogin.controlLogin(usuario, password);
 
-                string ultimoAcceso = "";
-                ultimoAcceso = gestionLogin.validarUltimoAcceso(usuario, password);
-
-                redirigirUsuario(mensaje, ultimoAcceso);
+                redirigirUsuario(mensaje, usuario, password);
             }
         }
         private void borrarCampos()
@@ -122,37 +117,53 @@ namespace GestionDeColegiados
             }
         }
 
-        private void redirigirUsuario(string mensaje, string ultimoAcceso)
+        private void AccesoUser(string mensaje)
         {
-            if(ultimoAcceso == "")
+            if (mensaje == "presidente")
             {
                 this.Hide();
-                CambiarPass cambiar = new CambiarPass();
-                cambiar.Show();
+                MenuPrincipal pantallaPrincipal = new MenuPrincipal();
+                pantallaPrincipal.Show();
+            }
+            else if (mensaje == "arbitro")
+            {
+                this.Hide();
+                FrmMenuArbitro pantallaPrincipalArbitro = new FrmMenuArbitro();
+                pantallaPrincipalArbitro.Show();
+            }
+        }
+
+
+        private  void controlarUltimoAcceso(bool tuvoUltimoAcceso, string mensaje)
+        {
+            if (tuvoUltimoAcceso)
+            {
+                AccesoUser(mensaje);
             }
             else
             {
-                if (mensaje == "presidente")
-                {
-                    this.Hide();
-                    MenuPrincipal pantallaPrincipal = new MenuPrincipal();
-                    pantallaPrincipal.Show();
-                }
-                else if (mensaje == "arbitro")
-                {
-                    this.Hide();
-                    FrmMenuArbitro pantallaPrincipalArbitro = new FrmMenuArbitro();
-                    pantallaPrincipalArbitro.Show();
-                }
-                else
-                {
-                    MessageBox.Show(mensaje, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    borrarCampos();
+                int id = gestionLogin.obtenerId(usuario, password);
+                
+                CambiarPass cambiar = new CambiarPass(id);
 
-                }
+                cambiar.ShowDialog();
+
             }
-            
         }
 
+        private void redirigirUsuario(string mensaje, string usuario, string password)
+        {
+            
+            if (mensaje.StartsWith("ERROR"))
+            {
+                MessageBox.Show(mensaje, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                borrarCampos();
+            }else
+            {
+                
+                bool ultimoAcceso = gestionLogin.validarUltimoAcceso(usuario, password);
+                controlarUltimoAcceso(ultimoAcceso, mensaje);
+            }
+        }
     }
 }

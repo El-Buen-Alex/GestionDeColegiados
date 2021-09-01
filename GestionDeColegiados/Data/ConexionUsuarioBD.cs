@@ -50,5 +50,11 @@ namespace Model
             //finalmente lo retornamos
             return administrador;
         }
+
+        public bool CambiarPassword(string newPass, int idUser)
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }

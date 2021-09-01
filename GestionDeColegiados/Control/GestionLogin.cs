@@ -5,12 +5,12 @@ namespace Control
 {
     public class GestionLogin
     {
-
+        private ConexionUsuarioBD gestionUsuario = new ConexionUsuarioBD();
         //metodo necesario para gestionar el intento de acceder a la aplicación
         public string controlLogin(string usuario, string password)
         {
             //creamos un objeto que nos ayudará a gestionar la conexion
-            ConexionUsuarioBD gestionUsuario = new ConexionUsuarioBD();
+            
             Administrador nuevoUsuario = null;
             //creamos una cadena que ayudará a dar respuesta del proceso
             string respuesta = "";
@@ -30,36 +30,56 @@ namespace Control
             }catch(Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                respuesta = ex.Message;
+                respuesta = ""+ex.Message;
             }
             return respuesta;
         }
 
-        public string validarUltimoAcceso(string usuario, string password)
+        public bool CambiarPass(string newPass, int idUser)
         {
-            //creamos un objeto que nos ayudará a gestionar la conexion
+            bool cambio = gestionUsuario.CambiarPassword(newPass, idUser);
+            
+            return cambio;
+        }
+
+        private Administrador obtenerUsuario(string username, string password)
+        {
             ConexionUsuarioBD gestionUsuario = new ConexionUsuarioBD();
-            Administrador nuevoUsuario = null;
+            Administrador usuario = null;
             //creamos una cadena que ayudará a dar respuesta del proceso
             string respuesta = "";
             try
             {
-                nuevoUsuario = gestionUsuario.ExisteUsuario(usuario.Trim(), password);
+                usuario = gestionUsuario.ExisteUsuario(username.Trim(), password);
 
-                if (nuevoUsuario == null)
+                if (usuario == null)
                 {
                     //se lanza la excepcion
-                    throw new usuarioNoRegistradoException(usuario);
-                }
-                else
-                {
-                    respuesta = nuevoUsuario.UltimoAcceso;
+                    throw new usuarioNoRegistradoException(username);
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
                 respuesta = ex.Message;
+            }
+            return usuario;
+        }
+        public int obtenerId(string usuario, string password)
+        {
+            int id = 0;
+            Administrador user = obtenerUsuario(usuario, password);
+
+            return user.Id;
+        }
+
+        public bool validarUltimoAcceso(string usuario, string password)
+        {
+            bool respuesta = true;
+            Administrador admin = obtenerUsuario(usuario, password);
+            if (String.IsNullOrEmpty(admin.UltimoAcceso))
+            {
+                respuesta = false;
             }
             return respuesta;
         }
