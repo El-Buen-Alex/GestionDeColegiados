@@ -134,5 +134,36 @@ namespace Control.AdmColegiados
                 MessageBox.Show(mensaje, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
+
+        //Método eliminarArbitro de la interface IAdm
+        public int eliminarArbitro (int idArbitro, string cedula, string nombre, string apellido,
+            string domicilio, string email, string telefono) {
+            juezCentral = new JuezCentral();
+            juezCentral.IdArbitro = idArbitro;
+            juezCentral.Cedula = cedula;
+            juezCentral.Nombre = nombre;
+            juezCentral.Apellidos = apellido;
+            juezCentral.Domicilio = domicilio;
+            juezCentral.Email = email;
+            juezCentral.Telefono = telefono;
+            int idNuevo = 0;
+
+            if (juezCentral != null) {
+                eliminarJuezCentralBD(idArbitro);
+                idNuevo = GuardarJuezCentralBD(juezCentral);
+            }
+            return idNuevo;
+        }
+
+        //Eliminar "lógico" en la BD
+        private void eliminarJuezCentralBD (int idArbitro) {
+            string mensaje = "";
+            try {
+                datos.eliminarJuezCentralBD(idArbitro);
+            } catch (falloBDException ex) {
+                mensaje = ex.Message;
+                MessageBox.Show(mensaje, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+        }
     }
 }

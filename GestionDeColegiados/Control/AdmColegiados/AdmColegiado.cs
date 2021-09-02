@@ -65,14 +65,11 @@ namespace Control.AdmColegiados
             string mensaje = "";
             try {
                 datos.InsertarColegiado(colegiado);
+                MessageBox.Show("Se ha guardado correctamente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             } catch (falloBDException ex) {
                 mensaje = ex.Message;
-            }
-            if (mensaje != "") {
                 MessageBox.Show(mensaje, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 MessageBox.Show("No se ha guardado el colegiado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            } else {
-                MessageBox.Show("Se ha guardado correctamente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -222,6 +219,36 @@ namespace Control.AdmColegiados
             int idArbitro = obtenerIDArbitro(idColegiado, filaSeleccionada);
             contexto = escogerArbitro(filaSeleccionada);
             contexto.editarArbitro(idArbitro, cedula, nombre, apellido, domicilio, email, telefono);
+        }
+
+        //Eliminar
+        public void recogerDatosEliminar (DataGridView dgvListarColegiados) {
+            filaSeleccionada = dgvListarColegiados.CurrentRow;
+        }
+        
+        public void eliminarArbitro (string lblID, string cedula, string nombre, string apellido, string domicilio, string email, string telefono) {
+            char delimitador = ' ';
+            string[] cadena = lblID.Split(delimitador);
+            int idColegiado = Convert.ToInt32(cadena[1]);
+            int idArbitro = obtenerIDArbitro(idColegiado, filaSeleccionada);
+            int idNuevo = 0;
+            contexto = escogerArbitro(filaSeleccionada);
+            idNuevo = contexto.eliminarArbitro(idArbitro, cedula, nombre, apellido, domicilio, email, telefono);
+            if (idNuevo != 0) {
+                string arbitro = filaSeleccionada.Cells[0].Value.ToString();
+                actualizarColegiado(idColegiado,idNuevo,arbitro);
+            }
+        }
+
+        private void actualizarColegiado (int idColegiado, int idNuevo, string arbitro) {
+            string mensaje = "";
+            try {
+                datos.actualizarColegiado(idColegiado, idNuevo, arbitro);
+                MessageBox.Show("Sus datos fueron agregados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            } catch (falloBDException ex) {
+                mensaje = ex.Message;
+                MessageBox.Show(mensaje, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
         }
     }
 } 

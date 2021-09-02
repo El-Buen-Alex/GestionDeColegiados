@@ -163,7 +163,6 @@ namespace Data
             return id;
         }
 
-
         public void InsertarColegiado(Colegiado colegiado)
         {
             conexion = ConexionBD.getConexion();    //Obtener conexión
@@ -526,6 +525,66 @@ namespace Data
                 comando.Parameters.AddWithValue("@_domicilio", cuartoArbitro.Domicilio);
                 comando.Parameters.AddWithValue("@_email", cuartoArbitro.Email);
                 comando.Parameters.AddWithValue("@_telefono", cuartoArbitro.Telefono);
+
+                comando.ExecuteNonQuery();
+                trans.Commit();
+            } catch (MySqlException ex) {
+                trans.Rollback();
+                throw new falloBDException(ex.Message);
+            }
+            conexion.Close();   //Cerrar conexión
+        }
+
+        public void eliminarArbitro (int idArbitro, string procedimiento) {
+            conexion = ConexionBD.getConexion();    //Obtener conexión
+            conexion.Open();                        //Abrir conexión
+            trans = conexion.BeginTransaction();    //Comenzar transaccion
+            try {
+                MySqlCommand comando = new MySqlCommand(procedimiento, conexion, trans);
+                comando.CommandType = CommandType.StoredProcedure;
+
+                comando.Parameters.AddWithValue("@_idArbitro", idArbitro);
+
+                comando.ExecuteNonQuery();
+                trans.Commit();
+            } catch (MySqlException ex) {
+                trans.Rollback();
+                throw new falloBDException(ex.Message);
+            }
+            conexion.Close();   //Cerrar conexión
+        }
+
+        public void eliminarJuezCentralBD (int idArbitro) {
+            string procedimiento = "eliminarJuezCentral";
+            eliminarArbitro(idArbitro,procedimiento);
+        }
+
+        public void eliminarAsistente1BD (int idArbitro) {
+            string procedimiento = "eliminarAsistente1";
+            eliminarArbitro(idArbitro, procedimiento);
+        }
+
+        public void eliminarAsistente2BD (int idArbitro) {
+            string procedimiento = "eliminarAsistente2";
+            eliminarArbitro(idArbitro, procedimiento);
+        }
+
+        public void eliminarCuartoArbitroBD (int idArbitro) {
+            string procedimiento = "eliminarCuartoArbitro";
+            eliminarArbitro(idArbitro, procedimiento);
+        }
+
+        public void actualizarColegiado (int idColegiado, int idNuevo, string arbitro) {
+            conexion = ConexionBD.getConexion();    //Obtener conexión
+            conexion.Open();                        //Abrir conexión
+            trans = conexion.BeginTransaction();    //Comenzar transaccion
+            try {
+                MySqlCommand comando = new MySqlCommand("actualizarColegiado", conexion, trans);
+                comando.CommandType = CommandType.StoredProcedure;
+
+                comando.Parameters.AddWithValue("@_idColegiado", idColegiado);
+                comando.Parameters.AddWithValue("@_idNuevo", idNuevo);
+                comando.Parameters.AddWithValue("@_arbitro", arbitro);
 
                 comando.ExecuteNonQuery();
                 trans.Commit();

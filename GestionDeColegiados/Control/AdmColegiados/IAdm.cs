@@ -12,5 +12,7 @@ namespace Control.AdmColegiados
             TextBox txtDomicilio, TextBox txtEmail, TextBox txtTelefono);
         void editarArbitro (int idArbitro, string cedula, string nombre, string apellido, 
             string domicilio, string email, string telefono);
+        int eliminarArbitro (int idArbitro, string cedula, string nombre, string apellido, 
+            string domicilio, string email, string telefono);
     }
 }

@@ -77,10 +77,15 @@ namespace GestionDeColegiados.FrmsColegiado
                 MessageBox.Show("El árbitro que ingresó ya se encuentra registrado!!\nIngrese uno nuevo", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             if (vacio != true && cedulaRepetida != true) {
-                MessageBox.Show("Sus datos fueron agregados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                string cedula = txtCedula.Text,
+                    nombre = txtNombre.Text,
+                    apellido = txtApellido.Text,
+                    domicilio = txtDomicilio.Text,
+                    email = txtEmail.Text,
+                    telefono = txtTelefono.Text;
+                admColegiado.eliminarArbitro(lblID.Text, cedula, nombre, apellido, domicilio, email, telefono);
                 Close();
-            }
-                
+            }  
         }
 
         private void btnCancelar_Click (object sender, EventArgs e) {

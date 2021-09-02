@@ -71,8 +71,9 @@ namespace GestionDeColegiados
                 DataGridViewRow row = dgvListarColegiados.CurrentRow;
                 string arbitro = row.Cells[0].Value.ToString();
                 frmElimAgregarArbitro frmAgregar = new frmElimAgregarArbitro(arbitro,cmbIdArbitro.Text);
+                admColegiado.recogerDatosEliminar(dgvListarColegiados);
                 frmAgregar.ShowDialog();
-                MessageBox.Show("Prueba");
+                admColegiado.llenarDatosGrivColegiado(dgvListarColegiados, cmbIdArbitro);
             }
         }
 
@@ -80,7 +81,8 @@ namespace GestionDeColegiados
             DialogResult resultado;
             resultado = MessageBox.Show("¡Está seguro de eliminar el "+cmbIdArbitro.Text+" de colegiados!", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
             if (resultado == DialogResult.Yes) {
-                MessageBox.Show("Se eliminó el colegiado correctamente","Aviso",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("Aún en construcción");
+                //MessageBox.Show("Se eliminó el colegiado correctamente","Aviso",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
         }
     }

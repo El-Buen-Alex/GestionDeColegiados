@@ -32,15 +32,15 @@ namespace Control.AdmColegiados
         }
 
         //Método guardar de la interface IAdm
-        public int guardar(TextBox txtcedulaJC, TextBox txtnombreJC, TextBox txtapellidoJC,
-            TextBox txtdomicilioJC, TextBox txtemailJC, TextBox txttelefonoJC)
+        public int guardar(TextBox txtcedula, TextBox txtnombre, TextBox txtapellido,
+            TextBox txtdomicilio, TextBox txtemail, TextBox txttelefono)
         {
-            string cedula = txtcedulaJC.Text,
-                nombre = txtnombreJC.Text,
-                apellidos = txtapellidoJC.Text,
-                domicilio = txtdomicilioJC.Text,
-                email = txtemailJC.Text,
-                telefono = txttelefonoJC.Text;
+            string cedula = txtcedula.Text,
+                nombre = txtnombre.Text,
+                apellidos = txtapellido.Text,
+                domicilio = txtdomicilio.Text,
+                email = txtemail.Text,
+                telefono = txttelefono.Text;
             int id = 0;
 
             cuartoArbitro = new CuartoArbitro(0, cedula, nombre, apellidos, domicilio, email, telefono);
@@ -48,13 +48,13 @@ namespace Control.AdmColegiados
             if (cuartoArbitro != null)
             {
                 listaCuartoArbitro.Add(cuartoArbitro);    //Añadir a la lista
-                id = GuardarJuezCentralBD(cuartoArbitro); //Guardar BD
+                id = GuardarCuartoArbitroBD(cuartoArbitro); //Guardar BD
             }
             return id;
         }
 
         //Guardar datos a la BD
-        private int GuardarJuezCentralBD(CuartoArbitro cuartoArbitro)
+        private int GuardarCuartoArbitroBD(CuartoArbitro cuartoArbitro)
         {
             int id = 0;
             string mensaje = "";
@@ -128,6 +128,37 @@ namespace Control.AdmColegiados
             try {
                 datos.editarCuartoArbitro(cuartoArbitro);
                 MessageBox.Show("Sus datos fueron actualizados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            } catch (falloBDException ex) {
+                mensaje = ex.Message;
+                MessageBox.Show(mensaje, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+        }
+
+        //Método eliminarArbitro de la interface IAdm
+        public int eliminarArbitro (int idArbitro, string cedula, string nombre, string apellido,
+            string domicilio, string email, string telefono) {
+            cuartoArbitro = new CuartoArbitro();
+            cuartoArbitro.IdArbitro = idArbitro;
+            cuartoArbitro.Cedula = cedula;
+            cuartoArbitro.Nombre = nombre;
+            cuartoArbitro.Apellidos = apellido;
+            cuartoArbitro.Domicilio = domicilio;
+            cuartoArbitro.Email = email;
+            cuartoArbitro.Telefono = telefono;
+            int idNuevo = 0;
+
+            if (cuartoArbitro != null) {
+                eliminarCuartoArbitroBD(idArbitro);
+                idNuevo = GuardarCuartoArbitroBD(cuartoArbitro);
+            }
+            return idNuevo;
+        }
+
+        //Eliminar "lógico" en la BD
+        private void eliminarCuartoArbitroBD (int idArbitro) {
+            string mensaje = "";
+            try {
+                datos.eliminarCuartoArbitroBD(idArbitro);
             } catch (falloBDException ex) {
                 mensaje = ex.Message;
                 MessageBox.Show(mensaje, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Stop);

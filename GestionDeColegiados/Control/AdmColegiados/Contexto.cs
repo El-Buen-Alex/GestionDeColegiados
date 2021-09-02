@@ -35,9 +35,14 @@ namespace Control.AdmColegiados
             adm.llenarDatosFormEditar(txtCedula, txtNombre, txtApellido, txtDomicilio, txtEmail, txtTelefono);
         }
 
-        internal void editarArbitro (int idArbitro, string cedula, string nombre, string apellido, 
+        public void editarArbitro (int idArbitro, string cedula, string nombre, string apellido, 
             string domicilio, string email, string telefono) {
             adm.editarArbitro(idArbitro, cedula, nombre, apellido, domicilio, email, telefono);
+        }
+
+        public int eliminarArbitro (int idArbitro, string cedula, string nombre, string apellido, 
+            string domicilio, string email, string telefono) {
+            return this.adm.eliminarArbitro(idArbitro, cedula, nombre, apellido, domicilio, email, telefono);
         }
     }
 }
