@@ -249,6 +249,70 @@ IN _telefono VARCHAR(10))
 	END$$
 DELIMITER 
 
+/*PROCEDIMIENTO PARA DAR DE BAJA UN JUEZ CENTRAL*/
+DELIMITER $$
+CREATE PROCEDURE eliminarJuezCentral (IN _idArbitro INT)
+	BEGIN
+		UPDATE juezcentral SET estado = 'I'
+		WHERE idjuezcentral = _idArbitro;
+	END$$
+DELIMITER 
+
+/*PROCEDIMIENTO PARA DAR DE BAJA UN ASISTENTE 1*/
+DELIMITER $$
+CREATE PROCEDURE eliminarAsistente1 (IN _idArbitro INT)
+	BEGIN
+		UPDATE asistente1 SET estado = 'I'
+		WHERE idasistente1 = _idArbitro;
+	END$$
+DELIMITER 
+
+/*PROCEDIMIENTO PARA DAR DE BAJA UN ASISTENTE 2*/
+DELIMITER $$
+CREATE PROCEDURE eliminarAsistente2 (IN _idArbitro INT)
+	BEGIN
+		UPDATE asistente2 SET estado = 'I'
+		WHERE idasistente2 = _idArbitro;
+	END$$
+DELIMITER 
+
+/*PROCEDIMIENTO PARA DAR DE BAJA UN CUARTO ARBITRO*/
+DELIMITER $$
+CREATE PROCEDURE eliminarCuartoArbitro (IN _idArbitro INT)
+	BEGIN
+		UPDATE cuartoarbitro SET estado = 'I'
+		WHERE idcuartoarbitro = _idArbitro;
+	END$$
+DELIMITER 
+
+/*PROCEDIMIENTO PARA ACTUALIZAR ID COLEGIADO DESPUES DE DAR DE BAJA*/
+DELIMITER $$
+CREATE PROCEDURE actualizarColegiado (IN _idColegiado INT,
+IN _idNuevo INT,
+IN _arbitro VARCHAR(25))
+	BEGIN
+		IF _arbitro = 'Juez Central' THEN
+		UPDATE colegiado SET idjuezcentral = _idNuevo
+		WHERE idcolegiado = _idColegiado;
+        END IF;
+        
+        IF _arbitro = 'Asistente 1' THEN
+		UPDATE colegiado SET idasistente1 = _idNuevo
+		WHERE idcolegiado = _idColegiado;
+        END IF;
+        
+        IF _arbitro = 'Asistente 2' THEN
+		UPDATE colegiado SET idasistente2 = _idNuevo
+		WHERE idcolegiado = _idColegiado;
+        END IF;
+        
+        IF _arbitro = 'Cuarto Árbitro' THEN
+		UPDATE colegiado SET idcuartoarbitro = _idNuevo
+		WHERE idcolegiado = _idColegiado;
+        END IF;
+	END$$
+DELIMITER 
+
 /*PROCEDIMIENTO PARA GUARDAR EQUIPO*/
 DELIMITER $$
 CREATE PROCEDURE guardarEquipo( 
