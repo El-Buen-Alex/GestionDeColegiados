@@ -66,28 +66,28 @@ namespace GestionDeColegiados.FrmsColegiado
             }
         }
 
+        private void chbxHabilitar_CheckedChanged (object sender, EventArgs e) {
+            if (chbxHabilitar.Checked == true) {
+                txtCedula.Enabled = true;
+            } else {
+                txtCedula.Enabled = false;
+            }
+        }
+
         private void btnActualizar_Click (object sender, EventArgs e) {
             bool vacio = validacionGUI.validarVacios(txtCedula, txtNombre, txtApellido, txtDomicilio, txtEmail, txtTelefono);
             bool cedulaRepetida = admColegiado.validarCedula(txtCedula);
             if (vacio == true) {
                 MessageBox.Show("Hay ciertos campos vacios", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            if (cedulaRepetida == true) {
-                MessageBox.Show("El árbitro que ingresó ya se encuentra registrado!!\nIngrese uno nuevo", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            if (vacio != true && cedulaRepetida != true) {
-                DialogResult resultado;
-                resultado = MessageBox.Show("¡Está seguro de actualizar!", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-                if (resultado == DialogResult.Yes) {
-                    string cedula = txtCedula.Text,
-                        nombre = txtNombre.Text,
-                        apellido = txtApellido.Text,
-                        domicilio = txtDomicilio.Text,
-                        email = txtEmail.Text,
-                        telefono = txtTelefono.Text;
-                    admColegiado.editarArbitro(lblID.Text, cedula, nombre, apellido, domicilio, email, telefono);
-                    MessageBox.Show("Sus datos fueron actualizados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Close();
+            if (txtCedula.Enabled == false) {
+                actualiza();
+            } else {
+                if (cedulaRepetida == true) {
+                    MessageBox.Show("El árbitro que ingresó ya se encuentra registrado!!\nIngrese uno nuevo", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                if (vacio != true && cedulaRepetida != true) {
+                    actualiza();
                 }
             }
         }
@@ -96,6 +96,21 @@ namespace GestionDeColegiados.FrmsColegiado
             DialogResult resultado;
             resultado = MessageBox.Show("¡Está seguro de cancelar!", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
             if (resultado == DialogResult.Yes) {
+                Close();
+            }
+        }
+
+        private void actualiza () {
+            DialogResult resultado;
+            resultado = MessageBox.Show("¡Está seguro de actualizar!", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if (resultado == DialogResult.Yes) {
+                string cedula = txtCedula.Text,
+                    nombre = txtNombre.Text,
+                    apellido = txtApellido.Text,
+                    domicilio = txtDomicilio.Text,
+                    email = txtEmail.Text,
+                    telefono = txtTelefono.Text;
+                admColegiado.editarArbitro(lblID.Text, cedula, nombre, apellido, domicilio, email, telefono);
                 Close();
             }
         }

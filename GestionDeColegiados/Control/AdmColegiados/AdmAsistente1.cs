@@ -62,9 +62,7 @@ namespace Control.AdmColegiados
                 id = datos.InsertarAsistente1(asistente1);
             } catch (falloBDException ex) {
                 mensaje = ex.Message;
-            }
-            if (mensaje != "") {
-                MessageBox.Show(mensaje);
+                MessageBox.Show(mensaje, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
             return id;
         }
@@ -110,21 +108,17 @@ namespace Control.AdmColegiados
         //Método editarArbitro de la interface IAdm
         public void editarArbitro (int idArbitro, string cedula, string nombre, string apellido,
             string domicilio, string email, string telefono) {
-            try {
-                asistente1 = new Asistente();
-                asistente1.IdArbitro = idArbitro;
-                asistente1.Cedula = cedula;
-                asistente1.Nombre = nombre;
-                asistente1.Apellidos = apellido;
-                asistente1.Domicilio = domicilio;
-                asistente1.Email = email;
-                asistente1.Telefono = telefono;
+            asistente1 = new Asistente();
+            asistente1.IdArbitro = idArbitro;
+            asistente1.Cedula = cedula;
+            asistente1.Nombre = nombre;
+            asistente1.Apellidos = apellido;
+            asistente1.Domicilio = domicilio;
+            asistente1.Email = email;
+            asistente1.Telefono = telefono;
 
-                if (asistente1 != null) {
-                    editarAsistente1BD(asistente1);
-                }
-            } catch (FormatException ex) {
-                Console.WriteLine(ex);
+            if (asistente1 != null) {
+               editarAsistente1BD(asistente1);
             }
         }
 
@@ -133,11 +127,10 @@ namespace Control.AdmColegiados
             string mensaje = "";
             try {
                 datos.editarAsistente1BD(asistente1);
+                MessageBox.Show("Sus datos fueron actualizados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             } catch (falloBDException ex) {
                 mensaje = ex.Message;
-            }
-            if (mensaje != "") {
-                MessageBox.Show(mensaje);
+                MessageBox.Show(mensaje, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
     }

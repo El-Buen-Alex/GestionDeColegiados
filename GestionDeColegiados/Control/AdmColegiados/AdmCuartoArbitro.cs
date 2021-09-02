@@ -62,9 +62,7 @@ namespace Control.AdmColegiados
                 id = datos.InsertarCuartoArbitro(cuartoArbitro);
             } catch (falloBDException ex) {
                 mensaje = ex.Message;
-            }
-            if (mensaje != "") {
-                MessageBox.Show(mensaje);
+                MessageBox.Show(mensaje, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
             return id;
         }
@@ -110,30 +108,29 @@ namespace Control.AdmColegiados
         //Método editarArbitro de la interface IAdm
         public void editarArbitro (int idArbitro, string cedula, string nombre, string apellido,
             string domicilio, string email, string telefono) {
-            try {
-                cuartoArbitro = new CuartoArbitro();
-                cuartoArbitro.IdArbitro = idArbitro;
-                cuartoArbitro.Cedula = cedula;
-                cuartoArbitro.Nombre = nombre;
-                cuartoArbitro.Apellidos = apellido;
-                cuartoArbitro.Domicilio = domicilio;
-                cuartoArbitro.Email = email;
-                cuartoArbitro.Telefono = telefono;
+            cuartoArbitro = new CuartoArbitro();
+            cuartoArbitro.IdArbitro = idArbitro;
+            cuartoArbitro.Cedula = cedula;
+            cuartoArbitro.Nombre = nombre;
+            cuartoArbitro.Apellidos = apellido;
+            cuartoArbitro.Domicilio = domicilio;
+            cuartoArbitro.Email = email;
+            cuartoArbitro.Telefono = telefono;
 
-                if (cuartoArbitro != null) {
-                    editarCuartoArbitroBD(cuartoArbitro);
-                }
-            } catch (falloBDException ex) {
-                Console.WriteLine(ex);
+            if (cuartoArbitro != null) {
+                editarCuartoArbitroBD(cuartoArbitro);
             }
         }
 
         //Modificar datos en la BD
         private void editarCuartoArbitroBD (CuartoArbitro cuartoArbitro) {
+            string mensaje = "";
             try {
                 datos.editarCuartoArbitro(cuartoArbitro);
+                MessageBox.Show("Sus datos fueron actualizados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             } catch (falloBDException ex) {
-                Console.WriteLine(ex);
+                mensaje = ex.Message;
+                MessageBox.Show(mensaje, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
     }

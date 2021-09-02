@@ -42,6 +42,7 @@
             this.lblEditar = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.chbxHabilitar = new System.Windows.Forms.CheckBox();
             this.PanelBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).BeginInit();
             this.SuspendLayout();
@@ -85,6 +86,7 @@
             // 
             // txtCedula
             // 
+            this.txtCedula.Enabled = false;
             this.txtCedula.Location = new System.Drawing.Point(186, 187);
             this.txtCedula.MaxLength = 10;
             this.txtCedula.Name = "txtCedula";
@@ -248,12 +250,24 @@
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // chbxHabilitar
+            // 
+            this.chbxHabilitar.AutoSize = true;
+            this.chbxHabilitar.Location = new System.Drawing.Point(419, 190);
+            this.chbxHabilitar.Name = "chbxHabilitar";
+            this.chbxHabilitar.Size = new System.Drawing.Size(64, 17);
+            this.chbxHabilitar.TabIndex = 82;
+            this.chbxHabilitar.Text = "Habilitar";
+            this.chbxHabilitar.UseVisualStyleBackColor = true;
+            this.chbxHabilitar.CheckedChanged += new System.EventHandler(this.chbxHabilitar_CheckedChanged);
+            // 
             // frmEditarArbitro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(129)))), ((int)(((byte)(150)))));
             this.ClientSize = new System.Drawing.Size(507, 566);
+            this.Controls.Add(this.chbxHabilitar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.lblEditar);
@@ -306,5 +320,6 @@
         private System.Windows.Forms.Label lblEditar;
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.CheckBox chbxHabilitar;
     }
 }

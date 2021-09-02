@@ -61,7 +61,7 @@ namespace GestionDeColegiados
             frmEditarArbitro frmEditar = new frmEditarArbitro(arbitro,cmbIdArbitro.Text);
             admColegiado.recogerDatosEditar(dgvListarColegiados);
             frmEditar.ShowDialog();
-            MessageBox.Show("Prueba");
+            admColegiado.llenarDatosGrivColegiado(dgvListarColegiados, cmbIdArbitro);
         }
 
         private void btnEliminarArbitro_Click (object sender, System.EventArgs e) {
