@@ -39,6 +39,8 @@ namespace GestionDeColegiados
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.registrar = new System.Windows.Forms.Button();
+            this.eliminar = new System.Windows.Forms.Button();
+            this.editar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label5
@@ -56,7 +58,7 @@ namespace GestionDeColegiados
             // presidente
             // 
             this.presidente.Location = new System.Drawing.Point(239, 298);
-            this.presidente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.presidente.Margin = new System.Windows.Forms.Padding(2);
             this.presidente.Name = "presidente";
             this.presidente.Size = new System.Drawing.Size(158, 20);
             this.presidente.TabIndex = 18;
@@ -65,7 +67,7 @@ namespace GestionDeColegiados
             // director
             // 
             this.director.Location = new System.Drawing.Point(236, 236);
-            this.director.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.director.Margin = new System.Windows.Forms.Padding(2);
             this.director.Name = "director";
             this.director.Size = new System.Drawing.Size(161, 20);
             this.director.TabIndex = 17;
@@ -74,7 +76,7 @@ namespace GestionDeColegiados
             // numjugadores
             // 
             this.numjugadores.Location = new System.Drawing.Point(236, 180);
-            this.numjugadores.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.numjugadores.Margin = new System.Windows.Forms.Padding(2);
             this.numjugadores.MaxLength = 2;
             this.numjugadores.Name = "numjugadores";
             this.numjugadores.Size = new System.Drawing.Size(161, 20);
@@ -85,7 +87,7 @@ namespace GestionDeColegiados
             // nombre
             // 
             this.nombre.Location = new System.Drawing.Point(236, 128);
-            this.nombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nombre.Margin = new System.Windows.Forms.Padding(2);
             this.nombre.Name = "nombre";
             this.nombre.Size = new System.Drawing.Size(161, 20);
             this.nombre.TabIndex = 15;
@@ -143,8 +145,8 @@ namespace GestionDeColegiados
             // 
             this.registrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
             this.registrar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.registrar.Location = new System.Drawing.Point(149, 422);
-            this.registrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.registrar.Location = new System.Drawing.Point(164, 422);
+            this.registrar.Margin = new System.Windows.Forms.Padding(2);
             this.registrar.Name = "registrar";
             this.registrar.Size = new System.Drawing.Size(109, 40);
             this.registrar.TabIndex = 10;
@@ -152,12 +154,38 @@ namespace GestionDeColegiados
             this.registrar.UseVisualStyleBackColor = false;
             this.registrar.Click += new System.EventHandler(this.registrar_Click);
             // 
+            // eliminar
+            // 
+            this.eliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.eliminar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.eliminar.Location = new System.Drawing.Point(316, 422);
+            this.eliminar.Margin = new System.Windows.Forms.Padding(2);
+            this.eliminar.Name = "eliminar";
+            this.eliminar.Size = new System.Drawing.Size(109, 40);
+            this.eliminar.TabIndex = 48;
+            this.eliminar.Text = "Eliminar";
+            this.eliminar.UseVisualStyleBackColor = false;
+            // 
+            // editar
+            // 
+            this.editar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.editar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.editar.Location = new System.Drawing.Point(11, 422);
+            this.editar.Margin = new System.Windows.Forms.Padding(2);
+            this.editar.Name = "editar";
+            this.editar.Size = new System.Drawing.Size(109, 40);
+            this.editar.TabIndex = 47;
+            this.editar.Text = "Editar";
+            this.editar.UseVisualStyleBackColor = false;
+            // 
             // frmNuevoEquipo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(129)))), ((int)(((byte)(150)))));
             this.ClientSize = new System.Drawing.Size(446, 507);
+            this.Controls.Add(this.eliminar);
+            this.Controls.Add(this.editar);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.presidente);
             this.Controls.Add(this.director);
@@ -169,7 +197,7 @@ namespace GestionDeColegiados
             this.Controls.Add(this.label1);
             this.Controls.Add(this.registrar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmNuevoEquipo";
             this.Text = "frmNuevoEquipo";
             this.ResumeLayout(false);
@@ -189,5 +217,7 @@ namespace GestionDeColegiados
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button registrar;
+        private System.Windows.Forms.Button eliminar;
+        private System.Windows.Forms.Button editar;
     }
 }
