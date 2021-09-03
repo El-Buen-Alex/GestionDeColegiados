@@ -64,14 +64,14 @@ namespace GestionDeColegiados
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(215, 20);
             this.label1.TabIndex = 21;
-            this.label1.Text = "Ingrese el número de equipo:";
+            this.label1.Text = "Ingrese el nombre de equipo:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // numEquipo
             // 
             this.numEquipo.Location = new System.Drawing.Point(228, 94);
             this.numEquipo.Name = "numEquipo";
-            this.numEquipo.Size = new System.Drawing.Size(100, 20);
+            this.numEquipo.Size = new System.Drawing.Size(128, 20);
             this.numEquipo.TabIndex = 22;
             // 
             // buscar

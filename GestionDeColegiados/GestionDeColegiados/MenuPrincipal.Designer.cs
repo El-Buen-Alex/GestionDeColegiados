@@ -42,11 +42,9 @@ namespace GestionDeColegiados
             this.btnGestionEquipos2 = new System.Windows.Forms.Button();
             this.flpOpcionGestionEquipo = new System.Windows.Forms.FlowLayoutPanel();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.btnAnadirEquipo = new System.Windows.Forms.Button();
             this.panel12 = new System.Windows.Forms.Panel();
             this.btnGenerarEncuentros = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.btnGestionEncuentros2 = new System.Windows.Forms.Button();
             this.flpOpcionGestionEncuentros = new System.Windows.Forms.FlowLayoutPanel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.btnAsignarColegiados = new System.Windows.Forms.Button();
@@ -71,6 +69,9 @@ namespace GestionDeColegiados
             this.pbMinimizar = new System.Windows.Forms.PictureBox();
             this.pbCerrar = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.btnGestionEncuentros2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.flpOpcionGestionColegiado.SuspendLayout();
@@ -111,6 +112,7 @@ namespace GestionDeColegiados
             this.flowLayoutPanel1.Controls.Add(this.panel15);
             this.flowLayoutPanel1.Controls.Add(this.button1);
             this.flowLayoutPanel1.Controls.Add(this.flpVerCompetencia);
+            this.flowLayoutPanel1.Controls.Add(this.button4);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 89);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -231,7 +233,7 @@ namespace GestionDeColegiados
             // flpOpcionGestionEquipo
             // 
             this.flpOpcionGestionEquipo.Controls.Add(this.panel11);
-            this.flpOpcionGestionEquipo.Controls.Add(this.btnAnadirEquipo);
+            this.flpOpcionGestionEquipo.Controls.Add(this.button5);
             this.flpOpcionGestionEquipo.Controls.Add(this.panel12);
             this.flpOpcionGestionEquipo.Controls.Add(this.btnGenerarEncuentros);
             this.flpOpcionGestionEquipo.Location = new System.Drawing.Point(2, 179);
@@ -248,22 +250,6 @@ namespace GestionDeColegiados
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(63, 38);
             this.panel11.TabIndex = 21;
-            // 
-            // btnAnadirEquipo
-            // 
-            this.btnAnadirEquipo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this.btnAnadirEquipo.FlatAppearance.BorderSize = 0;
-            this.btnAnadirEquipo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(75)))), ((int)(((byte)(119)))));
-            this.btnAnadirEquipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAnadirEquipo.ForeColor = System.Drawing.Color.Silver;
-            this.btnAnadirEquipo.Location = new System.Drawing.Point(69, 2);
-            this.btnAnadirEquipo.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAnadirEquipo.Name = "btnAnadirEquipo";
-            this.btnAnadirEquipo.Size = new System.Drawing.Size(107, 38);
-            this.btnAnadirEquipo.TabIndex = 15;
-            this.btnAnadirEquipo.Text = "Añadir Equipo";
-            this.btnAnadirEquipo.UseVisualStyleBackColor = false;
-            this.btnAnadirEquipo.Click += new System.EventHandler(this.btnAnadirEquipo_Click);
             // 
             // panel12
             // 
@@ -297,22 +283,6 @@ namespace GestionDeColegiados
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(19, 38);
             this.panel10.TabIndex = 17;
-            // 
-            // btnGestionEncuentros2
-            // 
-            this.btnGestionEncuentros2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this.btnGestionEncuentros2.FlatAppearance.BorderSize = 0;
-            this.btnGestionEncuentros2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(75)))), ((int)(((byte)(119)))));
-            this.btnGestionEncuentros2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGestionEncuentros2.ForeColor = System.Drawing.Color.Silver;
-            this.btnGestionEncuentros2.Location = new System.Drawing.Point(25, 272);
-            this.btnGestionEncuentros2.Margin = new System.Windows.Forms.Padding(2);
-            this.btnGestionEncuentros2.Name = "btnGestionEncuentros2";
-            this.btnGestionEncuentros2.Size = new System.Drawing.Size(164, 38);
-            this.btnGestionEncuentros2.TabIndex = 18;
-            this.btnGestionEncuentros2.Text = "Gestión Encuentros";
-            this.btnGestionEncuentros2.UseVisualStyleBackColor = false;
-            this.btnGestionEncuentros2.MouseEnter += new System.EventHandler(this.btnGestionEncuentros2_MouseEnter);
             // 
             // flpOpcionGestionEncuentros
             // 
@@ -603,6 +573,52 @@ namespace GestionDeColegiados
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(75)))), ((int)(((byte)(119)))));
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.ForeColor = System.Drawing.Color.Silver;
+            this.button4.Location = new System.Drawing.Point(2, 531);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(164, 38);
+            this.button4.TabIndex = 26;
+            this.button4.Text = "Gestión Encuentros";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(75)))), ((int)(((byte)(119)))));
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.ForeColor = System.Drawing.Color.Silver;
+            this.button5.Location = new System.Drawing.Point(69, 2);
+            this.button5.Margin = new System.Windows.Forms.Padding(2);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(107, 38);
+            this.button5.TabIndex = 24;
+            this.button5.Text = "Añadir Equipo";
+            this.button5.UseVisualStyleBackColor = false;
+            // 
+            // btnGestionEncuentros2
+            // 
+            this.btnGestionEncuentros2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.btnGestionEncuentros2.FlatAppearance.BorderSize = 0;
+            this.btnGestionEncuentros2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(75)))), ((int)(((byte)(119)))));
+            this.btnGestionEncuentros2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGestionEncuentros2.ForeColor = System.Drawing.Color.Silver;
+            this.btnGestionEncuentros2.Location = new System.Drawing.Point(25, 272);
+            this.btnGestionEncuentros2.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGestionEncuentros2.Name = "btnGestionEncuentros2";
+            this.btnGestionEncuentros2.Size = new System.Drawing.Size(164, 38);
+            this.btnGestionEncuentros2.TabIndex = 18;
+            this.btnGestionEncuentros2.Text = "Gestión Encuentros";
+            this.btnGestionEncuentros2.UseVisualStyleBackColor = false;
+            this.btnGestionEncuentros2.MouseEnter += new System.EventHandler(this.btnGestionEncuentros2_MouseEnter);
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -648,7 +664,6 @@ namespace GestionDeColegiados
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button btnGestionColegiado1;
         private System.Windows.Forms.Button btnGestionEquipos2;
-        private System.Windows.Forms.Button btnGestionEncuentros2;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel10;
@@ -659,7 +674,6 @@ namespace GestionDeColegiados
         private System.Windows.Forms.Button btnVerTodosColegiados;
         private System.Windows.Forms.FlowLayoutPanel flpOpcionGestionEquipo;
         private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Button btnAnadirEquipo;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Button btnGenerarEncuentros;
         private System.Windows.Forms.FlowLayoutPanel flpOpcionGestionEncuentros;
@@ -681,5 +695,8 @@ namespace GestionDeColegiados
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.Button btnVerTodosPartidos;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnGestionEncuentros2;
+        private System.Windows.Forms.Button button4;
     }
 }
