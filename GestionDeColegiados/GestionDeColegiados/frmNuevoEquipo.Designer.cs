@@ -145,7 +145,7 @@ namespace GestionDeColegiados
             // 
             this.registrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
             this.registrar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.registrar.Location = new System.Drawing.Point(164, 422);
+            this.registrar.Location = new System.Drawing.Point(160, 360);
             this.registrar.Margin = new System.Windows.Forms.Padding(2);
             this.registrar.Name = "registrar";
             this.registrar.Size = new System.Drawing.Size(109, 40);
@@ -158,13 +158,14 @@ namespace GestionDeColegiados
             // 
             this.eliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
             this.eliminar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.eliminar.Location = new System.Drawing.Point(316, 422);
+            this.eliminar.Location = new System.Drawing.Point(287, 422);
             this.eliminar.Margin = new System.Windows.Forms.Padding(2);
             this.eliminar.Name = "eliminar";
-            this.eliminar.Size = new System.Drawing.Size(109, 40);
+            this.eliminar.Size = new System.Drawing.Size(138, 40);
             this.eliminar.TabIndex = 48;
-            this.eliminar.Text = "Eliminar";
+            this.eliminar.Text = "Eliminar Equipo";
             this.eliminar.UseVisualStyleBackColor = false;
+            this.eliminar.Click += new System.EventHandler(this.eliminar_Click);
             // 
             // editar
             // 
@@ -173,10 +174,11 @@ namespace GestionDeColegiados
             this.editar.Location = new System.Drawing.Point(11, 422);
             this.editar.Margin = new System.Windows.Forms.Padding(2);
             this.editar.Name = "editar";
-            this.editar.Size = new System.Drawing.Size(109, 40);
+            this.editar.Size = new System.Drawing.Size(140, 40);
             this.editar.TabIndex = 47;
-            this.editar.Text = "Editar";
+            this.editar.Text = "Editar Equipo";
             this.editar.UseVisualStyleBackColor = false;
+            this.editar.Click += new System.EventHandler(this.editar_Click);
             // 
             // frmNuevoEquipo
             // 
