@@ -68,6 +68,18 @@
     <Compile Include="frmActualizarPartido.Designer.cs">
       <DependentUpon>frmActualizarPartido.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEditarEquipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditarEquipo.Designer.cs">
+      <DependentUpon>frmEditarEquipo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEliminarEquipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEliminarEquipo.Designer.cs">
+      <DependentUpon>frmEliminarEquipo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGenerarEncuentros.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +183,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmActualizarPartido.resx">
       <DependentUpon>frmActualizarPartido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditarEquipo.resx">
+      <DependentUpon>frmEditarEquipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEliminarEquipo.resx">
+      <DependentUpon>frmEliminarEquipo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGenerarEncuentros.resx">
       <DependentUpon>frmGenerarEncuentros.cs</DependentUpon>

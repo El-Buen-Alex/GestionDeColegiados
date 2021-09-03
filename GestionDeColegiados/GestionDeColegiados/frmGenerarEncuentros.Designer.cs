@@ -83,9 +83,10 @@ namespace GestionDeColegiados
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblTitulo.Location = new System.Drawing.Point(165, 33);
+            this.lblTitulo.Location = new System.Drawing.Point(124, 27);
+            this.lblTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(307, 29);
+            this.lblTitulo.Size = new System.Drawing.Size(245, 24);
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "GENERAR ENCUENTRO";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -95,10 +96,10 @@ namespace GestionDeColegiados
             this.btnGenerarEncuentros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
             this.btnGenerarEncuentros.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerarEncuentros.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnGenerarEncuentros.Location = new System.Drawing.Point(88, 647);
-            this.btnGenerarEncuentros.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnGenerarEncuentros.Location = new System.Drawing.Point(66, 526);
+            this.btnGenerarEncuentros.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGenerarEncuentros.Name = "btnGenerarEncuentros";
-            this.btnGenerarEncuentros.Size = new System.Drawing.Size(133, 49);
+            this.btnGenerarEncuentros.Size = new System.Drawing.Size(100, 40);
             this.btnGenerarEncuentros.TabIndex = 16;
             this.btnGenerarEncuentros.Text = "Generar encuentros";
             this.btnGenerarEncuentros.UseVisualStyleBackColor = false;
@@ -109,9 +110,10 @@ namespace GestionDeColegiados
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label7.Location = new System.Drawing.Point(436, 123);
+            this.label7.Location = new System.Drawing.Point(327, 100);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(107, 25);
+            this.label7.Size = new System.Drawing.Size(89, 20);
             this.label7.TabIndex = 17;
             this.label7.Text = "Visitantes";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -121,9 +123,10 @@ namespace GestionDeColegiados
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label8.Location = new System.Drawing.Point(119, 121);
+            this.label8.Location = new System.Drawing.Point(89, 98);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(64, 25);
+            this.label8.Size = new System.Drawing.Size(52, 20);
             this.label8.TabIndex = 18;
             this.label8.Text = "Local";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -133,10 +136,10 @@ namespace GestionDeColegiados
             this.btnGuardarEncuentros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
             this.btnGuardarEncuentros.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarEncuentros.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnGuardarEncuentros.Location = new System.Drawing.Point(399, 650);
-            this.btnGuardarEncuentros.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnGuardarEncuentros.Location = new System.Drawing.Point(299, 528);
+            this.btnGuardarEncuentros.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGuardarEncuentros.Name = "btnGuardarEncuentros";
-            this.btnGuardarEncuentros.Size = new System.Drawing.Size(145, 49);
+            this.btnGuardarEncuentros.Size = new System.Drawing.Size(109, 40);
             this.btnGuardarEncuentros.TabIndex = 22;
             this.btnGuardarEncuentros.Text = "Registrar encuentros";
             this.btnGuardarEncuentros.UseVisualStyleBackColor = false;
@@ -145,10 +148,10 @@ namespace GestionDeColegiados
             // pictureBox1
             // 
             this.pictureBox1.Image = global::GestionDeColegiados.Properties.Resources.Local;
-            this.pictureBox1.Location = new System.Drawing.Point(43, 158);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(32, 128);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(216, 62);
+            this.pictureBox1.Size = new System.Drawing.Size(162, 50);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 23;
             this.pictureBox1.TabStop = false;
@@ -157,10 +160,10 @@ namespace GestionDeColegiados
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox4.Image = global::GestionDeColegiados.Properties.Resources.Local;
-            this.pictureBox4.Location = new System.Drawing.Point(43, 254);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox4.Location = new System.Drawing.Point(32, 206);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(216, 62);
+            this.pictureBox4.Size = new System.Drawing.Size(162, 50);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 24;
             this.pictureBox4.TabStop = false;
@@ -169,10 +172,10 @@ namespace GestionDeColegiados
             // 
             this.pictureBox10.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox10.Image = global::GestionDeColegiados.Properties.Resources.Local;
-            this.pictureBox10.Location = new System.Drawing.Point(43, 450);
-            this.pictureBox10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox10.Location = new System.Drawing.Point(32, 366);
+            this.pictureBox10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(216, 62);
+            this.pictureBox10.Size = new System.Drawing.Size(162, 50);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox10.TabIndex = 28;
             this.pictureBox10.TabStop = false;
@@ -180,10 +183,10 @@ namespace GestionDeColegiados
             // pictureBox7
             // 
             this.pictureBox7.Image = global::GestionDeColegiados.Properties.Resources.Local;
-            this.pictureBox7.Location = new System.Drawing.Point(43, 352);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox7.Location = new System.Drawing.Point(32, 286);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(216, 62);
+            this.pictureBox7.Size = new System.Drawing.Size(162, 50);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox7.TabIndex = 27;
             this.pictureBox7.TabStop = false;
@@ -192,10 +195,10 @@ namespace GestionDeColegiados
             // 
             this.pictureBox13.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox13.Image = global::GestionDeColegiados.Properties.Resources.Local;
-            this.pictureBox13.Location = new System.Drawing.Point(43, 549);
-            this.pictureBox13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox13.Location = new System.Drawing.Point(32, 446);
+            this.pictureBox13.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(216, 62);
+            this.pictureBox13.Size = new System.Drawing.Size(162, 50);
             this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox13.TabIndex = 29;
             this.pictureBox13.TabStop = false;
@@ -204,10 +207,10 @@ namespace GestionDeColegiados
             // 
             this.pictureBox15.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox15.Image = global::GestionDeColegiados.Properties.Resources.Local;
-            this.pictureBox15.Location = new System.Drawing.Point(375, 549);
-            this.pictureBox15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox15.Location = new System.Drawing.Point(281, 446);
+            this.pictureBox15.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.Size = new System.Drawing.Size(216, 62);
+            this.pictureBox15.Size = new System.Drawing.Size(162, 50);
             this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox15.TabIndex = 37;
             this.pictureBox15.TabStop = false;
@@ -216,10 +219,10 @@ namespace GestionDeColegiados
             // 
             this.pictureBox12.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox12.Image = global::GestionDeColegiados.Properties.Resources.Local;
-            this.pictureBox12.Location = new System.Drawing.Point(375, 450);
-            this.pictureBox12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox12.Location = new System.Drawing.Point(281, 366);
+            this.pictureBox12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(216, 62);
+            this.pictureBox12.Size = new System.Drawing.Size(162, 50);
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox12.TabIndex = 36;
             this.pictureBox12.TabStop = false;
@@ -227,10 +230,10 @@ namespace GestionDeColegiados
             // pictureBox9
             // 
             this.pictureBox9.Image = global::GestionDeColegiados.Properties.Resources.Local;
-            this.pictureBox9.Location = new System.Drawing.Point(375, 352);
-            this.pictureBox9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox9.Location = new System.Drawing.Point(281, 286);
+            this.pictureBox9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(216, 62);
+            this.pictureBox9.Size = new System.Drawing.Size(162, 50);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox9.TabIndex = 35;
             this.pictureBox9.TabStop = false;
@@ -239,10 +242,10 @@ namespace GestionDeColegiados
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox6.Image = global::GestionDeColegiados.Properties.Resources.Local;
-            this.pictureBox6.Location = new System.Drawing.Point(375, 254);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox6.Location = new System.Drawing.Point(281, 206);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(216, 62);
+            this.pictureBox6.Size = new System.Drawing.Size(162, 50);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 33;
             this.pictureBox6.TabStop = false;
@@ -250,10 +253,10 @@ namespace GestionDeColegiados
             // pictureBox3
             // 
             this.pictureBox3.Image = global::GestionDeColegiados.Properties.Resources.Local;
-            this.pictureBox3.Location = new System.Drawing.Point(375, 158);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox3.Location = new System.Drawing.Point(281, 128);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(216, 62);
+            this.pictureBox3.Size = new System.Drawing.Size(162, 50);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 32;
             this.pictureBox3.TabStop = false;
@@ -264,9 +267,10 @@ namespace GestionDeColegiados
             this.lblEquipo1.BackColor = System.Drawing.Color.LightGray;
             this.lblEquipo1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEquipo1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblEquipo1.Location = new System.Drawing.Point(83, 178);
+            this.lblEquipo1.Location = new System.Drawing.Point(62, 145);
+            this.lblEquipo1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEquipo1.Name = "lblEquipo1";
-            this.lblEquipo1.Size = new System.Drawing.Size(30, 20);
+            this.lblEquipo1.Size = new System.Drawing.Size(23, 16);
             this.lblEquipo1.TabIndex = 41;
             this.lblEquipo1.Text = "---";
             this.lblEquipo1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -277,9 +281,10 @@ namespace GestionDeColegiados
             this.lblEquipo3.BackColor = System.Drawing.Color.LightGray;
             this.lblEquipo3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEquipo3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblEquipo3.Location = new System.Drawing.Point(83, 373);
+            this.lblEquipo3.Location = new System.Drawing.Point(62, 303);
+            this.lblEquipo3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEquipo3.Name = "lblEquipo3";
-            this.lblEquipo3.Size = new System.Drawing.Size(39, 20);
+            this.lblEquipo3.Size = new System.Drawing.Size(35, 16);
             this.lblEquipo3.TabIndex = 42;
             this.lblEquipo3.Text = "aaa";
             this.lblEquipo3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -290,9 +295,10 @@ namespace GestionDeColegiados
             this.lblEquipo2.BackColor = System.Drawing.Color.LightGray;
             this.lblEquipo2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEquipo2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblEquipo2.Location = new System.Drawing.Point(83, 274);
+            this.lblEquipo2.Location = new System.Drawing.Point(62, 223);
+            this.lblEquipo2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEquipo2.Name = "lblEquipo2";
-            this.lblEquipo2.Size = new System.Drawing.Size(23, 20);
+            this.lblEquipo2.Size = new System.Drawing.Size(18, 16);
             this.lblEquipo2.TabIndex = 43;
             this.lblEquipo2.Text = "--";
             this.lblEquipo2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -303,9 +309,10 @@ namespace GestionDeColegiados
             this.lblEquipo4.BackColor = System.Drawing.Color.LightGray;
             this.lblEquipo4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEquipo4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblEquipo4.Location = new System.Drawing.Point(83, 470);
+            this.lblEquipo4.Location = new System.Drawing.Point(62, 382);
+            this.lblEquipo4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEquipo4.Name = "lblEquipo4";
-            this.lblEquipo4.Size = new System.Drawing.Size(34, 20);
+            this.lblEquipo4.Size = new System.Drawing.Size(30, 16);
             this.lblEquipo4.TabIndex = 44;
             this.lblEquipo4.Text = "ola";
             this.lblEquipo4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -316,9 +323,10 @@ namespace GestionDeColegiados
             this.lblEquipo5.BackColor = System.Drawing.Color.LightGray;
             this.lblEquipo5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEquipo5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblEquipo5.Location = new System.Drawing.Point(83, 570);
+            this.lblEquipo5.Location = new System.Drawing.Point(62, 463);
+            this.lblEquipo5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEquipo5.Name = "lblEquipo5";
-            this.lblEquipo5.Size = new System.Drawing.Size(39, 20);
+            this.lblEquipo5.Size = new System.Drawing.Size(35, 16);
             this.lblEquipo5.TabIndex = 45;
             this.lblEquipo5.Text = "aaa";
             this.lblEquipo5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -329,9 +337,10 @@ namespace GestionDeColegiados
             this.lblEquipo6.BackColor = System.Drawing.Color.LightGray;
             this.lblEquipo6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEquipo6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblEquipo6.Location = new System.Drawing.Point(413, 178);
+            this.lblEquipo6.Location = new System.Drawing.Point(310, 145);
+            this.lblEquipo6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEquipo6.Name = "lblEquipo6";
-            this.lblEquipo6.Size = new System.Drawing.Size(59, 20);
+            this.lblEquipo6.Size = new System.Drawing.Size(53, 16);
             this.lblEquipo6.TabIndex = 46;
             this.lblEquipo6.Text = "aaaaa";
             this.lblEquipo6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -342,9 +351,10 @@ namespace GestionDeColegiados
             this.lblEquipo7.BackColor = System.Drawing.Color.LightGray;
             this.lblEquipo7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEquipo7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblEquipo7.Location = new System.Drawing.Point(413, 274);
+            this.lblEquipo7.Location = new System.Drawing.Point(310, 223);
+            this.lblEquipo7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEquipo7.Name = "lblEquipo7";
-            this.lblEquipo7.Size = new System.Drawing.Size(39, 20);
+            this.lblEquipo7.Size = new System.Drawing.Size(35, 16);
             this.lblEquipo7.TabIndex = 47;
             this.lblEquipo7.Text = "aaa";
             this.lblEquipo7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -355,9 +365,10 @@ namespace GestionDeColegiados
             this.lblEquipo8.BackColor = System.Drawing.Color.LightGray;
             this.lblEquipo8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEquipo8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblEquipo8.Location = new System.Drawing.Point(413, 373);
+            this.lblEquipo8.Location = new System.Drawing.Point(310, 303);
+            this.lblEquipo8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEquipo8.Name = "lblEquipo8";
-            this.lblEquipo8.Size = new System.Drawing.Size(39, 20);
+            this.lblEquipo8.Size = new System.Drawing.Size(35, 16);
             this.lblEquipo8.TabIndex = 48;
             this.lblEquipo8.Text = "aaa";
             this.lblEquipo8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -368,9 +379,10 @@ namespace GestionDeColegiados
             this.lblEquipo9.BackColor = System.Drawing.Color.LightGray;
             this.lblEquipo9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEquipo9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblEquipo9.Location = new System.Drawing.Point(413, 470);
+            this.lblEquipo9.Location = new System.Drawing.Point(310, 382);
+            this.lblEquipo9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEquipo9.Name = "lblEquipo9";
-            this.lblEquipo9.Size = new System.Drawing.Size(39, 20);
+            this.lblEquipo9.Size = new System.Drawing.Size(35, 16);
             this.lblEquipo9.TabIndex = 49;
             this.lblEquipo9.Text = "aaa";
             this.lblEquipo9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -381,9 +393,10 @@ namespace GestionDeColegiados
             this.lblEquipo10.BackColor = System.Drawing.Color.LightGray;
             this.lblEquipo10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEquipo10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblEquipo10.Location = new System.Drawing.Point(413, 570);
+            this.lblEquipo10.Location = new System.Drawing.Point(310, 463);
+            this.lblEquipo10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEquipo10.Name = "lblEquipo10";
-            this.lblEquipo10.Size = new System.Drawing.Size(39, 20);
+            this.lblEquipo10.Size = new System.Drawing.Size(35, 16);
             this.lblEquipo10.TabIndex = 50;
             this.lblEquipo10.Text = "aaa";
             this.lblEquipo10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -391,10 +404,9 @@ namespace GestionDeColegiados
             // pictureBox2
             // 
             this.pictureBox2.Image = global::GestionDeColegiados.Properties.Resources.vrs;
-            this.pictureBox2.Location = new System.Drawing.Point(264, 139);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Location = new System.Drawing.Point(198, 113);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(104, 90);
+            this.pictureBox2.Size = new System.Drawing.Size(78, 73);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 52;
             this.pictureBox2.TabStop = false;
@@ -402,10 +414,9 @@ namespace GestionDeColegiados
             // pictureBox11
             // 
             this.pictureBox11.Image = global::GestionDeColegiados.Properties.Resources.vrs;
-            this.pictureBox11.Location = new System.Drawing.Point(264, 426);
-            this.pictureBox11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox11.Location = new System.Drawing.Point(198, 346);
             this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(104, 90);
+            this.pictureBox11.Size = new System.Drawing.Size(78, 73);
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox11.TabIndex = 53;
             this.pictureBox11.TabStop = false;
@@ -413,10 +424,9 @@ namespace GestionDeColegiados
             // pictureBox8
             // 
             this.pictureBox8.Image = global::GestionDeColegiados.Properties.Resources.vrs;
-            this.pictureBox8.Location = new System.Drawing.Point(264, 334);
-            this.pictureBox8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox8.Location = new System.Drawing.Point(198, 271);
             this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(104, 90);
+            this.pictureBox8.Size = new System.Drawing.Size(78, 73);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox8.TabIndex = 54;
             this.pictureBox8.TabStop = false;
@@ -424,10 +434,9 @@ namespace GestionDeColegiados
             // pictureBox14
             // 
             this.pictureBox14.Image = global::GestionDeColegiados.Properties.Resources.vrs;
-            this.pictureBox14.Location = new System.Drawing.Point(264, 523);
-            this.pictureBox14.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox14.Location = new System.Drawing.Point(198, 425);
             this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(104, 90);
+            this.pictureBox14.Size = new System.Drawing.Size(78, 73);
             this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox14.TabIndex = 55;
             this.pictureBox14.TabStop = false;
@@ -435,10 +444,9 @@ namespace GestionDeColegiados
             // pictureBox5
             // 
             this.pictureBox5.Image = global::GestionDeColegiados.Properties.Resources.vrs;
-            this.pictureBox5.Location = new System.Drawing.Point(264, 236);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox5.Location = new System.Drawing.Point(198, 192);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(104, 90);
+            this.pictureBox5.Size = new System.Drawing.Size(78, 73);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 57;
             this.pictureBox5.TabStop = false;
@@ -448,20 +456,21 @@ namespace GestionDeColegiados
             this.lblOrden.AutoSize = true;
             this.lblOrden.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOrden.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblOrden.Location = new System.Drawing.Point(37, 89);
+            this.lblOrden.Location = new System.Drawing.Point(28, 72);
+            this.lblOrden.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblOrden.Name = "lblOrden";
-            this.lblOrden.Size = new System.Drawing.Size(550, 24);
+            this.lblOrden.Size = new System.Drawing.Size(429, 18);
             this.lblOrden.TabIndex = 58;
             this.lblOrden.Text = "Para Generar Encuentro De clic en el boton generar Encuentros";
             // 
             // frmGenerarEncuentros
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(129)))), ((int)(((byte)(150)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(656, 764);
+            this.ClientSize = new System.Drawing.Size(492, 621);
             this.Controls.Add(this.lblOrden);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox14);
@@ -495,7 +504,7 @@ namespace GestionDeColegiados
             this.Controls.Add(this.lblTitulo);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmGenerarEncuentros";
             this.Text = "frmGenerarEncuentros";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
