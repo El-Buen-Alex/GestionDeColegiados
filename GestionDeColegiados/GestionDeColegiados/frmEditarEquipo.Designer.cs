@@ -42,6 +42,8 @@ namespace GestionDeColegiados
             this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.guardar = new System.Windows.Forms.Button();
+            this.editar = new System.Windows.Forms.Button();
+            this.eliminar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buscar
@@ -172,7 +174,7 @@ namespace GestionDeColegiados
             // 
             this.guardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
             this.guardar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.guardar.Location = new System.Drawing.Point(183, 422);
+            this.guardar.Location = new System.Drawing.Point(214, 422);
             this.guardar.Margin = new System.Windows.Forms.Padding(2);
             this.guardar.Name = "guardar";
             this.guardar.Size = new System.Drawing.Size(109, 31);
@@ -180,12 +182,38 @@ namespace GestionDeColegiados
             this.guardar.Text = "Guardar";
             this.guardar.UseVisualStyleBackColor = false;
             // 
+            // editar
+            // 
+            this.editar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.editar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.editar.Location = new System.Drawing.Point(39, 422);
+            this.editar.Margin = new System.Windows.Forms.Padding(2);
+            this.editar.Name = "editar";
+            this.editar.Size = new System.Drawing.Size(109, 31);
+            this.editar.TabIndex = 44;
+            this.editar.Text = "Editar";
+            this.editar.UseVisualStyleBackColor = false;
+            // 
+            // eliminar
+            // 
+            this.eliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.eliminar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.eliminar.Location = new System.Drawing.Point(385, 422);
+            this.eliminar.Margin = new System.Windows.Forms.Padding(2);
+            this.eliminar.Name = "eliminar";
+            this.eliminar.Size = new System.Drawing.Size(109, 31);
+            this.eliminar.TabIndex = 45;
+            this.eliminar.Text = "Eliminar";
+            this.eliminar.UseVisualStyleBackColor = false;
+            // 
             // frmEditarEquipo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(129)))), ((int)(((byte)(150)))));
             this.ClientSize = new System.Drawing.Size(526, 487);
+            this.Controls.Add(this.eliminar);
+            this.Controls.Add(this.editar);
             this.Controls.Add(this.guardar);
             this.Controls.Add(this.presidente);
             this.Controls.Add(this.director);
@@ -221,5 +249,7 @@ namespace GestionDeColegiados
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button guardar;
+        private System.Windows.Forms.Button editar;
+        private System.Windows.Forms.Button eliminar;
     }
 }
