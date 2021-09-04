@@ -639,3 +639,25 @@ BEGIN
 	update campeonatos.encuentrosgenerados set estado=_estado, asignacion="ELIMINADO" where estado='A';
 END$$
 DELIMITER ;
+
+/*Procedimiento que nos arroja todos los datos de un equipo*/
+DELIMITER $$
+CREATE PROCEDURE obtenerDatosEquipos()
+BEGIN
+		SELECT e.idequipo, e.nombre, e.numero_jugadores , e.nombre_director_tecnico, e.presidente_equipo  FROM equipo e WHERE estado='A';
+	END $$
+DELIMITER ;
+
+/*PROCEDIMIENTO PARA EDITAR UN EQUIPO*/
+DELIMITER $$
+CREATE PROCEDURE editarEquipo (IN _idEquipo INT,
+IN _nombre VARCHAR(25),
+IN _numero_jugadores int,
+IN _nombre_director_tecnico VARCHAR(25),
+IN _presidente_equipo VARCHAR(25))
+	BEGIN
+		UPDATE equipo SET nombre = _nombre, numero_jugadores = _numero_jugadores, nombre_director_tecnico = _nombre_director_tecnico, 
+        presidente_equipo = _presidente_equipo 
+		WHERE idequipo = _idEquipo;
+	END$$
+DELIMITER ;

@@ -18,6 +18,25 @@ namespace Control.AdmEquipos
         {
 
         }
+        /*Método que nos permite llenar los campos del equipo seleccionado a editar*/
+        public void LlenarCampos(TextBox idEquipo, TextBox nombre, TextBox numjugadores, TextBox director, TextBox presidente, string id)
+        {
+            listaEquipo = datos.consultarEquiposTabla();
+            foreach (Equipo equipo in listaEquipo)
+            {
+                if (equipo.IdEquipo.Equals(Convert.ToInt32(id)))
+                {
+                    idEquipo.Text += equipo.IdEquipo;
+                    nombre.Text = equipo.NombreEquipo;
+                    numjugadores.Text += equipo.NumeroJugadores;
+                    director.Text = equipo.NombreDirectoTecnico;
+                    presidente.Text=equipo.PresidenteEquipo;
+                }
+
+
+            }
+        }
+
         /*Paso para el uso de Singleton*/
         public static AdmEquipo getEquipo()
         {
@@ -33,8 +52,50 @@ namespace Control.AdmEquipos
             extraerEquipos();
             return listaEquipo.Count;
         }
+
+        public void ActualizarDatos(int id, string nombre, int numjugadores, string directorNombre, string presidenteNombre)
+        {
+            equipo = new Equipo(id, nombre, numjugadores, directorNombre, presidenteNombre);
+            ActualizarRegistroEquipo(equipo);
+        }
+
+        private void ActualizarRegistroEquipo(Equipo equipo)
+        {
+            int id = 0;
+            if(equipo != null)
+            {
+                id=datos.EditarEquipo(equipo);
+                if(id != 0)
+                {
+                    MessageBox.Show("Actualización de datos exitosa", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Error al actualizar los datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        /*Método encargado de llenar un el datagridview que es usado para editar o eliminar un equipo previamente ya registrado*/
+        public void LlenaTabla(DataGridView tablaDatos, string nombre)
+        {
+            int i = 1;
+            tablaDatos.Rows.Clear();
+            listaEquipo = datos.consultarEquiposTabla();
+            foreach(Equipo equipo in listaEquipo)
+            {
+                if (equipo.NombreEquipo.Contains(nombre))
+                {
+                    tablaDatos.Rows.Add(i++, equipo.IdEquipo, equipo.NombreEquipo, equipo.NumeroJugadores, equipo.NombreDirectoTecnico, equipo.PresidenteEquipo);
+                }
+                
+                
+            }
+            
+        }
+
         /*Método que hace uso del constructor de la clase equipo, agrega a la lista y hace el llamado al método que conecta
-            a la base de datos para facilitar el registros de nuevos equipos*/
+   a la base de datos para facilitar el registros de nuevos equipos*/
         public void GuardarDatos(string nombre, int numJugadores, string directorNombre, string presidenteNombre)
         {
             equipo = new Equipo(0, nombre, numJugadores, directorNombre, presidenteNombre);

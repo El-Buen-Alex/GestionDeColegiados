@@ -236,5 +236,39 @@ namespace GestionDeColegiados
             btnIniciarSesion frm = new btnIniciarSesion();
             frm.Show();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (admEquipo.ObtenerCantidadEquipo() < 10)
+            {
+                AbrirFormEnPanel(new frmNuevoEquipo());
+            }
+            else
+            {
+                AbrirFormEnPanel(new frmListaEquipos());
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (admEquipo.ObtenerCantidadEquipo() > 0)
+            {
+                if(admGenerarEncuentros.obtnerNumeroEncuentrosGeneradosPendientes() == 0)
+                {
+                    AbrirFormEnPanel(new frmVerTodos());
+                }
+                else
+                {
+                    MessageBox.Show("Existen encuentros generados. No se pueden eliminar o editar equipos.");
+                    AbrirFormEnPanel(new frmGenerarEncuentros(true));
+                }
+                
+            }
+            else
+            {
+                MessageBox.Show("Ingrese primero algunos equipos");
+                AbrirFormEnPanel(new frmNuevoEquipo());
+            }
+        }
     }
 }

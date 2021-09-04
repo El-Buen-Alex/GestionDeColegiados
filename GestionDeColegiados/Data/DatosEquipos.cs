@@ -43,10 +43,71 @@ namespace Data
             conexion.Close();
             return equipo;
         }
+        /*Método que permite extraer toda la información de los equipos*/
+        public List<Equipo> consultarEquiposTabla()
+        {
+            List<Equipo> listaEquipo = new List<Equipo>();
+            Equipo nombreEquipo = null;
+            conexion = ConexionBD.getConexion();
+            conexion.Open();
+            try
+            {
+                MySqlCommand comando = new MySqlCommand("obtenerDatosEquipos", conexion);
+                comando.CommandType = CommandType.StoredProcedure;
+                MySqlDataReader reader = comando.ExecuteReader();
+                while (reader.Read())
+                {
+                    nombreEquipo = new Equipo();
+                    nombreEquipo.NombreEquipo = reader["nombre"].ToString();
+                    nombreEquipo.IdEquipo = Convert.ToInt32(reader["idequipo"].ToString());
+                    nombreEquipo.NumeroJugadores = Convert.ToInt32(reader["numero_jugadores"].ToString());
+                    nombreEquipo.NombreDirectoTecnico = reader["nombre_director_tecnico"].ToString();
+                    nombreEquipo.PresidenteEquipo = reader["presidente_equipo"].ToString();
+                    listaEquipo.Add(nombreEquipo);
+                }
+            }
+            catch (MySqlException ex)
+            {
+                listaEquipo = null;
+                throw new Exception(ex.ToString());
+            }
+            conexion.Close();
+            return listaEquipo;
+        }
+        /*Método que permite editar en la base de datos un registro selecionado en la tabla de editar equipo*/
+        public int EditarEquipo(Equipo equipo)
+        {
+            int id = 0;
+            conexion = ConexionBD.getConexion();
+            conexion.Open();
+            trans = conexion.BeginTransaction();
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand("editarEquipo", conexion, trans);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@_idEquipo", equipo.IdEquipo);
+                cmd.Parameters.AddWithValue("@_nombre", equipo.NombreEquipo);
+                cmd.Parameters.AddWithValue("@_numero_jugadores", equipo.NumeroJugadores);
+                cmd.Parameters.AddWithValue("@_nombre_director_tecnico", equipo.NombreDirectoTecnico);
+                cmd.Parameters.AddWithValue("@_presidente_equipo", equipo.PresidenteEquipo);
+                cmd.ExecuteNonQuery();
+                id = 1;
+                trans.Commit();
+            }
+            catch (MySqlException ex)
+            {
+                trans.Rollback();
+                throw new Exception(ex.ToString());
+            }
+            conexion.Close();
+            Console.WriteLine(id);
+            return id;
+        }
+
         /*Método que tiene la finalidad de almacenar los datos en la bd, donde recibió por parámetros el objeto del cual va a fragmentar la informacion
-         * para almacenarla. Se escribe el nombre de la columna y la variable que contiene la informacion para así poder registrarla en la bd
-         * 
-         */
+* para almacenarla. Se escribe el nombre de la columna y la variable que contiene la informacion para así poder registrarla en la bd
+* 
+*/
         public int InsertarEquipo(Equipo equipo)
         {
             int id = 0;

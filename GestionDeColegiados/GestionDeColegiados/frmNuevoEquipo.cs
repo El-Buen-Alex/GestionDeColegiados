@@ -105,12 +105,12 @@ namespace GestionDeColegiados
 
         private void eliminar_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new frmEliminarEquipo(true));
+           
         }
 
         private void editar_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new frmEditarEquipos(true));
+           
         }
     }
 }

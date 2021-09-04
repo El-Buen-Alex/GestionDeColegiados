@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>GestionDeColegiados</RootNamespace>
     <AssemblyName>GestionDeColegiados</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
@@ -74,11 +74,11 @@
     <Compile Include="frmEditarEquipo.Designer.cs">
       <DependentUpon>frmEditarEquipo.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmEliminarEquipo.cs">
+    <Compile Include="frmVerTodos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEliminarEquipo.Designer.cs">
-      <DependentUpon>frmEliminarEquipo.cs</DependentUpon>
+    <Compile Include="frmVerTodos.Designer.cs">
+      <DependentUpon>frmVerTodos.cs</DependentUpon>
     </Compile>
     <Compile Include="frmGenerarEncuentros.cs">
       <SubType>Form</SubType>
@@ -187,8 +187,8 @@
     <EmbeddedResource Include="frmEditarEquipo.resx">
       <DependentUpon>frmEditarEquipo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEliminarEquipo.resx">
-      <DependentUpon>frmEliminarEquipo.cs</DependentUpon>
+    <EmbeddedResource Include="frmVerTodos.resx">
+      <DependentUpon>frmVerTodos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGenerarEncuentros.resx">
       <DependentUpon>frmGenerarEncuentros.cs</DependentUpon>
