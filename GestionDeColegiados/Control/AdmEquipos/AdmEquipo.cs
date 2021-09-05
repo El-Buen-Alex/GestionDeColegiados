@@ -53,6 +53,24 @@ namespace Control.AdmEquipos
             return listaEquipo.Count;
         }
 
+        public void EliminarRegistro(string id)
+        {
+            int identificador = 0;
+            if (id.CompareTo("") != 0)
+            {
+                identificador=datos.EliminarEquipo(id);
+                if (identificador != 0)
+                {
+                    MessageBox.Show("Registro Eliminado con Éxito", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                        MessageBox.Show("Error al Eliminar los datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            
+        }
+
         public void ActualizarDatos(int id, string nombre, int numjugadores, string directorNombre, string presidenteNombre)
         {
             equipo = new Equipo(id, nombre, numjugadores, directorNombre, presidenteNombre);

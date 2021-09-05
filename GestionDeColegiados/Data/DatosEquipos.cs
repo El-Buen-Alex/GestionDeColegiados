@@ -74,6 +74,31 @@ namespace Data
             conexion.Close();
             return listaEquipo;
         }
+        /*Método que permite editar el estado en la base de datos un registro selecionado*/
+        public int EliminarEquipo(string id)
+        {
+            int identificador = 0;
+            conexion = ConexionBD.getConexion();
+            conexion.Open();
+            trans = conexion.BeginTransaction();
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand("eliminarEquipo", conexion, trans);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@_idEquipo", id);
+                cmd.ExecuteNonQuery();
+                identificador = 1;
+                trans.Commit();
+            }
+            catch (MySqlException ex)
+            {
+                trans.Rollback();
+                throw new Exception(ex.ToString());
+            }
+            conexion.Close();
+            return identificador;
+        }
+
         /*Método que permite editar en la base de datos un registro selecionado en la tabla de editar equipo*/
         public int EditarEquipo(Equipo equipo)
         {
@@ -100,7 +125,6 @@ namespace Data
                 throw new Exception(ex.ToString());
             }
             conexion.Close();
-            Console.WriteLine(id);
             return id;
         }
 

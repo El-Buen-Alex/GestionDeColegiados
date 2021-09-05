@@ -105,7 +105,7 @@ namespace GestionDeColegiados
             this.tablaDatos.Location = new System.Drawing.Point(12, 157);
             this.tablaDatos.Name = "tablaDatos";
             this.tablaDatos.ReadOnly = true;
-            this.tablaDatos.Size = new System.Drawing.Size(542, 125);
+            this.tablaDatos.Size = new System.Drawing.Size(601, 125);
             this.tablaDatos.TabIndex = 24;
             // 
             // btnEliminar
@@ -119,6 +119,7 @@ namespace GestionDeColegiados
             this.btnEliminar.TabIndex = 25;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnEditar
             // 

@@ -42,6 +42,7 @@ namespace GestionDeColegiados
             this.btnCancelar = new System.Windows.Forms.Button();
             this.idEquipo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnRegresar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label5
@@ -185,12 +186,26 @@ namespace GestionDeColegiados
             this.label1.TabIndex = 45;
             this.label1.Text = "Id Equipo:";
             // 
+            // btnRegresar
+            // 
+            this.btnRegresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.btnRegresar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRegresar.Location = new System.Drawing.Point(368, 434);
+            this.btnRegresar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(109, 31);
+            this.btnRegresar.TabIndex = 47;
+            this.btnRegresar.Text = "Regresar";
+            this.btnRegresar.UseVisualStyleBackColor = false;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
+            // 
             // frmEditarEquipo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(129)))), ((int)(((byte)(150)))));
             this.ClientSize = new System.Drawing.Size(526, 487);
+            this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.idEquipo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCancelar);
@@ -226,5 +241,6 @@ namespace GestionDeColegiados
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.TextBox idEquipo;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnRegresar;
     }
 }

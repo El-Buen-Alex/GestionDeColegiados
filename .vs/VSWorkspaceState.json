@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\GestionDeColegiados"
+    "\\GestionDeColegiados",
+    "\\GestionDeColegiados\\GestionDeColegiados"
   ],
-  "SelectedNode": "\\GestionDeColegiados\\GestionDeColegiados.sln",
+  "SelectedNode": "\\GestionDeColegiados\\GestionDeColegiados\\MenuPrincipal.cs",
   "PreviewInSolutionExplorer": false
 }

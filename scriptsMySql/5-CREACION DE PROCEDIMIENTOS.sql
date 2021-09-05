@@ -644,7 +644,7 @@ DELIMITER ;
 DELIMITER $$
 CREATE PROCEDURE obtenerDatosEquipos()
 BEGIN
-		SELECT e.idequipo, e.nombre, e.numero_jugadores , e.nombre_director_tecnico, e.presidente_equipo  FROM equipo e WHERE estado='A';
+		SELECT *  FROM equipo WHERE estado='A';
 	END $$
 DELIMITER ;
 
@@ -658,6 +658,15 @@ IN _presidente_equipo VARCHAR(25))
 	BEGIN
 		UPDATE equipo SET nombre = _nombre, numero_jugadores = _numero_jugadores, nombre_director_tecnico = _nombre_director_tecnico, 
         presidente_equipo = _presidente_equipo 
+		WHERE idequipo = _idEquipo;
+	END$$
+DELIMITER ;
+
+/*PROCEDIMIENTO PARA EDITAR EL ESTADO DE UN EQUIPO PARA ELIMINARLO*/
+DELIMITER $$
+CREATE PROCEDURE eliminarEquipo (IN _idEquipo INT)
+	BEGIN
+		UPDATE equipo SET estado='I'
 		WHERE idequipo = _idEquipo;
 	END$$
 DELIMITER ;

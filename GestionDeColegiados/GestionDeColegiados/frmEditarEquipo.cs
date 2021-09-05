@@ -53,5 +53,31 @@ namespace GestionDeColegiados
             }
            
         }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado;
+            
+            
+            bool hayVacios = valida.validarVacios(nombre.Text.Trim(), numjugadores.Text, director.Text, presidente.Text);
+            if (hayVacios!=true)
+            {
+                resultado = MessageBox.Show("¡Está seguro de regresar al apartado anterior, \n Si no ha dado clic en el botón Actualizar se perderán sus datos!", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
+                if (resultado == DialogResult.Yes)
+                {
+                    Close();
+                }
+            }
+            else
+            {
+                resultado = MessageBox.Show("¡Está seguro de regresar al apartado anterior, \n Hay ciertor campos vacíos!", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
+                if (resultado == DialogResult.Yes)
+                {
+                    Close();
+                }
+            }
+            
+
+        }
     }
 }
