@@ -13,6 +13,13 @@ namespace GestionDeColegiados
         {
             InitializeComponent();
         }
+
+        private void RefrezcarVista()
+        {
+            MenuPrincipal menuPrincipal = new MenuPrincipal();
+            menuPrincipal.abrirFormNuevoEquipo();
+        }
+
         /* Evento que desata en cadena la funcionalidad de registrar un nuevo equipo */
         private void registrar_Click(object sender, EventArgs e)
         {
@@ -30,7 +37,7 @@ namespace GestionDeColegiados
                     {
                         MessageBox.Show(Nombre + ", " + numJugadores + ", " + directorNombre + ", " + presidenteNombre);
                         admEquipo.GuardarDatos(Nombre, validacionGUI.AInt(numJugadores), directorNombre, presidenteNombre);       /*Se ejecuta el método que nos permitirá guardar la información*/
-
+                        RefrezcarVista();
                     }
                     else
                     {

@@ -29,26 +29,22 @@ namespace GestionDeColegiados.FrmsArbitro
                 gestionarAccesibilidadMsAdmin();
             }
         }
-        private void gestionarAccesibilidadFinalizarCompetencia(int cantEncuentrosGen, int cantEncuentrosDef, int cantEncFin)
+        private void gestionarAccesibilidadFinalizarCompetencia(int cantEncFin)
         {
             bool accesibilidad = false;
-            if(cantEncuentrosGen==0 && cantEncuentrosDef == 0 && cantEncFin>0)
+            //Cada 5 partidos, es un ronda, se podrá finzalizar una competencia si la ronda esta completa competencia
+            if ( cantEncFin%5==0)
             {
-                accesibilidad= true;
+                 accesibilidad= true;
             }
             fINALIZARCOMPETENCIAToolStripMenuItem.Enabled = accesibilidad;
         }
-        private void gestionarAccesibilidadMsAdmin()
+
+        private void ExaminarDisponibilidadPorEncuentrosGenerados(int cantidadGenerado)
         {
-            int cantidadGenerado = admGenerarEncuentros.obtnerNumeroEncuentrosGeneradosPendientes();
-            int cantidadDefinido = admEncuentroDefinido.ObtenerCantidadEncuentrosDefinidos();
-            int cantidadEncuentrosFinalizados = admEncuentroFinalizado.GetCantidadEncuentrosFinalizados();
-            dARBAJACOMPETENCIAToolStripMenuItem.Enabled = true;
             if (cantidadGenerado > 0)
             {
                 dARBAJACOMPETENCIAToolStripMenuItem.Enabled = true;
-                rEINICIARRESULTADOSToolStripMenuItem.Enabled = false;
-                rEINICIARTODALACOMPETENCIAToolStripMenuItem.Enabled = false;
             }
             else
             {
@@ -56,41 +52,57 @@ namespace GestionDeColegiados.FrmsArbitro
                 rEINICIARTODALACOMPETENCIAToolStripMenuItem.Enabled = false;
                 dARBAJACOMPETENCIAToolStripMenuItem.Enabled = false;
             }
+        }
+        private void ExaminarDisponibilidadPorEncuentrosDefinidos(int cantidadDefinido)
+        {
             if (cantidadDefinido > 0)
             {
                 rEINICIARTODALACOMPETENCIAToolStripMenuItem.Enabled = true;
-                rEINICIARRESULTADOSToolStripMenuItem.Enabled = false;
-               
+                dARBAJACOMPETENCIAToolStripMenuItem.Enabled = true;
+
             }
             else
             {
                 rEINICIARRESULTADOSToolStripMenuItem.Enabled = false;
                 rEINICIARTODALACOMPETENCIAToolStripMenuItem.Enabled = false;
             }
+        }
+        private void ExaminarDisponibilidadPorEncuentrosFinalizados(int cantidadEncuentrosFinalizados)
+        {
             if (cantidadEncuentrosFinalizados > 0)
             {
+                dARBAJACOMPETENCIAToolStripMenuItem.Enabled = true;
+                rEINICIARTODALACOMPETENCIAToolStripMenuItem.Enabled = true;
                 rEINICIARRESULTADOSToolStripMenuItem.Enabled = true;
             }
             else
             {
                 rEINICIARRESULTADOSToolStripMenuItem.Enabled = false;
             }
-            gestionarAccesibilidadFinalizarCompetencia(cantidadGenerado, cantidadDefinido, cantidadEncuentrosFinalizados);
-
         }
+
+        private void gestionarAccesibilidadMsAdmin()
+        {
+            int cantidadGenerado = admGenerarEncuentros.obtnerNumeroEncuentrosGeneradosPendientes();
+            int cantidadDefinido = admEncuentroDefinido.ObtenerCantidadEncuentrosDefinidos();
+            int cantidadEncuentrosFinalizados = admEncuentroFinalizado.GetCantidadEncuentrosFinalizados();
+            ExaminarDisponibilidadPorEncuentrosGenerados(cantidadGenerado);
+            ExaminarDisponibilidadPorEncuentrosDefinidos(cantidadDefinido);
+            ExaminarDisponibilidadPorEncuentrosFinalizados(cantidadEncuentrosFinalizados);
+            gestionarAccesibilidadFinalizarCompetencia(cantidadEncuentrosFinalizados);
+        }
+
         private void competenciaLlenar()
         {
             bool existe = admEncuentroFinalizado.LlenarDgv(dgvCompeticion);
             lblAdvertencia.Visible = !existe;
         }
 
-        private void mostrarMensajeFinalizar(bool respuesta)
+        private void mostrarMensajeFinalizar(bool respuesta, string mensaje)
         {
-            string mensaje = "";
             if (respuesta)
             {
                 admEstadio.PonerEstadiosDisponibles();
-                mensaje = "LIGA FINALIZADA!";
                 gestionarAccesibilidadMsAdmin();
             }
             else
@@ -105,7 +117,8 @@ namespace GestionDeColegiados.FrmsArbitro
         {
             string pregunta = "¿Seguro que quieres DAR DE BAJA la competición?\n";
             string mensaje = "Esto Hará que se vuelva a generar y definir encuentros en una nueva copa.";
-            string reaccion = "Pero no se podrá visualizar en futuras busquedas.";
+            string reaccion = " Pero no se podrá visualizar en futuras busquedas.";
+            string mensajeExito = "Se dio de baja a la competencia con exito";
             DialogResult res = MessageBox.Show(pregunta + mensaje + reaccion, "CUIDADO", MessageBoxButtons.YesNo);       
             if (res == DialogResult.Yes)
             {
@@ -118,7 +131,7 @@ namespace GestionDeColegiados.FrmsArbitro
                         resultado = admGenerarEncuentros.DarBajaEncuentros();
                     }
                 }
-                mostrarMensajeFinalizar(resultado);
+                mostrarMensajeFinalizar(resultado, mensajeExito);
             }
            
         }
@@ -128,17 +141,19 @@ namespace GestionDeColegiados.FrmsArbitro
             string pregunta = "¿Seguro que quieres FINALIZAR la competición?\n";
             string mensaje = "Esto Hará que se vuelva a generar y definir encuentros en una nueva copa";
             string reaccion = "Se podrá visualizar en futuras busquedas.";
+            string mensajeExito = "Se Finalizó la competencia con exito";
             DialogResult res = MessageBox.Show(pregunta + mensaje + reaccion, "CUIDADO", MessageBoxButtons.YesNo);
             if (res == DialogResult.Yes)
             {
                 bool resultado = admEncuentroFinalizado.FinalizarCompetencia();
-                mostrarMensajeFinalizar(resultado);
+                mostrarMensajeFinalizar(resultado, mensajeExito);
             }
         }
         private void ReiniciarTodaCompetencia()
         {
             string pregunta = "¿Seguro que quieres REINICIAR la competición?\n";
             string mensaje = "Esto Hará que se elimine todo menos los encuentros que esten generados";
+            string mensajeExito = "Se Reinició la competencia con exito";
             DialogResult res = MessageBox.Show(pregunta+mensaje, "Cuidado", MessageBoxButtons.YesNo);
             bool resultado = false;
             if (res == DialogResult.Yes)
@@ -153,7 +168,7 @@ namespace GestionDeColegiados.FrmsArbitro
                 {
                     resultado = admEncuentroDefinido.ReinicarCompetencia();
                 }
-                mostrarMensajeFinalizar(resultado);
+                mostrarMensajeFinalizar(resultado, mensajeExito);
             }
         }
         private void rEINICIARTODALACOMPETENCIAToolStripMenuItem_Click(object sender, EventArgs e)
@@ -165,11 +180,12 @@ namespace GestionDeColegiados.FrmsArbitro
         {
             string pregunta = "¿Seguro que quieres REINICIAR LOS RESULTADOS de la competición?\n";
             string mensaje = "Esto Hará que se elimine todo menos los encuentros que esten GENERADOS y DEFINIDOS";
+            string mensajeExito = "Se Reinicio los resultados de la competencia con exito";
             DialogResult res = MessageBox.Show(pregunta + mensaje, "ALERTA", MessageBoxButtons.YesNo);
             if (res == DialogResult.Yes)
             {
                 bool resultado = admEncuentroFinalizado.ReinicarCompetencia();
-                mostrarMensajeFinalizar(resultado);
+                mostrarMensajeFinalizar(resultado, mensajeExito);
             }
         }
     }
