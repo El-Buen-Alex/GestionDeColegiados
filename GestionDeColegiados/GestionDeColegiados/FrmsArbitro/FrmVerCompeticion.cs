@@ -26,38 +26,57 @@ namespace GestionDeColegiados.FrmsArbitro
             if (puedeAdministrar)
             {
                 msAdmin.Visible = puedeAdministrar;
-                gestionarDisponibilidadMenuAdm();
-                existenEncuentrosDefinidos();
-                existenEncuentrosGenerados();
+                gestionarAccesibilidadMsAdmin();
             }
         }
-
-        private void cambiarDisponibilidadMsAdmin(int cantidad)
+        private void gestionarAccesibilidadFinalizarCompetencia(int cantEncuentrosGen, int cantEncuentrosDef, int cantEncFin)
         {
-            if (cantidad > 0)
+            bool accesibilidad = false;
+            if(cantEncuentrosGen==0 && cantEncuentrosDef == 0 && cantEncFin>0)
             {
-                msAdmin.Enabled = true;
+                accesibilidad= true;
+            }
+            fINALIZARCOMPETENCIAToolStripMenuItem.Enabled = accesibilidad;
+        }
+        private void gestionarAccesibilidadMsAdmin()
+        {
+            int cantidadGenerado = admGenerarEncuentros.obtnerNumeroEncuentrosGeneradosPendientes();
+            int cantidadDefinido = admEncuentroDefinido.ObtenerCantidadEncuentrosDefinidos();
+            int cantidadEncuentrosFinalizados = admEncuentroFinalizado.GetCantidadEncuentrosFinalizados();
+            dARBAJACOMPETENCIAToolStripMenuItem.Enabled = true;
+            if (cantidadGenerado > 0)
+            {
+                dARBAJACOMPETENCIAToolStripMenuItem.Enabled = true;
+                rEINICIARRESULTADOSToolStripMenuItem.Enabled = false;
+                rEINICIARTODALACOMPETENCIAToolStripMenuItem.Enabled = false;
             }
             else
             {
-                msAdmin.Enabled = false;
+                rEINICIARRESULTADOSToolStripMenuItem.Enabled = false;
+                rEINICIARTODALACOMPETENCIAToolStripMenuItem.Enabled = false;
+                dARBAJACOMPETENCIAToolStripMenuItem.Enabled = false;
             }
-        }
+            if (cantidadDefinido > 0)
+            {
+                rEINICIARTODALACOMPETENCIAToolStripMenuItem.Enabled = true;
+                rEINICIARRESULTADOSToolStripMenuItem.Enabled = false;
+               
+            }
+            else
+            {
+                rEINICIARRESULTADOSToolStripMenuItem.Enabled = false;
+                rEINICIARTODALACOMPETENCIAToolStripMenuItem.Enabled = false;
+            }
+            if (cantidadEncuentrosFinalizados > 0)
+            {
+                rEINICIARRESULTADOSToolStripMenuItem.Enabled = true;
+            }
+            else
+            {
+                rEINICIARRESULTADOSToolStripMenuItem.Enabled = false;
+            }
+            gestionarAccesibilidadFinalizarCompetencia(cantidadGenerado, cantidadDefinido, cantidadEncuentrosFinalizados);
 
-        private void existenEncuentrosDefinidos()
-        {
-            int cantidad = admEncuentroDefinido.ObtenerCantidadEncuentrosDefinidos();
-            cambiarDisponibilidadMsAdmin(cantidad);
-        }
-        private void existenEncuentrosGenerados()
-        {
-            int cantidad=admGenerarEncuentros.obtnerNumeroEncuentrosGeneradosPendientes();
-            cambiarDisponibilidadMsAdmin(cantidad);
-        }
-        private void gestionarDisponibilidadMenuAdm()
-        {
-            int cantidadEncuentrosFinalizados = admEncuentroFinalizado.GetCantidadEncuentrosFinalizados();
-            cambiarDisponibilidadMsAdmin(cantidadEncuentrosFinalizados);
         }
         private void competenciaLlenar()
         {
@@ -72,7 +91,7 @@ namespace GestionDeColegiados.FrmsArbitro
             {
                 admEstadio.PonerEstadiosDisponibles();
                 mensaje = "LIGA FINALIZADA!";
-                gestionarDisponibilidadMenuAdm();
+                gestionarAccesibilidadMsAdmin();
             }
             else
             {

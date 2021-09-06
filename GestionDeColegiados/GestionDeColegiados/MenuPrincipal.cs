@@ -137,7 +137,7 @@ namespace GestionDeColegiados
             int numeroEncuentros = admGenerarEncuentros.obtnerNumeroEncuentrosGeneradosPendientes();
             if (numeroEncuentros == 0)
             {
-                MessageBox.Show("Ya se han asignado fecha y colegiados a los encuentros");
+                MessageBox.Show("No hay encuentros disponibles para asignar fecha y colegiados ");
             }
             else
             {
