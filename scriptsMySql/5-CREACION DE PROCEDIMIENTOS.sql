@@ -285,6 +285,15 @@ CREATE PROCEDURE eliminarCuartoArbitro (IN _idArbitro INT)
 	END$$
 DELIMITER 
 
+/*PROCEDIMIENTO PARA DAR DE BAJA UN COLEGIADO*/
+DELIMITER $$
+CREATE PROCEDURE eliminarColegiado (IN _idArbitro INT)
+	BEGIN
+		UPDATE colegiado SET estado = 'I'
+		WHERE idcolegiado = _idArbitro;
+	END$$
+DELIMITER 
+
 /*PROCEDIMIENTO PARA ACTUALIZAR ID COLEGIADO DESPUES DE DAR DE BAJA*/
 DELIMITER $$
 CREATE PROCEDURE actualizarColegiado (IN _idColegiado INT,
@@ -607,7 +616,6 @@ CREATE PROCEDURE actulizarEncuentroFinalizado(
 			END$$
 DELIMITER ;
 
-drop procedure finalizarCompetencia;
 /*PROCEDIMIENTO PARA FINALIZAR LA COMPETENCIA*/
 DELIMITER $$
 CREATE PROCEDURE finalizarCompetencia(in _copa varchar(5), in _estado char)
