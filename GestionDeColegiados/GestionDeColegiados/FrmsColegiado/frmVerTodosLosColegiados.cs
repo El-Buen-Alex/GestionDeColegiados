@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Drawing;
 using GestionDeColegiados.FrmsColegiado;
+using System;
 
 namespace GestionDeColegiados
 {
@@ -78,11 +79,15 @@ namespace GestionDeColegiados
         }
 
         private void btnEliminarColegiado_Click (object sender, System.EventArgs e) {
+            bool eliminado = false;
             DialogResult resultado;
             resultado = MessageBox.Show("¡Está seguro de eliminar el "+cmbIdArbitro.Text+" de colegiados!", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
             if (resultado == DialogResult.Yes) {
-                MessageBox.Show("Aún en construcción");
-                //MessageBox.Show("Se eliminó el colegiado correctamente","Aviso",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                eliminado = admColegiado.eliminarColegiado(cmbIdArbitro.Text,dgvListarColegiados);
+                if(eliminado == true) {
+                    admColegiado.llenarComboIdColegiado(cmbIdArbitro);
+                    dgvListarColegiados.Rows.Clear();
+                }
             }
         }
     }

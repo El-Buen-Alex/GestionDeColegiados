@@ -1,4 +1,5 @@
 ﻿using Data;
+using Model;
 using Model.Colegiados;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ namespace Control.AdmColegiados
         Colegiado colegiado = null;
         ValidacionGUI v = new ValidacionGUI();
         DatosColegiados datos = new DatosColegiados();
+        DatosEncuentroDefinido datosEncuentroDefinido = null;
         private List<IntegrantesColegiados> listaintegColeg;
         private static AdmColegiado admCol = null;
         Contexto contexto = null;
@@ -75,6 +77,9 @@ namespace Control.AdmColegiados
 
         //Listar datos con los nombres de los colegiados
         public void llenarComboIdColegiado (ComboBox cmbIdArbitro) {
+            cmbIdArbitro.DataSource = null;
+            cmbIdArbitro.Items.Clear();
+
             List<int> listaIdArbitro = new List<int>();
             listaIdArbitro = datos.consultarIdColegiado();
             foreach (int datosId in listaIdArbitro) {
@@ -236,15 +241,53 @@ namespace Control.AdmColegiados
             idNuevo = contexto.eliminarArbitro(idArbitro, cedula, nombre, apellido, domicilio, email, telefono);
             if (idNuevo != 0) {
                 string arbitro = filaSeleccionada.Cells[0].Value.ToString();
-                actualizarColegiado(idColegiado,idNuevo,arbitro);
+                actualizarColegiadoBD(idColegiado,idNuevo,arbitro);
             }
         }
 
-        private void actualizarColegiado (int idColegiado, int idNuevo, string arbitro) {
+        private void actualizarColegiadoBD (int idColegiado, int idNuevo, string arbitro) {
             string mensaje = "";
             try {
-                datos.actualizarColegiado(idColegiado, idNuevo, arbitro);
+                datos.actualizarColegiadoBD(idColegiado, idNuevo, arbitro);
                 MessageBox.Show("Sus datos fueron agregados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            } catch (falloBDException ex) {
+                mensaje = ex.Message;
+                MessageBox.Show(mensaje, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+        }
+
+        public bool eliminarColegiado (string colegiadoSeleccionado, DataGridView dgvListarColegiados) {
+            bool eliminado = false;
+            char delimitador = ' ';
+            string[] cadena = colegiadoSeleccionado.Split(delimitador);
+            int idColegiado = Convert.ToInt32(cadena[1]);
+            bool arbitroAsignado = validarArbitroAsignado(idColegiado);
+            if (arbitroAsignado != true) {
+                eliminarColegiadoBD(idColegiado);
+                eliminado = true;
+            } else {
+                MessageBox.Show("El "+colegiadoSeleccionado+" no se puede eliminar porque\nya se encuentra asignado en un encuentro!!!!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            return eliminado;
+        }
+
+        private bool validarArbitroAsignado (int idColegiado) {
+            List<EncuentroDefinido> listaEncuentro = new List<EncuentroDefinido>();
+            datosEncuentroDefinido = new DatosEncuentroDefinido();
+            listaEncuentro = datosEncuentroDefinido.ObtenerEncuentros();
+            foreach (EncuentroDefinido encuentroDefinido in listaEncuentro) {
+                if(encuentroDefinido.IdColegiado == idColegiado) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private void eliminarColegiadoBD (int idColegiado) {
+            string mensaje = "";
+            try {
+                datos.eliminarColegiado(idColegiado);
+                MessageBox.Show("Se eliminó el colegiado correctamente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             } catch (falloBDException ex) {
                 mensaje = ex.Message;
                 MessageBox.Show(mensaje, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Stop);

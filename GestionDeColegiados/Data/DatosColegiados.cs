@@ -574,7 +574,12 @@ namespace Data
             eliminarArbitro(idArbitro, procedimiento);
         }
 
-        public void actualizarColegiado (int idColegiado, int idNuevo, string arbitro) {
+        public void eliminarColegiado (int idColegiado) {
+            string procedimiento = "eliminarColegiado";
+            eliminarArbitro(idColegiado, procedimiento);
+        }
+
+        public void actualizarColegiadoBD (int idColegiado, int idNuevo, string arbitro) {
             conexion = ConexionBD.getConexion();    //Obtener conexión
             conexion.Open();                        //Abrir conexión
             trans = conexion.BeginTransaction();    //Comenzar transaccion
