@@ -50,7 +50,7 @@ namespace GestionDeColegiados
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(329, 127);
+            this.label5.Location = new System.Drawing.Point(186, 123);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(334, 32);
@@ -62,7 +62,7 @@ namespace GestionDeColegiados
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(187, 195);
+            this.label1.Location = new System.Drawing.Point(44, 191);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(265, 25);
@@ -72,7 +72,7 @@ namespace GestionDeColegiados
             // 
             // nomEquipo
             // 
-            this.nomEquipo.Location = new System.Drawing.Point(407, 195);
+            this.nomEquipo.Location = new System.Drawing.Point(264, 191);
             this.nomEquipo.Name = "nomEquipo";
             this.nomEquipo.Size = new System.Drawing.Size(159, 22);
             this.nomEquipo.TabIndex = 22;
@@ -81,7 +81,7 @@ namespace GestionDeColegiados
             // 
             this.buscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
             this.buscar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buscar.Location = new System.Drawing.Point(592, 189);
+            this.buscar.Location = new System.Drawing.Point(449, 185);
             this.buscar.Margin = new System.Windows.Forms.Padding(2);
             this.buscar.Name = "buscar";
             this.buscar.Size = new System.Drawing.Size(109, 31);
@@ -102,7 +102,7 @@ namespace GestionDeColegiados
             this.numjugadores,
             this.director,
             this.presidente});
-            this.tablaDatos.Location = new System.Drawing.Point(191, 258);
+            this.tablaDatos.Location = new System.Drawing.Point(48, 254);
             this.tablaDatos.Name = "tablaDatos";
             this.tablaDatos.ReadOnly = true;
             this.tablaDatos.RowHeadersWidth = 51;
@@ -161,7 +161,7 @@ namespace GestionDeColegiados
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
             this.btnEliminar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnEliminar.Location = new System.Drawing.Point(561, 473);
+            this.btnEliminar.Location = new System.Drawing.Point(418, 469);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(109, 31);
@@ -174,7 +174,7 @@ namespace GestionDeColegiados
             // 
             this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
             this.btnEditar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnEditar.Location = new System.Drawing.Point(233, 473);
+            this.btnEditar.Location = new System.Drawing.Point(90, 469);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(109, 31);

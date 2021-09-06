@@ -29,9 +29,9 @@ namespace GestionDeColegiados.FrmsArbitro
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.dgvCompeticion = new System.Windows.Forms.DataGridView();
             this.colNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,14 +75,14 @@ namespace GestionDeColegiados.FrmsArbitro
             this.dgvCompeticion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCompeticion.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvCompeticion.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCompeticion.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCompeticion.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvCompeticion.ColumnHeadersHeight = 35;
             this.dgvCompeticion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvCompeticion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -97,21 +97,21 @@ namespace GestionDeColegiados.FrmsArbitro
             this.dgvCompeticion.Name = "dgvCompeticion";
             this.dgvCompeticion.ReadOnly = true;
             this.dgvCompeticion.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(175)))), ((int)(((byte)(197)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCompeticion.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(175)))), ((int)(((byte)(197)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCompeticion.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvCompeticion.RowHeadersVisible = false;
             this.dgvCompeticion.RowHeadersWidth = 5;
             this.dgvCompeticion.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(129)))), ((int)(((byte)(150)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Caviar Dreams", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(129)))), ((int)(((byte)(150)))));
-            this.dgvCompeticion.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(129)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Caviar Dreams", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(129)))), ((int)(((byte)(150)))));
+            this.dgvCompeticion.RowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvCompeticion.RowTemplate.Height = 24;
             this.dgvCompeticion.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvCompeticion.Size = new System.Drawing.Size(496, 328);
@@ -186,9 +186,10 @@ namespace GestionDeColegiados.FrmsArbitro
             this.msAdmin.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.msAdmin.Location = new System.Drawing.Point(512, 216);
             this.msAdmin.Name = "msAdmin";
-            this.msAdmin.Size = new System.Drawing.Size(6, 4);
+            this.msAdmin.Size = new System.Drawing.Size(126, 28);
             this.msAdmin.TabIndex = 35;
             this.msAdmin.Text = "menuStrip1";
+            this.msAdmin.Visible = false;
             // 
             // aDMINISTRARToolStripMenuItem
             // 
@@ -199,7 +200,6 @@ namespace GestionDeColegiados.FrmsArbitro
             this.aDMINISTRARToolStripMenuItem.Name = "aDMINISTRARToolStripMenuItem";
             this.aDMINISTRARToolStripMenuItem.Size = new System.Drawing.Size(120, 24);
             this.aDMINISTRARToolStripMenuItem.Text = "ADMINISTRAR";
-            this.aDMINISTRARToolStripMenuItem.Visible = false;
             // 
             // rEINICIARToolStripMenuItem
             // 
@@ -229,8 +229,8 @@ namespace GestionDeColegiados.FrmsArbitro
             this.tERMINARCOMPETEToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fINALIZARCOMPETENCIAToolStripMenuItem});
             this.tERMINARCOMPETEToolStripMenuItem.Name = "tERMINARCOMPETEToolStripMenuItem";
-            this.tERMINARCOMPETEToolStripMenuItem.Size = new System.Drawing.Size(263, 26);
-            this.tERMINARCOMPETEToolStripMenuItem.Text = "TERMINAR COMPETE";
+            this.tERMINARCOMPETEToolStripMenuItem.Size = new System.Drawing.Size(267, 26);
+            this.tERMINARCOMPETEToolStripMenuItem.Text = "TERMINAR COMPETENCIA";
             // 
             // fINALIZARCOMPETENCIAToolStripMenuItem
             // 

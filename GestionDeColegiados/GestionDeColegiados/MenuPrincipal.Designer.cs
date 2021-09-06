@@ -62,7 +62,6 @@ namespace GestionDeColegiados
             this.flpVerCompetencia = new System.Windows.Forms.FlowLayoutPanel();
             this.panel16 = new System.Windows.Forms.Panel();
             this.btnVerTodosPartidos = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -73,6 +72,7 @@ namespace GestionDeColegiados
             this.pbMinimizar = new System.Windows.Forms.PictureBox();
             this.pbCerrar = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.panel10 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.flpOpcionGestionColegiado.SuspendLayout();
@@ -107,12 +107,12 @@ namespace GestionDeColegiados
             this.flowLayoutPanel1.Controls.Add(this.panel9);
             this.flowLayoutPanel1.Controls.Add(this.btnGestionEquipos2);
             this.flowLayoutPanel1.Controls.Add(this.flpOpcionGestionEquipo);
+            this.flowLayoutPanel1.Controls.Add(this.panel10);
             this.flowLayoutPanel1.Controls.Add(this.btnGestionEncuentros2);
             this.flowLayoutPanel1.Controls.Add(this.flpOpcionGestionEncuentros);
             this.flowLayoutPanel1.Controls.Add(this.panel15);
             this.flowLayoutPanel1.Controls.Add(this.button1);
             this.flowLayoutPanel1.Controls.Add(this.flpVerCompetencia);
-            this.flowLayoutPanel1.Controls.Add(this.button4);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 110);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -324,7 +324,7 @@ namespace GestionDeColegiados
             this.btnGestionEncuentros2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(75)))), ((int)(((byte)(119)))));
             this.btnGestionEncuentros2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGestionEncuentros2.ForeColor = System.Drawing.Color.Silver;
-            this.btnGestionEncuentros2.Location = new System.Drawing.Point(3, 383);
+            this.btnGestionEncuentros2.Location = new System.Drawing.Point(34, 383);
             this.btnGestionEncuentros2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGestionEncuentros2.Name = "btnGestionEncuentros2";
             this.btnGestionEncuentros2.Size = new System.Drawing.Size(219, 47);
@@ -499,21 +499,6 @@ namespace GestionDeColegiados
             this.btnVerTodosPartidos.UseVisualStyleBackColor = false;
             this.btnVerTodosPartidos.Click += new System.EventHandler(this.btnVerTodosPartidos_Click);
             // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(75)))), ((int)(((byte)(119)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.Color.Silver;
-            this.button4.Location = new System.Drawing.Point(3, 699);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(219, 47);
-            this.button4.TabIndex = 26;
-            this.button4.Text = "Gestión Encuentros";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.label3);
@@ -627,13 +612,22 @@ namespace GestionDeColegiados
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(1085, 42);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(145, 36);
             this.button2.TabIndex = 14;
             this.button2.Text = "CERRAR SESIÓN";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(75)))), ((int)(((byte)(119)))));
+            this.panel10.Location = new System.Drawing.Point(3, 383);
+            this.panel10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(25, 47);
+            this.panel10.TabIndex = 17;
             // 
             // MenuPrincipal
             // 
@@ -712,8 +706,8 @@ namespace GestionDeColegiados
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button btnGestionEncuentros2;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Panel panel17;
         private System.Windows.Forms.Button btnVerTodos;
+        private System.Windows.Forms.Panel panel10;
     }
 }

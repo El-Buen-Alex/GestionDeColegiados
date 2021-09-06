@@ -43,9 +43,19 @@ namespace GestionDeColegiados
             String nombre = nomEquipo.Text;
             if (nombre.CompareTo("") != 0)
             {
-                btnEditar.Visible = true;
-                btnEliminar.Visible = true;
                 equipo.LlenaTabla(tablaDatos, nombre);
+                if (tablaDatos.Rows.Count > 0)
+                {
+                    btnEditar.Visible = true;
+                    btnEliminar.Visible = true;
+                }
+                else
+                {
+                    btnEditar.Visible = false;
+                    btnEliminar.Visible = false ;
+                    MessageBox.Show("No existen resultados");
+                }
+              
             }
             else
             {

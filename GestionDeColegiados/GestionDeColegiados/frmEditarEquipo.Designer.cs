@@ -50,7 +50,7 @@ namespace GestionDeColegiados
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(216, 25);
+            this.label5.Location = new System.Drawing.Point(374, 84);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(246, 32);
             this.label5.TabIndex = 31;
@@ -58,7 +58,7 @@ namespace GestionDeColegiados
             // 
             // presidente
             // 
-            this.presidente.Location = new System.Drawing.Point(345, 374);
+            this.presidente.Location = new System.Drawing.Point(503, 433);
             this.presidente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.presidente.Name = "presidente";
             this.presidente.Size = new System.Drawing.Size(209, 22);
@@ -66,7 +66,7 @@ namespace GestionDeColegiados
             // 
             // director
             // 
-            this.director.Location = new System.Drawing.Point(345, 298);
+            this.director.Location = new System.Drawing.Point(503, 357);
             this.director.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.director.Name = "director";
             this.director.Size = new System.Drawing.Size(213, 22);
@@ -74,7 +74,7 @@ namespace GestionDeColegiados
             // 
             // numjugadores
             // 
-            this.numjugadores.Location = new System.Drawing.Point(345, 229);
+            this.numjugadores.Location = new System.Drawing.Point(503, 288);
             this.numjugadores.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numjugadores.MaxLength = 2;
             this.numjugadores.Name = "numjugadores";
@@ -83,7 +83,7 @@ namespace GestionDeColegiados
             // 
             // nombre
             // 
-            this.nombre.Location = new System.Drawing.Point(345, 165);
+            this.nombre.Location = new System.Drawing.Point(503, 224);
             this.nombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nombre.Name = "nombre";
             this.nombre.Size = new System.Drawing.Size(213, 22);
@@ -94,7 +94,7 @@ namespace GestionDeColegiados
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(97, 370);
+            this.label4.Location = new System.Drawing.Point(255, 429);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(202, 25);
             this.label4.TabIndex = 38;
@@ -105,7 +105,7 @@ namespace GestionDeColegiados
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(97, 294);
+            this.label3.Location = new System.Drawing.Point(255, 353);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(160, 25);
             this.label3.TabIndex = 37;
@@ -116,7 +116,7 @@ namespace GestionDeColegiados
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(97, 229);
+            this.label2.Location = new System.Drawing.Point(255, 288);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(205, 25);
             this.label2.TabIndex = 36;
@@ -127,7 +127,7 @@ namespace GestionDeColegiados
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label6.Location = new System.Drawing.Point(97, 164);
+            this.label6.Location = new System.Drawing.Point(255, 223);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(87, 25);
             this.label6.TabIndex = 35;
@@ -137,7 +137,7 @@ namespace GestionDeColegiados
             // 
             this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
             this.btnActualizar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnActualizar.Location = new System.Drawing.Point(253, 458);
+            this.btnActualizar.Location = new System.Drawing.Point(411, 517);
             this.btnActualizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(145, 38);
@@ -150,7 +150,7 @@ namespace GestionDeColegiados
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
             this.btnCancelar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCancelar.Location = new System.Drawing.Point(27, 534);
+            this.btnCancelar.Location = new System.Drawing.Point(185, 593);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(145, 38);
@@ -162,7 +162,7 @@ namespace GestionDeColegiados
             // idEquipo
             // 
             this.idEquipo.Enabled = false;
-            this.idEquipo.Location = new System.Drawing.Point(345, 102);
+            this.idEquipo.Location = new System.Drawing.Point(503, 161);
             this.idEquipo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.idEquipo.Name = "idEquipo";
             this.idEquipo.Size = new System.Drawing.Size(100, 22);
@@ -174,7 +174,7 @@ namespace GestionDeColegiados
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(97, 101);
+            this.label1.Location = new System.Drawing.Point(255, 160);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 25);
             this.label1.TabIndex = 45;
@@ -184,7 +184,7 @@ namespace GestionDeColegiados
             // 
             this.btnRegresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
             this.btnRegresar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRegresar.Location = new System.Drawing.Point(491, 534);
+            this.btnRegresar.Location = new System.Drawing.Point(649, 593);
             this.btnRegresar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRegresar.Name = "btnRegresar";
             this.btnRegresar.Size = new System.Drawing.Size(145, 38);
@@ -198,7 +198,7 @@ namespace GestionDeColegiados
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(129)))), ((int)(((byte)(150)))));
-            this.ClientSize = new System.Drawing.Size(701, 599);
+            this.ClientSize = new System.Drawing.Size(959, 892);
             this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.idEquipo);
             this.Controls.Add(this.label1);
@@ -214,7 +214,7 @@ namespace GestionDeColegiados
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmEditarEquipo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmEditarEquipo";

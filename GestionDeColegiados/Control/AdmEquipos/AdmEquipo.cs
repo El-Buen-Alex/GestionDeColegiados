@@ -102,7 +102,7 @@ namespace Control.AdmEquipos
             listaEquipo = datos.consultarEquiposTabla();
             foreach(Equipo equipo in listaEquipo)
             {
-                if (equipo.NombreEquipo.Contains(nombre))
+                if (equipo.NombreEquipo.ToLower().Contains(nombre.ToLower()))
                 {
                     tablaDatos.Rows.Add(i++, equipo.IdEquipo, equipo.NombreEquipo, equipo.NumeroJugadores, equipo.NombreDirectoTecnico, equipo.PresidenteEquipo);
                 }
