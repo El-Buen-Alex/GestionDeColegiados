@@ -34,14 +34,14 @@ namespace GestionDeColegiados
             this.nomEquipo = new System.Windows.Forms.TextBox();
             this.buscar = new System.Windows.Forms.Button();
             this.tablaDatos = new System.Windows.Forms.DataGridView();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
             this.num = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idEquipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreEquipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numjugadores = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.director = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.presidente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tablaDatos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,10 +50,10 @@ namespace GestionDeColegiados
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(150, 26);
+            this.label5.Location = new System.Drawing.Point(329, 127);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(261, 26);
+            this.label5.Size = new System.Drawing.Size(334, 32);
             this.label5.TabIndex = 20;
             this.label5.Text = "Datos de Configuración";
             // 
@@ -62,26 +62,26 @@ namespace GestionDeColegiados
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(8, 94);
+            this.label1.Location = new System.Drawing.Point(187, 195);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(215, 20);
+            this.label1.Size = new System.Drawing.Size(265, 25);
             this.label1.TabIndex = 21;
             this.label1.Text = "Ingrese el nombre de equipo:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // nomEquipo
             // 
-            this.nomEquipo.Location = new System.Drawing.Point(228, 94);
+            this.nomEquipo.Location = new System.Drawing.Point(407, 195);
             this.nomEquipo.Name = "nomEquipo";
-            this.nomEquipo.Size = new System.Drawing.Size(159, 20);
+            this.nomEquipo.Size = new System.Drawing.Size(159, 22);
             this.nomEquipo.TabIndex = 22;
             // 
             // buscar
             // 
             this.buscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
             this.buscar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buscar.Location = new System.Drawing.Point(413, 88);
+            this.buscar.Location = new System.Drawing.Point(592, 189);
             this.buscar.Margin = new System.Windows.Forms.Padding(2);
             this.buscar.Name = "buscar";
             this.buscar.Size = new System.Drawing.Size(109, 31);
@@ -102,17 +102,66 @@ namespace GestionDeColegiados
             this.numjugadores,
             this.director,
             this.presidente});
-            this.tablaDatos.Location = new System.Drawing.Point(12, 157);
+            this.tablaDatos.Location = new System.Drawing.Point(191, 258);
             this.tablaDatos.Name = "tablaDatos";
             this.tablaDatos.ReadOnly = true;
+            this.tablaDatos.RowHeadersWidth = 51;
             this.tablaDatos.Size = new System.Drawing.Size(601, 125);
             this.tablaDatos.TabIndex = 24;
+            // 
+            // num
+            // 
+            this.num.HeaderText = "Num";
+            this.num.MinimumWidth = 6;
+            this.num.Name = "num";
+            this.num.ReadOnly = true;
+            this.num.Width = 125;
+            // 
+            // idEquipo
+            // 
+            this.idEquipo.HeaderText = "Id Equipo";
+            this.idEquipo.MinimumWidth = 6;
+            this.idEquipo.Name = "idEquipo";
+            this.idEquipo.ReadOnly = true;
+            this.idEquipo.Width = 125;
+            // 
+            // nombreEquipo
+            // 
+            this.nombreEquipo.HeaderText = "Nombre";
+            this.nombreEquipo.MinimumWidth = 6;
+            this.nombreEquipo.Name = "nombreEquipo";
+            this.nombreEquipo.ReadOnly = true;
+            this.nombreEquipo.Width = 125;
+            // 
+            // numjugadores
+            // 
+            this.numjugadores.HeaderText = "Número de Jugadores";
+            this.numjugadores.MinimumWidth = 6;
+            this.numjugadores.Name = "numjugadores";
+            this.numjugadores.ReadOnly = true;
+            this.numjugadores.Width = 125;
+            // 
+            // director
+            // 
+            this.director.HeaderText = "Director Técnico";
+            this.director.MinimumWidth = 6;
+            this.director.Name = "director";
+            this.director.ReadOnly = true;
+            this.director.Width = 125;
+            // 
+            // presidente
+            // 
+            this.presidente.HeaderText = "Presidente de Equipo";
+            this.presidente.MinimumWidth = 6;
+            this.presidente.Name = "presidente";
+            this.presidente.ReadOnly = true;
+            this.presidente.Width = 125;
             // 
             // btnEliminar
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
             this.btnEliminar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnEliminar.Location = new System.Drawing.Point(382, 372);
+            this.btnEliminar.Location = new System.Drawing.Point(561, 473);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(109, 31);
@@ -125,7 +174,7 @@ namespace GestionDeColegiados
             // 
             this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
             this.btnEditar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnEditar.Location = new System.Drawing.Point(54, 372);
+            this.btnEditar.Location = new System.Drawing.Point(233, 473);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(109, 31);
@@ -134,46 +183,10 @@ namespace GestionDeColegiados
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // num
-            // 
-            this.num.HeaderText = "Num";
-            this.num.Name = "num";
-            this.num.ReadOnly = true;
-            // 
-            // idEquipo
-            // 
-            this.idEquipo.HeaderText = "Id Equipo";
-            this.idEquipo.Name = "idEquipo";
-            this.idEquipo.ReadOnly = true;
-            // 
-            // nombreEquipo
-            // 
-            this.nombreEquipo.HeaderText = "Nombre";
-            this.nombreEquipo.Name = "nombreEquipo";
-            this.nombreEquipo.ReadOnly = true;
-            // 
-            // numjugadores
-            // 
-            this.numjugadores.HeaderText = "Número de Jugadores";
-            this.numjugadores.Name = "numjugadores";
-            this.numjugadores.ReadOnly = true;
-            // 
-            // director
-            // 
-            this.director.HeaderText = "Director Técnico";
-            this.director.Name = "director";
-            this.director.ReadOnly = true;
-            // 
-            // presidente
-            // 
-            this.presidente.HeaderText = "Presidente de Equipo";
-            this.presidente.Name = "presidente";
-            this.presidente.ReadOnly = true;
-            // 
             // frmVerTodos
             // 
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(129)))), ((int)(((byte)(150)))));
-            this.ClientSize = new System.Drawing.Size(625, 483);
+            this.ClientSize = new System.Drawing.Size(959, 892);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.tablaDatos);
