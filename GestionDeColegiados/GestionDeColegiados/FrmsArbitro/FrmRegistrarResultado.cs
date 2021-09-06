@@ -22,7 +22,13 @@ namespace GestionDeColegiados.FrmsArbitro
             admEncuentrosDefinidos.LlenarPartidosCmb(cmbEncuentros);
             cambiarDisponibilidadControladoresUi(false);
         }
-
+        private void limpiarControladoresUi()
+        {
+            txtGolesLocal.Text="";
+            txtGolesVisitante.Text="";
+            lblPuntosLocalResultado.Text = "";
+            lblPuntosVisitanteResultado.Text= "";
+        }
         private void cambiarDisponibilidadControladoresUi(bool estado)
         {
             lblEquipoLocal.Enabled = estado;
@@ -45,6 +51,7 @@ namespace GestionDeColegiados.FrmsArbitro
         {
             refrezcarComponentes();
             cambiarDisponibilidadControladoresUi(true);
+            limpiarControladoresUi();
         }
 
         private void guardado(bool guardado)

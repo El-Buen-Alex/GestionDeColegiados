@@ -97,38 +97,46 @@ namespace GestionDeColegiados
             }
         }
 
+        private void ExaminarAccesibilidadGenerarEncuentrosPorCantidadEquipo()
+        {
+            if (admEquipo.ObtenerCantidadEquipo() == 10)
+            {
+                ExaminarAccesibilidadGenerarEncuentros();
+            }
+            else
+            {
+                string faltaEquipo = "Para generar encuentros debe existir 10 equipos registrados" +
+                    "\n\rExisten: " + admEquipo.ObtenerCantidadEquipo() + " Equipos registrados." +
+                    " Por favor ingrese: " + (10 - admEquipo.ObtenerCantidadEquipo()) + " más";
+                MessageBox.Show(faltaEquipo, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                AbrirFormEnPanel(new frmNuevoEquipo());
+            }
+        }
+
+        private void ExaminarAccesibilidadGenerarEncuentros()
+        {
+            if (admGenerarEncuentros.obtnerNumeroEncuentrosGeneradosPendientes() == 0)
+            {
+                AbrirFormEnPanel(new frmGenerarEncuentros(false));
+            }
+            else
+            {
+                MessageBox.Show("Ya se han generado y registrados los encuentros");
+                AbrirFormEnPanel(new frmGenerarEncuentros(true));
+            }
+        }
         private void btnGenerarEncuentros_Click(object sender, EventArgs e)
         {
             int cantEncuentrosDefinidos = admEncuentrosDefinidos.ObtenerNumeroPartidosPorJugar();
             if (cantEncuentrosDefinidos == 0)
             {
-                if (admEquipo.ObtenerCantidadEquipo() == 10)
-                {
-                    if (admGenerarEncuentros.obtnerNumeroEncuentrosGeneradosPendientes() == 0 )
-                    {
-                        AbrirFormEnPanel(new frmGenerarEncuentros(false));
-                    }
-                    else
-                    {
-                        MessageBox.Show("Ya se han generado y registrados los encuentros");
-                        AbrirFormEnPanel(new frmGenerarEncuentros(true));
-                    }
-                }
-                else
-                {
-                    string faltaEquipo = "Para generar encuentros debe existir 10 equipos registrados" +
-                        "\n\rExisten: " + admEquipo.ObtenerCantidadEquipo() + " Equipos registrados." +
-                        " Por favor ingrese: " + (10 - admEquipo.ObtenerCantidadEquipo()) + " más";
-                    MessageBox.Show(faltaEquipo, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    AbrirFormEnPanel(new frmNuevoEquipo());
-                }
+                ExaminarAccesibilidadGenerarEncuentrosPorCantidadEquipo();
             }
             else
             {
                 MessageBox.Show("Existen: " + cantEncuentrosDefinidos + " Por jugar, no se puede Generar Encuentros");
                 AbrirFormEnPanel(new frmTodosLosEncuentrosDefinidos());
             }
-
 
         }
 
@@ -137,7 +145,7 @@ namespace GestionDeColegiados
             int numeroEncuentros = admGenerarEncuentros.obtnerNumeroEncuentrosGeneradosPendientes();
             if (numeroEncuentros == 0)
             {
-                MessageBox.Show("Ya se han asignado fecha y colegiados a los encuentros");
+                MessageBox.Show("No hay encuentros disponibles para asignar fecha y colegiados ");
             }
             else
             {
@@ -156,13 +164,8 @@ namespace GestionDeColegiados
             {
                 AbrirFormEnPanel(new frmCambiarEstadioPartido());
             }
-
         }
 
-        private void pbMinimizar_Click(object sender, EventArgs e)
-        {
-
-        }
 
         //metodo que controla el evento de arrastrar pantalla
         private void PanelBarraTitulo_MouseDown(object sender, MouseEventArgs e)
@@ -215,14 +218,11 @@ namespace GestionDeColegiados
             {
                 AbrirFormEnPanel(new frmTodosLosEncuentrosDefinidos());
             }
-
         }
 
         private void btnVerTodosPartidos_Click(object sender, EventArgs e)
         {
-           
-                AbrirFormEnPanel(new FrmVerCompeticion(true));
-            
+            AbrirFormEnPanel(new FrmVerCompeticion(true));
         }
 
         private void button1_MouseEnter(object sender, EventArgs e)
@@ -236,8 +236,7 @@ namespace GestionDeColegiados
             btnIniciarSesion frm = new btnIniciarSesion();
             frm.Show();
         }
-
-        private void button5_Click(object sender, EventArgs e)
+        public void abrirFormNuevoEquipo()
         {
             if (admEquipo.ObtenerCantidadEquipo() < 10)
             {
@@ -248,21 +247,28 @@ namespace GestionDeColegiados
                 AbrirFormEnPanel(new frmListaEquipos());
             }
         }
+        private void button5_Click(object sender, EventArgs e)
+        {
+            abrirFormNuevoEquipo();
+        }
 
+        private void ExaminarAccesibilidadEditarEquipoPorEncuentrosGenerados()
+        {
+            if (admGenerarEncuentros.obtnerNumeroEncuentrosGeneradosPendientes() == 0)
+            {
+                AbrirFormEnPanel(new frmVerTodos());
+            }
+            else
+            {
+                MessageBox.Show("Existen encuentros generados. No se pueden eliminar o editar equipos.");
+                AbrirFormEnPanel(new frmGenerarEncuentros(true));
+            }
+        }
         private void button3_Click(object sender, EventArgs e)
         {
             if (admEquipo.ObtenerCantidadEquipo() > 0)
             {
-                if(admGenerarEncuentros.obtnerNumeroEncuentrosGeneradosPendientes() == 0)
-                {
-                    AbrirFormEnPanel(new frmVerTodos());
-                }
-                else
-                {
-                    MessageBox.Show("Existen encuentros generados. No se pueden eliminar o editar equipos.");
-                    AbrirFormEnPanel(new frmGenerarEncuentros(true));
-                }
-                
+                ExaminarAccesibilidadEditarEquipoPorEncuentrosGenerados();
             }
             else
             {

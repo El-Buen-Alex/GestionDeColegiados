@@ -495,14 +495,14 @@ DELIMITER ;
 DELIMITER $$
 CREATE PROCEDURE cantidadEncuentrosDefinidosActivos()
 	BEGIN
-		SELECT count(*) as cantidadEncuusersentros FROM encuentroDefinidos WHERE estado = 'A'; 
+		SELECT count(*) as cantidadEncuentrosActivos FROM encuentroDefinidos WHERE estado = 'A'; 
 	END$$
 DELIMITER ;
-/* PROCEDIMIENTO PARA OBTENER LOS ULTIMOS 5 ENCUENTROS DEFINIDOS*/
+/* PROCEDIMIENTO PARA OBTENER LOS ENCUENTROS DEFINIDOS*/
 DELIMITER $$
 CREATE PROCEDURE mostrarEncuentroDefinidos()
 	BEGIN
-		SELECT * FROM encuentroDefinidos WHERE estado = 'A' and asignacion="ASIGNADO" order by idefinido asc limit 5; 
+		SELECT * FROM encuentroDefinidos WHERE estado = 'A' and asignacion="ASIGNADO" order by idefinido; 
 	END$$
 DELIMITER  ;
 

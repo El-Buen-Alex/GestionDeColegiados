@@ -135,6 +135,7 @@ namespace Control.AdmEncuentros
             lblPuntosLocalResultado.Text = puntosLocal.ToString();
             lblPuntosVisitanteResultado.Text = CalcularPuntosVisitante(puntosLocal).ToString();
         }
+
         private EncuentroFinalizado GetEncuentro(int idEquipo, int idDefinido, string golesFavor, string golesContra)
         {
             

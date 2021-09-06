@@ -9,21 +9,16 @@ namespace Control
         //metodo necesario para gestionar el intento de acceder a la aplicación
         public string controlLogin(string usuario, string password)
         {
-            //creamos un objeto que nos ayudará a gestionar la conexion
-            
-            Administrador nuevoUsuario = null;
             //creamos una cadena que ayudará a dar respuesta del proceso
             string respuesta = "";
             try
             {
-                nuevoUsuario = gestionUsuario.ExisteUsuario(usuario.Trim(), password);
-
+                Administrador nuevoUsuario = obtenerUsuario(usuario, password);
                 if (nuevoUsuario == null)
                 {
                     //se lanza la excepcion
                     respuesta = "ERROR: ";
                     throw new usuarioNoRegistradoException(usuario);
-
                 }
                 else
                 {

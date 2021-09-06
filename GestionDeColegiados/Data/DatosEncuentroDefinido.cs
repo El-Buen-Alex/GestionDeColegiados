@@ -159,7 +159,7 @@ namespace Data
                 MySqlDataReader reader = comando.ExecuteReader();
                 if (reader.Read())
                 {
-                    cantidad = Convert.ToInt32(reader["cantidadEncuentros"].ToString());
+                    cantidad = Convert.ToInt32(reader["cantidadEncuentrosActivos"].ToString());
                 }
 
             }
