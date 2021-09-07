@@ -6,6 +6,12 @@ using System.Windows.Forms;
 
 namespace Control.AdmColegiados
 {
+    /// <summary>
+    /// Clase para la gestión de Juez Central.
+    /// </summary>
+    /// <remarks>
+    /// Crea las listas, instancias y validaciones para obtener los datos de Juez Central.
+    /// </remarks>
     public class AdmJuezCentral : IAdm
     {
         List<JuezCentral> listaJuezCentral = new List<JuezCentral>();
@@ -17,13 +23,24 @@ namespace Control.AdmColegiados
 
         public List<JuezCentral> ListaJuezCentral { get => listaJuezCentral; set => listaJuezCentral = value; }
 
-        //Paso para el uso de Singleton
-        //Creando atributo privado y estático de la misma clase
+        /// <summary>
+        /// Paso para el uso de Singleton.
+        /// </summary>
+        /// <remarks>
+        /// Creando atributo privado de la clase AdmJuezCentral.
+        /// </remarks>
         private AdmJuezCentral ()
         {
             listaJuezCentral = new List<JuezCentral>();
         }
 
+        /// <summary>
+        /// Paso para el uso de Singleton.
+        /// </summary>
+        /// <remarks>
+        /// Creando atributo estático de la clase Juez Central.
+        /// </remarks>
+        /// <returns>Devuelve una instancia de AdmJuezCentral.</returns>
         public static AdmJuezCentral getAdmJ()
         {
             if (admJ == null)
@@ -31,7 +48,16 @@ namespace Control.AdmColegiados
             return admJ;
         }
 
-        //Método guardar de la interface IAdm
+        /// <summary>
+        /// Método guardar de la interface IAdm.
+        /// </summary>
+        /// <param name="txtcedulaJC">Cedula recogida.</param>
+        /// <param name="txtnombreJC">Nombre recogido.</param>
+        /// <param name="txtapellidoJC">Apellido recogido.</param>
+        /// <param name="txtdomicilioJC">Domicilio recogido.</param>
+        /// <param name="txtemailJC">Email recogido.</param>
+        /// <param name="txttelefonoJC">Telefono recogido.</param>
+        /// <returns>Devuelve el último id registrado como entero.</returns>
         public int guardar(TextBox txtcedulaJC, TextBox txtnombreJC, TextBox txtapellidoJC,
             TextBox txtdomicilioJC, TextBox txtemailJC, TextBox txttelefonoJC)
         {
@@ -53,7 +79,11 @@ namespace Control.AdmColegiados
             return id;
         }
 
-        //Guardar datos en la BD
+        /// <summary>
+        /// Guardar datos de Juez Central en la BD.
+        /// </summary>
+        /// <param name="juezCentral">Objeto Juez Central.</param>
+        /// <returns>Devuelve el último id registrado como entero.</returns>
         private int GuardarJuezCentralBD(JuezCentral juezCentral)
         {
             int id = 0;
@@ -67,7 +97,14 @@ namespace Control.AdmColegiados
             return id;
         }
 
-        //Método obtenerDatos de la interface IAdm
+        /// <summary>
+        /// Método obtenerDatos de la interface IAdm.
+        /// </summary>
+        /// <remarks>
+        /// Llena <paramref name="dgvListarColegiados"/> con los datos del <paramref name="id"/> buscado.
+        /// </remarks>
+        /// <param name="id">ID de un Juez Central.</param>
+        /// <param name="dgvListarColegiados">DataGridView que va a ser llenado con datos.</param>
         public void obtenerDatos (int id, DataGridView dgvListarColegiados) {
             listaJuezCentral = datos.consultarJuezCentral(id);
             foreach (JuezCentral datosJC in listaJuezCentral) {
@@ -76,8 +113,18 @@ namespace Control.AdmColegiados
             }
         }
 
-        //Método recogerDatosEditar de la interface IAdm
+        /// <summary>
+        /// Instancia de la clase Asistente.
+        /// </summary>
         JuezCentral JC;
+
+        /// <summary>
+        /// Método recogerDatosEditar de la interface IAdm.
+        /// </summary>
+        /// <remarks>
+        /// Recoge los datos que son seleccionados para editar por el usuario.
+        /// </remarks>
+        /// <param name="filaSeleccionada">DataGridViewRow que contiene los datos seleccionado por el usuario.</param>
         public void recogerDatosEditar (DataGridViewRow filaSeleccionada) {
             foreach (JuezCentral juezCentral in listaJuezCentral) {
                 if (juezCentral.Cedula == filaSeleccionada.Cells[1].Value.ToString() &&
@@ -91,7 +138,18 @@ namespace Control.AdmColegiados
             }
         }
 
-        //Método llenarDatosFormEditar de la interface IAdm
+        /// <summary>
+        /// Método llenarDatosFormEditar de la interface IAdm.
+        /// </summary>
+        /// <remarks>
+        /// Llena los TexBox de Editar con los datos del Juez Central seleccionado.
+        /// </remarks>
+        /// <param name="txtCedula">Cedula.</param>
+        /// <param name="txtNombre">Nombre.</param>
+        /// <param name="txtApellido">Apellido.</param>
+        /// <param name="txtDomicilio">Domicilio.</param>
+        /// <param name="txtEmail">Email.</param>
+        /// <param name="txtTelefono">Telefono.</param>
         public void llenarDatosFormEditar (TextBox txtCedula, TextBox txtNombre, TextBox txtApellido, 
             TextBox txtDomicilio, TextBox txtEmail, TextBox txtTelefono) {
             try {
@@ -106,7 +164,16 @@ namespace Control.AdmColegiados
             }
         }
 
-        //Método editarArbitro de la interface IAdm
+        /// <summary>
+        /// Método editarArbitro de la interface IAdm.
+        /// </summary>
+        /// <param name="idArbitro">ID recogido.</param>
+        /// <param name="cedula">Cedula recogida.</param>
+        /// <param name="nombre">Nombre recogido.</param>
+        /// <param name="apellido">Apellido recogido.</param>
+        /// <param name="domicilio">Domicilio recogido.</param>
+        /// <param name="email">Email recogido.</param>
+        /// <param name="telefono">Telefono recogido.</param>
         public void editarArbitro (int idArbitro, string cedula, string nombre, string apellido,
             string domicilio, string email, string telefono) {
             juezCentral = new JuezCentral();
@@ -123,7 +190,10 @@ namespace Control.AdmColegiados
             }
         }
 
-        //Modificar datos en la BD
+        /// <summary>
+        /// Modificar datos de Asistente1 en la BD.
+        /// </summary>
+        /// <param name="juezCentral">Objeto Juez Central.</param>
         private void EditarJuezCentralBD (JuezCentral juezCentral) {
             string mensaje = "";
             try {
@@ -135,7 +205,17 @@ namespace Control.AdmColegiados
             }
         }
 
-        //Método eliminarArbitro de la interface IAdm
+        /// <summary>
+        /// Método eliminarArbitro de la interface IAdm.
+        /// </summary>
+        /// <param name="idArbitro">ID recogido.</param>
+        /// <param name="cedula">Cedula recogida.</param>
+        /// <param name="nombre">Nombre recogido.</param>
+        /// <param name="apellido">Apellido recogido.</param>
+        /// <param name="domicilio">Domicilio recogido.</param>
+        /// <param name="email">Email recogido.</param>
+        /// <param name="telefono">Telefono recogido.</param>
+        /// <returns>Devuelve el último id registrado como entero.</returns>
         public int eliminarArbitro (int idArbitro, string cedula, string nombre, string apellido,
             string domicilio, string email, string telefono) {
             juezCentral = new JuezCentral();
@@ -155,7 +235,10 @@ namespace Control.AdmColegiados
             return idNuevo;
         }
 
-        //Eliminar "lógico" en la BD
+        /// <summary>
+        /// Eliminar "lógico" en la BD.
+        /// </summary>
+        /// <param name="idArbitro">ID recogido.</param>
         private void eliminarJuezCentralBD (int idArbitro) {
             string mensaje = "";
             try {

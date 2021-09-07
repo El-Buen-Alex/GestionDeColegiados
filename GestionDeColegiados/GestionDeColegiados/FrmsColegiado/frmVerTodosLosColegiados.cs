@@ -83,7 +83,7 @@ namespace GestionDeColegiados
             DialogResult resultado;
             resultado = MessageBox.Show("¡Está seguro de eliminar el "+cmbIdArbitro.Text+" de colegiados!", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
             if (resultado == DialogResult.Yes) {
-                eliminado = admColegiado.eliminarColegiado(cmbIdArbitro.Text,dgvListarColegiados);
+                eliminado = admColegiado.eliminarColegiado(cmbIdArbitro.Text);
                 if(eliminado == true) {
                     admColegiado.llenarComboIdColegiado(cmbIdArbitro);
                     dgvListarColegiados.Rows.Clear();

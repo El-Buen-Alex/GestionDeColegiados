@@ -6,6 +6,12 @@ using System.Windows.Forms;
 
 namespace Control.AdmColegiados
 {
+    /// <summary>
+    /// Clase para la gestión de Asistente2.
+    /// </summary>
+    /// <remarks>
+    /// Crea las listas, instancias y validaciones para obtener los datos de Asistente2.
+    /// </remarks>
     public class AdmAsistente2 : IAdm
     {
         List<Asistente> listaAsistente2 = new List<Asistente>();
@@ -16,14 +22,25 @@ namespace Control.AdmColegiados
         private static AdmAsistente2 admA2 = null;
 
         public List<Asistente> ListaAsistente2 { get => listaAsistente2; set => listaAsistente2 = value; }
-        
-        //Paso para el uso de Singleton
-        //Creando atributo privado y estático de la misma clase
+
+        /// <summary>
+        /// Paso para el uso de Singleton.
+        /// </summary>
+        /// <remarks>
+        /// Creando atributo privado de la clase AdmAsistente2.
+        /// </remarks>
         private AdmAsistente2 ()
         {
             listaAsistente2 = new List<Asistente>();
         }
 
+        /// <summary>
+        /// Paso para el uso de Singleton.
+        /// </summary>
+        /// <remarks>
+        /// Creando atributo estático de la clase AdmAistente2.
+        /// </remarks>
+        /// <returns>Devuelve una instancia de AdmAsistente2.</returns>
         public static AdmAsistente2 getAdmA2()
         {
             if (admA2 == null)
@@ -31,7 +48,16 @@ namespace Control.AdmColegiados
             return admA2;
         }
 
-        //Método guardar de la interface IAdm
+        /// <summary>
+        /// Método guardar de la interface IAdm.
+        /// </summary>
+        /// <param name="txtcedulaAs2">Cedula recogida.</param>
+        /// <param name="txtnombreAs2">Nombre recogido.</param>
+        /// <param name="txtapellidoAs2">Apellido recogido.</param>
+        /// <param name="txtdomicilioAs2">Domicilio recogido.</param>
+        /// <param name="txtemailAs2">Email recogido.</param>
+        /// <param name="txttelefonoAs2">Telefono recogido.</param>
+        /// <returns>Devuelve el último id registrado como entero.</returns>
         public int guardar(TextBox txtcedulaAs2, TextBox txtnombreAs2, TextBox txtapellidoAs2,
             TextBox txtdomicilioAs2, TextBox txtemailAs2, TextBox txttelefonoAs2)
         {
@@ -53,7 +79,11 @@ namespace Control.AdmColegiados
             return id;
         }
 
-        //Guardar datos a la BD
+        /// <summary>
+        /// Guardar datos de Asistente2 en la BD.
+        /// </summary>
+        /// <param name="asistente2">Objeto Asistente2.</param>
+        /// <returns>Devuelve el último id registrado como entero.</returns>
         private int GuardarAsistente2BD(Asistente asistente2)
         {
             int id = 0;
@@ -67,7 +97,14 @@ namespace Control.AdmColegiados
             return id;
         }
 
-        //Método obtenerDatos de la interface IAdm
+        /// <summary>
+        /// Método obtenerDatos de la interface IAdm.
+        /// </summary>
+        /// <remarks>
+        /// Llena <paramref name="dgvListarColegiados"/> con los datos del <paramref name="id"/> buscado.
+        /// </remarks>
+        /// <param name="id">ID de un Asistente2.</param>
+        /// <param name="dgvListarColegiados">DataGridView que va a ser llenado con datos.</param>
         public void obtenerDatos (int id, DataGridView dgvListarColegiados) {
             listaAsistente2 = datos.consultarAsistente2(id);
             foreach (Asistente datosAs2 in listaAsistente2) {
@@ -75,9 +112,18 @@ namespace Control.AdmColegiados
             }
         }
 
-        //Editar
-        //Método recogerDatosEditar de la interface IAdm
+        /// <summary>
+        /// Instancia de la clase Asistente.
+        /// </summary>
         Asistente as2;
+
+        /// <summary>
+        /// Método recogerDatosEditar de la interface IAdm.
+        /// </summary>
+        /// <remarks>
+        /// Recoge los datos que son seleccionados para editar por el usuario.
+        /// </remarks>
+        /// <param name="filaSeleccionada">DataGridViewRow que contiene los datos seleccionado por el usuario.</param>
         public void recogerDatosEditar (DataGridViewRow filaSeleccionada) {
             foreach (Asistente asistente in listaAsistente2) {
                 if (asistente.Cedula == filaSeleccionada.Cells[1].Value.ToString() &&
@@ -91,7 +137,19 @@ namespace Control.AdmColegiados
             }
         }
 
-        //Método llenarDatosFormEditar de la interface IAdm
+
+        /// <summary>
+        /// Método llenarDatosFormEditar de la interface IAdm.
+        /// </summary>
+        /// <remarks>
+        /// Llena los TexBox de Editar con los datos del Asistente2 seleccionado.
+        /// </remarks>
+        /// <param name="txtCedula">Cedula.</param>
+        /// <param name="txtNombre">Nombre.</param>
+        /// <param name="txtApellido">Apellido.</param>
+        /// <param name="txtDomicilio">Domicilio.</param>
+        /// <param name="txtEmail">Email.</param>
+        /// <param name="txtTelefono">Telefono.</param>
         public void llenarDatosFormEditar (TextBox txtCedula, TextBox txtNombre, TextBox txtApellido, TextBox txtDomicilio, TextBox txtEmail, TextBox txtTelefono) {
             try {
                 txtCedula.Text = as2.Cedula.ToString();
@@ -105,7 +163,16 @@ namespace Control.AdmColegiados
             }
         }
 
-        //Método editarArbitro de la interface IAdm
+        /// <summary>
+        /// Método editarArbitro de la interface IAdm.
+        /// </summary>
+        /// <param name="idArbitro">ID recogido.</param>
+        /// <param name="cedula">Cedula recogida.</param>
+        /// <param name="nombre">Nombre recogido.</param>
+        /// <param name="apellido">Apellido recogido.</param>
+        /// <param name="domicilio">Domicilio recogido.</param>
+        /// <param name="email">Email recogido.</param>
+        /// <param name="telefono">Telefono recogido.</param>
         public void editarArbitro (int idArbitro, string cedula, string nombre, string apellido,
             string domicilio, string email, string telefono) {
             asistente2 = new Asistente();
@@ -122,7 +189,10 @@ namespace Control.AdmColegiados
             }
         }
 
-        //Modificar datos en la BD
+        /// <summary>
+        /// Modificar datos de Asistente1 en la BD.
+        /// </summary>
+        /// <param name="asistente2">Objeto Asistente2.</param>
         private void editarAsistente2BD (Asistente asistente2) {
             string mensaje = "";
             try {
@@ -134,7 +204,17 @@ namespace Control.AdmColegiados
             }
         }
 
-        //Método eliminarArbitro de la interface IAdm
+        /// <summary>
+        /// Método eliminarArbitro de la interface IAdm
+        /// </summary>
+        /// <param name="idArbitro">ID recogido.</param>
+        /// <param name="cedula">Cedula recogida.</param>
+        /// <param name="nombre">Nombre recogido.</param>
+        /// <param name="apellido">Apellido recogido.</param>
+        /// <param name="domicilio">Domicilio recogido.</param>
+        /// <param name="email">Email recogido.</param>
+        /// <param name="telefono">Telefono recogido.</param>
+        /// <returns>Devuelve el último id registrado como entero.</returns>
         public int eliminarArbitro (int idArbitro, string cedula, string nombre, string apellido,
             string domicilio, string email, string telefono) {
             asistente2 = new Asistente();
@@ -155,7 +235,10 @@ namespace Control.AdmColegiados
             return idNuevo;
         }
 
-        //Eliminar "lógico" en la BD
+        /// <summary>
+        /// Eliminar "lógico" en la BD
+        /// </summary>
+        /// <param name="idArbitro">ID recogido.</param>
         private void eliminarAsistente2BD (int idArbitro) {
             string mensaje = "";
             try {

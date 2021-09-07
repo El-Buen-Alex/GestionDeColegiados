@@ -7,6 +7,12 @@ using System.Windows.Forms;
 
 namespace Control.AdmColegiados
 {
+    /// <summary>
+    /// Clase para la gestión de Colegiados.
+    /// </summary>
+    /// <remarks>
+    /// Crea las listas, instancias y validaciones para obtener los datos de Colegiados.
+    /// </remarks>
     public class AdmColegiado
     {
         List<Colegiado> listaColegiado = new List<Colegiado>();
@@ -22,13 +28,24 @@ namespace Control.AdmColegiados
         public List<Colegiado> ListaColegiado { get => listaColegiado; set => listaColegiado = value; }
         public List<IntegrantesColegiados> ListaintegColeg { get => listaintegColeg; set => listaintegColeg = value; }
 
-        //Paso para el uso de Singleton
-        //Creando atributo privado y estático de la misma clase
+        /// <summary>
+        /// Paso para el uso de Singleton.
+        /// </summary>
+        /// <remarks>
+        /// Creando atributo privado de la clase AdmColegiado.
+        /// </remarks>
         private AdmColegiado ()
         {
             listaColegiado = new List<Colegiado>();
         }
 
+        /// <summary>
+        /// Paso para el uso de Singleton.
+        /// </summary>
+        /// <remarks>
+        /// Creando atributo estático de la clase AdmColegiado.
+        /// </remarks>
+        /// <returns>Devuelve una instancia de AdmColegiado.</returns>
         public static AdmColegiado getAdmCol()
         {
             if (admCol == null)
@@ -36,7 +53,10 @@ namespace Control.AdmColegiados
             return admCol;
         }
 
-        //Llenar ComboBox con nombres de Juez Central
+        /// <summary>
+        /// Llenar ComboBox con nombres de Juez Central.
+        /// </summary>
+        /// <param name="cmbGrupoColegiado"> ComboBox recogido.</param>
         public void LlenarColegiadosCmb(ComboBox cmbGrupoColegiado)
         {
             listaintegColeg = new List<IntegrantesColegiados>();
@@ -45,11 +65,22 @@ namespace Control.AdmColegiados
             cmbGrupoColegiado.DataSource = listaintegColeg;
 
         }
+
+        /// <summary>
+        /// LLenar lista de integrantes de colegiados.
+        /// </summary>
         public void llenarListaColegiados()
         {
             listaintegColeg = datos.ConsultarColegiado();
         }
-        //Guardar id de todos los arbitros
+
+        /// <summary>
+        /// Guardar id de todos los arbitros.
+        /// </summary>
+        /// <param name="idjuezcentral">ID del juez central.</param>
+        /// <param name="idasistente1">ID del asistente 1.</param>
+        /// <param name="idasistente2">ID del asistente 2.</param>
+        /// <param name="idcuartoarbitro">ID del cuarto arbitro.</param>
         public void Guardar(int idjuezcentral, int idasistente1, int idasistente2, int idcuartoarbitro)
         {
             colegiado = new Colegiado(0, idjuezcentral, idasistente1, idasistente2, idcuartoarbitro);
@@ -61,7 +92,10 @@ namespace Control.AdmColegiados
             }
         }
 
-        //Guardar colegiado en la BD
+        /// <summary>
+        /// Guardar datos de colegiado en la BD.
+        /// </summary>
+        /// <param name="colegiado">Objeto colegiado.</param>
         private void GuardarColegiadoBD(Colegiado colegiado)
         {
             string mensaje = "";
@@ -75,7 +109,10 @@ namespace Control.AdmColegiados
             }
         }
 
-        //Listar datos con los nombres de los colegiados
+        /// <summary>
+        /// Listar datos con los nombres de los colegiados.
+        /// </summary>
+        /// <param name="cmbIdArbitro">ComboBox seleccionado de colegiado.</param>
         public void llenarComboIdColegiado (ComboBox cmbIdArbitro) {
             cmbIdArbitro.DataSource = null;
             cmbIdArbitro.Items.Clear();
@@ -87,6 +124,14 @@ namespace Control.AdmColegiados
             }
         }
 
+        /// <summary>
+        /// Llenar el DataGridView con los datos de los árbitros.
+        /// </summary>
+        /// <remarks>
+        /// Se llena el DataGridView de acuerdo a un contexto de árbitros determinado.
+        /// </remarks>
+        /// <param name="dgvListarColegiados">DataGridView que se va a llenar con los datos de los árbitros.</param>
+        /// <param name="cmbIdArbitro">Combobox o grupo de colegiado seleccionado.</param>
         public void llenarDatosGrivColegiado (DataGridView dgvListarColegiados, ComboBox cmbIdArbitro) {
             dgvListarColegiados.Rows.Clear();
 
@@ -108,12 +153,22 @@ namespace Control.AdmColegiados
             contexto.datos(id, dgvListarColegiados);
         }
 
+        /// <summary>
+        /// Obtener nombres indexados de colegiados.
+        /// </summary>
+        /// <param name="indexColegiados">Numero index de colegiado.</param>
+        /// <returns>Devuelve el id del colegiado consultado como entero.</returns>
         public string ObtenerNombreDeColegiadosIndex(int indexColegiados)
         {
             int id = listaintegColeg[indexColegiados].IdGrupoColegiado;
             return ObtenerNombreDeColegiados(id);
         }
 
+        /// <summary>
+        /// Obtener nombres de colegiado consultado.
+        /// </summary>
+        /// <param name="idColegiado">ID del colegiado que se va a buscar.</param>
+        /// <returns>Delvuelve el nombre del colegiado consultado como string.</returns>
         public string ObtenerNombreDeColegiados(int idColegiado)
         {
             string nombres = "0";
@@ -121,14 +176,21 @@ namespace Control.AdmColegiados
             return nombres;
         }
 
-        //Obtener Cantidad de Colegiados
+        /// <summary>
+        /// Obtener Cantidad de Colegiados.
+        /// </summary>
+        /// <returns>Devuelve la cantidad de colegiados registrados.</returns>
         public int obtenerCantidadColegiado()
         {
             listaintegColeg = datos.ConsultarColegiado();
             return listaintegColeg.Count;
         }
 
-        //Consulta para validar si el arbitro ya está registrado
+        /// <summary>
+        /// Consulta para validar si el arbitro ya está registrado.
+        /// </summary>
+        /// <param name="txtcedula">Cedula que se va a validar.</param>
+        /// <returns>Devuelve true si la cedula está repetida o false si es una nueva.</returns>
         public bool validarCedula (TextBox txtcedula) 
         {
             string cedula = txtcedula.Text;
@@ -146,6 +208,11 @@ namespace Control.AdmColegiados
             return repetido;
         }
 
+        /// <summary>
+        /// Llenar ComboBox con los nombres de arbitros registrados como colegiado.
+        /// </summary>
+        /// <param name="cmbGrupoColegiado"></param>
+        /// <param name="idColegiados"></param>
         public void LlenarColegiadosCmb(ComboBox cmbGrupoColegiado, int idColegiados)
         {
             LlenarColegiadosCmb(cmbGrupoColegiado);
@@ -160,7 +227,14 @@ namespace Control.AdmColegiados
             }
         }
 
-        //Editar
+        /// <summary>
+        /// Método estático para obtener la implementación de un contexto.
+        /// </summary>
+        /// <remarks>
+        /// La implementación se obtiene de acuerdo a una fila seleccionada de un DataGridView.
+        /// </remarks>
+        /// <param name="filaSeleccionada">Fila seleccionada del DataGridview</param>
+        /// <returns>Devuelve la implementación de un contexto de árbitro.</returns>
         private static Contexto escogerArbitro (DataGridViewRow filaSeleccionada) {
             Contexto contextoArbitro = null;
             string arbitro = filaSeleccionada.Cells[0].Value.ToString();
@@ -179,17 +253,36 @@ namespace Control.AdmColegiados
             return contextoArbitro;
         }
 
+        /// <summary>
+        /// Método para recoger los datos del colegiado seleccionado.
+        /// </summary>
+        /// <param name="dgvListarColegiados">Datos obtenidos del DataGridView de colegiados.</param>
         public void recogerDatosEditar (DataGridView dgvListarColegiados) {
             filaSeleccionada = dgvListarColegiados.CurrentRow;
             contexto = escogerArbitro(filaSeleccionada);
             contexto.recogerDatosEditar(filaSeleccionada);
         }
 
+        /// <summary>
+        /// Llenar FrmEditar con datos.
+        /// </summary>
+        /// <param name="txtCedula">Cedula.</param>
+        /// <param name="txtNombre">Nombre.</param>
+        /// <param name="txtApellido">Apellido.</param>
+        /// <param name="txtDomicilio">Domicilio.</param>
+        /// <param name="txtEmail">Email.</param>
+        /// <param name="txtTelefono">Telefono.</param>
         public void LlenarDatosFormEditar (TextBox txtCedula, TextBox txtNombre, TextBox txtApellido, TextBox txtDomicilio, TextBox txtEmail, TextBox txtTelefono) {
             contexto = escogerArbitro(filaSeleccionada);
             contexto.llenarDatosFormEditar(txtCedula, txtNombre, txtApellido, txtDomicilio, txtEmail, txtTelefono);
         }
 
+        /// <summary>
+        /// Método para obtener el id del algun arbitro seleccionado.
+        /// </summary>
+        /// <param name="idColegiado">ID del grupo del colegiado al que pertenece el arbitro.</param>
+        /// <param name="filaSeleccionada">Datos del arbitro seleccionado en el DataGridView.</param>
+        /// <returns>Devuelve el id del arbitro seleccionado como entero.</returns>
         private int obtenerIDArbitro (int idColegiado, DataGridViewRow filaSeleccionada) {
             int idArbitro = 0;
             listaColegiado = datos.obtenerTodosIdColegiado(idColegiado);
@@ -217,6 +310,16 @@ namespace Control.AdmColegiados
             return idArbitro;
         }
 
+        /// <summary>
+        /// Método para editar el árbitro seleccionado.
+        /// </summary>
+        /// <param name="lblID">ID del colegiado al que pertenece el árbitro.</param>
+        /// <param name="cedula">Cedula.</param>
+        /// <param name="nombre">Nombre.</param>
+        /// <param name="apellido">Apellido.</param>
+        /// <param name="domicilio">Domicilio.</param>
+        /// <param name="email">Email.</param>
+        /// <param name="telefono">Teléfono.</param>
         public void editarArbitro (string lblID, string cedula, string nombre, string apellido, string domicilio, string email, string telefono) {
             char delimitador = ' ';
             string[] cadena = lblID.Split(delimitador);
@@ -226,11 +329,24 @@ namespace Control.AdmColegiados
             contexto.editarArbitro(idArbitro, cedula, nombre, apellido, domicilio, email, telefono);
         }
 
-        //Eliminar
+        /// <summary>
+        /// Recoger datos para eliminar el árbitro seleccionado.
+        /// </summary>
+        /// <param name="dgvListarColegiados">Datos del DataGridView.</param>
         public void recogerDatosEliminar (DataGridView dgvListarColegiados) {
             filaSeleccionada = dgvListarColegiados.CurrentRow;
         }
-        
+
+        /// <summary>
+        /// Método eliminar árbitro 
+        /// </summary>
+        /// <param name="lblID">ID del colegiado al que pertenece el árbitro.</param>
+        /// <param name="cedula">Cedula.</param>
+        /// <param name="nombre">Nombre.</param>
+        /// <param name="apellido">Apellido.</param>
+        /// <param name="domicilio">Domicilio.</param>
+        /// <param name="email">Email.</param>
+        /// <param name="telefono">Teléfono.</param>
         public void eliminarArbitro (string lblID, string cedula, string nombre, string apellido, string domicilio, string email, string telefono) {
             char delimitador = ' ';
             string[] cadena = lblID.Split(delimitador);
@@ -245,6 +361,12 @@ namespace Control.AdmColegiados
             }
         }
 
+        /// <summary>
+        /// Actualizar el id del nuevo colegiado agregado después de eliminar.
+        /// </summary>
+        /// <param name="idColegiado">ID del colegiado.</param>
+        /// <param name="idNuevo">El nuevo ID generado después de insertar.</param>
+        /// <param name="arbitro">Tipo de árbitro.</param>
         private void actualizarColegiadoBD (int idColegiado, int idNuevo, string arbitro) {
             string mensaje = "";
             try {
@@ -256,7 +378,12 @@ namespace Control.AdmColegiados
             }
         }
 
-        public bool eliminarColegiado (string colegiadoSeleccionado, DataGridView dgvListarColegiados) {
+        /// <summary>
+        /// Método para eliminar colegiado completo.
+        /// </summary>
+        /// <param name="colegiadoSeleccionado">Obtener el colegiado seleccionado.</param>
+        /// <returns>Devuelve true si fue eliminado o false si ocurrió algún error.</returns>
+        public bool eliminarColegiado (string colegiadoSeleccionado) {
             bool eliminado = false;
             char delimitador = ' ';
             string[] cadena = colegiadoSeleccionado.Split(delimitador);
@@ -271,6 +398,11 @@ namespace Control.AdmColegiados
             return eliminado;
         }
 
+        /// <summary>
+        /// Validar si el árbitro ya está asignado.
+        /// </summary>
+        /// <param name="idColegiado">ID del colegiado al cual pertenece el árbitro.</param>
+        /// <returns>Devueleve true si el árbitro fue asignado o false si no está asignado.</returns>
         private bool validarArbitroAsignado (int idColegiado) {
             List<EncuentroDefinido> listaEncuentro = new List<EncuentroDefinido>();
             datosEncuentroDefinido = new DatosEncuentroDefinido();
@@ -283,6 +415,10 @@ namespace Control.AdmColegiados
             return false;
         }
 
+        /// <summary>
+        /// Eliminar "lógico" en la BD de colegiado.
+        /// </summary>
+        /// <param name="idColegiado">ID del colegiado a eliminar.</param>
         private void eliminarColegiadoBD (int idColegiado) {
             string mensaje = "";
             try {
