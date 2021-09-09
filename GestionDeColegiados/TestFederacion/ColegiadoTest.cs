@@ -3,8 +3,15 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Windows.Forms;
 
 namespace TestFederacion {
+    /// <summary>
+    /// Clase para realizar pruebas unitarias de colegiado.
+    /// </summary>
     [TestClass]
     public class ColegiadoTest {
+
+        /// <summary>
+        /// Prueba <c>pruebaCP002</c> para el guardado de Asistente 1.
+        /// </summary>
         [TestMethod]
         public void pruebaCP002 () {
             var admAsistente1 = AdmAsistente1.getAdmA1();
@@ -27,6 +34,10 @@ namespace TestFederacion {
                 txtdomicilioAs1, txtemailAs1, txttelefonoAs1);
             Assert.AreNotEqual(resultadoNoEsperado, resultadoCodigo);
         }
+
+        /// <summary>
+        /// Prueba <c>pruebaCP003</c> para el guardado de Asistente 2.
+        /// </summary>
         [TestMethod]
         public void pruebaCP003 () {
             var admAsistente2 = AdmAsistente2.getAdmA2();
@@ -49,6 +60,10 @@ namespace TestFederacion {
                 txtdomicilioAs2, txtemailAs2, txttelefonoAs2);
             Assert.AreNotEqual(resultadoNoEsperado, resultadoCodigo);
         }
+
+        /// <summary>
+        /// Prueba <c>pruebaCP004</c> para el guardado de Cuarto Arbitro.
+        /// </summary>
         [TestMethod]
         public void pruebaCP004 () {
             var admCuartoArbitro = AdmCuartoArbitro.getAdmCA();
@@ -69,6 +84,10 @@ namespace TestFederacion {
                 txtdomicilioCA, txtemailCA, txttelefonoCA);
             Assert.AreNotEqual(resultadoNoEsperado, resultadoCodigo);
         }
+
+        /// <summary>
+        /// Prueba <c>pruebaCP005</c> para el guardado de Juez Central.
+        /// </summary>
         [TestMethod]
         public void pruebaCP005 () {
             var admJuezCentral = AdmJuezCentral.getAdmJ();
