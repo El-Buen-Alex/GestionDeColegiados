@@ -1,21 +1,20 @@
 ﻿using Control;
 using Control.AdmColegiados;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GestionDeColegiados.FrmsColegiado 
 {
+    /// <summary>
+    /// Formulario para eliminar y agregar Áribtros.
+    /// </summary>
     public partial class frmElimAgregarArbitro : Form 
     {
-        //dll y variables necesarios para poder mover el form
+        /// <summary>
+        /// DLL y variables necesarias para poder mover el formulario.
+        /// </summary>
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture ();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -25,33 +24,60 @@ namespace GestionDeColegiados.FrmsColegiado
         ValidacionGUI validacionGUI = new ValidacionGUI();
         AdmColegiado admColegiado = AdmColegiado.getAdmCol();
 
+        /// <summary>
+        /// Constructor del formulario.
+        /// </summary>
+        /// <param name="arbitro">Tipo de árbitro.</param>
+        /// <param name="idColegiado">ID del colegiado.</param>
         public frmElimAgregarArbitro (string arbitro, string idColegiado) {
             InitializeComponent();
             lblAgregar.Text += arbitro;
             lblID.Text = idColegiado;
         }
 
-        //metodo que controla el evento de arrastrar pantalla
+        /// <summary>
+        /// Método que controla el evento de arrastrar pantalla.
+        /// </summary>
+        /// <param name="sender">Objeto.</param>
+        /// <param name="e">Evento.</param>
         private void PanelBarraTitulo_MouseDown (object sender, MouseEventArgs e) {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        //evento para cerrar pantalla
+        /// <summary>
+        /// Evento para cerrar pantalla.
+        /// </summary>
+        /// <param name="sender">Objeto.</param>
+        /// <param name="e">Evento.</param>
         private void pbCerrar_Click (object sender, EventArgs e) {
             Close();
         }
 
-        //Eventos que generan un efecto visual en cuanto el mouse pasa por dicho controlador
+        /// <summary>
+        /// Eventos que generan un efecto visual en cuanto el mouse pasa por dicho controlador.
+        /// </summary>
+        /// <param name="sender">Objeto.</param>
+        /// <param name="e">Evento.</param>
         private void pbCerrar_MouseEnter (object sender, EventArgs e) {
             colorDefaultClose = pbCerrar.BackColor;
             pbCerrar.BackColor = Color.FromArgb(202, 49, 32);
         }
 
+        /// <summary>
+        /// Eventos que generan un efecto visual en cuanto el mouse sale por dicho controlador.
+        /// </summary>
+        /// <param name="sender">Objeto.</param>
+        /// <param name="e">Evento.</param>
         private void pbCerrar_MouseLeave (object sender, EventArgs e) {
             pbCerrar.BackColor = colorDefaultClose;
         }
 
+        /// <summary>
+        /// Evento para validar que solo ingrese números.
+        /// </summary>
+        /// <param name="sender">Objeto.</param>
+        /// <param name="e">Evento.</param>
         private void validarNumeros_KeyPress (object sender, KeyPressEventArgs e) {
             if (!char.IsNumber(e.KeyChar) && (e.KeyChar != Convert.ToChar(Keys.Back))) {
                 e.Handled = true;
@@ -59,6 +85,11 @@ namespace GestionDeColegiados.FrmsColegiado
             }
         }
 
+        /// <summary>
+        /// Evento para validar que solo ingrese letras.
+        /// </summary>
+        /// <param name="sender">Objeto.</param>
+        /// <param name="e">Evento.</param>
         private void validarLetras_KeyPress (object sender, KeyPressEventArgs e) {
             if (!char.IsLetter(e.KeyChar) && (e.KeyChar != Convert.ToChar(Keys.Back)) &&
                 (e.KeyChar != Convert.ToChar(Keys.Space))) {
@@ -67,6 +98,11 @@ namespace GestionDeColegiados.FrmsColegiado
             }
         }
 
+        /// <summary>
+        /// Evento click para el botón agregar.
+        /// </summary>
+        /// <param name="sender">Objeto.</param>
+        /// <param name="e">Evento.</param>
         private void btnAgregar_Click (object sender, EventArgs e) {
             bool vacio = validacionGUI.validarVacios(txtCedula, txtNombre, txtApellido, txtDomicilio, txtEmail, txtTelefono);
             bool cedulaRepetida = admColegiado.validarCedula(txtCedula);
@@ -88,6 +124,11 @@ namespace GestionDeColegiados.FrmsColegiado
             }  
         }
 
+        /// <summary>
+        /// Evento click para el botón cancelar.
+        /// </summary>
+        /// <param name="sender">Objeto.</param>
+        /// <param name="e">Evento.</param>
         private void btnCancelar_Click (object sender, EventArgs e) {
             DialogResult resultado;
             resultado = MessageBox.Show("¡Está seguro de cancelar!", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
