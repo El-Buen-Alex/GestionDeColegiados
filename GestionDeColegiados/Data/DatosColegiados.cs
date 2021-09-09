@@ -1,6 +1,4 @@
-﻿using Model;
-using Model.Colegiados;
-using Model.Equipo;
+﻿using Model.Colegiados;
 using MySql.Data.MySqlClient;
 using Sistema;
 using System;
@@ -9,12 +7,22 @@ using System.Data;
 
 namespace Data
 {
+    /// <summary>
+    /// Clase para gestionar los datos de colegiado en la BD.
+    /// </summary>
+    /// <remarks>
+    /// Se usa para ejecutar los procedimientos almacenados y operaciones de la BD.
+    /// </remarks>
     public class DatosColegiados
     {
         private MySqlConnection conexion = null;
         private MySqlTransaction trans = null;
-        
-        //Guardar Juez Central 
+
+        /// <summary>
+        /// Método para guardar Juez Central.
+        /// </summary>
+        /// <param name="juezCentral">Objeto Juez Central.</param>
+        /// <returns>Devuelve el último id insertado como entero.</returns>
         public int InsertarJuezCentral(JuezCentral juezCentral)
         {
             int id = 0;
@@ -58,7 +66,11 @@ namespace Data
             return id;
         }
 
-
+        /// <summary>
+        /// Método para guardar Asistente 1.
+        /// </summary>
+        /// <param name="asistente1">Objeto Asistente 1.</param>
+        /// <returns>Devuelve el último id insertado como entero.</returns>
         public int InsertarAsistente1(Asistente asistente1)
         {
             int id = 0;
@@ -95,6 +107,11 @@ namespace Data
             return id;
         }
 
+        /// <summary>
+        /// Método para guardar Asistente 2.
+        /// </summary>
+        /// <param name="asistente2">Objeto Asistente 2.</param>
+        /// <returns>Devuelve el último id insertado como entero.</returns>
         public int InsertarAsistente2(Asistente asistente2)
         {
             int id = 0;
@@ -131,6 +148,11 @@ namespace Data
             return id;
         }
 
+        /// <summary>
+        /// Método para guardar Cuarto Arbitro.
+        /// </summary>
+        /// <param name="cuartoArbitro">Objeto Cuarto Arbitro.</param>
+        /// <returns>Devuelve el último id insertado como entero</returns>
         public int InsertarCuartoArbitro(CuartoArbitro cuartoArbitro)
         {
             int id = 0;
@@ -163,6 +185,11 @@ namespace Data
             return id;
         }
 
+        /// <summary>
+        /// Método para guardar Colegiado.
+        /// </summary>
+        /// <param name="colegiado">Objeto Colegiado.</param>
+        /// <returns>Devuelve el último id insertado como entero</returns>
         public void InsertarColegiado(Colegiado colegiado)
         {
             conexion = ConexionBD.getConexion();    //Obtener conexión
@@ -190,6 +217,10 @@ namespace Data
             conexion.Close();//Cerrar conexión
         }
 
+        /// <summary>
+        /// Método para obtener los id de colegiados.
+        /// </summary>
+        /// <returns>Devuelve una lista de entero con los id.</returns>
         public List<int> consultarIdColegiado () {
             List<int> listaIdColegiado = new List<int>(); //Crear lista
             MySqlDataReader reader = null;          //tabla virtual
@@ -214,6 +245,11 @@ namespace Data
             return listaIdColegiado;
         }
 
+        /// <summary>
+        /// Método para obtener los datos de Juez Central.
+        /// </summary>
+        /// <param name="id">ID de Juez Central.</param>
+        /// <returns>Devuelve una lista con objetos Juez Central.</returns>
         public List<JuezCentral> consultarJuezCentral (int id) {
             List<JuezCentral> listaArbitro = new List<JuezCentral>(); //Crear lista
             JuezCentral arbitro = null;
@@ -246,6 +282,12 @@ namespace Data
             return listaArbitro;
         }
 
+        /// <summary>
+        /// Método para obtener los datos de Asistente.
+        /// </summary>
+        /// <param name="id">ID de asistente.</param>
+        /// <param name="procedimiento">Nombre del procedimierto a ejecutar.</param>
+        /// <returns>Devuelve una lista con objetos Asistente.</returns>
         public List<Asistente> consultarAsistente (int id, string procedimiento){
             List<Asistente> listaAsistente = new List<Asistente>();
             Asistente asistente = null;
@@ -278,19 +320,33 @@ namespace Data
             return listaAsistente;
         }
 
+        /// <summary>
+        /// Método para obtener los datos de Asistente 1.
+        /// </summary>
+        /// <param name="id">ID de asistente 1.</param>
+        /// <returns>Devuelve una lista con objetos Asistente 1.</returns>
         public List<Asistente> consultarAsistente1 (int id) {
             List<Asistente> listaAsistente1 = new List<Asistente>();
             listaAsistente1 = consultarAsistente(id, "obtenerAsistente1");
             return listaAsistente1;
         }
 
+        /// <summary>
+        /// Método para obtener los datos de Asistente 2.
+        /// </summary>
+        /// <param name="id">ID de asistente 2.</param>
+        /// <returns>Devuelve una lista con objetos Asistente 2.</returns>
         public List<Asistente> consultarAsistente2 (int id) {
             List<Asistente> listaAsistente1 = new List<Asistente>();
             listaAsistente1 = consultarAsistente(id, "obtenerAsistente2");
             return listaAsistente1;
         }
 
-
+        /// <summary>
+        /// Método para obtener los datos de Cuarto Arbitro.
+        /// </summary>
+        /// <param name="id">ID de Cuarto Arbitro.</param>
+        /// <returns>Devuelve una lista con objetos Cuarto Arbitro.</returns>
         public List<CuartoArbitro> consultarCuartoArbitro (int id) {
             List<CuartoArbitro> listaCA = new List<CuartoArbitro>(); //Crear lista
             CuartoArbitro arbitro = null;
@@ -323,6 +379,10 @@ namespace Data
             return listaCA;
         }
 
+        /// <summary>
+        /// Método para obtener nombre los arbitros.
+        /// </summary>
+        /// <returns>Devuelve una lista con objetos IntegrantesColegiados.</returns>
         public List<IntegrantesColegiados> ConsultarColegiado()
         {
             List<IntegrantesColegiados> listaColegiado = new List<IntegrantesColegiados>(); //Crear lista
@@ -358,6 +418,10 @@ namespace Data
             return listaColegiado;
         }
 
+        /// <summary>
+        /// Método para consultar las cedula de los arbitros registrados.
+        /// </summary>
+        /// <returns>Devuelve una lista con objetos IntegrantesColegiados.</returns>
         public List<IntegrantesColegiados> ConsultarCedulaColegiado () {
             List<IntegrantesColegiados> listaColegiado = new List<IntegrantesColegiados>();
             IntegrantesColegiados integrantesColeg = null;
@@ -389,6 +453,11 @@ namespace Data
             return listaColegiado;
         }
 
+        /// <summary>
+        /// Método para obtener el nombre de los arbitros de acuerdo a un id.
+        /// </summary>
+        /// <param name="idColegiado">ID colegiado.</param>
+        /// <returns>Devuelve un string con los nombres.</returns>
         public string ObtenerNombreDeColegiados (int idColegiado) {
             string nombres = "";
             MySqlDataReader reader = null;          //tabla virtual
@@ -414,6 +483,11 @@ namespace Data
             return nombres;
         }
 
+        /// <summary>
+        /// Método para obtener todos los id de los arbitros de acuerdo a un parametro.
+        /// </summary>
+        /// <param name="idColegiado">ID colegiado.</param>
+        /// <returns>Devuelve una lista con objetos Colegiado.</returns>
         public List<Colegiado> obtenerTodosIdColegiado (int idColegiado) {
             List<Colegiado> listaIDColegiado = new List<Colegiado>();
             Colegiado colegiado = null;
@@ -447,6 +521,10 @@ namespace Data
             return listaIDColegiado;
         }
 
+        /// <summary>
+        /// Método para editar una Juez Central.
+        /// </summary>
+        /// <param name="juezCentral">ID de Juez Central.</param>
         public void EditarJuezCentralBD (JuezCentral juezCentral) {
             conexion = ConexionBD.getConexion();    //Obtener conexión
             conexion.Open();                        //Abrir conexión
@@ -475,6 +553,11 @@ namespace Data
             conexion.Close();   //Cerrar conexión
         }
 
+        /// <summary>
+        /// Método para editar un Asistente.
+        /// </summary>
+        /// <param name="asistente">Objeto Asistente.</param>
+        /// <param name="procedimiento">Nombre del procedimiento.</param>
         public void editarAsistenteBD (Asistente asistente, string procedimiento) {
             conexion = ConexionBD.getConexion();    //Obtener conexión
             conexion.Open();                        //Abrir conexión
@@ -500,16 +583,28 @@ namespace Data
             conexion.Close();   //Cerrar conexión
         }
 
+        /// <summary>
+        /// Método para editar un Asistente 1.
+        /// </summary>
+        /// <param name="asistente1">Objeto Asistente 1.</param>
         public void editarAsistente1BD (Asistente asistente1) {
             string procedimiento = "editarAsistente1";
             editarAsistenteBD(asistente1,procedimiento);
         }
 
+        /// <summary>
+        /// Método para editar un Asistente 2.
+        /// </summary>
+        /// <param name="asistente2">Objeto Asistente 2.</param>
         public void editarAsistente2BD (Asistente asistente2) {
             string procedimiento = "editarAsistente2";
             editarAsistenteBD(asistente2, procedimiento);
         }
 
+        /// <summary>
+        /// Método para editar un Cuarto Arbitro.
+        /// </summary>
+        /// <param name="cuartoArbitro">Objeto Cuarto Arbitro-</param>
         public void editarCuartoArbitro (CuartoArbitro cuartoArbitro) {
             conexion = ConexionBD.getConexion();    //Obtener conexión
             conexion.Open();                        //Abrir conexión
@@ -535,6 +630,11 @@ namespace Data
             conexion.Close();   //Cerrar conexión
         }
 
+        /// <summary>
+        /// Eliminar un arbitro "lógico".
+        /// </summary>
+        /// <param name="idArbitro">ID arbitro.</param>
+        /// <param name="procedimiento">Nombre del procedimiento.</param>
         public void eliminarArbitro (int idArbitro, string procedimiento) {
             conexion = ConexionBD.getConexion();    //Obtener conexión
             conexion.Open();                        //Abrir conexión
@@ -554,31 +654,57 @@ namespace Data
             conexion.Close();   //Cerrar conexión
         }
 
+        /// <summary>
+        /// Método para eliminar un Juez Central.
+        /// </summary>
+        /// <param name="idArbitro">ID Juez Central.</param>
         public void eliminarJuezCentralBD (int idArbitro) {
             string procedimiento = "eliminarJuezCentral";
             eliminarArbitro(idArbitro,procedimiento);
         }
 
+        /// <summary>
+        /// Método para eliminar un Asistente 1.
+        /// </summary>
+        /// <param name="idArbitro">ID Asistente 1.</param>
         public void eliminarAsistente1BD (int idArbitro) {
             string procedimiento = "eliminarAsistente1";
             eliminarArbitro(idArbitro, procedimiento);
         }
 
+        /// <summary>
+        /// Método para eliminar un Asistente 2.
+        /// </summary>
+        /// <param name="idArbitro">ID Asistente 2.</param>
         public void eliminarAsistente2BD (int idArbitro) {
             string procedimiento = "eliminarAsistente2";
             eliminarArbitro(idArbitro, procedimiento);
         }
 
+        /// <summary>
+        /// Método para eliminar un Cuarto Arbitro.
+        /// </summary>
+        /// <param name="idArbitro">ID Cuarto Arbitro.</param>
         public void eliminarCuartoArbitroBD (int idArbitro) {
             string procedimiento = "eliminarCuartoArbitro";
             eliminarArbitro(idArbitro, procedimiento);
         }
 
+        /// <summary>
+        /// Método para eliminar un Colegiado.
+        /// </summary>
+        /// <param name="idArbitro">ID Colegiado.</param>
         public void eliminarColegiado (int idColegiado) {
             string procedimiento = "eliminarColegiado";
             eliminarArbitro(idColegiado, procedimiento);
         }
 
+        /// <summary>
+        /// Método para editar un arbitro de un colegiado.
+        /// </summary>
+        /// <param name="idColegiado">ID Colegiado.</param>
+        /// <param name="idNuevo">ID del nuevo arbitro.</param>
+        /// <param name="arbitro">Tipo de árbitro.</param>
         public void actualizarColegiadoBD (int idColegiado, int idNuevo, string arbitro) {
             conexion = ConexionBD.getConexion();    //Obtener conexión
             conexion.Open();                        //Abrir conexión

@@ -1,8 +1,15 @@
 ﻿using System;
 
 namespace Data {
+    /// <summary>
+    /// Excepcion para verificar fallos en la BD.
+    /// </summary>
     [Serializable]
     public class falloBDException : Exception {
+
+        /// <summary>
+        /// Constructores predeterminados.
+        /// </summary>
         public string Arbitro { get; }
 
         public falloBDException () { }
