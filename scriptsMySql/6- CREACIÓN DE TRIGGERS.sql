@@ -1,3 +1,5 @@
+use campeonatos;
+set global log_bin_trust_function_creators=1;
 --  DROP TRIGGER trg_actualiza_encuentros_generados;
 DELIMITER $$
 CREATE TRIGGER trg_actualiza_encuentros_generados
