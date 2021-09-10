@@ -53,7 +53,7 @@ namespace GestionDeColegiados
             this.label5.Location = new System.Drawing.Point(186, 123);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(334, 32);
+            this.label5.Size = new System.Drawing.Size(261, 26);
             this.label5.TabIndex = 20;
             this.label5.Text = "Datos de Configuración";
             // 
@@ -65,7 +65,7 @@ namespace GestionDeColegiados
             this.label1.Location = new System.Drawing.Point(44, 191);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(265, 25);
+            this.label1.Size = new System.Drawing.Size(215, 20);
             this.label1.TabIndex = 21;
             this.label1.Text = "Ingrese el nombre de equipo:";
             // 
@@ -73,7 +73,7 @@ namespace GestionDeColegiados
             // 
             this.nomEquipo.Location = new System.Drawing.Point(264, 191);
             this.nomEquipo.Name = "nomEquipo";
-            this.nomEquipo.Size = new System.Drawing.Size(159, 22);
+            this.nomEquipo.Size = new System.Drawing.Size(159, 20);
             this.nomEquipo.TabIndex = 22;
             // 
             // buscar
@@ -203,7 +203,6 @@ namespace GestionDeColegiados
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox nomEquipo;

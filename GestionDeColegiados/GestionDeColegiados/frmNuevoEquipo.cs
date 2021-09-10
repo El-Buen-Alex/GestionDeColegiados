@@ -49,7 +49,7 @@ namespace GestionDeColegiados
                     throw new registroEquipoMaximoException("EL registro máximo de equipos es de 10");
                 }
             }
-            catch (registroEquipoMaximoException mensaje) // Uso de las excepciones personalizadas al querer ingresar un nuevo equipo cuando ha alcanzado el límite se desata.
+            catch (registroEquipoMaximoException) // Uso de las excepciones personalizadas al querer ingresar un nuevo equipo cuando ha alcanzado el límite se desata.
             {
                 MessageBox.Show("EL registro máximo de equipos es de 10");
             }

@@ -64,7 +64,6 @@ namespace Control
         }
         public int obtenerId(string usuario, string password)
         {
-            int id = 0;
             Administrador user = obtenerUsuario(usuario, password);
 
             return user.Id;

@@ -50,7 +50,7 @@ namespace GestionDeColegiados.FrmsArbitro
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-'
+
         private void pbMinimizar_Click_1(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;

@@ -69,7 +69,6 @@ namespace Control.AdmEstadios
 
         public void SeleccionarEstadio(ComboBox cmbEstadios, Estadio estadio)
         {
-            int i = 0;
             LlenarEstadiosCmb(cmbEstadios, estadio);
             cmbEstadios.SelectedIndex = 0;
         }
