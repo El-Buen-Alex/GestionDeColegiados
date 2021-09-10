@@ -54,7 +54,7 @@ namespace Data
             conexion.Open();
             try
             {
-                MySqlCommand comando = new MySqlCommand("mostrarEncuentroDefinidos", conexion, transaccion);
+                MySqlCommand comando = new MySqlCommand("mostrarEncuentroDefinidos", conexion);
                 comando.CommandType = CommandType.StoredProcedure;
                 MySqlDataReader reader = comando.ExecuteReader();
                 while (reader.Read())

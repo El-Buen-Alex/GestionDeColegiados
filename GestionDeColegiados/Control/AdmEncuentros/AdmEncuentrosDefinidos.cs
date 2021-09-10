@@ -105,19 +105,6 @@ ademas del estadio*/
             cmbEncuentros.Items.Clear();
             listaEncuentrosDefinidos = datosEncuentroDefinido.ObtenerEncuentros();
             llenarCmbMatch(cmbEncuentros);
-           /* EncuentroGenerado encuentroGenerado;
-            Equipo local, visitante;
-            Estadio estadio;
-            for (int x = 0; x < listaEncuentrosDefinidos.Count; x++)
-            {
-                encuentroGenerado = admEncuentrosGenerados.ObtenerEncuentroPorID(listaEncuentrosDefinidos[x].IdEncuentroGeneradoPendiente);
-                local = admEquipos.ObtenerEquipoPorId(encuentroGenerado.IdEquipoLocal);
-                visitante = admEquipos.ObtenerEquipoPorId(encuentroGenerado.IdEquipoVisitante);
-
-                estadio = admEstadios.ObtenerEstadioPorId(listaEncuentrosDefinidos[x].IdEstadio);
-                cmbEncuentros.Items.Add(x + 1 + ":" + local.NombreEquipo + " VS " + visitante.NombreEquipo + "- " + estadio.Nombre);
-                listaEncuentrosGenerados.Add(encuentroGenerado);
-            }*/
         }
 
         public int ObtenerCantidadEncuentrosDefinidos()

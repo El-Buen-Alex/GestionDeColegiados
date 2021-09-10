@@ -611,7 +611,7 @@ CREATE PROCEDURE actulizarEncuentroFinalizado(
     in _puntos int)
 		BEGIN 
 				UPDATE encuentrofinalizado
-			SET	golesFavor=_golFavor, golesContra=_golContra,golesDiferencia=_golDiferencia,puntos=_puntos
+			SET	golesFavor=_golFavor, golesContra=_golContra,golesDiferencia=_golDiferencia,puntos=_puntos, estado='A'
             WHERE  idDefinido =_idDefinido and idEquipo=_idEquipo;
 			END$$
 DELIMITER ;
