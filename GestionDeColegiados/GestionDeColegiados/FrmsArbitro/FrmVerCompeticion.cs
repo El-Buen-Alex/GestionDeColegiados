@@ -139,8 +139,8 @@ namespace GestionDeColegiados.FrmsArbitro
         private void fINALIZARCOMPETENCIAToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string pregunta = "¿Seguro que quieres FINALIZAR la competición?\n";
-            string mensaje = "Esto Hará que se vuelva a generar y definir encuentros en una nueva copa";
-            string reaccion = "Se podrá visualizar en futuras busquedas.";
+            string mensaje = "Esto Hará que se vuelva a generar y definir encuentros en una nueva copa.";
+            string reaccion = " Se podrá visualizar en futuras busquedas.";
             string mensajeExito = "Se Finalizó la competencia con exito";
             DialogResult res = MessageBox.Show(pregunta + mensaje + reaccion, "CUIDADO", MessageBoxButtons.YesNo);
             if (res == DialogResult.Yes)
