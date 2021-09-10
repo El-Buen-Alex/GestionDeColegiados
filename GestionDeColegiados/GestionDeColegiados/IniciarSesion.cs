@@ -131,7 +131,13 @@ namespace GestionDeColegiados
             }
         }
 
-
+        /// <summary>
+        /// Metodo encargado de controlar si se debe cambiar contraseña o no
+        /// </summary>
+        /// <param name="tuvoUltimoAcceso">ultimo acceso del usuario</param>
+        /// <param name="mensaje">recibe el rol del usuario que intenta loggearse</param>
+        /// <param name="usuario">User name dle usuario</param>
+        /// <param name="password">pasword del usuario</param>
         private  void controlarUltimoAcceso(bool tuvoUltimoAcceso, string mensaje, string usuario, string password)
         {
             if (tuvoUltimoAcceso)
@@ -139,14 +145,11 @@ namespace GestionDeColegiados
                 AccesoUser(mensaje);
             }
             else
-
             {
                 int id = gestionLogin.obtenerId(usuario, password);
                 this.Hide();
                 CambiarPass cambiar = new CambiarPass(id);
-
                 cambiar.ShowDialog();
-
             }
         }
 

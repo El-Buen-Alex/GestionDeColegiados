@@ -68,7 +68,6 @@ namespace GestionDeColegiados
             this.label1.Size = new System.Drawing.Size(265, 25);
             this.label1.TabIndex = 21;
             this.label1.Text = "Ingrese el nombre de equipo:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // nomEquipo
             // 

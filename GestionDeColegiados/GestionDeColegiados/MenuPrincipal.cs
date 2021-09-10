@@ -49,7 +49,10 @@ namespace GestionDeColegiados
         }
 
 
-        //metodo para mostrar un form dentro del panel principal
+       /// <summary>
+       /// Metodo encargado de pintar cada ventana en un panel
+       /// </summary>
+       /// <param name="formhija">Form que será pintado en un panel</param>
         private void AbrirFormEnPanel(object formhija)
         {
             /*preguntamos si existe minimo un formulario ya abierto

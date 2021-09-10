@@ -17,6 +17,12 @@ namespace GestionDeColegiados
         public List<Label> ListaContenedoresLocal { get => listaContenedoresLocal; set => listaContenedoresLocal = value; }
         public List<Label> ListaContenedoresVisitante { get => listaContenedoresVisitante; set => listaContenedoresVisitante = value; }
 
+
+        /// <summary>
+        /// Constructor del form de Generar encuentro
+        /// </summary>
+        /// <remarks>Si el parametro ingresado es falso, se puede generar, caso contrario se muestran los encuentros</remarks>
+        /// <param name="estado">Define si los encuentros ya han sido generados o aún no</param>
         public frmGenerarEncuentros(bool estado)
         {
             InitializeComponent();

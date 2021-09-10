@@ -182,6 +182,15 @@ ademas del estadio*/
 
         }
 
+        /// <summary>
+        /// Llena la informacion de un encuentro definido, para visualizar
+        /// </summary>
+        /// <param name="indexEncuentroSeleccionado">Ubicacion del encuentro definido acorde a una lista</param>
+        /// <param name="lblEquipoLocal">Controlador ui encargado de pintar el nombre del equipo local</param>
+        /// <param name="lblEquipoVisitante">Controlador ui encargado de pintar el nombre del equipo visitante</param>
+        /// <param name="lblEstadio"> Controlador ui encargado de pintar el nombre del estadio</param>
+        /// <param name="lblFecha">Controlador ui encargado de pintar la fecha asignada</param>
+        /// <param name="lblColegiado">Controlador ui encargado de pintar el colegiado encargado del partido</param>
         public void LlenarInformacíonPartidoCompleta(int indexEncuentroSeleccionado, Label lblEquipoLocal, Label lblEquipoVisitante, Label lblEstadio, Label lblFecha, Label lblColegiado)
         {
             listaEncuentrosDefinidos = datosEncuentroDefinido.ObtenerEncuentros();
@@ -197,7 +206,18 @@ ademas del estadio*/
             return datosEncuentroDefinido.ObtenerCantidadEncuentrosPorJugar();
         }
 
- 
+        /// <summary>
+        /// Llena informacion de un encuentro definido para poder actualizarlo
+        /// </summary>
+        /// <param name="indexEncuentroSeleccionado">Ubicacion del encuentro definido acorde a una lista</param>
+        /// <param name="lblEquipoLocal">Controlador ui encargado de pintar el nombre del equipo local</param>
+        /// <param name="lblEquipoVisitante">Controlador ui encargado de pintar el nombre del equipo visitante</param>
+        /// <param name="cmbEstadios">Controlador ui encargado de llenar los estadios disponibles y seleccionar el correspodiente al encuentro</param>
+        /// <param name="dtpFechaEncuentro">Controlador ui encargado de llenar la fecha del encuentro</param>
+        /// <param name="dtpHora">Controlador ui encargado de llenar la hora del encuentro</param>
+        /// <param name="cmbGrupoColegiado">Controlador ui encargado de llenar los colegiados y seleccionar el correspodiente al encuentro</param>
+        /// <param name="txtColegiado">Se llena la informacion del grupo de colegiados</param>
+        /// <returns></returns>
         public bool LlenarInformacíonPartidoCompleta(int indexEncuentroSeleccionado, Label lblEquipoLocal, Label lblEquipoVisitante, ComboBox cmbEstadios, DateTimePicker dtpFechaEncuentro, DateTimePicker dtpHora, ComboBox cmbGrupoColegiado, TextBox txtColegiado)
         {
             bool respuesta = false;
@@ -254,7 +274,6 @@ ademas del estadio*/
         {
             bool actualizo = false;
             listaEncuentrosDefinidos = datosEncuentroDefinido.ObtenerEncuentros();
-            ///admEstadio.refrezcarListaEstadiosDisponibles();
             int idEncuentroPorActualizar = encuentroDefinido.Id;
             int idAntiguoEStadio = encuentroDefinido.IdEstadio;
             try

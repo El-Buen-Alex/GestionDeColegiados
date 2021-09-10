@@ -35,7 +35,10 @@ namespace Control.AdmEncuentros
 
             return admEncuentroFinalizado;
         }
-
+        /// <summary>
+        /// Usado para finalizar una competencia
+        /// </summary>
+        /// <returns> Un booleano que indica si la acción se completo con exito o no</returns>
         public bool FinalizarCompetencia()
         {
             bool respuesta = false;
@@ -45,7 +48,10 @@ namespace Control.AdmEncuentros
             respuesta = datosEncuentroFinalizado.FinalizarCompetencia(anio, "F");
             return respuesta;
         }
-
+        /// <summary>
+        /// Usado para finalizar la competencia
+        /// </summary>
+        /// <returns>Un booleano que indica si la acción se completo con exito o no</returns>
         public bool ReinicarCompetencia()
         {
             bool respuesta = false;
@@ -66,7 +72,11 @@ namespace Control.AdmEncuentros
 
             return respuesta;
         }
-
+        /// <summary>
+        /// Metodo usado para dar baja a la competencia
+        /// </summary>
+        /// <remarks>Se necesita existir encuentros finalizados para poder realizarse</remarks>
+        /// <returns>Un booleano que indica si la acción se completo con exito o no</returns>
         public bool DarBajaCompetencia()
         {
             bool respuesta = false;
@@ -87,7 +97,11 @@ namespace Control.AdmEncuentros
            
             return respuesta;
         }
-
+        /// <summary>
+        /// Se encarga de llenar la tabla de posiciones de los resultados de encuentros finalizados
+        /// </summary>
+        /// <param name="dgvCompeticion">DataGridView encargado de mostrar una simulada tabla de posiciones</param>
+        /// <returns>un booleano en respuesta de si se logró llenar con exito la tabla</returns>
         public bool LlenarDgv(DataGridView dgvCompeticion)
         {
             bool respuesta = false ;
@@ -108,7 +122,11 @@ namespace Control.AdmEncuentros
         }
 
        
-
+        /// <summary>
+        /// Encargado de calcular puntos de un equipo B
+        /// </summary>
+        /// <param name="puntos">Son los puntos que obtuvo el equipo A</param>
+        /// <returns> devuelve los puntos del equipo B en relacion al equipo A</returns>
         private int CalcularPuntosVisitante(int puntos)
         {
             int puntosVisitante = 0;
@@ -124,6 +142,14 @@ namespace Control.AdmEncuentros
             }
             return puntosVisitante;
         }
+        /// <summary>
+        /// llena la información de encuentro finalizado seleccionado de un combobox
+        /// </summary>
+        /// <param name="index">La posicion en el combobox del cual se escogio el encuentro</param>
+        /// <param name="txtGolesLocal">Conttrolador de UI encargado de pintar los Goles locales de un encuentro</param>
+        /// <param name="txtGolesVisitante">Conttrolador de UI encargado de pintar los Golesde visitante de un encuentro</param>
+        /// <param name="lblPuntosLocalResultado">Cantidad de puntos para el equipo local, acorde al resultado de goles</param>
+        /// <param name="lblPuntosVisitanteResultado">Cantidad de puntos para el equipo visitante, acorde al resultado de goles</param>
         public void LlenarInformacionPartido(int index, TextBox txtGolesLocal, TextBox txtGolesVisitante, Label lblPuntosLocalResultado, Label lblPuntosVisitanteResultado)
         {
             EncuentroDefinido encuentroDefinido = admEncuentrosDefinidos.GetEncuentroDefinidoByIndex(index);
@@ -135,7 +161,14 @@ namespace Control.AdmEncuentros
             lblPuntosLocalResultado.Text = puntosLocal.ToString();
             lblPuntosVisitanteResultado.Text = CalcularPuntosVisitante(puntosLocal).ToString();
         }
-
+        /// <summary>
+        /// Crea un encuentro finalizado
+        /// </summary>
+        /// <param name="idEquipo">Id del equipo ganador del encuentro</param>
+        /// <param name="idDefinido">Id del encuentro definido</param>
+        /// <param name="golesFavor">Goles a favor del equipo</param>
+        /// <param name="golesContra">Goles en contra del equipo</param>
+        /// <returns>Regresa un Encuentro finalizado, acorde a los datos recibidos</returns>
         private EncuentroFinalizado GetEncuentro(int idEquipo, int idDefinido, string golesFavor, string golesContra)
         {
             
@@ -146,6 +179,13 @@ namespace Control.AdmEncuentros
             return new EncuentroFinalizado(equipo.IdEquipo, golAFavor, golEnContra, idDefinido);
 
         }
+        /// <summary>
+        /// Metdodo utilizado para actualizar un encuentro Finalizado
+        /// </summary>
+        /// <param name="index">la posicion del encuentro finalizado respecto a una lista</param>
+        /// <param name="golesLocal">cantidad de goles de local que se han actualizado</param>
+        /// <param name="golesVisitante">cantidad de goles de visitante que se registran</param>
+        /// <returns>regresa un booleano que hace referencia a si la acción se logró con exito o no</returns>
         public bool UpdateEncuentroFinalizado(int index, string golesLocal, string golesVisitante)
         {
             bool respuesta = false;
@@ -165,6 +205,13 @@ namespace Control.AdmEncuentros
             return respuesta;
         }
 
+        /// <summary>
+        /// Metodo encargado de guardar un encuentro finalizado
+        /// </summary>
+        /// <param name="index">la posicion del encuentro finalizado respecto a una lista</param>
+        /// <param name="golesLocal">cantidad de goles de local que se han actualizado</param>
+        /// <param name="golesVisitante">cantidad de goles de visitante que se registran</param>
+        /// <returns>regresa un booleano que hace referencia a si la acción se logró con exito o no</returns>
         public bool GuardarEncuentroFinalizado(int index, string golesLocal, string golesVisitante)
         {
             bool guardado= true;

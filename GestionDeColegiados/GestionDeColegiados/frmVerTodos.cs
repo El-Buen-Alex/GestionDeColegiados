@@ -21,11 +21,6 @@ namespace GestionDeColegiados
             btnEliminar.Visible = false;
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnEditar_Click(object sender, EventArgs e)
         {
             DataGridViewRow filaSeleccionada = tablaDatos.CurrentRow;
@@ -55,7 +50,6 @@ namespace GestionDeColegiados
                     btnEliminar.Visible = false ;
                     MessageBox.Show("No existen resultados");
                 }
-              
             }
             else
             {
