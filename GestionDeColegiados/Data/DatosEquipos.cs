@@ -12,11 +12,12 @@ namespace Data
     {
         private MySqlConnection conexion = null;
         private MySqlTransaction trans = null;
-        /*método encargado de extraer el id del equipo el cual es pasado por parametro en el llamado de este método.
-            *Realiza las conexiones hacia la bd, escribe el nombre de la columna en la cual va hacer la busqueda.
-            *Una vez los datos cargaos se los almacena en los campos correspondiente de la clase contenedora Equipo el
-            *cual se encuentra en Model.
-        */
+
+        /// <summary>
+        /// Método que permite obtener el nombre y el id de un equipos por identificador
+        /// </summary>
+        /// <param name="id">id del equipo que se quiere obtener la información</param>
+        /// <returns>Devuelve un arreglo de equipos con la información necesaria</returns>
         public Equipo ObtenerEquipoPorId(int id)
         {
             Equipo equipo = null;
@@ -43,7 +44,11 @@ namespace Data
             conexion.Close();
             return equipo;
         }
-        /*Método que permite extraer toda la información de los equipos*/
+
+        /// <summary>
+        /// Método usado para extraer los datos completos de un equipo
+        /// </summary>
+        /// <returns>Devuelve una lista con los datos recuperdos desde la bases de datos</returns>
         public List<Equipo> consultarEquiposTabla()
         {
             List<Equipo> listaEquipo = new List<Equipo>();
@@ -74,7 +79,12 @@ namespace Data
             conexion.Close();
             return listaEquipo;
         }
-        /*Método que permite editar el estado en la base de datos un registro selecionado*/
+
+        /// <summary>
+        /// Método que permite eliminar un equipo, en este caso cambiar el estado de un equipo
+        /// </summary>
+        /// <param name="id">El parámetro es usado para actualizar el estado del equipo</param>
+        /// <returns>Se regresa una variable entera que funciona como bandera en el caso de ser éxitoso el cambio</returns>
         public int EliminarEquipo(string id)
         {
             int identificador = 0;
@@ -99,7 +109,12 @@ namespace Data
             return identificador;
         }
 
-        /*Método que permite editar en la base de datos un registro selecionado en la tabla de editar equipo*/
+
+        /// <summary>
+        /// Método que permite editar un equipo
+        /// </summary>
+        /// <param name="equipo">objeto con los datos necesarios de un equipo</param>
+        /// <returns>Se regresa una variable entera que funciona como bandera en el caso de ser éxitoso el cambio</returns>
         public int EditarEquipo(Equipo equipo)
         {
             int id = 0;
@@ -128,10 +143,11 @@ namespace Data
             return id;
         }
 
-        /*Método que tiene la finalidad de almacenar los datos en la bd, donde recibió por parámetros el objeto del cual va a fragmentar la informacion
-* para almacenarla. Se escribe el nombre de la columna y la variable que contiene la informacion para así poder registrarla en la bd
-* 
-*/
+        /// <summary>
+        /// Método que permite insertar un equipo a la vez en la base de datos
+        /// </summary>
+        /// <param name="equipo">Objeto que contiene la información necesaria para almacenar un equipo</param>
+        /// <returns>Regresa el id del equipo que se ingresó</returns>
         public int InsertarEquipo(Equipo equipo)
         {
             int id = 0;
@@ -160,7 +176,11 @@ namespace Data
             conexion.Close();
             return id;
         }
-        /*método encargado de extraer la informacion necesaria para ser presentada según sea nuestro criterio*/
+       
+      /// <summary>
+      /// Método para consultar el nombre de equipo y el id
+      /// </summary>
+      /// <returns>Devuelve una lista de todos los equipos registrados en la base de datos</returns>
         public List<Equipo> consultarEquipos()
         {
             List<Equipo> listaEquipo = new List<Equipo>();
@@ -189,6 +209,10 @@ namespace Data
             return listaEquipo;
         }
         /*Método el cual se comunica con el prcedimiento que nos devolverá la cantidad de equipos registrados en la bd*/
+      /// <summary>
+      /// Método para saber cuantos equipos han sido registrados en la base de datos
+      /// </summary>
+      /// <returns>Devuelve una variable entera con la información de la cantidad de equipos registrados </returns>
         public int ObtenerCantidadEquipoRegistrados()
         {
             int cantidad = 0;
