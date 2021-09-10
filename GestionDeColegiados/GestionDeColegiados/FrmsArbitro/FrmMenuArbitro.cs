@@ -50,7 +50,7 @@ namespace GestionDeColegiados.FrmsArbitro
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        //evento para minimizar pantalla
+'
         private void pbMinimizar_Click_1(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -63,6 +63,7 @@ namespace GestionDeColegiados.FrmsArbitro
 
 
         //Eventos que generan un efecto visual en cuanto el mouse pasa por dicho controlador
+
         private void pbCerrar_MouseEnter(object sender, EventArgs e)
         {
             colorDefaultClose = pbCerrar.BackColor;

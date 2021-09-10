@@ -32,7 +32,6 @@ namespace GestionDeColegiados.FrmsArbitro
         private void gestionarAccesibilidadFinalizarCompetencia(int cantEncFin)
         {
             bool accesibilidad = false;
-            //Cada 5 partidos, es un ronda, se podrá finzalizar una competencia si la ronda esta completa competencia
             if ( cantEncFin%5==0)
             {
                  accesibilidad= true;

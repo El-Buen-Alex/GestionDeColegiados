@@ -13,12 +13,15 @@ namespace Control.AdmEquipos
         private static AdmEquipo admEquipo = null;
         DatosEquipos datos = new DatosEquipos();
 
-        /*Paso para el uso de Singleton*/
+        /// <summary>
+        /// Paso para el uso de Singleton
+        /// </summary>
         private AdmEquipo()
         {
 
         }
-        /*Método que nos permite llenar los campos del equipo seleccionado a editar*/
+
+
         public void LlenarCampos(TextBox idEquipo, TextBox nombre, TextBox numjugadores, TextBox director, TextBox presidente, string id)
         {
             listaEquipo = datos.consultarEquiposTabla();
@@ -32,12 +35,9 @@ namespace Control.AdmEquipos
                     director.Text = equipo.NombreDirectoTecnico;
                     presidente.Text=equipo.PresidenteEquipo;
                 }
-
-
             }
         }
 
-        /*Paso para el uso de Singleton*/
         public static AdmEquipo getEquipo()
         {
             if (admEquipo == null)
@@ -46,7 +46,11 @@ namespace Control.AdmEquipos
             }
             return admEquipo;
         }
-        /*Método que consulta la cantidad de equipos que están presentes en la lista donde se agregan los equipos para llevar un control de registro en ella*/
+
+        /// <summary>
+        /// Método que consulta la cantidad de equipos que están presentes en la lista donde se agregan los equipos para llevar un control de registro en ella
+        /// </summary>
+        /// <returns>Devuelve la cantidad de equipos</returns>
         public int cantidadEquiposRegistrados()
         {
             extraerEquipos();
@@ -94,7 +98,13 @@ namespace Control.AdmEquipos
             }
         }
 
-        /*Método encargado de llenar un el datagridview que es usado para editar o eliminar un equipo previamente ya registrado*/
+
+ 
+        /// <summary>
+        /// Método encargado de llenar un el datagridview que es usado para editar o eliminar un equipo previamente ya registrado
+        /// </summary>
+        /// <param name="tablaDatos"></param>
+        /// <param name="nombre"></param>
         public void LlenaTabla(DataGridView tablaDatos, string nombre)
         {
             int i = 1;
@@ -105,15 +115,17 @@ namespace Control.AdmEquipos
                 if (equipo.NombreEquipo.ToLower().Contains(nombre.ToLower()))
                 {
                     tablaDatos.Rows.Add(i++, equipo.IdEquipo, equipo.NombreEquipo, equipo.NumeroJugadores, equipo.NombreDirectoTecnico, equipo.PresidenteEquipo);
-                }
-                
-                
-            }
-            
+                }                        
+            }  
         }
 
-        /*Método que hace uso del constructor de la clase equipo, agrega a la lista y hace el llamado al método que conecta
-   a la base de datos para facilitar el registros de nuevos equipos*/
+        /// <summary>
+        /// Método que hace uso del constructor de la clase equipo, agrega a la lista y hace el llamado al método que conecta a la base de datos para facilitar el registros de nuevos equipos
+        /// </summary>
+        /// <param name="nombre"></param>
+        /// <param name="numJugadores"></param>
+        /// <param name="directorNombre"></param>
+        /// <param name="presidenteNombre"></param>
         public void GuardarDatos(string nombre, int numJugadores, string directorNombre, string presidenteNombre)
         {
             equipo = new Equipo(0, nombre, numJugadores, directorNombre, presidenteNombre);
@@ -124,8 +136,10 @@ namespace Control.AdmEquipos
             }
         }
 
-
-        /*Método encargado de llenar los labels con informacion para ser presentada al usuario donde sea invocado*/
+        /// <summary>
+        /// Método encargado de llenar los labels con informacion para ser presentada al usuario donde sea invocado
+        /// </summary>
+        /// <param name="listaContenedores"></param>
         public void LlenarEquipos(List<Label> listaContenedores)
         {
             extraerEquipos();
@@ -135,21 +149,29 @@ namespace Control.AdmEquipos
             }
         }
 
-        /*método encargado de funcionar como puente entre los métodos de control con el método de data para obtener la cantidad de equipos 
-*  registrados en la base de datos
-*/
+        /// <summary>
+        /// método encargado de funcionar como puente entre los métodos de control con el método de data para obtener la cantidad de equipos registrados en la base de datos
+        /// </summary>
+        /// <returns></returns>
         public int ObtenerCantidadEquipo()
         {
             return datos.ObtenerCantidadEquipoRegistrados();
         }
-        /*método encargado de funcionar como puente entre los métodos de control con el método de data para solicitar el id en la base de datos*/
+
+        /// <summary>
+        /// Método encargado de funcionar como puente entre los métodos de control con el método de data para solicitar el id en la base de datos
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Retorna el equipo mediante su ID</returns>
         public Equipo ObtenerEquipoPorId(int id)
         {
             return datos.ObtenerEquipoPorId(id);
         }
 
-        
-        /*método encargado de funcionar como puente entre los métodos de control con el método de data para el registro en la base de datos*/
+        /// <summary>
+        /// Método encargado de funcionar como puente entre los métodos de control con el método de data para el registro en la base de datos
+        /// </summary>
+        /// <param name="equipo"></param>
         private void registrarEquipo(Equipo equipo)
         {
             int id = 0;
@@ -163,7 +185,11 @@ namespace Control.AdmEquipos
                 MessageBox.Show("Registro exitoso!");
             }
         }
-        /*Solicita los campos de la base de datos a otro metodo que hace la funcionalidad de extraerlos de  la bbdd*/
+
+        /// <summary>
+        /// Solicita los campos de la base de datos a otro metodo que hace la funcionalidad de extraerlos de  la BD
+        /// </summary>
+        /// <returns>Retorna algun equipo</returns>
         public List<Equipo> extraerEquipos()
         {
             listaEquipo = datos.consultarEquipos();
