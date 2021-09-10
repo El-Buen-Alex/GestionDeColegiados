@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['calcularpuntosvisitante_0',['CalcularPuntosVisitante',['../class_control_1_1_adm_encuentros_1_1_adm_encuentro_finalizado.html#aebe4ffac1d90fe4872bac41e2b1d5bb7',1,'Control::AdmEncuentros::AdmEncuentroFinalizado']]],
+  ['camposasistente1_1',['camposAsistente1',['../class_gestion_de_colegiados_1_1frm_nuevo_grupo_colegiado.html#a239b4bb488ef0b4fe6ed7b558fc6f1ac',1,'GestionDeColegiados::frmNuevoGrupoColegiado']]],
+  ['camposasistente2_2',['camposAsistente2',['../class_gestion_de_colegiados_1_1frm_nuevo_grupo_colegiado.html#aabf0d02e8fc9c31d209dfbbb2d6d1d2e',1,'GestionDeColegiados::frmNuevoGrupoColegiado']]],
+  ['camposcuartoarbitro_3',['camposCuartoArbitro',['../class_gestion_de_colegiados_1_1frm_nuevo_grupo_colegiado.html#acbfa332ab1f256d84aad1b61ef12fe18',1,'GestionDeColegiados::frmNuevoGrupoColegiado']]],
+  ['camposincompletos_4',['camposIncompletos',['../class_gestion_de_colegiados_1_1frm_nuevo_grupo_colegiado.html#ad85eff864d744658bbf1eb05b78a3b6f',1,'GestionDeColegiados::frmNuevoGrupoColegiado']]],
+  ['camposjuezcentral_5',['camposJuezCentral',['../class_gestion_de_colegiados_1_1frm_nuevo_grupo_colegiado.html#a6833e406728ee3c14fb9e1713d7bb454',1,'GestionDeColegiados::frmNuevoGrupoColegiado']]],
+  ['cantidadequiposregistrados_6',['cantidadEquiposRegistrados',['../class_control_1_1_adm_equipos_1_1_adm_equipo.html#ad400617220f14e788ca8d81d1edb14ce',1,'Control::AdmEquipos::AdmEquipo']]],
+  ['chbxhabilitar_5fcheckedchanged_7',['chbxHabilitar_CheckedChanged',['../class_gestion_de_colegiados_1_1_frms_colegiado_1_1frm_editar_arbitro.html#a1d5693d572e656208d1e11016e5f3df8',1,'GestionDeColegiados::FrmsColegiado::frmEditarArbitro']]],
+  ['colegiado_8',['Colegiado',['../class_model_1_1_colegiados_1_1_colegiado.html#a9c1c93f2dbeba22a491aeb93cf597075',1,'Model.Colegiados.Colegiado.Colegiado()'],['../class_model_1_1_colegiados_1_1_colegiado.html#af18e02301f2f130ba6f00635d3ef51f6',1,'Model.Colegiados.Colegiado.Colegiado(int idcolegiado, int idjuezcentral, int idasistente1, int idasistente2, int idcuartoarbitro)']]],
+  ['consultarasistente_9',['consultarAsistente',['../class_data_1_1_datos_colegiados.html#ad89d252e2460bd3fff3148063e1b9dc2',1,'Data::DatosColegiados']]],
+  ['consultarasistente1_10',['consultarAsistente1',['../class_data_1_1_datos_colegiados.html#a6b09505061a4addb07b8cd845e59ec6d',1,'Data::DatosColegiados']]],
+  ['consultarasistente2_11',['consultarAsistente2',['../class_data_1_1_datos_colegiados.html#a4f1e8d4d123be7260871c31099a02995',1,'Data::DatosColegiados']]],
+  ['consultarcedulacolegiado_12',['ConsultarCedulaColegiado',['../class_data_1_1_datos_colegiados.html#a253441a2c4cc94c31fdcc8992a6e6ce3',1,'Data::DatosColegiados']]],
+  ['consultarcolegiado_13',['ConsultarColegiado',['../class_data_1_1_datos_colegiados.html#a55447c15178727cc64eb8cc2a68ce301',1,'Data::DatosColegiados']]],
+  ['consultarcuartoarbitro_14',['consultarCuartoArbitro',['../class_data_1_1_datos_colegiados.html#a472251c4900430aa238cb9d4852dacd8',1,'Data::DatosColegiados']]],
+  ['consultarequipos_15',['consultarEquipos',['../class_data_1_1_datos_equipos.html#ad100e3fe75216d538b061d27543ec7da',1,'Data::DatosEquipos']]],
+  ['consultarequipostabla_16',['consultarEquiposTabla',['../class_data_1_1_datos_equipos.html#ad713cf6162ec2ec289a5a76dcff40196',1,'Data::DatosEquipos']]],
+  ['consultaridcolegiado_17',['consultarIdColegiado',['../class_data_1_1_datos_colegiados.html#a37353b1aba288181bef5872dc7af0f52',1,'Data::DatosColegiados']]],
+  ['consultarjuezcentral_18',['consultarJuezCentral',['../class_data_1_1_datos_colegiados.html#a95d08bfec636e1dbcc1bb06088aedbae',1,'Data::DatosColegiados']]],
+  ['contexto_19',['Contexto',['../class_control_1_1_adm_colegiados_1_1_contexto.html#aa7e67201c52346e78e537e09e319a30e',1,'Control::AdmColegiados::Contexto']]],
+  ['controlarultimoacceso_20',['controlarUltimoAcceso',['../class_gestion_de_colegiados_1_1btn_iniciar_sesion.html#a2dd695eb3bb8a0ff4dcdcf2d4a982b67',1,'GestionDeColegiados::btnIniciarSesion']]],
+  ['cuartoarbitro_21',['CuartoArbitro',['../class_model_1_1_colegiados_1_1_cuarto_arbitro.html#a4e21f6dc19a4b5dacdb967172602791e',1,'Model.Colegiados.CuartoArbitro.CuartoArbitro()'],['../class_model_1_1_colegiados_1_1_cuarto_arbitro.html#a113dc0120e6827afcd0311a04dfd24ae',1,'Model.Colegiados.CuartoArbitro.CuartoArbitro(int idArbitro, string cedula, string nombre, string apellidos, string domicilio, string email, string telefono)']]]
+];

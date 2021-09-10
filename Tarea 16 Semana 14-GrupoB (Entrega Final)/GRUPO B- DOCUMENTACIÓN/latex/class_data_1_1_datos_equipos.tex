@@ -1,0 +1,147 @@
+\hypertarget{class_data_1_1_datos_equipos}{}\doxysection{Referencia de la Clase Data.\+Datos\+Equipos}
+\label{class_data_1_1_datos_equipos}\index{Data.DatosEquipos@{Data.DatosEquipos}}
+\doxysubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_model_1_1_equipo_1_1_equipo}{Equipo}} \mbox{\hyperlink{class_data_1_1_datos_equipos_a61c6c2b51784dd69dd7d6f825ed82ec3}{Obtener\+Equipo\+Por\+Id}} (int id)
+\begin{DoxyCompactList}\small\item\em Método que permite obtener el nombre y el id de un equipos por identificador \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_model_1_1_equipo_1_1_equipo}{Equipo}} $>$ \mbox{\hyperlink{class_data_1_1_datos_equipos_ad713cf6162ec2ec289a5a76dcff40196}{consultar\+Equipos\+Tabla}} ()
+\begin{DoxyCompactList}\small\item\em Método usado para extraer los datos completos de un equipo \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_data_1_1_datos_equipos_ace89524bb1d7cbe1bb0df508b62c3b97}{Eliminar\+Equipo}} (string id)
+\begin{DoxyCompactList}\small\item\em Método que permite eliminar un equipo, en este caso cambiar el estado de un equipo \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_data_1_1_datos_equipos_ac18179b19f1f9c2ea738945ce481e6d1}{Editar\+Equipo}} (\mbox{\hyperlink{class_model_1_1_equipo_1_1_equipo}{Equipo}} equipo)
+\begin{DoxyCompactList}\small\item\em Método que permite editar un equipo \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_data_1_1_datos_equipos_a4f88b75f8b659fef429c6a84754ceccc}{Insertar\+Equipo}} (\mbox{\hyperlink{class_model_1_1_equipo_1_1_equipo}{Equipo}} equipo)
+\begin{DoxyCompactList}\small\item\em Método que permite insertar un equipo a la vez en la base de datos \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_model_1_1_equipo_1_1_equipo}{Equipo}} $>$ \mbox{\hyperlink{class_data_1_1_datos_equipos_ad100e3fe75216d538b061d27543ec7da}{consultar\+Equipos}} ()
+\begin{DoxyCompactList}\small\item\em Método para consultar el nombre de equipo y el id \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_data_1_1_datos_equipos_a7ba6325f175eaadbf629bd70e5e5a327}{Obtener\+Cantidad\+Equipo\+Registrados}} ()
+\begin{DoxyCompactList}\small\item\em Método para saber cuantos equipos han sido registrados en la base de datos \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Atributos privados}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_data_1_1_datos_equipos_a0b15908dc60bb2352f9c0f02dbb2fa86}\label{class_data_1_1_datos_equipos_a0b15908dc60bb2352f9c0f02dbb2fa86}} 
+My\+Sql\+Connection {\bfseries conexion} = null
+\item 
+\mbox{\Hypertarget{class_data_1_1_datos_equipos_af55a5ae46ab4d777e4a8ebb37cfd47c5}\label{class_data_1_1_datos_equipos_af55a5ae46ab4d777e4a8ebb37cfd47c5}} 
+My\+Sql\+Transaction {\bfseries trans} = null
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{class_data_1_1_datos_equipos_ad100e3fe75216d538b061d27543ec7da}\label{class_data_1_1_datos_equipos_ad100e3fe75216d538b061d27543ec7da}} 
+\index{Data.DatosEquipos@{Data.DatosEquipos}!consultarEquipos@{consultarEquipos}}
+\index{consultarEquipos@{consultarEquipos}!Data.DatosEquipos@{Data.DatosEquipos}}
+\doxysubsubsection{\texorpdfstring{consultarEquipos()}{consultarEquipos()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{class_model_1_1_equipo_1_1_equipo}{Equipo}} $>$ Data.\+Datos\+Equipos.\+consultar\+Equipos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Método para consultar el nombre de equipo y el id 
+
+\begin{DoxyReturn}{Devuelve}
+Devuelve una lista de todos los equipos registrados en la base de datos
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_1_1_datos_equipos_ad713cf6162ec2ec289a5a76dcff40196}\label{class_data_1_1_datos_equipos_ad713cf6162ec2ec289a5a76dcff40196}} 
+\index{Data.DatosEquipos@{Data.DatosEquipos}!consultarEquiposTabla@{consultarEquiposTabla}}
+\index{consultarEquiposTabla@{consultarEquiposTabla}!Data.DatosEquipos@{Data.DatosEquipos}}
+\doxysubsubsection{\texorpdfstring{consultarEquiposTabla()}{consultarEquiposTabla()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{class_model_1_1_equipo_1_1_equipo}{Equipo}} $>$ Data.\+Datos\+Equipos.\+consultar\+Equipos\+Tabla (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Método usado para extraer los datos completos de un equipo 
+
+\begin{DoxyReturn}{Devuelve}
+Devuelve una lista con los datos recuperdos desde la bases de datos
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_1_1_datos_equipos_ac18179b19f1f9c2ea738945ce481e6d1}\label{class_data_1_1_datos_equipos_ac18179b19f1f9c2ea738945ce481e6d1}} 
+\index{Data.DatosEquipos@{Data.DatosEquipos}!EditarEquipo@{EditarEquipo}}
+\index{EditarEquipo@{EditarEquipo}!Data.DatosEquipos@{Data.DatosEquipos}}
+\doxysubsubsection{\texorpdfstring{EditarEquipo()}{EditarEquipo()}}
+{\footnotesize\ttfamily int Data.\+Datos\+Equipos.\+Editar\+Equipo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_model_1_1_equipo_1_1_equipo}{Equipo}}}]{equipo }\end{DoxyParamCaption})}
+
+
+
+Método que permite editar un equipo 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em equipo} & objeto con los datos necesarios de un equipo\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Se regresa una variable entera que funciona como bandera en el caso de ser éxitoso el cambio
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_1_1_datos_equipos_ace89524bb1d7cbe1bb0df508b62c3b97}\label{class_data_1_1_datos_equipos_ace89524bb1d7cbe1bb0df508b62c3b97}} 
+\index{Data.DatosEquipos@{Data.DatosEquipos}!EliminarEquipo@{EliminarEquipo}}
+\index{EliminarEquipo@{EliminarEquipo}!Data.DatosEquipos@{Data.DatosEquipos}}
+\doxysubsubsection{\texorpdfstring{EliminarEquipo()}{EliminarEquipo()}}
+{\footnotesize\ttfamily int Data.\+Datos\+Equipos.\+Eliminar\+Equipo (\begin{DoxyParamCaption}\item[{string}]{id }\end{DoxyParamCaption})}
+
+
+
+Método que permite eliminar un equipo, en este caso cambiar el estado de un equipo 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em id} & El parámetro es usado para actualizar el estado del equipo\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Se regresa una variable entera que funciona como bandera en el caso de ser éxitoso el cambio
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_1_1_datos_equipos_a4f88b75f8b659fef429c6a84754ceccc}\label{class_data_1_1_datos_equipos_a4f88b75f8b659fef429c6a84754ceccc}} 
+\index{Data.DatosEquipos@{Data.DatosEquipos}!InsertarEquipo@{InsertarEquipo}}
+\index{InsertarEquipo@{InsertarEquipo}!Data.DatosEquipos@{Data.DatosEquipos}}
+\doxysubsubsection{\texorpdfstring{InsertarEquipo()}{InsertarEquipo()}}
+{\footnotesize\ttfamily int Data.\+Datos\+Equipos.\+Insertar\+Equipo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_model_1_1_equipo_1_1_equipo}{Equipo}}}]{equipo }\end{DoxyParamCaption})}
+
+
+
+Método que permite insertar un equipo a la vez en la base de datos 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em equipo} & Objeto que contiene la información necesaria para almacenar un equipo\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Regresa el id del equipo que se ingresó
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_1_1_datos_equipos_a7ba6325f175eaadbf629bd70e5e5a327}\label{class_data_1_1_datos_equipos_a7ba6325f175eaadbf629bd70e5e5a327}} 
+\index{Data.DatosEquipos@{Data.DatosEquipos}!ObtenerCantidadEquipoRegistrados@{ObtenerCantidadEquipoRegistrados}}
+\index{ObtenerCantidadEquipoRegistrados@{ObtenerCantidadEquipoRegistrados}!Data.DatosEquipos@{Data.DatosEquipos}}
+\doxysubsubsection{\texorpdfstring{ObtenerCantidadEquipoRegistrados()}{ObtenerCantidadEquipoRegistrados()}}
+{\footnotesize\ttfamily int Data.\+Datos\+Equipos.\+Obtener\+Cantidad\+Equipo\+Registrados (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Método para saber cuantos equipos han sido registrados en la base de datos 
+
+\begin{DoxyReturn}{Devuelve}
+Devuelve una variable entera con la información de la cantidad de equipos registrados 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_1_1_datos_equipos_a61c6c2b51784dd69dd7d6f825ed82ec3}\label{class_data_1_1_datos_equipos_a61c6c2b51784dd69dd7d6f825ed82ec3}} 
+\index{Data.DatosEquipos@{Data.DatosEquipos}!ObtenerEquipoPorId@{ObtenerEquipoPorId}}
+\index{ObtenerEquipoPorId@{ObtenerEquipoPorId}!Data.DatosEquipos@{Data.DatosEquipos}}
+\doxysubsubsection{\texorpdfstring{ObtenerEquipoPorId()}{ObtenerEquipoPorId()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_model_1_1_equipo_1_1_equipo}{Equipo}} Data.\+Datos\+Equipos.\+Obtener\+Equipo\+Por\+Id (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Método que permite obtener el nombre y el id de un equipos por identificador 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em id} & id del equipo que se quiere obtener la información\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Devuelve un arreglo de equipos con la información necesaria
+\end{DoxyReturn}
+
+
+La documentación para esta clase fue generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+USER/\+Documents/\+Git\+Hub/\+Gestion\+De\+Colegiados/\+Gestion\+De\+Colegiados/\+Data/Datos\+Equipos.\+cs\end{DoxyCompactItemize}

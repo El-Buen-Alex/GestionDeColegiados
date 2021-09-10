@@ -1,0 +1,209 @@
+\hypertarget{interface_control_1_1_adm_colegiados_1_1_i_adm}{}\doxysection{Referencia de la Interfaz Control.\+Adm\+Colegiados.\+IAdm}
+\label{interface_control_1_1_adm_colegiados_1_1_i_adm}\index{Control.AdmColegiados.IAdm@{Control.AdmColegiados.IAdm}}
+
+
+Interface para gestionar los Adm de todos los árbitros.  
+
+
+Diagrama de herencias de Control.\+Adm\+Colegiados.\+IAdm\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.081081cm]{interface_control_1_1_adm_colegiados_1_1_i_adm}
+\end{center}
+\end{figure}
+\doxysubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{interface_control_1_1_adm_colegiados_1_1_i_adm_a7bed32982f0ab52455ccfd82847104cc}{guardar}} (Text\+Box txtcedula, Text\+Box txtnombre, Text\+Box txtapellido, Text\+Box txtdomicilio, Text\+Box txtemail, Text\+Box txttelefono)
+\begin{DoxyCompactList}\small\item\em Obtener los datos de los arbitros a guardar \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_control_1_1_adm_colegiados_1_1_i_adm_af2b7f379f42974eba01365f00a2e7beb}{obtener\+Datos}} (int id, Data\+Grid\+View dgv\+Listar\+Colegiados)
+\begin{DoxyCompactList}\small\item\em Método para obtener datos del colegiado seleccionado. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_control_1_1_adm_colegiados_1_1_i_adm_a0959add3e219218326a9e0e67efa4df9}{recoger\+Datos\+Editar}} (Data\+Grid\+View\+Row fila\+Seleccionada)
+\begin{DoxyCompactList}\small\item\em Método recoger datos para editar. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_control_1_1_adm_colegiados_1_1_i_adm_a52024db438d59e14fca12f167ee84709}{llenar\+Datos\+Form\+Editar}} (Text\+Box txt\+Cedula, Text\+Box txt\+Nombre, Text\+Box txt\+Apellido, Text\+Box txt\+Domicilio, Text\+Box txt\+Email, Text\+Box txt\+Telefono)
+\begin{DoxyCompactList}\small\item\em Método para llenar datos del Form\+Editar. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_control_1_1_adm_colegiados_1_1_i_adm_ac53072fd5ba9f37ca4b8f040845ec7a3}{editar\+Arbitro}} (int id\+Arbitro, string cedula, string nombre, string apellido, string domicilio, string email, string telefono)
+\begin{DoxyCompactList}\small\item\em Método para editar árbitro. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{interface_control_1_1_adm_colegiados_1_1_i_adm_a2b26198b8f2c74f7c1ac8569d58a2e68}{eliminar\+Arbitro}} (int id\+Arbitro, string cedula, string nombre, string apellido, string domicilio, string email, string telefono)
+\begin{DoxyCompactList}\small\item\em Método eliminar\+Arbitro de la interface \mbox{\hyperlink{interface_control_1_1_adm_colegiados_1_1_i_adm}{IAdm}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Interface para gestionar los Adm de todos los árbitros. 
+
+\doxysubsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{interface_control_1_1_adm_colegiados_1_1_i_adm_ac53072fd5ba9f37ca4b8f040845ec7a3}\label{interface_control_1_1_adm_colegiados_1_1_i_adm_ac53072fd5ba9f37ca4b8f040845ec7a3}} 
+\index{Control.AdmColegiados.IAdm@{Control.AdmColegiados.IAdm}!editarArbitro@{editarArbitro}}
+\index{editarArbitro@{editarArbitro}!Control.AdmColegiados.IAdm@{Control.AdmColegiados.IAdm}}
+\doxysubsubsection{\texorpdfstring{editarArbitro()}{editarArbitro()}}
+{\footnotesize\ttfamily void Control.\+Adm\+Colegiados.\+IAdm.\+editar\+Arbitro (\begin{DoxyParamCaption}\item[{int}]{id\+Arbitro,  }\item[{string}]{cedula,  }\item[{string}]{nombre,  }\item[{string}]{apellido,  }\item[{string}]{domicilio,  }\item[{string}]{email,  }\item[{string}]{telefono }\end{DoxyParamCaption})}
+
+
+
+Método para editar árbitro. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em id\+Arbitro} & ID recogido.\\
+\hline
+{\em cedula} & Cedula recogida.\\
+\hline
+{\em nombre} & Nombre recogido.\\
+\hline
+{\em apellido} & Apellido recogido.\\
+\hline
+{\em domicilio} & Domicilio recogido.\\
+\hline
+{\em email} & Email recogido.\\
+\hline
+{\em telefono} & Telefono recogido.\\
+\hline
+\end{DoxyParams}
+
+
+Implementado en \mbox{\hyperlink{class_control_1_1_adm_colegiados_1_1_adm_asistente1_a0acb427438cf7d69d59b916b4889c5ff}{Control.\+Adm\+Colegiados.\+Adm\+Asistente1}}, \mbox{\hyperlink{class_control_1_1_adm_colegiados_1_1_adm_asistente2_a086b65a3293fae8e07b90695ccb5bbef}{Control.\+Adm\+Colegiados.\+Adm\+Asistente2}}, \mbox{\hyperlink{class_control_1_1_adm_colegiados_1_1_adm_cuarto_arbitro_a44477e84eabd53c74e64a85a6d92e60e}{Control.\+Adm\+Colegiados.\+Adm\+Cuarto\+Arbitro}} y \mbox{\hyperlink{class_control_1_1_adm_colegiados_1_1_adm_juez_central_a3219cefccaa57a1e9b2c740b3d03b881}{Control.\+Adm\+Colegiados.\+Adm\+Juez\+Central}}.
+
+\mbox{\Hypertarget{interface_control_1_1_adm_colegiados_1_1_i_adm_a2b26198b8f2c74f7c1ac8569d58a2e68}\label{interface_control_1_1_adm_colegiados_1_1_i_adm_a2b26198b8f2c74f7c1ac8569d58a2e68}} 
+\index{Control.AdmColegiados.IAdm@{Control.AdmColegiados.IAdm}!eliminarArbitro@{eliminarArbitro}}
+\index{eliminarArbitro@{eliminarArbitro}!Control.AdmColegiados.IAdm@{Control.AdmColegiados.IAdm}}
+\doxysubsubsection{\texorpdfstring{eliminarArbitro()}{eliminarArbitro()}}
+{\footnotesize\ttfamily int Control.\+Adm\+Colegiados.\+IAdm.\+eliminar\+Arbitro (\begin{DoxyParamCaption}\item[{int}]{id\+Arbitro,  }\item[{string}]{cedula,  }\item[{string}]{nombre,  }\item[{string}]{apellido,  }\item[{string}]{domicilio,  }\item[{string}]{email,  }\item[{string}]{telefono }\end{DoxyParamCaption})}
+
+
+
+Método eliminar\+Arbitro de la interface \mbox{\hyperlink{interface_control_1_1_adm_colegiados_1_1_i_adm}{IAdm}}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em id\+Arbitro} & ID recogido.\\
+\hline
+{\em cedula} & Cedula recogida.\\
+\hline
+{\em nombre} & Nombre recogido.\\
+\hline
+{\em apellido} & Apellido recogido.\\
+\hline
+{\em domicilio} & Domicilio recogido.\\
+\hline
+{\em email} & Email recogido.\\
+\hline
+{\em telefono} & Telefono recogido.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Devuelve el último id registrado como entero.
+\end{DoxyReturn}
+
+
+Implementado en \mbox{\hyperlink{class_control_1_1_adm_colegiados_1_1_adm_asistente1_a7f13b98076cb383fdb03e1096cb40e9d}{Control.\+Adm\+Colegiados.\+Adm\+Asistente1}}, \mbox{\hyperlink{class_control_1_1_adm_colegiados_1_1_adm_asistente2_adc5d24abe893cca5930e7e9d182a9d72}{Control.\+Adm\+Colegiados.\+Adm\+Asistente2}}, \mbox{\hyperlink{class_control_1_1_adm_colegiados_1_1_adm_cuarto_arbitro_a1e0e931ca18625b56c45a2f09ef68bc7}{Control.\+Adm\+Colegiados.\+Adm\+Cuarto\+Arbitro}} y \mbox{\hyperlink{class_control_1_1_adm_colegiados_1_1_adm_juez_central_a401500cb9ab6cc0d82ee8bfa04bad323}{Control.\+Adm\+Colegiados.\+Adm\+Juez\+Central}}.
+
+\mbox{\Hypertarget{interface_control_1_1_adm_colegiados_1_1_i_adm_a7bed32982f0ab52455ccfd82847104cc}\label{interface_control_1_1_adm_colegiados_1_1_i_adm_a7bed32982f0ab52455ccfd82847104cc}} 
+\index{Control.AdmColegiados.IAdm@{Control.AdmColegiados.IAdm}!guardar@{guardar}}
+\index{guardar@{guardar}!Control.AdmColegiados.IAdm@{Control.AdmColegiados.IAdm}}
+\doxysubsubsection{\texorpdfstring{guardar()}{guardar()}}
+{\footnotesize\ttfamily int Control.\+Adm\+Colegiados.\+IAdm.\+guardar (\begin{DoxyParamCaption}\item[{Text\+Box}]{txtcedula,  }\item[{Text\+Box}]{txtnombre,  }\item[{Text\+Box}]{txtapellido,  }\item[{Text\+Box}]{txtdomicilio,  }\item[{Text\+Box}]{txtemail,  }\item[{Text\+Box}]{txttelefono }\end{DoxyParamCaption})}
+
+
+
+Obtener los datos de los arbitros a guardar 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em txtcedula} & Cedula recogida.\\
+\hline
+{\em txtnombre} & Nombre recogido.\\
+\hline
+{\em txtapellido} & Apellido recogido.\\
+\hline
+{\em txtdomicilio} & Domicilio recogido.\\
+\hline
+{\em txtemail} & Email recogido.\\
+\hline
+{\em txttelefono} & Telefono recogido.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Devolverá el último id registrado como entero.
+\end{DoxyReturn}
+
+
+Implementado en \mbox{\hyperlink{class_control_1_1_adm_colegiados_1_1_adm_cuarto_arbitro_afdff61c769b66ea3ac4e35a8900875f2}{Control.\+Adm\+Colegiados.\+Adm\+Cuarto\+Arbitro}}, \mbox{\hyperlink{class_control_1_1_adm_colegiados_1_1_adm_asistente1_a3ec1fbbf352433bbe3c1dd222612400b}{Control.\+Adm\+Colegiados.\+Adm\+Asistente1}}, \mbox{\hyperlink{class_control_1_1_adm_colegiados_1_1_adm_asistente2_a34cc91ae97f42839c14d661cc4b818f8}{Control.\+Adm\+Colegiados.\+Adm\+Asistente2}} y \mbox{\hyperlink{class_control_1_1_adm_colegiados_1_1_adm_juez_central_acbf3aaea46256afdf7d65aef91764015}{Control.\+Adm\+Colegiados.\+Adm\+Juez\+Central}}.
+
+\mbox{\Hypertarget{interface_control_1_1_adm_colegiados_1_1_i_adm_a52024db438d59e14fca12f167ee84709}\label{interface_control_1_1_adm_colegiados_1_1_i_adm_a52024db438d59e14fca12f167ee84709}} 
+\index{Control.AdmColegiados.IAdm@{Control.AdmColegiados.IAdm}!llenarDatosFormEditar@{llenarDatosFormEditar}}
+\index{llenarDatosFormEditar@{llenarDatosFormEditar}!Control.AdmColegiados.IAdm@{Control.AdmColegiados.IAdm}}
+\doxysubsubsection{\texorpdfstring{llenarDatosFormEditar()}{llenarDatosFormEditar()}}
+{\footnotesize\ttfamily void Control.\+Adm\+Colegiados.\+IAdm.\+llenar\+Datos\+Form\+Editar (\begin{DoxyParamCaption}\item[{Text\+Box}]{txt\+Cedula,  }\item[{Text\+Box}]{txt\+Nombre,  }\item[{Text\+Box}]{txt\+Apellido,  }\item[{Text\+Box}]{txt\+Domicilio,  }\item[{Text\+Box}]{txt\+Email,  }\item[{Text\+Box}]{txt\+Telefono }\end{DoxyParamCaption})}
+
+
+
+Método para llenar datos del Form\+Editar. 
+
+Llena los Tex\+Box de Editar con los datos del árbitro seleccionado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em txt\+Cedula} & Cedula.\\
+\hline
+{\em txt\+Nombre} & Nombre.\\
+\hline
+{\em txt\+Apellido} & Apellido.\\
+\hline
+{\em txt\+Domicilio} & Domicilio.\\
+\hline
+{\em txt\+Email} & Email.\\
+\hline
+{\em txt\+Telefono} & Telefono.\\
+\hline
+\end{DoxyParams}
+
+
+Implementado en \mbox{\hyperlink{class_control_1_1_adm_colegiados_1_1_adm_asistente1_a3915b233f8885d075354bb7bb2ae3f74}{Control.\+Adm\+Colegiados.\+Adm\+Asistente1}}, \mbox{\hyperlink{class_control_1_1_adm_colegiados_1_1_adm_asistente2_afc8c816a31d90beafd7d3fbf94a267a0}{Control.\+Adm\+Colegiados.\+Adm\+Asistente2}}, \mbox{\hyperlink{class_control_1_1_adm_colegiados_1_1_adm_cuarto_arbitro_a0755d7b56515e1ac6f2a4b00154072fa}{Control.\+Adm\+Colegiados.\+Adm\+Cuarto\+Arbitro}} y \mbox{\hyperlink{class_control_1_1_adm_colegiados_1_1_adm_juez_central_a8d72d5075fa0b7d41ffc3cf5230c5446}{Control.\+Adm\+Colegiados.\+Adm\+Juez\+Central}}.
+
+\mbox{\Hypertarget{interface_control_1_1_adm_colegiados_1_1_i_adm_af2b7f379f42974eba01365f00a2e7beb}\label{interface_control_1_1_adm_colegiados_1_1_i_adm_af2b7f379f42974eba01365f00a2e7beb}} 
+\index{Control.AdmColegiados.IAdm@{Control.AdmColegiados.IAdm}!obtenerDatos@{obtenerDatos}}
+\index{obtenerDatos@{obtenerDatos}!Control.AdmColegiados.IAdm@{Control.AdmColegiados.IAdm}}
+\doxysubsubsection{\texorpdfstring{obtenerDatos()}{obtenerDatos()}}
+{\footnotesize\ttfamily void Control.\+Adm\+Colegiados.\+IAdm.\+obtener\+Datos (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{Data\+Grid\+View}]{dgv\+Listar\+Colegiados }\end{DoxyParamCaption})}
+
+
+
+Método para obtener datos del colegiado seleccionado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em id} & ID de un árbitro.\\
+\hline
+{\em dgv\+Listar\+Colegiados} & Data\+Grid\+View que va a ser llenado con datos.\\
+\hline
+\end{DoxyParams}
+
+
+Implementado en \mbox{\hyperlink{class_control_1_1_adm_colegiados_1_1_adm_asistente1_ada07454491f225d73fb6f55334ef73da}{Control.\+Adm\+Colegiados.\+Adm\+Asistente1}}, \mbox{\hyperlink{class_control_1_1_adm_colegiados_1_1_adm_asistente2_a29fccaf677ed091deef9ad1c86d97522}{Control.\+Adm\+Colegiados.\+Adm\+Asistente2}}, \mbox{\hyperlink{class_control_1_1_adm_colegiados_1_1_adm_cuarto_arbitro_a84bcb9a75d157cf7764ea2fee8330b05}{Control.\+Adm\+Colegiados.\+Adm\+Cuarto\+Arbitro}} y \mbox{\hyperlink{class_control_1_1_adm_colegiados_1_1_adm_juez_central_a1f57394d02b4a57e4e3d2a8af690f71e}{Control.\+Adm\+Colegiados.\+Adm\+Juez\+Central}}.
+
+\mbox{\Hypertarget{interface_control_1_1_adm_colegiados_1_1_i_adm_a0959add3e219218326a9e0e67efa4df9}\label{interface_control_1_1_adm_colegiados_1_1_i_adm_a0959add3e219218326a9e0e67efa4df9}} 
+\index{Control.AdmColegiados.IAdm@{Control.AdmColegiados.IAdm}!recogerDatosEditar@{recogerDatosEditar}}
+\index{recogerDatosEditar@{recogerDatosEditar}!Control.AdmColegiados.IAdm@{Control.AdmColegiados.IAdm}}
+\doxysubsubsection{\texorpdfstring{recogerDatosEditar()}{recogerDatosEditar()}}
+{\footnotesize\ttfamily void Control.\+Adm\+Colegiados.\+IAdm.\+recoger\+Datos\+Editar (\begin{DoxyParamCaption}\item[{Data\+Grid\+View\+Row}]{fila\+Seleccionada }\end{DoxyParamCaption})}
+
+
+
+Método recoger datos para editar. 
+
+Recoge los datos que son seleccionados para editar por el usuario. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em fila\+Seleccionada} & Data\+Grid\+View\+Row que contiene los datos seleccionado por el usuario.\\
+\hline
+\end{DoxyParams}
+
+
+Implementado en \mbox{\hyperlink{class_control_1_1_adm_colegiados_1_1_adm_asistente1_ac1555175e9615f7694c2d50f17612561}{Control.\+Adm\+Colegiados.\+Adm\+Asistente1}}, \mbox{\hyperlink{class_control_1_1_adm_colegiados_1_1_adm_asistente2_ad2edcc8371abc54dcdac54c07318e5c9}{Control.\+Adm\+Colegiados.\+Adm\+Asistente2}}, \mbox{\hyperlink{class_control_1_1_adm_colegiados_1_1_adm_cuarto_arbitro_ad77d911c75c2991cebcd4a40ca9500df}{Control.\+Adm\+Colegiados.\+Adm\+Cuarto\+Arbitro}} y \mbox{\hyperlink{class_control_1_1_adm_colegiados_1_1_adm_juez_central_ae1b9e748b3f5b90eca1d9248f5d4fd75}{Control.\+Adm\+Colegiados.\+Adm\+Juez\+Central}}.
+
+
+
+La documentación para este interfaz fue generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+USER/\+Documents/\+Git\+Hub/\+Gestion\+De\+Colegiados/\+Gestion\+De\+Colegiados/\+Control/\+Adm\+Colegiados/IAdm.\+cs\end{DoxyCompactItemize}

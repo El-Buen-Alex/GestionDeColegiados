@@ -1,0 +1,205 @@
+\hypertarget{class_control_1_1_adm_colegiados_1_1_contexto}{}\doxysection{Referencia de la Clase Control.\+Adm\+Colegiados.\+Contexto}
+\label{class_control_1_1_adm_colegiados_1_1_contexto}\index{Control.AdmColegiados.Contexto@{Control.AdmColegiados.Contexto}}
+
+
+Clase contexto para aplicar patrón de diseño Strategy.  
+
+
+\doxysubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_control_1_1_adm_colegiados_1_1_contexto_aa7e67201c52346e78e537e09e319a30e}{Contexto}} (\mbox{\hyperlink{interface_control_1_1_adm_colegiados_1_1_i_adm}{IAdm}} adm)
+\begin{DoxyCompactList}\small\item\em Constructor de la clase contexto. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_control_1_1_adm_colegiados_1_1_contexto_aff1ccbc4f27b231adbc24f0de52d07bf}{obtener\+Datos}} (Text\+Box txtcedula, Text\+Box txtnombre, Text\+Box txtapellido, Text\+Box txtdomicilio, Text\+Box txtemail, Text\+Box txttelefono)
+\begin{DoxyCompactList}\small\item\em Obtener los datos de los arbitros a guardar \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_control_1_1_adm_colegiados_1_1_contexto_ab9920c90d7ed9a809fb0a8292d3f1480}{datos}} (int id, Data\+Grid\+View dgv\+Listar\+Colegiados)
+\begin{DoxyCompactList}\small\item\em Método para obtener datos del colegiado seleccionado. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_control_1_1_adm_colegiados_1_1_contexto_ad5a44a315238b46b4b0c4a827ac2b197}{recoger\+Datos\+Editar}} (Data\+Grid\+View\+Row fila\+Seleccionada)
+\begin{DoxyCompactList}\small\item\em Método recoger datos para editar. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_control_1_1_adm_colegiados_1_1_contexto_ad1036baab820bed3e0fa597b74396db6}{llenar\+Datos\+Form\+Editar}} (Text\+Box txt\+Cedula, Text\+Box txt\+Nombre, Text\+Box txt\+Apellido, Text\+Box txt\+Domicilio, Text\+Box txt\+Email, Text\+Box txt\+Telefono)
+\begin{DoxyCompactList}\small\item\em Método para llenar datos del Form\+Editar. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_control_1_1_adm_colegiados_1_1_contexto_a996286c8b4cc6558f8f4a49132ff5d19}{editar\+Arbitro}} (int id\+Arbitro, string cedula, string nombre, string apellido, string domicilio, string email, string telefono)
+\begin{DoxyCompactList}\small\item\em Método para editar árbitro. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_control_1_1_adm_colegiados_1_1_contexto_ad51cf5389cdfa3c70de2da0aa4d67550}{eliminar\+Arbitro}} (int id\+Arbitro, string cedula, string nombre, string apellido, string domicilio, string email, string telefono)
+\begin{DoxyCompactList}\small\item\em Método eliminar\+Arbitro de la interface \mbox{\hyperlink{interface_control_1_1_adm_colegiados_1_1_i_adm}{IAdm}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Atributos privados}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_control_1_1_adm_colegiados_1_1_contexto_a24e3ac92356a2c3e4ae4fc070d564439}\label{class_control_1_1_adm_colegiados_1_1_contexto_a24e3ac92356a2c3e4ae4fc070d564439}} 
+\mbox{\hyperlink{interface_control_1_1_adm_colegiados_1_1_i_adm}{IAdm}} {\bfseries adm}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase contexto para aplicar patrón de diseño Strategy. 
+
+\doxysubsection{Documentación del constructor y destructor}
+\mbox{\Hypertarget{class_control_1_1_adm_colegiados_1_1_contexto_aa7e67201c52346e78e537e09e319a30e}\label{class_control_1_1_adm_colegiados_1_1_contexto_aa7e67201c52346e78e537e09e319a30e}} 
+\index{Control.AdmColegiados.Contexto@{Control.AdmColegiados.Contexto}!Contexto@{Contexto}}
+\index{Contexto@{Contexto}!Control.AdmColegiados.Contexto@{Control.AdmColegiados.Contexto}}
+\doxysubsubsection{\texorpdfstring{Contexto()}{Contexto()}}
+{\footnotesize\ttfamily Control.\+Adm\+Colegiados.\+Contexto.\+Contexto (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_control_1_1_adm_colegiados_1_1_i_adm}{IAdm}}}]{adm }\end{DoxyParamCaption})}
+
+
+
+Constructor de la clase contexto. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em adm} & Instacia de la clase adm.\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{class_control_1_1_adm_colegiados_1_1_contexto_ab9920c90d7ed9a809fb0a8292d3f1480}\label{class_control_1_1_adm_colegiados_1_1_contexto_ab9920c90d7ed9a809fb0a8292d3f1480}} 
+\index{Control.AdmColegiados.Contexto@{Control.AdmColegiados.Contexto}!datos@{datos}}
+\index{datos@{datos}!Control.AdmColegiados.Contexto@{Control.AdmColegiados.Contexto}}
+\doxysubsubsection{\texorpdfstring{datos()}{datos()}}
+{\footnotesize\ttfamily void Control.\+Adm\+Colegiados.\+Contexto.\+datos (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{Data\+Grid\+View}]{dgv\+Listar\+Colegiados }\end{DoxyParamCaption})}
+
+
+
+Método para obtener datos del colegiado seleccionado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em id} & ID de un árbitro.\\
+\hline
+{\em dgv\+Listar\+Colegiados} & Data\+Grid\+View que va a ser llenado con datos.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_control_1_1_adm_colegiados_1_1_contexto_a996286c8b4cc6558f8f4a49132ff5d19}\label{class_control_1_1_adm_colegiados_1_1_contexto_a996286c8b4cc6558f8f4a49132ff5d19}} 
+\index{Control.AdmColegiados.Contexto@{Control.AdmColegiados.Contexto}!editarArbitro@{editarArbitro}}
+\index{editarArbitro@{editarArbitro}!Control.AdmColegiados.Contexto@{Control.AdmColegiados.Contexto}}
+\doxysubsubsection{\texorpdfstring{editarArbitro()}{editarArbitro()}}
+{\footnotesize\ttfamily void Control.\+Adm\+Colegiados.\+Contexto.\+editar\+Arbitro (\begin{DoxyParamCaption}\item[{int}]{id\+Arbitro,  }\item[{string}]{cedula,  }\item[{string}]{nombre,  }\item[{string}]{apellido,  }\item[{string}]{domicilio,  }\item[{string}]{email,  }\item[{string}]{telefono }\end{DoxyParamCaption})}
+
+
+
+Método para editar árbitro. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em id\+Arbitro} & ID recogido.\\
+\hline
+{\em cedula} & Cedula recogida.\\
+\hline
+{\em nombre} & Nombre recogido.\\
+\hline
+{\em apellido} & Apellido recogido.\\
+\hline
+{\em domicilio} & Domicilio recogido.\\
+\hline
+{\em email} & Email recogido.\\
+\hline
+{\em telefono} & Telefono recogido.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_control_1_1_adm_colegiados_1_1_contexto_ad51cf5389cdfa3c70de2da0aa4d67550}\label{class_control_1_1_adm_colegiados_1_1_contexto_ad51cf5389cdfa3c70de2da0aa4d67550}} 
+\index{Control.AdmColegiados.Contexto@{Control.AdmColegiados.Contexto}!eliminarArbitro@{eliminarArbitro}}
+\index{eliminarArbitro@{eliminarArbitro}!Control.AdmColegiados.Contexto@{Control.AdmColegiados.Contexto}}
+\doxysubsubsection{\texorpdfstring{eliminarArbitro()}{eliminarArbitro()}}
+{\footnotesize\ttfamily int Control.\+Adm\+Colegiados.\+Contexto.\+eliminar\+Arbitro (\begin{DoxyParamCaption}\item[{int}]{id\+Arbitro,  }\item[{string}]{cedula,  }\item[{string}]{nombre,  }\item[{string}]{apellido,  }\item[{string}]{domicilio,  }\item[{string}]{email,  }\item[{string}]{telefono }\end{DoxyParamCaption})}
+
+
+
+Método eliminar\+Arbitro de la interface \mbox{\hyperlink{interface_control_1_1_adm_colegiados_1_1_i_adm}{IAdm}}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em id\+Arbitro} & ID recogido.\\
+\hline
+{\em cedula} & Cedula recogida.\\
+\hline
+{\em nombre} & Nombre recogido.\\
+\hline
+{\em apellido} & Apellido recogido.\\
+\hline
+{\em domicilio} & Domicilio recogido.\\
+\hline
+{\em email} & Email recogido.\\
+\hline
+{\em telefono} & Telefono recogido.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Devuelve el último id registrado como entero.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_control_1_1_adm_colegiados_1_1_contexto_ad1036baab820bed3e0fa597b74396db6}\label{class_control_1_1_adm_colegiados_1_1_contexto_ad1036baab820bed3e0fa597b74396db6}} 
+\index{Control.AdmColegiados.Contexto@{Control.AdmColegiados.Contexto}!llenarDatosFormEditar@{llenarDatosFormEditar}}
+\index{llenarDatosFormEditar@{llenarDatosFormEditar}!Control.AdmColegiados.Contexto@{Control.AdmColegiados.Contexto}}
+\doxysubsubsection{\texorpdfstring{llenarDatosFormEditar()}{llenarDatosFormEditar()}}
+{\footnotesize\ttfamily void Control.\+Adm\+Colegiados.\+Contexto.\+llenar\+Datos\+Form\+Editar (\begin{DoxyParamCaption}\item[{Text\+Box}]{txt\+Cedula,  }\item[{Text\+Box}]{txt\+Nombre,  }\item[{Text\+Box}]{txt\+Apellido,  }\item[{Text\+Box}]{txt\+Domicilio,  }\item[{Text\+Box}]{txt\+Email,  }\item[{Text\+Box}]{txt\+Telefono }\end{DoxyParamCaption})}
+
+
+
+Método para llenar datos del Form\+Editar. 
+
+Llena los Tex\+Box de Editar con los datos del árbitro seleccionado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em txt\+Cedula} & Cedula.\\
+\hline
+{\em txt\+Nombre} & Nombre.\\
+\hline
+{\em txt\+Apellido} & Apellido.\\
+\hline
+{\em txt\+Domicilio} & Domicilio.\\
+\hline
+{\em txt\+Email} & Email.\\
+\hline
+{\em txt\+Telefono} & Telefono.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_control_1_1_adm_colegiados_1_1_contexto_aff1ccbc4f27b231adbc24f0de52d07bf}\label{class_control_1_1_adm_colegiados_1_1_contexto_aff1ccbc4f27b231adbc24f0de52d07bf}} 
+\index{Control.AdmColegiados.Contexto@{Control.AdmColegiados.Contexto}!obtenerDatos@{obtenerDatos}}
+\index{obtenerDatos@{obtenerDatos}!Control.AdmColegiados.Contexto@{Control.AdmColegiados.Contexto}}
+\doxysubsubsection{\texorpdfstring{obtenerDatos()}{obtenerDatos()}}
+{\footnotesize\ttfamily int Control.\+Adm\+Colegiados.\+Contexto.\+obtener\+Datos (\begin{DoxyParamCaption}\item[{Text\+Box}]{txtcedula,  }\item[{Text\+Box}]{txtnombre,  }\item[{Text\+Box}]{txtapellido,  }\item[{Text\+Box}]{txtdomicilio,  }\item[{Text\+Box}]{txtemail,  }\item[{Text\+Box}]{txttelefono }\end{DoxyParamCaption})}
+
+
+
+Obtener los datos de los arbitros a guardar 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em txtcedula} & Cedula recogida.\\
+\hline
+{\em txtnombre} & Nombre recogido.\\
+\hline
+{\em txtapellido} & Apellido recogido.\\
+\hline
+{\em txtdomicilio} & Domicilio recogido.\\
+\hline
+{\em txtemail} & Email recogido.\\
+\hline
+{\em txttelefono} & Telefono recogido.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Devuelve el último id registrado como entero.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_control_1_1_adm_colegiados_1_1_contexto_ad5a44a315238b46b4b0c4a827ac2b197}\label{class_control_1_1_adm_colegiados_1_1_contexto_ad5a44a315238b46b4b0c4a827ac2b197}} 
+\index{Control.AdmColegiados.Contexto@{Control.AdmColegiados.Contexto}!recogerDatosEditar@{recogerDatosEditar}}
+\index{recogerDatosEditar@{recogerDatosEditar}!Control.AdmColegiados.Contexto@{Control.AdmColegiados.Contexto}}
+\doxysubsubsection{\texorpdfstring{recogerDatosEditar()}{recogerDatosEditar()}}
+{\footnotesize\ttfamily void Control.\+Adm\+Colegiados.\+Contexto.\+recoger\+Datos\+Editar (\begin{DoxyParamCaption}\item[{Data\+Grid\+View\+Row}]{fila\+Seleccionada }\end{DoxyParamCaption})}
+
+
+
+Método recoger datos para editar. 
+
+Recoge los datos que son seleccionados para editar por el usuario. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em fila\+Seleccionada} & Data\+Grid\+View\+Row que contiene los datos seleccionado por el usuario.\\
+\hline
+\end{DoxyParams}
+
+
+La documentación para esta clase fue generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+USER/\+Documents/\+Git\+Hub/\+Gestion\+De\+Colegiados/\+Gestion\+De\+Colegiados/\+Control/\+Adm\+Colegiados/Contexto.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,4 @@
+var searchData=
+[
+  ['tostring_0',['ToString',['../class_model_1_1_arbitro.html#af97170afc1f5594922c88ddf29928df9',1,'Model.Arbitro.ToString()'],['../class_model_1_1_colegiados_1_1_asistente.html#ae359bc6045e91426a79123e95aa1c3b2',1,'Model.Colegiados.Asistente.ToString()'],['../class_model_1_1_colegiados_1_1_colegiado.html#a5af61c2487a5e4105a2070d7a1a0f5db',1,'Model.Colegiados.Colegiado.ToString()'],['../class_model_1_1_colegiados_1_1_cuarto_arbitro.html#a1776d84780e72282ade249e67289ed7c',1,'Model.Colegiados.CuartoArbitro.ToString()'],['../class_model_1_1_colegiados_1_1_integrantes_colegiados.html#aa69f98c9e0a0d8f74354e834a72af635',1,'Model.Colegiados.IntegrantesColegiados.ToString()'],['../class_model_1_1_colegiados_1_1_juez_central.html#a210508c8c7695fc2104d15698d854a2a',1,'Model.Colegiados.JuezCentral.ToString()']]]
+];

@@ -1,0 +1,183 @@
+\hypertarget{class_control_1_1_validacion_g_u_i}{}\doxysection{Referencia de la Clase Control.\+Validacion\+GUI}
+\label{class_control_1_1_validacion_g_u_i}\index{Control.ValidacionGUI@{Control.ValidacionGUI}}
+
+
+Clase para validar datos.  
+
+
+\doxysubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_control_1_1_validacion_g_u_i_ad16e7739f80057179651e2e3dc34387d}{AInt}} (string valor)
+\begin{DoxyCompactList}\small\item\em Convierte un string en entero. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_control_1_1_validacion_g_u_i_a539ba68fdc95e6602a00b2324fc84932}{Es\+Double}} (string valor)
+\begin{DoxyCompactList}\small\item\em Convierte un string en double. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_control_1_1_validacion_g_u_i_a1f9dcc793b5e99373afade47543fd8f2}{Es\+Float}} (string valor)
+\begin{DoxyCompactList}\small\item\em Convierte un string en float. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_control_1_1_validacion_g_u_i_a1d071f2d0514f97d3000b0f1b1e4c89f}{validar\+Vacios}} (Text\+Box txtcedula, Text\+Box txtnombre, Text\+Box txtapellido, Text\+Box txtdomicilio, Text\+Box txtemail, Text\+Box txttelefono)
+\begin{DoxyCompactList}\small\item\em Valida Tex\+Box vacios de árbitros. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_control_1_1_validacion_g_u_i_a755c021928dce1f8be42977649ae02f6}{validarnum}} (int id\+Juez\+Central, int id\+Asistente1, int id\+Asistente2, int id\+Cuarto\+Arbitro)
+\begin{DoxyCompactList}\small\item\em Valida que los id de los árbitros no sean 0. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_control_1_1_validacion_g_u_i_ab90673eff70d2c7b7ae53c664cdd3e8b}{validar\+Vacios}} (string nombre, string numjugadores, string director, string presidente)
+\begin{DoxyCompactList}\small\item\em Valida los campos vacios de Equipo. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_control_1_1_validacion_g_u_i_a4646df700f602f235d4cdd93938a04ff}{Validar\+Fecha}} (Date\+Time fecha\+Elegida)
+\begin{DoxyCompactList}\small\item\em Validar fecha elegida. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase para validar datos. 
+
+\doxysubsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{class_control_1_1_validacion_g_u_i_ad16e7739f80057179651e2e3dc34387d}\label{class_control_1_1_validacion_g_u_i_ad16e7739f80057179651e2e3dc34387d}} 
+\index{Control.ValidacionGUI@{Control.ValidacionGUI}!AInt@{AInt}}
+\index{AInt@{AInt}!Control.ValidacionGUI@{Control.ValidacionGUI}}
+\doxysubsubsection{\texorpdfstring{AInt()}{AInt()}}
+{\footnotesize\ttfamily int Control.\+Validacion\+GUI.\+AInt (\begin{DoxyParamCaption}\item[{string}]{valor }\end{DoxyParamCaption})}
+
+
+
+Convierte un string en entero. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em valor} & Cadena para convertir.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Devuelve el numero como entero.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_control_1_1_validacion_g_u_i_a539ba68fdc95e6602a00b2324fc84932}\label{class_control_1_1_validacion_g_u_i_a539ba68fdc95e6602a00b2324fc84932}} 
+\index{Control.ValidacionGUI@{Control.ValidacionGUI}!EsDouble@{EsDouble}}
+\index{EsDouble@{EsDouble}!Control.ValidacionGUI@{Control.ValidacionGUI}}
+\doxysubsubsection{\texorpdfstring{EsDouble()}{EsDouble()}}
+{\footnotesize\ttfamily double Control.\+Validacion\+GUI.\+Es\+Double (\begin{DoxyParamCaption}\item[{string}]{valor }\end{DoxyParamCaption})}
+
+
+
+Convierte un string en double. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em valor} & Cadena para convertir.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Devuelve el numero como double.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_control_1_1_validacion_g_u_i_a1f9dcc793b5e99373afade47543fd8f2}\label{class_control_1_1_validacion_g_u_i_a1f9dcc793b5e99373afade47543fd8f2}} 
+\index{Control.ValidacionGUI@{Control.ValidacionGUI}!EsFloat@{EsFloat}}
+\index{EsFloat@{EsFloat}!Control.ValidacionGUI@{Control.ValidacionGUI}}
+\doxysubsubsection{\texorpdfstring{EsFloat()}{EsFloat()}}
+{\footnotesize\ttfamily float Control.\+Validacion\+GUI.\+Es\+Float (\begin{DoxyParamCaption}\item[{string}]{valor }\end{DoxyParamCaption})}
+
+
+
+Convierte un string en float. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em valor} & Cadena para convertir.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Devuelve el numero como float.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_control_1_1_validacion_g_u_i_a4646df700f602f235d4cdd93938a04ff}\label{class_control_1_1_validacion_g_u_i_a4646df700f602f235d4cdd93938a04ff}} 
+\index{Control.ValidacionGUI@{Control.ValidacionGUI}!ValidarFecha@{ValidarFecha}}
+\index{ValidarFecha@{ValidarFecha}!Control.ValidacionGUI@{Control.ValidacionGUI}}
+\doxysubsubsection{\texorpdfstring{ValidarFecha()}{ValidarFecha()}}
+{\footnotesize\ttfamily bool Control.\+Validacion\+GUI.\+Validar\+Fecha (\begin{DoxyParamCaption}\item[{Date\+Time}]{fecha\+Elegida }\end{DoxyParamCaption})}
+
+
+
+Validar fecha elegida. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em fecha\+Elegida} & Fecha recogida.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Devuelve false si la {\ttfamily fecha\+Elegida} es menor a la fecha actual o true si es mayor.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_control_1_1_validacion_g_u_i_a755c021928dce1f8be42977649ae02f6}\label{class_control_1_1_validacion_g_u_i_a755c021928dce1f8be42977649ae02f6}} 
+\index{Control.ValidacionGUI@{Control.ValidacionGUI}!validarnum@{validarnum}}
+\index{validarnum@{validarnum}!Control.ValidacionGUI@{Control.ValidacionGUI}}
+\doxysubsubsection{\texorpdfstring{validarnum()}{validarnum()}}
+{\footnotesize\ttfamily bool Control.\+Validacion\+GUI.\+validarnum (\begin{DoxyParamCaption}\item[{int}]{id\+Juez\+Central,  }\item[{int}]{id\+Asistente1,  }\item[{int}]{id\+Asistente2,  }\item[{int}]{id\+Cuarto\+Arbitro }\end{DoxyParamCaption})}
+
+
+
+Valida que los id de los árbitros no sean 0. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em id\+Juez\+Central} & ID Juez Central.\\
+\hline
+{\em id\+Asistente1} & ID Asistente 1.\\
+\hline
+{\em id\+Asistente2} & ID Asistente 2.\\
+\hline
+{\em id\+Cuarto\+Arbitro} & ID Cuarto Árbitro.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Devuelve true si cualquiera de los campos son 0 o false si son diferentes de 0.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_control_1_1_validacion_g_u_i_ab90673eff70d2c7b7ae53c664cdd3e8b}\label{class_control_1_1_validacion_g_u_i_ab90673eff70d2c7b7ae53c664cdd3e8b}} 
+\index{Control.ValidacionGUI@{Control.ValidacionGUI}!validarVacios@{validarVacios}}
+\index{validarVacios@{validarVacios}!Control.ValidacionGUI@{Control.ValidacionGUI}}
+\doxysubsubsection{\texorpdfstring{validarVacios()}{validarVacios()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Control.\+Validacion\+GUI.\+validar\+Vacios (\begin{DoxyParamCaption}\item[{string}]{nombre,  }\item[{string}]{numjugadores,  }\item[{string}]{director,  }\item[{string}]{presidente }\end{DoxyParamCaption})}
+
+
+
+Valida los campos vacios de Equipo. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em nombre} & Nombre recogido.\\
+\hline
+{\em numjugadores} & Numero de jugadores recogido.\\
+\hline
+{\em director} & Director recogido.\\
+\hline
+{\em presidente} & Presidente recogido.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Devuelve true si existe algún campo vacio o false si no los hay.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_control_1_1_validacion_g_u_i_a1d071f2d0514f97d3000b0f1b1e4c89f}\label{class_control_1_1_validacion_g_u_i_a1d071f2d0514f97d3000b0f1b1e4c89f}} 
+\index{Control.ValidacionGUI@{Control.ValidacionGUI}!validarVacios@{validarVacios}}
+\index{validarVacios@{validarVacios}!Control.ValidacionGUI@{Control.ValidacionGUI}}
+\doxysubsubsection{\texorpdfstring{validarVacios()}{validarVacios()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Control.\+Validacion\+GUI.\+validar\+Vacios (\begin{DoxyParamCaption}\item[{Text\+Box}]{txtcedula,  }\item[{Text\+Box}]{txtnombre,  }\item[{Text\+Box}]{txtapellido,  }\item[{Text\+Box}]{txtdomicilio,  }\item[{Text\+Box}]{txtemail,  }\item[{Text\+Box}]{txttelefono }\end{DoxyParamCaption})}
+
+
+
+Valida Tex\+Box vacios de árbitros. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em txtcedula} & Cedula recogida.\\
+\hline
+{\em txtnombre} & Nombre recogido.\\
+\hline
+{\em txtapellido} & Apellido recogido.\\
+\hline
+{\em txtdomicilio} & Domicilio recogido.\\
+\hline
+{\em txtemail} & Email recogido.\\
+\hline
+{\em txttelefono} & Telefono recogido.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Devuelve true si hay espacios vacios o false si no los hay.
+\end{DoxyReturn}
+
+
+La documentación para esta clase fue generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+USER/\+Documents/\+Git\+Hub/\+Gestion\+De\+Colegiados/\+Gestion\+De\+Colegiados/\+Control/Validacion\+GUI.\+cs\end{DoxyCompactItemize}

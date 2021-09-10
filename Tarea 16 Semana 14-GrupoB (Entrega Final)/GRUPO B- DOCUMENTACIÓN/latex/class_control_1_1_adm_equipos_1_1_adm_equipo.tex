@@ -1,0 +1,205 @@
+\hypertarget{class_control_1_1_adm_equipos_1_1_adm_equipo}{}\doxysection{Referencia de la Clase Control.\+Adm\+Equipos.\+Adm\+Equipo}
+\label{class_control_1_1_adm_equipos_1_1_adm_equipo}\index{Control.AdmEquipos.AdmEquipo@{Control.AdmEquipos.AdmEquipo}}
+\doxysubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_control_1_1_adm_equipos_1_1_adm_equipo_a3169044388aeb522865071d013e1dd25}\label{class_control_1_1_adm_equipos_1_1_adm_equipo_a3169044388aeb522865071d013e1dd25}} 
+void {\bfseries Llenar\+Campos} (Text\+Box id\+Equipo, Text\+Box nombre, Text\+Box numjugadores, Text\+Box director, Text\+Box presidente, string id)
+\item 
+int \mbox{\hyperlink{class_control_1_1_adm_equipos_1_1_adm_equipo_ad400617220f14e788ca8d81d1edb14ce}{cantidad\+Equipos\+Registrados}} ()
+\begin{DoxyCompactList}\small\item\em Método que consulta la cantidad de equipos que están presentes en la lista donde se agregan los equipos para llevar un control de registro en ella \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_control_1_1_adm_equipos_1_1_adm_equipo_ac137523edf5e5782f846c9902da82cb9}\label{class_control_1_1_adm_equipos_1_1_adm_equipo_ac137523edf5e5782f846c9902da82cb9}} 
+void {\bfseries Eliminar\+Registro} (string id)
+\item 
+\mbox{\Hypertarget{class_control_1_1_adm_equipos_1_1_adm_equipo_a1f4824b6769bb815917849316df39380}\label{class_control_1_1_adm_equipos_1_1_adm_equipo_a1f4824b6769bb815917849316df39380}} 
+void {\bfseries Actualizar\+Datos} (int id, string nombre, int numjugadores, string director\+Nombre, string presidente\+Nombre)
+\item 
+void \mbox{\hyperlink{class_control_1_1_adm_equipos_1_1_adm_equipo_ae0bb35e105b1693aced33d3e059fff48}{Llena\+Tabla}} (Data\+Grid\+View tabla\+Datos, string nombre)
+\begin{DoxyCompactList}\small\item\em Método encargado de llenar un el datagridview que es usado para editar o eliminar un equipo previamente ya registrado \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_control_1_1_adm_equipos_1_1_adm_equipo_a7ce9c5ae7f2e0746de40656325f0540f}{Guardar\+Datos}} (string nombre, int num\+Jugadores, string director\+Nombre, string presidente\+Nombre)
+\begin{DoxyCompactList}\small\item\em Método que hace uso del constructor de la clase equipo, agrega a la lista y hace el llamado al método que conecta a la base de datos para facilitar el registros de nuevos equipos \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_control_1_1_adm_equipos_1_1_adm_equipo_ac94a80d44e9cef73ebc27a24d342608d}{Llenar\+Equipos}} (List$<$ Label $>$ lista\+Contenedores)
+\begin{DoxyCompactList}\small\item\em Método encargado de llenar los labels con informacion para ser presentada al usuario donde sea invocado \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_control_1_1_adm_equipos_1_1_adm_equipo_a26b602ea7c100a6bb71186571af6a3e1}{Obtener\+Cantidad\+Equipo}} ()
+\begin{DoxyCompactList}\small\item\em método encargado de funcionar como puente entre los métodos de control con el método de data para obtener la cantidad de equipos registrados en la base de datos \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_model_1_1_equipo_1_1_equipo}{Equipo}} \mbox{\hyperlink{class_control_1_1_adm_equipos_1_1_adm_equipo_a493dab93197866bc5650eb76b134e155}{Obtener\+Equipo\+Por\+Id}} (int id)
+\begin{DoxyCompactList}\small\item\em Método encargado de funcionar como puente entre los métodos de control con el método de data para solicitar el id en la base de datos \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_model_1_1_equipo_1_1_equipo}{Equipo}} $>$ \mbox{\hyperlink{class_control_1_1_adm_equipos_1_1_adm_equipo_a5e0d97a5b7e637d4898c41e771dadf69}{extraer\+Equipos}} ()
+\begin{DoxyCompactList}\small\item\em Solicita los campos de la base de datos a otro metodo que hace la funcionalidad de extraerlos de la BD \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_control_1_1_adm_equipos_1_1_adm_equipo_a823a40a001bf25888c3e34cb062be7cf}\label{class_control_1_1_adm_equipos_1_1_adm_equipo_a823a40a001bf25888c3e34cb062be7cf}} 
+void {\bfseries Llenar\+Equipos\+Cmb} (Combo\+Box cmb\+Equipos, List$<$ \mbox{\hyperlink{class_model_1_1_equipo_1_1_equipo}{Equipo}} $>$ equipos\+Aux)
+\item 
+\mbox{\Hypertarget{class_control_1_1_adm_equipos_1_1_adm_equipo_a6e5c73cb1a1774df8888dac0737a00e1}\label{class_control_1_1_adm_equipos_1_1_adm_equipo_a6e5c73cb1a1774df8888dac0737a00e1}} 
+void {\bfseries Observer\+Cmb\+Equipos} (Combo\+Box cmb\+Equipos, string equipo, string equipo\+Select)
+\end{DoxyCompactItemize}
+\doxysubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_control_1_1_adm_equipos_1_1_adm_equipo_a50a515f27ed5ae05e497ac37618d0711}\label{class_control_1_1_adm_equipos_1_1_adm_equipo_a50a515f27ed5ae05e497ac37618d0711}} 
+static \mbox{\hyperlink{class_control_1_1_adm_equipos_1_1_adm_equipo}{Adm\+Equipo}} {\bfseries get\+Equipo} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Métodos privados}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_control_1_1_adm_equipos_1_1_adm_equipo_afc7a02c0589de9f5e843cfb0addb8c10}\label{class_control_1_1_adm_equipos_1_1_adm_equipo_afc7a02c0589de9f5e843cfb0addb8c10}} 
+{\bfseries Adm\+Equipo} ()
+\begin{DoxyCompactList}\small\item\em Paso para el uso de Singleton \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_control_1_1_adm_equipos_1_1_adm_equipo_a7579121ac67e17d3828c48d43a789937}\label{class_control_1_1_adm_equipos_1_1_adm_equipo_a7579121ac67e17d3828c48d43a789937}} 
+void {\bfseries Actualizar\+Registro\+Equipo} (\mbox{\hyperlink{class_model_1_1_equipo_1_1_equipo}{Equipo}} equipo)
+\item 
+void \mbox{\hyperlink{class_control_1_1_adm_equipos_1_1_adm_equipo_a186897d94ba272e53730d6e6afecd4fd}{registrar\+Equipo}} (\mbox{\hyperlink{class_model_1_1_equipo_1_1_equipo}{Equipo}} equipo)
+\begin{DoxyCompactList}\small\item\em Método encargado de funcionar como puente entre los métodos de control con el método de data para el registro en la base de datos \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_control_1_1_adm_equipos_1_1_adm_equipo_aec3b637cb88e82996508ab4c510b6d4a}\label{class_control_1_1_adm_equipos_1_1_adm_equipo_aec3b637cb88e82996508ab4c510b6d4a}} 
+int {\bfseries seleccionar\+Equipo\+Cmb} (string equipo, List$<$ \mbox{\hyperlink{class_model_1_1_equipo_1_1_equipo}{Equipo}} $>$ equipos\+Aux)
+\end{DoxyCompactItemize}
+\doxysubsection*{Atributos privados}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_control_1_1_adm_equipos_1_1_adm_equipo_a208fdf2cd10ddac2f0bf0ea872fd0a8f}\label{class_control_1_1_adm_equipos_1_1_adm_equipo_a208fdf2cd10ddac2f0bf0ea872fd0a8f}} 
+\mbox{\hyperlink{class_model_1_1_equipo_1_1_equipo}{Equipo}} {\bfseries equipo} = null
+\item 
+\mbox{\Hypertarget{class_control_1_1_adm_equipos_1_1_adm_equipo_ad529b52fb58a7e387696616570251481}\label{class_control_1_1_adm_equipos_1_1_adm_equipo_ad529b52fb58a7e387696616570251481}} 
+List$<$ \mbox{\hyperlink{class_model_1_1_equipo_1_1_equipo}{Equipo}} $>$ {\bfseries lista\+Equipo} = new List$<$\mbox{\hyperlink{class_model_1_1_equipo_1_1_equipo}{Equipo}}$>$()
+\item 
+\mbox{\Hypertarget{class_control_1_1_adm_equipos_1_1_adm_equipo_ad2666f1d55f738099bc21c9e498eb330}\label{class_control_1_1_adm_equipos_1_1_adm_equipo_ad2666f1d55f738099bc21c9e498eb330}} 
+\mbox{\hyperlink{class_data_1_1_datos_equipos}{Datos\+Equipos}} {\bfseries datos} = new \mbox{\hyperlink{class_data_1_1_datos_equipos}{Datos\+Equipos}}()
+\end{DoxyCompactItemize}
+\doxysubsection*{Atributos privados estáticos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_control_1_1_adm_equipos_1_1_adm_equipo_a62bde230424f94c186fa6eba07ab78aa}\label{class_control_1_1_adm_equipos_1_1_adm_equipo_a62bde230424f94c186fa6eba07ab78aa}} 
+static \mbox{\hyperlink{class_control_1_1_adm_equipos_1_1_adm_equipo}{Adm\+Equipo}} {\bfseries adm\+Equipo} = null
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{class_control_1_1_adm_equipos_1_1_adm_equipo_ad400617220f14e788ca8d81d1edb14ce}\label{class_control_1_1_adm_equipos_1_1_adm_equipo_ad400617220f14e788ca8d81d1edb14ce}} 
+\index{Control.AdmEquipos.AdmEquipo@{Control.AdmEquipos.AdmEquipo}!cantidadEquiposRegistrados@{cantidadEquiposRegistrados}}
+\index{cantidadEquiposRegistrados@{cantidadEquiposRegistrados}!Control.AdmEquipos.AdmEquipo@{Control.AdmEquipos.AdmEquipo}}
+\doxysubsubsection{\texorpdfstring{cantidadEquiposRegistrados()}{cantidadEquiposRegistrados()}}
+{\footnotesize\ttfamily int Control.\+Adm\+Equipos.\+Adm\+Equipo.\+cantidad\+Equipos\+Registrados (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Método que consulta la cantidad de equipos que están presentes en la lista donde se agregan los equipos para llevar un control de registro en ella 
+
+\begin{DoxyReturn}{Devuelve}
+Devuelve la cantidad de equipos
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_control_1_1_adm_equipos_1_1_adm_equipo_a5e0d97a5b7e637d4898c41e771dadf69}\label{class_control_1_1_adm_equipos_1_1_adm_equipo_a5e0d97a5b7e637d4898c41e771dadf69}} 
+\index{Control.AdmEquipos.AdmEquipo@{Control.AdmEquipos.AdmEquipo}!extraerEquipos@{extraerEquipos}}
+\index{extraerEquipos@{extraerEquipos}!Control.AdmEquipos.AdmEquipo@{Control.AdmEquipos.AdmEquipo}}
+\doxysubsubsection{\texorpdfstring{extraerEquipos()}{extraerEquipos()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{class_model_1_1_equipo_1_1_equipo}{Equipo}} $>$ Control.\+Adm\+Equipos.\+Adm\+Equipo.\+extraer\+Equipos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Solicita los campos de la base de datos a otro metodo que hace la funcionalidad de extraerlos de la BD 
+
+\begin{DoxyReturn}{Devuelve}
+Retorna algun equipo
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_control_1_1_adm_equipos_1_1_adm_equipo_a7ce9c5ae7f2e0746de40656325f0540f}\label{class_control_1_1_adm_equipos_1_1_adm_equipo_a7ce9c5ae7f2e0746de40656325f0540f}} 
+\index{Control.AdmEquipos.AdmEquipo@{Control.AdmEquipos.AdmEquipo}!GuardarDatos@{GuardarDatos}}
+\index{GuardarDatos@{GuardarDatos}!Control.AdmEquipos.AdmEquipo@{Control.AdmEquipos.AdmEquipo}}
+\doxysubsubsection{\texorpdfstring{GuardarDatos()}{GuardarDatos()}}
+{\footnotesize\ttfamily void Control.\+Adm\+Equipos.\+Adm\+Equipo.\+Guardar\+Datos (\begin{DoxyParamCaption}\item[{string}]{nombre,  }\item[{int}]{num\+Jugadores,  }\item[{string}]{director\+Nombre,  }\item[{string}]{presidente\+Nombre }\end{DoxyParamCaption})}
+
+
+
+Método que hace uso del constructor de la clase equipo, agrega a la lista y hace el llamado al método que conecta a la base de datos para facilitar el registros de nuevos equipos 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em nombre} & \\
+\hline
+{\em num\+Jugadores} & \\
+\hline
+{\em director\+Nombre} & \\
+\hline
+{\em presidente\+Nombre} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_control_1_1_adm_equipos_1_1_adm_equipo_ac94a80d44e9cef73ebc27a24d342608d}\label{class_control_1_1_adm_equipos_1_1_adm_equipo_ac94a80d44e9cef73ebc27a24d342608d}} 
+\index{Control.AdmEquipos.AdmEquipo@{Control.AdmEquipos.AdmEquipo}!LlenarEquipos@{LlenarEquipos}}
+\index{LlenarEquipos@{LlenarEquipos}!Control.AdmEquipos.AdmEquipo@{Control.AdmEquipos.AdmEquipo}}
+\doxysubsubsection{\texorpdfstring{LlenarEquipos()}{LlenarEquipos()}}
+{\footnotesize\ttfamily void Control.\+Adm\+Equipos.\+Adm\+Equipo.\+Llenar\+Equipos (\begin{DoxyParamCaption}\item[{List$<$ Label $>$}]{lista\+Contenedores }\end{DoxyParamCaption})}
+
+
+
+Método encargado de llenar los labels con informacion para ser presentada al usuario donde sea invocado 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em lista\+Contenedores} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_control_1_1_adm_equipos_1_1_adm_equipo_ae0bb35e105b1693aced33d3e059fff48}\label{class_control_1_1_adm_equipos_1_1_adm_equipo_ae0bb35e105b1693aced33d3e059fff48}} 
+\index{Control.AdmEquipos.AdmEquipo@{Control.AdmEquipos.AdmEquipo}!LlenaTabla@{LlenaTabla}}
+\index{LlenaTabla@{LlenaTabla}!Control.AdmEquipos.AdmEquipo@{Control.AdmEquipos.AdmEquipo}}
+\doxysubsubsection{\texorpdfstring{LlenaTabla()}{LlenaTabla()}}
+{\footnotesize\ttfamily void Control.\+Adm\+Equipos.\+Adm\+Equipo.\+Llena\+Tabla (\begin{DoxyParamCaption}\item[{Data\+Grid\+View}]{tabla\+Datos,  }\item[{string}]{nombre }\end{DoxyParamCaption})}
+
+
+
+Método encargado de llenar un el datagridview que es usado para editar o eliminar un equipo previamente ya registrado 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em tabla\+Datos} & \\
+\hline
+{\em nombre} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_control_1_1_adm_equipos_1_1_adm_equipo_a26b602ea7c100a6bb71186571af6a3e1}\label{class_control_1_1_adm_equipos_1_1_adm_equipo_a26b602ea7c100a6bb71186571af6a3e1}} 
+\index{Control.AdmEquipos.AdmEquipo@{Control.AdmEquipos.AdmEquipo}!ObtenerCantidadEquipo@{ObtenerCantidadEquipo}}
+\index{ObtenerCantidadEquipo@{ObtenerCantidadEquipo}!Control.AdmEquipos.AdmEquipo@{Control.AdmEquipos.AdmEquipo}}
+\doxysubsubsection{\texorpdfstring{ObtenerCantidadEquipo()}{ObtenerCantidadEquipo()}}
+{\footnotesize\ttfamily int Control.\+Adm\+Equipos.\+Adm\+Equipo.\+Obtener\+Cantidad\+Equipo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+método encargado de funcionar como puente entre los métodos de control con el método de data para obtener la cantidad de equipos registrados en la base de datos 
+
+\begin{DoxyReturn}{Devuelve}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_control_1_1_adm_equipos_1_1_adm_equipo_a493dab93197866bc5650eb76b134e155}\label{class_control_1_1_adm_equipos_1_1_adm_equipo_a493dab93197866bc5650eb76b134e155}} 
+\index{Control.AdmEquipos.AdmEquipo@{Control.AdmEquipos.AdmEquipo}!ObtenerEquipoPorId@{ObtenerEquipoPorId}}
+\index{ObtenerEquipoPorId@{ObtenerEquipoPorId}!Control.AdmEquipos.AdmEquipo@{Control.AdmEquipos.AdmEquipo}}
+\doxysubsubsection{\texorpdfstring{ObtenerEquipoPorId()}{ObtenerEquipoPorId()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_model_1_1_equipo_1_1_equipo}{Equipo}} Control.\+Adm\+Equipos.\+Adm\+Equipo.\+Obtener\+Equipo\+Por\+Id (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Método encargado de funcionar como puente entre los métodos de control con el método de data para solicitar el id en la base de datos 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em id} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Retorna el equipo mediante su ID
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_control_1_1_adm_equipos_1_1_adm_equipo_a186897d94ba272e53730d6e6afecd4fd}\label{class_control_1_1_adm_equipos_1_1_adm_equipo_a186897d94ba272e53730d6e6afecd4fd}} 
+\index{Control.AdmEquipos.AdmEquipo@{Control.AdmEquipos.AdmEquipo}!registrarEquipo@{registrarEquipo}}
+\index{registrarEquipo@{registrarEquipo}!Control.AdmEquipos.AdmEquipo@{Control.AdmEquipos.AdmEquipo}}
+\doxysubsubsection{\texorpdfstring{registrarEquipo()}{registrarEquipo()}}
+{\footnotesize\ttfamily void Control.\+Adm\+Equipos.\+Adm\+Equipo.\+registrar\+Equipo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_model_1_1_equipo_1_1_equipo}{Equipo}}}]{equipo }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Método encargado de funcionar como puente entre los métodos de control con el método de data para el registro en la base de datos 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em equipo} & \\
+\hline
+\end{DoxyParams}
+
+
+La documentación para esta clase fue generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+USER/\+Documents/\+Git\+Hub/\+Gestion\+De\+Colegiados/\+Gestion\+De\+Colegiados/\+Control/\+Adm\+Equipos/Adm\+Equipo.\+cs\end{DoxyCompactItemize}

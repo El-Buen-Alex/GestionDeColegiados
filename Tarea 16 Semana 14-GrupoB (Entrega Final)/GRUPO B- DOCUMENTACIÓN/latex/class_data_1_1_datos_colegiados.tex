@@ -1,0 +1,531 @@
+\hypertarget{class_data_1_1_datos_colegiados}{}\doxysection{Referencia de la Clase Data.\+Datos\+Colegiados}
+\label{class_data_1_1_datos_colegiados}\index{Data.DatosColegiados@{Data.DatosColegiados}}
+
+
+Clase para gestionar los datos de colegiado en la BD.  
+
+
+\doxysubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_data_1_1_datos_colegiados_aa249ae222a2e974ba91839e340920cc0}{Insertar\+Juez\+Central}} (\mbox{\hyperlink{class_model_1_1_colegiados_1_1_juez_central}{Juez\+Central}} juez\+Central)
+\begin{DoxyCompactList}\small\item\em Método para guardar Juez Central. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_data_1_1_datos_colegiados_a5135eb6a3a5a2f1db8371885c33bf2e1}{Insertar\+Asistente1}} (\mbox{\hyperlink{class_model_1_1_colegiados_1_1_asistente}{Asistente}} asistente1)
+\begin{DoxyCompactList}\small\item\em Método para guardar Asistente 1. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_data_1_1_datos_colegiados_a35747c889d80c56e2cd5867a4754a12b}{Insertar\+Asistente2}} (\mbox{\hyperlink{class_model_1_1_colegiados_1_1_asistente}{Asistente}} asistente2)
+\begin{DoxyCompactList}\small\item\em Método para guardar Asistente 2. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_data_1_1_datos_colegiados_a931d5e3cc25970a4a33ffead7a839fd6}{Insertar\+Cuarto\+Arbitro}} (\mbox{\hyperlink{class_model_1_1_colegiados_1_1_cuarto_arbitro}{Cuarto\+Arbitro}} cuarto\+Arbitro)
+\begin{DoxyCompactList}\small\item\em Método para guardar Cuarto Arbitro. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_data_1_1_datos_colegiados_ae28cac27533ea94754a4469cde6a729e}{Insertar\+Colegiado}} (\mbox{\hyperlink{class_model_1_1_colegiados_1_1_colegiado}{Colegiado}} colegiado)
+\begin{DoxyCompactList}\small\item\em Método para guardar Colegiado. \end{DoxyCompactList}\item 
+List$<$ int $>$ \mbox{\hyperlink{class_data_1_1_datos_colegiados_a37353b1aba288181bef5872dc7af0f52}{consultar\+Id\+Colegiado}} ()
+\begin{DoxyCompactList}\small\item\em Método para obtener los id de colegiados. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_model_1_1_colegiados_1_1_juez_central}{Juez\+Central}} $>$ \mbox{\hyperlink{class_data_1_1_datos_colegiados_a95d08bfec636e1dbcc1bb06088aedbae}{consultar\+Juez\+Central}} (int id)
+\begin{DoxyCompactList}\small\item\em Método para obtener los datos de Juez Central. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_model_1_1_colegiados_1_1_asistente}{Asistente}} $>$ \mbox{\hyperlink{class_data_1_1_datos_colegiados_ad89d252e2460bd3fff3148063e1b9dc2}{consultar\+Asistente}} (int id, string procedimiento)
+\begin{DoxyCompactList}\small\item\em Método para obtener los datos de Asistente. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_model_1_1_colegiados_1_1_asistente}{Asistente}} $>$ \mbox{\hyperlink{class_data_1_1_datos_colegiados_a6b09505061a4addb07b8cd845e59ec6d}{consultar\+Asistente1}} (int id)
+\begin{DoxyCompactList}\small\item\em Método para obtener los datos de Asistente 1. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_model_1_1_colegiados_1_1_asistente}{Asistente}} $>$ \mbox{\hyperlink{class_data_1_1_datos_colegiados_a4f1e8d4d123be7260871c31099a02995}{consultar\+Asistente2}} (int id)
+\begin{DoxyCompactList}\small\item\em Método para obtener los datos de Asistente 2. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_model_1_1_colegiados_1_1_cuarto_arbitro}{Cuarto\+Arbitro}} $>$ \mbox{\hyperlink{class_data_1_1_datos_colegiados_a472251c4900430aa238cb9d4852dacd8}{consultar\+Cuarto\+Arbitro}} (int id)
+\begin{DoxyCompactList}\small\item\em Método para obtener los datos de Cuarto Arbitro. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_model_1_1_colegiados_1_1_integrantes_colegiados}{Integrantes\+Colegiados}} $>$ \mbox{\hyperlink{class_data_1_1_datos_colegiados_a55447c15178727cc64eb8cc2a68ce301}{Consultar\+Colegiado}} ()
+\begin{DoxyCompactList}\small\item\em Método para obtener nombre los arbitros. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_model_1_1_colegiados_1_1_integrantes_colegiados}{Integrantes\+Colegiados}} $>$ \mbox{\hyperlink{class_data_1_1_datos_colegiados_a253441a2c4cc94c31fdcc8992a6e6ce3}{Consultar\+Cedula\+Colegiado}} ()
+\begin{DoxyCompactList}\small\item\em Método para consultar las cedula de los arbitros registrados. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_data_1_1_datos_colegiados_aff0e2037e2e0e3fbe138b2cc5fa24434}{Obtener\+Nombre\+De\+Colegiados}} (int id\+Colegiado)
+\begin{DoxyCompactList}\small\item\em Método para obtener el nombre de los arbitros de acuerdo a un id. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_model_1_1_colegiados_1_1_colegiado}{Colegiado}} $>$ \mbox{\hyperlink{class_data_1_1_datos_colegiados_a96771c2b458faeeb57bfe3c6ba1fd5ad}{obtener\+Todos\+Id\+Colegiado}} (int id\+Colegiado)
+\begin{DoxyCompactList}\small\item\em Método para obtener todos los id de los arbitros de acuerdo a un parametro. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_data_1_1_datos_colegiados_a7f8b1f0c7f62dfacf44538d81418e2d1}{Editar\+Juez\+Central\+BD}} (\mbox{\hyperlink{class_model_1_1_colegiados_1_1_juez_central}{Juez\+Central}} juez\+Central)
+\begin{DoxyCompactList}\small\item\em Método para editar una Juez Central. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_data_1_1_datos_colegiados_a18a290d1a04479f9c0084e31bb8bd433}{editar\+Asistente\+BD}} (\mbox{\hyperlink{class_model_1_1_colegiados_1_1_asistente}{Asistente}} asistente, string procedimiento)
+\begin{DoxyCompactList}\small\item\em Método para editar un Asistente. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_data_1_1_datos_colegiados_a63ed21d7dd192a9d997d6bee7420cd34}{editar\+Asistente1\+BD}} (\mbox{\hyperlink{class_model_1_1_colegiados_1_1_asistente}{Asistente}} asistente1)
+\begin{DoxyCompactList}\small\item\em Método para editar un Asistente 1. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_data_1_1_datos_colegiados_a9a127c05c2c04d8217c24846b9e8177e}{editar\+Asistente2\+BD}} (\mbox{\hyperlink{class_model_1_1_colegiados_1_1_asistente}{Asistente}} asistente2)
+\begin{DoxyCompactList}\small\item\em Método para editar un Asistente 2. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_data_1_1_datos_colegiados_a154538f0ef2f30f2557ea92ba4085672}{editar\+Cuarto\+Arbitro}} (\mbox{\hyperlink{class_model_1_1_colegiados_1_1_cuarto_arbitro}{Cuarto\+Arbitro}} cuarto\+Arbitro)
+\begin{DoxyCompactList}\small\item\em Método para editar un Cuarto Arbitro. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_data_1_1_datos_colegiados_a7879f9a287bbd628968ee41108259b50}{eliminar\+Arbitro}} (int id\+Arbitro, string procedimiento)
+\begin{DoxyCompactList}\small\item\em Eliminar un arbitro \char`\"{}lógico\char`\"{}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_data_1_1_datos_colegiados_afeece9a88360d679dde990c492186d8a}{eliminar\+Juez\+Central\+BD}} (int id\+Arbitro)
+\begin{DoxyCompactList}\small\item\em Método para eliminar un Juez Central. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_data_1_1_datos_colegiados_a9242869d2333f8da911eb62b19ad5e26}{eliminar\+Asistente1\+BD}} (int id\+Arbitro)
+\begin{DoxyCompactList}\small\item\em Método para eliminar un Asistente 1. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_data_1_1_datos_colegiados_a9dca48c4d6083424175eab494827d768}{eliminar\+Asistente2\+BD}} (int id\+Arbitro)
+\begin{DoxyCompactList}\small\item\em Método para eliminar un Asistente 2. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_data_1_1_datos_colegiados_a8776a15848a2fcbf8faca1fda17dd3b6}{eliminar\+Cuarto\+Arbitro\+BD}} (int id\+Arbitro)
+\begin{DoxyCompactList}\small\item\em Método para eliminar un Cuarto Arbitro. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_data_1_1_datos_colegiados_a7dba8eb33a61d6492032074628c8dad0}{eliminar\+Colegiado}} (int id\+Colegiado)
+\begin{DoxyCompactList}\small\item\em Método para eliminar un Colegiado. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_data_1_1_datos_colegiados_a4d4c418b07a731a25a28f79d8f09bab1}{actualizar\+Colegiado\+BD}} (int id\+Colegiado, int id\+Nuevo, string arbitro)
+\begin{DoxyCompactList}\small\item\em Método para editar un arbitro de un colegiado. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Atributos privados}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_data_1_1_datos_colegiados_a0167099a52152d1ec893c7ef4dd733b8}\label{class_data_1_1_datos_colegiados_a0167099a52152d1ec893c7ef4dd733b8}} 
+My\+Sql\+Connection {\bfseries conexion} = null
+\item 
+\mbox{\Hypertarget{class_data_1_1_datos_colegiados_a86e9ddeff7c89b3fad1b07148d5f61d8}\label{class_data_1_1_datos_colegiados_a86e9ddeff7c89b3fad1b07148d5f61d8}} 
+My\+Sql\+Transaction {\bfseries trans} = null
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase para gestionar los datos de colegiado en la BD. 
+
+Se usa para ejecutar los procedimientos almacenados y operaciones de la BD. 
+
+\doxysubsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{class_data_1_1_datos_colegiados_a4d4c418b07a731a25a28f79d8f09bab1}\label{class_data_1_1_datos_colegiados_a4d4c418b07a731a25a28f79d8f09bab1}} 
+\index{Data.DatosColegiados@{Data.DatosColegiados}!actualizarColegiadoBD@{actualizarColegiadoBD}}
+\index{actualizarColegiadoBD@{actualizarColegiadoBD}!Data.DatosColegiados@{Data.DatosColegiados}}
+\doxysubsubsection{\texorpdfstring{actualizarColegiadoBD()}{actualizarColegiadoBD()}}
+{\footnotesize\ttfamily void Data.\+Datos\+Colegiados.\+actualizar\+Colegiado\+BD (\begin{DoxyParamCaption}\item[{int}]{id\+Colegiado,  }\item[{int}]{id\+Nuevo,  }\item[{string}]{arbitro }\end{DoxyParamCaption})}
+
+
+
+Método para editar un arbitro de un colegiado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em id\+Colegiado} & ID Colegiado.\\
+\hline
+{\em id\+Nuevo} & ID del nuevo arbitro.\\
+\hline
+{\em arbitro} & Tipo de árbitro.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_data_1_1_datos_colegiados_ad89d252e2460bd3fff3148063e1b9dc2}\label{class_data_1_1_datos_colegiados_ad89d252e2460bd3fff3148063e1b9dc2}} 
+\index{Data.DatosColegiados@{Data.DatosColegiados}!consultarAsistente@{consultarAsistente}}
+\index{consultarAsistente@{consultarAsistente}!Data.DatosColegiados@{Data.DatosColegiados}}
+\doxysubsubsection{\texorpdfstring{consultarAsistente()}{consultarAsistente()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{class_model_1_1_colegiados_1_1_asistente}{Asistente}} $>$ Data.\+Datos\+Colegiados.\+consultar\+Asistente (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{string}]{procedimiento }\end{DoxyParamCaption})}
+
+
+
+Método para obtener los datos de Asistente. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em id} & ID de asistente.\\
+\hline
+{\em procedimiento} & Nombre del procedimierto a ejecutar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Devuelve una lista con objetos Asistente.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_1_1_datos_colegiados_a6b09505061a4addb07b8cd845e59ec6d}\label{class_data_1_1_datos_colegiados_a6b09505061a4addb07b8cd845e59ec6d}} 
+\index{Data.DatosColegiados@{Data.DatosColegiados}!consultarAsistente1@{consultarAsistente1}}
+\index{consultarAsistente1@{consultarAsistente1}!Data.DatosColegiados@{Data.DatosColegiados}}
+\doxysubsubsection{\texorpdfstring{consultarAsistente1()}{consultarAsistente1()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{class_model_1_1_colegiados_1_1_asistente}{Asistente}} $>$ Data.\+Datos\+Colegiados.\+consultar\+Asistente1 (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Método para obtener los datos de Asistente 1. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em id} & ID de asistente 1.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Devuelve una lista con objetos Asistente 1.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_1_1_datos_colegiados_a4f1e8d4d123be7260871c31099a02995}\label{class_data_1_1_datos_colegiados_a4f1e8d4d123be7260871c31099a02995}} 
+\index{Data.DatosColegiados@{Data.DatosColegiados}!consultarAsistente2@{consultarAsistente2}}
+\index{consultarAsistente2@{consultarAsistente2}!Data.DatosColegiados@{Data.DatosColegiados}}
+\doxysubsubsection{\texorpdfstring{consultarAsistente2()}{consultarAsistente2()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{class_model_1_1_colegiados_1_1_asistente}{Asistente}} $>$ Data.\+Datos\+Colegiados.\+consultar\+Asistente2 (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Método para obtener los datos de Asistente 2. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em id} & ID de asistente 2.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Devuelve una lista con objetos Asistente 2.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_1_1_datos_colegiados_a253441a2c4cc94c31fdcc8992a6e6ce3}\label{class_data_1_1_datos_colegiados_a253441a2c4cc94c31fdcc8992a6e6ce3}} 
+\index{Data.DatosColegiados@{Data.DatosColegiados}!ConsultarCedulaColegiado@{ConsultarCedulaColegiado}}
+\index{ConsultarCedulaColegiado@{ConsultarCedulaColegiado}!Data.DatosColegiados@{Data.DatosColegiados}}
+\doxysubsubsection{\texorpdfstring{ConsultarCedulaColegiado()}{ConsultarCedulaColegiado()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{class_model_1_1_colegiados_1_1_integrantes_colegiados}{Integrantes\+Colegiados}} $>$ Data.\+Datos\+Colegiados.\+Consultar\+Cedula\+Colegiado (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Método para consultar las cedula de los arbitros registrados. 
+
+\begin{DoxyReturn}{Devuelve}
+Devuelve una lista con objetos Integrantes\+Colegiados.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_1_1_datos_colegiados_a55447c15178727cc64eb8cc2a68ce301}\label{class_data_1_1_datos_colegiados_a55447c15178727cc64eb8cc2a68ce301}} 
+\index{Data.DatosColegiados@{Data.DatosColegiados}!ConsultarColegiado@{ConsultarColegiado}}
+\index{ConsultarColegiado@{ConsultarColegiado}!Data.DatosColegiados@{Data.DatosColegiados}}
+\doxysubsubsection{\texorpdfstring{ConsultarColegiado()}{ConsultarColegiado()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{class_model_1_1_colegiados_1_1_integrantes_colegiados}{Integrantes\+Colegiados}} $>$ Data.\+Datos\+Colegiados.\+Consultar\+Colegiado (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Método para obtener nombre los arbitros. 
+
+\begin{DoxyReturn}{Devuelve}
+Devuelve una lista con objetos Integrantes\+Colegiados.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_1_1_datos_colegiados_a472251c4900430aa238cb9d4852dacd8}\label{class_data_1_1_datos_colegiados_a472251c4900430aa238cb9d4852dacd8}} 
+\index{Data.DatosColegiados@{Data.DatosColegiados}!consultarCuartoArbitro@{consultarCuartoArbitro}}
+\index{consultarCuartoArbitro@{consultarCuartoArbitro}!Data.DatosColegiados@{Data.DatosColegiados}}
+\doxysubsubsection{\texorpdfstring{consultarCuartoArbitro()}{consultarCuartoArbitro()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{class_model_1_1_colegiados_1_1_cuarto_arbitro}{Cuarto\+Arbitro}} $>$ Data.\+Datos\+Colegiados.\+consultar\+Cuarto\+Arbitro (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Método para obtener los datos de Cuarto Arbitro. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em id} & ID de Cuarto Arbitro.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Devuelve una lista con objetos Cuarto Arbitro.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_1_1_datos_colegiados_a37353b1aba288181bef5872dc7af0f52}\label{class_data_1_1_datos_colegiados_a37353b1aba288181bef5872dc7af0f52}} 
+\index{Data.DatosColegiados@{Data.DatosColegiados}!consultarIdColegiado@{consultarIdColegiado}}
+\index{consultarIdColegiado@{consultarIdColegiado}!Data.DatosColegiados@{Data.DatosColegiados}}
+\doxysubsubsection{\texorpdfstring{consultarIdColegiado()}{consultarIdColegiado()}}
+{\footnotesize\ttfamily List$<$ int $>$ Data.\+Datos\+Colegiados.\+consultar\+Id\+Colegiado (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Método para obtener los id de colegiados. 
+
+\begin{DoxyReturn}{Devuelve}
+Devuelve una lista de entero con los id.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_1_1_datos_colegiados_a95d08bfec636e1dbcc1bb06088aedbae}\label{class_data_1_1_datos_colegiados_a95d08bfec636e1dbcc1bb06088aedbae}} 
+\index{Data.DatosColegiados@{Data.DatosColegiados}!consultarJuezCentral@{consultarJuezCentral}}
+\index{consultarJuezCentral@{consultarJuezCentral}!Data.DatosColegiados@{Data.DatosColegiados}}
+\doxysubsubsection{\texorpdfstring{consultarJuezCentral()}{consultarJuezCentral()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{class_model_1_1_colegiados_1_1_juez_central}{Juez\+Central}} $>$ Data.\+Datos\+Colegiados.\+consultar\+Juez\+Central (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Método para obtener los datos de Juez Central. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em id} & ID de Juez Central.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Devuelve una lista con objetos Juez Central.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_1_1_datos_colegiados_a63ed21d7dd192a9d997d6bee7420cd34}\label{class_data_1_1_datos_colegiados_a63ed21d7dd192a9d997d6bee7420cd34}} 
+\index{Data.DatosColegiados@{Data.DatosColegiados}!editarAsistente1BD@{editarAsistente1BD}}
+\index{editarAsistente1BD@{editarAsistente1BD}!Data.DatosColegiados@{Data.DatosColegiados}}
+\doxysubsubsection{\texorpdfstring{editarAsistente1BD()}{editarAsistente1BD()}}
+{\footnotesize\ttfamily void Data.\+Datos\+Colegiados.\+editar\+Asistente1\+BD (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_model_1_1_colegiados_1_1_asistente}{Asistente}}}]{asistente1 }\end{DoxyParamCaption})}
+
+
+
+Método para editar un Asistente 1. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em asistente1} & Objeto Asistente 1.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_data_1_1_datos_colegiados_a9a127c05c2c04d8217c24846b9e8177e}\label{class_data_1_1_datos_colegiados_a9a127c05c2c04d8217c24846b9e8177e}} 
+\index{Data.DatosColegiados@{Data.DatosColegiados}!editarAsistente2BD@{editarAsistente2BD}}
+\index{editarAsistente2BD@{editarAsistente2BD}!Data.DatosColegiados@{Data.DatosColegiados}}
+\doxysubsubsection{\texorpdfstring{editarAsistente2BD()}{editarAsistente2BD()}}
+{\footnotesize\ttfamily void Data.\+Datos\+Colegiados.\+editar\+Asistente2\+BD (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_model_1_1_colegiados_1_1_asistente}{Asistente}}}]{asistente2 }\end{DoxyParamCaption})}
+
+
+
+Método para editar un Asistente 2. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em asistente2} & Objeto Asistente 2.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_data_1_1_datos_colegiados_a18a290d1a04479f9c0084e31bb8bd433}\label{class_data_1_1_datos_colegiados_a18a290d1a04479f9c0084e31bb8bd433}} 
+\index{Data.DatosColegiados@{Data.DatosColegiados}!editarAsistenteBD@{editarAsistenteBD}}
+\index{editarAsistenteBD@{editarAsistenteBD}!Data.DatosColegiados@{Data.DatosColegiados}}
+\doxysubsubsection{\texorpdfstring{editarAsistenteBD()}{editarAsistenteBD()}}
+{\footnotesize\ttfamily void Data.\+Datos\+Colegiados.\+editar\+Asistente\+BD (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_model_1_1_colegiados_1_1_asistente}{Asistente}}}]{asistente,  }\item[{string}]{procedimiento }\end{DoxyParamCaption})}
+
+
+
+Método para editar un Asistente. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em asistente} & Objeto Asistente.\\
+\hline
+{\em procedimiento} & Nombre del procedimiento.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_data_1_1_datos_colegiados_a154538f0ef2f30f2557ea92ba4085672}\label{class_data_1_1_datos_colegiados_a154538f0ef2f30f2557ea92ba4085672}} 
+\index{Data.DatosColegiados@{Data.DatosColegiados}!editarCuartoArbitro@{editarCuartoArbitro}}
+\index{editarCuartoArbitro@{editarCuartoArbitro}!Data.DatosColegiados@{Data.DatosColegiados}}
+\doxysubsubsection{\texorpdfstring{editarCuartoArbitro()}{editarCuartoArbitro()}}
+{\footnotesize\ttfamily void Data.\+Datos\+Colegiados.\+editar\+Cuarto\+Arbitro (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_model_1_1_colegiados_1_1_cuarto_arbitro}{Cuarto\+Arbitro}}}]{cuarto\+Arbitro }\end{DoxyParamCaption})}
+
+
+
+Método para editar un Cuarto Arbitro. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em cuarto\+Arbitro} & Objeto Cuarto Arbitro-\/\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_data_1_1_datos_colegiados_a7f8b1f0c7f62dfacf44538d81418e2d1}\label{class_data_1_1_datos_colegiados_a7f8b1f0c7f62dfacf44538d81418e2d1}} 
+\index{Data.DatosColegiados@{Data.DatosColegiados}!EditarJuezCentralBD@{EditarJuezCentralBD}}
+\index{EditarJuezCentralBD@{EditarJuezCentralBD}!Data.DatosColegiados@{Data.DatosColegiados}}
+\doxysubsubsection{\texorpdfstring{EditarJuezCentralBD()}{EditarJuezCentralBD()}}
+{\footnotesize\ttfamily void Data.\+Datos\+Colegiados.\+Editar\+Juez\+Central\+BD (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_model_1_1_colegiados_1_1_juez_central}{Juez\+Central}}}]{juez\+Central }\end{DoxyParamCaption})}
+
+
+
+Método para editar una Juez Central. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em juez\+Central} & ID de Juez Central.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_data_1_1_datos_colegiados_a7879f9a287bbd628968ee41108259b50}\label{class_data_1_1_datos_colegiados_a7879f9a287bbd628968ee41108259b50}} 
+\index{Data.DatosColegiados@{Data.DatosColegiados}!eliminarArbitro@{eliminarArbitro}}
+\index{eliminarArbitro@{eliminarArbitro}!Data.DatosColegiados@{Data.DatosColegiados}}
+\doxysubsubsection{\texorpdfstring{eliminarArbitro()}{eliminarArbitro()}}
+{\footnotesize\ttfamily void Data.\+Datos\+Colegiados.\+eliminar\+Arbitro (\begin{DoxyParamCaption}\item[{int}]{id\+Arbitro,  }\item[{string}]{procedimiento }\end{DoxyParamCaption})}
+
+
+
+Eliminar un arbitro \char`\"{}lógico\char`\"{}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em id\+Arbitro} & ID arbitro.\\
+\hline
+{\em procedimiento} & Nombre del procedimiento.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_data_1_1_datos_colegiados_a9242869d2333f8da911eb62b19ad5e26}\label{class_data_1_1_datos_colegiados_a9242869d2333f8da911eb62b19ad5e26}} 
+\index{Data.DatosColegiados@{Data.DatosColegiados}!eliminarAsistente1BD@{eliminarAsistente1BD}}
+\index{eliminarAsistente1BD@{eliminarAsistente1BD}!Data.DatosColegiados@{Data.DatosColegiados}}
+\doxysubsubsection{\texorpdfstring{eliminarAsistente1BD()}{eliminarAsistente1BD()}}
+{\footnotesize\ttfamily void Data.\+Datos\+Colegiados.\+eliminar\+Asistente1\+BD (\begin{DoxyParamCaption}\item[{int}]{id\+Arbitro }\end{DoxyParamCaption})}
+
+
+
+Método para eliminar un Asistente 1. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em id\+Arbitro} & ID Asistente 1.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_data_1_1_datos_colegiados_a9dca48c4d6083424175eab494827d768}\label{class_data_1_1_datos_colegiados_a9dca48c4d6083424175eab494827d768}} 
+\index{Data.DatosColegiados@{Data.DatosColegiados}!eliminarAsistente2BD@{eliminarAsistente2BD}}
+\index{eliminarAsistente2BD@{eliminarAsistente2BD}!Data.DatosColegiados@{Data.DatosColegiados}}
+\doxysubsubsection{\texorpdfstring{eliminarAsistente2BD()}{eliminarAsistente2BD()}}
+{\footnotesize\ttfamily void Data.\+Datos\+Colegiados.\+eliminar\+Asistente2\+BD (\begin{DoxyParamCaption}\item[{int}]{id\+Arbitro }\end{DoxyParamCaption})}
+
+
+
+Método para eliminar un Asistente 2. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em id\+Arbitro} & ID Asistente 2.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_data_1_1_datos_colegiados_a7dba8eb33a61d6492032074628c8dad0}\label{class_data_1_1_datos_colegiados_a7dba8eb33a61d6492032074628c8dad0}} 
+\index{Data.DatosColegiados@{Data.DatosColegiados}!eliminarColegiado@{eliminarColegiado}}
+\index{eliminarColegiado@{eliminarColegiado}!Data.DatosColegiados@{Data.DatosColegiados}}
+\doxysubsubsection{\texorpdfstring{eliminarColegiado()}{eliminarColegiado()}}
+{\footnotesize\ttfamily void Data.\+Datos\+Colegiados.\+eliminar\+Colegiado (\begin{DoxyParamCaption}\item[{int}]{id\+Colegiado }\end{DoxyParamCaption})}
+
+
+
+Método para eliminar un Colegiado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em id\+Arbitro} & ID Colegiado.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_data_1_1_datos_colegiados_a8776a15848a2fcbf8faca1fda17dd3b6}\label{class_data_1_1_datos_colegiados_a8776a15848a2fcbf8faca1fda17dd3b6}} 
+\index{Data.DatosColegiados@{Data.DatosColegiados}!eliminarCuartoArbitroBD@{eliminarCuartoArbitroBD}}
+\index{eliminarCuartoArbitroBD@{eliminarCuartoArbitroBD}!Data.DatosColegiados@{Data.DatosColegiados}}
+\doxysubsubsection{\texorpdfstring{eliminarCuartoArbitroBD()}{eliminarCuartoArbitroBD()}}
+{\footnotesize\ttfamily void Data.\+Datos\+Colegiados.\+eliminar\+Cuarto\+Arbitro\+BD (\begin{DoxyParamCaption}\item[{int}]{id\+Arbitro }\end{DoxyParamCaption})}
+
+
+
+Método para eliminar un Cuarto Arbitro. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em id\+Arbitro} & ID Cuarto Arbitro.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_data_1_1_datos_colegiados_afeece9a88360d679dde990c492186d8a}\label{class_data_1_1_datos_colegiados_afeece9a88360d679dde990c492186d8a}} 
+\index{Data.DatosColegiados@{Data.DatosColegiados}!eliminarJuezCentralBD@{eliminarJuezCentralBD}}
+\index{eliminarJuezCentralBD@{eliminarJuezCentralBD}!Data.DatosColegiados@{Data.DatosColegiados}}
+\doxysubsubsection{\texorpdfstring{eliminarJuezCentralBD()}{eliminarJuezCentralBD()}}
+{\footnotesize\ttfamily void Data.\+Datos\+Colegiados.\+eliminar\+Juez\+Central\+BD (\begin{DoxyParamCaption}\item[{int}]{id\+Arbitro }\end{DoxyParamCaption})}
+
+
+
+Método para eliminar un Juez Central. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em id\+Arbitro} & ID Juez Central.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_data_1_1_datos_colegiados_a5135eb6a3a5a2f1db8371885c33bf2e1}\label{class_data_1_1_datos_colegiados_a5135eb6a3a5a2f1db8371885c33bf2e1}} 
+\index{Data.DatosColegiados@{Data.DatosColegiados}!InsertarAsistente1@{InsertarAsistente1}}
+\index{InsertarAsistente1@{InsertarAsistente1}!Data.DatosColegiados@{Data.DatosColegiados}}
+\doxysubsubsection{\texorpdfstring{InsertarAsistente1()}{InsertarAsistente1()}}
+{\footnotesize\ttfamily int Data.\+Datos\+Colegiados.\+Insertar\+Asistente1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_model_1_1_colegiados_1_1_asistente}{Asistente}}}]{asistente1 }\end{DoxyParamCaption})}
+
+
+
+Método para guardar Asistente 1. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em asistente1} & Objeto Asistente 1.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Devuelve el último id insertado como entero.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_1_1_datos_colegiados_a35747c889d80c56e2cd5867a4754a12b}\label{class_data_1_1_datos_colegiados_a35747c889d80c56e2cd5867a4754a12b}} 
+\index{Data.DatosColegiados@{Data.DatosColegiados}!InsertarAsistente2@{InsertarAsistente2}}
+\index{InsertarAsistente2@{InsertarAsistente2}!Data.DatosColegiados@{Data.DatosColegiados}}
+\doxysubsubsection{\texorpdfstring{InsertarAsistente2()}{InsertarAsistente2()}}
+{\footnotesize\ttfamily int Data.\+Datos\+Colegiados.\+Insertar\+Asistente2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_model_1_1_colegiados_1_1_asistente}{Asistente}}}]{asistente2 }\end{DoxyParamCaption})}
+
+
+
+Método para guardar Asistente 2. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em asistente2} & Objeto Asistente 2.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Devuelve el último id insertado como entero.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_1_1_datos_colegiados_ae28cac27533ea94754a4469cde6a729e}\label{class_data_1_1_datos_colegiados_ae28cac27533ea94754a4469cde6a729e}} 
+\index{Data.DatosColegiados@{Data.DatosColegiados}!InsertarColegiado@{InsertarColegiado}}
+\index{InsertarColegiado@{InsertarColegiado}!Data.DatosColegiados@{Data.DatosColegiados}}
+\doxysubsubsection{\texorpdfstring{InsertarColegiado()}{InsertarColegiado()}}
+{\footnotesize\ttfamily void Data.\+Datos\+Colegiados.\+Insertar\+Colegiado (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_model_1_1_colegiados_1_1_colegiado}{Colegiado}}}]{colegiado }\end{DoxyParamCaption})}
+
+
+
+Método para guardar Colegiado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em colegiado} & Objeto Colegiado.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Devuelve el último id insertado como entero
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_1_1_datos_colegiados_a931d5e3cc25970a4a33ffead7a839fd6}\label{class_data_1_1_datos_colegiados_a931d5e3cc25970a4a33ffead7a839fd6}} 
+\index{Data.DatosColegiados@{Data.DatosColegiados}!InsertarCuartoArbitro@{InsertarCuartoArbitro}}
+\index{InsertarCuartoArbitro@{InsertarCuartoArbitro}!Data.DatosColegiados@{Data.DatosColegiados}}
+\doxysubsubsection{\texorpdfstring{InsertarCuartoArbitro()}{InsertarCuartoArbitro()}}
+{\footnotesize\ttfamily int Data.\+Datos\+Colegiados.\+Insertar\+Cuarto\+Arbitro (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_model_1_1_colegiados_1_1_cuarto_arbitro}{Cuarto\+Arbitro}}}]{cuarto\+Arbitro }\end{DoxyParamCaption})}
+
+
+
+Método para guardar Cuarto Arbitro. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em cuarto\+Arbitro} & Objeto Cuarto Arbitro.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Devuelve el último id insertado como entero
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_1_1_datos_colegiados_aa249ae222a2e974ba91839e340920cc0}\label{class_data_1_1_datos_colegiados_aa249ae222a2e974ba91839e340920cc0}} 
+\index{Data.DatosColegiados@{Data.DatosColegiados}!InsertarJuezCentral@{InsertarJuezCentral}}
+\index{InsertarJuezCentral@{InsertarJuezCentral}!Data.DatosColegiados@{Data.DatosColegiados}}
+\doxysubsubsection{\texorpdfstring{InsertarJuezCentral()}{InsertarJuezCentral()}}
+{\footnotesize\ttfamily int Data.\+Datos\+Colegiados.\+Insertar\+Juez\+Central (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_model_1_1_colegiados_1_1_juez_central}{Juez\+Central}}}]{juez\+Central }\end{DoxyParamCaption})}
+
+
+
+Método para guardar Juez Central. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em juez\+Central} & Objeto Juez Central.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Devuelve el último id insertado como entero.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_1_1_datos_colegiados_aff0e2037e2e0e3fbe138b2cc5fa24434}\label{class_data_1_1_datos_colegiados_aff0e2037e2e0e3fbe138b2cc5fa24434}} 
+\index{Data.DatosColegiados@{Data.DatosColegiados}!ObtenerNombreDeColegiados@{ObtenerNombreDeColegiados}}
+\index{ObtenerNombreDeColegiados@{ObtenerNombreDeColegiados}!Data.DatosColegiados@{Data.DatosColegiados}}
+\doxysubsubsection{\texorpdfstring{ObtenerNombreDeColegiados()}{ObtenerNombreDeColegiados()}}
+{\footnotesize\ttfamily string Data.\+Datos\+Colegiados.\+Obtener\+Nombre\+De\+Colegiados (\begin{DoxyParamCaption}\item[{int}]{id\+Colegiado }\end{DoxyParamCaption})}
+
+
+
+Método para obtener el nombre de los arbitros de acuerdo a un id. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em id\+Colegiado} & ID colegiado.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Devuelve un string con los nombres.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_1_1_datos_colegiados_a96771c2b458faeeb57bfe3c6ba1fd5ad}\label{class_data_1_1_datos_colegiados_a96771c2b458faeeb57bfe3c6ba1fd5ad}} 
+\index{Data.DatosColegiados@{Data.DatosColegiados}!obtenerTodosIdColegiado@{obtenerTodosIdColegiado}}
+\index{obtenerTodosIdColegiado@{obtenerTodosIdColegiado}!Data.DatosColegiados@{Data.DatosColegiados}}
+\doxysubsubsection{\texorpdfstring{obtenerTodosIdColegiado()}{obtenerTodosIdColegiado()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{class_model_1_1_colegiados_1_1_colegiado}{Colegiado}} $>$ Data.\+Datos\+Colegiados.\+obtener\+Todos\+Id\+Colegiado (\begin{DoxyParamCaption}\item[{int}]{id\+Colegiado }\end{DoxyParamCaption})}
+
+
+
+Método para obtener todos los id de los arbitros de acuerdo a un parametro. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em id\+Colegiado} & ID colegiado.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Devuelve una lista con objetos Colegiado.
+\end{DoxyReturn}
+
+
+La documentación para esta clase fue generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+USER/\+Documents/\+Git\+Hub/\+Gestion\+De\+Colegiados/\+Gestion\+De\+Colegiados/\+Data/Datos\+Colegiados.\+cs\end{DoxyCompactItemize}
