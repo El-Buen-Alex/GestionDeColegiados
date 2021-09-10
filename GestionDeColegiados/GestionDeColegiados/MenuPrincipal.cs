@@ -257,14 +257,13 @@ namespace GestionDeColegiados
 
         private void ExaminarAccesibilidadEditarEquipoPorEncuentrosGenerados()
         {
-            if (admGenerarEncuentros.obtnerNumeroEncuentrosGeneradosPendientes() == 0)
+            if (admGenerarEncuentros.obtnerNumeroEncuentrosGeneradosPendientes() == 0 && admEncuentroFinalizado.GetCantidadEncuentrosFinalizados() == 0 && admEncuentrosDefinidos.ObtenerCantidadEncuentrosDefinidos() == 0)
             {
                 AbrirFormEnPanel(new frmVerTodos());
             }
             else
             {
-                MessageBox.Show("Existen encuentros generados. No se pueden eliminar o editar equipos.");
-                AbrirFormEnPanel(new frmGenerarEncuentros(true));
+                MessageBox.Show("Existen encuentros generados o definidos. No se pueden eliminar o editar equipos.");
             }
         }
         private void button3_Click(object sender, EventArgs e)

@@ -60,6 +60,7 @@ namespace GestionDeColegiados.FrmsArbitro
             {
                 cambiarDisponibilidadControladoresUi(false);
                 admEncuentrosDefinidos.LlenarPartidosCmb(cmbEncuentros);
+
             }
         }
 
