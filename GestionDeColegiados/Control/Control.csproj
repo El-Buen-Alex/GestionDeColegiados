@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Control</RootNamespace>
     <AssemblyName>Control</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
@@ -75,7 +75,7 @@
       <Name>Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
-      <Project>{6F613673-769D-462B-8A59-93C5BB888B39}</Project>
+      <Project>{6f613673-769d-462b-8a59-93c5bb888b39}</Project>
       <Name>Model</Name>
     </ProjectReference>
   </ItemGroup>
